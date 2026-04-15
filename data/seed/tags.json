@@ -1,0 +1,34 @@
+{
+  "bennys": {
+    "display": "Benny's Original Motor Works",
+    "rule": { "type": "fandom_category", "category": "Benny's Original Motor Works" }
+  },
+  "hsw": {
+    "display": "HSW Upgrade",
+    "rule": { "type": "fandom_category", "category": "Hao's Special Works" }
+  },
+  "imani_tech": {
+    "display": "Imani Tech",
+    "rule": { "type": "fandom_category", "category": "Imani Tech" }
+  },
+  "arena": {
+    "display": "Arena War",
+    "rule": { "type": "fandom_category", "category": "Arena War" }
+  },
+  "weaponized": {
+    "display": "Weaponized",
+    "rule": { "type": "fandom_category", "category": "Weaponized Vehicles" }
+  },
+  "open_wheel": {
+    "display": "Open Wheel",
+    "rule": { "type": "fandom_category", "category": "Open Wheel" }
+  },
+  "drift": {
+    "display": "Drift Tuning",
+    "rule": { "type": "fandom_category", "category": "Drift Tuning" }
+  },
+  "lowrider": {
+    "display": "Lowrider",
+    "rule": { "type": "fandom_category", "category": "Lowrider" }
+  }
+}

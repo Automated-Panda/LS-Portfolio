@@ -1,0 +1,42 @@
+{
+  "name": "ls-garage-manager",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GTA Online garage and vehicle collection manager",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "fetch": "tsx scripts/fetch-sources.ts",
+    "build:vehicles": "tsx scripts/build-vehicles.ts",
+    "build:properties": "tsx scripts/build-properties.ts",
+    "validate": "tsx scripts/validate-seed.ts",
+    "seed:all": "npm run fetch && npm run build:vehicles && npm run build:properties && npm run validate",
+    "db:import": "tsx --env-file=.env.local scripts/import-seed.ts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "autoprefixer": "^10.4.20",
+    "cheerio": "^1.0.0",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "^15.1.0",
+    "postcss": "^8.4.49",
+    "sharp": "^0.33.5",
+    "supabase": "^2.91.1",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

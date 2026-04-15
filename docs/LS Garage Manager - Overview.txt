@@ -1,0 +1,363 @@
+# LS Garage Manager - Product & Technical Spec
+
+## Overview
+
+LS Garage Manager is a web application that allows GTA Online players to:
+
+- Browse all garage-storable vehicles
+- Track which vehicles they own (including duplicates)
+- Select and configure owned properties
+- Manage garage floors/sections
+- Assign vehicles to specific garage slots
+- Visualize garage layouts in a simple top-down format
+
+The goal is to help users organise and manage large vehicle collections efficiently.
+
+---
+
+## MVP Scope
+
+### Core Features
+
+1. User Accounts
+- Sign up / login
+- Persist user data (vehicles, properties, assignments)
+
+2. Vehicle Database
+- Full list of garage-storable vehicles
+- Each vehicle is a unique record (variants are separate)
+- Includes images, class, manufacturer, tags
+
+3. Ownership Tracking
+- Users can add vehicles to their collection
+- Duplicate vehicles supported (multiple instances)
+
+4. Property Management
+- Preloaded list of GTA Online properties
+- Users select owned properties
+- Properties can have configurable garage sections/floors
+
+5. Garage Structure
+- Each property contains sections (floors/garages)
+- Each section has a defined number of slots
+- Users can enable/disable sections
+
+6. Slot Assignment
+- Vehicles can be assigned to:
+  - Property
+  - Section
+  - Slot
+- Visual slot-based layout
+
+7. Dashboard
+- Total vehicles owned
+- Total capacity
+- Used capacity
+- Unassigned vehicles
+
+---
+
+## App Navigation Structure
+
+- Dashboard
+- All Vehicles
+- My Vehicles
+- My Properties
+- (Future) Organize
+- (Future) Settings
+
+---
+
+## Vehicle System
+
+### Requirements
+
+- Vehicles must be filterable by:
+  - Class (Super, Sports, Muscle, etc.)
+  - Manufacturer
+  - Tags (Benny's, HSW, Imani Tech, etc.)
+  - Owned / Unowned
+
+- Variants are separate vehicles:
+  Example:
+  - Elegy RH8
+  - Elegy Retro Custom
+
+- Vehicles can optionally link to a base model
+
+---
+
+## Property System
+
+### Requirements
+
+- Preloaded property database
+- Users select owned properties
+- Each property may have sections:
+  - Floors
+  - Garage levels
+  - Storage areas
+
+Examples:
+- Nightclub B2/B3/B4
+- Agency Garage Levels
+- Office Garage Floors
+
+- Sections can be enabled/disabled per user
+
+---
+
+## Garage Slot System
+
+### Requirements
+
+- Each section contains slots
+- Slots have:
+  - slot_number
+  - x/y position (for UI layout)
+
+- Vehicles are assigned to specific slots
+
+- UI should show:
+  - occupied slots
+  - empty slots
+
+---
+
+## UI Requirements
+
+### All Vehicles Page
+
+- Image card layout
+- Each card shows:
+  - image
+  - name
+  - manufacturer
+  - class
+  - tags
+  - owned state
+
+- Actions:
+  - Add to collection
+  - Add duplicate
+
+---
+
+### My Vehicles Page
+
+- Shows only owned vehicles
+- Each entry shows:
+  - vehicle
+  - assigned property
+  - assigned section
+  - assigned slot
+
+- Allows assignment / reassignment
+
+---
+
+### My Properties Page
+
+- List of all properties
+- Toggle owned properties
+- Clicking property opens detail view:
+  - sections/floors
+  - enable/disable sections
+  - capacity display
+
+---
+
+### Garage View (within property)
+
+- Top-down layout (simple grid or positioned slots)
+- Each slot shows:
+  - vehicle image (if occupied)
+  - empty placeholder (if not)
+
+- Click-based assignment:
+  - click slot → assign vehicle
+  - click occupied → move/remove
+
+---
+
+### Dashboard
+
+- Total owned vehicles
+- Total garage capacity
+- Used capacity
+- Unassigned vehicles
+
+---
+
+## Data Model
+
+### Tables
+
+#### vehicles
+- id
+- name
+- slug
+- manufacturer
+- class
+- image_url
+- release_update
+- is_garage_storable
+- variant_type
+- base_vehicle_id (nullable)
+- source_url
+- notes
+
+---
+
+#### vehicle_tags
+- id
+- name
+
+---
+
+#### vehicle_tag_links
+- vehicle_id
+- tag_id
+
+---
+
+#### properties
+- id
+- name
+- slug
+- property_type
+- location
+- image_url
+- source_url
+- notes
+
+---
+
+#### property_sections
+- id
+- property_id
+- section_name
+- section_type
+- default_capacity
+- is_optional
+- sort_order
+
+---
+
+#### layout_templates (optional MVP)
+- id
+- name
+- slot_count
+- layout_type
+- metadata_json
+
+---
+
+#### garage_slots
+- id
+- property_section_id
+- slot_number
+- x_pos
+- y_pos
+
+---
+
+## User Tables
+
+#### users
+- id
+- email
+- username
+- created_at
+
+---
+
+#### user_owned_vehicles
+- id
+- user_id
+- vehicle_id
+- nickname (nullable)
+- notes (nullable)
+- assigned_property_id (nullable)
+- assigned_section_id (nullable)
+- assigned_slot_id (nullable)
+
+NOTE:
+Each row represents ONE owned instance (supports duplicates)
+
+---
+
+#### user_owned_properties
+- id
+- user_id
+- property_id
+- custom_name (nullable)
+- owned (boolean)
+
+---
+
+#### user_enabled_property_sections
+- id
+- user_owned_property_id
+- property_section_id
+- enabled (boolean)
+- capacity_override (nullable)
+
+---
+
+## Tech Stack
+
+Recommended:
+
+- Frontend: Next.js
+- Backend: Supabase
+- Database: PostgreSQL
+- Styling: Tailwind CSS
+- UI: shadcn/ui (optional)
+
+---
+
+## MVP Constraints
+
+DO NOT BUILD YET:
+
+- Auto-organize engine
+- Drag-and-drop UI
+- 3D garage models
+- Mobile native app
+- Social features
+- Screenshot importing
+
+---
+
+## Future Features
+
+- Auto-organize vehicles by rules
+- Custom tags
+- Duplicate management tools
+- Drag-and-drop garage layout
+- Visual garage themes
+- “Where should this car go?” suggestions
+- Buy planning / wishlist
+
+---
+
+## Key Design Principles
+
+- Keep UI clean and fast
+- Prioritize usability over visual perfection
+- Use simple layouts instead of complex 3D
+- Treat vehicles and variants as separate records
+- Support duplicates from day one
+
+---
+
+## Summary
+
+LS Garage Manager MVP focuses on:
+
+- vehicle tracking
+- property configuration
+- slot-based garage management
+
+The goal is to create a solid foundation for future automation and organization features.
