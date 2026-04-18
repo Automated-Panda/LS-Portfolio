@@ -1898,9 +1898,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/chino.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2122,7 +2120,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/comet2.webp",
@@ -2642,9 +2639,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/diablous.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -3568,7 +3563,6 @@
     "is_garage_storable": true,
     "variant_of": "elegy",
     "tags": [
-      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/elegy2.webp",
@@ -3872,7 +3866,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/faction.webp",
@@ -3989,9 +3982,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/fcr.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4472,9 +4463,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "gauntlet",
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/gauntlet3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -6238,7 +6227,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/manana.webp",
@@ -6461,9 +6449,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/minivan.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -6524,7 +6510,7 @@
   {
     "id": "monster",
     "internal_name": "monster",
-    "display_name": "Monster",
+    "display_name": "Liberator",
     "manufacturer_id": "vapid",
     "class": "OFF_ROAD",
     "release_update": null,
@@ -6771,9 +6757,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/nero.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -7380,7 +7364,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/peyote.webp",
@@ -9651,9 +9634,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/specter.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -10430,7 +10411,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/tenf.webp",
@@ -10636,7 +10616,6 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
-      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/tornado.webp",
@@ -11340,7 +11319,6 @@
     "is_garage_storable": true,
     "variant_of": "virgo",
     "tags": [
-      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/virgo3.webp",
@@ -11610,9 +11588,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/weevil.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11801,9 +11777,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/yosemite.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11885,9 +11859,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/youga2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11903,9 +11875,7 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/youga3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11916,12 +11886,14 @@
     "id": "youga4",
     "internal_name": "youga4",
     "display_name": "Youga Custom",
-    "manufacturer_id": "vapid",
+    "manufacturer_id": "bravado",
     "class": "VAN",
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/youga4.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",

@@ -30,13 +30,15 @@ export function AppShell({
 
   return (
     <div className="flex min-h-screen">
-      <aside className="hidden w-64 flex-col border-r bg-card md:flex">
-        <div className="flex h-14 items-center border-b px-4">
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r bg-card md:flex">
+        <div className="flex h-14 shrink-0 items-center border-b px-4">
           <Link href="/dashboard" className="font-semibold tracking-tight">
             LS Portfolio
           </Link>
         </div>
-        <SidebarNav counts={counts} />
+        <div className="flex-1 overflow-y-auto">
+          <SidebarNav counts={counts} />
+        </div>
       </aside>
 
       <aside

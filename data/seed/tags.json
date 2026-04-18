@@ -1,10 +1,10 @@
 {
   "bennys": {
-    "display": "Benny's Original Motor Works",
+    "display": "Benny's",
     "rule": { "type": "fandom_category", "category": "Benny's Original Motor Works" }
   },
   "hsw": {
-    "display": "HSW Upgrade",
+    "display": "HSW",
     "rule": { "type": "fandom_category", "category": "Hao's Special Works" }
   },
   "imani_tech": {

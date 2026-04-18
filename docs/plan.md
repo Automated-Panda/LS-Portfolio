@@ -4,20 +4,36 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** ✅ Phase 3 — Vehicle Browser (feature-complete; image-quality polish ongoing in [`notes.md`](./notes.md))
-**Last updated:** 2026-04-18 (evening)
+**Current phase:** 🟡 Phase 4 — Property Management (browse/select done; owned views + upgrade selection next)
+**Last updated:** 2026-04-18 (late night)
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
 
-**Phase 3 is functionally done.** The `/vehicles` page works end-to-end: 720-card responsive grid, URL-driven filters, one-click ownership, drift sub-toggles, live sidebar counts. Data is clean (no duplicate cards, no placeholder images that we know of).
+**Phase 4 browse/select is live.** `/properties` mirrors `/vehicles`: 15-card grid, type/location/search filters, one-click ownership toggle. Sidebar was restructured into **Browse** and **My Portfolio** sections with **Dashboard** pinned, sticky on desktop. Owned counts split into `vehicles`, `properties` (residence + garage), and `businesses` (business type). `/my-businesses` exists as a stub.
 
-**What's carried forward:**
-1. 📝 **Image-quality touch-ups** — James is compiling a list of cards with sub-par images (wrong angle, low quality, etc.) in `docs/notes.md`. One re-source pass to handle all of them when the list is ready.
-2. 🚀 **Phase 4 — Property Management** is the next build phase: `/my-properties` page where a user picks which of the 15 property types they own and which upgrade tiers they have. This unblocks Phase 5 (slot assignment) which is where the tracker becomes genuinely useful.
+**What else landed tonight:**
+- Brand theming: GTA V forest green (`HSL 142 65% 38%`) on `--accent` + `--secondary`; emerald retained for owned-state so ownership reads distinct from brand chrome.
+- Card chrome: class → top-left image overlay; fixed-height tag row (22px) with `+N` overflow chip (tooltip lists the rest). Cards now uniform height without awkward empty bodies.
+- 9 vehicle image touch-ups (cruiser, intruder, monster/liberator, stromberg, tulip, vortex, blazer, caracara2, banshee) — `scripts/normalize-temp-images.ts` handles the drop-zone workflow (`docs/temp-images/<name>.{png|jpg|webp}`).
+- Vapid Monster renamed to **Liberator** (display_name only; internal_name `monster` unchanged).
+- Benny's tag cleanup: **customs-only rule** — base vehicles lose `bennys` if a variant of them also carries it (`scripts/fix-bennys-custom-only.ts`), plus 8 manual corrections (`fix-bennys-corrections.ts`) and Youga Custom manufacturer fix (Vapid → Bravado).
+- Tag displays shortened: "Benny's Original Motor Works" → "Benny's", "HSW Upgrade" → "HSW".
+- Infra: shifted local Supabase ports 5432X → 5442X to dodge Windows Hyper-V TCP reservations (saved in memory as reference).
 
-**Suggested order next session:** knock out the image touch-up pass first (quick, finishes Phase 3), then brainstorm Phase 4 scope.
+**What's next for Phase 4 (Phase 4b — Granular Properties):**
+
+Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-properties-granular-design.md`](./specs/2026-04-18-properties-granular-design.md). TL;DR: existing 15 category-level properties become ~300-400 per-instance properties (every individual apartment, garage, nightclub, etc.). Schema adds `subtype`, `subtype_display`, `neighborhood`, `capacity` columns. Upgrades attach to instances, not types.
+
+1. **Pilot: Nightclubs** (next session) — 10 locations × 6 upgrade rows each. Validates schema + data + upgrade UI end-to-end before scaling.
+2. **Fan-out to all property types** — apartments, garages, bunkers, offices, MC clubhouses, biker businesses, warehouses, etc. Across multiple sessions.
+3. **`/my-properties`** + **`/my-businesses`** owned views with upgrade-tier selection (Phase 4c).
+4. This unblocks **Phase 5** (vehicle→slot assignment), which is where the tracker becomes genuinely useful.
+
+**Smaller followups:**
+- Optional: bake the `custom_only` flag properly into `tags.json` + `scripts/lib/tags.ts` so future `npm run build:vehicles` runs don't need the post-pass script.
+- Optional: add a `DISPLAY_NAME_OVERRIDES` map to `build-vehicles.ts` so renames like Monster→Liberator survive a rebuild.
 
 ---
 
@@ -29,7 +45,7 @@
 | **1. Supabase Setup** | ✅ Complete (local) | Local Supabase stack running via Docker; schema + seed imported; hosted project deferred to Phase 9 |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
-| **4. Property Management** | ⚪ Next up | My Properties page + upgrade selection |
+| **4. Property Management** | 🟡 In progress | `/properties` browse + ownership ✅ · `/my-properties` owned view + upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
 | 7. Marketing Site | ⚪ Not started | Landing page, about, pricing (if applicable) |
@@ -222,10 +238,57 @@ Design for Phase 0: [`docs/specs/2026-04-15-data-seed-design.md`](./specs/2026-0
 - Manufacturer acronyms rendered correctly (BF, HVY, LCC, MTL)
 
 ### Known followups (not blocking)
-- [ ] **Image-quality polish** — some vehicles have correct-but-mediocre Fandom images (wrong angle, low quality). List + re-source next session. See [`docs/notes.md`](./notes.md).
+- [x] **Image-quality polish** — 9 vehicles re-sourced on 2026-04-18 via the `docs/temp-images/` drop-zone + `scripts/normalize-temp-images.ts`. Further requests go through the same workflow.
 
 ### Smoke test status
 Basic flows confirmed working interactively on `localhost:3000` on 2026-04-18 (browse, filter, search, toggle ownership, toggle drift, sidebar count updates). No automated tests this phase.
+
+---
+
+## 📋 Phase 4 — Property Management  🟡 In progress
+
+**Scope chosen:** mirror the `/vehicles` pattern for properties (browse + ownership toggle), then add owned views (`/my-properties`, `/my-businesses`) with per-property upgrade-tier selection. Businesses split out from general properties in the sidebar since they're a distinct asset class with business-specific mechanics (income, supplies) to come.
+
+### Completed this phase (2026-04-18)
+
+#### Sidebar restructure
+- [x] `nav-items.ts` — sections model: pinned `Dashboard`, then `Browse` (All Vehicles, All Properties, Visual Garage) and `My Portfolio` (My Vehicles, My Properties, My Businesses).
+- [x] `sidebar-nav.tsx` — renders section headers (small uppercase muted labels).
+- [x] `app-shell.tsx` — desktop aside is `sticky top-0 h-screen` with internal scroll.
+- [x] `getOwnedCounts` splits `properties` (residence + garage) vs `businesses` (business type) via inner join to `properties.property_type`.
+
+#### `/properties` browse page (mirrors `/vehicles`)
+- [x] `lib/properties.ts` — client-safe types + `propertyImageUrl()` + `formatPropertyType()`.
+- [x] `lib/queries/properties.ts` — `getPropertiesBrowserData(userId)` fetches properties + upgrades + owned set.
+- [x] `app/(app)/properties/page.tsx` — server component, auth + data fetch.
+- [x] `properties-browser.tsx` — URL-driven filters, responsive grid.
+- [x] `filter-bar.tsx` — type pills (All / Residences / Garages / Businesses / Special), location dropdown, debounced search.
+- [x] `property-card.tsx` — image, name, type overlay, location (MapPin), capacity chip, own/unown toggle with optimistic updates.
+- [x] `actions.ts` — `togglePropertyOwnership(propertyId)` server action.
+
+#### Theming & card chrome (2026-04-18 late night)
+- [x] GTA V forest green (`HSL 142 65% 38%`) on `--accent` + `--secondary`, light + dark. Emerald-500 retained for owned-state.
+- [x] Class badge → top-left image overlay (`bg-black/70 backdrop-blur`). Property type badge same treatment.
+- [x] Tag row fixed to 22px height with `+N` overflow chip (tooltip lists hidden tags). Tag chips use `shrink-0` to prevent compression.
+- [x] Shortened tag display labels: "Benny's Original Motor Works" → "Benny's", "HSW Upgrade" → "HSW".
+
+#### Data cleanups (2026-04-18)
+- [x] `scripts/normalize-temp-images.ts` — drop-zone workflow: files into `docs/temp-images/<name>.<ext>`, `npx tsx scripts/normalize-temp-images.ts` converts to 600w webp and moves to `data/images/vehicles/<id>.webp`. `NAME_OVERRIDES` handles display↔id mismatches (e.g. `liberator` → `monster`, `caracara4x4` → `caracara2`).
+- [x] 9 vehicles re-sourced via this workflow.
+- [x] Vapid Monster renamed to **Liberator** in seed + DB. Internal id stays `monster`.
+- [x] `scripts/fix-bennys-custom-only.ts` — applies **customs-only rule**: for each base tagged `bennys`, if a variant also has `bennys`, strip the tag from the base. 14 bases cleaned.
+- [x] `scripts/fix-bennys-corrections.ts` — 8 manual corrections from James's review (6 removes, 2 adds) + Youga Custom manufacturer fix (Vapid → Bravado).
+
+### Still to do
+
+- [ ] **`/my-properties`** — real owned view (currently a stub). Show owned residences + garages, allow picking upgrade tiers per property (e.g., Stand-Alone Garage → 2/6/10-car).
+- [ ] **`/my-businesses`** — real owned view. Show owned businesses, allow picking upgrade tiers.
+- [ ] (Optional) Bake `custom_only` flag into `tags.json` + `scripts/lib/tags.ts` so the post-pass script isn't needed after future rebuilds.
+- [ ] (Optional) Add `DISPLAY_NAME_OVERRIDES` to `build-vehicles.ts` so Liberator rename survives a full rebuild.
+
+### Infrastructure notes (2026-04-18)
+
+- Local Supabase ports shifted 5432X → 5442X to avoid Windows Hyper-V reserved port range 54274-54373. New ports: API 54421, DB 54422, Studio 54423, Mailpit 54424, Analytics 54427, Pooler 54429, Shadow DB 54420. See memory `reference_supabase_ports.md` for full context.
 
 ---
 
@@ -255,6 +318,12 @@ Short-form record of decisions made during brainstorming. See the design doc for
 | 2026-04-18 | Drift variants collapse into the base card with a sub-toggle | 23 drift-prefixed vehicles visually duplicate their base. One card per base + a separate Drift pill is less noise and reads cleanly. DB still stores base + drift as separate `user_owned_vehicles`-eligible rows. |
 | 2026-04-18 | Mission-only / faction-named entries removed from seed | `fbi` + `fbi2` were labeled "Federal Investigation Bureau" and pointed at the FIB wiki faction page — not ownable vehicles. If more slip through later, drop into `BOGUS_IDS` in `scripts/fetch-missing-images.ts` and re-run. |
 | 2026-04-18 | Class names normalized in display layer only | `formatClass()` runs once in `getVehiclesBrowserData`; the raw DurtyFree value (`MUSCLE`, `SPORT_CLASSIC`) stays in the DB for deterministic re-imports. |
+| 2026-04-18 | Sidebar: Dashboard pinned + Browse / My Portfolio sections, sticky on desktop | Product now spans multiple asset types (vehicles, properties, businesses, aircraft, boats to come); a flat nav list doesn't scale, and splitting public catalogue from owned portfolio maps to how users actually think. |
+| 2026-04-18 | Businesses separate from Properties in nav (but same DB table) | Businesses share structure with properties (one `properties` table) but have distinct mechanics (income, supplies). Splitting them in nav lets the owned view diverge later without another data migration. Browse page keeps them together with a Type filter. |
+| 2026-04-18 | Brand chrome uses GTA V forest green (HSL 142 65% 38%); owned-state stays emerald-500 | Two greens sit ~18° apart in hue with different saturation, so they read as distinct signals. Brand = "this is an LS Portfolio thing"; emerald = "you own this". |
+| 2026-04-18 | Benny's tag rule: customs-only | Filter should surface the vehicles that *are* Benny's upgrades, not every vehicle that *can be taken to* Benny's. Base vehicles that are in Fandom's Benny's category get the tag stripped if any variant of them also has it. Standalone customs (no variants) keep theirs. |
+| 2026-04-18 | Class as image overlay + fixed-height tag row with `+N` overflow | Keeps all cards uniform height without wrap-jitter or empty bodies. Class is always visible without competing for space with tags. |
+| 2026-04-18 | Local Supabase ports 5432X → 5442X | Windows Hyper-V dynamic port reservations include 54274-54373 on James's machine, which blocks the default Supabase range. Shifted into the 54374-54480 gap. |
 
 ---
 

@@ -101,6 +101,9 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
               No image
             </div>
           )}
+          <span className="absolute left-2 top-2 z-10 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
+            {vehicle.class}
+          </span>
         </div>
 
         <div className="flex flex-1 flex-col gap-2 p-3">
@@ -112,15 +115,24 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
               {vehicle.manufacturer_display}
             </p>
           </div>
-          <div className="mt-auto flex flex-wrap items-center gap-1">
-            <Badge variant="secondary" className="text-[10px]">
-              {vehicle.class}
-            </Badge>
-            {vehicle.tag_ids.map((id) => (
-              <Badge key={id} variant="outline" className="text-[10px]">
+          <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">
+            {vehicle.tag_ids.slice(0, 2).map((id) => (
+              <Badge key={id} variant="outline" className="shrink-0 text-[10px]">
                 {tagLookup[id] ?? id}
               </Badge>
             ))}
+            {vehicle.tag_ids.length > 2 && (
+              <Badge
+                variant="outline"
+                className="shrink-0 text-[10px]"
+                title={vehicle.tag_ids
+                  .slice(2)
+                  .map((id) => tagLookup[id] ?? id)
+                  .join(", ")}
+              >
+                +{vehicle.tag_ids.length - 2}
+              </Badge>
+            )}
             {vehicle.drift_variant && (
               <span
                 role="button"

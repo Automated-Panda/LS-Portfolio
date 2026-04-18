@@ -123,22 +123,41 @@ export async function getVehiclesBrowserData(
 
 export async function getOwnedCounts(
   userId: string,
-): Promise<{ vehicles: number; properties: number }> {
+): Promise<{ vehicles: number; properties: number; businesses: number }> {
   const supabase = await createClient();
 
-  const [vehicles, properties] = await Promise.all([
+  const [vehiclesRes, ownedPropsRes] = await Promise.all([
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id", { count: "exact", head: true })
       .eq("user_id", userId),
     supabase
       .from("user_owned_properties")
-      .select("property_id", { count: "exact", head: true })
+      .select("property_id, properties!inner(property_type)")
       .eq("user_id", userId),
   ]);
 
+  type OwnedPropRow = {
+    property_id: string;
+    properties:
+      | { property_type: string }
+      | Array<{ property_type: string }>
+      | null;
+  };
+
+  const ownedProps = (ownedPropsRes.data ?? []) as OwnedPropRow[];
+
+  let businesses = 0;
+  let properties = 0;
+  for (const row of ownedProps) {
+    const p = Array.isArray(row.properties) ? row.properties[0] : row.properties;
+    if (p?.property_type === "business") businesses += 1;
+    else properties += 1;
+  }
+
   return {
-    vehicles: vehicles.count ?? 0,
-    properties: properties.count ?? 0,
+    vehicles: vehiclesRes.count ?? 0,
+    properties,
+    businesses,
   };
 }
