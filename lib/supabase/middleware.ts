@@ -3,6 +3,24 @@ import { NextResponse, type NextRequest } from "next/server";
 
 type CookieToSet = { name: string; value: string; options: CookieOptions };
 
+const PUBLIC_PATHS = new Set([
+  "/",
+  "/login",
+  "/signup",
+  "/forgot-password",
+  "/reset-password",
+]);
+
+const AUTH_ONLY_PATHS = new Set([
+  "/login",
+  "/signup",
+  "/forgot-password",
+]);
+
+function isPublic(pathname: string): boolean {
+  return PUBLIC_PATHS.has(pathname) || pathname.startsWith("/auth/");
+}
+
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
@@ -27,8 +45,25 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  // Touches the session so it gets refreshed and cookies re-set.
-  await supabase.auth.getUser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const { pathname } = request.nextUrl;
+
+  if (!user && !isPublic(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    url.searchParams.set("next", pathname);
+    return NextResponse.redirect(url);
+  }
+
+  if (user && AUTH_ONLY_PATHS.has(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/dashboard";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
 
   return supabaseResponse;
 }

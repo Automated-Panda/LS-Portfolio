@@ -79,10 +79,16 @@ async function main(): Promise<void> {
   // second pass: attach variant_of now that all rows exist
   const variantUpdates = vehicles
     .filter((v) => v.variant_of)
-    .map((v) => ({ id: v.id, variant_of: v.variant_of }));
+    .map((v) => ({ id: v.id, variant_of: v.variant_of as string }));
   if (variantUpdates.length) {
     console.log(`  attaching ${variantUpdates.length} variant relationships...`);
-    await upsert("vehicles", variantUpdates as unknown as Record<string, unknown>[]);
+    for (const row of variantUpdates) {
+      const { error } = await supabase
+        .from("vehicles")
+        .update({ variant_of: row.variant_of })
+        .eq("id", row.id);
+      if (error) throw new Error(`update vehicle variant_of ${row.id}: ${error.message}`);
+    }
   }
 
   // ---- vehicle_tag_links ----
@@ -100,7 +106,7 @@ async function main(): Promise<void> {
     .delete()
     .in("vehicle_id", vehicleIds);
   if (delErr) throw new Error(`clear vehicle_tag_links: ${delErr.message}`);
-  await upsert("vehicle_tag_links", linkRows);
+  await upsert("vehicle_tag_links", linkRows, "vehicle_id,tag_id");
 
   // ---- properties ----
   console.log(`Importing ${properties.length} properties...`);
@@ -135,21 +141,32 @@ async function main(): Promise<void> {
   const upgradeRequires = properties
     .flatMap((p) => p.upgrades)
     .filter((u) => u.required_upgrade_id)
-    .map((u) => ({ id: u.id, required_upgrade_id: u.required_upgrade_id }));
+    .map((u) => ({ id: u.id, required_upgrade_id: u.required_upgrade_id as string }));
   if (upgradeRequires.length) {
     console.log(`  attaching ${upgradeRequires.length} upgrade requirements...`);
-    await upsert("property_upgrades", upgradeRequires as unknown as Record<string, unknown>[]);
+    for (const row of upgradeRequires) {
+      const { error } = await supabase
+        .from("property_upgrades")
+        .update({ required_upgrade_id: row.required_upgrade_id })
+        .eq("id", row.id);
+      if (error)
+        throw new Error(`update property_upgrade required_upgrade_id ${row.id}: ${error.message}`);
+    }
   }
 
   console.log("Import complete.");
 }
 
-async function upsert(table: string, rows: Record<string, unknown>[]): Promise<void> {
+async function upsert(
+  table: string,
+  rows: Record<string, unknown>[],
+  onConflict = "id",
+): Promise<void> {
   if (!rows.length) return;
   const chunkSize = 500;
   for (let i = 0; i < rows.length; i += chunkSize) {
     const chunk = rows.slice(i, i + chunkSize);
-    const { error } = await supabase.from(table).upsert(chunk, { onConflict: "id" });
+    const { error } = await supabase.from(table).upsert(chunk, { onConflict });
     if (error) {
       throw new Error(`upsert ${table} (chunk ${i}): ${error.message}`);
     }

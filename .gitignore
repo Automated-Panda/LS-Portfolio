@@ -22,6 +22,9 @@ next-env.d.ts
 # data cache — raw upstream dumps, not source of truth; re-runnable via `npm run fetch`
 data/raw/
 
+# published vehicle images — derivative of data/images/vehicles/, rebuild with `npm run images:publish`
+/public/vehicles/
+
 # supabase local dev volumes (container state, not migrations)
 supabase/.branches/
 supabase/.temp/
@@ -42,6 +45,9 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# claude code local config
+.claude/
 
 # misc
 *.pem

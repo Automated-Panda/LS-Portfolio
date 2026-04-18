@@ -32,10 +32,16 @@ export function parseFandomPage(html: string): FandomPageData {
       image_url = stripFandomImageQuery(candidate);
     }
   });
-  // Fallback: og:image if nothing else found
+  // Fallback: og:image if nothing else found. Reject known wiki-wide
+  // placeholders (disambig pages fall back to Site-community-image / Site-logo).
   if (!image_url) {
     const ogImg = $('meta[property="og:image"]').attr("content");
-    if (ogImg && !/InvisibleHeroImage/i.test(ogImg)) {
+    if (
+      ogImg &&
+      !/InvisibleHeroImage|Site-community-image|Site-logo|Wiki-wordmark/i.test(
+        ogImg,
+      )
+    ) {
       image_url = stripFandomImageQuery(ogImg);
     }
   }

@@ -1,7 +1,40 @@
-export default function AppLayout({
+import { redirect } from "next/navigation";
+
+import { AppShell } from "@/components/app-shell/app-shell";
+import { getOwnedCounts } from "@/lib/queries/vehicles";
+import { createClient } from "@/lib/supabase/server";
+
+export default async function AppLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="min-h-screen">{children}</div>;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/login");
+  }
+
+  const [{ data: profile }, counts] = await Promise.all([
+    supabase
+      .from("profiles")
+      .select("username, display_name")
+      .eq("id", user.id)
+      .maybeSingle(),
+    getOwnedCounts(user.id),
+  ]);
+
+  return (
+    <AppShell
+      email={user.email ?? ""}
+      username={profile?.username ?? null}
+      displayName={profile?.display_name ?? null}
+      counts={counts}
+    >
+      {children}
+    </AppShell>
+  );
 }
