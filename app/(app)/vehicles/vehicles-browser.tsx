@@ -3,8 +3,8 @@
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
-import type { FilterOptions, VehicleSummary } from "@/lib/vehicles";
-import { vehicleImageUrl } from "@/lib/vehicles";
+import type { AssetCategory, FilterOptions, VehicleSummary } from "@/lib/vehicles";
+import { assetCategoryOf, vehicleImageUrl } from "@/lib/vehicles";
 
 import { FilterBar } from "./filter-bar";
 import { VehicleCard } from "./vehicle-card";
@@ -25,6 +25,7 @@ export function VehiclesBrowser({
   const q = (searchParams.get("q") ?? "").toLowerCase().trim();
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
+  const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
   const tagParam = searchParams.get("tags") ?? "";
 
   const ownedSet = useMemo(
@@ -48,6 +49,7 @@ export function VehiclesBrowser({
       ) {
         return false;
       }
+      if (cat && assetCategoryOf(v.class) !== cat) return false;
       if (cls && v.class !== cls) return false;
       if (mfr && v.manufacturer_id !== mfr) return false;
       if (
@@ -58,7 +60,7 @@ export function VehiclesBrowser({
       }
       return true;
     });
-  }, [vehicles, q, cls, mfr, tagParam]);
+  }, [vehicles, q, cat, cls, mfr, tagParam]);
 
   return (
     <div className="space-y-6">

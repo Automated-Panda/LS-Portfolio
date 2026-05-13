@@ -27,7 +27,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { FilterOptions } from "@/lib/vehicles";
+import type { AssetCategory, FilterOptions } from "@/lib/vehicles";
+import {
+  ASSET_CATEGORIES,
+  ASSET_CATEGORY_LABEL,
+  assetCategoryOf,
+} from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
 export function FilterBar({ filters }: { filters: FilterOptions }) {
@@ -39,6 +44,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   const q = searchParams.get("q") ?? "";
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
+  const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
   const selectedTags = (searchParams.get("tags") ?? "")
     .split(",")
     .filter(Boolean);
@@ -82,10 +88,61 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   };
 
   const selectedMfr = filters.manufacturers.find((m) => m.id === mfr);
-  const hasAny = q || cls || mfr || selectedTags.length > 0;
+  const hasAny = q || cls || mfr || cat || selectedTags.length > 0;
+
+  // Classes available in the currently-selected category — switching to Air
+  // narrows the Class dropdown to Plane/Helicopter, etc.
+  const visibleClasses = cat
+    ? filters.classes.filter((c) => assetCategoryOf(c) === cat)
+    : filters.classes;
+
+  const setCategory = (next: AssetCategory | "") => {
+    // Clear class filter when switching category so a stale "Muscle" doesn't
+    // persist into Air and zero out results.
+    update({ cat: next || null, class: null });
+  };
 
   return (
     <div className="space-y-3">
+      <div className="flex flex-wrap gap-1.5">
+        <button
+          type="button"
+          onClick={() => setCategory("")}
+          className="focus:outline-none"
+        >
+          <Badge
+            variant={!cat ? "default" : "outline"}
+            className={cn(
+              "cursor-pointer transition-colors",
+              cat && "hover:bg-accent",
+            )}
+          >
+            All
+          </Badge>
+        </button>
+        {ASSET_CATEGORIES.map((c) => {
+          const active = cat === c;
+          return (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setCategory(c)}
+              className="focus:outline-none"
+            >
+              <Badge
+                variant={active ? "default" : "outline"}
+                className={cn(
+                  "cursor-pointer transition-colors",
+                  !active && "hover:bg-accent",
+                )}
+              >
+                {ASSET_CATEGORY_LABEL[c]}
+              </Badge>
+            </button>
+          );
+        })}
+      </div>
+
       <div className="flex flex-wrap items-center gap-2">
         <Input
           placeholder="Search vehicles…"
@@ -105,7 +162,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="__all">All classes</SelectItem>
-            {filters.classes.map((c) => (
+            {visibleClasses.map((c) => (
               <SelectItem key={c} value={c}>
                 {c}
               </SelectItem>

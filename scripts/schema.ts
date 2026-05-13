@@ -24,7 +24,7 @@ export const VehicleSchema = z.object({
   manufacturer_id: z.string().min(1),
   class: z.string().min(1),
   release_update: z.string().nullable(),
-  is_garage_storable: z.literal(true),
+  is_garage_storable: z.boolean(),
   variant_of: z.string().nullable(),
   tags: z.array(z.string()),
   image_path: z.string().min(1).nullable(),

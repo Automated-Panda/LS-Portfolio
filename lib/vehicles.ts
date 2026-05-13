@@ -36,3 +36,20 @@ export function formatClass(raw: string): string {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
     .join(" ");
 }
+
+export type AssetCategory = "land" | "air" | "sea";
+
+export const ASSET_CATEGORIES: AssetCategory[] = ["land", "air", "sea"];
+
+export const ASSET_CATEGORY_LABEL: Record<AssetCategory, string> = {
+  land: "Land",
+  air: "Air",
+  sea: "Sea",
+};
+
+// Derived from the formatted class (formatClass output).
+export function assetCategoryOf(formattedClass: string): AssetCategory {
+  if (formattedClass === "Plane" || formattedClass === "Helicopter") return "air";
+  if (formattedClass === "Boat") return "sea";
+  return "land";
+}
