@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Anton } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "LS Portfolio",
@@ -14,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${anton.variable}`}>
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}
         <Toaster />

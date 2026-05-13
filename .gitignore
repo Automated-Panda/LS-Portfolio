@@ -22,8 +22,8 @@ next-env.d.ts
 # data cache — raw upstream dumps, not source of truth; re-runnable via `npm run fetch`
 data/raw/
 
-# published vehicle images — derivative of data/images/vehicles/, rebuild with `npm run images:publish`
-/public/vehicles/
+# scratch / design previews — not deployed
+/public/logo-concepts.html
 
 # supabase local dev volumes (container state, not migrations)
 supabase/.branches/

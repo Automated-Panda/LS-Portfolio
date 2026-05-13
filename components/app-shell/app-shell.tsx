@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 import type { NavCounts } from "./nav-items";
@@ -32,8 +33,8 @@ export function AppShell({
     <div className="flex min-h-screen">
       <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r bg-card md:flex">
         <div className="flex h-14 shrink-0 items-center border-b px-4">
-          <Link href="/dashboard" className="font-semibold tracking-tight">
-            LS Portfolio
+          <Link href="/dashboard" aria-label="LS Portfolio — Dashboard">
+            <Logo size="sm" />
           </Link>
         </div>
         <div className="flex-1 overflow-y-auto">
@@ -51,9 +52,9 @@ export function AppShell({
           <Link
             href="/dashboard"
             onClick={() => setOpen(false)}
-            className="font-semibold tracking-tight"
+            aria-label="LS Portfolio — Dashboard"
           >
-            LS Portfolio
+            <Logo size="sm" />
           </Link>
           <Button
             variant="ghost"
