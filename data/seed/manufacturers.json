@@ -16,7 +16,7 @@
     "country": null
   },
   "bf": {
-    "display": "BF",
+    "display": "Bf",
     "country": null
   },
   "bollokan": {
@@ -29,6 +29,10 @@
   },
   "brute": {
     "display": "Brute",
+    "country": null
+  },
+  "bucking": {
+    "display": "Bucking",
     "country": null
   },
   "canis": {
@@ -67,6 +71,10 @@
     "display": "Dundrear",
     "country": null
   },
+  "eberhard": {
+    "display": "Eberhard",
+    "country": null
+  },
   "emperor": {
     "display": "Emperor",
     "country": null
@@ -92,7 +100,7 @@
     "country": null
   },
   "hvy": {
-    "display": "HVY",
+    "display": "Hvy",
     "country": null
   },
   "imponte": {
@@ -111,6 +119,10 @@
     "display": "Karin",
     "country": null
   },
+  "kraken": {
+    "display": "Kraken",
+    "country": null
+  },
   "lampada": {
     "display": "Lampada",
     "country": null
@@ -120,7 +132,7 @@
     "country": null
   },
   "lcc": {
-    "display": "LCC",
+    "display": "Lcc",
     "country": null
   },
   "maibatsu": {
@@ -136,7 +148,7 @@
     "country": null
   },
   "mtl": {
-    "display": "MTL",
+    "display": "Mtl",
     "country": null
   },
   "nagasaki": {
@@ -185,6 +197,10 @@
   },
   "shitzu": {
     "display": "Shitzu",
+    "country": null
+  },
+  "speedoph": {
+    "display": "Speedoph",
     "country": null
   },
   "stanley": {

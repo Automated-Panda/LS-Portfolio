@@ -48,6 +48,22 @@
     }
   },
   {
+    "id": "akula",
+    "internal_name": "akula",
+    "display_name": "Akula",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/akula.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Akula"
+    }
+  },
+  {
     "id": "akuma",
     "internal_name": "akuma",
     "display_name": "Akuma",
@@ -84,6 +100,24 @@
     }
   },
   {
+    "id": "alkonost",
+    "internal_name": "alkonost",
+    "display_name": "RO-86 Alkonost",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "weaponized"
+    ],
+    "image_path": "data/images/vehicles/alkonost.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/RO-86_Alkonost"
+    }
+  },
+  {
     "id": "alpha",
     "internal_name": "alpha",
     "display_name": "Alpha",
@@ -100,6 +134,24 @@
     }
   },
   {
+    "id": "alphaz1",
+    "internal_name": "alphaz1",
+    "display_name": "Alpha-Z1",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/alphaz1.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Alpha-Z1"
+    }
+  },
+  {
     "id": "ambulance",
     "internal_name": "AMBULANCE",
     "display_name": "Ambulance",
@@ -113,6 +165,40 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ambulance"
+    }
+  },
+  {
+    "id": "annihilator",
+    "internal_name": "annihilator",
+    "display_name": "Annihilator",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/annihilator.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Annihilator"
+    }
+  },
+  {
+    "id": "annihilator2",
+    "internal_name": "annihilator2",
+    "display_name": "Annihilator Stealth",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "annihilator",
+    "tags": [
+      "weaponized"
+    ],
+    "image_path": "data/images/vehicles/annihilator2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Annihilator_Stealth"
     }
   },
   {
@@ -317,6 +403,38 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Avarus"
+    }
+  },
+  {
+    "id": "avenger",
+    "internal_name": "avenger",
+    "display_name": "Avenger",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/avenger.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Avenger"
+    }
+  },
+  {
+    "id": "avisa",
+    "internal_name": "avisa",
+    "display_name": "Avisa",
+    "manufacturer_id": "kraken",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/avisa.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Avisa"
     }
   },
   {
@@ -631,6 +749,24 @@
     }
   },
   {
+    "id": "besra",
+    "internal_name": "besra",
+    "display_name": "Besra",
+    "manufacturer_id": "western",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/besra.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Besra"
+    }
+  },
+  {
     "id": "bestiagts",
     "internal_name": "bestiagts",
     "display_name": "Bestia GTS",
@@ -843,6 +979,54 @@
     }
   },
   {
+    "id": "blimp",
+    "internal_name": "BLIMP",
+    "display_name": "Atomic Blimp",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/blimp.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Atomic_Blimp"
+    }
+  },
+  {
+    "id": "blimp2",
+    "internal_name": "BLIMP2",
+    "display_name": "Xero Blimp",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "blimp",
+    "tags": [],
+    "image_path": "data/images/vehicles/blimp2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Xero_Blimp"
+    }
+  },
+  {
+    "id": "blimp3",
+    "internal_name": "blimp3",
+    "display_name": "Blimp",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "blimp",
+    "tags": [],
+    "image_path": "data/images/vehicles/blimp3.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Blimp"
+    }
+  },
+  {
     "id": "blista",
     "internal_name": "blista",
     "display_name": "Blista",
@@ -940,6 +1124,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bodhi"
+    }
+  },
+  {
+    "id": "bombushka",
+    "internal_name": "bombushka",
+    "display_name": "RM-10 Bombushka",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/bombushka.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/RM-10_Bombushka"
     }
   },
   {
@@ -1514,6 +1714,38 @@
     }
   },
   {
+    "id": "buzzard",
+    "internal_name": "buzzard",
+    "display_name": "Buzzard Attack Chopper",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/buzzard.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Buzzard_Attack_Chopper"
+    }
+  },
+  {
+    "id": "buzzard2",
+    "internal_name": "Buzzard2",
+    "display_name": "Buzzard",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "buzzard",
+    "tags": [],
+    "image_path": "data/images/vehicles/buzzard2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Buzzard"
+    }
+  },
+  {
     "id": "caddy",
     "internal_name": "caddy",
     "display_name": "Caddy",
@@ -1629,6 +1861,56 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Carbon_RS"
+    }
+  },
+  {
+    "id": "cargobob",
+    "internal_name": "Cargobob",
+    "display_name": "Cargobob",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Cargobob"
+    }
+  },
+  {
+    "id": "cargobob5",
+    "internal_name": "cargobob5",
+    "display_name": "DH-7 Iron Mule",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "cargobob",
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/cargobob5.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/DH-7_Iron_Mule"
+    }
+  },
+  {
+    "id": "cargoplane",
+    "internal_name": "cargoplane",
+    "display_name": "Cargo Plane",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/cargoplane.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Cargo_Plane"
     }
   },
   {
@@ -1898,7 +2180,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/chino.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2120,6 +2404,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/comet2.webp",
@@ -2216,6 +2501,40 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Comet_S2_Cabrio"
+    }
+  },
+  {
+    "id": "conada",
+    "internal_name": "conada",
+    "display_name": "Conada",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/conada.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Conada"
+    }
+  },
+  {
+    "id": "conada2",
+    "internal_name": "conada2",
+    "display_name": "Weaponized Conada",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "conada",
+    "tags": [],
+    "image_path": "data/images/vehicles/conada2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Weaponized_Conada"
     }
   },
   {
@@ -2397,6 +2716,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Crusader"
+    }
+  },
+  {
+    "id": "cuban800",
+    "internal_name": "cuban800",
+    "display_name": "Cuban 800",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/cuban800.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Cuban_800"
     }
   },
   {
@@ -2639,7 +2974,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/diablous.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2681,6 +3018,38 @@
     }
   },
   {
+    "id": "dinghy",
+    "internal_name": "Dinghy",
+    "display_name": "Dinghy",
+    "manufacturer_id": "nagasaki",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Dinghy"
+    }
+  },
+  {
+    "id": "dinghy5",
+    "internal_name": "dinghy5",
+    "display_name": "Weaponized Dinghy",
+    "manufacturer_id": "nagasaki",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "dinghy",
+    "tags": [],
+    "image_path": "data/images/vehicles/dinghy5.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Weaponized_Dinghy"
+    }
+  },
+  {
     "id": "dloader",
     "internal_name": "dloader",
     "display_name": "Duneloader",
@@ -2710,6 +3079,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Docktug"
+    }
+  },
+  {
+    "id": "dodo",
+    "internal_name": "dodo",
+    "display_name": "Dodo",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Dodo"
     }
   },
   {
@@ -3520,6 +3905,38 @@
     }
   },
   {
+    "id": "duster",
+    "internal_name": "duster",
+    "display_name": "Duster",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/duster.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Duster"
+    }
+  },
+  {
+    "id": "duster2",
+    "internal_name": "duster2",
+    "display_name": "Duster 300-H",
+    "manufacturer_id": "western",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "duster",
+    "tags": [],
+    "image_path": "data/images/vehicles/duster2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Duster_300-H"
+    }
+  },
+  {
     "id": "dynasty",
     "internal_name": "Dynasty",
     "display_name": "Dynasty",
@@ -3563,6 +3980,7 @@
     "is_garage_storable": true,
     "variant_of": "elegy",
     "tags": [
+      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/elegy2.webp",
@@ -3866,6 +4284,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/faction.webp",
@@ -3974,6 +4393,22 @@
     }
   },
   {
+    "id": "fbi",
+    "internal_name": "FBI",
+    "display_name": "Federal Investigation Bureau",
+    "manufacturer_id": "unknown",
+    "class": "EMERGENCY",
+    "release_update": null,
+    "is_garage_storable": true,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/fbi.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/FIB"
+    }
+  },
+  {
     "id": "fcr",
     "internal_name": "fcr",
     "display_name": "FCR 1000",
@@ -3982,7 +4417,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/fcr.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4307,6 +4744,22 @@
     }
   },
   {
+    "id": "frogger",
+    "internal_name": "Frogger",
+    "display_name": "Frogger",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/frogger.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Frogger"
+    }
+  },
+  {
     "id": "fugitive",
     "internal_name": "fugitive",
     "display_name": "Fugitive",
@@ -4463,7 +4916,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "gauntlet",
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/gauntlet3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4877,6 +5332,22 @@
     }
   },
   {
+    "id": "havok",
+    "internal_name": "havok",
+    "display_name": "Havok",
+    "manufacturer_id": "nagasaki",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/havok.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Havok"
+    }
+  },
+  {
     "id": "hellion",
     "internal_name": "hellion",
     "display_name": "Hellion",
@@ -4964,6 +5435,40 @@
     }
   },
   {
+    "id": "howard",
+    "internal_name": "howard",
+    "display_name": "Howard NX-25",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/howard.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Howard_NX-25"
+    }
+  },
+  {
+    "id": "hunter",
+    "internal_name": "hunter",
+    "display_name": "FH-1 Hunter",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/hunter.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/FH-1_Hunter"
+    }
+  },
+  {
     "id": "huntley",
     "internal_name": "huntley",
     "display_name": "Huntley S",
@@ -4993,6 +5498,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hustler"
+    }
+  },
+  {
+    "id": "hydra",
+    "internal_name": "hydra",
+    "display_name": "Hydra",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/hydra.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Hydra"
     }
   },
   {
@@ -5739,6 +6260,38 @@
     }
   },
   {
+    "id": "jet",
+    "internal_name": "jet",
+    "display_name": "Jet",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/jet.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Jet"
+    }
+  },
+  {
+    "id": "jetmax",
+    "internal_name": "jetmax",
+    "display_name": "Jetmax",
+    "manufacturer_id": "shitzu",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/jetmax.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Jetmax"
+    }
+  },
+  {
     "id": "journey",
     "internal_name": "journey",
     "display_name": "Journey",
@@ -5938,6 +6491,22 @@
     }
   },
   {
+    "id": "kosatka",
+    "internal_name": "kosatka",
+    "display_name": "Kosatka",
+    "manufacturer_id": "rune",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/kosatka.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Kosatka"
+    }
+  },
+  {
     "id": "krieger",
     "internal_name": "krieger",
     "display_name": "Krieger",
@@ -6052,6 +6621,22 @@
     }
   },
   {
+    "id": "lazer",
+    "internal_name": "Lazer",
+    "display_name": "P-996 LAZER",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/lazer.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/P-996_LAZER"
+    }
+  },
+  {
     "id": "le7b",
     "internal_name": "le7b",
     "display_name": "RE-7B",
@@ -6152,6 +6737,22 @@
     }
   },
   {
+    "id": "longfin",
+    "internal_name": "longfin",
+    "display_name": "Longfin",
+    "manufacturer_id": "shitzu",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/longfin.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Longfin"
+    }
+  },
+  {
     "id": "luiva",
     "internal_name": "luiva",
     "display_name": "Luiva",
@@ -6183,6 +6784,42 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Lurcher"
+    }
+  },
+  {
+    "id": "luxor",
+    "internal_name": "luxor",
+    "display_name": "Luxor",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/luxor.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Luxor"
+    }
+  },
+  {
+    "id": "luxor2",
+    "internal_name": "luxor2",
+    "display_name": "Luxor Deluxe",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "luxor",
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/luxor2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Luxor_Deluxe"
     }
   },
   {
@@ -6218,6 +6855,22 @@
     }
   },
   {
+    "id": "mammatus",
+    "internal_name": "mammatus",
+    "display_name": "Mammatus",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/mammatus.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Mammatus"
+    }
+  },
+  {
     "id": "manana",
     "internal_name": "manana",
     "display_name": "Manana",
@@ -6227,6 +6880,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/manana.webp",
@@ -6305,6 +6959,22 @@
     }
   },
   {
+    "id": "marquis",
+    "internal_name": "marquis",
+    "display_name": "Marquis",
+    "manufacturer_id": "dinka",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/marquis.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Marquis"
+    }
+  },
+  {
     "id": "marshall",
     "internal_name": "marshall",
     "display_name": "Marshall",
@@ -6354,6 +7024,38 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Massacro_(Racecar)"
+    }
+  },
+  {
+    "id": "maverick",
+    "internal_name": "maverick",
+    "display_name": "Maverick",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Maverick"
+    }
+  },
+  {
+    "id": "maverick2",
+    "internal_name": "maverick2",
+    "display_name": "Higgins Helitours Maverick",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "maverick",
+    "tags": [],
+    "image_path": "data/images/vehicles/maverick2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Higgins_Helitours_Maverick"
     }
   },
   {
@@ -6407,6 +7109,38 @@
     }
   },
   {
+    "id": "microlight",
+    "internal_name": "microlight",
+    "display_name": "Ultralight",
+    "manufacturer_id": "nagasaki",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/microlight.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Ultralight"
+    }
+  },
+  {
+    "id": "miljet",
+    "internal_name": "Miljet",
+    "display_name": "Miljet",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/miljet.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Miljet"
+    }
+  },
+  {
     "id": "minimus",
     "internal_name": "minimus",
     "display_name": "Minimus",
@@ -6449,7 +7183,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/minivan.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -6492,6 +7228,38 @@
     }
   },
   {
+    "id": "mogul",
+    "internal_name": "mogul",
+    "display_name": "Mogul",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/mogul.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Mogul"
+    }
+  },
+  {
+    "id": "molotok",
+    "internal_name": "molotok",
+    "display_name": "V-65 Molotok",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/molotok.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/V-65_Molotok"
+    }
+  },
+  {
     "id": "monroe",
     "internal_name": "monroe",
     "display_name": "Monroe",
@@ -6510,7 +7278,7 @@
   {
     "id": "monster",
     "internal_name": "monster",
-    "display_name": "Liberator",
+    "display_name": "Monster",
     "manufacturer_id": "vapid",
     "class": "OFF_ROAD",
     "release_update": null,
@@ -6757,7 +7525,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/nero.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -6833,6 +7603,22 @@
     }
   },
   {
+    "id": "nimbus",
+    "internal_name": "nimbus",
+    "display_name": "Nimbus",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/nimbus.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Nimbus"
+    }
+  },
+  {
     "id": "ninef",
     "internal_name": "ninef",
     "display_name": "9F",
@@ -6885,6 +7671,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Niobe"
+    }
+  },
+  {
+    "id": "nokota",
+    "internal_name": "nokota",
+    "display_name": "P-45 Nokota",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/nokota.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/P-45_Nokota"
     }
   },
   {
@@ -7259,6 +8061,22 @@
     }
   },
   {
+    "id": "patrolboat",
+    "internal_name": "patrolboat",
+    "display_name": "Kurtz 31 Patrol Boat",
+    "manufacturer_id": "unknown",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/patrolboat.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Kurtz_31_Patrol_Boat"
+    }
+  },
+  {
     "id": "pbus",
     "internal_name": "pbus",
     "display_name": "Prison Bus",
@@ -7364,6 +8182,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/peyote.webp",
@@ -7884,6 +8703,22 @@
     }
   },
   {
+    "id": "polmav",
+    "internal_name": "polmav",
+    "display_name": "Police Maverick",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Police_Maverick"
+    }
+  },
+  {
     "id": "polterminus",
     "internal_name": "polterminus",
     "display_name": "Terminus Patrol",
@@ -8012,6 +8847,22 @@
     }
   },
   {
+    "id": "predator",
+    "internal_name": "Predator",
+    "display_name": "Police Predator",
+    "manufacturer_id": "unknown",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/predator.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Police_Predator"
+    }
+  },
+  {
     "id": "premier",
     "internal_name": "premier",
     "display_name": "Premier",
@@ -8095,6 +8946,22 @@
     }
   },
   {
+    "id": "pyro",
+    "internal_name": "pyro",
+    "display_name": "Pyro",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/pyro.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Pyro"
+    }
+  },
+  {
     "id": "r300",
     "internal_name": "r300",
     "display_name": "300R",
@@ -8144,6 +9011,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Raiden"
+    }
+  },
+  {
+    "id": "raiju",
+    "internal_name": "raiju",
+    "display_name": "F-160 Raiju",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/raiju.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/F-160_Raiju"
     }
   },
   {
@@ -8640,6 +9523,22 @@
     }
   },
   {
+    "id": "rogue",
+    "internal_name": "rogue",
+    "display_name": "Rogue",
+    "manufacturer_id": "western",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/rogue.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Rogue"
+    }
+  },
+  {
     "id": "romero",
     "internal_name": "romero",
     "display_name": "Romero Hearse",
@@ -8969,6 +9868,22 @@
     }
   },
   {
+    "id": "savage",
+    "internal_name": "savage",
+    "display_name": "Savage",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/savage.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Savage"
+    }
+  },
+  {
     "id": "savestra",
     "internal_name": "savestra",
     "display_name": "Savestra",
@@ -9235,6 +10150,70 @@
     }
   },
   {
+    "id": "seabreeze",
+    "internal_name": "seabreeze",
+    "display_name": "Seabreeze",
+    "manufacturer_id": "western",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/seabreeze.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Seabreeze"
+    }
+  },
+  {
+    "id": "seashark",
+    "internal_name": "seashark",
+    "display_name": "Seashark",
+    "manufacturer_id": "speedoph",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/seashark.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Seashark"
+    }
+  },
+  {
+    "id": "seasparrow",
+    "internal_name": "seasparrow",
+    "display_name": "Sea Sparrow",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Sea_Sparrow"
+    }
+  },
+  {
+    "id": "seasparrow2",
+    "internal_name": "seasparrow2",
+    "display_name": "Sparrow",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "seasparrow",
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Sparrow"
+    }
+  },
+  {
     "id": "seminole",
     "internal_name": "Seminole",
     "display_name": "Seminole",
@@ -9387,6 +10366,22 @@
     }
   },
   {
+    "id": "shamal",
+    "internal_name": "Shamal",
+    "display_name": "Shamal",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/shamal.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Shamal"
+    }
+  },
+  {
     "id": "sheava",
     "internal_name": "sheava",
     "display_name": "ETR1",
@@ -9468,6 +10463,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Shotaro"
+    }
+  },
+  {
+    "id": "skylift",
+    "internal_name": "skylift",
+    "display_name": "Skylift",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/skylift.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Skylift"
     }
   },
   {
@@ -9634,7 +10645,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/specter.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -9657,6 +10670,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Specter_Custom"
+    }
+  },
+  {
+    "id": "speeder",
+    "internal_name": "speeder",
+    "display_name": "Speeder",
+    "manufacturer_id": "pegassi",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/speeder.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Speeder"
     }
   },
   {
@@ -9724,6 +10753,22 @@
     }
   },
   {
+    "id": "squalo",
+    "internal_name": "squalo",
+    "display_name": "Squalo",
+    "manufacturer_id": "shitzu",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": null,
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Squalo"
+    }
+  },
+  {
     "id": "stafford",
     "internal_name": "stafford",
     "display_name": "Stafford",
@@ -9787,6 +10832,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stanier"
+    }
+  },
+  {
+    "id": "starling",
+    "internal_name": "starling",
+    "display_name": "LF-22 Starling",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/starling.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/LF-22_Starling"
     }
   },
   {
@@ -9891,6 +10952,22 @@
     }
   },
   {
+    "id": "streamer216",
+    "internal_name": "streamer216",
+    "display_name": "Streamer216",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/streamer216.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Streamer216"
+    }
+  },
+  {
     "id": "streiter",
     "internal_name": "streiter",
     "display_name": "Streiter",
@@ -9923,6 +11000,22 @@
     }
   },
   {
+    "id": "strikeforce",
+    "internal_name": "strikeforce",
+    "display_name": "B-11 Strikeforce",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/strikeforce.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/B-11_Strikeforce"
+    }
+  },
+  {
     "id": "stromberg",
     "internal_name": "stromberg",
     "display_name": "Stromberg",
@@ -9952,6 +11045,54 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stryder"
+    }
+  },
+  {
+    "id": "stunt",
+    "internal_name": "Stunt",
+    "display_name": "Mallard",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/stunt.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Mallard"
+    }
+  },
+  {
+    "id": "submersible",
+    "internal_name": "submersible",
+    "display_name": "Submersible",
+    "manufacturer_id": "unknown",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/submersible.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Submersible"
+    }
+  },
+  {
+    "id": "submersible2",
+    "internal_name": "submersible2",
+    "display_name": "Kraken",
+    "manufacturer_id": "unknown",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "submersible",
+    "tags": [],
+    "image_path": "data/images/vehicles/submersible2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Kraken"
     }
   },
   {
@@ -10037,6 +11178,22 @@
     }
   },
   {
+    "id": "suntrap",
+    "internal_name": "Suntrap",
+    "display_name": "Suntrap",
+    "manufacturer_id": "shitzu",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/suntrap.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Suntrap"
+    }
+  },
+  {
     "id": "superd",
     "internal_name": "superd",
     "display_name": "Super Diamond",
@@ -10050,6 +11207,42 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Super_Diamond"
+    }
+  },
+  {
+    "id": "supervolito",
+    "internal_name": "supervolito",
+    "display_name": "SuperVolito",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/supervolito.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/SuperVolito"
+    }
+  },
+  {
+    "id": "supervolito2",
+    "internal_name": "supervolito2",
+    "display_name": "SuperVolito Carbon",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "supervolito",
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/supervolito2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/SuperVolito_Carbon"
     }
   },
   {
@@ -10132,6 +11325,40 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Suzume"
+    }
+  },
+  {
+    "id": "swift",
+    "internal_name": "swift",
+    "display_name": "Swift",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/swift.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Swift"
+    }
+  },
+  {
+    "id": "swift2",
+    "internal_name": "swift2",
+    "display_name": "Swift Deluxe",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "swift",
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/swift2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Swift_Deluxe"
     }
   },
   {
@@ -10411,6 +11638,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "imani_tech"
     ],
     "image_path": "data/images/vehicles/tenf.webp",
@@ -10521,6 +11749,22 @@
     }
   },
   {
+    "id": "thruster",
+    "internal_name": "thruster",
+    "display_name": "Thruster",
+    "manufacturer_id": "mammoth",
+    "class": "MILITARY",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/thruster.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Thruster"
+    }
+  },
+  {
     "id": "tigon",
     "internal_name": "tigon",
     "display_name": "Tigon",
@@ -10552,6 +11796,38 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tipper"
+    }
+  },
+  {
+    "id": "titan",
+    "internal_name": "titan",
+    "display_name": "Titan",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/titan.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Titan"
+    }
+  },
+  {
+    "id": "titan2",
+    "internal_name": "titan2",
+    "display_name": "Titan 250 D",
+    "manufacturer_id": "eberhard",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "titan",
+    "tags": [],
+    "image_path": "data/images/vehicles/titan2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Titan_250_D"
     }
   },
   {
@@ -10616,6 +11892,7 @@
     "is_garage_storable": true,
     "variant_of": null,
     "tags": [
+      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/tornado.webp",
@@ -10657,6 +11934,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tornado_Rat_Rod"
+    }
+  },
+  {
+    "id": "toro",
+    "internal_name": "toro",
+    "display_name": "Toro",
+    "manufacturer_id": "lampada",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/toro.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Toro"
     }
   },
   {
@@ -10838,6 +12131,22 @@
     }
   },
   {
+    "id": "tropic",
+    "internal_name": "tropic",
+    "display_name": "Tropic",
+    "manufacturer_id": "shitzu",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/tropic.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Tropic"
+    }
+  },
+  {
     "id": "tropos",
     "internal_name": "tropos",
     "display_name": "Tropos Rallye",
@@ -10851,6 +12160,38 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tropos_Rallye"
+    }
+  },
+  {
+    "id": "tug",
+    "internal_name": "tug",
+    "display_name": "Tug",
+    "manufacturer_id": "unknown",
+    "class": "BOAT",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/tug.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Tug"
+    }
+  },
+  {
+    "id": "tula",
+    "internal_name": "tula",
+    "display_name": "Tula",
+    "manufacturer_id": "mammoth",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/tula.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Tula"
     }
   },
   {
@@ -11072,6 +12413,38 @@
     }
   },
   {
+    "id": "valkyrie",
+    "internal_name": "valkyrie",
+    "display_name": "Valkyrie",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/valkyrie.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Valkyrie"
+    }
+  },
+  {
+    "id": "valkyrie2",
+    "internal_name": "valkyrie2",
+    "display_name": "Valkyrie MOD.0",
+    "manufacturer_id": "unknown",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "valkyrie",
+    "tags": [],
+    "image_path": "data/images/vehicles/valkyrie2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Valkyrie_MOD.0"
+    }
+  },
+  {
     "id": "vamos",
     "internal_name": "vamos",
     "display_name": "Vamos",
@@ -11106,6 +12479,38 @@
     }
   },
   {
+    "id": "velum",
+    "internal_name": "velum",
+    "display_name": "Velum",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/velum.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Velum"
+    }
+  },
+  {
+    "id": "velum2",
+    "internal_name": "velum2",
+    "display_name": "Velum 5-Seater",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": "velum",
+    "tags": [],
+    "image_path": "data/images/vehicles/velum2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Velum_5-Seater"
+    }
+  },
+  {
     "id": "verlierer2",
     "internal_name": "verlierer2",
     "display_name": "Verlierer",
@@ -11135,6 +12540,22 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Verus"
+    }
+  },
+  {
+    "id": "vestra",
+    "internal_name": "vestra",
+    "display_name": "Vestra",
+    "manufacturer_id": "bucking",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/vestra.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Vestra"
     }
   },
   {
@@ -11319,6 +12740,7 @@
     "is_garage_storable": true,
     "variant_of": "virgo",
     "tags": [
+      "bennys",
       "lowrider"
     ],
     "image_path": "data/images/vehicles/virgo3.webp",
@@ -11396,6 +12818,40 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Vivanite"
+    }
+  },
+  {
+    "id": "volatol",
+    "internal_name": "volatol",
+    "display_name": "Volatol",
+    "manufacturer_id": "unknown",
+    "class": "PLANE",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/volatol.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Volatol"
+    }
+  },
+  {
+    "id": "volatus",
+    "internal_name": "volatus",
+    "display_name": "Volatus",
+    "manufacturer_id": "bucking",
+    "class": "HELICOPTER",
+    "release_update": null,
+    "is_garage_storable": false,
+    "variant_of": null,
+    "tags": [
+      "imani_tech"
+    ],
+    "image_path": "data/images/vehicles/volatus.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Volatus"
     }
   },
   {
@@ -11588,7 +13044,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/weevil.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11777,7 +13235,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/yosemite.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11859,7 +13319,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/youga2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11875,7 +13337,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [],
+    "tags": [
+      "bennys"
+    ],
     "image_path": "data/images/vehicles/youga3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11886,14 +13350,12 @@
     "id": "youga4",
     "internal_name": "youga4",
     "display_name": "Youga Custom",
-    "manufacturer_id": "bravado",
+    "manufacturer_id": "vapid",
     "class": "VAN",
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "youga",
-    "tags": [
-      "bennys"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/youga4.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",

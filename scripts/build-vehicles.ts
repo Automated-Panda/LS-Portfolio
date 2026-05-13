@@ -20,7 +20,22 @@ const IMAGES_DIR = path.join("data", "images", "vehicles");
 
 const CLASS_FILTER: string[] | null = null;
 
-const STORABLE_TYPES = new Set([
+const INCLUDED_TYPES = new Set([
+  "CAR",
+  "BIKE",
+  "BICYCLE",
+  "QUADBIKE",
+  "AMPHIBIOUS_AUTOMOBILE",
+  "SUBMARINECAR",
+  "AMPHIBIOUS_QUADBIKE",
+  "PLANE",
+  "HELI",
+  "BOAT",
+  "SUBMARINE",
+  "BLIMP",
+]);
+
+const GARAGE_STORABLE_TYPES = new Set([
   "CAR",
   "BIKE",
   "BICYCLE",
@@ -74,7 +89,7 @@ async function main(): Promise<void> {
   );
 
   const inScope = vehiclesRaw.filter((v) => {
-    if (!v.Type || !STORABLE_TYPES.has(v.Type)) return false;
+    if (!v.Type || !INCLUDED_TYPES.has(v.Type)) return false;
     if (CLASS_FILTER === null) return true;
     return v.Class && CLASS_FILTER.includes(v.Class);
   });
@@ -152,7 +167,7 @@ async function main(): Promise<void> {
       manufacturer_id: manufacturerId,
       class: v.Class || "Unknown",
       release_update: null,
-      is_garage_storable: true,
+      is_garage_storable: GARAGE_STORABLE_TYPES.has(v.Type ?? ""),
       variant_of,
       tags,
       image_path: (await fileExists(imageOutPath)) ? imageRelPath : null,

@@ -30,7 +30,7 @@ const FANDOM_DELAY_MS = 400;
 
 const CLASS_FILTER: string[] | null = null;
 
-const STORABLE_TYPES = new Set([
+const INCLUDED_TYPES = new Set([
   "CAR",
   "BIKE",
   "BICYCLE",
@@ -38,6 +38,11 @@ const STORABLE_TYPES = new Set([
   "AMPHIBIOUS_AUTOMOBILE",
   "SUBMARINECAR",
   "AMPHIBIOUS_QUADBIKE",
+  "PLANE",
+  "HELI",
+  "BOAT",
+  "SUBMARINE",
+  "BLIMP",
 ]);
 
 async function fetchToFile(url: string, outPath: string): Promise<void> {
@@ -92,7 +97,7 @@ async function main(): Promise<void> {
   );
 
   const inScope = vehiclesRaw.filter((v) => {
-    if (!v.Type || !STORABLE_TYPES.has(v.Type)) return false;
+    if (!v.Type || !INCLUDED_TYPES.has(v.Type)) return false;
     if (CLASS_FILTER === null) return true;
     return v.Class && CLASS_FILTER.includes(v.Class);
   });
