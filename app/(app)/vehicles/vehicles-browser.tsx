@@ -13,12 +13,15 @@ type Props = {
   vehicles: VehicleSummary[];
   ownedVehicleIds: string[];
   filters: FilterOptions;
+  // "all" (default) = full catalogue at /vehicles; "owned" = /my-vehicles
+  mode?: "all" | "owned";
 };
 
 export function VehiclesBrowser({
   vehicles,
   ownedVehicleIds,
   filters,
+  mode = "all",
 }: Props) {
   const searchParams = useSearchParams();
 
@@ -38,6 +41,20 @@ export function VehiclesBrowser({
     for (const t of filters.tags) map[t.id] = t.display;
     return map;
   }, [filters.tags]);
+
+  // In owned mode, restrict filter options to values present in the user's
+  // collection so the Class dropdown doesn't list classes they can never select.
+  const scopedFilters = useMemo(() => {
+    if (mode !== "owned") return filters;
+    const classes = Array.from(new Set(vehicles.map((v) => v.class))).sort();
+    const mfrIds = new Set(vehicles.map((v) => v.manufacturer_id));
+    const tagIds = new Set(vehicles.flatMap((v) => v.tag_ids));
+    return {
+      classes,
+      manufacturers: filters.manufacturers.filter((m) => mfrIds.has(m.id)),
+      tags: filters.tags.filter((t) => tagIds.has(t.id)),
+    };
+  }, [filters, vehicles, mode]);
 
   const filtered = useMemo(() => {
     const selectedTags = tagParam.split(",").filter(Boolean);
@@ -62,23 +79,30 @@ export function VehiclesBrowser({
     });
   }, [vehicles, q, cat, cls, mfr, tagParam]);
 
+  const isOwnedMode = mode === "owned";
+  const title = isOwnedMode ? "My Vehicles" : "All Vehicles";
+  const subtitle = isOwnedMode
+    ? `${filtered.length.toLocaleString()} of ${vehicles.length.toLocaleString()} owned`
+    : `${filtered.length.toLocaleString()} of ${vehicles.length.toLocaleString()} vehicles${
+        ownedVehicleIds.length > 0 ? ` · ${ownedVehicleIds.length} owned` : ""
+      }`;
+  const emptyMessage =
+    isOwnedMode && vehicles.length === 0
+      ? "You don't own any vehicles yet — browse All Vehicles to add some."
+      : "No vehicles match your filters.";
+
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-semibold tracking-tight">All Vehicles</h1>
-        <p className="text-sm text-muted-foreground">
-          {filtered.length.toLocaleString()} of{" "}
-          {vehicles.length.toLocaleString()} vehicles
-          {ownedVehicleIds.length > 0 &&
-            ` · ${ownedVehicleIds.length} owned`}
-        </p>
+        <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
+        <p className="text-sm text-muted-foreground">{subtitle}</p>
       </div>
 
-      <FilterBar filters={filters} />
+      <FilterBar filters={scopedFilters} />
 
       {filtered.length === 0 ? (
         <div className="flex h-40 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground">
-          No vehicles match your filters.
+          {emptyMessage}
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
