@@ -19,7 +19,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/gta-online/property-types/"
     },
-    "image_path": "data/images/properties/high-end-apartment.webp"
+    "image_path": null
   },
   {
     "id": "stand-alone-garage",
@@ -57,7 +57,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": null
     },
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": null
   },
   {
     "id": "eclipse-blvd-garages",
@@ -79,7 +79,7 @@
       "fandom": "https://gta.fandom.com/wiki/Eclipse_Boulevard_Garages",
       "gtabase": null
     },
-    "image_path": "data/images/properties/eclipse-blvd-garages.webp"
+    "image_path": null
   },
   {
     "id": "office-garage",
@@ -117,7 +117,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/executive-offices"
     },
-    "image_path": "data/images/properties/office-garage.webp"
+    "image_path": null
   },
   {
     "id": "nightclub",
@@ -155,7 +155,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": "data/images/properties/nightclub.webp"
+    "image_path": null
   },
   {
     "id": "facility",
@@ -177,7 +177,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": "data/images/properties/facility.webp"
+    "image_path": null
   },
   {
     "id": "arena-workshop",
@@ -199,7 +199,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arena_Workshop",
       "gtabase": null
     },
-    "image_path": "data/images/properties/arena-workshop.webp"
+    "image_path": null
   },
   {
     "id": "agency",
@@ -221,7 +221,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/the-agency"
     },
-    "image_path": "data/images/properties/agency.webp"
+    "image_path": null
   },
   {
     "id": "arcade",
@@ -243,7 +243,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": "data/images/properties/arcade.webp"
+    "image_path": null
   },
   {
     "id": "auto-shop",
@@ -265,7 +265,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": "data/images/properties/auto-shop.webp"
+    "image_path": null
   },
   {
     "id": "casino-penthouse",
@@ -287,7 +287,7 @@
       "fandom": "https://gta.fandom.com/wiki/Master_Penthouse",
       "gtabase": null
     },
-    "image_path": "data/images/properties/casino-penthouse.webp"
+    "image_path": null
   },
   {
     "id": "hangar",
@@ -309,7 +309,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": "data/images/properties/hangar.webp"
+    "image_path": null
   },
   {
     "id": "bunker",
@@ -331,7 +331,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": "data/images/properties/bunker.webp"
+    "image_path": null
   },
   {
     "id": "salvage-yard",
@@ -353,7 +353,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": "data/images/properties/salvage-yard.webp"
+    "image_path": null
   },
   {
     "id": "clubhouse",
@@ -375,6 +375,6 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": null
     },
-    "image_path": "data/images/properties/clubhouse.webp"
+    "image_path": null
   }
 ]

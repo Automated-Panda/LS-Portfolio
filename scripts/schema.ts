@@ -49,7 +49,7 @@ export const PropertySchema = z.object({
   display_name: z.string().min(1),
   property_type: z.enum(["business", "residence", "garage", "special"]),
   location: z.string().nullable(),
-  image_path: z.string().min(1),
+  image_path: z.string().min(1).nullable(),
   counts_as_garage: z.boolean(),
   upgrades: z.array(PropertyUpgradeSchema),
   _sources: z.object({
