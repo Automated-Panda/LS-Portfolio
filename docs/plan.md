@@ -5,11 +5,21 @@
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
 **Current phase:** 🟡 Phase 4 — Property Management (browse/select done; owned views + upgrade selection next)
-**Last updated:** 2026-04-18 (late night)
+**Last updated:** 2026-05-13
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-13 — Hosted Supabase + Aircraft/Boats expansion
+
+**Infra:** swapped dev DB from local Docker to **hosted Supabase project LSPortfolio** (`bzoizaakcqzlvpraysjn`, eu-west-1, Postgres 17). 0001 + 0002 migrations applied via MCP plugin. `handle_new_user` revoked from anon/authenticated/public so it's only callable by the auth trigger. Local Docker stack kept as a fallback.
+
+**Data:** expanded vehicle pipeline to cover aircraft, helis, boats, submarines, blimps — renamed `STORABLE_TYPES` → `INCLUDED_TYPES`, added new `GARAGE_STORABLE_TYPES` set so `is_garage_storable` is now derived per-type instead of hardcoded `true`. Re-fetched 111 new Fandom pages, rebuilt seed, re-imported. **Net seed: 720 → 808 vehicles** (after prune drops 73 dupes including new aircraft/boat variant clusters). Trailers + trains intentionally excluded.
+
+**UI follow-up pending:** `/vehicles` doesn't categorize aircraft/boats yet — they're mixed in with cars. Adding an Asset Class top-level filter is the immediate next step.
+
+### 2026-04-18 — Phase 4a landed
 
 **Phase 4 browse/select is live.** `/properties` mirrors `/vehicles`: 15-card grid, type/location/search filters, one-click ownership toggle. Sidebar was restructured into **Browse** and **My Portfolio** sections with **Dashboard** pinned, sticky on desktop. Owned counts split into `vehicles`, `properties` (residence + garage), and `businesses` (business type). `/my-businesses` exists as a stub.
 
@@ -42,7 +52,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | Phase | Status | Description |
 |---|---|---|
 | **0. Foundation & Data Seed** | ✅ Complete | Repo scaffold + vehicle/property JSON datasets |
-| **1. Supabase Setup** | ✅ Complete (local) | Local Supabase stack running via Docker; schema + seed imported; hosted project deferred to Phase 9 |
+| **1. Supabase Setup** | ✅ Complete (hosted live) | Hosted LSPortfolio project active (eu-west-1); 0001+0002 migrations applied; seed imported; local Docker kept as fallback |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
 | **4. Property Management** | 🟡 In progress | `/properties` browse + ownership ✅ · `/my-properties` owned view + upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
@@ -104,14 +114,14 @@ Design for Phase 0: [`docs/specs/2026-04-15-data-seed-design.md`](./specs/2026-0
 - [x] Re-run pipeline (fetch → build → validate) — **777 vehicles, 60 manufacturers, 266 variants detected**
 - [x] Full dataset validates clean (0 errors, 9 warnings for Fandom 403s)
 
-**Final Phase 0 stats (as of 2026-04-18):**
-- **720** visible vehicles across 19 classes — which roll up to **~697 cards** after drift collapse (was 777):
+**Final Phase 0 stats (as of 2026-05-13):**
+- **808** visible vehicles across 22 classes (was 720; +88 from aircraft/boats expansion on 2026-05-13). After drift collapse, ~785 cards in the UI:
   - –2: `fbi`/`fbi2` dropped as faction-page junk (pointed at the FIB wiki page, not a vehicle)
   - –55: `variant_of` rows pruned via `npm run vehicles:prune-variants` in two passes:
     - Pass A (50): variants whose `display_name` matched their base (bison2/bison3, boxville2–4, burrito3–5, mule2/3/5, tornado2–4, towtruck2–4, caddy2/3, emperor2/3, mesa2/3, police2/3, utillitruck2/3, and others)
     - Pass B (5): variants sharing a `display_name` with *each other* but not the base (dune5 "Ramp Buggy", sentinel3 "Sentinel", speedo5 "Speedo Custom", tractor3 "Fieldmaster", youga5 "Youga Custom")
   - Drift variants (~23) are kept in the DB as distinct `user_owned_vehicles`-eligible rows but collapsed in the UI — they show as a `Drift` sub-toggle on the base card instead of their own card
-- 60 manufacturers
+- 64 manufacturers (was 60)
 - 15 property types with tiered upgrades
 - 266 variants auto-detected
 - Tag distribution: Imani Tech 170, Weaponized 55, Benny's 53, Arena 46, HSW 27, Lowrider 26, Open Wheel 7
@@ -152,10 +162,13 @@ Design for Phase 0: [`docs/specs/2026-04-15-data-seed-design.md`](./specs/2026-0
 - [x] Verified row counts match seed JSON
 - [x] Verified RLS: query `user_owned_vehicles` as `authenticated` role with no JWT returns 0 rows
 
-#### Hosted Supabase project (deferred to Phase 9 / launch)
-- [ ] Create hosted Supabase project
-- [ ] `supabase link` + `supabase db push` to apply migration
-- [ ] Re-run `npm run db:import` against hosted URL/keys
+#### Hosted Supabase project (completed 2026-05-13, pulled forward from Phase 9)
+- [x] Created hosted Supabase project **LSPortfolio** (`bzoizaakcqzlvpraysjn`, eu-west-1, Postgres 17)
+- [x] 0001_init.sql applied via MCP plugin (`mcp__plugin_supabase_supabase__apply_migration`)
+- [x] 0002_revoke_handle_new_user.sql applied — security advisor finding fixed
+- [x] `.env.local` swapped to hosted URL + legacy JWT keys; local Docker kept as fallback
+- [x] `npm run db:import` against hosted — 808 vehicles, 64 manufacturers, 8 tags, 388 vehicle_tag_links, 15 properties, 21 upgrades
+- [x] Verified counts via `mcp__plugin_supabase_supabase__execute_sql`
 
 ---
 
@@ -236,6 +249,12 @@ Design for Phase 0: [`docs/specs/2026-04-15-data-seed-design.md`](./specs/2026-0
 - 0 display-name collisions remaining (verified)
 - All image paths point at real vehicle shots (spot-checked by hash dedup + aspect-ratio sweep)
 - Manufacturer acronyms rendered correctly (BF, HVY, LCC, MTL)
+
+### 2026-05-13 — Aircraft / boats expansion (pulled forward from rebrand vision)
+- Pipeline now includes PLANE/HELI/BOAT/SUBMARINE/BLIMP types — 720 → 808 vehicles
+- `is_garage_storable` now derived from type (was hardcoded `true`)
+- New aircraft/boat rows are mixed into `/vehicles` with no top-level category filter — **next UI task** is an Asset Class filter so cars/bikes don't get visually muddied with planes and boats
+- `/my-vehicles` still only knows about garage-storable assets; my-aircraft / my-boats nav items not yet added
 
 ### Known followups (not blocking)
 - [x] **Image-quality polish** — 9 vehicles re-sourced on 2026-04-18 via the `docs/temp-images/` drop-zone + `scripts/normalize-temp-images.ts`. Further requests go through the same workflow.
@@ -324,6 +343,9 @@ Short-form record of decisions made during brainstorming. See the design doc for
 | 2026-04-18 | Benny's tag rule: customs-only | Filter should surface the vehicles that *are* Benny's upgrades, not every vehicle that *can be taken to* Benny's. Base vehicles that are in Fandom's Benny's category get the tag stripped if any variant of them also has it. Standalone customs (no variants) keep theirs. |
 | 2026-04-18 | Class as image overlay + fixed-height tag row with `+N` overflow | Keeps all cards uniform height without wrap-jitter or empty bodies. Class is always visible without competing for space with tags. |
 | 2026-04-18 | Local Supabase ports 5432X → 5442X | Windows Hyper-V dynamic port reservations include 54274-54373 on James's machine, which blocks the default Supabase range. Shifted into the 54374-54480 gap. |
+| 2026-05-13 | Pulled hosted Supabase forward from Phase 9 | James provisioned LSPortfolio early to skip ongoing Docker port hassles and align dev with what'll ship. MCP plugin gives the agent direct schema access for migrations + advisor checks. |
+| 2026-05-13 | Vehicle pipeline now covers aircraft + boats (excludes trailers + trains) | Original `STORABLE_TYPES` filter dated from garage-only scope; rebrand vision (LS Portfolio) explicitly includes aircraft/boats. Trailers + trains are not really "owned" assets in a player-portfolio sense, so they stay excluded. |
+| 2026-05-13 | `is_garage_storable` derived from type, not hardcoded | Schema anticipated this with the boolean column. Adding non-garage types (planes, boats) made the hardcoded `true` wrong — the column now correctly distinguishes garage-eligible vs garaged-only assets so Phase 5 slot assignment can filter accordingly. |
 
 ---
 
