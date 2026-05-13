@@ -4,12 +4,41 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4 — Property Management (browse/select done; owned views + upgrade selection next)
+**Current phase:** 🟡 Phase 4 — Property Management (browse/select done; owned views + upgrade selection next). Phase 6 brand identity also landed in parallel.
 **Last updated:** 2026-05-13
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-13 (late) — Brand identity, email templates, live-site image fixes
+
+**Brand identity (Phase 6 pulled forward):**
+- Logo locked in: **V1 layout** — "LS" + 5 yellow stars trailing + "PORTFOLIO" stacked to the right. Direct GTA wanted-level reference without copying it.
+- Favicon: **F2 design** — "LS" with 5 stars above on a black rounded tile. Wired via `app/icon.svg` (Next.js auto-favicon).
+- **Anton** loaded via `next/font/google`, exposed as `--font-anton` and Tailwind `font-display` utility (fallback chain: Impact → Haettenschweiler → sans-serif).
+- New `components/logo.tsx` (`<Logo size="sm|md|lg|xl" theme="dark|light" />`) replaces "LS Portfolio" plain text in the auth-app sidebar (desktop + mobile) and the marketing hero.
+- Standalone `public/logo.svg` + `public/logo-light.svg` for emails / external use (Impact-only, no Anton dependency).
+- Design exploration kept locally in `public/logo-concepts.html` (gitignored).
+
+**Branded email templates (6) in `supabase/templates/`:**
+- `confirm.html`, `invite.html`, `magic-link.html`, `email-change.html`, `recovery.html`, `reauthentication.html`. Dark-themed card on `#0a0a0a`, amber CTA, table-based for Outlook compat, Impact wordmark, inline CSS only.
+- Wired in `supabase/config.toml` for Docker fallback. **Hosted Supabase still needs manual paste-into-dashboard** (MCP plugin doesn't expose email-template management) — pending task before live signups feel branded.
+
+**Live-site image fixes (production was broken):**
+- **Vehicle cards** — `/public/vehicles/` was gitignored, so Vercel never received any of the 721 images. Untracked, committed (32MB / 800 webp after publish), pushed. Added `/public/logo-concepts.html` to gitignore in its place.
+- **Air/sea cards** — 79 aircraft/boat images existed in `data/images/vehicles/` (Phase 0+3 expansion output) but `npm run images:publish` was never run after that pipeline. Now caught up: 800/800.
+- **Property cards** — `build-properties.ts` was unconditionally writing `image_path = data/images/properties/{slug}.webp` for every property even though those files don't exist. Updated script to use `fs.existsSync`; made `PropertySchema.image_path` nullable; **direct SQL UPDATE on hosted DB cleared all 15 stale paths** so cards now show the "No image" fallback. Drop a cover into `data/images/properties/{slug}.webp` → `build:properties` → `db:import` and it surfaces per-property without code changes.
+- Added 1-year `immutable` `Cache-Control` header on `/vehicles/*.webp` via `next.config.ts.headers()`.
+
+**Discussed — not built:**
+- **Rockstar account linking** — investigated; not viable. R* has no public OAuth/API for player inventory, and Social Club scraping never exposed inventory data anyway. Mods on GTA Online get users permabanned. **The realistic path is a bulk-add UX** (multi-select on `/vehicles` → "Mark all owned") so initial onboarding isn't 200 clicks. Probably worth scoping next session.
+
+**Pending follow-ups (in priority order):**
+1. Paste 6 email templates into hosted Supabase dashboard (Auth → Email Templates). Mapping in commit `811027d`'s message.
+2. Property card curation — drop covers into `data/images/properties/{slug}.webp` over time.
+3. Bulk-add UX for vehicle ownership (the Rockstar-API-replacement).
+4. Resume Phase 4b — Granular Properties (Nightclubs pilot, see existing notes below).
 
 ### 2026-05-13 — Hosted Supabase + Aircraft/Boats expansion
 
@@ -58,7 +87,8 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | **4. Property Management** | 🟡 In progress | `/properties` browse + ownership ✅ · `/my-properties` owned view + upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
-| 7. Marketing Site | ⚪ Not started | Landing page, about, pricing (if applicable) |
+| **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
+| 7. Marketing Site | 🟢 Hero updated | Landing page hero uses new Logo; full marketing build (about, pricing, etc.) still ⚪ |
 | 8. Visual Garage Editor | ⚪ Not started | Top-down grid view, click-to-assign |
 | 9. Polish & Launch | ⚪ Not started | SEO, analytics, hosting, domain |
 
@@ -346,6 +376,10 @@ Short-form record of decisions made during brainstorming. See the design doc for
 | 2026-05-13 | Pulled hosted Supabase forward from Phase 9 | James provisioned LSPortfolio early to skip ongoing Docker port hassles and align dev with what'll ship. MCP plugin gives the agent direct schema access for migrations + advisor checks. |
 | 2026-05-13 | Vehicle pipeline now covers aircraft + boats (excludes trailers + trains) | Original `STORABLE_TYPES` filter dated from garage-only scope; rebrand vision (LS Portfolio) explicitly includes aircraft/boats. Trailers + trains are not really "owned" assets in a player-portfolio sense, so they stay excluded. |
 | 2026-05-13 | `is_garage_storable` derived from type, not hardcoded | Schema anticipated this with the boolean column. Adding non-garage types (planes, boats) made the hardcoded `true` wrong — the column now correctly distinguishes garage-eligible vs garaged-only assets so Phase 5 slot assignment can filter accordingly. |
+| 2026-05-13 | Vehicle images committed to repo (not Supabase Storage / CDN) | 32MB / 800 webp is fine as Vercel static assets — counted as static `public/`, not function bundle. Simpler than a separate bucket + URL rewrite, free bandwidth on Vercel, no remotePatterns config. Revisit if the catalogue grows past ~500MB or if mutating images becomes a workflow. |
+| 2026-05-13 | Property `image_path` is nullable; only set when file exists on disk | Build script unconditionally wrote a path even when no cover existed, so cards 404'd instead of falling back to "No image". Now `fs.existsSync`-gated. Schema nullable. Lets us curate covers piecemeal — drop a webp + rebuild + import surfaces it per-property. |
+| 2026-05-13 | Logo: V1 layout + F2 favicon; Anton via next/font (Impact fallback in emails) | V1 (LS + 5 stars trailing + PORTFOLIO underneath) and F2 (LS with stars above on a tile) reference GTA's wanted-level HUD without copying. Anton is the closest free Google Font to the in-game condensed display type; Impact is the universal email/SVG fallback since embedding Anton in standalone SVGs would bloat the files. |
+| 2026-05-13 | Rockstar account linking not viable; bulk-add UX is the replacement | R* has never had a public player-inventory API, and Social Club scraping never exposed inventory data. Mods on GTA Online = permaban. The realistic path is making manual ownership entry fast enough that the absence of auto-sync doesn't matter — multi-select bulk-add, CSV/clipboard import, eventually screenshot OCR. |
 
 ---
 
@@ -366,7 +400,8 @@ Things we deliberately are NOT building yet:
 
 ## 🚧 Open Questions
 
-- **Property images:** do we want a cover image per property, per upgrade, or both? Currently designed as one cover per property — revisit if the upgrade detail UI needs it.
-- **Hosting:** Vercel vs self-hosted vs Cloudflare Pages? Decide before Phase 9.
+- **Property images:** ~~do we want a cover image per property, per upgrade, or both?~~ Resolved 2026-05-13 — one nullable cover per property, drop covers into `data/images/properties/` as they're curated. Revisit per-upgrade covers only if Phase 4c's detail UI needs them.
+- **Hosting:** Vercel vs self-hosted vs Cloudflare Pages? Decide before Phase 9. (Currently deployed on Vercel via Github auto-deploy.)
 - **Domain:** not registered yet.
 - **Public vs gated marketing site:** does the landing page need a waitlist / beta signup, or go straight to live signups? Decide in Phase 7.
+- **Bulk-add UX for vehicles:** scope + design needed. Likely a "Mark all owned" multi-select mode on `/vehicles` plus optional clipboard-paste import. Brainstorm next session.
