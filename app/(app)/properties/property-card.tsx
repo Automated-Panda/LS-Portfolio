@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, MapPin, Plus } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 import Image from "next/image";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
@@ -90,12 +90,9 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
             <p className="text-sm font-medium leading-tight">
               {property.display_name}
             </p>
-            {property.location && (
-              <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
-                <MapPin className="h-3 w-3" />
-                <span className="truncate">{property.location}</span>
-              </p>
-            )}
+            <p className="mt-0.5 text-xs text-muted-foreground truncate">
+              {property.subtype_display} · {property.neighborhood ?? "Location unknown"}
+            </p>
           </div>
           <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">
             {property.max_capacity > 0 && (

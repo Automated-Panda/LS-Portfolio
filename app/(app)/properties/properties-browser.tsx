@@ -27,11 +27,18 @@ export function PropertiesBrowser({
 
   const q = (searchParams.get("q") ?? "").toLowerCase().trim();
   const type = searchParams.get("type") ?? "";
-  const loc = searchParams.get("loc") ?? "";
+  const subtype = searchParams.get("subtype") ?? "";
+  const nbhd = searchParams.get("nbhd") ?? "";
 
   const ownedSet = useMemo(
     () => new Set(ownedPropertyIds),
     [ownedPropertyIds],
+  );
+
+  // Slim index passed to FilterBar so it can derive visible subtypes per type.
+  const propertiesIndex = useMemo(
+    () => properties.map((p) => ({ subtype: p.subtype, property_type: p.property_type })),
+    [properties],
   );
 
   const filtered = useMemo(() => {
@@ -39,15 +46,17 @@ export function PropertiesBrowser({
       if (
         q &&
         !p.display_name.toLowerCase().includes(q) &&
-        !(p.location ?? "").toLowerCase().includes(q)
+        !(p.neighborhood ?? "").toLowerCase().includes(q) &&
+        !(p.subtype_display ?? "").toLowerCase().includes(q)
       ) {
         return false;
       }
       if (type && p.property_type !== type) return false;
-      if (loc && p.location !== loc) return false;
+      if (subtype && p.subtype !== subtype) return false;
+      if (nbhd && p.neighborhood !== nbhd) return false;
       return true;
     });
-  }, [properties, q, type, loc]);
+  }, [properties, q, type, subtype, nbhd]);
 
   return (
     <div className="space-y-6">
@@ -61,7 +70,7 @@ export function PropertiesBrowser({
         </p>
       </div>
 
-      <FilterBar filters={filters} />
+      <FilterBar filters={filters} propertiesIndex={propertiesIndex} />
 
       {filtered.length === 0 ? (
         <div className="flex h-40 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground">

@@ -4,7 +4,11 @@ export type PropertySummary = {
   id: string;
   display_name: string;
   property_type: PropertyType;
+  subtype: string;
+  subtype_display: string;
   location: string | null;
+  neighborhood: string | null;
+  capacity: number;
   image_path: string | null;
   counts_as_garage: boolean;
   max_capacity: number;
@@ -13,7 +17,8 @@ export type PropertySummary = {
 
 export type PropertyFilterOptions = {
   types: PropertyType[];
-  locations: string[];
+  subtypes: { id: string; display: string }[];
+  neighborhoods: string[];
 };
 
 export function propertyImageUrl(imagePath: string | null): string | null {
