@@ -4,12 +4,39 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4 — Property Management (browse/select done; owned views + upgrade selection next). Phase 6 brand identity also landed in parallel.
-**Last updated:** 2026-05-13
+**Current phase:** 🟡 Phase 4b — Granular Properties (nightclubs pilot live; fan out to apartments/garages/etc. next). `/properties` and `/businesses` split into two scoped browse routes.
+**Last updated:** 2026-05-15
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-15 — Phase 4b nightclubs pilot landed + `/businesses` split
+
+**Schema:** migration `0003_granular_properties.sql` applied to hosted Supabase — `properties` table now carries `subtype`, `subtype_display`, `neighborhood`, `capacity` columns (with indexes on `subtype` and `neighborhood`). The 15 type-level rows were truncated cascade-style as part of the migration (pre-launch, only test ownership state was lost) and replaced with 10 per-instance nightclub rows.
+
+**Data:** `scripts/data/nightclubs-seed.ts` defines 10 location instances (`nightclub-la-mesa`, `nightclub-mission-row`, …, `nightclub-la-puerta`) — each carries the same 6-upgrade pattern (3 stacked garage levels + equipment + security + dry-ice). 9 of 10 are flagged `verify: true` for an address fact-check pass against Fandom. `scripts/data/properties-seed.ts` collapses to `[...NIGHTCLUBS_SEED]` (other types disabled, ready to extend session by session). Hosted DB now has 10 properties, 60 upgrades, 20 required-upgrade chains.
+
+**Tooling:** `scripts/build-properties.ts` resolves cover images by `subtype` (every `nightclub-*` instance shares one `nightclub.webp`); `scripts/import-seed.ts` writes the new columns; Zod `PropertySchema` adds the new fields plus an optional `verify` flag.
+
+**UI — `/properties` vs `/businesses` split:** sidebar Browse section now has *All Vehicles → All Properties → All Businesses → Visual Garage*. Both routes share `<PropertiesBrowser>` and `<FilterBar>` and `<PropertyCard>`; the query takes a `scope: "properties" | "businesses"` parameter (`SCOPE_TYPES` maps it to the `property_type` set). Filter-bar hides the Type pill row when only 1 type is in scope (mirrors the existing subtype hide-when-1 rule). New subtype pill row added (also hidden when only 1 subtype). Old `?loc=` URL param replaced by `?nbhd=`; new `?subtype=` param. Card sub-line is now `subtype_display · neighborhood`. Today: `/businesses` shows 10 nightclubs; `/properties` empty until apartments/garages fan out.
+
+**Capacity semantics fix:** `max_capacity` previously = `Math.max(...upgrade.capacity)` (highest single tier). Phase 4b upgrades are *stackable increments*, so max_capacity is now `property.capacity + Σ upgrade.capacity`. Nightclubs correctly show "Up to 31 cars" (10+10+11) instead of "11".
+
+**Pending follow-ups from this session (in priority order):**
+
+1. **Drop a `nightclub.webp`** cover image into `data/images/properties/`, run `npm run images:publish`, redeploy. All 10 nightclub cards currently fall back to "No image".
+2. **Verify the 9 flagged street addresses** in `nightclubs-seed.ts` against Fandom location pages; strip `verify: true` once confirmed.
+3. **Fan out Phase 4b to other property types** — apartments (high-end ×17, low-end, mid), stand-alone garages (~20 locations), MC clubhouses, offices, hangars, yachts, bunkers, biker businesses, vehicle warehouses, arcades, auto shops, agencies, salvage yards, facilities. Each is a separate session of data curation. Priority: **garage-bearing types first** (these unblock onboarding-wizard work later) — high-end apartments + stand-alone garages are the natural next targets.
+4. **`/my-properties` upgrade-tier UI** (Phase 4c). Click an owned property → check off which upgrades are installed; enforces `required_upgrade_id` chains. Schema already supports this; UI is the new work.
+5. **`/my-businesses` owned view.** Same pattern as #4 but scoped to business-type properties.
+
+**Plan + spec references:** implementation plan was `docs/plans/2026-05-15-phase-4b-nightclubs-pilot.md` (10 tasks + 1 bonus); design spec is `docs/specs/2026-04-18-properties-granular-design.md`.
+
+**Still pending from prior sessions** (carried over — none of these were touched today):
+- Paste 6 branded email templates into hosted Supabase Auth dashboard (templates live in `supabase/templates/`).
+- Asset Class top-level filter on `/vehicles` so planes/boats don't visually muddy with cars (808-vehicle browse).
+- Bulk-add UX for vehicle ownership → **reshaped into onboarding-wizard concept** (pick property → multi-select vehicles stored inside). Wizard depends on full Phase 4b fanout + a vehicle→property linking schema. Designed in conversation this session; spec deferred until Phase 4b is far enough along to test against.
 
 ### 2026-05-13 (late) — Brand identity, email templates, live-site image fixes
 
@@ -84,7 +111,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | **1. Supabase Setup** | ✅ Complete (hosted live) | Hosted LSPortfolio project active (eu-west-1); 0001+0002 migrations applied; seed imported; local Docker kept as fallback |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
-| **4. Property Management** | 🟡 In progress | `/properties` browse + ownership ✅ · `/my-properties` owned view + upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
+| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · Nightclubs pilot (10 instances × 6 upgrades) ✅ · Fan out to apartments/garages/etc. ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
 | **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
@@ -380,6 +407,10 @@ Short-form record of decisions made during brainstorming. See the design doc for
 | 2026-05-13 | Property `image_path` is nullable; only set when file exists on disk | Build script unconditionally wrote a path even when no cover existed, so cards 404'd instead of falling back to "No image". Now `fs.existsSync`-gated. Schema nullable. Lets us curate covers piecemeal — drop a webp + rebuild + import surfaces it per-property. |
 | 2026-05-13 | Logo: V1 layout + F2 favicon; Anton via next/font (Impact fallback in emails) | V1 (LS + 5 stars trailing + PORTFOLIO underneath) and F2 (LS with stars above on a tile) reference GTA's wanted-level HUD without copying. Anton is the closest free Google Font to the in-game condensed display type; Impact is the universal email/SVG fallback since embedding Anton in standalone SVGs would bloat the files. |
 | 2026-05-13 | Rockstar account linking not viable; bulk-add UX is the replacement | R* has never had a public player-inventory API, and Social Club scraping never exposed inventory data. Mods on GTA Online = permaban. The realistic path is making manual ownership entry fast enough that the absence of auto-sync doesn't matter — multi-select bulk-add, CSV/clipboard import, eventually screenshot OCR. |
+| 2026-05-15 | Phase 4b nightclubs pilot ships before any other fanout type | Validates the per-instance schema + scoped UI + capacity semantics end-to-end on one type (60 upgrade rows × 10 locations) before scaling to ~300-400 rows across 12 more types. If anything was wrong with the model, finding out now is much cheaper. |
+| 2026-05-15 | `/properties` and `/businesses` split into separate browse routes | The sidebar already split *owned* views (My Properties vs My Businesses); the *browse* side was the asymmetric leftover. Same `<PropertiesBrowser>` powers both via a scope param — no component duplication. Filter-bar hides the Type pill row when only one type is in scope so `/businesses` doesn't show a redundant "Business" pill. |
+| 2026-05-15 | `max_capacity` = base + sum-of-upgrade-increments (was max-single-upgrade) | Old type-level seed used capacity-as-absolute-alternative semantics ("2-Car / 6-Car / 10-Car Garage" tiers were pick-one). Phase 4b model is increment-based: a fully-upgraded nightclub stacks L1+L2+L3 = 10+10+11 = 31. Future per-instance fanout will follow the same increment convention; any pick-one tiers (rare in granular model) collapse to one row per instance. |
+| 2026-05-15 | Bulk-add UX reshaped into onboarding-wizard concept | When user logs in, prompt them to pick a property they own → multi-select the vehicles stored inside → repeat per property. Replaces the "mark 200 cars" flat bulk-add idea with a property-first walkthrough. Requires Phase 4b complete + a new vehicle→property linking schema (effectively Phase 5 lite). Spec deferred until Phase 4b fanout is far enough along to test the wizard against. |
 
 ---
 
