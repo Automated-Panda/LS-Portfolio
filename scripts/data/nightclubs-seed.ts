@@ -20,15 +20,15 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   { id: "nightclub-la-mesa",            display_name: "La Mesa Nightclub",            neighborhood: "La Mesa",            address: "1618 Popular St" },
-  { id: "nightclub-mission-row",        display_name: "Mission Row Nightclub",        neighborhood: "Mission Row",        address: "South Mo Milton Drive",       verify: true },
-  { id: "nightclub-del-perro",          display_name: "Del Perro Nightclub",          neighborhood: "Del Perro",          address: "Bay City Avenue",             verify: true },
-  { id: "nightclub-downtown-vinewood",  display_name: "Downtown Vinewood Nightclub",  neighborhood: "Downtown Vinewood",  address: "Vinewood Boulevard",          verify: true },
-  { id: "nightclub-strawberry",         display_name: "Strawberry Nightclub",         neighborhood: "Strawberry",         address: "Strawberry Avenue",           verify: true },
-  { id: "nightclub-vespucci-canals",    display_name: "Vespucci Canals Nightclub",    neighborhood: "Vespucci Canals",    address: "Cougar Avenue",               verify: true },
-  { id: "nightclub-west-vinewood",      display_name: "West Vinewood Nightclub",      neighborhood: "West Vinewood",      address: "Eclipse Boulevard",           verify: true },
-  { id: "nightclub-elysian-island",     display_name: "Elysian Island Nightclub",     neighborhood: "Elysian Island",     address: "Norton Place",                verify: true },
-  { id: "nightclub-cypress-flats",      display_name: "Cypress Flats Nightclub",      neighborhood: "Cypress Flats",      address: "Carson Avenue",               verify: true },
-  { id: "nightclub-la-puerta",          display_name: "La Puerta Nightclub",          neighborhood: "La Puerta",          address: "Adam's Apple Boulevard",      verify: true },
+  { id: "nightclub-mission-row",        display_name: "Mission Row Nightclub",        neighborhood: "Mission Row",        address: "South Mo Milton Drive" },
+  { id: "nightclub-del-perro",          display_name: "Del Perro Nightclub",          neighborhood: "Del Perro",          address: "Bay City Avenue" },
+  { id: "nightclub-downtown-vinewood",  display_name: "Downtown Vinewood Nightclub",  neighborhood: "Downtown Vinewood",  address: "Vinewood Boulevard" },
+  { id: "nightclub-strawberry",         display_name: "Strawberry Nightclub",         neighborhood: "Strawberry",         address: "Strawberry Avenue" },
+  { id: "nightclub-vespucci-canals",    display_name: "Vespucci Canals Nightclub",    neighborhood: "Vespucci Canals",    address: "Cougar Avenue" },
+  { id: "nightclub-west-vinewood",      display_name: "West Vinewood Nightclub",      neighborhood: "West Vinewood",      address: "Eclipse Boulevard" },
+  { id: "nightclub-elysian-island",     display_name: "Elysian Island Nightclub",     neighborhood: "Elysian Island",     address: "Norton Place" },
+  { id: "nightclub-cypress-flats",      display_name: "Cypress Flats Nightclub",      neighborhood: "Cypress Flats",      address: "Carson Avenue" },
+  { id: "nightclub-la-puerta",          display_name: "La Puerta Nightclub",          neighborhood: "La Puerta",          address: "Adam's Apple Boulevard" },
 ];
 
 function buildNightclub(loc: LocationSeed): Omit<Property, "image_path"> {

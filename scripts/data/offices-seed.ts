@@ -1,12 +1,14 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online CEO Executive Offices — 5 per-location instances.
+ * GTA Online CEO Executive Offices — 4 purchasable locations.
  * The office building itself does not store cars (counts_as_garage: false).
- * Vehicle storage comes from the chained Office Garage upgrade (3 levels × 20 = 60 max).
+ * Vehicle storage comes from the chained Office Garage upgrade
+ * (3 levels × 20 = 60 max when fully upgraded).
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Executive_Offices
+ *   https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices
  */
 
 type LocationSeed = {
@@ -19,39 +21,28 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   {
-    id: "ceo-office-maze-bank-tower",
-    display_name: "Maze Bank Tower",
-    neighborhood: "Pillbox Hill",
-    address: "Pillbox Hill, Los Santos",
-    verify: true,
+    id: "ceo-office-maze-bank-west",
+    display_name: "Maze Bank West",
+    neighborhood: "Del Perro",
+    address: "Del Perro, Los Santos",
   },
   {
     id: "ceo-office-arcadius-business-center",
     display_name: "Arcadius Business Center",
     neighborhood: "Pillbox Hill",
     address: "Pillbox Hill, Los Santos",
-    verify: true,
   },
   {
     id: "ceo-office-lombank-west",
     display_name: "Lombank West",
     neighborhood: "Del Perro",
     address: "Del Perro, Los Santos",
-    verify: true,
   },
   {
-    id: "ceo-office-maze-bank-west",
-    display_name: "Maze Bank West",
-    neighborhood: "Del Perro",
-    address: "Del Perro, Los Santos",
-    verify: true,
-  },
-  {
-    id: "ceo-office-dynasty8-executive",
-    display_name: "Dynasty 8 Executive",
+    id: "ceo-office-maze-bank-tower",
+    display_name: "Maze Bank Tower",
     neighborhood: "Pillbox Hill",
     address: "Pillbox Hill, Los Santos",
-    verify: true,
   },
 ];
 
@@ -94,7 +85,8 @@ function buildOffice(loc: LocationSeed): Omit<Property, "image_path"> {
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Executive_Offices",
-      gtabase: null,
+      gtabase:
+        "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices",
     },
     ...(loc.verify ? { verify: true } : {}),
   };

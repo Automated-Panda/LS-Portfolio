@@ -2,12 +2,13 @@ import type { Property } from "../schema";
 
 /**
  * GTA Online Hangars — 5 purchasable instances.
- * 3 at Los Santos International Airport (LSIA), 2 at Fort Zancudo.
- * Hangars store aircraft and provide the Hangar Business (Air Freight Cargo).
- * They do NOT store ground vehicles (counts_as_garage: false).
+ * 2 at Los Santos International Airport, 3 at Fort Zancudo.
+ * Hangars store aircraft (not ground vehicles, counts_as_garage: false)
+ * and unlock the Air Freight Cargo business.
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Hangar
+ *   https://gtalens.com/map/property-hangars
  */
 
 type LocationSeed = {
@@ -20,39 +21,34 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   {
+    id: "hangar-lsia-a17",
+    display_name: "LSIA Hangar A17",
+    neighborhood: "Los Santos International Airport",
+    address: "Los Santos International Airport, Hangar A17",
+  },
+  {
     id: "hangar-lsia-1",
     display_name: "LSIA Hangar 1",
-    neighborhood: "LSIA",
-    address: "Los Santos International Airport",
-    verify: true,
+    neighborhood: "Los Santos International Airport",
+    address: "Los Santos International Airport, Hangar 1",
   },
   {
-    id: "hangar-lsia-3499",
-    display_name: "LSIA Hangar 3499",
-    neighborhood: "LSIA",
-    address: "Los Santos International Airport, Hangar 3499",
-    verify: true,
-  },
-  {
-    id: "hangar-lsia-3497",
-    display_name: "LSIA Hangar 3497",
-    neighborhood: "LSIA",
-    address: "Los Santos International Airport, Hangar 3497",
-    verify: true,
-  },
-  {
-    id: "hangar-fort-zancudo-a17",
-    display_name: "Fort Zancudo Hangar A17",
+    id: "hangar-fort-zancudo-3497",
+    display_name: "Fort Zancudo Hangar 3497",
     neighborhood: "Fort Zancudo",
-    address: "Fort Zancudo, Blaine County",
-    verify: true,
+    address: "Fort Zancudo, Hangar 3497",
+  },
+  {
+    id: "hangar-fort-zancudo-3499",
+    display_name: "Fort Zancudo Hangar 3499",
+    neighborhood: "Fort Zancudo",
+    address: "Fort Zancudo, Hangar 3499",
   },
   {
     id: "hangar-fort-zancudo-a2",
     display_name: "Fort Zancudo Hangar A2",
     neighborhood: "Fort Zancudo",
-    address: "Fort Zancudo, Blaine County",
-    verify: true,
+    address: "Fort Zancudo, Hangar A2",
   },
 ];
 

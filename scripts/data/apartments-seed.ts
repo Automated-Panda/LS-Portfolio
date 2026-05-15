@@ -31,91 +31,102 @@ type ApartmentSeed = {
 // HIGH-END APARTMENTS
 // ---------------------------------------------------------------------------
 
+// Canonical 17 = 7 apartment buildings + 10 stilt houses in Vinewood Hills.
+// Per-LOCATION rows; buildings with multiple purchaseable apartments are
+// collapsed into one row (e.g. Eclipse Towers Apt 3/31/40 → "Eclipse Towers").
+// Source: gtabase.com / leo3418.github.io / sportskeeda.
 const HIGH_END_LOCATIONS: ApartmentSeed[] = [
+  // 7 apartment buildings
   {
-    id: "high-end-apartment-4-integrity-way-apt-30",
-    display_name: "4 Integrity Way, Apt 30",
+    id: "high-end-apartment-eclipse-towers",
+    display_name: "Eclipse Towers",
+    neighborhood: "Pillbox Hill",
+    address: "Eclipse Boulevard, Pillbox Hill",
+  },
+  {
+    id: "high-end-apartment-3-alta-st",
+    display_name: "3 Alta Street",
+    neighborhood: "Downtown Vinewood",
+    address: "3 Alta Street",
+  },
+  {
+    id: "high-end-apartment-del-perro-heights",
+    display_name: "Del Perro Heights",
+    neighborhood: "Del Perro",
+    address: "Del Perro Heights",
+  },
+  {
+    id: "high-end-apartment-4-integrity-way",
+    display_name: "4 Integrity Way",
     neighborhood: "Downtown Vinewood",
     address: "4 Integrity Way",
   },
   {
-    id: "high-end-apartment-eclipse-towers-apt-3",
-    display_name: "Eclipse Towers, Apt 3",
-    neighborhood: "West Vinewood",
-    address: "Eclipse Towers",
-  },
-  {
-    id: "high-end-apartment-eclipse-towers-apt-31",
-    display_name: "Eclipse Towers, Apt 31",
-    neighborhood: "West Vinewood",
-    address: "Eclipse Towers",
-  },
-  {
-    id: "high-end-apartment-eclipse-towers-apt-40",
-    display_name: "Eclipse Towers, Apt 40",
-    neighborhood: "West Vinewood",
-    address: "Eclipse Towers",
-  },
-  {
-    id: "high-end-apartment-del-perro-heights-apt-4",
-    display_name: "Del Perro Heights, Apt 4",
+    id: "high-end-apartment-weazel-plaza",
+    display_name: "Weazel Plaza",
     neighborhood: "Del Perro",
-    address: "Del Perro Heights",
+    address: "Weazel Plaza",
   },
   {
-    id: "high-end-apartment-del-perro-heights-apt-7",
-    display_name: "Del Perro Heights, Apt 7",
+    id: "high-end-apartment-richards-majestic",
+    display_name: "Richards Majestic",
     neighborhood: "Del Perro",
-    address: "Del Perro Heights",
+    address: "Richards Majestic",
   },
   {
-    id: "high-end-apartment-del-perro-heights-apt-20",
-    display_name: "Del Perro Heights, Apt 20",
-    neighborhood: "Del Perro",
-    address: "Del Perro Heights",
-  },
-  {
-    id: "high-end-apartment-tinsel-towers-apt-29",
-    display_name: "Tinsel Towers, Apt 29",
-    neighborhood: "West Vinewood",
+    id: "high-end-apartment-tinsel-towers",
+    display_name: "Tinsel Towers",
+    neighborhood: "Downtown Vinewood",
     address: "Tinsel Towers",
   },
+  // 10 stilt houses in Vinewood Hills
   {
-    id: "high-end-apartment-tinsel-towers-apt-42",
-    display_name: "Tinsel Towers, Apt 42",
-    neighborhood: "West Vinewood",
-    address: "Tinsel Towers",
+    id: "high-end-apartment-2862-hillcrest-ave",
+    display_name: "2862 Hillcrest Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2862 Hillcrest Avenue",
   },
   {
-    id: "high-end-apartment-weazel-plaza-apt-26",
-    display_name: "Weazel Plaza, Apt 26",
-    neighborhood: "Downtown Vinewood",
-    address: "Weazel Plaza",
+    id: "high-end-apartment-2866-hillcrest-ave",
+    display_name: "2866 Hillcrest Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2866 Hillcrest Avenue",
   },
   {
-    id: "high-end-apartment-weazel-plaza-apt-70",
-    display_name: "Weazel Plaza, Apt 70",
-    neighborhood: "Downtown Vinewood",
-    address: "Weazel Plaza",
+    id: "high-end-apartment-2868-hillcrest-ave",
+    display_name: "2868 Hillcrest Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2868 Hillcrest Avenue",
   },
   {
-    id: "high-end-apartment-weazel-plaza-apt-101",
-    display_name: "Weazel Plaza, Apt 101",
-    neighborhood: "Downtown Vinewood",
-    address: "Weazel Plaza",
+    id: "high-end-apartment-2874-hillcrest-ave",
+    display_name: "2874 Hillcrest Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2874 Hillcrest Avenue",
   },
   {
-    id: "high-end-apartment-1561-san-vitas-st-apt-4",
-    display_name: "1561 San Vitas Street, Apt 4",
-    neighborhood: "West Vinewood",
-    address: "1561 San Vitas Street",
+    id: "high-end-apartment-2044-north-conker-ave",
+    display_name: "2044 North Conker Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2044 North Conker Avenue",
   },
   {
-    id: "high-end-apartment-0123-atlee-st-apt-27",
-    display_name: "0123 Atlee Street, Apt 27",
-    neighborhood: "Mirror Park",
-    address: "0123 Atlee Street",
-    verify: true,
+    id: "high-end-apartment-2045-north-conker-ave",
+    display_name: "2045 North Conker Avenue",
+    neighborhood: "Vinewood Hills",
+    address: "2045 North Conker Avenue",
+  },
+  {
+    id: "high-end-apartment-2117-milton-rd",
+    display_name: "2117 Milton Road",
+    neighborhood: "Vinewood Hills",
+    address: "2117 Milton Road",
+  },
+  {
+    id: "high-end-apartment-2113-mad-wayne-thunder-dr",
+    display_name: "2113 Mad Wayne Thunder Drive",
+    neighborhood: "Vinewood Hills",
+    address: "2113 Mad Wayne Thunder Drive",
   },
   {
     id: "high-end-apartment-3655-wild-oats-dr",
@@ -124,18 +135,10 @@ const HIGH_END_LOCATIONS: ApartmentSeed[] = [
     address: "3655 Wild Oats Drive",
   },
   {
-    id: "high-end-apartment-2044-north-conker-ave",
-    display_name: "2044 North Conker Avenue",
-    neighborhood: "Rockford Hills",
-    address: "2044 North Conker Avenue",
-    verify: true,
-  },
-  {
-    id: "high-end-apartment-2862-hillcrest-ave",
-    display_name: "2862 Hillcrest Avenue",
+    id: "high-end-apartment-3677-whispymound-dr",
+    display_name: "3677 Whispymound Drive",
     neighborhood: "Vinewood Hills",
-    address: "2862 Hillcrest Avenue",
-    verify: true,
+    address: "3677 Whispymound Drive",
   },
 ];
 
@@ -181,12 +184,6 @@ const MID_END_LOCATIONS: ApartmentSeed[] = [
     display_name: "3671 Whispymound Drive",
     neighborhood: "Vinewood Hills",
     address: "3671 Whispymound Drive",
-  },
-  {
-    id: "mid-end-apartment-2113-mad-wayne-thunder-dr",
-    display_name: "2113 Mad Wayne Thunder Drive",
-    neighborhood: "Rockford Hills",
-    address: "2113 Mad Wayne Thunder Drive",
   },
   {
     id: "mid-end-apartment-1237-prosperity-st-apt-5",
@@ -262,13 +259,6 @@ const MID_END_LOCATIONS: ApartmentSeed[] = [
     display_name: "1104 Las Lagunas Boulevard, Apt 1",
     neighborhood: "East Los Santos",
     address: "1104 Las Lagunas Boulevard",
-    verify: true,
-  },
-  {
-    id: "mid-end-apartment-2874-hillcrest-ave",
-    display_name: "2874 Hillcrest Avenue",
-    neighborhood: "Vinewood Hills",
-    address: "2874 Hillcrest Avenue",
     verify: true,
   },
   {
@@ -353,13 +343,6 @@ const MID_END_LOCATIONS: ApartmentSeed[] = [
     display_name: "1237 Prosperity Street, Apt 14",
     neighborhood: "Little Seoul",
     address: "1237 Prosperity Street",
-    verify: true,
-  },
-  {
-    id: "mid-end-apartment-3655-wild-oats-dr-apt-2",
-    display_name: "3655 Wild Oats Drive, Apt 2",
-    neighborhood: "Vinewood Hills",
-    address: "3655 Wild Oats Drive",
     verify: true,
   },
   {

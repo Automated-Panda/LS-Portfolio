@@ -19,39 +19,34 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   {
-    id: "vehicle-warehouse-lsia",
-    display_name: "LSIA Vehicle Warehouse",
-    neighborhood: "Los Santos International Airport",
-    address: "Los Santos International Airport, Los Santos",
-    verify: true,
+    id: "vehicle-warehouse-murrieta-heights",
+    display_name: "Murrieta Heights Vehicle Warehouse",
+    neighborhood: "Murrieta Heights",
+    address: "Murrieta Heights, Los Santos",
   },
   {
     id: "vehicle-warehouse-la-mesa",
     display_name: "La Mesa Vehicle Warehouse",
     neighborhood: "La Mesa",
     address: "La Mesa, Los Santos",
-    verify: true,
   },
   {
     id: "vehicle-warehouse-la-puerta",
     display_name: "La Puerta Vehicle Warehouse",
     neighborhood: "La Puerta",
     address: "La Puerta, Los Santos",
-    verify: true,
   },
   {
-    id: "vehicle-warehouse-el-burro-heights",
-    display_name: "El Burro Heights Vehicle Warehouse",
-    neighborhood: "El Burro Heights",
-    address: "El Burro Heights, Los Santos",
-    verify: true,
+    id: "vehicle-warehouse-davis",
+    display_name: "Davis Vehicle Warehouse",
+    neighborhood: "Davis",
+    address: "Davis, Los Santos",
   },
   {
     id: "vehicle-warehouse-cypress-flats",
     display_name: "Cypress Flats Vehicle Warehouse",
     neighborhood: "Cypress Flats",
     address: "Cypress Flats, Los Santos",
-    verify: true,
   },
 ];
 

@@ -1,12 +1,14 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online Arcades — 6 per-location instances.
- * Arcade properties serve as the planning hub for the Casino Heist.
- * Each includes a basement garage storing up to 10 vehicles for heist prep.
+ * GTA Online Arcades — 6 purchasable locations.
+ * Added with The Diamond Casino Heist DLC. Each arcade serves as the
+ * planning hub for the Casino Heist and includes a basement garage
+ * storing up to 10 vehicles for heist prep.
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Arcades
+ *   https://www.gtabase.com/grand-theft-auto-v/properties-gta-online/pixel-pete-s-arcade
  */
 
 type LocationSeed = {
@@ -19,46 +21,40 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   {
-    id: "arcade-paleto-bay",
-    display_name: "Paleto Bay Arcade (Eight-Bit)",
+    id: "arcade-pixel-petes",
+    display_name: "Pixel Pete's",
     neighborhood: "Paleto Bay",
     address: "Paleto Bay, Blaine County",
-    verify: true,
   },
   {
-    id: "arcade-grapeseed",
-    display_name: "Pixel Pete's (Grapeseed)",
+    id: "arcade-wonderama",
+    display_name: "Wonderama",
     neighborhood: "Grapeseed",
     address: "Grapeseed, Blaine County",
-    verify: true,
   },
   {
-    id: "arcade-davis",
-    display_name: "Wonderama (Davis)",
+    id: "arcade-the-warehouse",
+    display_name: "The Warehouse",
     neighborhood: "Davis",
     address: "Davis, Los Santos",
-    verify: true,
   },
   {
-    id: "arcade-la-mesa",
-    display_name: "Insert Coin (La Mesa)",
+    id: "arcade-videogeddon",
+    display_name: "Videogeddon",
     neighborhood: "La Mesa",
     address: "La Mesa, Los Santos",
-    verify: true,
   },
   {
-    id: "arcade-vinewood",
-    display_name: "Videogeddon (Vinewood)",
-    neighborhood: "Vinewood",
-    address: "Vinewood Boulevard, Los Santos",
-    verify: true,
-  },
-  {
-    id: "arcade-rockford-hills",
-    display_name: "Videogeddon (Rockford Hills)",
+    id: "arcade-insert-coin",
+    display_name: "Insert Coin",
     neighborhood: "Rockford Hills",
     address: "Rockford Hills, Los Santos",
-    verify: true,
+  },
+  {
+    id: "arcade-eight-bit",
+    display_name: "Eight-Bit",
+    neighborhood: "Vinewood",
+    address: "Vinewood Boulevard, Los Santos",
   },
 ];
 

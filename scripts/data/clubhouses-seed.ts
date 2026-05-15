@@ -1,11 +1,13 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online MC Clubhouses — 12 per-location instances.
- * The Clubhouse Garage upgrade adds motorcycle-only storage (10 bikes).
+ * GTA Online MC Clubhouses — 12 purchasable locations (Bikers DLC).
+ * Six 1-Story and six 2-Story variants. Each includes a Clubhouse Garage
+ * upgrade for motorcycle-only storage (10 bikes).
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Clubhouses
+ *   https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses
  */
 
 type LocationSeed = {
@@ -13,93 +15,96 @@ type LocationSeed = {
   display_name: string;
   neighborhood: string;
   address: string;
+  stories: 1 | 2;
   verify?: boolean;
 };
 
 const LOCATIONS: LocationSeed[] = [
+  // 1-Story Clubhouses
   {
     id: "mc-clubhouse-great-chaparral",
     display_name: "Great Chaparral Clubhouse",
     neighborhood: "Great Chaparral",
-    address: "Great Chaparral, Blaine County",
-    verify: true,
-  },
-  {
-    id: "mc-clubhouse-grapeseed",
-    display_name: "Grapeseed Clubhouse",
-    neighborhood: "Grapeseed",
-    address: "Grapeseed, Blaine County",
-    verify: true,
-  },
-  {
-    id: "mc-clubhouse-paleto-bay",
-    display_name: "Paleto Bay Clubhouse",
-    neighborhood: "Paleto Bay",
-    address: "Paleto Bay, Blaine County",
-    verify: true,
+    address: "Route 68, Great Chaparral",
+    stories: 1,
   },
   {
     id: "mc-clubhouse-sandy-shores",
     display_name: "Sandy Shores Clubhouse",
     neighborhood: "Sandy Shores",
-    address: "Sandy Shores, Blaine County",
-    verify: true,
+    address: "Algonquin Boulevard, Sandy Shores",
+    stories: 1,
   },
   {
-    id: "mc-clubhouse-route-68",
-    display_name: "Route 68 Clubhouse",
-    neighborhood: "Route 68",
-    address: "Route 68, Blaine County",
-    verify: true,
+    id: "mc-clubhouse-paleto-bay-1story",
+    display_name: "Paleto Bay Clubhouse (1-Story)",
+    neighborhood: "Paleto Bay",
+    address: "Paleto Bay, Blaine County",
+    stories: 1,
   },
   {
-    id: "mc-clubhouse-elysian-island",
-    display_name: "Elysian Island Clubhouse",
-    neighborhood: "Elysian Island",
-    address: "Elysian Island, Los Santos",
-    verify: true,
+    id: "mc-clubhouse-del-perro-beach",
+    display_name: "Del Perro Beach Clubhouse",
+    neighborhood: "Del Perro Beach",
+    address: "Del Perro Beach, Los Santos",
+    stories: 1,
+  },
+  {
+    id: "mc-clubhouse-rancho",
+    display_name: "Rancho Clubhouse",
+    neighborhood: "Rancho",
+    address: "Rancho, Los Santos",
+    stories: 1,
+  },
+  {
+    id: "mc-clubhouse-pillbox-hill",
+    display_name: "Pillbox Hill Clubhouse",
+    neighborhood: "Pillbox Hill",
+    address: "Pillbox Hill, Los Santos",
+    stories: 1,
+  },
+  // 2-Story Clubhouses
+  {
+    id: "mc-clubhouse-grapeseed",
+    display_name: "Grapeseed Clubhouse",
+    neighborhood: "Grapeseed",
+    address: "East Joshua Road, Grapeseed",
+    stories: 2,
+  },
+  {
+    id: "mc-clubhouse-paleto-bay-2story",
+    display_name: "Paleto Bay Clubhouse (2-Story)",
+    neighborhood: "Paleto Bay",
+    address: "Paleto Boulevard, Paleto Bay",
+    stories: 2,
+  },
+  {
+    id: "mc-clubhouse-vespucci-beach",
+    display_name: "Vespucci Beach Clubhouse",
+    neighborhood: "Vespucci Beach",
+    address: "Vespucci Beach, Los Santos",
+    stories: 2,
   },
   {
     id: "mc-clubhouse-la-mesa",
     display_name: "La Mesa Clubhouse",
     neighborhood: "La Mesa",
     address: "La Mesa, Los Santos",
-    verify: true,
+    stories: 2,
   },
   {
-    id: "mc-clubhouse-cypress-flats",
-    display_name: "Cypress Flats Clubhouse",
-    neighborhood: "Cypress Flats",
-    address: "Cypress Flats, Los Santos",
-    verify: true,
+    id: "mc-clubhouse-downtown-vinewood",
+    display_name: "Downtown Vinewood Clubhouse",
+    neighborhood: "Downtown Vinewood",
+    address: "Downtown Vinewood, Los Santos",
+    stories: 2,
   },
   {
-    id: "mc-clubhouse-strawberry",
-    display_name: "Strawberry Clubhouse",
-    neighborhood: "Strawberry",
-    address: "Strawberry, Los Santos",
-    verify: true,
-  },
-  {
-    id: "mc-clubhouse-rockford-hills",
-    display_name: "Rockford Hills Clubhouse",
-    neighborhood: "Rockford Hills",
-    address: "Rockford Hills, Los Santos",
-    verify: true,
-  },
-  {
-    id: "mc-clubhouse-vespucci-canals",
-    display_name: "Vespucci Canals Clubhouse",
-    neighborhood: "Vespucci Canals",
-    address: "Vespucci Canals, Los Santos",
-    verify: true,
-  },
-  {
-    id: "mc-clubhouse-mission-row",
-    display_name: "Mission Row Clubhouse",
-    neighborhood: "Mission Row",
-    address: "Mission Row, Los Santos",
-    verify: true,
+    id: "mc-clubhouse-hawick",
+    display_name: "Hawick Clubhouse",
+    neighborhood: "Hawick",
+    address: "Hawick Avenue, Hawick",
+    stories: 2,
   },
 ];
 
@@ -121,12 +126,13 @@ function buildClubhouse(loc: LocationSeed): Omit<Property, "image_path"> {
         tier: null,
         capacity: 10,
         required_upgrade_id: null,
-        notes: "Motorcycle-only storage",
+        notes: `${loc.stories}-Story Clubhouse. Motorcycle-only storage.`,
       },
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Clubhouses",
-      gtabase: null,
+      gtabase:
+        "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses",
     },
     ...(loc.verify ? { verify: true } : {}),
   };

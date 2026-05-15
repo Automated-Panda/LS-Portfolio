@@ -1,12 +1,13 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online Agencies — 5 per-location instances.
- * The Agency is the hub for The Contract DLC missions.
- * Each includes a garage storing up to 20 personal vehicles.
+ * GTA Online Agencies — 4 purchasable locations.
+ * Added with The Contract DLC. Each includes a garage for up to
+ * 20 personal vehicles plus the planning room used by Contract missions.
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Agencies
+ *   https://gtalens.com/map/property-agencies
  */
 
 type LocationSeed = {
@@ -19,39 +20,28 @@ type LocationSeed = {
 
 const LOCATIONS: LocationSeed[] = [
   {
+    id: "agency-little-seoul",
+    display_name: "Little Seoul Agency",
+    neighborhood: "Little Seoul",
+    address: "San Andreas Avenue, Little Seoul",
+  },
+  {
     id: "agency-vespucci-canals",
     display_name: "Vespucci Canals Agency",
     neighborhood: "Vespucci Canals",
-    address: "Vespucci Canals, Los Santos",
-    verify: true,
-  },
-  {
-    id: "agency-hawick",
-    display_name: "Hawick Agency",
-    neighborhood: "Hawick",
-    address: "Hawick, Los Santos",
-    verify: true,
+    address: "San Andreas Avenue & Tongva Drive, Vespucci Canals",
   },
   {
     id: "agency-rockford-hills",
     display_name: "Rockford Hills Agency",
     neighborhood: "Rockford Hills",
-    address: "Rockford Hills, Los Santos",
-    verify: true,
+    address: "Backlot City, Rockford Hills",
   },
   {
-    id: "agency-little-seoul",
-    display_name: "Little Seoul Agency",
-    neighborhood: "Little Seoul",
-    address: "Little Seoul, Los Santos",
-    verify: true,
-  },
-  {
-    id: "agency-vinewood",
-    display_name: "Vinewood Agency",
-    neighborhood: "Vinewood",
-    address: "Vinewood, Los Santos",
-    verify: true,
+    id: "agency-hawick",
+    display_name: "Hawick Agency",
+    neighborhood: "Hawick",
+    address: "Spanish Avenue, Hawick",
   },
 ];
 

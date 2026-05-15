@@ -23,35 +23,30 @@ const LOCATIONS: LocationSeed[] = [
     display_name: "Mission Row Auto Shop",
     neighborhood: "Mission Row",
     address: "Mission Row, Los Santos",
-    verify: true,
   },
   {
     id: "auto-shop-la-mesa",
     display_name: "La Mesa Auto Shop",
     neighborhood: "La Mesa",
     address: "La Mesa, Los Santos",
-    verify: true,
   },
   {
     id: "auto-shop-strawberry",
     display_name: "Strawberry Auto Shop",
     neighborhood: "Strawberry",
     address: "Strawberry, Los Santos",
-    verify: true,
   },
   {
     id: "auto-shop-rancho",
     display_name: "Rancho Auto Shop",
     neighborhood: "Rancho",
     address: "Rancho, Los Santos",
-    verify: true,
   },
   {
     id: "auto-shop-burton",
     display_name: "Burton Auto Shop",
     neighborhood: "Burton",
     address: "Burton, Los Santos",
-    verify: true,
   },
 ];
 

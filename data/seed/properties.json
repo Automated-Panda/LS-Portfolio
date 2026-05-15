@@ -1,7 +1,85 @@
 [
   {
-    "id": "high-end-apartment-4-integrity-way-apt-30",
-    "display_name": "4 Integrity Way, Apt 30",
+    "id": "high-end-apartment-eclipse-towers",
+    "display_name": "Eclipse Towers",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Eclipse Boulevard, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-eclipse-towers-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-3-alta-st",
+    "display_name": "3 Alta Street",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "3 Alta Street",
+    "neighborhood": "Downtown Vinewood",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-3-alta-st-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-del-perro-heights",
+    "display_name": "Del Perro Heights",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Del Perro Heights",
+    "neighborhood": "Del Perro",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-del-perro-heights-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-4-integrity-way",
+    "display_name": "4 Integrity Way",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
@@ -11,7 +89,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-4-integrity-way-apt-30-garage",
+        "id": "high-end-apartment-4-integrity-way-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -26,96 +104,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-eclipse-towers-apt-3",
-    "display_name": "Eclipse Towers, Apt 3",
+    "id": "high-end-apartment-weazel-plaza",
+    "display_name": "Weazel Plaza",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Eclipse Towers",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-eclipse-towers-apt-3-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-eclipse-towers-apt-31",
-    "display_name": "Eclipse Towers, Apt 31",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Eclipse Towers",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-eclipse-towers-apt-31-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-eclipse-towers-apt-40",
-    "display_name": "Eclipse Towers, Apt 40",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Eclipse Towers",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-eclipse-towers-apt-40-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-del-perro-heights-apt-4",
-    "display_name": "Del Perro Heights, Apt 4",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Del Perro Heights",
+    "location": "Weazel Plaza",
     "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-del-perro-heights-apt-4-garage",
+        "id": "high-end-apartment-weazel-plaza-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -130,18 +130,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-del-perro-heights-apt-7",
-    "display_name": "Del Perro Heights, Apt 7",
+    "id": "high-end-apartment-richards-majestic",
+    "display_name": "Richards Majestic",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Del Perro Heights",
+    "location": "Richards Majestic",
     "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-del-perro-heights-apt-7-garage",
+        "id": "high-end-apartment-richards-majestic-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -156,96 +156,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-del-perro-heights-apt-20",
-    "display_name": "Del Perro Heights, Apt 20",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Del Perro Heights",
-    "neighborhood": "Del Perro",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-del-perro-heights-apt-20-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-tinsel-towers-apt-29",
-    "display_name": "Tinsel Towers, Apt 29",
+    "id": "high-end-apartment-tinsel-towers",
+    "display_name": "Tinsel Towers",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
     "location": "Tinsel Towers",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-tinsel-towers-apt-29-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-tinsel-towers-apt-42",
-    "display_name": "Tinsel Towers, Apt 42",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Tinsel Towers",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-tinsel-towers-apt-42-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-weazel-plaza-apt-26",
-    "display_name": "Weazel Plaza, Apt 26",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "Weazel Plaza",
     "neighborhood": "Downtown Vinewood",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-weazel-plaza-apt-26-garage",
+        "id": "high-end-apartment-tinsel-towers-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -260,18 +182,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-weazel-plaza-apt-70",
-    "display_name": "Weazel Plaza, Apt 70",
+    "id": "high-end-apartment-2862-hillcrest-ave",
+    "display_name": "2862 Hillcrest Avenue",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Weazel Plaza",
-    "neighborhood": "Downtown Vinewood",
+    "location": "2862 Hillcrest Avenue",
+    "neighborhood": "Vinewood Hills",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-weazel-plaza-apt-70-garage",
+        "id": "high-end-apartment-2862-hillcrest-ave-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -286,18 +208,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-weazel-plaza-apt-101",
-    "display_name": "Weazel Plaza, Apt 101",
+    "id": "high-end-apartment-2866-hillcrest-ave",
+    "display_name": "2866 Hillcrest Avenue",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Weazel Plaza",
-    "neighborhood": "Downtown Vinewood",
+    "location": "2866 Hillcrest Avenue",
+    "neighborhood": "Vinewood Hills",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-weazel-plaza-apt-101-garage",
+        "id": "high-end-apartment-2866-hillcrest-ave-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -312,18 +234,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-1561-san-vitas-st-apt-4",
-    "display_name": "1561 San Vitas Street, Apt 4",
+    "id": "high-end-apartment-2868-hillcrest-ave",
+    "display_name": "2868 Hillcrest Avenue",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "1561 San Vitas Street",
-    "neighborhood": "West Vinewood",
+    "location": "2868 Hillcrest Avenue",
+    "neighborhood": "Vinewood Hills",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-1561-san-vitas-st-apt-4-garage",
+        "id": "high-end-apartment-2868-hillcrest-ave-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -338,18 +260,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-0123-atlee-st-apt-27",
-    "display_name": "0123 Atlee Street, Apt 27",
+    "id": "high-end-apartment-2874-hillcrest-ave",
+    "display_name": "2874 Hillcrest Avenue",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "0123 Atlee Street",
-    "neighborhood": "Mirror Park",
+    "location": "2874 Hillcrest Avenue",
+    "neighborhood": "Vinewood Hills",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-0123-atlee-st-apt-27-garage",
+        "id": "high-end-apartment-2874-hillcrest-ave-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -361,7 +283,110 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-2044-north-conker-ave",
+    "display_name": "2044 North Conker Avenue",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "2044 North Conker Avenue",
+    "neighborhood": "Vinewood Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-2044-north-conker-ave-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-2045-north-conker-ave",
+    "display_name": "2045 North Conker Avenue",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "2045 North Conker Avenue",
+    "neighborhood": "Vinewood Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-2045-north-conker-ave-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-2117-milton-rd",
+    "display_name": "2117 Milton Road",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "2117 Milton Road",
+    "neighborhood": "Vinewood Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-2117-milton-rd-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": null
+  },
+  {
+    "id": "high-end-apartment-2113-mad-wayne-thunder-dr",
+    "display_name": "2113 Mad Wayne Thunder Drive",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "2113 Mad Wayne Thunder Drive",
+    "neighborhood": "Vinewood Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "high-end-apartment-2113-mad-wayne-thunder-dr-garage",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
     "image_path": null
   },
   {
@@ -391,45 +416,18 @@
     "image_path": null
   },
   {
-    "id": "high-end-apartment-2044-north-conker-ave",
-    "display_name": "2044 North Conker Avenue",
+    "id": "high-end-apartment-3677-whispymound-dr",
+    "display_name": "3677 Whispymound Drive",
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "2044 North Conker Avenue",
-    "neighborhood": "Rockford Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2044-north-conker-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "high-end-apartment-2862-hillcrest-ave",
-    "display_name": "2862 Hillcrest Avenue",
-    "property_type": "residence",
-    "subtype": "high-end-apartment",
-    "subtype_display": "High-End Apartment",
-    "location": "2862 Hillcrest Avenue",
+    "location": "3677 Whispymound Drive",
     "neighborhood": "Vinewood Hills",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "high-end-apartment-2862-hillcrest-ave-garage",
+        "id": "high-end-apartment-3677-whispymound-dr-garage",
         "display_name": "10-Car Garage",
         "tier": null,
         "capacity": 10,
@@ -441,7 +439,6 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -457,32 +454,6 @@
     "upgrades": [
       {
         "id": "mid-end-apartment-3671-whispymound-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-2113-mad-wayne-thunder-dr",
-    "display_name": "2113 Mad Wayne Thunder Drive",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "2113 Mad Wayne Thunder Drive",
-    "neighborhood": "Rockford Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-2113-mad-wayne-thunder-dr-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -778,33 +749,6 @@
     "upgrades": [
       {
         "id": "mid-end-apartment-1104-las-lagunas-blvd-apt-1-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-2874-hillcrest-ave",
-    "display_name": "2874 Hillcrest Avenue",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "2874 Hillcrest Avenue",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-2874-hillcrest-ave-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -1129,33 +1073,6 @@
     "upgrades": [
       {
         "id": "mid-end-apartment-1237-prosperity-st-apt-14-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-3655-wild-oats-dr-apt-2",
-    "display_name": "3655 Wild Oats Drive, Apt 2",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "3655 Wild Oats Drive",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-3655-wild-oats-dr-apt-2-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -2163,18 +2080,18 @@
     "image_path": null
   },
   {
-    "id": "ceo-office-maze-bank-tower",
-    "display_name": "Maze Bank Tower",
+    "id": "ceo-office-maze-bank-west",
+    "display_name": "Maze Bank West",
     "property_type": "business",
     "subtype": "ceo-office",
     "subtype_display": "CEO Office",
-    "location": "Pillbox Hill, Los Santos",
-    "neighborhood": "Pillbox Hill",
+    "location": "Del Perro, Los Santos",
+    "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "ceo-office-maze-bank-tower-garage-1",
+        "id": "ceo-office-maze-bank-west-garage-1",
         "display_name": "Office Garage Level 1",
         "tier": 1,
         "capacity": 20,
@@ -2182,27 +2099,26 @@
         "notes": null
       },
       {
-        "id": "ceo-office-maze-bank-tower-garage-2",
+        "id": "ceo-office-maze-bank-west-garage-2",
         "display_name": "Office Garage Level 2",
         "tier": 2,
         "capacity": 20,
-        "required_upgrade_id": "ceo-office-maze-bank-tower-garage-1",
+        "required_upgrade_id": "ceo-office-maze-bank-west-garage-1",
         "notes": null
       },
       {
-        "id": "ceo-office-maze-bank-tower-garage-3",
+        "id": "ceo-office-maze-bank-west-garage-3",
         "display_name": "Office Garage Level 3",
         "tier": 3,
         "capacity": 20,
-        "required_upgrade_id": "ceo-office-maze-bank-tower-garage-2",
+        "required_upgrade_id": "ceo-office-maze-bank-west-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total"
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2243,9 +2159,8 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2286,57 +2201,13 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "ceo-office-maze-bank-west",
-    "display_name": "Maze Bank West",
-    "property_type": "business",
-    "subtype": "ceo-office",
-    "subtype_display": "CEO Office",
-    "location": "Del Perro, Los Santos",
-    "neighborhood": "Del Perro",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "ceo-office-maze-bank-west-garage-1",
-        "display_name": "Office Garage Level 1",
-        "tier": 1,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      },
-      {
-        "id": "ceo-office-maze-bank-west-garage-2",
-        "display_name": "Office Garage Level 2",
-        "tier": 2,
-        "capacity": 20,
-        "required_upgrade_id": "ceo-office-maze-bank-west-garage-1",
-        "notes": null
-      },
-      {
-        "id": "ceo-office-maze-bank-west-garage-3",
-        "display_name": "Office Garage Level 3",
-        "tier": 3,
-        "capacity": 20,
-        "required_upgrade_id": "ceo-office-maze-bank-west-garage-2",
-        "notes": "Fully upgraded Office Garage holds 60 vehicles total"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "ceo-office-dynasty8-executive",
-    "display_name": "Dynasty 8 Executive",
+    "id": "ceo-office-maze-bank-tower",
+    "display_name": "Maze Bank Tower",
     "property_type": "business",
     "subtype": "ceo-office",
     "subtype_display": "CEO Office",
@@ -2346,7 +2217,7 @@
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "ceo-office-dynasty8-executive-garage-1",
+        "id": "ceo-office-maze-bank-tower-garage-1",
         "display_name": "Office Garage Level 1",
         "tier": 1,
         "capacity": 20,
@@ -2354,27 +2225,26 @@
         "notes": null
       },
       {
-        "id": "ceo-office-dynasty8-executive-garage-2",
+        "id": "ceo-office-maze-bank-tower-garage-2",
         "display_name": "Office Garage Level 2",
         "tier": 2,
         "capacity": 20,
-        "required_upgrade_id": "ceo-office-dynasty8-executive-garage-1",
+        "required_upgrade_id": "ceo-office-maze-bank-tower-garage-1",
         "notes": null
       },
       {
-        "id": "ceo-office-dynasty8-executive-garage-3",
+        "id": "ceo-office-maze-bank-tower-garage-3",
         "display_name": "Office Garage Level 3",
         "tier": 3,
         "capacity": 20,
-        "required_upgrade_id": "ceo-office-dynasty8-executive-garage-2",
+        "required_upgrade_id": "ceo-office-maze-bank-tower-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total"
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2383,7 +2253,7 @@
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Great Chaparral, Blaine County",
+    "location": "Route 68, Great Chaparral",
     "neighborhood": "Great Chaparral",
     "capacity": 0,
     "counts_as_garage": true,
@@ -2394,68 +2264,13 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mc-clubhouse-grapeseed",
-    "display_name": "Grapeseed Clubhouse",
-    "property_type": "business",
-    "subtype": "mc-clubhouse",
-    "subtype_display": "MC Clubhouse",
-    "location": "Grapeseed, Blaine County",
-    "neighborhood": "Grapeseed",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mc-clubhouse-grapeseed-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mc-clubhouse-paleto-bay",
-    "display_name": "Paleto Bay Clubhouse",
-    "property_type": "business",
-    "subtype": "mc-clubhouse",
-    "subtype_display": "MC Clubhouse",
-    "location": "Paleto Bay, Blaine County",
-    "neighborhood": "Paleto Bay",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mc-clubhouse-paleto-bay-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2464,7 +2279,7 @@
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Sandy Shores, Blaine County",
+    "location": "Algonquin Boulevard, Sandy Shores",
     "neighborhood": "Sandy Shores",
     "capacity": 0,
     "counts_as_garage": true,
@@ -2475,68 +2290,195 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mc-clubhouse-route-68",
-    "display_name": "Route 68 Clubhouse",
+    "id": "mc-clubhouse-paleto-bay-1story",
+    "display_name": "Paleto Bay Clubhouse (1-Story)",
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Route 68, Blaine County",
-    "neighborhood": "Route 68",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mc-clubhouse-route-68-garage",
+        "id": "mc-clubhouse-paleto-bay-1story-garage",
         "display_name": "Clubhouse Garage",
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mc-clubhouse-elysian-island",
-    "display_name": "Elysian Island Clubhouse",
+    "id": "mc-clubhouse-del-perro-beach",
+    "display_name": "Del Perro Beach Clubhouse",
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Elysian Island, Los Santos",
-    "neighborhood": "Elysian Island",
+    "location": "Del Perro Beach, Los Santos",
+    "neighborhood": "Del Perro Beach",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mc-clubhouse-elysian-island-garage",
+        "id": "mc-clubhouse-del-perro-beach-garage",
         "display_name": "Clubhouse Garage",
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "mc-clubhouse-rancho",
+    "display_name": "Rancho Clubhouse",
+    "property_type": "business",
+    "subtype": "mc-clubhouse",
+    "subtype_display": "MC Clubhouse",
+    "location": "Rancho, Los Santos",
+    "neighborhood": "Rancho",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mc-clubhouse-rancho-garage",
+        "display_name": "Clubhouse Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
+    },
+    "image_path": null
+  },
+  {
+    "id": "mc-clubhouse-pillbox-hill",
+    "display_name": "Pillbox Hill Clubhouse",
+    "property_type": "business",
+    "subtype": "mc-clubhouse",
+    "subtype_display": "MC Clubhouse",
+    "location": "Pillbox Hill, Los Santos",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mc-clubhouse-pillbox-hill-garage",
+        "display_name": "Clubhouse Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "1-Story Clubhouse. Motorcycle-only storage."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
+    },
+    "image_path": null
+  },
+  {
+    "id": "mc-clubhouse-grapeseed",
+    "display_name": "Grapeseed Clubhouse",
+    "property_type": "business",
+    "subtype": "mc-clubhouse",
+    "subtype_display": "MC Clubhouse",
+    "location": "East Joshua Road, Grapeseed",
+    "neighborhood": "Grapeseed",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mc-clubhouse-grapeseed-garage",
+        "display_name": "Clubhouse Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
+    },
+    "image_path": null
+  },
+  {
+    "id": "mc-clubhouse-paleto-bay-2story",
+    "display_name": "Paleto Bay Clubhouse (2-Story)",
+    "property_type": "business",
+    "subtype": "mc-clubhouse",
+    "subtype_display": "MC Clubhouse",
+    "location": "Paleto Boulevard, Paleto Bay",
+    "neighborhood": "Paleto Bay",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mc-clubhouse-paleto-bay-2story-garage",
+        "display_name": "Clubhouse Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
+    },
+    "image_path": null
+  },
+  {
+    "id": "mc-clubhouse-vespucci-beach",
+    "display_name": "Vespucci Beach Clubhouse",
+    "property_type": "business",
+    "subtype": "mc-clubhouse",
+    "subtype_display": "MC Clubhouse",
+    "location": "Vespucci Beach, Los Santos",
+    "neighborhood": "Vespucci Beach",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mc-clubhouse-vespucci-beach-garage",
+        "display_name": "Clubhouse Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
+    },
     "image_path": null
   },
   {
@@ -2556,149 +2498,65 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mc-clubhouse-cypress-flats",
-    "display_name": "Cypress Flats Clubhouse",
+    "id": "mc-clubhouse-downtown-vinewood",
+    "display_name": "Downtown Vinewood Clubhouse",
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Cypress Flats, Los Santos",
-    "neighborhood": "Cypress Flats",
+    "location": "Downtown Vinewood, Los Santos",
+    "neighborhood": "Downtown Vinewood",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mc-clubhouse-cypress-flats-garage",
+        "id": "mc-clubhouse-downtown-vinewood-garage",
         "display_name": "Clubhouse Garage",
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mc-clubhouse-strawberry",
-    "display_name": "Strawberry Clubhouse",
+    "id": "mc-clubhouse-hawick",
+    "display_name": "Hawick Clubhouse",
     "property_type": "business",
     "subtype": "mc-clubhouse",
     "subtype_display": "MC Clubhouse",
-    "location": "Strawberry, Los Santos",
-    "neighborhood": "Strawberry",
+    "location": "Hawick Avenue, Hawick",
+    "neighborhood": "Hawick",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mc-clubhouse-strawberry-garage",
+        "id": "mc-clubhouse-hawick-garage",
         "display_name": "Clubhouse Garage",
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": "2-Story Clubhouse. Motorcycle-only storage."
       }
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mc-clubhouse-rockford-hills",
-    "display_name": "Rockford Hills Clubhouse",
-    "property_type": "business",
-    "subtype": "mc-clubhouse",
-    "subtype_display": "MC Clubhouse",
-    "location": "Rockford Hills, Los Santos",
-    "neighborhood": "Rockford Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mc-clubhouse-rockford-hills-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mc-clubhouse-vespucci-canals",
-    "display_name": "Vespucci Canals Clubhouse",
-    "property_type": "business",
-    "subtype": "mc-clubhouse",
-    "subtype_display": "MC Clubhouse",
-    "location": "Vespucci Canals, Los Santos",
-    "neighborhood": "Vespucci Canals",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mc-clubhouse-vespucci-canals-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mc-clubhouse-mission-row",
-    "display_name": "Mission Row Clubhouse",
-    "property_type": "business",
-    "subtype": "mc-clubhouse",
-    "subtype_display": "MC Clubhouse",
-    "location": "Mission Row, Los Santos",
-    "neighborhood": "Mission Row",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mc-clubhouse-mission-row-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2741,7 +2599,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2784,7 +2641,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2827,7 +2683,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2870,7 +2725,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2913,7 +2767,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2956,7 +2809,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -2999,7 +2851,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3042,7 +2893,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3085,7 +2935,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3128,22 +2977,21 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "bunker-zancudo-river",
-    "display_name": "Zancudo River Bunker",
+    "id": "bunker-grand-senora-oilfields",
+    "display_name": "Grand Senora Oilfields Bunker",
     "property_type": "business",
     "subtype": "bunker",
     "subtype_display": "Bunker",
-    "location": "Zancudo River, Blaine County",
-    "neighborhood": "Zancudo River",
+    "location": "Grand Senora Oilfields, Blaine County",
+    "neighborhood": "Grand Senora Oilfields",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "bunker-zancudo-river-personal-quarters",
+        "id": "bunker-grand-senora-oilfields-personal-quarters",
         "display_name": "Personal Quarters",
         "tier": null,
         "capacity": 0,
@@ -3151,7 +2999,7 @@
         "notes": "Does not store personal vehicles directly"
       },
       {
-        "id": "bunker-zancudo-river-vehicle-workshop",
+        "id": "bunker-grand-senora-oilfields-vehicle-workshop",
         "display_name": "Mobile Operations Center Workshop",
         "tier": null,
         "capacity": 0,
@@ -3159,7 +3007,7 @@
         "notes": "Enables MOC modifications"
       },
       {
-        "id": "bunker-zancudo-river-gun-locker",
+        "id": "bunker-grand-senora-oilfields-gun-locker",
         "display_name": "Gun Locker",
         "tier": null,
         "capacity": 0,
@@ -3171,7 +3019,6 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3198,7 +3045,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3225,7 +3071,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3252,22 +3097,21 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "facility-paleto-forest",
-    "display_name": "Paleto Forest Facility",
+    "id": "facility-paleto-bay",
+    "display_name": "Paleto Bay Facility",
     "property_type": "business",
     "subtype": "facility",
     "subtype_display": "Facility",
-    "location": "Paleto Forest, Blaine County",
-    "neighborhood": "Paleto Forest",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "facility-paleto-forest-garage",
+        "id": "facility-paleto-bay-garage",
         "display_name": "Facility Garage",
         "tier": null,
         "capacity": 7,
@@ -3279,7 +3123,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3306,22 +3149,21 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "facility-tataviam-mountains",
-    "display_name": "Tataviam Mountains Facility",
+    "id": "facility-zancudo-river",
+    "display_name": "Zancudo River Facility",
     "property_type": "business",
     "subtype": "facility",
     "subtype_display": "Facility",
-    "location": "Tataviam Mountains, Los Santos County",
-    "neighborhood": "Tataviam Mountains",
+    "location": "Zancudo River, Blaine County",
+    "neighborhood": "Zancudo River",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "facility-tataviam-mountains-garage",
+        "id": "facility-zancudo-river-garage",
         "display_name": "Facility Garage",
         "tier": null,
         "capacity": 7,
@@ -3333,7 +3175,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3360,7 +3201,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3387,22 +3227,21 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "facility-elysian-island",
-    "display_name": "Elysian Island Facility",
+    "id": "facility-grand-senora-desert",
+    "display_name": "Grand Senora Desert Facility",
     "property_type": "business",
     "subtype": "facility",
     "subtype_display": "Facility",
-    "location": "Elysian Island, Los Santos",
-    "neighborhood": "Elysian Island",
+    "location": "Grand Senora Desert, Blaine County",
+    "neighborhood": "Grand Senora Desert",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "facility-elysian-island-garage",
+        "id": "facility-grand-senora-desert-garage",
         "display_name": "Facility Garage",
         "tier": null,
         "capacity": 7,
@@ -3414,88 +3253,6 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "agency-vespucci-canals",
-    "display_name": "Vespucci Canals Agency",
-    "property_type": "business",
-    "subtype": "agency",
-    "subtype_display": "The Agency",
-    "location": "Vespucci Canals, Los Santos",
-    "neighborhood": "Vespucci Canals",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "agency-vespucci-canals-garage",
-        "display_name": "Agency Garage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Agencies",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "agency-hawick",
-    "display_name": "Hawick Agency",
-    "property_type": "business",
-    "subtype": "agency",
-    "subtype_display": "The Agency",
-    "location": "Hawick, Los Santos",
-    "neighborhood": "Hawick",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "agency-hawick-garage",
-        "display_name": "Agency Garage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Agencies",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "agency-rockford-hills",
-    "display_name": "Rockford Hills Agency",
-    "property_type": "business",
-    "subtype": "agency",
-    "subtype_display": "The Agency",
-    "location": "Rockford Hills, Los Santos",
-    "neighborhood": "Rockford Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "agency-rockford-hills-garage",
-        "display_name": "Agency Garage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Agencies",
-      "gtabase": null
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3504,7 +3261,7 @@
     "property_type": "business",
     "subtype": "agency",
     "subtype_display": "The Agency",
-    "location": "Little Seoul, Los Santos",
+    "location": "San Andreas Avenue, Little Seoul",
     "neighborhood": "Little Seoul",
     "capacity": 0,
     "counts_as_garage": true,
@@ -3522,22 +3279,21 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "agency-vinewood",
-    "display_name": "Vinewood Agency",
+    "id": "agency-vespucci-canals",
+    "display_name": "Vespucci Canals Agency",
     "property_type": "business",
     "subtype": "agency",
     "subtype_display": "The Agency",
-    "location": "Vinewood, Los Santos",
-    "neighborhood": "Vinewood",
+    "location": "San Andreas Avenue & Tongva Drive, Vespucci Canals",
+    "neighborhood": "Vespucci Canals",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "agency-vinewood-garage",
+        "id": "agency-vespucci-canals-garage",
         "display_name": "Agency Garage",
         "tier": null,
         "capacity": 20,
@@ -3549,12 +3305,63 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "arcade-paleto-bay",
-    "display_name": "Paleto Bay Arcade (Eight-Bit)",
+    "id": "agency-rockford-hills",
+    "display_name": "Rockford Hills Agency",
+    "property_type": "business",
+    "subtype": "agency",
+    "subtype_display": "The Agency",
+    "location": "Backlot City, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "agency-rockford-hills-garage",
+        "display_name": "Agency Garage",
+        "tier": null,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Agencies",
+      "gtabase": null
+    },
+    "image_path": null
+  },
+  {
+    "id": "agency-hawick",
+    "display_name": "Hawick Agency",
+    "property_type": "business",
+    "subtype": "agency",
+    "subtype_display": "The Agency",
+    "location": "Spanish Avenue, Hawick",
+    "neighborhood": "Hawick",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "agency-hawick-garage",
+        "display_name": "Agency Garage",
+        "tier": null,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Agencies",
+      "gtabase": null
+    },
+    "image_path": null
+  },
+  {
+    "id": "arcade-pixel-petes",
+    "display_name": "Pixel Pete's",
     "property_type": "business",
     "subtype": "arcade",
     "subtype_display": "Arcade",
@@ -3564,7 +3371,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arcade-paleto-bay-garage",
+        "id": "arcade-pixel-petes-garage",
         "display_name": "Arcade Garage",
         "tier": null,
         "capacity": 10,
@@ -3576,12 +3383,11 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "arcade-grapeseed",
-    "display_name": "Pixel Pete's (Grapeseed)",
+    "id": "arcade-wonderama",
+    "display_name": "Wonderama",
     "property_type": "business",
     "subtype": "arcade",
     "subtype_display": "Arcade",
@@ -3591,7 +3397,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arcade-grapeseed-garage",
+        "id": "arcade-wonderama-garage",
         "display_name": "Arcade Garage",
         "tier": null,
         "capacity": 10,
@@ -3603,12 +3409,11 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "arcade-davis",
-    "display_name": "Wonderama (Davis)",
+    "id": "arcade-the-warehouse",
+    "display_name": "The Warehouse",
     "property_type": "business",
     "subtype": "arcade",
     "subtype_display": "Arcade",
@@ -3618,7 +3423,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arcade-davis-garage",
+        "id": "arcade-the-warehouse-garage",
         "display_name": "Arcade Garage",
         "tier": null,
         "capacity": 10,
@@ -3630,12 +3435,11 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "arcade-la-mesa",
-    "display_name": "Insert Coin (La Mesa)",
+    "id": "arcade-videogeddon",
+    "display_name": "Videogeddon",
     "property_type": "business",
     "subtype": "arcade",
     "subtype_display": "Arcade",
@@ -3645,7 +3449,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arcade-la-mesa-garage",
+        "id": "arcade-videogeddon-garage",
         "display_name": "Arcade Garage",
         "tier": null,
         "capacity": 10,
@@ -3657,39 +3461,11 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "arcade-vinewood",
-    "display_name": "Videogeddon (Vinewood)",
-    "property_type": "business",
-    "subtype": "arcade",
-    "subtype_display": "Arcade",
-    "location": "Vinewood Boulevard, Los Santos",
-    "neighborhood": "Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "arcade-vinewood-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Arcades",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "arcade-rockford-hills",
-    "display_name": "Videogeddon (Rockford Hills)",
+    "id": "arcade-insert-coin",
+    "display_name": "Insert Coin",
     "property_type": "business",
     "subtype": "arcade",
     "subtype_display": "Arcade",
@@ -3699,7 +3475,7 @@
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arcade-rockford-hills-garage",
+        "id": "arcade-insert-coin-garage",
         "display_name": "Arcade Garage",
         "tier": null,
         "capacity": 10,
@@ -3711,7 +3487,32 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "arcade-eight-bit",
+    "display_name": "Eight-Bit",
+    "property_type": "business",
+    "subtype": "arcade",
+    "subtype_display": "Arcade",
+    "location": "Vinewood Boulevard, Los Santos",
+    "neighborhood": "Vinewood",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "arcade-eight-bit-garage",
+        "display_name": "Arcade Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "Underground garage for Casino Heist prep vehicles"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Arcades",
+      "gtabase": null
+    },
     "image_path": null
   },
   {
@@ -3738,7 +3539,6 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3765,7 +3565,6 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3792,7 +3591,6 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3819,7 +3617,6 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3846,7 +3643,6 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3873,7 +3669,6 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3900,22 +3695,21 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "salvage-yard-la-mesa",
-    "display_name": "La Mesa Salvage Yard",
+    "id": "salvage-yard-la-puerta",
+    "display_name": "La Puerta Salvage Yard",
     "property_type": "business",
     "subtype": "salvage-yard",
     "subtype_display": "Salvage Yard",
-    "location": "La Mesa, Los Santos",
-    "neighborhood": "La Mesa",
+    "location": "La Puerta, Los Santos",
+    "neighborhood": "La Puerta",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "salvage-yard-la-mesa-tow-truck",
+        "id": "salvage-yard-la-puerta-tow-truck",
         "display_name": "Tow Truck Bay",
         "tier": null,
         "capacity": 1,
@@ -3927,7 +3721,6 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -3954,22 +3747,21 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "salvage-yard-davis",
-    "display_name": "Davis Salvage Yard",
+    "id": "salvage-yard-paleto-bay",
+    "display_name": "Paleto Bay Salvage Yard",
     "property_type": "business",
     "subtype": "salvage-yard",
     "subtype_display": "Salvage Yard",
-    "location": "Davis, Los Santos",
-    "neighborhood": "Davis",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "salvage-yard-davis-tow-truck",
+        "id": "salvage-yard-paleto-bay-tow-truck",
         "display_name": "Tow Truck Bay",
         "tier": null,
         "capacity": 1,
@@ -3981,22 +3773,21 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "vehicle-warehouse-lsia",
-    "display_name": "LSIA Vehicle Warehouse",
+    "id": "vehicle-warehouse-murrieta-heights",
+    "display_name": "Murrieta Heights Vehicle Warehouse",
     "property_type": "business",
     "subtype": "vehicle-warehouse",
     "subtype_display": "Vehicle Warehouse",
-    "location": "Los Santos International Airport, Los Santos",
-    "neighborhood": "Los Santos International Airport",
+    "location": "Murrieta Heights, Los Santos",
+    "neighborhood": "Murrieta Heights",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "vehicle-warehouse-lsia-storage",
+        "id": "vehicle-warehouse-murrieta-heights-storage",
         "display_name": "Vehicle Warehouse Storage",
         "tier": null,
         "capacity": 40,
@@ -4008,7 +3799,6 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4035,7 +3825,6 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4062,22 +3851,21 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "vehicle-warehouse-el-burro-heights",
-    "display_name": "El Burro Heights Vehicle Warehouse",
+    "id": "vehicle-warehouse-davis",
+    "display_name": "Davis Vehicle Warehouse",
     "property_type": "business",
     "subtype": "vehicle-warehouse",
     "subtype_display": "Vehicle Warehouse",
-    "location": "El Burro Heights, Los Santos",
-    "neighborhood": "El Burro Heights",
+    "location": "Davis, Los Santos",
+    "neighborhood": "Davis",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "vehicle-warehouse-el-burro-heights-storage",
+        "id": "vehicle-warehouse-davis-storage",
         "display_name": "Vehicle Warehouse Storage",
         "tier": null,
         "capacity": 40,
@@ -4089,7 +3877,6 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4116,7 +3903,32 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "hangar-lsia-a17",
+    "display_name": "LSIA Hangar A17",
+    "property_type": "business",
+    "subtype": "hangar",
+    "subtype_display": "Hangar",
+    "location": "Los Santos International Airport, Hangar A17",
+    "neighborhood": "Los Santos International Airport",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [
+      {
+        "id": "hangar-lsia-a17-storage",
+        "display_name": "Hangar Storage",
+        "tier": null,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Stores planes and helicopters; not garage vehicles"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Hangar",
+      "gtabase": null
+    },
     "image_path": null
   },
   {
@@ -4125,8 +3937,8 @@
     "property_type": "business",
     "subtype": "hangar",
     "subtype_display": "Hangar",
-    "location": "Los Santos International Airport",
-    "neighborhood": "LSIA",
+    "location": "Los Santos International Airport, Hangar 1",
+    "neighborhood": "Los Santos International Airport",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
@@ -4143,76 +3955,21 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "hangar-lsia-3499",
-    "display_name": "LSIA Hangar 3499",
+    "id": "hangar-fort-zancudo-3497",
+    "display_name": "Fort Zancudo Hangar 3497",
     "property_type": "business",
     "subtype": "hangar",
     "subtype_display": "Hangar",
-    "location": "Los Santos International Airport, Hangar 3499",
-    "neighborhood": "LSIA",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "hangar-lsia-3499-storage",
-        "display_name": "Hangar Storage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Hangar",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "hangar-lsia-3497",
-    "display_name": "LSIA Hangar 3497",
-    "property_type": "business",
-    "subtype": "hangar",
-    "subtype_display": "Hangar",
-    "location": "Los Santos International Airport, Hangar 3497",
-    "neighborhood": "LSIA",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "hangar-lsia-3497-storage",
-        "display_name": "Hangar Storage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Hangar",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "hangar-fort-zancudo-a17",
-    "display_name": "Fort Zancudo Hangar A17",
-    "property_type": "business",
-    "subtype": "hangar",
-    "subtype_display": "Hangar",
-    "location": "Fort Zancudo, Blaine County",
+    "location": "Fort Zancudo, Hangar 3497",
     "neighborhood": "Fort Zancudo",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "hangar-fort-zancudo-a17-storage",
+        "id": "hangar-fort-zancudo-3497-storage",
         "display_name": "Hangar Storage",
         "tier": null,
         "capacity": 20,
@@ -4224,7 +3981,32 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "hangar-fort-zancudo-3499",
+    "display_name": "Fort Zancudo Hangar 3499",
+    "property_type": "business",
+    "subtype": "hangar",
+    "subtype_display": "Hangar",
+    "location": "Fort Zancudo, Hangar 3499",
+    "neighborhood": "Fort Zancudo",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [
+      {
+        "id": "hangar-fort-zancudo-3499-storage",
+        "display_name": "Hangar Storage",
+        "tier": null,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Stores planes and helicopters; not garage vehicles"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Hangar",
+      "gtabase": null
+    },
     "image_path": null
   },
   {
@@ -4233,7 +4015,7 @@
     "property_type": "business",
     "subtype": "hangar",
     "subtype_display": "Hangar",
-    "location": "Fort Zancudo, Blaine County",
+    "location": "Fort Zancudo, Hangar A2",
     "neighborhood": "Fort Zancudo",
     "capacity": 0,
     "counts_as_garage": false,
@@ -4251,7 +4033,6 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4435,7 +4216,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4502,7 +4282,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4569,7 +4348,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4636,7 +4414,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4703,7 +4480,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4770,7 +4546,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4837,7 +4612,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4904,7 +4678,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4971,7 +4744,6 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -5012,138 +4784,8 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-coke-grand-senora",
-    "display_name": "Grand Senora Desert Cocaine Lockup",
-    "property_type": "business",
-    "subtype": "biker-business-coke",
-    "subtype_display": "Cocaine Lockup",
-    "location": "Grand Senora Desert, Blaine County",
-    "neighborhood": "Grand Senora Desert",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-coke-grand-senora-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-coke-grand-senora-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-coke-grand-senora-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-coke-paleto-bay",
-    "display_name": "Paleto Bay Cocaine Lockup",
-    "property_type": "business",
-    "subtype": "biker-business-coke",
-    "subtype_display": "Cocaine Lockup",
-    "location": "Paleto Bay, Blaine County",
-    "neighborhood": "Paleto Bay",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-coke-paleto-bay-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-coke-paleto-bay-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-coke-paleto-bay-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-coke-san-chianski",
-    "display_name": "San Chianski Mountain Range Cocaine Lockup",
-    "property_type": "business",
-    "subtype": "biker-business-coke",
-    "subtype_display": "Cocaine Lockup",
-    "location": "San Chianski Mountain Range, Blaine County",
-    "neighborhood": "San Chianski Mountain Range",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-coke-san-chianski-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-coke-san-chianski-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-coke-san-chianski-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -5184,24 +4826,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-coke-terminal",
-    "display_name": "Terminal Cocaine Lockup",
+    "id": "biker-business-coke-morningwood",
+    "display_name": "Morningwood Cocaine Lockup",
     "property_type": "business",
     "subtype": "biker-business-coke",
     "subtype_display": "Cocaine Lockup",
-    "location": "Terminal, Los Santos",
-    "neighborhood": "Terminal",
+    "location": "Morningwood, Los Santos",
+    "neighborhood": "Morningwood",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-coke-terminal-equipment",
+        "id": "biker-business-coke-morningwood-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5209,7 +4850,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-coke-terminal-staff",
+        "id": "biker-business-coke-morningwood-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5217,7 +4858,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-coke-terminal-security",
+        "id": "biker-business-coke-morningwood-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5227,24 +4868,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-meth-alamo-sea",
-    "display_name": "Alamo Sea Meth Lab",
+    "id": "biker-business-coke-paleto-bay",
+    "display_name": "Paleto Bay Cocaine Lockup",
     "property_type": "business",
-    "subtype": "biker-business-meth",
-    "subtype_display": "Meth Lab",
-    "location": "Alamo Sea, Blaine County",
-    "neighborhood": "Alamo Sea",
+    "subtype": "biker-business-coke",
+    "subtype_display": "Cocaine Lockup",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-meth-alamo-sea-equipment",
+        "id": "biker-business-coke-paleto-bay-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5252,7 +4892,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-meth-alamo-sea-staff",
+        "id": "biker-business-coke-paleto-bay-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5260,7 +4900,49 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-meth-alamo-sea-security",
+        "id": "biker-business-coke-paleto-bay-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
+    },
+    "image_path": null
+  },
+  {
+    "id": "biker-business-meth-el-burro-heights",
+    "display_name": "El Burro Heights Meth Lab",
+    "property_type": "business",
+    "subtype": "biker-business-meth",
+    "subtype_display": "Meth Lab",
+    "location": "El Burro Heights, Los Santos",
+    "neighborhood": "El Burro Heights",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [
+      {
+        "id": "biker-business-meth-el-burro-heights-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases production speed"
+      },
+      {
+        "id": "biker-business-meth-el-burro-heights-staff",
+        "display_name": "Staff Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases production quality"
+      },
+      {
+        "id": "biker-business-meth-el-burro-heights-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5270,24 +4952,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-meth-grapeseed",
-    "display_name": "Grapeseed Meth Lab",
+    "id": "biker-business-meth-grand-senora-desert",
+    "display_name": "Grand Senora Desert Meth Lab",
     "property_type": "business",
     "subtype": "biker-business-meth",
     "subtype_display": "Meth Lab",
-    "location": "Grapeseed, Blaine County",
-    "neighborhood": "Grapeseed",
+    "location": "Grand Senora Desert, Blaine County",
+    "neighborhood": "Grand Senora Desert",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-meth-grapeseed-equipment",
+        "id": "biker-business-meth-grand-senora-desert-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5295,7 +4976,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-meth-grapeseed-staff",
+        "id": "biker-business-meth-grand-senora-desert-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5303,7 +4984,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-meth-grapeseed-security",
+        "id": "biker-business-meth-grand-senora-desert-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5313,9 +4994,8 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -5356,24 +5036,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-meth-route-68",
-    "display_name": "Route 68 Meth Lab",
+    "id": "biker-business-meth-terminal",
+    "display_name": "Terminal Meth Lab",
     "property_type": "business",
     "subtype": "biker-business-meth",
     "subtype_display": "Meth Lab",
-    "location": "Route 68, Blaine County",
-    "neighborhood": "Route 68",
+    "location": "Terminal, Los Santos",
+    "neighborhood": "Terminal",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-meth-route-68-equipment",
+        "id": "biker-business-meth-terminal-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5381,7 +5060,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-meth-route-68-staff",
+        "id": "biker-business-meth-terminal-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5389,7 +5068,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-meth-route-68-security",
+        "id": "biker-business-meth-terminal-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5399,24 +5078,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-meth-cypress-flats",
-    "display_name": "Cypress Flats Meth Lab",
+    "id": "biker-business-weed-vinewood-downtown",
+    "display_name": "Downtown Vinewood Weed Farm",
     "property_type": "business",
-    "subtype": "biker-business-meth",
-    "subtype_display": "Meth Lab",
-    "location": "Cypress Flats, Los Santos",
-    "neighborhood": "Cypress Flats",
+    "subtype": "biker-business-weed",
+    "subtype_display": "Weed Farm",
+    "location": "Downtown Vinewood, Los Santos",
+    "neighborhood": "Downtown Vinewood",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-meth-cypress-flats-equipment",
+        "id": "biker-business-weed-vinewood-downtown-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5424,7 +5102,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-meth-cypress-flats-staff",
+        "id": "biker-business-weed-vinewood-downtown-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5432,7 +5110,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-meth-cypress-flats-security",
+        "id": "biker-business-weed-vinewood-downtown-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5441,25 +5119,24 @@
       }
     ],
     "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
+      "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-meth-elysian-island",
-    "display_name": "Elysian Island Meth Lab",
+    "id": "biker-business-weed-elysian-island",
+    "display_name": "Elysian Island Weed Farm",
     "property_type": "business",
-    "subtype": "biker-business-meth",
-    "subtype_display": "Meth Lab",
+    "subtype": "biker-business-weed",
+    "subtype_display": "Weed Farm",
     "location": "Elysian Island, Los Santos",
     "neighborhood": "Elysian Island",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-meth-elysian-island-equipment",
+        "id": "biker-business-weed-elysian-island-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5467,7 +5144,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-meth-elysian-island-staff",
+        "id": "biker-business-weed-elysian-island-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5475,50 +5152,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-meth-elysian-island-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-weed-alamo-sea",
-    "display_name": "Alamo Sea Weed Farm",
-    "property_type": "business",
-    "subtype": "biker-business-weed",
-    "subtype_display": "Weed Farm",
-    "location": "Alamo Sea, Blaine County",
-    "neighborhood": "Alamo Sea",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-weed-alamo-sea-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-weed-alamo-sea-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-weed-alamo-sea-security",
+        "id": "biker-business-weed-elysian-island-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5528,24 +5162,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-weed-grapeseed",
-    "display_name": "Grapeseed Weed Farm",
+    "id": "biker-business-weed-mount-chiliad",
+    "display_name": "Mount Chiliad Weed Farm",
     "property_type": "business",
     "subtype": "biker-business-weed",
     "subtype_display": "Weed Farm",
-    "location": "Grapeseed, Blaine County",
-    "neighborhood": "Grapeseed",
+    "location": "Mount Chiliad, Blaine County",
+    "neighborhood": "Mount Chiliad",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-weed-grapeseed-equipment",
+        "id": "biker-business-weed-mount-chiliad-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5553,7 +5186,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-weed-grapeseed-staff",
+        "id": "biker-business-weed-mount-chiliad-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5561,7 +5194,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-weed-grapeseed-security",
+        "id": "biker-business-weed-mount-chiliad-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5571,24 +5204,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-weed-grand-senora",
-    "display_name": "Grand Senora Desert Weed Farm",
+    "id": "biker-business-weed-san-chianski",
+    "display_name": "San Chianski Weed Farm",
     "property_type": "business",
     "subtype": "biker-business-weed",
     "subtype_display": "Weed Farm",
-    "location": "Grand Senora Desert, Blaine County",
-    "neighborhood": "Grand Senora Desert",
+    "location": "San Chianski Mountain Range, Blaine County",
+    "neighborhood": "San Chianski Mountain Range",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-weed-grand-senora-equipment",
+        "id": "biker-business-weed-san-chianski-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5596,7 +5228,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-weed-grand-senora-staff",
+        "id": "biker-business-weed-san-chianski-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5604,7 +5236,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-weed-grand-senora-security",
+        "id": "biker-business-weed-san-chianski-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5614,110 +5246,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-weed-paleto-bay",
-    "display_name": "Paleto Bay Weed Farm",
+    "id": "biker-business-cash-cypress-flats",
+    "display_name": "Cypress Flats Counterfeit Cash",
     "property_type": "business",
-    "subtype": "biker-business-weed",
-    "subtype_display": "Weed Farm",
-    "location": "Paleto Bay, Blaine County",
-    "neighborhood": "Paleto Bay",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-weed-paleto-bay-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-weed-paleto-bay-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-weed-paleto-bay-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-weed-sandy-shores",
-    "display_name": "Sandy Shores Weed Farm",
-    "property_type": "business",
-    "subtype": "biker-business-weed",
-    "subtype_display": "Weed Farm",
-    "location": "Sandy Shores, Blaine County",
-    "neighborhood": "Sandy Shores",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-weed-sandy-shores-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-weed-sandy-shores-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-weed-sandy-shores-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-weed-cypress-flats",
-    "display_name": "Cypress Flats Weed Farm",
-    "property_type": "business",
-    "subtype": "biker-business-weed",
-    "subtype_display": "Weed Farm",
+    "subtype": "biker-business-cash",
+    "subtype_display": "Counterfeit Cash Factory",
     "location": "Cypress Flats, Los Santos",
     "neighborhood": "Cypress Flats",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-weed-cypress-flats-equipment",
+        "id": "biker-business-cash-cypress-flats-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5725,7 +5270,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-weed-cypress-flats-staff",
+        "id": "biker-business-cash-cypress-flats-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5733,50 +5278,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-weed-cypress-flats-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-cash-alamo-sea",
-    "display_name": "Alamo Sea Counterfeit Cash Factory",
-    "property_type": "business",
-    "subtype": "biker-business-cash",
-    "subtype_display": "Counterfeit Cash Factory",
-    "location": "Alamo Sea, Blaine County",
-    "neighborhood": "Alamo Sea",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-cash-alamo-sea-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-cash-alamo-sea-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-cash-alamo-sea-security",
+        "id": "biker-business-cash-cypress-flats-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5786,14 +5288,13 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-cash-grand-senora",
-    "display_name": "Grand Senora Desert Counterfeit Cash Factory",
+    "id": "biker-business-cash-grand-senora-desert",
+    "display_name": "Grand Senora Desert Counterfeit Cash",
     "property_type": "business",
     "subtype": "biker-business-cash",
     "subtype_display": "Counterfeit Cash Factory",
@@ -5803,7 +5304,7 @@
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-cash-grand-senora-equipment",
+        "id": "biker-business-cash-grand-senora-desert-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5811,7 +5312,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-cash-grand-senora-staff",
+        "id": "biker-business-cash-grand-senora-desert-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5819,7 +5320,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-cash-grand-senora-security",
+        "id": "biker-business-cash-grand-senora-desert-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5829,14 +5330,13 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
     "id": "biker-business-cash-paleto-bay",
-    "display_name": "Paleto Bay Counterfeit Cash Factory",
+    "display_name": "Paleto Bay Counterfeit Cash",
     "property_type": "business",
     "subtype": "biker-business-cash",
     "subtype_display": "Counterfeit Cash Factory",
@@ -5872,24 +5372,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-cash-route-68",
-    "display_name": "Route 68 Counterfeit Cash Factory",
+    "id": "biker-business-cash-vespucci-canals",
+    "display_name": "Vespucci Canals Counterfeit Cash",
     "property_type": "business",
     "subtype": "biker-business-cash",
     "subtype_display": "Counterfeit Cash Factory",
-    "location": "Route 68, Blaine County",
-    "neighborhood": "Route 68",
+    "location": "Vespucci Canals, Los Santos",
+    "neighborhood": "Vespucci Canals",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-cash-route-68-equipment",
+        "id": "biker-business-cash-vespucci-canals-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5897,7 +5396,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-cash-route-68-staff",
+        "id": "biker-business-cash-vespucci-canals-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5905,7 +5404,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-cash-route-68-security",
+        "id": "biker-business-cash-vespucci-canals-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5915,67 +5414,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-cash-la-mesa",
-    "display_name": "La Mesa Counterfeit Cash Factory",
+    "id": "biker-business-forgery-elysian-island",
+    "display_name": "Elysian Island Document Forgery",
     "property_type": "business",
-    "subtype": "biker-business-cash",
-    "subtype_display": "Counterfeit Cash Factory",
-    "location": "La Mesa, Los Santos",
-    "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-cash-la-mesa-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-cash-la-mesa-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-cash-la-mesa-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-cash-elysian-island",
-    "display_name": "Elysian Island Counterfeit Cash Factory",
-    "property_type": "business",
-    "subtype": "biker-business-cash",
-    "subtype_display": "Counterfeit Cash Factory",
+    "subtype": "biker-business-forgery",
+    "subtype_display": "Document Forgery Office",
     "location": "Elysian Island, Los Santos",
     "neighborhood": "Elysian Island",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-cash-elysian-island-equipment",
+        "id": "biker-business-forgery-elysian-island-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5983,7 +5438,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-cash-elysian-island-staff",
+        "id": "biker-business-forgery-elysian-island-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -5991,50 +5446,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-cash-elysian-island-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-forgery-alamo-sea",
-    "display_name": "Alamo Sea Document Forgery Office",
-    "property_type": "business",
-    "subtype": "biker-business-forgery",
-    "subtype_display": "Document Forgery Office",
-    "location": "Alamo Sea, Blaine County",
-    "neighborhood": "Alamo Sea",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-forgery-alamo-sea-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-forgery-alamo-sea-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-forgery-alamo-sea-security",
+        "id": "biker-business-forgery-elysian-island-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6044,14 +5456,13 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
     "id": "biker-business-forgery-grapeseed",
-    "display_name": "Grapeseed Document Forgery Office",
+    "display_name": "Grapeseed Document Forgery",
     "property_type": "business",
     "subtype": "biker-business-forgery",
     "subtype_display": "Document Forgery Office",
@@ -6087,24 +5498,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-forgery-grand-senora",
-    "display_name": "Grand Senora Desert Document Forgery Office",
+    "id": "biker-business-forgery-paleto-bay",
+    "display_name": "Paleto Bay Document Forgery",
     "property_type": "business",
     "subtype": "biker-business-forgery",
     "subtype_display": "Document Forgery Office",
-    "location": "Grand Senora Desert, Blaine County",
-    "neighborhood": "Grand Senora Desert",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-forgery-grand-senora-equipment",
+        "id": "biker-business-forgery-paleto-bay-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6112,7 +5522,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-forgery-grand-senora-staff",
+        "id": "biker-business-forgery-paleto-bay-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6120,7 +5530,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-forgery-grand-senora-security",
+        "id": "biker-business-forgery-paleto-bay-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6130,24 +5540,23 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "biker-business-forgery-sandy-shores",
-    "display_name": "Sandy Shores Document Forgery Office",
+    "id": "biker-business-forgery-textile-city",
+    "display_name": "Textile City Document Forgery",
     "property_type": "business",
     "subtype": "biker-business-forgery",
     "subtype_display": "Document Forgery Office",
-    "location": "Sandy Shores, Blaine County",
-    "neighborhood": "Sandy Shores",
+    "location": "Textile City, Los Santos",
+    "neighborhood": "Textile City",
     "capacity": 0,
     "counts_as_garage": false,
     "upgrades": [
       {
-        "id": "biker-business-forgery-sandy-shores-equipment",
+        "id": "biker-business-forgery-textile-city-equipment",
         "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6155,7 +5564,7 @@
         "notes": "Increases production speed"
       },
       {
-        "id": "biker-business-forgery-sandy-shores-staff",
+        "id": "biker-business-forgery-textile-city-staff",
         "display_name": "Staff Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6163,7 +5572,7 @@
         "notes": "Increases production quality"
       },
       {
-        "id": "biker-business-forgery-sandy-shores-security",
+        "id": "biker-business-forgery-textile-city-security",
         "display_name": "Security Upgrade",
         "tier": null,
         "capacity": 0,
@@ -6173,95 +5582,8 @@
     ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-forgery-cypress-flats",
-    "display_name": "Cypress Flats Document Forgery Office",
-    "property_type": "business",
-    "subtype": "biker-business-forgery",
-    "subtype_display": "Document Forgery Office",
-    "location": "Cypress Flats, Los Santos",
-    "neighborhood": "Cypress Flats",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-forgery-cypress-flats-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-forgery-cypress-flats-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-forgery-cypress-flats-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "biker-business-forgery-la-mesa",
-    "display_name": "La Mesa Document Forgery Office",
-    "property_type": "business",
-    "subtype": "biker-business-forgery",
-    "subtype_display": "Document Forgery Office",
-    "location": "La Mesa, Los Santos",
-    "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "biker-business-forgery-la-mesa-equipment",
-        "display_name": "Equipment Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production speed"
-      },
-      {
-        "id": "biker-business-forgery-la-mesa-staff",
-        "display_name": "Staff Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Increases production quality"
-      },
-      {
-        "id": "biker-business-forgery-la-mesa-security",
-        "display_name": "Security Upgrade",
-        "tier": null,
-        "capacity": 0,
-        "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
-      "gtabase": null
-    },
-    "verify": true,
     "image_path": null
   }
 ]
