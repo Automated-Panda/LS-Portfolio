@@ -5,14 +5,23 @@ import type {
   PropertyType,
 } from "@/lib/properties";
 
+export type PropertyScope = "properties" | "businesses";
+
 export type PropertiesBrowserData = {
+  scope: PropertyScope;
   properties: PropertySummary[];
   ownedPropertyIds: string[];
   filters: PropertyFilterOptions;
 };
 
+const SCOPE_TYPES: Record<PropertyScope, PropertyType[]> = {
+  properties: ["residence", "garage", "special"],
+  businesses: ["business"],
+};
+
 export async function getPropertiesBrowserData(
   userId: string,
+  scope: PropertyScope,
 ): Promise<PropertiesBrowserData> {
   const supabase = await createClient();
 
@@ -27,6 +36,7 @@ export async function getPropertiesBrowserData(
          location, neighborhood, capacity, image_path, counts_as_garage,
          property_upgrades ( capacity )`,
       )
+      .in("property_type", SCOPE_TYPES[scope])
       .order("subtype_display", { ascending: true })
       .order("display_name", { ascending: true }),
     supabase
@@ -56,10 +66,9 @@ export async function getPropertiesBrowserData(
 
   const properties: PropertySummary[] = raw.map((p) => {
     const upgrades = p.property_upgrades ?? [];
-    const upgradeMax = upgrades.reduce(
-      (m, u) => Math.max(m, u.capacity ?? 0),
-      0,
-    );
+    // Phase 4b semantics: upgrades are stackable increments — a fully-
+    // upgraded property's capacity is base + every upgrade's contribution.
+    const upgradeSum = upgrades.reduce((sum, u) => sum + (u.capacity ?? 0), 0);
     return {
       id: p.id,
       display_name: p.display_name,
@@ -71,7 +80,7 @@ export async function getPropertiesBrowserData(
       capacity: p.capacity,
       image_path: p.image_path,
       counts_as_garage: p.counts_as_garage,
-      max_capacity: Math.max(p.capacity, upgradeMax),
+      max_capacity: p.capacity + upgradeSum,
       upgrade_count: upgrades.length,
     };
   });
@@ -88,6 +97,7 @@ export async function getPropertiesBrowserData(
   const typeOrder: PropertyType[] = ["residence", "garage", "business", "special"];
 
   return {
+    scope,
     properties,
     ownedPropertyIds: (ownedRows ?? []).map((r) => r.property_id),
     filters: {

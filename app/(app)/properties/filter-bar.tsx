@@ -27,9 +27,14 @@ type Props = {
   /** Slim slice of all properties — used to compute which subtypes are
    *  present for the currently selected type filter. */
   propertiesIndex: Pick<PropertySummary, "subtype" | "property_type">[];
+  searchPlaceholder?: string;
 };
 
-export function FilterBar({ filters, propertiesIndex }: Props) {
+export function FilterBar({
+  filters,
+  propertiesIndex,
+  searchPlaceholder = "Search properties…",
+}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -96,45 +101,47 @@ export function FilterBar({ filters, propertiesIndex }: Props) {
 
   return (
     <div className="space-y-3">
-      {/* Type pill row */}
-      <div className="flex flex-wrap gap-1.5">
-        <button
-          type="button"
-          onClick={() => setType("")}
-          className="focus:outline-none"
-        >
-          <Badge
-            variant={!type ? "default" : "outline"}
-            className={cn(
-              "cursor-pointer transition-colors",
-              type && "hover:bg-accent",
-            )}
+      {/* Type pill row — only shown when 2+ types are in scope */}
+      {filters.types.length >= 2 && (
+        <div className="flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={() => setType("")}
+            className="focus:outline-none"
           >
-            All
-          </Badge>
-        </button>
-        {filters.types.map((t) => {
-          const active = type === t;
-          return (
-            <button
-              key={t}
-              type="button"
-              onClick={() => setType(t)}
-              className="focus:outline-none"
+            <Badge
+              variant={!type ? "default" : "outline"}
+              className={cn(
+                "cursor-pointer transition-colors",
+                type && "hover:bg-accent",
+              )}
             >
-              <Badge
-                variant={active ? "default" : "outline"}
-                className={cn(
-                  "cursor-pointer transition-colors",
-                  !active && "hover:bg-accent",
-                )}
+              All
+            </Badge>
+          </button>
+          {filters.types.map((t) => {
+            const active = type === t;
+            return (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setType(t)}
+                className="focus:outline-none"
               >
-                {formatPropertyType(t)}
-              </Badge>
-            </button>
-          );
-        })}
-      </div>
+                <Badge
+                  variant={active ? "default" : "outline"}
+                  className={cn(
+                    "cursor-pointer transition-colors",
+                    !active && "hover:bg-accent",
+                  )}
+                >
+                  {formatPropertyType(t)}
+                </Badge>
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {/* Subtype pill row — only shown when 2+ subtypes are available */}
       {visibleSubtypes.length >= 2 && (
@@ -181,7 +188,7 @@ export function FilterBar({ filters, propertiesIndex }: Props) {
       {/* Search + neighborhood + clear */}
       <div className="flex flex-wrap items-center gap-2">
         <Input
-          placeholder="Search properties…"
+          placeholder={searchPlaceholder}
           value={searchDraft}
           onChange={(e) => setSearchDraft(e.target.value)}
           className="max-w-xs"

@@ -3,9 +3,9 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getPropertiesBrowserData } from "@/lib/queries/properties";
 
-import { PropertiesBrowser } from "./properties-browser";
+import { PropertiesBrowser } from "../properties/properties-browser";
 
-export default async function PropertiesPage() {
+export default async function BusinessesPage() {
   const supabase = await createClient();
   const {
     data: { user },
@@ -13,7 +13,7 @@ export default async function PropertiesPage() {
 
   if (!user) redirect("/login");
 
-  const data = await getPropertiesBrowserData(user.id, "properties");
+  const data = await getPropertiesBrowserData(user.id, "businesses");
 
   return <PropertiesBrowser {...data} />;
 }

@@ -33,6 +33,7 @@ export const NAV_SECTIONS: NavSection[] = [
     items: [
       { label: "All Vehicles", href: "/vehicles", icon: Car },
       { label: "All Properties", href: "/properties", icon: Building2 },
+      { label: "All Businesses", href: "/businesses", icon: Briefcase },
       { label: "Visual Garage", href: "/garage", icon: Grid3x3 },
     ],
   },
