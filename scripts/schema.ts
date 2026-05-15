@@ -48,7 +48,11 @@ export const PropertySchema = z.object({
   id: z.string().min(1),
   display_name: z.string().min(1),
   property_type: z.enum(["business", "residence", "garage", "special"]),
+  subtype: z.string().min(1),
+  subtype_display: z.string().min(1),
   location: z.string().nullable(),
+  neighborhood: z.string().nullable(),
+  capacity: z.number().int().min(0),
   image_path: z.string().min(1).nullable(),
   counts_as_garage: z.boolean(),
   upgrades: z.array(PropertyUpgradeSchema),
@@ -56,6 +60,7 @@ export const PropertySchema = z.object({
     fandom: z.string().url().nullable(),
     gtabase: z.string().url().nullable(),
   }),
+  verify: z.boolean().optional(),
 });
 export const PropertiesFileSchema = z.array(PropertySchema);
 

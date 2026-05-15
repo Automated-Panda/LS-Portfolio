@@ -1,154 +1,62 @@
 [
   {
-    "id": "high-end-apartment",
-    "display_name": "High-End Apartment",
-    "property_type": "residence",
-    "location": "Various",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/gta-online/property-types/"
-    },
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage",
-    "display_name": "Stand-Alone Garage",
-    "property_type": "garage",
-    "location": "Various",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-small",
-        "display_name": "2-Car Garage",
-        "tier": 1,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      },
-      {
-        "id": "stand-alone-garage-medium",
-        "display_name": "6-Car Garage",
-        "tier": 2,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      },
-      {
-        "id": "stand-alone-garage-large",
-        "display_name": "10-Car Garage",
-        "tier": 3,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "eclipse-blvd-garages",
-    "display_name": "Eclipse Blvd Garages",
-    "property_type": "garage",
-    "location": "Eclipse Boulevard, Vinewood",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "eclipse-blvd-garages-all",
-        "display_name": "50-Car Garage",
-        "tier": null,
-        "capacity": 50,
-        "required_upgrade_id": null,
-        "notes": "Available as single purchase with all floors"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Eclipse_Boulevard_Garages",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "office-garage",
-    "display_name": "Office Garage",
-    "property_type": "garage",
-    "location": "CEO Office Extension",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "office-garage-floor-1",
-        "display_name": "Garage Level 1",
-        "tier": 1,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      },
-      {
-        "id": "office-garage-floor-2",
-        "display_name": "Garage Level 2",
-        "tier": 2,
-        "capacity": 20,
-        "required_upgrade_id": "office-garage-floor-1",
-        "notes": null
-      },
-      {
-        "id": "office-garage-floor-3",
-        "display_name": "Garage Level 3",
-        "tier": 3,
-        "capacity": 20,
-        "required_upgrade_id": "office-garage-floor-2",
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/executive-offices"
-    },
-    "image_path": null
-  },
-  {
-    "id": "nightclub",
-    "display_name": "Nightclub",
+    "id": "nightclub-la-mesa",
+    "display_name": "La Mesa Nightclub",
     "property_type": "business",
-    "location": "Various",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "1618 Popular St",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "nightclub-garage-1",
-        "display_name": "Garage Level 1",
+        "id": "nightclub-la-mesa-garage-1",
+        "display_name": "Storage Garage Level 1",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
         "notes": null
       },
       {
-        "id": "nightclub-garage-2",
-        "display_name": "Garage Level 2",
+        "id": "nightclub-la-mesa-garage-2",
+        "display_name": "Storage Garage Level 2",
         "tier": 2,
         "capacity": 10,
-        "required_upgrade_id": "nightclub-garage-1",
+        "required_upgrade_id": "nightclub-la-mesa-garage-1",
         "notes": null
       },
       {
-        "id": "nightclub-garage-3",
-        "display_name": "Garage Level 3",
+        "id": "nightclub-la-mesa-garage-3",
+        "display_name": "Storage Garage Level 3",
         "tier": 3,
         "capacity": 11,
-        "required_upgrade_id": "nightclub-garage-2",
+        "required_upgrade_id": "nightclub-la-mesa-garage-2",
         "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-la-mesa-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-la-mesa-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-la-mesa-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
       }
     ],
     "_sources": {
@@ -158,223 +66,606 @@
     "image_path": null
   },
   {
-    "id": "facility",
-    "display_name": "Facility",
+    "id": "nightclub-mission-row",
+    "display_name": "Mission Row Nightclub",
     "property_type": "business",
-    "location": "Various",
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "facility-garage",
-        "display_name": "Facility Garage",
-        "tier": null,
-        "capacity": 7,
-        "required_upgrade_id": null,
-        "notes": "Stores Avenger, MOC, TM-02 Khanjali, RCV, and other Doomsday vehicles"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Facility",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "arena-workshop",
-    "display_name": "Arena Workshop",
-    "property_type": "business",
-    "location": "Maze Bank Arena",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "South Mo Milton Drive",
+    "neighborhood": "Mission Row",
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "arena-workshop-garage",
-        "display_name": "Workshop Garage",
-        "tier": null,
-        "capacity": 30,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Arena_Workshop",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "agency",
-    "display_name": "The Agency",
-    "property_type": "business",
-    "location": "Various",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "agency-garage",
-        "display_name": "Agency Garage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Agencies",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/the-agency"
-    },
-    "image_path": null
-  },
-  {
-    "id": "arcade",
-    "display_name": "Arcade",
-    "property_type": "business",
-    "location": "Various",
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "arcade-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
+        "id": "nightclub-mission-row-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
         "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Arcades",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "auto-shop",
-    "display_name": "Auto Shop",
-    "property_type": "business",
-    "location": "Various",
-    "counts_as_garage": true,
-    "upgrades": [
+      },
       {
-        "id": "auto-shop-garage",
-        "display_name": "Auto Shop Garage",
-        "tier": null,
+        "id": "nightclub-mission-row-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
         "capacity": 10,
-        "required_upgrade_id": null,
+        "required_upgrade_id": "nightclub-mission-row-garage-1",
         "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "casino-penthouse",
-    "display_name": "Casino Penthouse",
-    "property_type": "residence",
-    "location": "Diamond Casino & Resort",
-    "counts_as_garage": true,
-    "upgrades": [
+      },
       {
-        "id": "casino-penthouse-garage",
-        "display_name": "Penthouse Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Master_Penthouse",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "hangar",
-    "display_name": "Hangar",
-    "property_type": "business",
-    "location": "LSIA or Fort Zancudo",
-    "counts_as_garage": false,
-    "upgrades": [
+        "id": "nightclub-mission-row-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-mission-row-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
       {
-        "id": "hangar-all",
-        "display_name": "Hangar Storage",
-        "tier": null,
-        "capacity": 20,
-        "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters, not garage vehicles"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Hangar",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "bunker",
-    "display_name": "Bunker",
-    "property_type": "business",
-    "location": "Blaine County",
-    "counts_as_garage": false,
-    "upgrades": [
-      {
-        "id": "bunker-personal-quarters",
-        "display_name": "Personal Quarters",
+        "id": "nightclub-mission-row-equipment",
+        "display_name": "Equipment Upgrade",
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Does not store personal vehicles directly"
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Bunker",
-      "gtabase": null
-    },
-    "image_path": null
-  },
-  {
-    "id": "salvage-yard",
-    "display_name": "Salvage Yard",
-    "property_type": "business",
-    "location": "Various",
-    "counts_as_garage": false,
-    "upgrades": [
+        "notes": "Increases nightclub income generation"
+      },
       {
-        "id": "salvage-yard-tow-truck",
-        "display_name": "Tow Truck Bay",
+        "id": "nightclub-mission-row-security",
+        "display_name": "Security Upgrade",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores the Salvage Yard tow truck"
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-mission-row-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
       }
     ],
     "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
-      "gtabase": null
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "verify": true,
     "image_path": null
   },
   {
-    "id": "clubhouse",
-    "display_name": "Clubhouse",
+    "id": "nightclub-del-perro",
+    "display_name": "Del Perro Nightclub",
     "property_type": "business",
-    "location": "Various",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Bay City Avenue",
+    "neighborhood": "Del Perro",
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "clubhouse-garage",
-        "display_name": "Clubhouse Garage",
-        "tier": null,
+        "id": "nightclub-del-perro-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Motorcycle-only storage"
+        "notes": null
+      },
+      {
+        "id": "nightclub-del-perro-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-del-perro-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-del-perro-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-del-perro-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-del-perro-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-del-perro-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-del-perro-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
       }
     ],
     "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Clubhouses",
-      "gtabase": null
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-downtown-vinewood",
+    "display_name": "Downtown Vinewood Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Vinewood Boulevard",
+    "neighborhood": "Downtown Vinewood",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-downtown-vinewood-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-downtown-vinewood-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-downtown-vinewood-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-downtown-vinewood-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-downtown-vinewood-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-downtown-vinewood-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-downtown-vinewood-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-downtown-vinewood-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-strawberry",
+    "display_name": "Strawberry Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Strawberry Avenue",
+    "neighborhood": "Strawberry",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-strawberry-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-strawberry-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-strawberry-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-strawberry-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-strawberry-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-strawberry-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-strawberry-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-strawberry-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-vespucci-canals",
+    "display_name": "Vespucci Canals Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Cougar Avenue",
+    "neighborhood": "Vespucci Canals",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-vespucci-canals-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-vespucci-canals-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-vespucci-canals-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-vespucci-canals-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-vespucci-canals-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-vespucci-canals-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-vespucci-canals-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-vespucci-canals-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-west-vinewood",
+    "display_name": "West Vinewood Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Eclipse Boulevard",
+    "neighborhood": "West Vinewood",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-west-vinewood-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-west-vinewood-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-west-vinewood-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-west-vinewood-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-west-vinewood-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-west-vinewood-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-west-vinewood-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-west-vinewood-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-elysian-island",
+    "display_name": "Elysian Island Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Norton Place",
+    "neighborhood": "Elysian Island",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-elysian-island-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-elysian-island-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-elysian-island-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-elysian-island-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-elysian-island-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-elysian-island-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-elysian-island-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-elysian-island-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-cypress-flats",
+    "display_name": "Cypress Flats Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Carson Avenue",
+    "neighborhood": "Cypress Flats",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-cypress-flats-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-cypress-flats-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-cypress-flats-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-cypress-flats-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-cypress-flats-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-cypress-flats-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-cypress-flats-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-cypress-flats-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "nightclub-la-puerta",
+    "display_name": "La Puerta Nightclub",
+    "property_type": "business",
+    "subtype": "nightclub",
+    "subtype_display": "Nightclub",
+    "location": "Adam's Apple Boulevard",
+    "neighborhood": "La Puerta",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "nightclub-la-puerta-garage-1",
+        "display_name": "Storage Garage Level 1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "nightclub-la-puerta-garage-2",
+        "display_name": "Storage Garage Level 2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": "nightclub-la-puerta-garage-1",
+        "notes": null
+      },
+      {
+        "id": "nightclub-la-puerta-garage-3",
+        "display_name": "Storage Garage Level 3",
+        "tier": 3,
+        "capacity": 11,
+        "required_upgrade_id": "nightclub-la-puerta-garage-2",
+        "notes": "Includes the MTL Pounder Custom slot"
+      },
+      {
+        "id": "nightclub-la-puerta-equipment",
+        "display_name": "Equipment Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Increases nightclub income generation"
+      },
+      {
+        "id": "nightclub-la-puerta-security",
+        "display_name": "Security Upgrade",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reduces raid frequency"
+      },
+      {
+        "id": "nightclub-la-puerta-dry-ice",
+        "display_name": "Dry Ice Machine",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Cosmetic / perk"
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Nightclubs",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
+    },
+    "verify": true,
     "image_path": null
   }
 ]
