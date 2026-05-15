@@ -4,12 +4,54 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4b — Granular Properties (full fanout landed; verification + images next). `/properties` (81 cards) and `/businesses` (109 cards) split into scoped browse routes. 165 of 190 rows are `verify: true`-flagged for a future Fandom cross-check pass.
-**Last updated:** 2026-05-15 (late)
+**Current phase:** 🟡 Phase 4b — Granular Properties (full fanout + verification done; images next). `/properties` (78 cards) and `/businesses` (88 cards) split into scoped browse routes. **166 properties across 23 subtypes, 0 verify-flagged** — addresses cross-checked against gtalens/gtabase/leo3418.
+**Last updated:** 2026-05-16
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-16 — Phase 4b verification pass: 165 → 0 verify-flagged rows
+
+**Two-stage WebSearch + WebFetch verification** ran across the seed:
+
+Pass 1 (190 → 175):
+- gtabase pages surfaced canonical lists for most workplace types.
+- Structural corrections: **CEO Office 5 → 4** (drop "Dynasty 8 Executive" placeholder); **Agency 5 → 4**; **biker businesses 6/type → 4/type** (cocaine, meth, weed, cash, forgery all dropped to canonical 4). Net –15 rows.
+- Name corrections: arcade names completely swapped (Pixel Pete's actually at Paleto Bay, Wonderama at Grapeseed, Eight-Bit at Vinewood; The Warehouse added as 6th); hangar display names aligned to gtabase naming (LSIA A17/1, Zancudo 3497/3499/A2); facility 3 misplacements (Paleto Forest→Paleto Bay, Tataviam→Zancudo River, Elysian Island→Grand Senora Desert); salvage yard 2 wrong cities; vehicle warehouse 2 wrong cities; bunker "Zancudo River" → "Grand Senora Oilfields"; auto shop "Burton" confirmed (subagent was right).
+- High-end apartments restructured to 17 per-LOCATION rows (7 buildings + 10 Vinewood Hills stilts: Hillcrest ×4, North Conker ×2, Milton, Whispymound, Mad Wayne Thunder, Wild Oats).
+
+Pass 2 (175 → 166):
+- gtalens.com map data unlocked the apartment + stand-alone garage canonical lists.
+- **Stand-alone garages 22 → 27** (added 5 missing canonical addresses; all real GTA streets across Banning, Cypress Flats, Davis, Grapeseed, Banham Canyon, etc., with confirmed sizes: 6× 10-car / 8× 6-car / 13× 2-car).
+- **Mid-end apartments 27 → 13** (canonical Dynasty 8 list — the speculative 30-row guess was way over).
+- **Low-end apartments 10 → 10** (replaced placeholder addresses with canonical Dynasty 8 ones).
+
+**Result:** 166 properties across 23 subtypes, **zero verify flags**. Hosted DB synced via truncate-cascade + reimport.
+
+**Subtype final counts:**
+| Subtype | n | Subtype | n |
+|---|---|---|---|
+| High-End Apartment | 17 | Bunker | 11 |
+| Mid-End Apartment | 13 | Facility | 9 |
+| Low-End Apartment | 10 | Hangar | 5 |
+| Casino Penthouse | 1 | Super Yacht | 1 |
+| Stand-Alone Garage | 27 | Arcade | 6 |
+| Eclipse Blvd Garages | 1 | Auto Shop | 5 |
+| Nightclub | 10 | Salvage Yard | 5 |
+| MC Clubhouse | 12 | Vehicle Warehouse | 5 |
+| CEO Office | 4 | The Agency | 4 |
+| Cocaine Lockup | 4 | Meth Lab | 4 |
+| Weed Farm | 4 | Counterfeit Cash Factory | 4 |
+| Document Forgery Office | 4 | | |
+
+**Sources used:** gtalens.com (apartments-and-garages map), gtabase.com (per-type property pages: mc-businesses, mc-clubhouses, auto-shops, vehicle-warehouses, facilities, bunkers, salvage-yards), leo3418.github.io (apartment-locations), WebSearch fallbacks (sportskeeda, gosunoob, dotesports). **Fandom CDN still 403s WebFetch** so couldn't use Fandom directly, but every type now has a non-Fandom canonical source baked into its `_sources.gtabase` field.
+
+**Pending follow-ups from this push:**
+1. **Type-level images** — one `.webp` per subtype (23 images). Extend `scripts/normalize-temp-images.ts` to route property images by filename. Drop a `nightclub.webp` first so the 10 nightclubs get a cover.
+2. **`/my-properties` upgrade-tier UI** (Phase 4c) — click an owned property → check off installed upgrades. Schema supports this already.
+3. **`/my-businesses` owned view** — same pattern, business-scoped.
+4. **Vehicle→property linking schema** — small migration adding `stored_in_property_id` to `user_owned_vehicles` (or a join table). Unblocks the onboarding wizard.
 
 ### 2026-05-15 (late) — Phase 4b full fanout: 180 new property instances
 
@@ -138,7 +180,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | **1. Supabase Setup** | ✅ Complete (hosted live) | Hosted LSPortfolio project active (eu-west-1); 0001+0002 migrations applied; seed imported; local Docker kept as fallback |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
-| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout: 190 instances across 22 subtypes** ✅ · Verification pass (165 flagged rows) ⚪ · Type-level images (22 subtypes) ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
+| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout + verification: 166 canonical instances across 23 subtypes, 0 verify-flagged** ✅ · Type-level images (23 subtypes) ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
 | **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
