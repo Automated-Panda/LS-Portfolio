@@ -3,9 +3,10 @@ import type { Property } from "../schema";
 /**
  * GTA Online Stand-Alone Garages and Eclipse Boulevard Garages.
  *
- * Stand-Alone Garages: ~22 purchaseable locations across San Andreas.
- * Each garage has a fixed size (2, 6, or 10 cars); capacity lives in
- * the single upgrade rather than on the property itself.
+ * Stand-Alone Garages: 27 canonical addresses across San Andreas, each with
+ * a fixed size (2, 6, or 10 cars). Capacity lives in the single upgrade
+ * rather than on the property itself. Per-location addresses + sizes
+ * sourced from gtalens.com's interactive apartments & garages map.
  *
  * Eclipse Boulevard Garages: 1 combined entry — the Vinewood 50-car
  * multi-floor complex sold as a single purchase.
@@ -13,8 +14,7 @@ import type { Property } from "../schema";
  * Sources:
  *   https://gta.fandom.com/wiki/Garage_(GTA_Online)
  *   https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages
- *
- * Rows flagged `verify: true` where exact address or capacity is uncertain.
+ *   https://gtalens.com/map/apartments-and-garages
  */
 
 // ---------------------------------------------------------------------------
@@ -34,43 +34,151 @@ type GarageSeed = {
 // STAND-ALONE GARAGES
 // ---------------------------------------------------------------------------
 
+// Canonical 27 stand-alone garages per gtalens.com:
+// 6× 10-car, 8× 6-car, 13× 2-car.
 const STANDALONE_LOCATIONS: GarageSeed[] = [
+  // ---- 10-car garages (6) ----
   {
-    id: "stand-alone-garage-1115-innocence-blvd",
-    display_name: "1115 Innocence Boulevard",
+    id: "stand-alone-garage-0120-murrieta-heights",
+    display_name: "0120 Murrieta Heights",
+    neighborhood: "Murrieta Heights",
+    address: "0120 Murrieta Heights",
+    car_count: 10,
+  },
+  {
+    id: "stand-alone-garage-unit-2-popular-st",
+    display_name: "Unit 2 Popular St",
+    neighborhood: "La Mesa",
+    address: "Unit 2 Popular Street",
+    car_count: 10,
+  },
+  {
+    id: "stand-alone-garage-331-supply-st",
+    display_name: "331 Supply St",
+    neighborhood: "Cypress Flats",
+    address: "331 Supply Street",
+    car_count: 10,
+  },
+  {
+    id: "stand-alone-garage-1623-south-shambles-st",
+    display_name: "1623 South Shambles St",
     neighborhood: "Strawberry",
-    address: "1115 Innocence Boulevard",
-    car_count: 2,
-  },
-  {
-    id: "stand-alone-garage-0772-roy-lowenstein-blvd",
-    display_name: "0772 Roy Lowenstein Boulevard",
-    neighborhood: "Chamberlain Hills",
-    address: "0772 Roy Lowenstein Boulevard",
-    car_count: 2,
-  },
-  {
-    id: "stand-alone-garage-0700-la-puerta-ave",
-    display_name: "0700 La Puerta Avenue",
-    neighborhood: "La Puerta",
-    address: "0700 La Puerta Avenue",
-    car_count: 2,
-  },
-  {
-    id: "stand-alone-garage-0102-elgin-ave",
-    display_name: "0102 Elgin Avenue",
-    neighborhood: "Vinewood",
-    address: "0102 Elgin Avenue",
-    car_count: 2,
-    verify: true,
+    address: "1623 South Shambles Street",
+    car_count: 10,
   },
   {
     id: "stand-alone-garage-1337-exceptionalists-way",
     display_name: "1337 Exceptionalists Way",
-    neighborhood: "LSIA",
+    neighborhood: "Banning",
     address: "1337 Exceptionalists Way",
+    car_count: 10,
+  },
+  {
+    id: "stand-alone-garage-unit-76-greenwich-parkway",
+    display_name: "Unit 76 Greenwich Parkway",
+    neighborhood: "Banning",
+    address: "Unit 76 Greenwich Parkway",
+    car_count: 10,
+  },
+  // ---- 6-car garages (8) ----
+  {
+    id: "stand-alone-garage-unit-14-popular-st",
+    display_name: "Unit 14 Popular St",
+    neighborhood: "La Mesa",
+    address: "Unit 14 Popular Street",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-unit-1-olympic-fwy",
+    display_name: "Unit 1 Olympic Fwy",
+    neighborhood: "La Puerta",
+    address: "Unit 1 Olympic Freeway",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-0552-roy-lowenstein-blvd",
+    display_name: "0552 Roy Lowenstein Blvd",
+    neighborhood: "Chamberlain Hills",
+    address: "0552 Roy Lowenstein Boulevard",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-0432-davis-ave",
+    display_name: "0432 Davis Ave",
+    neighborhood: "Davis",
+    address: "0432 Davis Avenue",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-870-route-68-approach",
+    display_name: "870 Route 68 Approach",
+    neighborhood: "Route 68",
+    address: "870 Route 68 Approach",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-8754-route-68",
+    display_name: "8754 Route 68",
+    neighborhood: "Route 68",
+    address: "8754 Route 68",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-1905-davis-ave",
+    display_name: "1905 Davis Ave",
+    neighborhood: "Davis",
+    address: "1905 Davis Avenue",
+    car_count: 6,
+  },
+  {
+    id: "stand-alone-garage-4531-dry-dock-st",
+    display_name: "4531 Dry Dock St",
+    neighborhood: "Elysian Island",
+    address: "4531 Dry Dock Street",
+    car_count: 6,
+  },
+  // ---- 2-car garages (13) ----
+  {
+    id: "stand-alone-garage-0754-roy-lowenstein-blvd",
+    display_name: "0754 Roy Lowenstein Blvd",
+    neighborhood: "Chamberlain Hills",
+    address: "0754 Roy Lowenstein Boulevard",
     car_count: 2,
-    verify: true,
+  },
+  {
+    id: "stand-alone-garage-12-little-bighorn-ave",
+    display_name: "12 Little Bighorn Ave",
+    neighborhood: "Davis",
+    address: "12 Little Bighorn Avenue",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-unit-124-popular-st",
+    display_name: "Unit 124 Popular St",
+    neighborhood: "La Mesa",
+    address: "Unit 124 Popular Street",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-142-paleto-blvd",
+    display_name: "142 Paleto Blvd",
+    neighborhood: "Paleto Bay",
+    address: "142 Paleto Boulevard",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-1-strawberry-ave",
+    display_name: "1 Strawberry Ave",
+    neighborhood: "Strawberry",
+    address: "1 Strawberry Avenue",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-1932-grapeseed-ave",
+    display_name: "1932 Grapeseed Ave",
+    neighborhood: "Grapeseed",
+    address: "1932 Grapeseed Avenue",
+    car_count: 2,
   },
   {
     id: "stand-alone-garage-1920-senora-way",
@@ -78,133 +186,48 @@ const STANDALONE_LOCATIONS: GarageSeed[] = [
     neighborhood: "Sandy Shores",
     address: "1920 Senora Way",
     car_count: 2,
-    verify: true,
   },
   {
-    id: "stand-alone-garage-0437-north-main-st",
-    display_name: "0437 North Main Street",
-    neighborhood: "Paleto Bay",
-    address: "0437 North Main Street",
+    id: "stand-alone-garage-2000-great-ocean-hwy",
+    display_name: "2000 Great Ocean Highway",
+    neighborhood: "Banham Canyon",
+    address: "2000 Great Ocean Highway",
     car_count: 2,
-    verify: true,
   },
   {
-    id: "stand-alone-garage-0506-innocence-blvd",
-    display_name: "0506 Innocence Boulevard",
+    id: "stand-alone-garage-197-route-68",
+    display_name: "197 Route 68",
+    neighborhood: "Route 68",
+    address: "197 Route 68",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-1200-route-68",
+    display_name: "1200 Route 68",
+    neighborhood: "Route 68",
+    address: "1200 Route 68",
+    car_count: 2,
+  },
+  {
+    id: "stand-alone-garage-innocence-blvd",
+    display_name: "Garage Innocence Blvd",
     neighborhood: "Strawberry",
-    address: "0506 Innocence Boulevard",
-    car_count: 6,
+    address: "Innocence Boulevard",
+    car_count: 2,
   },
   {
-    id: "stand-alone-garage-1235-south-shambles-st",
-    display_name: "1235 South Shambles Street",
-    neighborhood: "Strawberry",
-    address: "1235 South Shambles Street",
-    car_count: 6,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-1600-la-mesa-blvd",
-    display_name: "1600 La Mesa Boulevard",
-    neighborhood: "La Mesa",
-    address: "1600 La Mesa Boulevard",
-    car_count: 6,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0612-popular-st",
-    display_name: "0612 Popular Street",
-    neighborhood: "La Mesa",
-    address: "0612 Popular Street",
-    car_count: 6,
-  },
-  {
-    id: "stand-alone-garage-0632-popular-st",
-    display_name: "0632 Popular Street",
-    neighborhood: "La Mesa",
-    address: "0632 Popular Street",
-    car_count: 6,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0516-grove-st",
-    display_name: "0516 Grove Street",
-    neighborhood: "Grove Street",
-    address: "0516 Grove Street",
-    car_count: 6,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-1231-south-mo-milton-dr",
-    display_name: "1231 South Mo Milton Drive",
-    neighborhood: "Rancho",
-    address: "1231 South Mo Milton Drive",
-    car_count: 6,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0494-lake-vinewood-dr",
-    display_name: "0494 Lake Vinewood Drive",
-    neighborhood: "Vinewood Hills",
-    address: "0494 Lake Vinewood Drive",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0725-amarillo-vista",
-    display_name: "0725 Amarillo Vista",
-    neighborhood: "Vinewood Hills",
-    address: "0725 Amarillo Vista",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0231-south-rockford-dr",
-    display_name: "0231 South Rockford Drive",
-    neighborhood: "Rockford Hills",
-    address: "0231 South Rockford Drive",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-1235-las-lagunas-blvd",
-    display_name: "1235 Las Lagunas Boulevard",
-    neighborhood: "East Los Santos",
-    address: "1235 Las Lagunas Boulevard",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-2332-adam-apple-blvd",
-    display_name: "2332 Adam's Apple Boulevard",
-    neighborhood: "La Puerta",
-    address: "2332 Adam's Apple Boulevard",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0112-east-bay-city-ave",
-    display_name: "0112 East Bay City Avenue",
+    id: "stand-alone-garage-634-blvd-del-perro",
+    display_name: "634 Blvd Del Perro",
     neighborhood: "Del Perro",
-    address: "0112 East Bay City Avenue",
-    car_count: 10,
-    verify: true,
+    address: "634 Boulevard Del Perro",
+    car_count: 2,
   },
   {
-    id: "stand-alone-garage-1561-san-vitas-st",
-    display_name: "1561 San Vitas Street",
-    neighborhood: "West Vinewood",
-    address: "1561 San Vitas Street",
-    car_count: 10,
-    verify: true,
-  },
-  {
-    id: "stand-alone-garage-0391-palomino-ave",
-    display_name: "0391 Palomino Avenue",
+    id: "stand-alone-garage-0897-mirror-park-blvd",
+    display_name: "0897 Mirror Park Blvd",
     neighborhood: "Mirror Park",
-    address: "0391 Palomino Avenue",
-    car_count: 10,
-    verify: true,
+    address: "0897 Mirror Park Boulevard",
+    car_count: 2,
   },
 ];
 

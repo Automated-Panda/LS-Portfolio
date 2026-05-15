@@ -442,18 +442,18 @@
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-3671-whispymound-dr",
-    "display_name": "3671 Whispymound Drive",
+    "id": "mid-end-apartment-1162-power-st-apt-3",
+    "display_name": "1162 Power Street, Apt 3",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "3671 Whispymound Drive",
-    "neighborhood": "Vinewood Hills",
+    "location": "1162 Power Street",
+    "neighborhood": "Downtown",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-3671-whispymound-dr-garage",
+        "id": "mid-end-apartment-1162-power-st-apt-3-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -468,44 +468,18 @@
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-1237-prosperity-st-apt-5",
-    "display_name": "1237 Prosperity Street, Apt 5",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "1237 Prosperity Street",
-    "neighborhood": "Little Seoul",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1237-prosperity-st-apt-5-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-0605-spanish-ave-apt-8",
-    "display_name": "0605 Spanish Avenue, Apt 8",
+    "id": "mid-end-apartment-0605-spanish-ave-apt-1",
+    "display_name": "0605 Spanish Avenue, Apt 1",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
     "location": "0605 Spanish Avenue",
-    "neighborhood": "Little Seoul",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0605-spanish-ave-apt-8-garage",
+        "id": "mid-end-apartment-0605-spanish-ave-apt-1-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -517,22 +491,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-apartment-7-harold-way",
-    "display_name": "Apt 7, Harold Way",
+    "id": "mid-end-apartment-0604-las-lagunas-blvd-apt-4",
+    "display_name": "0604 Las Lagunas Boulevard, Apt 4",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "Harold Way",
-    "neighborhood": "Burton",
+    "location": "0604 Las Lagunas Boulevard",
+    "neighborhood": "La Puerta",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-apartment-7-harold-way-garage",
+        "id": "mid-end-apartment-0604-las-lagunas-blvd-apt-4-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -544,103 +517,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-1402-south-mo-milton-dr",
-    "display_name": "1402 South Mo Milton Drive",
+    "id": "mid-end-apartment-0184-milton-rd-apt-13",
+    "display_name": "0184 Milton Road, Apt 13",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "1402 South Mo Milton Drive",
-    "neighborhood": "Rancho",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1402-south-mo-milton-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-1561-san-vitas-st-apt-2",
-    "display_name": "1561 San Vitas Street, Apt 2",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "1561 San Vitas Street",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1561-san-vitas-st-apt-2-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-3912-amarillo-vista",
-    "display_name": "3912 Amarillo Vista",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "3912 Amarillo Vista",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-3912-amarillo-vista-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-0012-bay-city-ave-apt-4",
-    "display_name": "0012 Bay City Avenue, Apt 4",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0012 Bay City Avenue",
+    "location": "0184 Milton Road",
     "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0012-bay-city-ave-apt-4-garage",
+        "id": "mid-end-apartment-0184-milton-rd-apt-13-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -652,22 +543,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-1623-south-shambles-st",
-    "display_name": "1623 South Shambles Street",
+    "id": "mid-end-apartment-the-royale-apt-19",
+    "display_name": "The Royale, Apt 19",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "1623 South Shambles Street",
-    "neighborhood": "Strawberry",
+    "location": "The Royale",
+    "neighborhood": "Downtown",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-1623-south-shambles-st-garage",
+        "id": "mid-end-apartment-the-royale-apt-19-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -679,22 +569,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-0725-prosperity-st-apt-1",
-    "display_name": "0725 Prosperity Street, Apt 1",
+    "id": "mid-end-apartment-0504-s-mo-milton-dr",
+    "display_name": "0504 South Mo Milton Drive",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "0725 Prosperity Street",
-    "neighborhood": "Little Seoul",
+    "location": "0504 South Mo Milton Drive",
+    "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0725-prosperity-st-apt-1-garage",
+        "id": "mid-end-apartment-0504-s-mo-milton-dr-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -706,22 +595,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-3004-route-68-apt-2",
-    "display_name": "3004 Route 68, Apt 2",
+    "id": "mid-end-apartment-0115-bay-city-ave-apt-45",
+    "display_name": "0115 Bay City Avenue, Apt 45",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "3004 Route 68",
-    "neighborhood": "Harmony",
+    "location": "0115 Bay City Avenue",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-3004-route-68-apt-2-garage",
+        "id": "mid-end-apartment-0115-bay-city-ave-apt-45-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -733,22 +621,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-1104-las-lagunas-blvd-apt-1",
-    "display_name": "1104 Las Lagunas Boulevard, Apt 1",
+    "id": "mid-end-apartment-0325-south-rockford-dr",
+    "display_name": "0325 South Rockford Drive",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "1104 Las Lagunas Boulevard",
-    "neighborhood": "East Los Santos",
+    "location": "0325 South Rockford Drive",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-1104-las-lagunas-blvd-apt-1-garage",
+        "id": "mid-end-apartment-0325-south-rockford-dr-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -760,22 +647,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-0017-integrity-way-apt-2",
-    "display_name": "0017 Integrity Way, Apt 2",
+    "id": "mid-end-apartment-dream-tower-apt-15",
+    "display_name": "Dream Tower, Apt 15",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "0017 Integrity Way",
-    "neighborhood": "Downtown Vinewood",
+    "location": "Dream Tower",
+    "neighborhood": "Downtown",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0017-integrity-way-apt-2-garage",
+        "id": "mid-end-apartment-dream-tower-apt-15-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -787,22 +673,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-0136-east-mirror-dr",
-    "display_name": "0136 East Mirror Drive",
+    "id": "mid-end-apartment-4-hangman-ave",
+    "display_name": "4 Hangman Avenue",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "0136 East Mirror Drive",
-    "neighborhood": "Mirror Park",
+    "location": "4 Hangman Avenue",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0136-east-mirror-dr-garage",
+        "id": "mid-end-apartment-4-hangman-ave-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -814,22 +699,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-2405-strawberry-ave",
-    "display_name": "2405 Strawberry Avenue",
+    "id": "mid-end-apartment-12-sustancia-rd",
+    "display_name": "12 Sustancia Road",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "2405 Strawberry Avenue",
-    "neighborhood": "Strawberry",
+    "location": "12 Sustancia Road",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-2405-strawberry-ave-garage",
+        "id": "mid-end-apartment-12-sustancia-rd-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -841,22 +725,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-2054-north-conker-ave",
-    "display_name": "2054 North Conker Avenue",
+    "id": "mid-end-apartment-4584-procopio-dr",
+    "display_name": "4584 Procopio Drive",
     "property_type": "residence",
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
-    "location": "2054 North Conker Avenue",
-    "neighborhood": "Rockford Hills",
+    "location": "4584 Procopio Drive",
+    "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-2054-north-conker-ave-garage",
+        "id": "mid-end-apartment-4584-procopio-dr-garage",
         "display_name": "6-Car Garage",
         "tier": null,
         "capacity": 6,
@@ -868,142 +751,6 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-1900-b-jamestown-st",
-    "display_name": "1900B Jamestown Street",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "1900B Jamestown Street",
-    "neighborhood": "Strawberry",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1900-b-jamestown-st-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-3215-wetland-way",
-    "display_name": "3215 Wetland Way",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "3215 Wetland Way",
-    "neighborhood": "Paleto Bay",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-3215-wetland-way-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-0606-spanish-ave-apt-3",
-    "display_name": "0606 Spanish Avenue, Apt 3",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0606 Spanish Avenue",
-    "neighborhood": "Little Seoul",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0606-spanish-ave-apt-3-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-0197-integration-blvd-apt-2",
-    "display_name": "0197 Integration Boulevard, Apt 2",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0197 Integration Boulevard",
-    "neighborhood": "East Los Santos",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0197-integration-blvd-apt-2-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-1561-san-vitas-st-apt-6",
-    "display_name": "1561 San Vitas Street, Apt 6",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "1561 San Vitas Street",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1561-san-vitas-st-apt-6-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -1013,7 +760,7 @@
     "subtype": "mid-end-apartment",
     "subtype_display": "Mid-End Apartment",
     "location": "4401 Procopio Drive",
-    "neighborhood": "North Chumash",
+    "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
@@ -1030,25 +777,24 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-2001-las-lagunas-blvd-apt-3",
-    "display_name": "2001 Las Lagunas Boulevard, Apt 3",
+    "id": "low-end-apartment-2143-las-lagunas-blvd-apt-9",
+    "display_name": "2143 Las Lagunas Boulevard, Apt 9",
     "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "2001 Las Lagunas Boulevard",
-    "neighborhood": "East Los Santos",
+    "subtype": "low-end-apartment",
+    "subtype_display": "Low-End Apartment",
+    "location": "2143 Las Lagunas Boulevard",
+    "neighborhood": "La Puerta",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-2001-las-lagunas-blvd-apt-3-garage",
-        "display_name": "6-Car Garage",
+        "id": "low-end-apartment-2143-las-lagunas-blvd-apt-9-garage",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 6,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1057,25 +803,24 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-1237-prosperity-st-apt-14",
-    "display_name": "1237 Prosperity Street, Apt 14",
+    "id": "low-end-apartment-1561-san-vitas-st-apt-2",
+    "display_name": "1561 San Vitas Street, Apt 2",
     "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "1237 Prosperity Street",
-    "neighborhood": "Little Seoul",
+    "subtype": "low-end-apartment",
+    "subtype_display": "Low-End Apartment",
+    "location": "1561 San Vitas Street",
+    "neighborhood": "La Puerta",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-1237-prosperity-st-apt-14-garage",
-        "display_name": "6-Car Garage",
+        "id": "low-end-apartment-1561-san-vitas-st-apt-2-garage",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 6,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1084,25 +829,24 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-0473-peaceful-st-apt-1",
-    "display_name": "0473 Peaceful Street, Apt 1",
+    "id": "low-end-apartment-0112-s-rockford-dr-apt-13",
+    "display_name": "0112 South Rockford Drive, Apt 13",
     "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0473 Peaceful Street",
-    "neighborhood": "Strawberry",
+    "subtype": "low-end-apartment",
+    "subtype_display": "Low-End Apartment",
+    "location": "0112 South Rockford Drive",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0473-peaceful-st-apt-1-garage",
-        "display_name": "6-Car Garage",
+        "id": "low-end-apartment-0112-s-rockford-dr-apt-13-garage",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 6,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1111,76 +855,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "mid-end-apartment-0019-bay-city-apt-7",
-    "display_name": "0019 Bay City Avenue, Apt 7",
+    "id": "low-end-apartment-2057-vespucci-blvd-apt-1",
+    "display_name": "2057 Vespucci Boulevard, Apt 1",
     "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0019 Bay City Avenue",
+    "subtype": "low-end-apartment",
+    "subtype_display": "Low-End Apartment",
+    "location": "2057 Vespucci Boulevard",
     "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "mid-end-apartment-0019-bay-city-apt-7-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "mid-end-apartment-0605-grove-st-apt-2",
-    "display_name": "0605 Grove Street, Apt 2",
-    "property_type": "residence",
-    "subtype": "mid-end-apartment",
-    "subtype_display": "Mid-End Apartment",
-    "location": "0605 Grove Street",
-    "neighborhood": "Grove Street",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0605-grove-st-apt-2-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "low-end-apartment-3671-whispymound-dr-apt-1",
-    "display_name": "3671 Whispymound Drive, Apt 1",
-    "property_type": "residence",
-    "subtype": "low-end-apartment",
-    "subtype_display": "Low-End Apartment",
-    "location": "3671 Whispymound Drive",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-3671-whispymound-dr-apt-1-garage",
+        "id": "low-end-apartment-2057-vespucci-blvd-apt-1-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1192,22 +881,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-1605-las-lagunas-blvd",
-    "display_name": "1605 Las Lagunas Boulevard",
+    "id": "low-end-apartment-0069-cougar-ave-apt-19",
+    "display_name": "0069 Cougar Avenue, Apt 19",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "1605 Las Lagunas Boulevard",
-    "neighborhood": "East Los Santos",
+    "location": "0069 Cougar Avenue",
+    "neighborhood": "Downtown",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-1605-las-lagunas-blvd-garage",
+        "id": "low-end-apartment-0069-cougar-ave-apt-19-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1219,22 +907,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-0605-grove-st",
-    "display_name": "0605 Grove Street",
+    "id": "low-end-apartment-1237-prosperity-st-apt-21",
+    "display_name": "1237 Prosperity Street, Apt 21",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "0605 Grove Street",
-    "neighborhood": "Grove Street",
+    "location": "1237 Prosperity Street",
+    "neighborhood": "La Puerta",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-0605-grove-st-garage",
+        "id": "low-end-apartment-1237-prosperity-st-apt-21-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1246,22 +933,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-1162-power-st-apt-1",
-    "display_name": "1162 Power Street, Apt 1",
+    "id": "low-end-apartment-1115-blvd-del-perro-apt-18",
+    "display_name": "1115 Boulevard Del Perro, Apt 18",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "1162 Power Street",
-    "neighborhood": "Chamberlain Hills",
+    "location": "1115 Boulevard Del Perro",
+    "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-1162-power-st-apt-1-garage",
+        "id": "low-end-apartment-1115-blvd-del-perro-apt-18-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1273,22 +959,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-0115-innocence-blvd",
-    "display_name": "0115 Innocence Boulevard",
+    "id": "low-end-apartment-0232-paleto-blvd",
+    "display_name": "0232 Paleto Boulevard",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "0115 Innocence Boulevard",
-    "neighborhood": "Strawberry",
+    "location": "0232 Paleto Boulevard",
+    "neighborhood": "Paleto Bay",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-0115-innocence-blvd-garage",
+        "id": "low-end-apartment-0232-paleto-blvd-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1300,22 +985,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-0921-south-mo-milton-dr",
-    "display_name": "0921 South Mo Milton Drive",
+    "id": "low-end-apartment-140-zancudo-ave",
+    "display_name": "140 Zancudo Avenue",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "0921 South Mo Milton Drive",
-    "neighborhood": "Rancho",
+    "location": "140 Zancudo Avenue",
+    "neighborhood": "Fort Zancudo",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-0921-south-mo-milton-dr-garage",
+        "id": "low-end-apartment-140-zancudo-ave-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1327,22 +1011,21 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "low-end-apartment-0112-sinner-st",
-    "display_name": "0112 Sinner Street",
+    "id": "low-end-apartment-1893-grapeseed-ave",
+    "display_name": "1893 Grapeseed Avenue",
     "property_type": "residence",
     "subtype": "low-end-apartment",
     "subtype_display": "Low-End Apartment",
-    "location": "0112 Sinner Street",
-    "neighborhood": "South Los Santos",
+    "location": "1893 Grapeseed Avenue",
+    "neighborhood": "Grapeseed",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "low-end-apartment-0112-sinner-st-garage",
+        "id": "low-end-apartment-1893-grapeseed-ave-garage",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1354,88 +1037,6 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "low-end-apartment-1537-aguja-st-apt-6",
-    "display_name": "1537 Aguja Street, Apt 6",
-    "property_type": "residence",
-    "subtype": "low-end-apartment",
-    "subtype_display": "Low-End Apartment",
-    "location": "1537 Aguja Street",
-    "neighborhood": "Little Seoul",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-1537-aguja-st-apt-6-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "low-end-apartment-0818-route-68",
-    "display_name": "0818 Route 68",
-    "property_type": "residence",
-    "subtype": "low-end-apartment",
-    "subtype_display": "Low-End Apartment",
-    "location": "0818 Route 68",
-    "neighborhood": "Harmony",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-0818-route-68-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "low-end-apartment-2210-jamestown-st-apt-3",
-    "display_name": "2210 Jamestown Street, Apt 3",
-    "property_type": "residence",
-    "subtype": "low-end-apartment",
-    "subtype_display": "Low-End Apartment",
-    "location": "2210 Jamestown Street",
-    "neighborhood": "Strawberry",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-2210-jamestown-st-apt-3-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Apartments",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -1465,21 +1066,99 @@
     "image_path": null
   },
   {
-    "id": "stand-alone-garage-1115-innocence-blvd",
-    "display_name": "1115 Innocence Boulevard",
+    "id": "stand-alone-garage-0120-murrieta-heights",
+    "display_name": "0120 Murrieta Heights",
     "property_type": "garage",
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
-    "location": "1115 Innocence Boulevard",
+    "location": "0120 Murrieta Heights",
+    "neighborhood": "Murrieta Heights",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-0120-murrieta-heights-spaces",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-unit-2-popular-st",
+    "display_name": "Unit 2 Popular St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Unit 2 Popular Street",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-unit-2-popular-st-spaces",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-331-supply-st",
+    "display_name": "331 Supply St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "331 Supply Street",
+    "neighborhood": "Cypress Flats",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-331-supply-st-spaces",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-1623-south-shambles-st",
+    "display_name": "1623 South Shambles St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "1623 South Shambles Street",
     "neighborhood": "Strawberry",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "stand-alone-garage-1115-innocence-blvd-spaces",
-        "display_name": "2-Car Garage",
+        "id": "stand-alone-garage-1623-south-shambles-st-spaces",
+        "display_name": "10-Car Garage",
         "tier": null,
-        "capacity": 2,
+        "capacity": 10,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1488,85 +1167,6 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0772-roy-lowenstein-blvd",
-    "display_name": "0772 Roy Lowenstein Boulevard",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0772 Roy Lowenstein Boulevard",
-    "neighborhood": "Chamberlain Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0772-roy-lowenstein-blvd-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0700-la-puerta-ave",
-    "display_name": "0700 La Puerta Avenue",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0700 La Puerta Avenue",
-    "neighborhood": "La Puerta",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0700-la-puerta-ave-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0102-elgin-ave",
-    "display_name": "0102 Elgin Avenue",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0102 Elgin Avenue",
-    "neighborhood": "Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0102-elgin-ave-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
     "image_path": null
   },
   {
@@ -1576,12 +1176,272 @@
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
     "location": "1337 Exceptionalists Way",
-    "neighborhood": "LSIA",
+    "neighborhood": "Banning",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "stand-alone-garage-1337-exceptionalists-way-spaces",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-unit-76-greenwich-parkway",
+    "display_name": "Unit 76 Greenwich Parkway",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Unit 76 Greenwich Parkway",
+    "neighborhood": "Banning",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-unit-76-greenwich-parkway-spaces",
+        "display_name": "10-Car Garage",
+        "tier": null,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-unit-14-popular-st",
+    "display_name": "Unit 14 Popular St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Unit 14 Popular Street",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-unit-14-popular-st-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-unit-1-olympic-fwy",
+    "display_name": "Unit 1 Olympic Fwy",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Unit 1 Olympic Freeway",
+    "neighborhood": "La Puerta",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-unit-1-olympic-fwy-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-0552-roy-lowenstein-blvd",
+    "display_name": "0552 Roy Lowenstein Blvd",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "0552 Roy Lowenstein Boulevard",
+    "neighborhood": "Chamberlain Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-0552-roy-lowenstein-blvd-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-0432-davis-ave",
+    "display_name": "0432 Davis Ave",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "0432 Davis Avenue",
+    "neighborhood": "Davis",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-0432-davis-ave-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-870-route-68-approach",
+    "display_name": "870 Route 68 Approach",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "870 Route 68 Approach",
+    "neighborhood": "Route 68",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-870-route-68-approach-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-8754-route-68",
+    "display_name": "8754 Route 68",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "8754 Route 68",
+    "neighborhood": "Route 68",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-8754-route-68-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-1905-davis-ave",
+    "display_name": "1905 Davis Ave",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "1905 Davis Avenue",
+    "neighborhood": "Davis",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-1905-davis-ave-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-4531-dry-dock-st",
+    "display_name": "4531 Dry Dock St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "4531 Dry Dock Street",
+    "neighborhood": "Elysian Island",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-4531-dry-dock-st-spaces",
+        "display_name": "6-Car Garage",
+        "tier": null,
+        "capacity": 6,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-0754-roy-lowenstein-blvd",
+    "display_name": "0754 Roy Lowenstein Blvd",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "0754 Roy Lowenstein Boulevard",
+    "neighborhood": "Chamberlain Hills",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-0754-roy-lowenstein-blvd-spaces",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1593,7 +1453,136 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "verify": true,
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-12-little-bighorn-ave",
+    "display_name": "12 Little Bighorn Ave",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "12 Little Bighorn Avenue",
+    "neighborhood": "Davis",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-12-little-bighorn-ave-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-unit-124-popular-st",
+    "display_name": "Unit 124 Popular St",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Unit 124 Popular Street",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-unit-124-popular-st-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-142-paleto-blvd",
+    "display_name": "142 Paleto Blvd",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "142 Paleto Boulevard",
+    "neighborhood": "Paleto Bay",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-142-paleto-blvd-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-1-strawberry-ave",
+    "display_name": "1 Strawberry Ave",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "1 Strawberry Avenue",
+    "neighborhood": "Strawberry",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-1-strawberry-ave-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-1932-grapeseed-ave",
+    "display_name": "1932 Grapeseed Ave",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "1932 Grapeseed Avenue",
+    "neighborhood": "Grapeseed",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-1932-grapeseed-ave-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
     "image_path": null
   },
   {
@@ -1620,22 +1609,21 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "stand-alone-garage-0437-north-main-st",
-    "display_name": "0437 North Main Street",
+    "id": "stand-alone-garage-2000-great-ocean-hwy",
+    "display_name": "2000 Great Ocean Highway",
     "property_type": "garage",
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
-    "location": "0437 North Main Street",
-    "neighborhood": "Paleto Bay",
+    "location": "2000 Great Ocean Highway",
+    "neighborhood": "Banham Canyon",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "stand-alone-garage-0437-north-main-st-spaces",
+        "id": "stand-alone-garage-2000-great-ocean-hwy-spaces",
         "display_name": "2-Car Garage",
         "tier": null,
         "capacity": 2,
@@ -1647,25 +1635,76 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "stand-alone-garage-0506-innocence-blvd",
-    "display_name": "0506 Innocence Boulevard",
+    "id": "stand-alone-garage-197-route-68",
+    "display_name": "197 Route 68",
     "property_type": "garage",
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
-    "location": "0506 Innocence Boulevard",
+    "location": "197 Route 68",
+    "neighborhood": "Route 68",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-197-route-68-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-1200-route-68",
+    "display_name": "1200 Route 68",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "1200 Route 68",
+    "neighborhood": "Route 68",
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "stand-alone-garage-1200-route-68-spaces",
+        "display_name": "2-Car Garage",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
+    },
+    "image_path": null
+  },
+  {
+    "id": "stand-alone-garage-innocence-blvd",
+    "display_name": "Garage Innocence Blvd",
+    "property_type": "garage",
+    "subtype": "stand-alone-garage",
+    "subtype_display": "Stand-Alone Garage",
+    "location": "Innocence Boulevard",
     "neighborhood": "Strawberry",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "stand-alone-garage-0506-innocence-blvd-spaces",
-        "display_name": "6-Car Garage",
+        "id": "stand-alone-garage-innocence-blvd-spaces",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 6,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1677,317 +1716,21 @@
     "image_path": null
   },
   {
-    "id": "stand-alone-garage-1235-south-shambles-st",
-    "display_name": "1235 South Shambles Street",
+    "id": "stand-alone-garage-634-blvd-del-perro",
+    "display_name": "634 Blvd Del Perro",
     "property_type": "garage",
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
-    "location": "1235 South Shambles Street",
-    "neighborhood": "Strawberry",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1235-south-shambles-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-1600-la-mesa-blvd",
-    "display_name": "1600 La Mesa Boulevard",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "1600 La Mesa Boulevard",
-    "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1600-la-mesa-blvd-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0612-popular-st",
-    "display_name": "0612 Popular Street",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0612 Popular Street",
-    "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0612-popular-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0632-popular-st",
-    "display_name": "0632 Popular Street",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0632 Popular Street",
-    "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0632-popular-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0516-grove-st",
-    "display_name": "0516 Grove Street",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0516 Grove Street",
-    "neighborhood": "Grove Street",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0516-grove-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-1231-south-mo-milton-dr",
-    "display_name": "1231 South Mo Milton Drive",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "1231 South Mo Milton Drive",
-    "neighborhood": "Rancho",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1231-south-mo-milton-dr-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0494-lake-vinewood-dr",
-    "display_name": "0494 Lake Vinewood Drive",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0494 Lake Vinewood Drive",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0494-lake-vinewood-dr-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0725-amarillo-vista",
-    "display_name": "0725 Amarillo Vista",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0725 Amarillo Vista",
-    "neighborhood": "Vinewood Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0725-amarillo-vista-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0231-south-rockford-dr",
-    "display_name": "0231 South Rockford Drive",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0231 South Rockford Drive",
-    "neighborhood": "Rockford Hills",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0231-south-rockford-dr-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-1235-las-lagunas-blvd",
-    "display_name": "1235 Las Lagunas Boulevard",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "1235 Las Lagunas Boulevard",
-    "neighborhood": "East Los Santos",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1235-las-lagunas-blvd-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-2332-adam-apple-blvd",
-    "display_name": "2332 Adam's Apple Boulevard",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "2332 Adam's Apple Boulevard",
-    "neighborhood": "La Puerta",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-2332-adam-apple-blvd-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0112-east-bay-city-ave",
-    "display_name": "0112 East Bay City Avenue",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0112 East Bay City Avenue",
+    "location": "634 Boulevard Del Perro",
     "neighborhood": "Del Perro",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "stand-alone-garage-0112-east-bay-city-ave-spaces",
-        "display_name": "10-Car Garage",
+        "id": "stand-alone-garage-634-blvd-del-perro-spaces",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 10,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -1996,52 +1739,24 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "verify": true,
     "image_path": null
   },
   {
-    "id": "stand-alone-garage-1561-san-vitas-st",
-    "display_name": "1561 San Vitas Street",
+    "id": "stand-alone-garage-0897-mirror-park-blvd",
+    "display_name": "0897 Mirror Park Blvd",
     "property_type": "garage",
     "subtype": "stand-alone-garage",
     "subtype_display": "Stand-Alone Garage",
-    "location": "1561 San Vitas Street",
-    "neighborhood": "West Vinewood",
-    "capacity": 0,
-    "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1561-san-vitas-st-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
-    "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
-      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
-    },
-    "verify": true,
-    "image_path": null
-  },
-  {
-    "id": "stand-alone-garage-0391-palomino-ave",
-    "display_name": "0391 Palomino Avenue",
-    "property_type": "garage",
-    "subtype": "stand-alone-garage",
-    "subtype_display": "Stand-Alone Garage",
-    "location": "0391 Palomino Avenue",
+    "location": "0897 Mirror Park Boulevard",
     "neighborhood": "Mirror Park",
     "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
       {
-        "id": "stand-alone-garage-0391-palomino-ave-spaces",
-        "display_name": "10-Car Garage",
+        "id": "stand-alone-garage-0897-mirror-park-blvd-spaces",
+        "display_name": "2-Car Garage",
         "tier": null,
-        "capacity": 10,
+        "capacity": 2,
         "required_upgrade_id": null,
         "notes": null
       }
@@ -2050,7 +1765,6 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "verify": true,
     "image_path": null
   },
   {
@@ -4083,7 +3797,6 @@
       "fandom": "https://gta.fandom.com/wiki/Galaxy_Super_Yacht",
       "gtabase": null
     },
-    "verify": true,
     "image_path": null
   },
   {

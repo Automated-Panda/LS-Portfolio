@@ -61,6 +61,5 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
       fandom: "https://gta.fandom.com/wiki/Galaxy_Super_Yacht",
       gtabase: null,
     },
-    verify: true,
   },
 ];
