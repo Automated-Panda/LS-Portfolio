@@ -23,7 +23,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
   },
   {
     "id": "high-end-apartment-3-alta-st",
@@ -49,7 +49,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
   },
   {
     "id": "high-end-apartment-del-perro-heights",
@@ -75,7 +75,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
   },
   {
     "id": "high-end-apartment-4-integrity-way",
@@ -101,7 +101,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
   },
   {
     "id": "high-end-apartment-weazel-plaza",
@@ -127,7 +127,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
   },
   {
     "id": "high-end-apartment-richards-majestic",
@@ -153,7 +153,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
   },
   {
     "id": "high-end-apartment-tinsel-towers",
@@ -179,7 +179,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
   },
   {
     "id": "high-end-apartment-2862-hillcrest-ave",
@@ -205,7 +205,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2862-hillcrest-ave.webp"
   },
   {
     "id": "high-end-apartment-2866-hillcrest-ave",
@@ -231,7 +231,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2866-hillcrest-ave.webp"
   },
   {
     "id": "high-end-apartment-2868-hillcrest-ave",
@@ -257,7 +257,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2868-hillcrest-ave.webp"
   },
   {
     "id": "high-end-apartment-2874-hillcrest-ave",
@@ -283,7 +283,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2874-hillcrest-ave.webp"
   },
   {
     "id": "high-end-apartment-2044-north-conker-ave",
@@ -309,7 +309,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2044-north-conker-ave.webp"
   },
   {
     "id": "high-end-apartment-2045-north-conker-ave",
@@ -335,7 +335,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2045-north-conker-ave.webp"
   },
   {
     "id": "high-end-apartment-2117-milton-rd",
@@ -361,7 +361,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2117-milton-rd.webp"
   },
   {
     "id": "high-end-apartment-2113-mad-wayne-thunder-dr",
@@ -387,7 +387,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-2113-mad-wayne-thunder-dr.webp"
   },
   {
     "id": "high-end-apartment-3655-wild-oats-dr",
@@ -413,7 +413,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-3655-wild-oats-dr.webp"
   },
   {
     "id": "high-end-apartment-3677-whispymound-dr",
@@ -439,7 +439,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/high-end-apartment-3677-whispymound-dr.webp"
   },
   {
     "id": "mid-end-apartment-1162-power-st-apt-3",
@@ -465,7 +465,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-1162-power-st-apt-3.webp"
   },
   {
     "id": "mid-end-apartment-0605-spanish-ave-apt-1",
@@ -491,7 +491,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0605-spanish-ave-apt-1.webp"
   },
   {
     "id": "mid-end-apartment-0604-las-lagunas-blvd-apt-4",
@@ -517,7 +517,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0604-las-lagunas-blvd-apt-4.webp"
   },
   {
     "id": "mid-end-apartment-0184-milton-rd-apt-13",
@@ -543,7 +543,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0184-milton-rd-apt-13.webp"
   },
   {
     "id": "mid-end-apartment-the-royale-apt-19",
@@ -569,7 +569,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-the-royale-apt-19.webp"
   },
   {
     "id": "mid-end-apartment-0504-s-mo-milton-dr",
@@ -595,7 +595,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0504-s-mo-milton-dr.webp"
   },
   {
     "id": "mid-end-apartment-0115-bay-city-ave-apt-45",
@@ -621,7 +621,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0115-bay-city-ave-apt-45.webp"
   },
   {
     "id": "mid-end-apartment-0325-south-rockford-dr",
@@ -647,7 +647,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-0325-south-rockford-dr.webp"
   },
   {
     "id": "mid-end-apartment-dream-tower-apt-15",
@@ -673,7 +673,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-dream-tower-apt-15.webp"
   },
   {
     "id": "mid-end-apartment-4-hangman-ave",
@@ -699,7 +699,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-4-hangman-ave.webp"
   },
   {
     "id": "mid-end-apartment-12-sustancia-rd",
@@ -725,7 +725,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-12-sustancia-rd.webp"
   },
   {
     "id": "mid-end-apartment-4584-procopio-dr",
@@ -751,7 +751,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-4584-procopio-dr.webp"
   },
   {
     "id": "mid-end-apartment-4401-procopio-dr",
@@ -777,7 +777,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mid-end-apartment-4401-procopio-dr.webp"
   },
   {
     "id": "low-end-apartment-2143-las-lagunas-blvd-apt-9",
@@ -803,7 +803,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-2143-las-lagunas-blvd-apt-9.webp"
   },
   {
     "id": "low-end-apartment-1561-san-vitas-st-apt-2",
@@ -829,7 +829,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-1561-san-vitas-st-apt-2.webp"
   },
   {
     "id": "low-end-apartment-0112-s-rockford-dr-apt-13",
@@ -855,7 +855,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-0112-s-rockford-dr-apt-13.webp"
   },
   {
     "id": "low-end-apartment-2057-vespucci-blvd-apt-1",
@@ -881,7 +881,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-2057-vespucci-blvd-apt-1.webp"
   },
   {
     "id": "low-end-apartment-0069-cougar-ave-apt-19",
@@ -907,7 +907,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-0069-cougar-ave-apt-19.webp"
   },
   {
     "id": "low-end-apartment-1237-prosperity-st-apt-21",
@@ -933,7 +933,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-1237-prosperity-st-apt-21.webp"
   },
   {
     "id": "low-end-apartment-1115-blvd-del-perro-apt-18",
@@ -959,7 +959,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-1115-blvd-del-perro-apt-18.webp"
   },
   {
     "id": "low-end-apartment-0232-paleto-blvd",
@@ -985,7 +985,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-0232-paleto-blvd.webp"
   },
   {
     "id": "low-end-apartment-140-zancudo-ave",
@@ -1011,7 +1011,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-140-zancudo-ave.webp"
   },
   {
     "id": "low-end-apartment-1893-grapeseed-ave",
@@ -1037,7 +1037,7 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": null
+    "image_path": "data/images/properties/low-end-apartment-1893-grapeseed-ave.webp"
   },
   {
     "id": "casino-penthouse",
@@ -1089,7 +1089,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-0120-murrieta-heights.webp"
   },
   {
     "id": "stand-alone-garage-unit-2-popular-st",
@@ -1115,7 +1115,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
     "id": "stand-alone-garage-331-supply-st",
@@ -1141,7 +1141,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-331-supply-st.webp"
   },
   {
     "id": "stand-alone-garage-1623-south-shambles-st",
@@ -1167,7 +1167,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1623-south-shambles-st.webp"
   },
   {
     "id": "stand-alone-garage-1337-exceptionalists-way",
@@ -1193,7 +1193,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1337-exceptionalists-way.webp"
   },
   {
     "id": "stand-alone-garage-unit-76-greenwich-parkway",
@@ -1219,7 +1219,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
     "id": "stand-alone-garage-unit-14-popular-st",
@@ -1245,7 +1245,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
     "id": "stand-alone-garage-unit-1-olympic-fwy",
@@ -1271,7 +1271,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
     "id": "stand-alone-garage-0552-roy-lowenstein-blvd",
@@ -1297,7 +1297,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-0552-roy-lowenstein-blvd.webp"
   },
   {
     "id": "stand-alone-garage-0432-davis-ave",
@@ -1323,7 +1323,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-0432-davis-ave.webp"
   },
   {
     "id": "stand-alone-garage-870-route-68-approach",
@@ -1349,7 +1349,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-870-route-68-approach.webp"
   },
   {
     "id": "stand-alone-garage-8754-route-68",
@@ -1375,7 +1375,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-8754-route-68.webp"
   },
   {
     "id": "stand-alone-garage-1905-davis-ave",
@@ -1401,7 +1401,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1905-davis-ave.webp"
   },
   {
     "id": "stand-alone-garage-4531-dry-dock-st",
@@ -1427,7 +1427,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-4531-dry-dock-st.webp"
   },
   {
     "id": "stand-alone-garage-0754-roy-lowenstein-blvd",
@@ -1453,7 +1453,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-0754-roy-lowenstein-blvd.webp"
   },
   {
     "id": "stand-alone-garage-12-little-bighorn-ave",
@@ -1479,7 +1479,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-12-little-bighorn-ave.webp"
   },
   {
     "id": "stand-alone-garage-unit-124-popular-st",
@@ -1505,7 +1505,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
     "id": "stand-alone-garage-142-paleto-blvd",
@@ -1531,7 +1531,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-142-paleto-blvd.webp"
   },
   {
     "id": "stand-alone-garage-1-strawberry-ave",
@@ -1557,7 +1557,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1-strawberry-ave.webp"
   },
   {
     "id": "stand-alone-garage-1932-grapeseed-ave",
@@ -1583,7 +1583,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1932-grapeseed-ave.webp"
   },
   {
     "id": "stand-alone-garage-1920-senora-way",
@@ -1609,7 +1609,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1920-senora-way.webp"
   },
   {
     "id": "stand-alone-garage-2000-great-ocean-hwy",
@@ -1635,7 +1635,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-2000-great-ocean-hwy.webp"
   },
   {
     "id": "stand-alone-garage-197-route-68",
@@ -1661,7 +1661,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-197-route-68.webp"
   },
   {
     "id": "stand-alone-garage-1200-route-68",
@@ -1687,7 +1687,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-1200-route-68.webp"
   },
   {
     "id": "stand-alone-garage-innocence-blvd",
@@ -1713,7 +1713,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-innocence-blvd.webp"
   },
   {
     "id": "stand-alone-garage-634-blvd-del-perro",
@@ -1739,7 +1739,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-634-blvd-del-perro.webp"
   },
   {
     "id": "stand-alone-garage-0897-mirror-park-blvd",
@@ -1765,7 +1765,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/stand-alone-garage-0897-mirror-park-blvd.webp"
   },
   {
     "id": "eclipse-blvd-garages-all",
@@ -1791,7 +1791,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
-    "image_path": null
+    "image_path": "data/images/properties/eclipse-blvd-garages-all.webp"
   },
   {
     "id": "ceo-office-maze-bank-west",
@@ -1833,7 +1833,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "image_path": null
+    "image_path": "data/images/properties/ceo-office-maze-bank-west.webp"
   },
   {
     "id": "ceo-office-arcadius-business-center",
@@ -1875,7 +1875,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "image_path": null
+    "image_path": "data/images/properties/ceo-office-arcadius-business-center.webp"
   },
   {
     "id": "ceo-office-lombank-west",
@@ -1917,7 +1917,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "image_path": null
+    "image_path": "data/images/properties/ceo-office-lombank-west.webp"
   },
   {
     "id": "ceo-office-maze-bank-tower",
@@ -1959,7 +1959,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
-    "image_path": null
+    "image_path": "data/images/properties/ceo-office-maze-bank-tower.webp"
   },
   {
     "id": "mc-clubhouse-great-chaparral",
@@ -1985,7 +1985,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-great-chaparral.webp"
   },
   {
     "id": "mc-clubhouse-sandy-shores",
@@ -2011,7 +2011,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-sandy-shores.webp"
   },
   {
     "id": "mc-clubhouse-paleto-bay-1story",
@@ -2037,7 +2037,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-1story.webp"
   },
   {
     "id": "mc-clubhouse-del-perro-beach",
@@ -2063,7 +2063,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-del-perro-beach.webp"
   },
   {
     "id": "mc-clubhouse-rancho",
@@ -2089,7 +2089,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-rancho.webp"
   },
   {
     "id": "mc-clubhouse-pillbox-hill",
@@ -2115,7 +2115,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-pillbox-hill.webp"
   },
   {
     "id": "mc-clubhouse-grapeseed",
@@ -2141,7 +2141,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-grapeseed.webp"
   },
   {
     "id": "mc-clubhouse-paleto-bay-2story",
@@ -2167,7 +2167,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-2story.webp"
   },
   {
     "id": "mc-clubhouse-vespucci-beach",
@@ -2193,7 +2193,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-vespucci-beach.webp"
   },
   {
     "id": "mc-clubhouse-la-mesa",
@@ -2219,7 +2219,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-la-mesa.webp"
   },
   {
     "id": "mc-clubhouse-downtown-vinewood",
@@ -2245,7 +2245,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-downtown-vinewood.webp"
   },
   {
     "id": "mc-clubhouse-hawick",
@@ -2271,7 +2271,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/mc-clubhouse-hawick.webp"
   },
   {
     "id": "bunker-chumash",
@@ -2313,7 +2313,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-chumash.webp"
   },
   {
     "id": "bunker-paleto-forest",
@@ -2355,7 +2355,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-paleto-forest.webp"
   },
   {
     "id": "bunker-raton-canyon",
@@ -2397,7 +2397,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-raton-canyon.webp"
   },
   {
     "id": "bunker-lago-zancudo",
@@ -2439,7 +2439,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-lago-zancudo.webp"
   },
   {
     "id": "bunker-smoke-tree-road",
@@ -2481,7 +2481,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-smoke-tree-road.webp"
   },
   {
     "id": "bunker-thomson-scrapyard",
@@ -2523,7 +2523,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-thomson-scrapyard.webp"
   },
   {
     "id": "bunker-grapeseed",
@@ -2565,7 +2565,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-grapeseed.webp"
   },
   {
     "id": "bunker-route-68",
@@ -2607,7 +2607,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-route-68.webp"
   },
   {
     "id": "bunker-farmhouse",
@@ -2649,7 +2649,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-farmhouse.webp"
   },
   {
     "id": "bunker-grand-senora-desert",
@@ -2691,7 +2691,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-grand-senora-desert.webp"
   },
   {
     "id": "bunker-grand-senora-oilfields",
@@ -2733,7 +2733,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/bunker-grand-senora-oilfields.webp"
   },
   {
     "id": "facility-land-act-reservoir",
@@ -2759,7 +2759,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-land-act-reservoir.webp"
   },
   {
     "id": "facility-lago-zancudo",
@@ -2785,7 +2785,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-lago-zancudo.webp"
   },
   {
     "id": "facility-mount-gordo",
@@ -2811,7 +2811,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-mount-gordo.webp"
   },
   {
     "id": "facility-paleto-bay",
@@ -2837,7 +2837,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-paleto-bay.webp"
   },
   {
     "id": "facility-ron-alternates-wind-farm",
@@ -2863,7 +2863,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-ron-alternates-wind-farm.webp"
   },
   {
     "id": "facility-zancudo-river",
@@ -2889,7 +2889,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-zancudo-river.webp"
   },
   {
     "id": "facility-sandy-shores",
@@ -2915,7 +2915,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-sandy-shores.webp"
   },
   {
     "id": "facility-route-68",
@@ -2941,7 +2941,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-route-68.webp"
   },
   {
     "id": "facility-grand-senora-desert",
@@ -2967,7 +2967,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/facility-grand-senora-desert.webp"
   },
   {
     "id": "agency-little-seoul",
@@ -2993,7 +2993,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/agency-little-seoul.webp"
   },
   {
     "id": "agency-vespucci-canals",
@@ -3019,7 +3019,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/agency-vespucci-canals.webp"
   },
   {
     "id": "agency-rockford-hills",
@@ -3045,7 +3045,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/agency-rockford-hills.webp"
   },
   {
     "id": "agency-hawick",
@@ -3071,7 +3071,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/agency-hawick.webp"
   },
   {
     "id": "arcade-pixel-petes",
@@ -3097,7 +3097,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade-pixel-petes.webp"
   },
   {
     "id": "arcade-wonderama",
@@ -3123,7 +3123,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade-wonderama.webp"
   },
   {
     "id": "arcade-the-warehouse",
@@ -3149,7 +3149,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade.webp"
   },
   {
     "id": "arcade-videogeddon",
@@ -3175,7 +3175,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade-videogeddon.webp"
   },
   {
     "id": "arcade-insert-coin",
@@ -3201,7 +3201,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade-insert-coin.webp"
   },
   {
     "id": "arcade-eight-bit",
@@ -3227,7 +3227,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/arcade-eight-bit.webp"
   },
   {
     "id": "auto-shop-mission-row",
@@ -3253,7 +3253,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/auto-shop-mission-row.webp"
   },
   {
     "id": "auto-shop-la-mesa",
@@ -3279,7 +3279,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/auto-shop-la-mesa.webp"
   },
   {
     "id": "auto-shop-strawberry",
@@ -3305,7 +3305,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/auto-shop-strawberry.webp"
   },
   {
     "id": "auto-shop-rancho",
@@ -3331,7 +3331,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/auto-shop-rancho.webp"
   },
   {
     "id": "auto-shop-burton",
@@ -3357,7 +3357,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/auto-shop-burton.webp"
   },
   {
     "id": "salvage-yard-murrieta-heights",
@@ -3383,7 +3383,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/salvage-yard-murrieta-heights.webp"
   },
   {
     "id": "salvage-yard-sandy-shores",
@@ -3409,7 +3409,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/salvage-yard-sandy-shores.webp"
   },
   {
     "id": "salvage-yard-la-puerta",
@@ -3435,7 +3435,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/salvage-yard-la-puerta.webp"
   },
   {
     "id": "salvage-yard-strawberry",
@@ -3461,7 +3461,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/salvage-yard-strawberry.webp"
   },
   {
     "id": "salvage-yard-paleto-bay",
@@ -3487,7 +3487,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/salvage-yard-paleto-bay.webp"
   },
   {
     "id": "vehicle-warehouse-murrieta-heights",
@@ -3513,7 +3513,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/vehicle-warehouse-murrieta-heights.webp"
   },
   {
     "id": "vehicle-warehouse-la-mesa",
@@ -3539,7 +3539,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/vehicle-warehouse-la-mesa.webp"
   },
   {
     "id": "vehicle-warehouse-la-puerta",
@@ -3565,7 +3565,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/vehicle-warehouse-la-puerta.webp"
   },
   {
     "id": "vehicle-warehouse-davis",
@@ -3591,7 +3591,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/vehicle-warehouse-davis.webp"
   },
   {
     "id": "vehicle-warehouse-cypress-flats",
@@ -3617,7 +3617,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/vehicle-warehouse-cypress-flats.webp"
   },
   {
     "id": "hangar-lsia-a17",
@@ -3643,7 +3643,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/hangar-lsia-a17.webp"
   },
   {
     "id": "hangar-lsia-1",
@@ -3669,7 +3669,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/hangar-lsia-1.webp"
   },
   {
     "id": "hangar-fort-zancudo-3497",
@@ -3695,7 +3695,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/hangar-fort-zancudo-3497.webp"
   },
   {
     "id": "hangar-fort-zancudo-3499",
@@ -3721,7 +3721,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/hangar-fort-zancudo-3499.webp"
   },
   {
     "id": "hangar-fort-zancudo-a2",
@@ -3747,7 +3747,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/hangar-fort-zancudo-a2.webp"
   },
   {
     "id": "yacht-galaxy-super-yacht",
@@ -3797,7 +3797,7 @@
       "fandom": "https://gta.fandom.com/wiki/Galaxy_Super_Yacht",
       "gtabase": null
     },
-    "image_path": null
+    "image_path": "data/images/properties/yacht-galaxy-super-yacht.webp"
   },
   {
     "id": "nightclub-la-mesa",
@@ -3863,7 +3863,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-la-mesa.webp"
   },
   {
     "id": "nightclub-mission-row",
@@ -3929,7 +3929,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-mission-row.webp"
   },
   {
     "id": "nightclub-del-perro",
@@ -3995,7 +3995,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-del-perro.webp"
   },
   {
     "id": "nightclub-downtown-vinewood",
@@ -4061,7 +4061,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-downtown-vinewood.webp"
   },
   {
     "id": "nightclub-strawberry",
@@ -4127,7 +4127,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-strawberry.webp"
   },
   {
     "id": "nightclub-vespucci-canals",
@@ -4193,7 +4193,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-vespucci-canals.webp"
   },
   {
     "id": "nightclub-west-vinewood",
@@ -4259,7 +4259,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-west-vinewood.webp"
   },
   {
     "id": "nightclub-elysian-island",
@@ -4325,7 +4325,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-elysian-island.webp"
   },
   {
     "id": "nightclub-cypress-flats",
@@ -4391,7 +4391,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-cypress-flats.webp"
   },
   {
     "id": "nightclub-la-puerta",
@@ -4457,7 +4457,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
-    "image_path": null
+    "image_path": "data/images/properties/nightclub-la-puerta.webp"
   },
   {
     "id": "biker-business-coke-alamo-sea",
@@ -4499,7 +4499,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-coke-alamo-sea.webp"
   },
   {
     "id": "biker-business-coke-elysian-island",
@@ -4541,7 +4541,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-coke-elysian-island.webp"
   },
   {
     "id": "biker-business-coke-morningwood",
@@ -4583,7 +4583,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-coke-morningwood.webp"
   },
   {
     "id": "biker-business-coke-paleto-bay",
@@ -4625,7 +4625,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-coke-paleto-bay.webp"
   },
   {
     "id": "biker-business-meth-el-burro-heights",
@@ -4667,7 +4667,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-meth-el-burro-heights.webp"
   },
   {
     "id": "biker-business-meth-grand-senora-desert",
@@ -4709,7 +4709,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-meth-grand-senora-desert.webp"
   },
   {
     "id": "biker-business-meth-paleto-bay",
@@ -4751,7 +4751,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-meth-paleto-bay.webp"
   },
   {
     "id": "biker-business-meth-terminal",
@@ -4793,7 +4793,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-meth-terminal.webp"
   },
   {
     "id": "biker-business-weed-vinewood-downtown",
@@ -4835,7 +4835,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-weed-vinewood-downtown.webp"
   },
   {
     "id": "biker-business-weed-elysian-island",
@@ -4877,7 +4877,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-weed-elysian-island.webp"
   },
   {
     "id": "biker-business-weed-mount-chiliad",
@@ -4919,7 +4919,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-weed-mount-chiliad.webp"
   },
   {
     "id": "biker-business-weed-san-chianski",
@@ -4961,7 +4961,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-weed-san-chianski.webp"
   },
   {
     "id": "biker-business-cash-cypress-flats",
@@ -5003,7 +5003,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-cash-cypress-flats.webp"
   },
   {
     "id": "biker-business-cash-grand-senora-desert",
@@ -5045,7 +5045,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-cash-grand-senora-desert.webp"
   },
   {
     "id": "biker-business-cash-paleto-bay",
@@ -5087,7 +5087,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-cash-paleto-bay.webp"
   },
   {
     "id": "biker-business-cash-vespucci-canals",
@@ -5129,7 +5129,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-cash-vespucci-canals.webp"
   },
   {
     "id": "biker-business-forgery-elysian-island",
@@ -5171,7 +5171,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-forgery-elysian-island.webp"
   },
   {
     "id": "biker-business-forgery-grapeseed",
@@ -5213,7 +5213,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-forgery-grapeseed.webp"
   },
   {
     "id": "biker-business-forgery-paleto-bay",
@@ -5255,7 +5255,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-forgery-paleto-bay.webp"
   },
   {
     "id": "biker-business-forgery-textile-city",
@@ -5297,6 +5297,6 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
-    "image_path": null
+    "image_path": "data/images/properties/biker-business-forgery-textile-city.webp"
   }
 ]

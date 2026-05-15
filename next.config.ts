@@ -18,6 +18,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: "/properties/:path*.webp",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 };
