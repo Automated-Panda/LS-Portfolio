@@ -4,12 +4,39 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4b — Granular Properties (nightclubs pilot live; fan out to apartments/garages/etc. next). `/properties` and `/businesses` split into two scoped browse routes.
-**Last updated:** 2026-05-15
+**Current phase:** 🟡 Phase 4b — Granular Properties (full fanout landed; verification + images next). `/properties` (81 cards) and `/businesses` (109 cards) split into scoped browse routes. 165 of 190 rows are `verify: true`-flagged for a future Fandom cross-check pass.
+**Last updated:** 2026-05-15 (late)
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-15 (late) — Phase 4b full fanout: 180 new property instances
+
+**Result:** Hosted DB now carries **190 properties** across 22 subtypes (58 residences + 23 garages + 109 businesses), with 335 property_upgrades and 30 upgrade-requirement chains. Built in one push using 3 parallel research subagents (Sonnet) each handling a subtype group — residential / workplaces / aircraft-boats-biker — then integrated by aggregating their named exports into `scripts/data/properties-seed.ts`.
+
+**Subtype coverage:**
+- Residential: High-End Apartment 17 · Mid-End 30 · Low-End 10 · Casino Penthouse 1
+- Garage: Stand-Alone 22 · Eclipse Blvd 1
+- Business: Nightclub 10 · CEO Office 5 · MC Clubhouse 12 · Bunker 11 · Facility 9 · Agency 5 · Arcade 6 · Auto Shop 5 · Salvage Yard 5 · Vehicle Warehouse 5 · Hangar 5 · Super Yacht 1 · Coke 6 · Meth 6 · Weed 6 · Cash 6 · Forgery 6
+
+**New seed-file structure:** 15 type-specific seed files in `scripts/data/` — one per subtype group. `properties-seed.ts` is now an index that spreads all of them into `PROPERTIES_SEED`. Adding a new subtype is dropping in a new `*-seed.ts` file + one import line.
+
+**⚠️ Data quality caveat:** 165 of 190 rows carry `verify: true`. Fandom CDN returned **HTTP 403** to WebFetch in every context (controller and subagents), so all location data was authored from the model's GTA Online knowledge rather than live Fandom verification. Structure is correct; instance names + addresses need a verification pass.
+
+**Two integration bugs fixed during merge:**
+- `apartments-seed.ts` row 7: id `low-end-apartment-1231-happiness-island-rd` had display_name `"0112 Sinner Street"` (subagent's own copy-paste artifact). Corrected id → `low-end-apartment-0112-sinner-st`.
+- `hangars-seed.ts`: LSIA Hangar 3499 had display_name `"LSIA Hangar A17"` (mixed up with the Fort Zancudo Hangar A17 entry). Display corrected.
+
+**Pending follow-ups from this push (in priority order):**
+
+1. **Verification pass** — work through the 165 verify-flagged rows. Best approach is probably:
+   - Find a Fandom mirror or cache that returns 200 instead of 403, OR
+   - Manually open the relevant Fandom list pages and cross-check / patch the seed
+   - Strip `verify: true` row-by-row as confirmed.
+   - Most uncertain: biker-business locations (per-business-type lists vary), CEO 5th office, mid-end apartment exact addresses, stand-alone garage addresses past the well-known 4.
+2. **Type-level images** — one `.webp` per subtype (22 images total). Use `scripts/normalize-temp-images.ts` workflow (extend to route to `data/images/properties/` based on filename → subtype match), then `npm run images:publish`.
+3. **`/my-properties` + `/my-businesses` upgrade-tier UI** — Phase 4c. Click an owned property → check off installed upgrades; enforce `required_upgrade_id` chains. Schema already supports this.
 
 ### 2026-05-15 — Phase 4b nightclubs pilot landed + `/businesses` split
 
@@ -111,7 +138,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | **1. Supabase Setup** | ✅ Complete (hosted live) | Hosted LSPortfolio project active (eu-west-1); 0001+0002 migrations applied; seed imported; local Docker kept as fallback |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
-| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · Nightclubs pilot (10 instances × 6 upgrades) ✅ · Fan out to apartments/garages/etc. ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
+| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout: 190 instances across 22 subtypes** ✅ · Verification pass (165 flagged rows) ⚪ · Type-level images (22 subtypes) ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
 | **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
