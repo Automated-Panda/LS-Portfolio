@@ -4,12 +4,49 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4b — Granular Properties (full fanout + verification done; images next). `/properties` (78 cards) and `/businesses` (88 cards) split into scoped browse routes. **166 properties across 23 subtypes, 0 verify-flagged** — addresses cross-checked against gtalens/gtabase/leo3418.
-**Last updated:** 2026-05-16
+**Current phase:** 🟡 Phase 4b — Granular Properties **done** (data + images shipped). `/properties` (78 cards) and `/businesses` (88 cards) live with per-instance gtabase preview images. **166 properties across 23 subtypes, 0 verify-flagged, 165 with unique cover images.** Next: Phase 4c (`/my-properties` upgrade-tier UI) and Phase 5 lite (vehicle→property linking) to unblock the onboarding wizard.
+**Last updated:** 2026-05-16 (late)
 
 ---
 
 ## 🧭 Where we left off (tomorrow's jumping-off point)
+
+### 2026-05-16 (late) — Per-instance property images: 159/166 unique, 6 fallback, 1 missing
+
+Wrote `scripts/fetch-property-images.ts` — brute-force gtabase CDN scraper with multi-pattern URL generation per subtype. After three iteration passes refining slug rules, the script lands per-instance preview images for **159 of 166 properties (96%)**:
+
+- **159 unique** images, one per property, fetched directly from gtabase's `jch-optimize/ng/` CDN
+- **6 subtype fallback** (5 stand-alone-garage Unit-X variants + 1 *The Warehouse* arcade — gtabase has the page but no image asset; they share `stand-alone-garage.webp` / `arcade.webp` instead)
+- **1 no-image** (Casino Penthouse — uses gtabase's `igallery/` URL pattern that the fetcher doesn't yet handle; manual sourcing later)
+
+**Slug-pattern gotchas the fetcher now handles:**
+- `biker-clubhouse_<loc>-clubhouse(-2)?` for MC clubhouses (1-story / 2-story)
+- `biker-business_<biz-name>-<loc>` for biker businesses (cocaine-lockup, methamphetamine-lab, weed-farm, counterfeit-cash-factory, document-forgery-office)
+- `apartment_full_stilt-<full-address>` for the 10 Vinewood Hills stilts
+- `yacht_the-<model>` (Aquarius / Pisces / Orion)
+- `garage_eclipse-blvd-garage` (singular form on gtabase)
+- `apartment_<address>-apt<N>` (no dash before number, full street word)
+- Compass direction expansion (`s` → `south`, etc.)
+- `murietta` typo (gtabase typo on the Murrieta Heights salvage yard)
+- `lsia-nightclub` for what my seed calls "La Puerta Nightclub" (gtabase indexes under LSIA)
+
+**Other infra:**
+- `scripts/build-properties.ts`: now resolves image_path with per-instance first → subtype fallback → null. Three-tier priority.
+- `scripts/publish-images.mjs`: now publishes both vehicles AND properties (was vehicles-only).
+- `next.config.ts`: 1-year immutable `Cache-Control` on `/properties/*.webp` (matches existing rule for `/vehicles/*.webp`).
+- `data/images/properties/` (161 webp, 1.9MB) committed to repo; same for `public/properties/`. Vercel serves both as static assets.
+
+**Hosted DB:** reimported. `image_path` column populated for 165/166 rows.
+
+**Status of Phase 4b:** ✅ **DONE.** Data is canonical, every property has a cover (except Casino Penthouse). Time to move up the stack to Phase 4c.
+
+**Pending follow-ups (in priority order):**
+
+1. **`/my-properties` upgrade-tier UI** (Phase 4c) — click an owned property → check off installed upgrades; enforce `required_upgrade_id` chains. Schema already supports this (`user_owned_property_upgrades` table is live).
+2. **`/my-businesses` owned view** — same pattern, business-scoped.
+3. **Vehicle→property linking schema** — small migration adding either `stored_in_property_id` to `user_owned_vehicles` or a new join table. The piece that unblocks the onboarding wizard.
+4. **Casino Penthouse image** — manually source a cover image and drop into `data/images/properties/casino-penthouse.webp` (or extend the fetcher to handle gtabase's `igallery/` URL format).
+5. **Stand-alone garage Unit-X variants + The Warehouse arcade** — same: would be nice to have unique covers for the 6 currently sharing a subtype fallback. Low priority; the fallback is real, not a placeholder.
 
 ### 2026-05-16 — Phase 4b verification pass: 165 → 0 verify-flagged rows
 
@@ -48,7 +85,7 @@ Pass 2 (175 → 166):
 **Sources used:** gtalens.com (apartments-and-garages map), gtabase.com (per-type property pages: mc-businesses, mc-clubhouses, auto-shops, vehicle-warehouses, facilities, bunkers, salvage-yards), leo3418.github.io (apartment-locations), WebSearch fallbacks (sportskeeda, gosunoob, dotesports). **Fandom CDN still 403s WebFetch** so couldn't use Fandom directly, but every type now has a non-Fandom canonical source baked into its `_sources.gtabase` field.
 
 **Pending follow-ups from this push:**
-1. **Type-level images** — one `.webp` per subtype (23 images). Extend `scripts/normalize-temp-images.ts` to route property images by filename. Drop a `nightclub.webp` first so the 10 nightclubs get a cover.
+1. ~~**Type-level images**~~ — superseded by per-instance image fetcher (see next session below). 159/166 properties got unique gtabase preview images instead.
 2. **`/my-properties` upgrade-tier UI** (Phase 4c) — click an owned property → check off installed upgrades. Schema supports this already.
 3. **`/my-businesses` owned view** — same pattern, business-scoped.
 4. **Vehicle→property linking schema** — small migration adding `stored_in_property_id` to `user_owned_vehicles` (or a join table). Unblocks the onboarding wizard.
@@ -180,7 +217,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | **1. Supabase Setup** | ✅ Complete (hosted live) | Hosted LSPortfolio project active (eu-west-1); 0001+0002 migrations applied; seed imported; local Docker kept as fallback |
 | 2. Auth & User Shell | ✅ Code complete (full smoke test deferred to Phase 9) | Supabase auth, profile table, basic dashboard layout |
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
-| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout + verification: 166 canonical instances across 23 subtypes, 0 verify-flagged** ✅ · Type-level images (23 subtypes) ⚪ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
+| **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout + verification: 166 canonical instances across 23 subtypes, 0 verify-flagged** ✅ · **Per-instance preview images: 159 unique + 6 fallback + 1 missing** ✅ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
 | 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
 | **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
@@ -480,6 +517,8 @@ Short-form record of decisions made during brainstorming. See the design doc for
 | 2026-05-15 | `/properties` and `/businesses` split into separate browse routes | The sidebar already split *owned* views (My Properties vs My Businesses); the *browse* side was the asymmetric leftover. Same `<PropertiesBrowser>` powers both via a scope param — no component duplication. Filter-bar hides the Type pill row when only one type is in scope so `/businesses` doesn't show a redundant "Business" pill. |
 | 2026-05-15 | `max_capacity` = base + sum-of-upgrade-increments (was max-single-upgrade) | Old type-level seed used capacity-as-absolute-alternative semantics ("2-Car / 6-Car / 10-Car Garage" tiers were pick-one). Phase 4b model is increment-based: a fully-upgraded nightclub stacks L1+L2+L3 = 10+10+11 = 31. Future per-instance fanout will follow the same increment convention; any pick-one tiers (rare in granular model) collapse to one row per instance. |
 | 2026-05-15 | Bulk-add UX reshaped into onboarding-wizard concept | When user logs in, prompt them to pick a property they own → multi-select the vehicles stored inside → repeat per property. Replaces the "mark 200 cars" flat bulk-add idea with a property-first walkthrough. Requires Phase 4b complete + a new vehicle→property linking schema (effectively Phase 5 lite). Spec deferred until Phase 4b fanout is far enough along to test the wizard against. |
+| 2026-05-16 | Per-instance property images sourced from gtabase via brute-force URL trials | Wrote `scripts/fetch-property-images.ts`: for each property, generate a fan of candidate gtabase CDN URLs (subtype-specific slug rules + abbreviation expansions + apostrophe normalisation + special cases for typos and aliases), fetch the first that 200s, normalise via sharp to 600w webp. Hit rate 96% (159 / 166) after 3 iteration passes. 6 fall back to subtype-level shared images; Casino Penthouse stays imageless until the `igallery/` URL format is added. Beats the spec's earlier "type-level only" decision. |
+| 2026-05-16 | Image resolution priority: per-instance → subtype fallback → null | `build-properties.ts` checks `data/images/properties/<id>.webp` first, then `data/images/properties/<subtype>.webp`, then null (UI shows "No image"). Lets us mix unique covers with type-level fallbacks per subtype without code branching, and a future image polish pass can drop unique webps into the per-instance slot at any time. |
 
 ---
 
