@@ -1,10 +1,11 @@
 /**
  * Stage 3: build data/seed/properties.json from the hand-curated seed file.
  *
- * Image-path resolution: per-instance first, subtype-level fallback second.
- *   1. data/images/properties/<id>.webp           — unique per-property image
- *   2. data/images/properties/<subtype>.webp      — type-level fallback
- *   3. null                                       — UI shows "No image"
+ * Image-path resolution priority:
+ *   1. data/images/properties/<id>.webp                 — unique per-instance
+ *   2. data/images/properties/<parent_building>.webp    — tower-level (units inherit tower image)
+ *   3. data/images/properties/<subtype>.webp            — type-level fallback
+ *   4. null                                             — UI shows "No image"
  *
  * Use scripts/fetch-property-images.ts to source per-instance images from
  * gtabase. Subtype-level fallbacks are seeded manually (copy of a sample
@@ -20,22 +21,21 @@ const SEED_DIR = path.join("data", "seed");
 const IMAGES_DIR = path.join("data", "images", "properties");
 
 function resolveImagePath(prop: Omit<Property, "image_path">): string | null {
-  const instanceImage = path
-    .join(IMAGES_DIR, `${prop.id}.webp`)
-    .replace(/\\/g, "/");
-  if (existsSync(instanceImage)) return instanceImage;
+  const candidates = [prop.id];
+  if (prop.parent_building) candidates.push(prop.parent_building);
+  candidates.push(prop.subtype);
 
-  const subtypeImage = path
-    .join(IMAGES_DIR, `${prop.subtype}.webp`)
-    .replace(/\\/g, "/");
-  if (existsSync(subtypeImage)) return subtypeImage;
-
+  for (const key of candidates) {
+    const p = path.join(IMAGES_DIR, `${key}.webp`).replace(/\\/g, "/");
+    if (existsSync(p)) return p;
+  }
   return null;
 }
 
 async function main(): Promise<void> {
   const properties: Property[] = PROPERTIES_SEED.map((p) => ({
     ...p,
+    parent_building: p.parent_building ?? null,
     image_path: resolveImagePath(p),
   }));
 

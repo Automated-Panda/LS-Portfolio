@@ -53,6 +53,12 @@ export const PropertySchema = z.object({
   location: z.string().nullable(),
   neighborhood: z.string().nullable(),
   capacity: z.number().int().min(0),
+  // Self-referencing FK: when set, this row is a unit (e.g. apartment 3 of
+  // Eclipse Towers) and the tower's row id lives here. Towers themselves
+  // carry parent_building=null and are non-ownable in the UI — clicking
+  // them opens a units dialog instead. Optional so existing per-type seed
+  // files don't all need updating — build-properties.ts defaults to null.
+  parent_building: z.string().nullable().optional(),
   image_path: z.string().min(1).nullable(),
   counts_as_garage: z.boolean(),
   upgrades: z.array(PropertyUpgradeSchema),

@@ -13,6 +13,17 @@ import { TradeInModal, type TradeInTrigger } from "@/components/portfolio/trade-
 
 import { togglePropertyOwnership } from "./actions";
 
+type TowerProps = {
+  /** When set, this property is a tower aggregator. Click opens a units
+   * dialog instead of toggling ownership. The tower itself is non-ownable. */
+  tower: {
+    totalUnits: number;
+    ownedCount: number;
+    selectedCount?: number;     // only meaningful in selectionMode="multi"
+    onOpen: () => void;
+  };
+};
+
 type Props = {
   property: PropertySummary;
   imageUrl: string | null;
@@ -20,19 +31,24 @@ type Props = {
   selectionMode?: "browse" | "multi";
   selected?: boolean;
   onSelect?: (propertyId: string) => void;
-};
+} & Partial<TowerProps>;
 
 function PropertyCardImpl({
   property, imageUrl, owned,
   selectionMode = "browse",
   selected = false,
   onSelect,
+  tower,
 }: Props) {
   const [optimisticOwned, setOptimisticOwned] = useState(owned);
   const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleToggle = () => {
+    if (tower) {
+      tower.onOpen();
+      return;
+    }
     if (selectionMode === "multi") {
       onSelect?.(property.id);
       return;
@@ -55,7 +71,16 @@ function PropertyCardImpl({
     });
   };
 
-  const isHighlighted = selectionMode === "multi" ? selected : optimisticOwned;
+  const towerInteracted = tower
+    ? selectionMode === "multi"
+      ? (tower.selectedCount ?? 0) > 0
+      : tower.ownedCount > 0
+    : false;
+  const isHighlighted = tower
+    ? towerInteracted
+    : selectionMode === "multi"
+      ? selected
+      : optimisticOwned;
 
   return (
     <>
@@ -72,20 +97,35 @@ function PropertyCardImpl({
         disabled={isPending}
         className="flex flex-1 flex-col text-left"
       >
-        <div
-          className={cn(
-            "absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all",
-            isHighlighted
-              ? "bg-emerald-500 text-white"
-              : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
-          )}
-        >
-          {isHighlighted ? (
-            <Check className="h-4 w-4" />
-          ) : (
-            <Plus className="h-4 w-4" />
-          )}
-        </div>
+        {tower ? (
+          <div
+            className={cn(
+              "absolute right-2 top-2 z-10 flex h-7 items-center gap-1 rounded-full px-2 text-xs font-semibold transition-all",
+              towerInteracted
+                ? "bg-emerald-500 text-white"
+                : "bg-background/90 text-foreground",
+            )}
+          >
+            {selectionMode === "multi"
+              ? `${tower.selectedCount ?? 0} / ${tower.totalUnits}`
+              : `${tower.ownedCount} / ${tower.totalUnits}`}
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all",
+              isHighlighted
+                ? "bg-emerald-500 text-white"
+                : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
+            )}
+          >
+            {isHighlighted ? (
+              <Check className="h-4 w-4" />
+            ) : (
+              <Plus className="h-4 w-4" />
+            )}
+          </div>
+        )}
 
         <div className="relative aspect-video w-full bg-muted">
           {imageUrl ? (
@@ -117,10 +157,16 @@ function PropertyCardImpl({
             </p>
           </div>
           <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">
-            {property.max_capacity > 0 && (
+            {tower ? (
               <Badge variant="outline" className="shrink-0 text-[10px]">
-                Up to {property.max_capacity} cars
+                {tower.totalUnits} units · click to pick
               </Badge>
+            ) : (
+              property.max_capacity > 0 && (
+                <Badge variant="outline" className="shrink-0 text-[10px]">
+                  Up to {property.max_capacity} cars
+                </Badge>
+              )
             )}
           </div>
         </div>

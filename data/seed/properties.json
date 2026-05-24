@@ -5,20 +5,156 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Eclipse Boulevard, Pillbox Hill",
-    "neighborhood": "Pillbox Hill",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-eclipse-towers-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-apt-3",
+    "display_name": "Eclipse Towers, Apartment 3",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-apt-5",
+    "display_name": "Eclipse Towers, Apartment 5",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-apt-9",
+    "display_name": "Eclipse Towers, Apartment 9",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-apt-31",
+    "display_name": "Eclipse Towers, Apartment 31",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-apt-40",
+    "display_name": "Eclipse Towers, Apartment 40",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-penthouse-suite-1",
+    "display_name": "Eclipse Towers, Penthouse Suite 1",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-penthouse-suite-2",
+    "display_name": "Eclipse Towers, Penthouse Suite 2",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-eclipse-towers-penthouse-suite-3",
+    "display_name": "Eclipse Towers, Penthouse Suite 3",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "South Mo Milton Drive, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-eclipse-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -31,20 +167,48 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "3 Alta Street",
-    "neighborhood": "Downtown Vinewood",
+    "location": "3 Alta Street, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-3-alta-st-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
+  },
+  {
+    "id": "high-end-apartment-3-alta-st-apt-10",
+    "display_name": "3 Alta Street, Apartment 10",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "3 Alta Street, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-3-alta-st",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
+  },
+  {
+    "id": "high-end-apartment-3-alta-st-apt-57",
+    "display_name": "3 Alta Street, Apartment 57",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "3 Alta Street, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-3-alta-st",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -57,20 +221,66 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Del Perro Heights",
+    "location": "Marathon Avenue & Prosperity Street, Del Perro",
     "neighborhood": "Del Perro",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-del-perro-heights-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+  },
+  {
+    "id": "high-end-apartment-del-perro-heights-apt-4",
+    "display_name": "Del Perro Heights, Apartment 4",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Marathon Avenue & Prosperity Street, Del Perro",
+    "neighborhood": "Del Perro",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-del-perro-heights",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+  },
+  {
+    "id": "high-end-apartment-del-perro-heights-apt-7",
+    "display_name": "Del Perro Heights, Apartment 7",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Marathon Avenue & Prosperity Street, Del Perro",
+    "neighborhood": "Del Perro",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-del-perro-heights",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+  },
+  {
+    "id": "high-end-apartment-del-perro-heights-apt-20",
+    "display_name": "Del Perro Heights, Apartment 20",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Marathon Avenue & Prosperity Street, Del Perro",
+    "neighborhood": "Del Perro",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-del-perro-heights",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -83,20 +293,66 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "4 Integrity Way",
-    "neighborhood": "Downtown Vinewood",
+    "location": "Integrity Way, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-4-integrity-way-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+  },
+  {
+    "id": "high-end-apartment-4-integrity-way-apt-28",
+    "display_name": "4 Integrity Way, Apartment 28",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Integrity Way, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-4-integrity-way",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+  },
+  {
+    "id": "high-end-apartment-4-integrity-way-apt-30",
+    "display_name": "4 Integrity Way, Apartment 30",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Integrity Way, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-4-integrity-way",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+  },
+  {
+    "id": "high-end-apartment-4-integrity-way-apt-35",
+    "display_name": "4 Integrity Way, Apartment 35",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Integrity Way, Pillbox Hill",
+    "neighborhood": "Pillbox Hill",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-4-integrity-way",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -109,20 +365,66 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Weazel Plaza",
-    "neighborhood": "Del Perro",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-weazel-plaza-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+  },
+  {
+    "id": "high-end-apartment-weazel-plaza-apt-26",
+    "display_name": "Weazel Plaza, Apartment 26",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-weazel-plaza",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+  },
+  {
+    "id": "high-end-apartment-weazel-plaza-apt-70",
+    "display_name": "Weazel Plaza, Apartment 70",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-weazel-plaza",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+  },
+  {
+    "id": "high-end-apartment-weazel-plaza-apt-101",
+    "display_name": "Weazel Plaza, Apartment 101",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-weazel-plaza",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -135,20 +437,66 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Richards Majestic",
-    "neighborhood": "Del Perro",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-richards-majestic-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+  },
+  {
+    "id": "high-end-apartment-richards-majestic-apt-2",
+    "display_name": "Richards Majestic, Apartment 2",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-richards-majestic",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+  },
+  {
+    "id": "high-end-apartment-richards-majestic-apt-4",
+    "display_name": "Richards Majestic, Apartment 4",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-richards-majestic",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+  },
+  {
+    "id": "high-end-apartment-richards-majestic-apt-51",
+    "display_name": "Richards Majestic, Apartment 51",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Movie Star Way & Heritage Way, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-richards-majestic",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -161,20 +509,66 @@
     "property_type": "residence",
     "subtype": "high-end-apartment",
     "subtype_display": "High-End Apartment",
-    "location": "Tinsel Towers",
-    "neighborhood": "Downtown Vinewood",
+    "location": "Tinsel Towers Avenue, Rockford Hills",
+    "neighborhood": "Rockford Hills",
     "capacity": 0,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-tinsel-towers-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-tinsel-towers-apt-29",
+    "display_name": "Tinsel Towers, Apartment 29",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Tinsel Towers Avenue, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-tinsel-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-tinsel-towers-apt-42",
+    "display_name": "Tinsel Towers, Apartment 42",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Tinsel Towers Avenue, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-tinsel-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Apartments",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
+    },
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+  },
+  {
+    "id": "high-end-apartment-tinsel-towers-apt-45",
+    "display_name": "Tinsel Towers, Apartment 45",
+    "property_type": "residence",
+    "subtype": "high-end-apartment",
+    "subtype_display": "High-End Apartment",
+    "location": "Tinsel Towers Avenue, Rockford Hills",
+    "neighborhood": "Rockford Hills",
+    "capacity": 10,
+    "parent_building": "high-end-apartment-tinsel-towers",
+    "counts_as_garage": true,
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -189,18 +583,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2862 Hillcrest Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2862-hillcrest-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -215,18 +601,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2866 Hillcrest Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2866-hillcrest-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -241,18 +619,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2868 Hillcrest Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2868-hillcrest-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -267,18 +637,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2874 Hillcrest Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2874-hillcrest-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -293,18 +655,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2044 North Conker Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2044-north-conker-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -319,18 +673,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2045 North Conker Avenue",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2045-north-conker-ave-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -345,18 +691,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2117 Milton Road",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2117-milton-rd-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -371,18 +709,10 @@
     "subtype_display": "High-End Apartment",
     "location": "2113 Mad Wayne Thunder Drive",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-2113-mad-wayne-thunder-dr-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -397,18 +727,10 @@
     "subtype_display": "High-End Apartment",
     "location": "3655 Wild Oats Drive",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-3655-wild-oats-dr-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -423,18 +745,10 @@
     "subtype_display": "High-End Apartment",
     "location": "3677 Whispymound Drive",
     "neighborhood": "Vinewood Hills",
-    "capacity": 0,
+    "capacity": 10,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "high-end-apartment-3677-whispymound-dr-garage",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -449,18 +763,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "1162 Power Street",
     "neighborhood": "Downtown",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-1162-power-st-apt-3-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -475,18 +781,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0605 Spanish Avenue",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0605-spanish-ave-apt-1-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -501,18 +799,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0604 Las Lagunas Boulevard",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0604-las-lagunas-blvd-apt-4-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -527,18 +817,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0184 Milton Road",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0184-milton-rd-apt-13-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -553,18 +835,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "The Royale",
     "neighborhood": "Downtown",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-the-royale-apt-19-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -579,18 +853,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0504 South Mo Milton Drive",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0504-s-mo-milton-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -605,18 +871,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0115 Bay City Avenue",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0115-bay-city-ave-apt-45-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -631,18 +889,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "0325 South Rockford Drive",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-0325-south-rockford-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -657,18 +907,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "Dream Tower",
     "neighborhood": "Downtown",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-dream-tower-apt-15-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -683,18 +925,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "4 Hangman Avenue",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-4-hangman-ave-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -709,18 +943,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "12 Sustancia Road",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-12-sustancia-rd-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -735,18 +961,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "4584 Procopio Drive",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-4584-procopio-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -761,18 +979,10 @@
     "subtype_display": "Mid-End Apartment",
     "location": "4401 Procopio Drive",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 6,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "mid-end-apartment-4401-procopio-dr-garage",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -787,18 +997,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "2143 Las Lagunas Boulevard",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-2143-las-lagunas-blvd-apt-9-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -813,18 +1015,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "1561 San Vitas Street",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-1561-san-vitas-st-apt-2-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -839,18 +1033,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "0112 South Rockford Drive",
     "neighborhood": "Pillbox Hill",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-0112-s-rockford-dr-apt-13-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -865,18 +1051,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "2057 Vespucci Boulevard",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-2057-vespucci-blvd-apt-1-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -891,18 +1069,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "0069 Cougar Avenue",
     "neighborhood": "Downtown",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-0069-cougar-ave-apt-19-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -917,18 +1087,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "1237 Prosperity Street",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-1237-prosperity-st-apt-21-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -943,18 +1105,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "1115 Boulevard Del Perro",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-1115-blvd-del-perro-apt-18-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -969,18 +1123,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "0232 Paleto Boulevard",
     "neighborhood": "Paleto Bay",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-0232-paleto-blvd-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -995,18 +1141,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "140 Zancudo Avenue",
     "neighborhood": "Fort Zancudo",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-140-zancudo-ave-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -1021,18 +1159,10 @@
     "subtype_display": "Low-End Apartment",
     "location": "1893 Grapeseed Avenue",
     "neighborhood": "Grapeseed",
-    "capacity": 0,
+    "capacity": 2,
+    "parent_building": null,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "low-end-apartment-1893-grapeseed-ave-garage",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
@@ -1063,6 +1193,7 @@
       "fandom": "https://gta.fandom.com/wiki/Master_Penthouse",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/casino-penthouse"
     },
+    "parent_building": null,
     "image_path": null
   },
   {
@@ -1089,6 +1220,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-0120-murrieta-heights.webp"
   },
   {
@@ -1115,6 +1247,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
@@ -1141,6 +1274,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-331-supply-st.webp"
   },
   {
@@ -1167,6 +1301,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1623-south-shambles-st.webp"
   },
   {
@@ -1193,6 +1328,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1337-exceptionalists-way.webp"
   },
   {
@@ -1219,6 +1355,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
@@ -1245,6 +1382,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
@@ -1271,6 +1409,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
@@ -1297,6 +1436,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-0552-roy-lowenstein-blvd.webp"
   },
   {
@@ -1323,6 +1463,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-0432-davis-ave.webp"
   },
   {
@@ -1349,6 +1490,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-870-route-68-approach.webp"
   },
   {
@@ -1375,6 +1517,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-8754-route-68.webp"
   },
   {
@@ -1401,6 +1544,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1905-davis-ave.webp"
   },
   {
@@ -1427,6 +1571,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-4531-dry-dock-st.webp"
   },
   {
@@ -1453,6 +1598,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-0754-roy-lowenstein-blvd.webp"
   },
   {
@@ -1479,6 +1625,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-12-little-bighorn-ave.webp"
   },
   {
@@ -1505,6 +1652,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage.webp"
   },
   {
@@ -1531,6 +1679,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-142-paleto-blvd.webp"
   },
   {
@@ -1557,6 +1706,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1-strawberry-ave.webp"
   },
   {
@@ -1583,6 +1733,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1932-grapeseed-ave.webp"
   },
   {
@@ -1609,6 +1760,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1920-senora-way.webp"
   },
   {
@@ -1635,6 +1787,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-2000-great-ocean-hwy.webp"
   },
   {
@@ -1661,6 +1814,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-197-route-68.webp"
   },
   {
@@ -1687,6 +1841,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-1200-route-68.webp"
   },
   {
@@ -1713,6 +1868,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-innocence-blvd.webp"
   },
   {
@@ -1739,6 +1895,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-634-blvd-del-perro.webp"
   },
   {
@@ -1765,6 +1922,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/stand-alone-garage-0897-mirror-park-blvd.webp"
   },
   {
@@ -1782,6 +1940,7 @@
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/eclipse-blvd-garages-all.webp"
   },
   {
@@ -1799,6 +1958,7 @@
       "fandom": "https://gta.fandom.com/wiki/The_Vinewood_Club",
       "gtabase": "https://www.gtabase.com/gta-online/properties/the-vinewood-club-garage"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vinewood-car-club.webp"
   },
   {
@@ -1841,6 +2001,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/ceo-office-maze-bank-west.webp"
   },
   {
@@ -1883,6 +2044,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/ceo-office-arcadius-business-center.webp"
   },
   {
@@ -1925,6 +2087,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/ceo-office-lombank-west.webp"
   },
   {
@@ -1967,6 +2130,7 @@
       "fandom": "https://gta.fandom.com/wiki/Executive_Offices",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/ceo-office-maze-bank-tower.webp"
   },
   {
@@ -1993,6 +2157,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-great-chaparral.webp"
   },
   {
@@ -2019,6 +2184,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-sandy-shores.webp"
   },
   {
@@ -2045,6 +2211,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-paleto-bay-1story.webp"
   },
   {
@@ -2071,6 +2238,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-del-perro-beach.webp"
   },
   {
@@ -2097,6 +2265,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-rancho.webp"
   },
   {
@@ -2123,6 +2292,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-pillbox-hill.webp"
   },
   {
@@ -2149,6 +2319,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-grapeseed.webp"
   },
   {
@@ -2175,6 +2346,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-paleto-bay-2story.webp"
   },
   {
@@ -2201,6 +2373,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-vespucci-beach.webp"
   },
   {
@@ -2227,6 +2400,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-la-mesa.webp"
   },
   {
@@ -2253,6 +2427,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-downtown-vinewood.webp"
   },
   {
@@ -2279,6 +2454,7 @@
       "fandom": "https://gta.fandom.com/wiki/Clubhouses",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/mc-clubhouse-hawick.webp"
   },
   {
@@ -2321,6 +2497,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-chumash.webp"
   },
   {
@@ -2363,6 +2540,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-paleto-forest.webp"
   },
   {
@@ -2405,6 +2583,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-raton-canyon.webp"
   },
   {
@@ -2447,6 +2626,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-lago-zancudo.webp"
   },
   {
@@ -2489,6 +2669,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-smoke-tree-road.webp"
   },
   {
@@ -2531,6 +2712,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-thomson-scrapyard.webp"
   },
   {
@@ -2573,6 +2755,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-grapeseed.webp"
   },
   {
@@ -2615,6 +2798,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-route-68.webp"
   },
   {
@@ -2657,6 +2841,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-farmhouse.webp"
   },
   {
@@ -2699,6 +2884,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-grand-senora-desert.webp"
   },
   {
@@ -2741,6 +2927,7 @@
       "fandom": "https://gta.fandom.com/wiki/Bunker",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/bunker-grand-senora-oilfields.webp"
   },
   {
@@ -2767,6 +2954,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-land-act-reservoir.webp"
   },
   {
@@ -2793,6 +2981,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-lago-zancudo.webp"
   },
   {
@@ -2819,6 +3008,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-mount-gordo.webp"
   },
   {
@@ -2845,6 +3035,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-paleto-bay.webp"
   },
   {
@@ -2871,6 +3062,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-ron-alternates-wind-farm.webp"
   },
   {
@@ -2897,6 +3089,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-zancudo-river.webp"
   },
   {
@@ -2923,6 +3116,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-sandy-shores.webp"
   },
   {
@@ -2949,6 +3143,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-route-68.webp"
   },
   {
@@ -2975,6 +3170,7 @@
       "fandom": "https://gta.fandom.com/wiki/Facility",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/facility-grand-senora-desert.webp"
   },
   {
@@ -3001,6 +3197,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/agency-little-seoul.webp"
   },
   {
@@ -3027,6 +3224,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/agency-vespucci-canals.webp"
   },
   {
@@ -3053,6 +3251,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/agency-rockford-hills.webp"
   },
   {
@@ -3079,6 +3278,7 @@
       "fandom": "https://gta.fandom.com/wiki/Agencies",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/agency-hawick.webp"
   },
   {
@@ -3105,6 +3305,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade-pixel-petes.webp"
   },
   {
@@ -3131,6 +3332,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade-wonderama.webp"
   },
   {
@@ -3157,6 +3359,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade.webp"
   },
   {
@@ -3183,6 +3386,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade-videogeddon.webp"
   },
   {
@@ -3209,6 +3413,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade-insert-coin.webp"
   },
   {
@@ -3235,6 +3440,7 @@
       "fandom": "https://gta.fandom.com/wiki/Arcades",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/arcade-eight-bit.webp"
   },
   {
@@ -3261,6 +3467,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/auto-shop-mission-row.webp"
   },
   {
@@ -3287,6 +3494,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/auto-shop-la-mesa.webp"
   },
   {
@@ -3313,6 +3521,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/auto-shop-strawberry.webp"
   },
   {
@@ -3339,6 +3548,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/auto-shop-rancho.webp"
   },
   {
@@ -3365,6 +3575,7 @@
       "fandom": "https://gta.fandom.com/wiki/Auto_Shop",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/auto-shop-burton.webp"
   },
   {
@@ -3391,6 +3602,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/salvage-yard-murrieta-heights.webp"
   },
   {
@@ -3417,6 +3629,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/salvage-yard-sandy-shores.webp"
   },
   {
@@ -3443,6 +3656,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/salvage-yard-la-puerta.webp"
   },
   {
@@ -3469,6 +3683,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/salvage-yard-strawberry.webp"
   },
   {
@@ -3495,6 +3710,7 @@
       "fandom": "https://gta.fandom.com/wiki/Salvage_Yard",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/salvage-yard-paleto-bay.webp"
   },
   {
@@ -3521,6 +3737,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vehicle-warehouse-murrieta-heights.webp"
   },
   {
@@ -3547,6 +3764,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vehicle-warehouse-la-mesa.webp"
   },
   {
@@ -3573,6 +3791,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vehicle-warehouse-la-puerta.webp"
   },
   {
@@ -3599,6 +3818,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vehicle-warehouse-davis.webp"
   },
   {
@@ -3625,6 +3845,7 @@
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/vehicle-warehouse-cypress-flats.webp"
   },
   {
@@ -3651,6 +3872,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/hangar-lsia-a17.webp"
   },
   {
@@ -3677,6 +3899,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/hangar-lsia-1.webp"
   },
   {
@@ -3703,6 +3926,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/hangar-fort-zancudo-3497.webp"
   },
   {
@@ -3729,6 +3953,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/hangar-fort-zancudo-3499.webp"
   },
   {
@@ -3755,6 +3980,7 @@
       "fandom": "https://gta.fandom.com/wiki/Hangar",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/hangar-fort-zancudo-a2.webp"
   },
   {
@@ -3805,6 +4031,7 @@
       "fandom": "https://gta.fandom.com/wiki/Galaxy_Super_Yacht",
       "gtabase": null
     },
+    "parent_building": null,
     "image_path": "data/images/properties/yacht-galaxy-super-yacht.webp"
   },
   {
@@ -3871,6 +4098,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-la-mesa.webp"
   },
   {
@@ -3937,6 +4165,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-mission-row.webp"
   },
   {
@@ -4003,6 +4232,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-del-perro.webp"
   },
   {
@@ -4069,6 +4299,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-downtown-vinewood.webp"
   },
   {
@@ -4135,6 +4366,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-strawberry.webp"
   },
   {
@@ -4201,6 +4433,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-vespucci-canals.webp"
   },
   {
@@ -4267,6 +4500,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-west-vinewood.webp"
   },
   {
@@ -4333,6 +4567,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-elysian-island.webp"
   },
   {
@@ -4399,6 +4634,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-cypress-flats.webp"
   },
   {
@@ -4465,6 +4701,7 @@
       "fandom": "https://gta.fandom.com/wiki/Nightclubs",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/nightclub-la-puerta.webp"
   },
   {
@@ -4507,6 +4744,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-coke-alamo-sea.webp"
   },
   {
@@ -4549,6 +4787,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-coke-elysian-island.webp"
   },
   {
@@ -4591,6 +4830,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-coke-morningwood.webp"
   },
   {
@@ -4633,6 +4873,7 @@
       "fandom": "https://gta.fandom.com/wiki/Cocaine_Lockup",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-coke-paleto-bay.webp"
   },
   {
@@ -4675,6 +4916,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-meth-el-burro-heights.webp"
   },
   {
@@ -4717,6 +4959,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-meth-grand-senora-desert.webp"
   },
   {
@@ -4759,6 +5002,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-meth-paleto-bay.webp"
   },
   {
@@ -4801,6 +5045,7 @@
       "fandom": "https://gta.fandom.com/wiki/Methamphetamine_Lab",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-meth-terminal.webp"
   },
   {
@@ -4843,6 +5088,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-weed-vinewood-downtown.webp"
   },
   {
@@ -4885,6 +5131,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-weed-elysian-island.webp"
   },
   {
@@ -4927,6 +5174,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-weed-mount-chiliad.webp"
   },
   {
@@ -4969,6 +5217,7 @@
       "fandom": "https://gta.fandom.com/wiki/Weed_Farm",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-weed-san-chianski.webp"
   },
   {
@@ -5011,6 +5260,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-cash-cypress-flats.webp"
   },
   {
@@ -5053,6 +5303,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-cash-grand-senora-desert.webp"
   },
   {
@@ -5095,6 +5346,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-cash-paleto-bay.webp"
   },
   {
@@ -5137,6 +5389,7 @@
       "fandom": "https://gta.fandom.com/wiki/Counterfeit_Cash_Factory",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-cash-vespucci-canals.webp"
   },
   {
@@ -5179,6 +5432,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-forgery-elysian-island.webp"
   },
   {
@@ -5221,6 +5475,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-forgery-grapeseed.webp"
   },
   {
@@ -5263,6 +5518,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-forgery-paleto-bay.webp"
   },
   {
@@ -5305,6 +5561,7 @@
       "fandom": "https://gta.fandom.com/wiki/Document_Forgery_Office",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
+    "parent_building": null,
     "image_path": "data/images/properties/biker-business-forgery-textile-city.webp"
   }
 ]

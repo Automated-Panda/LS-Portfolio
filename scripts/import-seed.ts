@@ -119,7 +119,16 @@ async function main(): Promise<void> {
     "low-end-apartment",
     "stand-alone-garage",
   ]);
-  const propertyRows = properties.map((p) => ({
+  // Sort so tower rows (parent_building=null) come before unit rows
+  // (parent_building=tower.id). Postgres FK validates at end-of-statement
+  // for batch upserts, but ordering keeps the intent obvious + future-proofs
+  // against any chunked-batch behavior.
+  const sortedProperties = [...properties].sort((a, b) => {
+    const aHasParent = a.parent_building ? 1 : 0;
+    const bHasParent = b.parent_building ? 1 : 0;
+    return aHasParent - bHasParent;
+  });
+  const propertyRows = sortedProperties.map((p) => ({
     id: p.id,
     display_name: p.display_name,
     property_type: p.property_type,
@@ -129,6 +138,7 @@ async function main(): Promise<void> {
     neighborhood: p.neighborhood,
     capacity: p.capacity,
     ownership_group: RESIDENTIAL_POOL.has(p.subtype) ? "residential" : p.subtype,
+    parent_building: p.parent_building ?? null,
     image_path: p.image_path,
     counts_as_garage: p.counts_as_garage,
     source_fandom: p._sources.fandom,

@@ -33,7 +33,8 @@ export async function getPropertiesBrowserData(
       .from("properties")
       .select(
         `id, display_name, property_type, subtype, subtype_display,
-         location, neighborhood, capacity, image_path, counts_as_garage,
+         location, neighborhood, capacity, parent_building,
+         image_path, counts_as_garage,
          property_upgrades ( capacity )`,
       )
       .in("property_type", SCOPE_TYPES[scope])
@@ -57,6 +58,7 @@ export async function getPropertiesBrowserData(
     location: string | null;
     neighborhood: string | null;
     capacity: number;
+    parent_building: string | null;
     image_path: string | null;
     counts_as_garage: boolean;
     property_upgrades: Array<{ capacity: number }> | null;
@@ -78,6 +80,7 @@ export async function getPropertiesBrowserData(
       location: p.location,
       neighborhood: p.neighborhood,
       capacity: p.capacity,
+      parent_building: p.parent_building,
       image_path: p.image_path,
       counts_as_garage: p.counts_as_garage,
       max_capacity: p.capacity + upgradeSum,

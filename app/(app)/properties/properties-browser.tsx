@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import type {
   PropertyFilterOptions,
@@ -9,6 +9,7 @@ import type {
 } from "@/lib/properties";
 import { propertyImageUrl } from "@/lib/properties";
 import type { PropertyScope } from "@/lib/queries/properties";
+import { TowerUnitsDialog } from "@/components/portfolio/tower-units-dialog";
 
 import { FilterBar } from "./filter-bar";
 import { PropertyCard } from "./property-card";
@@ -47,6 +48,7 @@ export function PropertiesBrowser({
 }: Props) {
   const copy = COPY[scope];
   const searchParams = useSearchParams();
+  const [openTowerId, setOpenTowerId] = useState<string | null>(null);
 
   const q = (searchParams.get("q") ?? "").toLowerCase().trim();
   const type = searchParams.get("type") ?? "";
@@ -57,15 +59,38 @@ export function PropertiesBrowser({
     () => new Set(ownedPropertyIds),
     [ownedPropertyIds],
   );
+  const selectedSet = useMemo(
+    () => new Set(selectedIds ?? []),
+    [selectedIds],
+  );
+
+  // Group units under their parent_building so each tower knows its children.
+  const unitsByTower = useMemo(() => {
+    const m = new Map<string, PropertySummary[]>();
+    for (const p of properties) {
+      if (!p.parent_building) continue;
+      const arr = m.get(p.parent_building) ?? [];
+      arr.push(p);
+      m.set(p.parent_building, arr);
+    }
+    return m;
+  }, [properties]);
 
   // Slim index passed to FilterBar so it can derive visible subtypes per type.
+  // Don't include unit rows — they share their tower's subtype so they don't
+  // affect the available pills, and including them would inflate the count.
   const propertiesIndex = useMemo(
-    () => properties.map((p) => ({ subtype: p.subtype, property_type: p.property_type })),
+    () =>
+      properties
+        .filter((p) => !p.parent_building)
+        .map((p) => ({ subtype: p.subtype, property_type: p.property_type })),
     [properties],
   );
 
   const filtered = useMemo(() => {
     return properties.filter((p) => {
+      // Hide units from the main grid — they live inside their tower dialog.
+      if (p.parent_building) return false;
       if (
         q &&
         !p.display_name.toLowerCase().includes(q) &&
@@ -81,13 +106,19 @@ export function PropertiesBrowser({
     });
   }, [properties, q, type, subtype, nbhd]);
 
+  const openTower = openTowerId
+    ? properties.find((p) => p.id === openTowerId) ?? null
+    : null;
+  const openTowerUnits = openTowerId ? unitsByTower.get(openTowerId) ?? [] : [];
+
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-semibold tracking-tight">{copy.title}</h1>
         <p className="text-sm text-muted-foreground">
           {filtered.length.toLocaleString()} of{" "}
-          {properties.length.toLocaleString()} {copy.noun}
+          {properties.filter((p) => !p.parent_building).length.toLocaleString()}{" "}
+          {copy.noun}
           {ownedPropertyIds.length > 0 &&
             ` · ${ownedPropertyIds.length} owned`}
         </p>
@@ -105,18 +136,45 @@ export function PropertiesBrowser({
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {filtered.map((p) => (
-            <PropertyCard
-              key={p.id}
-              property={p}
-              imageUrl={propertyImageUrl(p.image_path)}
-              owned={ownedSet.has(p.id)}
-              selectionMode={selectionMode ?? "browse"}
-              selected={selectedIds?.includes(p.id) ?? false}
-              onSelect={onToggleSelection}
-            />
-          ))}
+          {filtered.map((p) => {
+            const units = unitsByTower.get(p.id);
+            const isTower = units !== undefined && units.length > 0;
+            return (
+              <PropertyCard
+                key={p.id}
+                property={p}
+                imageUrl={propertyImageUrl(p.image_path)}
+                owned={ownedSet.has(p.id)}
+                selectionMode={selectionMode ?? "browse"}
+                selected={selectedSet.has(p.id)}
+                onSelect={onToggleSelection}
+                tower={
+                  isTower
+                    ? {
+                        totalUnits: units!.length,
+                        ownedCount: units!.filter((u) => ownedSet.has(u.id)).length,
+                        selectedCount: units!.filter((u) => selectedSet.has(u.id)).length,
+                        onOpen: () => setOpenTowerId(p.id),
+                      }
+                    : undefined
+                }
+              />
+            );
+          })}
         </div>
+      )}
+
+      {openTower && (
+        <TowerUnitsDialog
+          tower={openTower}
+          units={openTowerUnits}
+          ownedSet={ownedSet}
+          open={true}
+          onOpenChange={(o) => !o && setOpenTowerId(null)}
+          selectionMode={selectionMode}
+          selectedIds={selectedIds}
+          onToggleSelection={onToggleSelection}
+        />
       )}
     </div>
   );

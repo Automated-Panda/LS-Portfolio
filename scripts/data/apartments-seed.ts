@@ -28,58 +28,124 @@ type ApartmentSeed = {
 };
 
 // ---------------------------------------------------------------------------
-// HIGH-END APARTMENTS
+// HIGH-END APARTMENTS — TOWERS + UNITS + STILTS
 // ---------------------------------------------------------------------------
 
-// Canonical 17 = 7 apartment buildings + 10 stilt houses in Vinewood Hills.
-// Per-LOCATION rows; buildings with multiple purchaseable apartments are
-// collapsed into one row (e.g. Eclipse Towers Apt 3/31/40 → "Eclipse Towers").
-// Source: gtabase.com / leo3418.github.io / sportskeeda.
-const HIGH_END_LOCATIONS: ApartmentSeed[] = [
-  // 7 apartment buildings
+// High-end has three structural pieces post-fanout:
+//   1. 7 towers (Eclipse, 3 Alta, Del Perro Heights, 4 Integrity Way,
+//      Weazel Plaza, Richards Majestic, Tinsel Towers) — each is a parent
+//      row with parent_building=null, NON-OWNABLE, and aggregates multiple
+//      unit rows beneath it.
+//   2. 35 units (apartments + penthouse suites across the 7 towers) —
+//      ownable, each with capacity 10, parent_building set to the tower id.
+//   3. 10 stilt houses in Vinewood Hills — independent ownable units with
+//      no parent_building (they aren't in any tower).
+//
+// Sources: gtabase.com per-unit pages + leo3418.github.io + gtalens.com map.
+
+type Unit = {
+  /** Slug appended to the tower id, e.g. "apt-3" → "{tower.id}-apt-3". */
+  slug: string;
+  /** Shown inside the units dialog, e.g. "Apartment 3" or "Penthouse Suite 1". */
+  label: string;
+  verify?: boolean;
+};
+
+type Tower = {
+  id: string;
+  display_name: string;
+  neighborhood: string;
+  address: string;
+  units: Unit[];
+};
+
+const HIGH_END_TOWERS: Tower[] = [
   {
     id: "high-end-apartment-eclipse-towers",
     display_name: "Eclipse Towers",
-    neighborhood: "Pillbox Hill",
-    address: "Eclipse Boulevard, Pillbox Hill",
+    neighborhood: "Rockford Hills",
+    address: "South Mo Milton Drive, Rockford Hills",
+    units: [
+      { slug: "apt-3", label: "Apartment 3" },
+      { slug: "apt-5", label: "Apartment 5" },
+      { slug: "apt-9", label: "Apartment 9" },
+      { slug: "apt-31", label: "Apartment 31" },
+      { slug: "apt-40", label: "Apartment 40" },
+      { slug: "penthouse-suite-1", label: "Penthouse Suite 1" },
+      { slug: "penthouse-suite-2", label: "Penthouse Suite 2" },
+      { slug: "penthouse-suite-3", label: "Penthouse Suite 3" },
+    ],
   },
   {
     id: "high-end-apartment-3-alta-st",
     display_name: "3 Alta Street",
-    neighborhood: "Downtown Vinewood",
-    address: "3 Alta Street",
+    neighborhood: "Pillbox Hill",
+    address: "3 Alta Street, Pillbox Hill",
+    units: [
+      { slug: "apt-10", label: "Apartment 10" },
+      { slug: "apt-57", label: "Apartment 57" },
+    ],
   },
   {
     id: "high-end-apartment-del-perro-heights",
     display_name: "Del Perro Heights",
     neighborhood: "Del Perro",
-    address: "Del Perro Heights",
+    address: "Marathon Avenue & Prosperity Street, Del Perro",
+    units: [
+      { slug: "apt-4", label: "Apartment 4" },
+      { slug: "apt-7", label: "Apartment 7" },
+      { slug: "apt-20", label: "Apartment 20" },
+    ],
   },
   {
     id: "high-end-apartment-4-integrity-way",
     display_name: "4 Integrity Way",
-    neighborhood: "Downtown Vinewood",
-    address: "4 Integrity Way",
+    neighborhood: "Pillbox Hill",
+    address: "Integrity Way, Pillbox Hill",
+    units: [
+      { slug: "apt-28", label: "Apartment 28" },
+      { slug: "apt-30", label: "Apartment 30" },
+      { slug: "apt-35", label: "Apartment 35" },
+    ],
   },
   {
     id: "high-end-apartment-weazel-plaza",
     display_name: "Weazel Plaza",
-    neighborhood: "Del Perro",
-    address: "Weazel Plaza",
+    neighborhood: "Rockford Hills",
+    address: "Movie Star Way & Heritage Way, Rockford Hills",
+    units: [
+      { slug: "apt-26", label: "Apartment 26" },
+      { slug: "apt-70", label: "Apartment 70" },
+      { slug: "apt-101", label: "Apartment 101" },
+    ],
   },
   {
     id: "high-end-apartment-richards-majestic",
     display_name: "Richards Majestic",
-    neighborhood: "Del Perro",
-    address: "Richards Majestic",
+    neighborhood: "Rockford Hills",
+    address: "Movie Star Way & Heritage Way, Rockford Hills",
+    units: [
+      { slug: "apt-2", label: "Apartment 2" },
+      { slug: "apt-4", label: "Apartment 4" },
+      { slug: "apt-51", label: "Apartment 51" },
+    ],
   },
   {
     id: "high-end-apartment-tinsel-towers",
     display_name: "Tinsel Towers",
-    neighborhood: "Downtown Vinewood",
-    address: "Tinsel Towers",
+    neighborhood: "Rockford Hills",
+    address: "Tinsel Towers Avenue, Rockford Hills",
+    units: [
+      { slug: "apt-29", label: "Apartment 29" },
+      { slug: "apt-42", label: "Apartment 42" },
+      { slug: "apt-45", label: "Apartment 45" },
+    ],
   },
-  // 10 stilt houses in Vinewood Hills
+];
+
+// 10 stilt houses in Vinewood Hills — each is its own ownable property,
+// no tower grouping.
+const STILT_HOUSES: ApartmentSeed[] = [
   {
     id: "high-end-apartment-2862-hillcrest-ave",
     display_name: "2862 Hillcrest Avenue",
@@ -142,7 +208,54 @@ const HIGH_END_LOCATIONS: ApartmentSeed[] = [
   },
 ];
 
-function buildHighEnd(loc: ApartmentSeed): Omit<Property, "image_path"> {
+// Tower aggregator row — non-ownable, no capacity, no upgrades. The browse
+// UI special-cases this kind of row (any property with child units) to open
+// a units dialog instead of toggling ownership.
+function buildHighEndTower(tower: Tower): Omit<Property, "image_path"> {
+  return {
+    id: tower.id,
+    display_name: tower.display_name,
+    property_type: "residence",
+    subtype: "high-end-apartment",
+    subtype_display: "High-End Apartment",
+    location: tower.address,
+    neighborhood: tower.neighborhood,
+    capacity: 0,
+    parent_building: null,
+    counts_as_garage: true,
+    upgrades: [],
+    _sources: {
+      fandom: "https://gta.fandom.com/wiki/Apartments",
+      gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments",
+    },
+  };
+}
+
+// Unit row — ownable, 10-car garage built in (capacity on the property, no
+// upgrade tier). parent_building points at the tower id.
+function buildHighEndUnit(tower: Tower, unit: Unit): Omit<Property, "image_path"> {
+  return {
+    id: `${tower.id}-${unit.slug}`,
+    display_name: `${tower.display_name}, ${unit.label}`,
+    property_type: "residence",
+    subtype: "high-end-apartment",
+    subtype_display: "High-End Apartment",
+    location: tower.address,
+    neighborhood: tower.neighborhood,
+    capacity: 10,
+    parent_building: tower.id,
+    counts_as_garage: true,
+    upgrades: [],
+    _sources: {
+      fandom: "https://gta.fandom.com/wiki/Apartments",
+      gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments",
+    },
+    ...(unit.verify ? { verify: true } : {}),
+  };
+}
+
+// Stilt house — independent, 10-car garage built in, no tower grouping.
+function buildStiltHouse(loc: ApartmentSeed): Omit<Property, "image_path"> {
   return {
     id: loc.id,
     display_name: loc.display_name,
@@ -151,18 +264,10 @@ function buildHighEnd(loc: ApartmentSeed): Omit<Property, "image_path"> {
     subtype_display: "High-End Apartment",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    capacity: 10,
+    parent_building: null,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: `${loc.id}-garage`,
-        display_name: "10-Car Garage",
-        tier: null,
-        capacity: 10,
-        required_upgrade_id: null,
-        notes: null,
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Apartments",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments",
@@ -171,8 +276,13 @@ function buildHighEnd(loc: ApartmentSeed): Omit<Property, "image_path"> {
   };
 }
 
-export const HIGH_END_APARTMENTS: Omit<Property, "image_path">[] =
-  HIGH_END_LOCATIONS.map(buildHighEnd);
+export const HIGH_END_APARTMENTS: Omit<Property, "image_path">[] = [
+  ...HIGH_END_TOWERS.flatMap((t) => [
+    buildHighEndTower(t),
+    ...t.units.map((u) => buildHighEndUnit(t, u)),
+  ]),
+  ...STILT_HOUSES.map(buildStiltHouse),
+];
 
 // ---------------------------------------------------------------------------
 // MID-END APARTMENTS
@@ -269,18 +379,10 @@ function buildMidEnd(loc: ApartmentSeed): Omit<Property, "image_path"> {
     subtype_display: "Mid-End Apartment",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    capacity: 6,
+    parent_building: null,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: `${loc.id}-garage`,
-        display_name: "6-Car Garage",
-        tier: null,
-        capacity: 6,
-        required_upgrade_id: null,
-        notes: null,
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Apartments",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments",
@@ -369,18 +471,10 @@ function buildLowEnd(loc: ApartmentSeed): Omit<Property, "image_path"> {
     subtype_display: "Low-End Apartment",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    capacity: 2,
+    parent_building: null,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: `${loc.id}-garage`,
-        display_name: "2-Car Garage",
-        tier: null,
-        capacity: 2,
-        required_upgrade_id: null,
-        notes: null,
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Apartments",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments",

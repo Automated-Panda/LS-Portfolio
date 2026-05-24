@@ -9,6 +9,7 @@ export type PropertySummary = {
   location: string | null;
   neighborhood: string | null;
   capacity: number;
+  parent_building: string | null;
   image_path: string | null;
   counts_as_garage: boolean;
   max_capacity: number;
