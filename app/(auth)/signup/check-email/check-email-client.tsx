@@ -34,7 +34,7 @@ export function CheckEmailClient({ email }: Props) {
       const { data } = await supabase.auth.getUser();
       if (cancelled) return;
       if (data.user) {
-        router.replace("/dashboard");
+        router.replace("/wizard");
       } else {
         setPollCount((n) => n + 1);
       }
@@ -48,7 +48,7 @@ export function CheckEmailClient({ email }: Props) {
     // 3s poll is the slow safety net.
     const { data: sub } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_IN" && !cancelled) {
-        router.replace("/dashboard");
+        router.replace("/wizard");
       }
     });
 

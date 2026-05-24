@@ -80,8 +80,8 @@ export async function signUpAction(
       data: { username },
       // Where Supabase sends the user after they click the confirmation
       // link. /auth/callback exchanges the PKCE code for a session and
-      // forwards to ?next= (the layout will then route new users to /wizard).
-      emailRedirectTo: `${origin}/auth/callback?next=/dashboard`,
+      // forwards to ?next= — straight into the onboarding wizard.
+      emailRedirectTo: `${origin}/auth/callback?next=/wizard`,
     },
   });
 
@@ -97,10 +97,12 @@ export async function signUpAction(
   }
 
   // If Confirm Email is OFF on the Supabase project, signUp returns a session
-  // and the user is already logged in — send them straight to the dashboard
-  // (the layout handles the wizard redirect for first-timers).
+  // and the user is already logged in — drop them into the onboarding wizard.
+  // (The wizard's "Finish later" button kicks back out to /dashboard, which
+  // is intentionally exempt from the layout's wizard-redirect so it doesn't
+  // loop them right back.)
   if (signUpData.session) {
-    redirect("/dashboard");
+    redirect("/wizard");
   }
 
   // Confirm Email is ON — user has no session yet. Park them on the
