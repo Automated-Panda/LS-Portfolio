@@ -4,12 +4,42 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟡 Phase 4b — Granular Properties **done** (data + images shipped). `/properties` (78 cards) and `/businesses` (88 cards) live with per-instance gtabase preview images. **166 properties across 23 subtypes, 0 verify-flagged, 165 with unique cover images.** Next: Phase 4c (`/my-properties` upgrade-tier UI) and Phase 5 lite (vehicle→property linking) to unblock the onboarding wizard.
-**Last updated:** 2026-05-16 (late)
+**Current phase:** 🟢 **Piece 1 (Foundation) code complete** on `feat/piece-1-foundation`. Wizard + multi-instance ownership + storage linking + Phase 4c upgrade UI + trade-in flow + custom tags + /my-vehicles overhaul — all 22 implementation tasks landed via subagent-driven execution. **Manual acceptance walk-through pending** before merge to main.
+**Last updated:** 2026-05-24
 
 ---
 
-## 🧭 Where we left off (tomorrow's jumping-off point)
+## 🧭 Where we left off
+
+### 2026-05-24 — Piece 1 Foundation: code complete on feat/piece-1-foundation
+
+Subagent-driven execution of the 23-task implementation plan ([`docs/plans/2026-05-24-piece-1-foundation.md`](./plans/2026-05-24-piece-1-foundation.md)). Spec at [`docs/specs/2026-05-24-foundation-track-and-link-cars-design.md`](./specs/2026-05-24-foundation-track-and-link-cars-design.md).
+
+**What landed (22 commits on `feat/piece-1-foundation`):**
+
+- **Migrations 0004 + 0005 + 0006:** `user_owned_vehicles` gains `stored_in_property_id` (uuid FK → user_owned_properties, ON DELETE SET NULL) + `custom_tags text[]` with GIN index. `properties` gains `ownership_group text NOT NULL` (apartments + stand-alone garages pooled as `residential`). New `property_ownership_limits` reference table seeded with 19 caps. 0006 was a fixup for a `yacht` / `super-yacht` key mismatch discovered post-0005.
+- **Verify-flag research:** auto-shop / agency / salvage-yard all confirmed at max=1. No fixup needed.
+- **Server actions:** `addVehicleInstance` (replaces the old binary toggle — always +1 instance). `togglePropertyOwnership` now detects trade-in (returns `{needsTradeIn}` payload). New `tradeInProperty`, `unownProperty`, `toggleUpgradeInstalled`, `assignVehicleStorage`, `assignVehiclesToSubGarage`, `updateVehicleInstance`, `removeVehicleInstance`. Capacity check helper at `lib/capacity.ts` is the single source of truth.
+- **Queries:** `lib/queries/wizard.ts` (derived completion check, no state table). `lib/queries/my-properties.ts` (`OwnedPropertyDetail` with nested upgrades + per-sub-garage car counts). `lib/queries/my-vehicles.ts` (`OwnedVehicleInstance` — instance-based). `lib/queries/ownership.ts` (group-status for trade-in detection). `getVehiclesBrowserData` now populates `owned_count` on VehicleSummary.
+- **Shared components:** `PropertyDrawer` (used by wizard hub AND /my-properties — single source for upgrade tree + per-sub-garage storage). `VehiclePickerModal` (+/− counter per vehicle, capacity-enforced). `InstanceDrawer` (per-vehicle editor — nickname, tags, notes, storage). `TradeInModal` (radio-pick which property to trade). `CustomTagsInput` (MVP — plain comma-separated text input). `LocationFilter` (multi-select + Unassigned toggle).
+- **Pages:** `/wizard` route with state machine (picker → hub). `/my-properties` is now real (was a stub) — card grid + drawer + empty state. `/my-vehicles` fully rewritten — cards + table + view-toggle (localStorage-persisted) + sub-line + Unassigned banner + LocationFilter.
+- **Wiring:** Layout-level wizard-redirect for first-login users (skips `/wizard` and `/dashboard` to avoid loops). Middleware patched to inject `x-pathname` request header so the layout can read the current path via Next's `headers()`.
+- **VehicleCard refactor:** `Owned ×N` chip + "Add to portfolio" semantics. Drift sub-toggle counts independently.
+- **shadcn primitives added:** `sheet`, `dialog`, `checkbox` (auto-added by `npx shadcn add` during their respective component-building tasks).
+
+**What's pending before merge:**
+
+1. **Manual acceptance walk-through** — work through all 9 acceptance criteria from the spec on `localhost:3000`. The plan's Task 23 lists them.
+2. **Final code review** — optional via `/ultrareview` or `/code-review`.
+3. **Merge `feat/piece-1-foundation` → `main`** once the walk-through passes.
+
+**What got deferred to Piece 1.5 (per spec):**
+- Custom uploaded vehicle images (needs Supabase Storage + upload UI + image processing)
+- Polished chip-input tag editor with autocomplete
+- Per-car selection in trade-in over-capacity flow (currently the modal sends empty destinations → server auto-moves what fits + unassigns overflow)
+
+**What's pending for Piece 2:**
+- AI organizer ("put my drift cars in one place") — fresh brainstorm after Piece 1 ships.
 
 ### 2026-05-16 (late) — Per-instance property images: 159/166 unique, 6 fallback, 1 missing
 
