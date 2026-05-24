@@ -1,10 +1,28 @@
-export default function MyPropertiesPage() {
+import { redirect } from "next/navigation";
+
+import { createClient } from "@/lib/supabase/server";
+import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
+
+import { MyPropertiesGrid } from "./my-properties-grid";
+import { MyPropertiesEmptyState } from "./empty-state";
+
+export default async function MyPropertiesPage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/login");
+
+  const properties = await getOwnedPropertiesWithStorage(user.id);
+
   return (
-    <div className="space-y-2">
-      <h1 className="text-3xl font-semibold tracking-tight">My Properties</h1>
-      <p className="text-sm text-muted-foreground">
-        Your garages, apartments, and businesses. Coming in Phase 4.
-      </p>
+    <div className="flex flex-col gap-4">
+      <h1 className="text-2xl font-bold">My Properties</h1>
+      {properties.length === 0 ? (
+        <MyPropertiesEmptyState />
+      ) : (
+        <MyPropertiesGrid properties={properties} />
+      )}
     </div>
   );
 }
