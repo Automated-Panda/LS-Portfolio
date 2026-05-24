@@ -27,11 +27,17 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
     setOptimisticOwned(nextState);
     startTransition(async () => {
       const result = await togglePropertyOwnership(property.id);
-      if (result.error) {
+      if ("error" in result && result.error) {
         setOptimisticOwned(!nextState);
         toast.error(result.error);
-      } else {
-        setOptimisticOwned(result.owned);
+      } else if ("needsTradeIn" in result) {
+        // Task 18 will wire the TradeInModal here.
+        setOptimisticOwned(false);
+        toast.info("At ownership limit — trade-in modal coming in a moment.");
+      } else if ("ok" in result && result.ok === false && "removed" in result) {
+        setOptimisticOwned(false);
+      } else if ("ok" in result && result.ok === true) {
+        setOptimisticOwned(true);
       }
     });
   };
