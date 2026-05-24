@@ -1,30 +1,33 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
-import { getVehiclesBrowserData } from "@/lib/queries/vehicles";
+import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
+import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 
-import { VehiclesBrowser } from "../vehicles/vehicles-browser";
+import { MyVehiclesClient } from "./my-vehicles-client";
 
 export default async function MyVehiclesPage() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-
   if (!user) redirect("/login");
 
-  const data = await getVehiclesBrowserData(user.id);
-  const ownedSet = new Set(data.ownedVehicleIds);
-  const ownedVehicles = data.vehicles.filter(
-    (v) => ownedSet.has(v.id) || (v.drift_variant?.owned ?? false),
+  const [instances, ownedProperties, { data: tags }] = await Promise.all([
+    getOwnedVehicleInstances(user.id),
+    getOwnedPropertiesWithStorage(user.id),
+    supabase.from("vehicle_tags").select("id, display"),
+  ]);
+
+  const tagLookup = Object.fromEntries(
+    (tags ?? []).map((t) => [t.id, t.display]),
   );
 
   return (
-    <VehiclesBrowser
-      vehicles={ownedVehicles}
-      ownedVehicleIds={data.ownedVehicleIds}
-      filters={data.filters}
-      mode="owned"
+    <MyVehiclesClient
+      instances={instances}
+      ownedProperties={ownedProperties}
+      tagLookup={tagLookup}
     />
   );
 }
