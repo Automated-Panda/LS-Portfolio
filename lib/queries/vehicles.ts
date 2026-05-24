@@ -62,6 +62,10 @@ export async function getVehiclesBrowserData(
 
   const raw = (vehicleRows ?? []) as RawVehicle[];
   const ownedSet = new Set((ownedRows ?? []).map((r) => r.vehicle_id));
+  const ownedCount = new Map<string, number>();
+  for (const r of ownedRows ?? []) {
+    ownedCount.set(r.vehicle_id, (ownedCount.get(r.vehicle_id) ?? 0) + 1);
+  }
 
   // Fold drift variants into their base by display_name.
   const isDrift = (v: RawVehicle) =>
@@ -104,6 +108,7 @@ export async function getVehiclesBrowserData(
         manufacturer_display: mfr?.display ?? v.manufacturer_id,
         image_path: v.image_path,
         tag_ids: (v.vehicle_tag_links ?? []).map((l) => l.tag_id),
+        owned_count: ownedCount.get(v.id) ?? 0,
         drift_variant: driftByBaseId.get(v.id) ?? null,
       };
     });
@@ -127,6 +132,7 @@ export async function getOwnedCounts(
   const supabase = await createClient();
 
   const [vehiclesRes, ownedPropsRes] = await Promise.all([
+    // Counts user_owned_vehicles rows = instance count (multi-instance aware).
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id", { count: "exact", head: true })

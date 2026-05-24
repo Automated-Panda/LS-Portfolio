@@ -11,6 +11,7 @@ export type VehicleSummary = {
   manufacturer_display: string;
   image_path: string | null;
   tag_ids: string[];
+  owned_count: number;        // 0 if user owns no instances, N if N instances
   // When set, the vehicle has a "drift" handling variant in the game.
   // Ownership of the drift variant is tracked as a separate user_owned_vehicles
   // row but surfaced via a sub-toggle on the base vehicle's card.
