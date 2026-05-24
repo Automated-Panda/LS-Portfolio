@@ -18,6 +18,9 @@ type Props = {
   properties: PropertySummary[];
   ownedPropertyIds: string[];
   filters: PropertyFilterOptions;
+  selectionMode?: "browse" | "multi";
+  selectedIds?: string[];
+  onToggleSelection?: (propertyId: string) => void;
 };
 
 const COPY: Record<PropertyScope, { title: string; noun: string; searchPlaceholder: string }> = {
@@ -38,6 +41,9 @@ export function PropertiesBrowser({
   properties,
   ownedPropertyIds,
   filters,
+  selectionMode,
+  selectedIds,
+  onToggleSelection,
 }: Props) {
   const copy = COPY[scope];
   const searchParams = useSearchParams();
@@ -105,6 +111,9 @@ export function PropertiesBrowser({
               property={p}
               imageUrl={propertyImageUrl(p.image_path)}
               owned={ownedSet.has(p.id)}
+              selectionMode={selectionMode ?? "browse"}
+              selected={selectedIds?.includes(p.id) ?? false}
+              onSelect={onToggleSelection}
             />
           ))}
         </div>

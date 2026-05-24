@@ -17,14 +17,26 @@ type Props = {
   property: PropertySummary;
   imageUrl: string | null;
   owned: boolean;
+  selectionMode?: "browse" | "multi";
+  selected?: boolean;
+  onSelect?: (propertyId: string) => void;
 };
 
-function PropertyCardImpl({ property, imageUrl, owned }: Props) {
+function PropertyCardImpl({
+  property, imageUrl, owned,
+  selectionMode = "browse",
+  selected = false,
+  onSelect,
+}: Props) {
   const [optimisticOwned, setOptimisticOwned] = useState(owned);
   const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleToggle = () => {
+    if (selectionMode === "multi") {
+      onSelect?.(property.id);
+      return;
+    }
     const nextState = !optimisticOwned;
     setOptimisticOwned(nextState);
     startTransition(async () => {
@@ -43,12 +55,14 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
     });
   };
 
+  const isHighlighted = selectionMode === "multi" ? selected : optimisticOwned;
+
   return (
     <>
     <div
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-lg border bg-card transition-all hover:border-foreground/40",
-        optimisticOwned && "border-emerald-500/70 ring-2 ring-emerald-500/30",
+        isHighlighted && "border-emerald-500/70 ring-2 ring-emerald-500/30",
         isPending && "opacity-80",
       )}
     >
@@ -61,12 +75,12 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
         <div
           className={cn(
             "absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all",
-            optimisticOwned
+            isHighlighted
               ? "bg-emerald-500 text-white"
               : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
           )}
         >
-          {optimisticOwned ? (
+          {isHighlighted ? (
             <Check className="h-4 w-4" />
           ) : (
             <Plus className="h-4 w-4" />
