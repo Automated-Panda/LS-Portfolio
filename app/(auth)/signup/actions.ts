@@ -1,5 +1,6 @@
 "use server";
 
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
@@ -22,6 +23,13 @@ export type SignupState = {
   error?: string;
   fieldErrors?: Partial<Record<"email" | "password" | "username", string>>;
 };
+
+async function getOrigin(): Promise<string> {
+  const h = await headers();
+  const host = h.get("host") ?? "localhost:3000";
+  const proto = h.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
+  return `${proto}://${host}`;
+}
 
 export async function signUpAction(
   _prev: SignupState,
@@ -47,6 +55,10 @@ export async function signUpAction(
   const { email, password, username } = parsed.data;
   const supabase = await createClient();
 
+  // Pre-check username uniqueness so we can return a clean field error
+  // before creating an auth.users row. The handle_new_user trigger has a
+  // UNIQUE constraint on profiles.username as a backstop, but failing there
+  // happens AFTER the auth user is created — messier to recover from.
   const { data: taken } = await supabase
     .from("profiles")
     .select("id")
@@ -57,9 +69,20 @@ export async function signUpAction(
     return { fieldErrors: { username: "That username is taken." } };
   }
 
+  const origin = await getOrigin();
+
   const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      // Carries through to auth.users.raw_user_meta_data; the
+      // handle_new_user trigger (migration 0009) pulls it into profiles.
+      data: { username },
+      // Where Supabase sends the user after they click the confirmation
+      // link. /auth/callback exchanges the PKCE code for a session and
+      // forwards to ?next= (the layout will then route new users to /wizard).
+      emailRedirectTo: `${origin}/auth/callback?next=/dashboard`,
+    },
   });
 
   if (signUpError) {
@@ -73,17 +96,14 @@ export async function signUpAction(
     return { error: "Signup succeeded but no user was returned." };
   }
 
-  const { error: updateError } = await supabase
-    .from("profiles")
-    .update({ username })
-    .eq("id", signUpData.user.id);
-
-  if (updateError) {
-    if (updateError.code === "23505") {
-      return { fieldErrors: { username: "That username is taken." } };
-    }
-    return { error: "Account created but username couldn't be set." };
+  // If Confirm Email is OFF on the Supabase project, signUp returns a session
+  // and the user is already logged in — send them straight to the dashboard
+  // (the layout handles the wizard redirect for first-timers).
+  if (signUpData.session) {
+    redirect("/dashboard");
   }
 
-  redirect("/dashboard");
+  // Confirm Email is ON — user has no session yet. Park them on the
+  // check-email screen where they wait for the confirmation link.
+  redirect(`/signup/check-email?email=${encodeURIComponent(email)}`);
 }
