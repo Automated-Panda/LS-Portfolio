@@ -50,13 +50,14 @@ export function PropertyDrawer({
       .filter((u) => u.is_installed)
       .reduce((sum, u) => sum + u.cars_here, 0);
 
-  // Drawer-skip for simple properties: auto-open the vehicle picker when
-  // the property has zero upgrade choices AND a base capacity > 0.
+  // Drawer-skip for simple properties: auto-open the vehicle picker when the
+  // property has no storage-tier choices and a base capacity > 0. Equipment/
+  // security upgrades alone don't justify the drawer — those can be managed
+  // from /my-properties. Stand-alone garages, apartments, Eclipse Blvd, etc.
+  // jump straight to picking cars.
   useEffect(() => {
     if (!open) return;
-    const noUpgrades =
-      storageUpgrades.length === 0 && nonStorageUpgrades.length === 0;
-    if (noUpgrades && property.base_capacity > 0 && !pickerOpen) {
+    if (storageUpgrades.length === 0 && property.base_capacity > 0 && !pickerOpen) {
       setPickerTarget({
         upgradeId: null,
         label: "Base storage",
@@ -68,7 +69,6 @@ export function PropertyDrawer({
   }, [
     open,
     storageUpgrades.length,
-    nonStorageUpgrades.length,
     property.base_capacity,
     baseStorageCars,
     pickerOpen,
