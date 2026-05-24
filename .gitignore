@@ -49,6 +49,9 @@ desktop.ini
 # claude code local config
 .claude/
 
+# superpowers brainstorm mockups
+.superpowers/
+
 # misc
 *.pem
 .vercel
