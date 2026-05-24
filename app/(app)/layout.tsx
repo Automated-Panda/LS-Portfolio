@@ -18,6 +18,14 @@ export default async function AppLayout({
     redirect("/login");
   }
 
+  const { headers } = await import("next/headers");
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const { isWizardCompleted } = await import("@/lib/queries/wizard");
+  const completed = await isWizardCompleted(user.id);
+  if (!completed && pathname !== "/wizard" && pathname !== "/dashboard") {
+    redirect("/wizard");
+  }
+
   const [{ data: profile }, counts] = await Promise.all([
     supabase
       .from("profiles")
