@@ -277,21 +277,39 @@ export const ECLIPSE_BLVD_GARAGES: Omit<Property, "image_path">[] = [
     subtype_display: "Eclipse Boulevard Garages",
     location: "Eclipse Boulevard",
     neighborhood: "West Vinewood",
-    capacity: 0,
+    capacity: 50,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: "eclipse-blvd-garages-all-spaces",
-        display_name: "50-Car Garage",
-        tier: null,
-        capacity: 50,
-        required_upgrade_id: null,
-        notes: "Available as single purchase with all floors",
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// VINEWOOD CAR CLUB GARAGE (GTA+ exclusive, The Chop Shop update, Dec 2023)
+// ---------------------------------------------------------------------------
+// 100-vehicle garage on West Eclipse Boulevard, Pillbox Hill. Five floors
+// stacked, 20 cars each. GTA+ membership required to maintain active storage
+// — without it, stored vehicles persist but new storage is suspended. We
+// model it as a single property with base capacity 100 and no upgrade tiers.
+
+export const VINEWOOD_CAR_CLUB: Omit<Property, "image_path">[] = [
+  {
+    id: "vinewood-car-club",
+    display_name: "The Vinewood Club Garage",
+    property_type: "garage",
+    subtype: "vinewood-car-club",
+    subtype_display: "Vinewood Club Garage",
+    location: "West Eclipse Boulevard, Pillbox Hill",
+    neighborhood: "Pillbox Hill",
+    capacity: 100,
+    counts_as_garage: true,
+    upgrades: [],
+    _sources: {
+      fandom: "https://gta.fandom.com/wiki/The_Vinewood_Club",
+      gtabase: "https://www.gtabase.com/gta-online/properties/the-vinewood-club-garage",
     },
   },
 ];

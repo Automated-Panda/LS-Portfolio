@@ -6,7 +6,11 @@ import {
   MID_END_APARTMENTS,
   LOW_END_APARTMENTS,
 } from "./apartments-seed";
-import { STANDALONE_GARAGES, ECLIPSE_BLVD_GARAGES } from "./garages-seed";
+import {
+  STANDALONE_GARAGES,
+  ECLIPSE_BLVD_GARAGES,
+  VINEWOOD_CAR_CLUB,
+} from "./garages-seed";
 import { CASINO_PENTHOUSE_SEED } from "./casino-penthouse-seed";
 import { CEO_OFFICES } from "./offices-seed";
 import { MC_CLUBHOUSES } from "./clubhouses-seed";
@@ -54,6 +58,7 @@ export const PROPERTIES_SEED: Omit<Property, "image_path">[] = [
   // Garages
   ...STANDALONE_GARAGES,
   ...ECLIPSE_BLVD_GARAGES,
+  ...VINEWOOD_CAR_CLUB,
   // Workplaces
   ...CEO_OFFICES,
   ...MC_CLUBHOUSES,

@@ -110,6 +110,15 @@ async function main(): Promise<void> {
 
   // ---- properties ----
   console.log(`Importing ${properties.length} properties...`);
+  // Mirror migration 0005's ownership_group backfill: apartments + standalone
+  // garages share the 'residential' pool (10-property cap post-Criminal
+  // Enterprises). Other subtypes are their own group.
+  const RESIDENTIAL_POOL = new Set([
+    "high-end-apartment",
+    "mid-end-apartment",
+    "low-end-apartment",
+    "stand-alone-garage",
+  ]);
   const propertyRows = properties.map((p) => ({
     id: p.id,
     display_name: p.display_name,
@@ -119,6 +128,7 @@ async function main(): Promise<void> {
     location: p.location,
     neighborhood: p.neighborhood,
     capacity: p.capacity,
+    ownership_group: RESIDENTIAL_POOL.has(p.subtype) ? "residential" : p.subtype,
     image_path: p.image_path,
     counts_as_garage: p.counts_as_garage,
     source_fandom: p._sources.fandom,
