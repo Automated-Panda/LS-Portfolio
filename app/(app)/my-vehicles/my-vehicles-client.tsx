@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,6 +21,13 @@ type Props = {
 const VIEW_KEY = "my-vehicles:view";
 
 export function MyVehiclesClient({ instances, ownedProperties, tagLookup }: Props) {
+  // Union of every custom tag in the user's fleet — feeds the autocomplete in
+  // the instance drawer so adding the same tag to multiple cars suggests itself.
+  const tagSuggestions = useMemo(
+    () =>
+      Array.from(new Set(instances.flatMap((i) => i.custom_tags))).sort(),
+    [instances],
+  );
   const [view, setView] = useState<"cards" | "table">("cards");
   const [search, setSearch] = useState("");
   const [selectedPropertyIds, setSelectedPropertyIds] = useState<string[]>([]);
@@ -82,9 +89,18 @@ export function MyVehiclesClient({ instances, ownedProperties, tagLookup }: Prop
       </div>
       <UnassignedBanner count={unassignedCount} />
       {view === "cards" ? (
-        <MyVehiclesGrid instances={filtered} ownedProperties={ownedProperties} tagLookup={tagLookup} />
+        <MyVehiclesGrid
+          instances={filtered}
+          ownedProperties={ownedProperties}
+          tagLookup={tagLookup}
+          tagSuggestions={tagSuggestions}
+        />
       ) : (
-        <MyVehiclesTable instances={filtered} ownedProperties={ownedProperties} />
+        <MyVehiclesTable
+          instances={filtered}
+          ownedProperties={ownedProperties}
+          tagSuggestions={tagSuggestions}
+        />
       )}
     </div>
   );

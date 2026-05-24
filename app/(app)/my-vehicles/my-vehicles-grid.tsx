@@ -12,9 +12,15 @@ type Props = {
   instances: OwnedVehicleInstance[];
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
+  tagSuggestions?: string[];
 };
 
-export function MyVehiclesGrid({ instances, ownedProperties, tagLookup }: Props) {
+export function MyVehiclesGrid({
+  instances,
+  ownedProperties,
+  tagLookup,
+  tagSuggestions,
+}: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = instances.find((i) => i.id === selectedId);
 
@@ -72,6 +78,7 @@ export function MyVehiclesGrid({ instances, ownedProperties, tagLookup }: Props)
         <InstanceDrawer
           instance={selected}
           ownedProperties={ownedProperties}
+          tagSuggestions={tagSuggestions}
           open={true}
           onOpenChange={(o) => !o && setSelectedId(null)}
         />

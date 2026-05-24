@@ -27,6 +27,8 @@ import { CustomTagsInput } from "./custom-tags-input";
 type Props = {
   instance: OwnedVehicleInstance;
   ownedProperties: OwnedPropertyDetail[];
+  /** Union of all custom_tags across user's fleet — feeds the tag autocomplete. */
+  tagSuggestions?: string[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
@@ -34,6 +36,7 @@ type Props = {
 export function InstanceDrawer({
   instance,
   ownedProperties,
+  tagSuggestions,
   open,
   onOpenChange,
 }: Props) {
@@ -156,7 +159,11 @@ export function InstanceDrawer({
 
           <div className="flex flex-col gap-2">
             <Label>Custom tags</Label>
-            <CustomTagsInput value={tags} onChange={setTags} />
+            <CustomTagsInput
+              value={tags}
+              onChange={setTags}
+              suggestions={tagSuggestions}
+            />
           </div>
 
           <div className="flex flex-col gap-2">

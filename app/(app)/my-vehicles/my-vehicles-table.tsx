@@ -9,11 +9,16 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 type Props = {
   instances: OwnedVehicleInstance[];
   ownedProperties: OwnedPropertyDetail[];
+  tagSuggestions?: string[];
 };
 
 type SortKey = "display_name" | "class" | "manufacturer_display" | "property" | "upgrade";
 
-export function MyVehiclesTable({ instances, ownedProperties }: Props) {
+export function MyVehiclesTable({
+  instances,
+  ownedProperties,
+  tagSuggestions,
+}: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<SortKey>("display_name");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
@@ -90,6 +95,7 @@ export function MyVehiclesTable({ instances, ownedProperties }: Props) {
         <InstanceDrawer
           instance={selected}
           ownedProperties={ownedProperties}
+          tagSuggestions={tagSuggestions}
           open={true}
           onOpenChange={(o) => !o && setSelectedId(null)}
         />
