@@ -5,13 +5,23 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getOwnershipGroupStatus } from "@/lib/queries/ownership";
 
+export type TradeInCar = {
+  ownedVehicleId: string;
+  label: string;             // nickname || vehicle display_name
+};
+
 export type ToggleResult =
   | { ok: true; ownedPropertyId: string }
   | { ok: false; removed: true }
   | {
       needsTradeIn: {
         group: string;
-        currentlyOwned: Array<{ id: string; display_name: string; car_count: number }>;
+        currentlyOwned: Array<{
+          id: string;
+          display_name: string;
+          car_count: number;
+          cars: TradeInCar[];
+        }>;
         newProperty: { id: string; display_name: string; capacity: number };
       };
     }
@@ -57,25 +67,44 @@ export async function togglePropertyOwnership(
   const status = await getOwnershipGroupStatus(user.id, prop.ownership_group);
 
   if (status.atLimit) {
-    // Fetch current owned in this group with car counts.
+    // Fetch current owned in this group with per-car detail. We include cars
+    // up-front (vs lazy-fetch on dest pick) because the trigger payload is
+    // small even with full lists, and the TradeInModal needs labels to render
+    // the per-car checkbox grid when destination capacity < source car count.
     const { data: rows, error: rowErr } = await supabase
       .from("user_owned_properties")
       .select(`
         id,
         properties!inner ( display_name, ownership_group ),
-        user_owned_vehicles!stored_in_property_id ( id )
+        user_owned_vehicles!stored_in_property_id (
+          id, nickname,
+          vehicles!inner ( display_name )
+        )
       `)
       .eq("user_id", user.id)
       .eq("properties.ownership_group", prop.ownership_group);
     if (rowErr) return { error: rowErr.message };
 
+    type CarRow = {
+      id: string;
+      nickname: string | null;
+      vehicles: { display_name: string } | { display_name: string }[] | null;
+    };
     type Row = NonNullable<typeof rows>[number];
     const currentlyOwned = (rows ?? []).map((r: Row) => {
       const p = Array.isArray(r.properties) ? r.properties[0] : r.properties;
+      const cars = ((r.user_owned_vehicles ?? []) as CarRow[]).map((c) => {
+        const v = Array.isArray(c.vehicles) ? c.vehicles[0] : c.vehicles;
+        return {
+          ownedVehicleId: c.id,
+          label: c.nickname ?? v?.display_name ?? "Unknown vehicle",
+        };
+      });
       return {
         id: r.id,
         display_name: p?.display_name ?? "",
-        car_count: (r.user_owned_vehicles ?? []).length,
+        car_count: cars.length,
+        cars,
       };
     });
 
