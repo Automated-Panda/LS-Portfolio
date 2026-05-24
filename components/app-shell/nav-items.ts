@@ -5,6 +5,7 @@ import {
   Grid3x3,
   Home,
   LayoutDashboard,
+  Sparkles,
   Warehouse,
   type LucideIcon,
 } from "lucide-react";
@@ -57,6 +58,11 @@ export const NAV_SECTIONS: NavSection[] = [
         href: "/my-businesses",
         icon: Briefcase,
         badgeKey: "businesses",
+      },
+      {
+        label: "Organize",
+        href: "/organize",
+        icon: Sparkles,
       },
     ],
   },
