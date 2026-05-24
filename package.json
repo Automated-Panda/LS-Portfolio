@@ -21,6 +21,7 @@
     "mfr:fix-acronyms": "tsx --env-file=.env.local scripts/fix-manufacturer-display.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.98.0",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-checkbox": "^1.3.3",
     "@radix-ui/react-dialog": "^1.1.15",
