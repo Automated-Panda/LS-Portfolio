@@ -129,6 +129,35 @@ export async function tradeInProperty(
     .single();
   if (newErr) return { error: newErr.message };
 
+  // Empty destinations = "move-all-that-fit, unassign overflow" server-side
+  // default. The TradeInModal uses this when the user just clicks Trade in
+  // without per-car selection (Piece 1 MVP; full per-car picker is Piece 1.1).
+  if (args.carDestinations.length === 0) {
+    const { data: cars, error: carsErr } = await supabase
+      .from("user_owned_vehicles")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("stored_in_property_id", args.tradeInOwnedPropertyId)
+      .order("created_at", { ascending: true });
+    if (carsErr) return { error: carsErr.message };
+
+    const { data: newPropRow } = await supabase
+      .from("user_owned_properties")
+      .select("properties!inner(capacity)")
+      .eq("id", newRow.id)
+      .maybeSingle();
+    type PropCap = { capacity: number };
+    const newP = Array.isArray(newPropRow?.properties)
+      ? (newPropRow?.properties[0] as PropCap | undefined)
+      : (newPropRow?.properties as PropCap | undefined);
+    const cap = newP?.capacity ?? 0;
+
+    args.carDestinations = (cars ?? []).map((c, i) => ({
+      ownedVehicleId: c.id,
+      action: i < cap ? "move" : "unassign",
+    }));
+  }
+
   // 2. Move-or-unassign each car.
   for (const dest of args.carDestinations) {
     const patch =

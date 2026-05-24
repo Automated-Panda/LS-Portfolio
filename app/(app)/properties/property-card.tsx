@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import type { PropertySummary } from "@/lib/properties";
 import { formatPropertyType } from "@/lib/properties";
 import { cn } from "@/lib/utils";
+import { TradeInModal, type TradeInTrigger } from "@/components/portfolio/trade-in-modal";
 
 import { togglePropertyOwnership } from "./actions";
 
@@ -20,6 +21,7 @@ type Props = {
 
 function PropertyCardImpl({ property, imageUrl, owned }: Props) {
   const [optimisticOwned, setOptimisticOwned] = useState(owned);
+  const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleToggle = () => {
@@ -31,9 +33,8 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
         setOptimisticOwned(!nextState);
         toast.error(result.error);
       } else if ("needsTradeIn" in result) {
-        // Task 18 will wire the TradeInModal here.
         setOptimisticOwned(false);
-        toast.info("At ownership limit — trade-in modal coming in a moment.");
+        setTradeInTrigger(result.needsTradeIn);
       } else if ("ok" in result && result.ok === false && "removed" in result) {
         setOptimisticOwned(false);
       } else if ("ok" in result && result.ok === true) {
@@ -43,6 +44,7 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
   };
 
   return (
+    <>
     <div
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-lg border bg-card transition-all hover:border-foreground/40",
@@ -110,6 +112,11 @@ function PropertyCardImpl({ property, imageUrl, owned }: Props) {
         </div>
       </button>
     </div>
+    <TradeInModal
+      trigger={tradeInTrigger}
+      onClose={() => setTradeInTrigger(null)}
+    />
+    </>
   );
 }
 
