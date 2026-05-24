@@ -50,14 +50,15 @@ export function PropertyDrawer({
       .filter((u) => u.is_installed)
       .reduce((sum, u) => sum + u.cars_here, 0);
 
-  // Drawer-skip for simple properties: auto-open the vehicle picker when the
-  // property has no storage-tier choices and a base capacity > 0. Equipment/
-  // security upgrades alone don't justify the drawer — those can be managed
-  // from /my-properties. Stand-alone garages, apartments, Eclipse Blvd, etc.
-  // jump straight to picking cars.
+  // Drawer-skip for simple properties: auto-open the vehicle picker ONCE when
+  // the drawer opens for a property with no storage-tier choices and a base
+  // capacity > 0. Stand-alone garages, apartments, Eclipse Blvd, etc. jump
+  // straight to picking cars. Deps are intentionally narrow (open + property.id)
+  // so closing the modal doesn't re-trigger the auto-open — see the bug where
+  // saving cars caused the modal to instantly re-open in a loop.
   useEffect(() => {
     if (!open) return;
-    if (storageUpgrades.length === 0 && property.base_capacity > 0 && !pickerOpen) {
+    if (storageUpgrades.length === 0 && property.base_capacity > 0) {
       setPickerTarget({
         upgradeId: null,
         label: "Base storage",
@@ -66,13 +67,8 @@ export function PropertyDrawer({
       });
       setPickerOpen(true);
     }
-  }, [
-    open,
-    storageUpgrades.length,
-    property.base_capacity,
-    baseStorageCars,
-    pickerOpen,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, property.id]);
 
   const handleToggleUpgrade = (upgradeId: string) => {
     startTransition(async () => {
