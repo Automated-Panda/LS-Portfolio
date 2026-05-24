@@ -111,7 +111,6 @@ export function VehiclesBrowser({
               key={v.id}
               vehicle={v}
               imageUrl={vehicleImageUrl(v.image_path)}
-              owned={ownedSet.has(v.id)}
               tagLookup={tagLookup}
             />
           ))}

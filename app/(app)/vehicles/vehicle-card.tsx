@@ -14,73 +14,75 @@ import { addVehicleInstance } from "./actions";
 type Props = {
   vehicle: VehicleSummary;
   imageUrl: string | null;
-  owned: boolean;
   tagLookup: Record<string, string>;
 };
 
-function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
-  const [optimisticOwned, setOptimisticOwned] = useState(owned);
+function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
+  const [optimisticCount, setOptimisticCount] = useState(vehicle.owned_count);
   const [isPending, startTransition] = useTransition();
-  const [driftOwned, setDriftOwned] = useState(
-    vehicle.drift_variant?.owned ?? false,
+  const [driftCount, setDriftCount] = useState(
+    vehicle.drift_variant?.owned ? 1 : 0,
   );
   const [driftPending, startDriftTransition] = useTransition();
 
-  const handleToggle = () => {
-    const nextState = !optimisticOwned;
-    setOptimisticOwned(nextState);
+  const handleAdd = () => {
+    setOptimisticCount(optimisticCount + 1);
     startTransition(async () => {
       const result = await addVehicleInstance(vehicle.id);
       if (result.error) {
-        setOptimisticOwned(!nextState);
+        setOptimisticCount(optimisticCount);
         toast.error(result.error);
       } else {
-        setOptimisticOwned(true);
+        toast.success(`Added ${vehicle.display_name}`);
       }
     });
   };
 
-  const handleDriftToggle = (e: React.MouseEvent) => {
+  const handleDriftAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!vehicle.drift_variant) return;
-    const driftId = vehicle.drift_variant.id;
-    const nextState = !driftOwned;
-    setDriftOwned(nextState);
+    setDriftCount(driftCount + 1);
     startDriftTransition(async () => {
-      const result = await addVehicleInstance(driftId);
+      const result = await addVehicleInstance(vehicle.drift_variant!.id);
       if (result.error) {
-        setDriftOwned(!nextState);
+        setDriftCount(driftCount);
         toast.error(result.error);
       } else {
-        setDriftOwned(true);
+        toast.success(`Added Drift ${vehicle.display_name}`);
       }
     });
   };
+
+  const owned = optimisticCount > 0;
 
   return (
     <div
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-lg border bg-card transition-all hover:border-foreground/40",
-        optimisticOwned && "border-emerald-500/70 ring-2 ring-emerald-500/30",
+        owned && "border-emerald-500/70 ring-2 ring-emerald-500/30",
         isPending && "opacity-80",
       )}
     >
       <button
         type="button"
-        onClick={handleToggle}
+        onClick={handleAdd}
         disabled={isPending}
         className="flex flex-1 flex-col text-left"
+        aria-label={`Add ${vehicle.display_name} to portfolio`}
       >
         <div
           className={cn(
-            "absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all",
-            optimisticOwned
+            "absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full px-2 transition-all",
+            owned
               ? "bg-emerald-500 text-white"
               : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
           )}
         >
-          {optimisticOwned ? (
-            <Check className="h-4 w-4" />
+          {owned ? (
+            <>
+              <Check className="h-4 w-4" />
+              <span className="text-xs font-semibold">×{optimisticCount}</span>
+            </>
           ) : (
             <Plus className="h-4 w-4" />
           )}
@@ -108,12 +110,8 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
 
         <div className="flex flex-1 flex-col gap-2 p-3">
           <div>
-            <p className="text-sm font-medium leading-tight">
-              {vehicle.display_name}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {vehicle.manufacturer_display}
-            </p>
+            <p className="text-sm font-medium leading-tight">{vehicle.display_name}</p>
+            <p className="text-xs text-muted-foreground">{vehicle.manufacturer_display}</p>
           </div>
           <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">
             {vehicle.tag_ids.slice(0, 2).map((id) => (
@@ -125,10 +123,7 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
               <Badge
                 variant="outline"
                 className="shrink-0 text-[10px]"
-                title={vehicle.tag_ids
-                  .slice(2)
-                  .map((id) => tagLookup[id] ?? id)
-                  .join(", ")}
+                title={vehicle.tag_ids.slice(2).map((id) => tagLookup[id] ?? id).join(", ")}
               >
                 +{vehicle.tag_ids.length - 2}
               </Badge>
@@ -137,29 +132,25 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
               <span
                 role="button"
                 tabIndex={0}
-                onClick={handleDriftToggle}
+                onClick={handleDriftAdd}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    handleDriftToggle(e as unknown as React.MouseEvent);
+                    handleDriftAdd(e as unknown as React.MouseEvent);
                   }
                 }}
                 className={cn(
                   "ml-auto inline-flex cursor-pointer select-none items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-medium transition-colors",
-                  driftOwned
+                  driftCount > 0
                     ? "border-emerald-500/70 bg-emerald-500/20 text-emerald-300"
                     : "border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground",
                   driftPending && "opacity-60",
                 )}
-                aria-pressed={driftOwned}
-                aria-label={`${driftOwned ? "Remove" : "Add"} drift variant`}
+                aria-pressed={driftCount > 0}
+                aria-label={`Add Drift ${vehicle.display_name}`}
               >
-                {driftOwned ? (
-                  <Check className="h-3 w-3" />
-                ) : (
-                  <Plus className="h-3 w-3" />
-                )}
-                Drift
+                {driftCount > 0 ? <Check className="h-3 w-3" /> : <Plus className="h-3 w-3" />}
+                Drift{driftCount > 1 ? ` ×${driftCount}` : ""}
               </span>
             )}
           </div>
