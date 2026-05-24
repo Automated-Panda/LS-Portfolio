@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import type { VehicleSummary } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
-import { toggleVehicleOwnership } from "./actions";
+import { addVehicleInstance } from "./actions";
 
 type Props = {
   vehicle: VehicleSummary;
@@ -30,12 +30,12 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
     const nextState = !optimisticOwned;
     setOptimisticOwned(nextState);
     startTransition(async () => {
-      const result = await toggleVehicleOwnership(vehicle.id);
+      const result = await addVehicleInstance(vehicle.id);
       if (result.error) {
         setOptimisticOwned(!nextState);
         toast.error(result.error);
       } else {
-        setOptimisticOwned(result.owned);
+        setOptimisticOwned(true);
       }
     });
   };
@@ -47,12 +47,12 @@ function VehicleCardImpl({ vehicle, imageUrl, owned, tagLookup }: Props) {
     const nextState = !driftOwned;
     setDriftOwned(nextState);
     startDriftTransition(async () => {
-      const result = await toggleVehicleOwnership(driftId);
+      const result = await addVehicleInstance(driftId);
       if (result.error) {
         setDriftOwned(!nextState);
         toast.error(result.error);
       } else {
-        setDriftOwned(result.owned);
+        setDriftOwned(true);
       }
     });
   };

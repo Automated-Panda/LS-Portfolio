@@ -4,51 +4,32 @@ import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/lib/supabase/server";
 
-export type ToggleResult = {
+export type AddInstanceResult = {
   vehicleId: string;
-  owned: boolean;
+  createdInstanceId?: string;
   error?: string;
 };
 
-export async function toggleVehicleOwnership(
+export async function addVehicleInstance(
   vehicleId: string,
-): Promise<ToggleResult> {
+): Promise<AddInstanceResult> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { vehicleId, owned: false, error: "Not signed in." };
+    return { vehicleId, error: "Not signed in." };
   }
 
-  const { data: existing, error: selectErr } = await supabase
+  const { data, error } = await supabase
     .from("user_owned_vehicles")
+    .insert({ user_id: user.id, vehicle_id: vehicleId })
     .select("id")
-    .eq("user_id", user.id)
-    .eq("vehicle_id", vehicleId);
+    .single();
 
-  if (selectErr) {
-    return { vehicleId, owned: false, error: selectErr.message };
-  }
+  if (error) return { vehicleId, error: error.message };
 
-  if (existing && existing.length > 0) {
-    const { error } = await supabase
-      .from("user_owned_vehicles")
-      .delete()
-      .eq("user_id", user.id)
-      .eq("vehicle_id", vehicleId);
-
-    if (error) return { vehicleId, owned: true, error: error.message };
-    revalidatePath("/", "layout");
-    return { vehicleId, owned: false };
-  }
-
-  const { error } = await supabase
-    .from("user_owned_vehicles")
-    .insert({ user_id: user.id, vehicle_id: vehicleId });
-
-  if (error) return { vehicleId, owned: false, error: error.message };
   revalidatePath("/", "layout");
-  return { vehicleId, owned: true };
+  return { vehicleId, createdInstanceId: data.id };
 }
