@@ -4,12 +4,40 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟢 **Piece 1 (Foundation) code complete** on `feat/piece-1-foundation`. Wizard + multi-instance ownership + storage linking + Phase 4c upgrade UI + trade-in flow + custom tags + /my-vehicles overhaul — all 22 implementation tasks landed via subagent-driven execution. **Manual acceptance walk-through pending** before merge to main.
+**Current phase:** 🟢 **Piece 2 (AI Organizer) code complete** on `feat/piece-2-organizer`. Chat-driven AI organizer with Claude Haiku 4.5 intent parsing, deterministic chained-displacement planner, Apply-now-with-undo / checklist-only execution modes, 1hr undo window, plan history. All 22 implementation tasks landed via subagent-driven execution. **Manual acceptance walk-through pending** before merge to main.
+
+Piece 1 is shipped (merged to main + deployed). Piece 1.5 small items (chip-input tag editor, per-car trade-in picker) also shipped. Custom uploaded vehicle images still deferred.
+
 **Last updated:** 2026-05-24
 
 ---
 
 ## 🧭 Where we left off
+
+### 2026-05-24 — Piece 2 AI Organizer: code complete on feat/piece-2-organizer
+
+Subagent-driven execution of the 23-task implementation plan ([`docs/plans/2026-05-24-piece-2-organizer.md`](./plans/2026-05-24-piece-2-organizer.md)). Spec at [`docs/specs/2026-05-24-piece-2-organizer-design.md`](./specs/2026-05-24-piece-2-organizer-design.md).
+
+**What landed:**
+
+- **Migration 0008** — `organizer_plans` table + `organizer_plan_status` enum + RLS. Plan steps + undo snapshot live as JSONB on the row.
+- **`@anthropic-ai/sdk` v0.98** added; `ANTHROPIC_API_KEY` server-side env var.
+- **`lib/organizer/` (10 files):** types, locations (LocationKey + slot helpers), filter-vehicles, portfolio-context (LLM taxonomy block builder), intent-parser (Claude Haiku 4.5 with prompt caching on behavior + per-user portfolio blocks), validate-intent (server-side ID/tag checks), planner (chained-displacement algorithm), `__samples__/` fixtures + `tsx`-runnable verification (4/4 samples passing first try), apply-plan (snapshot + execute + arm 1hr undo), undo-plan (restore from snapshot), format-failure (LLM rewrite of structured failures).
+- **`lib/queries/organizer.ts`** — getRecentPlans, getPlan, getActiveUndoablePlan.
+- **`/organize` route + UI** — page.tsx server component, organize-chat.tsx orchestrator (state machine: idle → thinking → clarifying/plan-ready → applied/checklist/failed), plan-renderer, checklist-progress, undo-banner with live countdown, recent-plans-list, example-pills (4 prompts) + clarification-pills.
+- **Sidebar nav entry** — Sparkles icon under "My Portfolio".
+
+**Verified during implementation:**
+- All 4 planner sample fixtures pass first run (simple-fit, displacement, compound, insufficient-capacity)
+- Typecheck clean at every commit
+
+**Pending follow-ups (Piece 2.1+):**
+- Multi-turn conversational refinement (Approach B from brainstorm)
+- Distribution-mode planner ("spread evenly across N properties")
+- Auto-target-picking (`target: { auto_pick: "largest_fit" }`)
+- Plan history pagination/search beyond 10 entries
+- Stale `pending` plans cleanup
+- Pro tier paywall wrap (`<RequiresPro>` boundary) when Stripe lands in Phase 9
 
 ### 2026-05-24 — Piece 1 Foundation: code complete on feat/piece-1-foundation
 
