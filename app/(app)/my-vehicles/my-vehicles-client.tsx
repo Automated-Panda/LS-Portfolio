@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,7 +29,6 @@ export function MyVehiclesClient({
   initialUnassignedOnly,
 }: Props) {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const tagSuggestions = useMemo(
     () =>
@@ -49,9 +48,14 @@ export function MyVehiclesClient({
     localStorage.setItem(VIEW_KEY, view);
   }, [view]);
 
-  // Sync ?unassigned=1 with state without scrolling or adding history entries.
+  // Sync ?unassigned=1 with state. Read window.location.search (not the
+  // searchParams hook) and guard with an equality check — otherwise the
+  // searchParams reference churn from router.replace would re-fire this
+  // effect forever.
   useEffect(() => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
+    const had = params.get("unassigned") === "1";
+    if (had === unassignedOnly) return;
     if (unassignedOnly) {
       params.set("unassigned", "1");
     } else {
@@ -61,7 +65,7 @@ export function MyVehiclesClient({
     router.replace(qs ? `/my-vehicles?${qs}` : "/my-vehicles", {
       scroll: false,
     });
-  }, [unassignedOnly, router, searchParams]);
+  }, [unassignedOnly, router]);
 
   const filtered = instances.filter((i) => {
     if (unassignedOnly && i.storage) return false;
