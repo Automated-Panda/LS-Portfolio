@@ -4,15 +4,39 @@
 
 > Living document. Update as work progresses. This is the single source of truth for "where are we, what's next, what needs testing."
 
-**Current phase:** 🟢 **Piece 2 (AI Organizer) code complete** on `feat/piece-2-organizer`. Chat-driven AI organizer with Claude Haiku 4.5 intent parsing, deterministic chained-displacement planner, Apply-now-with-undo / checklist-only execution modes, 1hr undo window, plan history. All 22 implementation tasks landed via subagent-driven execution. **Manual acceptance walk-through pending** before merge to main.
+**Current phase:** 🟢 **Phase 6 Dashboard code complete** on `feat/phase-6-dashboard`. 7 dashboard widgets + EmptyDashboard onboarding view + DashboardLayout composition + page.tsx rewrite with parallel fetch/derive/branch (Approach C). All 12 implementation tasks landed via subagent-driven execution. **Manual acceptance walk-through pending** before merge to main.
 
 Piece 1 is shipped (merged to main + deployed). Piece 1.5 small items (chip-input tag editor, per-car trade-in picker) also shipped. Custom uploaded vehicle images still deferred.
 
-**Last updated:** 2026-05-24
+**Last updated:** 2026-05-26
 
 ---
 
 ## 🧭 Where we left off
+
+### 2026-05-26 — Phase 6 Dashboard: code complete on feat/phase-6-dashboard
+
+Subagent-driven execution of the 12-task implementation plan ([`docs/plans/2026-05-26-dashboard.md`](./plans/2026-05-26-dashboard.md)). Spec at [`docs/specs/2026-05-26-dashboard-design.md`](./specs/2026-05-26-dashboard-design.md).
+
+**What landed:**
+
+- **7 dashboard widgets** in `components/dashboard/`: `TotalsStrip`, `QuickActions`, `NeedsAttention`, `BreakdownChips`, `CapacityCard`, `CatalogCard`, `RecentActivity`.
+- **`EmptyDashboard`** — onboarding view shown when the user has no owned assets yet.
+- **`DashboardLayout`** — composition component that branches between the empty and populated views.
+- **`page.tsx` rewrite** — parallel fetch + derive + branch (Approach C: reuse existing queries + page-level composition). No new server actions needed.
+- **`lib/queries/dashboard.ts`** — new slim query file with `getCatalogTotals()`.
+- **Piggyback: `?unassigned=1`** URL param on `/my-vehicles` so the NeedsAttention widget can deep-link to unassigned vehicles.
+
+**Layout (C1 story-stacked):** welcome block → TotalsStrip → QuickActions → NeedsAttention (conditional) → BreakdownChips → Capacity + Catalog row → RecentActivity. Mobile collapses to single column.
+
+**Verified during implementation:**
+- Typecheck clean at every commit
+- Spec compliance + code quality reviews per task
+- One critical infinite-loop bug caught and fixed in code review (Task 2)
+- One misleading null-fallback caught and tightened in code review (Task 11)
+
+**Pending before merge:**
+- Manual acceptance walk-through on `localhost:3000` against the spec's smoke checklist (Task 12 in the plan). Then merge to `main`.
 
 ### 2026-05-24 — Piece 2 AI Organizer: code complete on feat/piece-2-organizer
 
@@ -277,7 +301,7 @@ Brainstormed 2026-04-18 late night. Design locked in [`docs/specs/2026-04-18-pro
 | 3. Vehicle Browser | ✅ Feature complete (image-quality polish ongoing) | All Vehicles page + filtering + ownership toggling |
 | **4. Property Management** | 🟡 In progress | `/properties` + `/businesses` browse split ✅ · Phase 4b granular schema ✅ · **Full fanout + verification: 166 canonical instances across 23 subtypes, 0 verify-flagged** ✅ · **Per-instance preview images: 159 unique + 6 fallback + 1 missing** ✅ · `/my-properties` upgrade selection ⚪ · `/my-businesses` owned view ⚪ |
 | 5. Slot Assignment | ⚪ Not started | My Vehicles page + assign to property/upgrade/slot |
-| 6. Dashboard | ⚪ Not started | Totals, capacity, unassigned counts |
+| 6. Dashboard | 🟢 Code complete (pending acceptance walk-through) | 7 widgets (TotalsStrip, QuickActions, NeedsAttention, BreakdownChips, CapacityCard, CatalogCard, RecentActivity) + EmptyDashboard + DashboardLayout live on `feat/phase-6-dashboard`; merge to main pending walk-through |
 | **Brand identity** (cross-cutting) | ✅ Logo, favicon, fonts, email templates | Logo component + Anton font wired site-wide; 6 branded email templates pending hosted dashboard paste |
 | 7. Marketing Site | 🟢 Hero updated | Landing page hero uses new Logo; full marketing build (about, pricing, etc.) still ⚪ |
 | 8. Visual Garage Editor | ⚪ Not started | Top-down grid view, click-to-assign |
