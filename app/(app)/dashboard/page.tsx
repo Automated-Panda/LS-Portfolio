@@ -171,14 +171,14 @@ export default async function DashboardPage() {
   // --- Needs attention ---
   const unassignedVehicles = vehicleInstances.filter((v) => v.storage === null)
     .length;
-  const activeUndoForWidget = activeUndoPlan
-    ? {
-        id: activeUndoPlan.id,
-        appliedAt: activeUndoPlan.applied_at ?? activeUndoPlan.created_at,
-        expiresAt:
-          activeUndoPlan.undo_expires_at ?? activeUndoPlan.created_at,
-      }
-    : null;
+  const activeUndoForWidget =
+    activeUndoPlan && activeUndoPlan.applied_at && activeUndoPlan.undo_expires_at
+      ? {
+          id: activeUndoPlan.id,
+          appliedAt: activeUndoPlan.applied_at,
+          expiresAt: activeUndoPlan.undo_expires_at,
+        }
+      : null;
 
   const data: DashboardData = {
     greetingName,
