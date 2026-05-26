@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,13 +17,20 @@ type Props = {
   instances: OwnedVehicleInstance[];
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
+  initialUnassignedOnly: boolean;
 };
 
 const VIEW_KEY = "my-vehicles:view";
 
-export function MyVehiclesClient({ instances, ownedProperties, tagLookup }: Props) {
-  // Union of every custom tag in the user's fleet — feeds the autocomplete in
-  // the instance drawer so adding the same tag to multiple cars suggests itself.
+export function MyVehiclesClient({
+  instances,
+  ownedProperties,
+  tagLookup,
+  initialUnassignedOnly,
+}: Props) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const tagSuggestions = useMemo(
     () =>
       Array.from(new Set(instances.flatMap((i) => i.custom_tags))).sort(),
@@ -31,7 +39,7 @@ export function MyVehiclesClient({ instances, ownedProperties, tagLookup }: Prop
   const [view, setView] = useState<"cards" | "table">("cards");
   const [search, setSearch] = useState("");
   const [selectedPropertyIds, setSelectedPropertyIds] = useState<string[]>([]);
-  const [unassignedOnly, setUnassignedOnly] = useState(false);
+  const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
 
   useEffect(() => {
     const v = localStorage.getItem(VIEW_KEY);
@@ -40,6 +48,20 @@ export function MyVehiclesClient({ instances, ownedProperties, tagLookup }: Prop
   useEffect(() => {
     localStorage.setItem(VIEW_KEY, view);
   }, [view]);
+
+  // Sync ?unassigned=1 with state without scrolling or adding history entries.
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (unassignedOnly) {
+      params.set("unassigned", "1");
+    } else {
+      params.delete("unassigned");
+    }
+    const qs = params.toString();
+    router.replace(qs ? `/my-vehicles?${qs}` : "/my-vehicles", {
+      scroll: false,
+    });
+  }, [unassignedOnly, router, searchParams]);
 
   const filtered = instances.filter((i) => {
     if (unassignedOnly && i.storage) return false;
