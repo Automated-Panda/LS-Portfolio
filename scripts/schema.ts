@@ -55,6 +55,8 @@ export const PropertyUpgradeSchema = z.object({
   price: z.number().int().min(0).nullable().optional(),
   /** Optional sub-slot breakdown. Sum of capacities should equal the upgrade's capacity (or, for an "always-on" upgrade like the mansion's base 20-car slot, the property's base_capacity). */
   sub_slots: z.array(SubSlotSchema).nullable().optional(),
+  /** When set, this upgrade is mutually exclusive with other upgrades on the same property sharing the same mutex_group label. Installing one auto-uninstalls the others. E.g. Super Yacht model variants. */
+  mutex_group: z.string().nullable().optional(),
 });
 
 export const PropertySchema = z.object({

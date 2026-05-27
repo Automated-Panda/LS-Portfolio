@@ -6340,8 +6340,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Murrieta Heights, Los Santos",
     "neighborhood": "Murrieta Heights",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6359,8 +6359,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "La Mesa, Los Santos",
     "neighborhood": "La Mesa",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6378,8 +6378,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "La Puerta, Los Santos",
     "neighborhood": "La Puerta",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6397,8 +6397,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Davis, Los Santos",
     "neighborhood": "Davis",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6416,8 +6416,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Cypress Flats, Los Santos",
     "neighborhood": "Cypress Flats",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6435,8 +6435,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Los Santos International Airport, South Los Santos",
     "neighborhood": "Los Santos International Airport",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6454,8 +6454,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Los Santos International Airport, South Los Santos",
     "neighborhood": "Los Santos International Airport",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6473,8 +6473,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "El Burro Heights, East Los Santos",
     "neighborhood": "El Burro Heights",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -6492,8 +6492,8 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Elysian Island, South Los Santos",
     "neighborhood": "Elysian Island",
-    "capacity": 40,
-    "counts_as_garage": true,
+    "capacity": 0,
+    "counts_as_garage": false,
     "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
@@ -7366,6 +7366,7 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Entry-level ($6,000,000).",
+        "mutex_group": "yacht-model",
         "price": 6000000
       },
       {
@@ -7375,6 +7376,7 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Mid-tier ($7,000,000).",
+        "mutex_group": "yacht-model",
         "price": 7000000
       },
       {
@@ -7384,6 +7386,7 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Top-tier, premium ($8,000,000); includes hot tubs.",
+        "mutex_group": "yacht-model",
         "price": 8000000
       }
     ],

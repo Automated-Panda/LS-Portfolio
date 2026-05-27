@@ -33,6 +33,8 @@ export type OwnedPropertyDetail = {
       required_upgrade_id?: string | null;
       cars_here: number;
     }> | null;
+    /** Mutex group label: upgrades sharing this label on the same property are mutually exclusive (e.g. yacht models). */
+    mutex_group: string | null;
   }>;
 };
 
@@ -62,7 +64,7 @@ export async function getOwnedPropertiesWithStorage(
       properties!inner (
         display_name, property_type, subtype, subtype_display, neighborhood, image_path,
         capacity, ownership_group, counts_as_garage, price,
-        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots )
+        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots, mutex_group )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
       user_owned_vehicles!stored_in_property_id (
@@ -89,6 +91,7 @@ export async function getOwnedPropertiesWithStorage(
       required_upgrade_id: string | null; sort_order: number;
       price: number | null;
       sub_slots: RawSubSlot[] | null;
+      mutex_group: string | null;
     }>;
     const installedIds = new Set(
       (row.user_owned_property_upgrades ?? []).map(
@@ -131,6 +134,7 @@ export async function getOwnedPropertiesWithStorage(
         .map((u) => ({
           ...u,
           price: u.price ?? null,
+          mutex_group: u.mutex_group ?? null,
           is_installed: installedIds.has(u.id),
           cars_here: carsByUpgrade.get(u.id) ?? 0,
           sub_slots: u.sub_slots

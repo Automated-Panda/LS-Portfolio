@@ -128,15 +128,48 @@ export function PropertyDrawer({
   const handleToggleUpgrade = (upgradeId: string, currentlyInstalled: boolean) => {
     // Optimistic flip — instant visual feedback.
     setOptimistic(upgradeId, !currentlyInstalled);
+
+    // Mutex-group sibling handling — if we're INSTALLING an upgrade in a
+    // mutex group, optimistically uninstall every sibling. The server does
+    // the same atomically, but doing it client-side too keeps the UI honest
+    // while the round-trip lands (e.g. switching yacht model).
+    if (!currentlyInstalled) {
+      const target = property.upgrades.find((u) => u.id === upgradeId);
+      if (target?.mutex_group) {
+        for (const sib of property.upgrades) {
+          if (sib.id !== upgradeId && sib.mutex_group === target.mutex_group) {
+            setOptimistic(sib.id, false);
+          }
+        }
+      }
+    }
+
     startTransition(async () => {
       const r = await toggleUpgradeInstalled(property.id, upgradeId);
       if ("error" in r) {
         // Rollback optimistic state on error.
         setOptimistic(upgradeId, undefined);
+        // Also clear any sibling overrides we set
+        const target = property.upgrades.find((u) => u.id === upgradeId);
+        if (target?.mutex_group) {
+          for (const sib of property.upgrades) {
+            if (sib.id !== upgradeId && sib.mutex_group === target.mutex_group) {
+              setOptimistic(sib.id, undefined);
+            }
+          }
+        }
         toast.error(r.error);
       } else {
         // Server confirmed — drop the override so revalidated data takes over.
         setOptimistic(upgradeId, undefined);
+        const target = property.upgrades.find((u) => u.id === upgradeId);
+        if (target?.mutex_group) {
+          for (const sib of property.upgrades) {
+            if (sib.id !== upgradeId && sib.mutex_group === target.mutex_group) {
+              setOptimistic(sib.id, undefined);
+            }
+          }
+        }
       }
     });
   };

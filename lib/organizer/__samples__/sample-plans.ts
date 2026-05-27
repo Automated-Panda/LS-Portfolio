@@ -85,6 +85,7 @@ function p(
       cars_here: 0,
       price: null,
       sub_slots: null,
+      mutex_group: null,
     })),
   };
 }

@@ -60,10 +60,10 @@ export async function toggleUpgradeInstalled(
     return { ok: true, installed: false };
   }
 
-  // Install — verify prereq.
+  // Install — verify prereq + handle mutex group.
   const { data: upgrade } = await supabase
     .from("property_upgrades")
-    .select("required_upgrade_id")
+    .select("required_upgrade_id, mutex_group, property_id")
     .eq("id", upgradeId)
     .maybeSingle();
   if (upgrade?.required_upgrade_id) {
@@ -75,6 +75,25 @@ export async function toggleUpgradeInstalled(
       .maybeSingle();
     if (!hasParent) {
       return { error: "Install the required upgrade first." };
+    }
+  }
+
+  // Mutex group: auto-uninstall any sibling upgrades in the same group on
+  // this owned property (e.g. switching yacht model — old model is replaced).
+  if (upgrade?.mutex_group) {
+    const { data: siblings } = await supabase
+      .from("property_upgrades")
+      .select("id")
+      .eq("property_id", upgrade.property_id)
+      .eq("mutex_group", upgrade.mutex_group)
+      .neq("id", upgradeId);
+    const siblingIds = (siblings ?? []).map((s) => s.id);
+    if (siblingIds.length > 0) {
+      await supabase
+        .from("user_owned_property_upgrades")
+        .delete()
+        .eq("user_owned_property_id", ownedPropertyId)
+        .in("property_upgrade_id", siblingIds);
     }
   }
 

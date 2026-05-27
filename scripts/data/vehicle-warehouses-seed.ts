@@ -98,9 +98,12 @@ function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> 
     subtype_display: "Vehicle Warehouse",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    // 40-car source-vehicle storage is included on purchase, not an upgrade.
-    capacity: 40,
-    counts_as_garage: true,
+    // 40-slot source-vehicle inventory for CEO Special Cargo Import/Export
+    // missions. These aren't player-vehicle slots — they hold mission target
+    // cars — so counts_as_garage is false and capacity stays 0 from the
+    // portfolio's perspective.
+    capacity: 0,
+    counts_as_garage: false,
     upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Vehicle_Warehouse",

@@ -31,6 +31,7 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
         capacity: 0,
         required_upgrade_id: null,
         notes: "Entry-level ($6,000,000).",
+        mutex_group: "yacht-model",
       },
       {
         id: `${YACHT_ID}-pisces`,
@@ -39,6 +40,7 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
         capacity: 0,
         required_upgrade_id: null,
         notes: "Mid-tier ($7,000,000).",
+        mutex_group: "yacht-model",
       },
       {
         id: `${YACHT_ID}-aquarius`,
@@ -47,6 +49,7 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
         capacity: 0,
         required_upgrade_id: null,
         notes: "Top-tier, premium ($8,000,000); includes hot tubs.",
+        mutex_group: "yacht-model",
       },
     ],
     _sources: {
