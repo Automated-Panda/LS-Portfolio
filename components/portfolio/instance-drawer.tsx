@@ -1,5 +1,6 @@
 "use client";
 
+import { Plus, X } from "lucide-react";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -50,6 +51,41 @@ export function InstanceDrawer({
     instance.storage?.assigned_upgrade_id ?? "",
   );
   const [isPending, startTransition] = useTransition();
+
+  // Auto-expand fields that already have content on open. Empty fields show
+  // as `+ Field name` pill buttons; clicking expands the input inline.
+  const [showNickname, setShowNickname] = useState(
+    (instance.nickname ?? "") !== "",
+  );
+  const [showTags, setShowTags] = useState(instance.custom_tags.length > 0);
+  const [showNotes, setShowNotes] = useState((instance.notes ?? "") !== "");
+
+  const collapsedButtons: Array<{
+    key: "nickname" | "tags" | "notes";
+    label: string;
+    expanded: boolean;
+    expand: () => void;
+  }> = [
+    {
+      key: "nickname",
+      label: "Custom Name",
+      expanded: showNickname,
+      expand: () => setShowNickname(true),
+    },
+    {
+      key: "tags",
+      label: "Highlights",
+      expanded: showTags,
+      expand: () => setShowTags(true),
+    },
+    {
+      key: "notes",
+      label: "Notes",
+      expanded: showNotes,
+      expand: () => setShowNotes(true),
+    },
+  ];
+  const anyCollapsed = collapsedButtons.some((b) => !b.expanded);
 
   // Only show properties that can actually store vehicles — hides hangars,
   // yachts, businesses without garages, etc. from the storage picker.
@@ -117,16 +153,7 @@ export function InstanceDrawer({
         </SheetHeader>
 
         <div className="flex flex-col gap-4 py-4">
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="nickname">Custom Name</Label>
-            <Input
-              id="nickname"
-              value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
-              placeholder="e.g. Pearl Black Banshee"
-            />
-          </div>
-
+          {/* Storage stays always-visible — it's the functional core. */}
           <div className="flex flex-col gap-2">
             <Label>Storage location</Label>
             <select
@@ -160,24 +187,75 @@ export function InstanceDrawer({
             )}
           </div>
 
-          <div className="flex flex-col gap-2">
-            <Label>Highlight features</Label>
-            <CustomTagsInput
-              value={tags}
-              onChange={setTags}
-              suggestions={tagSuggestions}
-            />
-          </div>
+          {/* Collapsed-field pill row — only shows for fields not yet expanded. */}
+          {anyCollapsed && (
+            <div className="flex flex-wrap gap-2">
+              {collapsedButtons
+                .filter((b) => !b.expanded)
+                .map((b) => (
+                  <button
+                    key={b.key}
+                    type="button"
+                    onClick={b.expand}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-dashed border-foreground/30 px-3 py-1 text-xs text-muted-foreground hover:border-foreground/60 hover:text-foreground transition-colors"
+                  >
+                    <Plus className="h-3 w-3" /> {b.label}
+                  </button>
+                ))}
+            </div>
+          )}
 
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="notes">Notes</Label>
-            <textarea
-              id="notes"
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              className="min-h-24 rounded-md border bg-background px-3 py-2 text-sm"
-            />
-          </div>
+          {showNickname && (
+            <ExpandableField
+              label="Custom Name"
+              onCollapse={() => {
+                setNickname("");
+                setShowNickname(false);
+              }}
+            >
+              <Input
+                id="nickname"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+                placeholder="e.g. Pearl Black Banshee"
+                autoFocus={!instance.nickname}
+              />
+            </ExpandableField>
+          )}
+
+          {showTags && (
+            <ExpandableField
+              label="Highlight features"
+              onCollapse={() => {
+                setTags([]);
+                setShowTags(false);
+              }}
+            >
+              <CustomTagsInput
+                value={tags}
+                onChange={setTags}
+                suggestions={tagSuggestions}
+              />
+            </ExpandableField>
+          )}
+
+          {showNotes && (
+            <ExpandableField
+              label="Notes"
+              onCollapse={() => {
+                setNotes("");
+                setShowNotes(false);
+              }}
+            >
+              <textarea
+                id="notes"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="min-h-24 rounded-md border bg-background px-3 py-2 text-sm w-full"
+                autoFocus={!instance.notes}
+              />
+            </ExpandableField>
+          )}
         </div>
 
         <SheetFooter className="flex-col gap-2 sm:flex-col">
@@ -195,5 +273,32 @@ export function InstanceDrawer({
         </SheetFooter>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function ExpandableField({
+  label,
+  children,
+  onCollapse,
+}: {
+  label: string;
+  children: React.ReactNode;
+  onCollapse: () => void;
+}) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <Label>{label}</Label>
+        <button
+          type="button"
+          onClick={onCollapse}
+          className="rounded-md p-1 text-muted-foreground hover:bg-muted/50 hover:text-foreground transition-colors"
+          aria-label={`Clear ${label}`}
+        >
+          <X className="h-3.5 w-3.5" />
+        </button>
+      </div>
+      {children}
+    </div>
   );
 }
