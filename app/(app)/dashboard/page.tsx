@@ -8,7 +8,7 @@ import {
   getActiveUndoablePlan,
   getRecentPlans,
 } from "@/lib/queries/organizer";
-import { getCatalogTotals } from "@/lib/queries/dashboard";
+import { getCatalogCoverage } from "@/lib/queries/dashboard";
 import { assetCategoryOf } from "@/lib/vehicles";
 
 import { DashboardLayout, type DashboardData } from "./dashboard-layout";
@@ -47,7 +47,7 @@ export default async function DashboardPage() {
     ownedProperties,
     recentPlans,
     activeUndoPlan,
-    catalogTotals,
+    catalogCoverage,
   ] = await Promise.all([
     supabase
       .from("profiles")
@@ -59,7 +59,7 @@ export default async function DashboardPage() {
     getOwnedPropertiesWithStorage(user.id),
     getRecentPlans(user.id, 5),
     getActiveUndoablePlan(user.id),
-    getCatalogTotals(),
+    getCatalogCoverage(user.id),
   ]);
 
   const greetingName = profile?.display_name ?? profile?.username ?? null;
@@ -153,20 +153,9 @@ export default async function DashboardPage() {
     };
   }) as ChipRow;
 
-  // --- Catalog % (unique types owned vs catalog total) ---
-  const uniqueVehicleTypes = new Set(
-    vehicleInstances.map((v) => v.vehicle_id),
-  ).size;
-  const uniquePropertyTypes = new Set(ownedProperties.map((p) => p.property_id))
-    .size;
-  const catalogVehiclePercent =
-    catalogTotals.vehicles === 0
-      ? 0
-      : Math.round((uniqueVehicleTypes / catalogTotals.vehicles) * 100);
-  const catalogPropertyPercent =
-    catalogTotals.properties === 0
-      ? 0
-      : Math.round((uniquePropertyTypes / catalogTotals.properties) * 100);
+  // Catalog coverage now uses cap-based denominators (e.g. residential cap of
+  // 10, nightclub cap of 1) and splits properties from businesses — see
+  // getCatalogCoverage / dashboard_catalog_group_rows.
 
   // --- Net worth ---
   // Sum vehicle prices over instances, property prices over owned, and
@@ -217,18 +206,7 @@ export default async function DashboardPage() {
       vehicleClasses: vehicleClassTop5,
       propertySubtypes: propertySubtypeTop3,
     },
-    catalog: {
-      vehicles: {
-        ownedUnique: uniqueVehicleTypes,
-        total: catalogTotals.vehicles,
-        percent: catalogVehiclePercent,
-      },
-      properties: {
-        ownedUnique: uniquePropertyTypes,
-        total: catalogTotals.properties,
-        percent: catalogPropertyPercent,
-      },
-    },
+    catalog: catalogCoverage,
     netWorth: {
       total: netWorthTotal,
       vehicles: vehiclesValue,

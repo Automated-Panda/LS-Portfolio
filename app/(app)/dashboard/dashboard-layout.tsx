@@ -22,6 +22,7 @@ export type DashboardData = {
   catalog: {
     vehicles: { ownedUnique: number; total: number; percent: number };
     properties: { ownedUnique: number; total: number; percent: number };
+    businesses: { ownedUnique: number; total: number; percent: number };
   };
   netWorth: {
     total: number;
@@ -86,6 +87,7 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
         <CatalogCard
           vehicles={data.catalog.vehicles}
           properties={data.catalog.properties}
+          businesses={data.catalog.businesses}
         />
       </div>
 

@@ -7,6 +7,7 @@ type Row = { ownedUnique: number; total: number; percent: number };
 type Props = {
   vehicles: Row;
   properties: Row;
+  businesses: Row;
 };
 
 function ProgressRow({
@@ -35,7 +36,7 @@ function ProgressRow({
   );
 }
 
-export function CatalogCard({ vehicles, properties }: Props) {
+export function CatalogCard({ vehicles, properties, businesses }: Props) {
   return (
     <Card>
       <div className="flex flex-col gap-3 p-4">
@@ -47,8 +48,9 @@ export function CatalogCard({ vehicles, properties }: Props) {
         </div>
         <ProgressRow label="Vehicles" row={vehicles} />
         <ProgressRow label="Properties" row={properties} />
+        <ProgressRow label="Businesses" row={businesses} />
         <p className="text-xs text-muted-foreground">
-          Unique types owned out of the GTA V catalog.
+          Properties &amp; Businesses are scored against the in-game ownership cap (e.g. 10 apartments, 1 nightclub). Vehicles is unique catalogue coverage.
         </p>
       </div>
     </Card>
