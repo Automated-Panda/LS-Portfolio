@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { titleCaseTag } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -30,12 +29,14 @@ export function CustomTagsInput({
   const [focused, setFocused] = useState(false);
 
   const addTag = (raw: string) => {
-    const t = titleCaseTag(raw);
+    const t = raw.trim();
     if (!t) {
       setDraft("");
       return;
     }
-    // Case-insensitive dedup so "Drift" + "drift" don't both end up stored.
+    // Case-insensitive dedup on the same vehicle (so "Drift" + "drift"
+    // don't both attach to one car), but preserve whatever casing the
+    // user actually typed.
     const tLower = t.toLowerCase();
     if (value.some((existing) => existing.toLowerCase() === tLower)) {
       setDraft("");
@@ -104,20 +105,17 @@ export function CustomTagsInput({
         />
         {focused && filteredSuggestions.length > 0 && (
           <div className="absolute left-0 right-0 top-full z-50 mt-1 max-h-48 overflow-y-auto rounded-md border bg-popover shadow-md">
-            {filteredSuggestions.map((s) => {
-              const display = titleCaseTag(s);
-              return (
-                <button
-                  key={s}
-                  type="button"
-                  className="block w-full px-3 py-1.5 text-left text-sm hover:bg-muted"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => addTag(s)}
-                >
-                  {display}
-                </button>
-              );
-            })}
+            {filteredSuggestions.map((s) => (
+              <button
+                key={s}
+                type="button"
+                className="block w-full px-3 py-1.5 text-left text-sm hover:bg-muted"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => addTag(s)}
+              >
+                {s}
+              </button>
+            ))}
           </div>
         )}
       </div>

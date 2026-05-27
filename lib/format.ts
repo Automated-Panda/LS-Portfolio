@@ -26,16 +26,3 @@ export function formatMoneyFull(amount: number | null | undefined): string {
   return FULL.format(amount);
 }
 
-/**
- * Normalize a custom-tag / highlight to Title Case so 'benny wheels' →
- * 'Benny Wheels' and 'f1-wheels' → 'F1-Wheels'. Word boundaries: start of
- * string, spaces, hyphens, slashes. Used identically by client (input
- * normalize) and server (save normalize) — DO NOT diverge them.
- */
-export function titleCaseTag(raw: string): string {
-  const cleaned = raw.trim().toLowerCase();
-  if (!cleaned) return "";
-  return cleaned.replace(/(^|[\s\-/])(\p{L})/gu, (_, sep, ch) =>
-    sep + (ch as string).toUpperCase(),
-  );
-}

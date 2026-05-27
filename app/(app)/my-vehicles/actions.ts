@@ -7,7 +7,6 @@ import {
   currentCarCountAt,
 } from "@/lib/capacity";
 import { createClient } from "@/lib/supabase/server";
-import { titleCaseTag } from "@/lib/format";
 
 type Result<T = {}> = ({ ok: true } & T) | { error: string };
 
@@ -114,14 +113,13 @@ export async function updateVehicleInstance(opts: {
   if (opts.nickname !== undefined) patch.nickname = opts.nickname;
   if (opts.notes !== undefined) patch.notes = opts.notes;
   if (opts.customTags !== undefined) {
-    // Normalize to Title Case (e.g. 'benny wheels' → 'Benny Wheels') and
-    // dedup case-insensitively. Mirrors the client-side titleCaseTag in
-    // CustomTagsInput, but enforces it server-side so direct API writes
-    // can't bypass.
+    // Trim only — preserve whatever casing the user typed. Dedup
+    // case-insensitively per-vehicle so 'Drift' + 'drift' can't both
+    // attach to the same car.
     const seen = new Set<string>();
     const normalized: string[] = [];
     for (const raw of opts.customTags) {
-      const t = titleCaseTag(raw);
+      const t = raw.trim();
       if (!t) continue;
       const key = t.toLowerCase();
       if (seen.has(key)) continue;

@@ -8,8 +8,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/server";
+import { getUserHighlights } from "@/lib/queries/highlights";
 
 import { DangerZone } from "./danger-zone";
+import { ManageHighlights } from "./manage-highlights";
 import { ProfileForm } from "./profile-form";
 
 export default async function ProfilePage() {
@@ -22,11 +24,14 @@ export default async function ProfilePage() {
     redirect("/login");
   }
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("username, display_name")
-    .eq("id", user.id)
-    .maybeSingle();
+  const [{ data: profile }, highlights] = await Promise.all([
+    supabase
+      .from("profiles")
+      .select("username, display_name")
+      .eq("id", user.id)
+      .maybeSingle(),
+    getUserHighlights(user.id),
+  ]);
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
@@ -52,6 +57,8 @@ export default async function ProfilePage() {
           />
         </CardContent>
       </Card>
+
+      <ManageHighlights highlights={highlights} />
 
       <DangerZone />
     </div>
