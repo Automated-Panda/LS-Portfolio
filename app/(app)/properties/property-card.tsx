@@ -2,6 +2,7 @@
 
 import { Check, Plus } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -41,6 +42,7 @@ function PropertyCardImpl({
   onSelect,
   tower,
 }: Props) {
+  const router = useRouter();
   const [optimisticOwned, setOptimisticOwned] = useState(owned);
   const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -68,6 +70,22 @@ function PropertyCardImpl({
         setOptimisticOwned(false);
       } else if ("ok" in result && result.ok === true) {
         setOptimisticOwned(true);
+        // For garage-bearing properties, offer a one-click jump straight into
+        // the storage picker so the user doesn't have to navigate to
+        // /my-properties manually to start adding cars.
+        if (property.counts_as_garage && property.max_capacity > 0) {
+          const destPath =
+            property.property_type === "business"
+              ? "/my-businesses"
+              : "/my-properties";
+          toast.success(`Added ${property.display_name}`, {
+            action: {
+              label: "Add cars",
+              onClick: () =>
+                router.push(`${destPath}?open=${encodeURIComponent(property.id)}`),
+            },
+          });
+        }
       }
     });
   };

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
@@ -14,7 +15,19 @@ type Props = {
 };
 
 export function MyPropertiesGrid({ properties, instances }: Props) {
+  const searchParams = useSearchParams();
   const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  // Deep-link: /my-properties?open=<catalogue property_id> auto-opens that
+  // property's drawer. Used by the toast action on /properties to jump the
+  // user straight into "add cars" after owning a new property.
+  useEffect(() => {
+    const focus = searchParams.get("open");
+    if (!focus) return;
+    const match = properties.find((p) => p.property_id === focus);
+    if (match) setSelectedId(match.id);
+  }, [searchParams, properties]);
+
   const selected = properties.find((p) => p.id === selectedId);
 
   return (
