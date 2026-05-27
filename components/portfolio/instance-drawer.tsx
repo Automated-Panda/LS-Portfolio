@@ -115,7 +115,7 @@ export function InstanceDrawer({
 
         <div className="flex flex-col gap-4 py-4">
           <div className="flex flex-col gap-2">
-            <Label htmlFor="nickname">Nickname</Label>
+            <Label htmlFor="nickname">Custom Name</Label>
             <Input
               id="nickname"
               value={nickname}
@@ -158,7 +158,7 @@ export function InstanceDrawer({
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label>Custom tags</Label>
+            <Label>Highlight features</Label>
             <CustomTagsInput
               value={tags}
               onChange={setTags}
