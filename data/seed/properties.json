@@ -7591,7 +7591,7 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": null
+    "image_path": "data/images/properties/mckenzie-field-hangar.webp"
   },
   {
     "id": "higgins-helitours",
@@ -7622,7 +7622,7 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": null
+    "image_path": "data/images/properties/higgins-helitours.webp"
   },
   {
     "id": "sp-garment-factory",
