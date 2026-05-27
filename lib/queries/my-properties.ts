@@ -5,6 +5,7 @@ export type OwnedPropertyDetail = {
   id: string;                 // user_owned_properties.id (uuid)
   property_id: string;        // properties.id (text)
   display_name: string;
+  property_type: "residence" | "garage" | "business" | "special";
   subtype: string;
   subtype_display: string;
   neighborhood: string | null;
@@ -26,18 +27,31 @@ export type OwnedPropertyDetail = {
   }>;
 };
 
+export type OwnedScope = "all" | "properties" | "businesses";
+
+/**
+ * Property types in each owned-view scope. Matches the same split used by
+ * the browse routes (`/properties` vs `/businesses`).
+ */
+const SCOPE_TYPES: Record<OwnedScope, Array<"residence" | "garage" | "business" | "special"> | null> = {
+  all: null,
+  properties: ["residence", "garage", "special"],
+  businesses: ["business"],
+};
+
 export async function getOwnedPropertiesWithStorage(
   userId: string,
+  scope: OwnedScope = "all",
 ): Promise<OwnedPropertyDetail[]> {
   const supabase = await createClient();
 
-  const { data, error } = await supabase
+  const query = supabase
     .from("user_owned_properties")
     .select(`
       id,
       property_id,
       properties!inner (
-        display_name, subtype, subtype_display, neighborhood, image_path,
+        display_name, property_type, subtype, subtype_display, neighborhood, image_path,
         capacity, ownership_group, counts_as_garage,
         property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order )
       ),
@@ -48,6 +62,11 @@ export async function getOwnedPropertiesWithStorage(
     `)
     .eq("user_id", userId)
     .order("created_at", { ascending: true });
+
+  const types = SCOPE_TYPES[scope];
+  if (types) query.in("properties.property_type", types);
+
+  const { data, error } = await query;
 
   if (error) throw error;
 
@@ -79,6 +98,7 @@ export async function getOwnedPropertiesWithStorage(
       id: row.id,
       property_id: row.property_id,
       display_name: p?.display_name ?? "",
+      property_type: (p?.property_type ?? "residence") as OwnedPropertyDetail["property_type"],
       subtype: p?.subtype ?? "",
       subtype_display: p?.subtype_display ?? "",
       neighborhood: p?.neighborhood ?? null,

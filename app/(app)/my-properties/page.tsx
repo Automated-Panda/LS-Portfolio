@@ -15,7 +15,7 @@ export default async function MyPropertiesPage() {
   if (!user) redirect("/login");
 
   const [properties, instances] = await Promise.all([
-    getOwnedPropertiesWithStorage(user.id),
+    getOwnedPropertiesWithStorage(user.id, "properties"),
     getOwnedVehicleInstances(user.id),
   ]);
 

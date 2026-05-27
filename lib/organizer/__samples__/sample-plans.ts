@@ -67,6 +67,7 @@ function p(
     image_path: null,
     base_capacity: baseCapacity,
     counts_as_garage: true,
+    property_type: "residence",
     ownership_group: id,
     total_upgrades: upgrades.length,
     installed_upgrades: upgrades.filter((u) => u.installed).length,
