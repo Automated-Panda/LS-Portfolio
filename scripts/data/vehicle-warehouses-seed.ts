@@ -1,14 +1,9 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online Vehicle Warehouses — per-location instances.
+ * GTA Online Vehicle Warehouses — per-location instances (9 total).
  * Used for CEO Special Cargo (Import/Export) missions.
  * Each warehouse stores up to 40 source vehicles.
- *
- * NOTE 2026-05-27: gtabase actually lists 9 warehouses in the current game
- * (Murrieta Heights, La Mesa, La Puerta, Davis, Cypress Flats, LSIA,
- * LSIA 2, El Burro Heights, Elysian Island). We currently seed 6 (the
- * original 5 + LSIA). The other 3 are flagged as a follow-up in notes.md.
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Vehicle_Warehouse
@@ -60,7 +55,39 @@ const LOCATIONS: LocationSeed[] = [
     neighborhood: "Los Santos International Airport",
     address: "Los Santos International Airport, South Los Santos",
   },
+  {
+    id: "vehicle-warehouse-lsia-2",
+    display_name: "LSIA Vehicle Warehouse 2",
+    neighborhood: "Los Santos International Airport",
+    address: "Los Santos International Airport, South Los Santos",
+  },
+  {
+    id: "vehicle-warehouse-el-burro-heights",
+    display_name: "El Burro Heights Vehicle Warehouse",
+    neighborhood: "El Burro Heights",
+    address: "El Burro Heights, East Los Santos",
+  },
+  {
+    id: "vehicle-warehouse-elysian-island",
+    display_name: "Elysian Island Vehicle Warehouse",
+    neighborhood: "Elysian Island",
+    address: "Elysian Island, South Los Santos",
+  },
 ];
+
+const GTABASE_SLUG: Record<string, string> = {
+  "vehicle-warehouse-lsia": "lsia-vehicle-warehouse",
+  "vehicle-warehouse-lsia-2": "lsia-vehicle-warehouse-2",
+  "vehicle-warehouse-el-burro-heights": "el-burro-heights-vehicle-warehouse",
+  "vehicle-warehouse-elysian-island": "elysian-island-vehicle-warehouse",
+};
+
+function gtabaseUrlFor(id: string): string | null {
+  const slug = GTABASE_SLUG[id];
+  return slug
+    ? `https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/${slug}`
+    : null;
+}
 
 function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> {
   return {
@@ -86,7 +113,7 @@ function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> 
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Vehicle_Warehouse",
-      gtabase: "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse",
+      gtabase: gtabaseUrlFor(loc.id),
     },
     ...(loc.verify ? { verify: true } : {}),
   };

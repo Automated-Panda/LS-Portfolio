@@ -59,20 +59,16 @@ Soon-ish work batch. Group these together when picking next pieces.
 
 ---
 
-## ✅ LSIA Vehicle Warehouse — landed 2026-05-27
+## ✅ Vehicle Warehouses — all 9 landed 2026-05-27
 
-- [x] Confirmed name + location via gtabase: "LSIA Vehicle Warehouse" at Los Santos International Airport
-- [x] Added row to `scripts/data/vehicle-warehouses-seed.ts`
-- [x] Per-instance cover image from gtabase
-- [x] Rebuild + db:import → 196 properties / 264 upgrades on hosted
+- [x] **LSIA Vehicle Warehouse** — first miss James flagged
+- [x] **LSIA Vehicle Warehouse 2** — second LSIA location
+- [x] **El Burro Heights Vehicle Warehouse**
+- [x] **Elysian Island Vehicle Warehouse**
+- [x] All 4 added with per-instance gtabase cover images
+- [x] Rebuild + db:import → 199 properties / 267 upgrades on hosted
 
-> 🔔 **Discovered while doing this:** gtabase actually lists **9 total** vehicle warehouses (Murrieta Heights, La Mesa, La Puerta, Davis, Cypress Flats, LSIA, **LSIA 2, El Burro Heights, Elysian Island**). We now seed 6. The remaining 3 are tracked below.
-
-### Still missing — 3 more vehicle warehouses
-- [ ] LSIA Vehicle Warehouse 2 (~$2.3M) — second LSIA location
-- [ ] El Burro Heights Vehicle Warehouse (~$1.6M)
-- [ ] Elysian Island Vehicle Warehouse (~$1.95M)
-- [ ] Same workflow as LSIA: seed row + image + build + import
+> Seed now matches gtabase canonical count (9 total: Murrieta Heights, La Mesa, La Puerta, Davis, Cypress Flats, LSIA, LSIA 2, El Burro Heights, Elysian Island).
 
 ---
 
