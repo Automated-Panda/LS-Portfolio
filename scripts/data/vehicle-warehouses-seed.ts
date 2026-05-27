@@ -1,12 +1,18 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online Vehicle Warehouses — 5 per-location instances.
+ * GTA Online Vehicle Warehouses — per-location instances.
  * Used for CEO Special Cargo (Import/Export) missions.
  * Each warehouse stores up to 40 source vehicles.
  *
+ * NOTE 2026-05-27: gtabase actually lists 9 warehouses in the current game
+ * (Murrieta Heights, La Mesa, La Puerta, Davis, Cypress Flats, LSIA,
+ * LSIA 2, El Burro Heights, Elysian Island). We currently seed 6 (the
+ * original 5 + LSIA). The other 3 are flagged as a follow-up in notes.md.
+ *
  * Sources:
  *   https://gta.fandom.com/wiki/Vehicle_Warehouse
+ *   https://www.gtabase.com/grand-theft-auto-v/guides/property-types/vehicle-warehouses
  */
 
 type LocationSeed = {
@@ -48,6 +54,12 @@ const LOCATIONS: LocationSeed[] = [
     neighborhood: "Cypress Flats",
     address: "Cypress Flats, Los Santos",
   },
+  {
+    id: "vehicle-warehouse-lsia",
+    display_name: "LSIA Vehicle Warehouse",
+    neighborhood: "Los Santos International Airport",
+    address: "Los Santos International Airport, South Los Santos",
+  },
 ];
 
 function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> {
@@ -74,7 +86,7 @@ function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> 
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Vehicle_Warehouse",
-      gtabase: null,
+      gtabase: "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse",
     },
     ...(loc.verify ? { verify: true } : {}),
   };

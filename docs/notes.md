@@ -59,15 +59,20 @@ Soon-ish work batch. Group these together when picking next pieces.
 
 ---
 
-## 🔜 LSIA Vehicle Warehouse — missing from DB (first thing tomorrow)
+## ✅ LSIA Vehicle Warehouse — landed 2026-05-27
 
-> The LSIA (Los Santos International Airport) Vehicle Warehouse is missing from the seed. Current seed has 5 vehicle-warehouse instances; should be 6.
+- [x] Confirmed name + location via gtabase: "LSIA Vehicle Warehouse" at Los Santos International Airport
+- [x] Added row to `scripts/data/vehicle-warehouses-seed.ts`
+- [x] Per-instance cover image from gtabase
+- [x] Rebuild + db:import → 196 properties / 264 upgrades on hosted
 
-- [ ] Confirm canonical name + location via gtabase / Fandom
-- [ ] Add row to `scripts/data/vehicle-warehouses-seed.ts`
-- [ ] Source cover image (gtabase fetcher or manual drop)
-- [ ] `npm run build:properties` → `npm run db:import`
-- [ ] Verify on `/businesses?subtype=vehicle-warehouse`
+> 🔔 **Discovered while doing this:** gtabase actually lists **9 total** vehicle warehouses (Murrieta Heights, La Mesa, La Puerta, Davis, Cypress Flats, LSIA, **LSIA 2, El Burro Heights, Elysian Island**). We now seed 6. The remaining 3 are tracked below.
+
+### Still missing — 3 more vehicle warehouses
+- [ ] LSIA Vehicle Warehouse 2 (~$2.3M) — second LSIA location
+- [ ] El Burro Heights Vehicle Warehouse (~$1.6M)
+- [ ] Elysian Island Vehicle Warehouse (~$1.95M)
+- [ ] Same workflow as LSIA: seed row + image + build + import
 
 ---
 
@@ -146,7 +151,7 @@ Per-mansion config — user picks which of the 3 in-game AI assistants they have
 
 ## 🖼️ Missing / incorrect images
 
-- [ ] **Casino Penthouse** — source cover image (gtabase uses `igallery/` URL pattern; either extend fetcher or drop manually into `data/images/properties/casino-penthouse.webp`)
+- [x] **Casino Penthouse** — sourced from gtabase, dropped into `data/images/properties/casino-penthouse.webp` (2026-05-27). All 196 properties now have cover images (0 no-image, 165 unique, 31 subtype fallback).
 - [ ] **Vehicle image audit** — list the vehicles with missing / wrong images
   - [ ] Walk through `/vehicles` and note the offenders
   - [ ] Drop replacements into `docs/temp-images/<name>.<ext>`
