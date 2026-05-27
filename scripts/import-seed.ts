@@ -119,6 +119,13 @@ async function main(): Promise<void> {
     "low-end-apartment",
     "stand-alone-garage",
   ]);
+  // Special Cargo Warehouses share one ownership group across sizes
+  // (in-game cap is 5 total, mix of sizes allowed).
+  const CARGO_WAREHOUSE_POOL = new Set([
+    "cargo-warehouse-small",
+    "cargo-warehouse-medium",
+    "cargo-warehouse-large",
+  ]);
   // Sort so tower rows (parent_building=null) come before unit rows
   // (parent_building=tower.id). Postgres FK validates at end-of-statement
   // for batch upserts, but ordering keeps the intent obvious + future-proofs
@@ -137,7 +144,11 @@ async function main(): Promise<void> {
     location: p.location,
     neighborhood: p.neighborhood,
     capacity: p.capacity,
-    ownership_group: RESIDENTIAL_POOL.has(p.subtype) ? "residential" : p.subtype,
+    ownership_group: RESIDENTIAL_POOL.has(p.subtype)
+      ? "residential"
+      : CARGO_WAREHOUSE_POOL.has(p.subtype)
+        ? "cargo-warehouse"
+        : p.subtype,
     parent_building: p.parent_building ?? null,
     image_path: p.image_path,
     counts_as_garage: p.counts_as_garage,

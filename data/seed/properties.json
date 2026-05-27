@@ -4053,6 +4053,419 @@
     "image_path": "data/images/properties/vehicle-warehouse-elysian-island.webp"
   },
   {
+    "id": "cargo-warehouse-convenience-store-lockup",
+    "display_name": "Convenience Store Lockup",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/convenience-store-lockup"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-convenience-store-lockup.webp"
+  },
+  {
+    "id": "cargo-warehouse-celltowa-unit",
+    "display_name": "Celltowa Unit",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/celltowa-unit"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-celltowa-unit.webp"
+  },
+  {
+    "id": "cargo-warehouse-white-widow-garage",
+    "display_name": "White Widow Garage",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/white-widow-garage"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-white-widow-garage.webp"
+  },
+  {
+    "id": "cargo-warehouse-pacific-bait-storage",
+    "display_name": "Pacific Bait Storage",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/pacific-bait-storage"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-pacific-bait-storage.webp"
+  },
+  {
+    "id": "cargo-warehouse-pier-400-utility-building",
+    "display_name": "Pier 400 Utility Building",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/pier-400-utility-building"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-pier-400-utility-building.webp"
+  },
+  {
+    "id": "cargo-warehouse-foreclosed-garage",
+    "display_name": "Foreclosed Garage",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-small",
+    "subtype_display": "Small Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/foreclosed-garage"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-foreclosed-garage.webp"
+  },
+  {
+    "id": "cargo-warehouse-gee-warehouse",
+    "display_name": "GEE Warehouse",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": "El Burro Heights, Los Santos",
+    "neighborhood": "El Burro Heights",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/gee-warehouse"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-gee-warehouse.webp"
+  },
+  {
+    "id": "cargo-warehouse-derriere-lingerie-backlot",
+    "display_name": "Derriere Lingerie Backlot",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/derriere-lingerie-backlot"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-derriere-lingerie-backlot.webp"
+  },
+  {
+    "id": "cargo-warehouse-fridgit-annexe",
+    "display_name": "Fridgit Annexe",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/fridgit-annexe"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-fridgit-annexe.webp"
+  },
+  {
+    "id": "cargo-warehouse-discount-retail-unit",
+    "display_name": "Discount Retail Unit",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": "Vinewood Downtown, Los Santos",
+    "neighborhood": "Vinewood Downtown",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/discount-retail-unit"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-discount-retail-unit.webp"
+  },
+  {
+    "id": "cargo-warehouse-disused-factory-outlet",
+    "display_name": "Disused Factory Outlet",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/disused-factory-outlet"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-disused-factory-outlet.webp"
+  },
+  {
+    "id": "cargo-warehouse-ls-marine-building-3",
+    "display_name": "LS Marine Building 3",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": "Elysian Island, Los Santos",
+    "neighborhood": "Elysian Island",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/ls-marine-building-3"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-ls-marine-building-3.webp"
+  },
+  {
+    "id": "cargo-warehouse-old-power-station",
+    "display_name": "Old Power Station",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/old-power-station"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-old-power-station.webp"
+  },
+  {
+    "id": "cargo-warehouse-railyard-warehouse",
+    "display_name": "Railyard Warehouse",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-medium",
+    "subtype_display": "Medium Warehouse",
+    "location": "La Mesa, Los Santos",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/railyard-warehouse"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-railyard-warehouse.webp"
+  },
+  {
+    "id": "cargo-warehouse-wholesale-furniture",
+    "display_name": "Wholesale Furniture",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/wholesale-furniture"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-wholesale-furniture.webp"
+  },
+  {
+    "id": "cargo-warehouse-west-vinewood-backlot",
+    "display_name": "West Vinewood Backlot",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/west-vinewood-backlot"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-west-vinewood-backlot.webp"
+  },
+  {
+    "id": "cargo-warehouse-xero-gas-factory",
+    "display_name": "Xero Gas Factory",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/xero-gas-factory"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-xero-gas-factory.webp"
+  },
+  {
+    "id": "cargo-warehouse-logistics-depot",
+    "display_name": "Logistics Depot",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/logistics-depot"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-logistics-depot.webp"
+  },
+  {
+    "id": "cargo-warehouse-bilgeco-warehouse",
+    "display_name": "Bilgeco Warehouse",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/bilgeco-warehouse"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-bilgeco-warehouse.webp"
+  },
+  {
+    "id": "cargo-warehouse-walker-sons-warehouse",
+    "display_name": "Walker & Sons Warehouse",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": "Banning, Los Santos",
+    "neighborhood": "Banning",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/walker-sons-warehouse"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-walker-sons-warehouse.webp"
+  },
+  {
+    "id": "cargo-warehouse-cypress-warehouses",
+    "display_name": "Cypress Warehouses",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/cypress-warehouses"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-cypress-warehouses.webp"
+  },
+  {
+    "id": "cargo-warehouse-darnel-bros-warehouse",
+    "display_name": "Darnel Bros Warehouse",
+    "property_type": "business",
+    "subtype": "cargo-warehouse-large",
+    "subtype_display": "Large Warehouse",
+    "location": null,
+    "neighborhood": null,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Warehouses",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/darnel-bros-warehouse"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/cargo-warehouse-darnel-bros-warehouse.webp"
+  },
+  {
     "id": "hangar-lsia-a17",
     "display_name": "LSIA Hangar A17",
     "property_type": "business",
