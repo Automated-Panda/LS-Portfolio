@@ -4,6 +4,18 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 🔜 LSIA Vehicle Warehouse — missing from DB (first thing tomorrow)
+
+> The LSIA (Los Santos International Airport) Vehicle Warehouse is missing from the seed. Current seed has 5 vehicle-warehouse instances; should be 6.
+
+- [ ] Confirm canonical name + location via gtabase / Fandom
+- [ ] Add row to `scripts/data/vehicle-warehouses-seed.ts`
+- [ ] Source cover image (gtabase fetcher or manual drop)
+- [ ] `npm run build:properties` → `npm run db:import`
+- [ ] Verify on `/businesses?subtype=vehicle-warehouse`
+
+---
+
 ## 🧪 AI Organizer — acceptance walkthrough (Piece 2)
 
 > Code is merged but the end-to-end manual test never happened. Worth running through before building on top of it so we know what (if anything) needs polish.
