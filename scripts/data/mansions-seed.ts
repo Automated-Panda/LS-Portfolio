@@ -39,7 +39,7 @@ const COMMON_UPGRADES = (mansionId: string) => [
     id: `${mansionId}-garage`,
     display_name: "Mansion Garage",
     tier: null,
-    capacity: 0,
+    capacity: 20, // 17 garage + 2 driveway + 1 podium — totals to 20
     required_upgrade_id: null,
     notes: "17 garage slots + 2 driveway + 1 podium (podium slot requires the Car Podium upgrade).",
     price: 0,
