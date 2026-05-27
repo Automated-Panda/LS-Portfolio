@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useConfirm } from "@/components/ui/confirm-dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   setAllUpgradesInstalled,
   toggleUpgradeInstalled,
@@ -249,166 +250,76 @@ export function PropertyDrawer({
             </SheetDescription>
           </SheetHeader>
 
-          <div className="flex flex-col gap-4 py-4">
-            {property.upgrades.length > 0 && (
-              <div className="flex gap-2">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => handleSetAllUpgrades(true)}
-                  disabled={isPending}
-                  className="flex-1"
-                >
-                  ✓ Install all upgrades
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => handleSetAllUpgrades(false)}
-                  disabled={isPending}
-                  className="flex-1"
-                >
-                  Uninstall all
-                </Button>
-              </div>
-            )}
+          <Tabs defaultValue="all" className="py-4">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="all">All</TabsTrigger>
+              <TabsTrigger value="upgrades">Upgrades</TabsTrigger>
+              <TabsTrigger value="garage">Garage</TabsTrigger>
+            </TabsList>
 
-            {storageUpgrades.length > 0 && (
-              <section>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  Storage upgrades
-                </p>
-                <div className="flex flex-col gap-1">
-                  {storageUpgrades.map((u) => {
-                    const installed = isInstalled(u.id, u.is_installed);
-                    const prereqMet =
-                      !u.required_upgrade_id ||
-                      isInstalled(
-                        u.required_upgrade_id,
-                        property.upgrades.find((x) => x.id === u.required_upgrade_id)
-                          ?.is_installed ?? false,
-                      );
-                    return (
-                      <label
-                        key={u.id}
-                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50 cursor-pointer"
-                        style={{ opacity: prereqMet ? 1 : 0.5 }}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={installed}
-                          disabled={!prereqMet}
-                          onChange={() => handleToggleUpgrade(u.id, installed)}
-                        />
-                        <span className="text-sm flex-1">{u.display_name}</span>
-                        {u.price !== null && (
-                          <span
-                            className="text-[10px] tabular-nums text-emerald-300/70"
-                            title={formatMoneyFull(u.price)}
-                          >
-                            {formatMoneyCompact(u.price)}
-                          </span>
-                        )}
-                        <Badge variant="outline" className="text-[10px]">
-                          {u.capacity}
-                        </Badge>
-                      </label>
-                    );
-                  })}
+            <TabsContent value="all" className="flex flex-col gap-4 mt-4">
+              {property.upgrades.length > 0 && (
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" onClick={() => handleSetAllUpgrades(true)} disabled={isPending} className="flex-1">
+                    ✓ Install all upgrades
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => handleSetAllUpgrades(false)} disabled={isPending} className="flex-1">
+                    Uninstall all
+                  </Button>
                 </div>
-              </section>
-            )}
+              )}
+              <UpgradesSection
+                storageUpgrades={storageUpgrades}
+                nonStorageUpgrades={nonStorageUpgrades}
+                isInstalled={isInstalled}
+                handleToggleUpgrade={handleToggleUpgrade}
+                property={property}
+              />
+              <StorageSection
+                property={property}
+                storageUpgrades={storageUpgrades}
+                carsByUpgrade={carsByUpgrade}
+                baseStorageCars={baseStorageCars}
+                setPickerTarget={setPickerTarget}
+                setPickerOpen={setPickerOpen}
+                handleRemoveFromStorage={handleRemoveFromStorage}
+                isPending={isPending}
+              />
+            </TabsContent>
 
-            {nonStorageUpgrades.length > 0 && (
-              <section>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  Equipment &amp; security
-                </p>
-                <div className="flex flex-col gap-1">
-                  {nonStorageUpgrades.map((u) => {
-                    const installed = isInstalled(u.id, u.is_installed);
-                    const prereqMet =
-                      !u.required_upgrade_id ||
-                      isInstalled(
-                        u.required_upgrade_id,
-                        property.upgrades.find((x) => x.id === u.required_upgrade_id)
-                          ?.is_installed ?? false,
-                      );
-                    return (
-                      <label
-                        key={u.id}
-                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50 cursor-pointer"
-                        style={{ opacity: prereqMet ? 1 : 0.5 }}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={installed}
-                          disabled={!prereqMet}
-                          onChange={() => handleToggleUpgrade(u.id, installed)}
-                        />
-                        <span className="text-sm flex-1">{u.display_name}</span>
-                        {u.price !== null && (
-                          <span
-                            className="text-[10px] tabular-nums text-emerald-300/70"
-                            title={formatMoneyFull(u.price)}
-                          >
-                            {formatMoneyCompact(u.price)}
-                          </span>
-                        )}
-                      </label>
-                    );
-                  })}
+            <TabsContent value="upgrades" className="flex flex-col gap-4 mt-4">
+              {property.upgrades.length > 0 && (
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline" onClick={() => handleSetAllUpgrades(true)} disabled={isPending} className="flex-1">
+                    ✓ Install all upgrades
+                  </Button>
+                  <Button size="sm" variant="outline" onClick={() => handleSetAllUpgrades(false)} disabled={isPending} className="flex-1">
+                    Uninstall all
+                  </Button>
                 </div>
-              </section>
-            )}
+              )}
+              <UpgradesSection
+                storageUpgrades={storageUpgrades}
+                nonStorageUpgrades={nonStorageUpgrades}
+                isInstalled={isInstalled}
+                handleToggleUpgrade={handleToggleUpgrade}
+                property={property}
+              />
+            </TabsContent>
 
-            <section>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Your storage
-              </p>
-              <div className="flex flex-col gap-2">
-                {property.base_capacity > 0 && (
-                  <StorageBlock
-                    label={property.subtype_display}
-                    capacity={property.base_capacity}
-                    cars={carsByUpgrade.get(null) ?? []}
-                    onAddCars={() => {
-                      setPickerTarget({
-                        upgradeId: null,
-                        label: "Base storage",
-                        capacity: property.base_capacity,
-                        current: baseStorageCars,
-                      });
-                      setPickerOpen(true);
-                    }}
-                    onRemoveCar={handleRemoveFromStorage}
-                    isPending={isPending}
-                  />
-                )}
-                {storageUpgrades
-                  .filter((u) => u.is_installed)
-                  .map((u) => (
-                    <StorageBlock
-                      key={u.id}
-                      label={u.display_name}
-                      capacity={u.capacity}
-                      cars={carsByUpgrade.get(u.id) ?? []}
-                      onAddCars={() => {
-                        setPickerTarget({
-                          upgradeId: u.id,
-                          label: u.display_name,
-                          capacity: u.capacity,
-                          current: u.cars_here,
-                        });
-                        setPickerOpen(true);
-                      }}
-                      onRemoveCar={handleRemoveFromStorage}
-                      isPending={isPending}
-                    />
-                  ))}
-              </div>
-            </section>
-          </div>
+            <TabsContent value="garage" className="flex flex-col gap-4 mt-4">
+              <StorageSection
+                property={property}
+                storageUpgrades={storageUpgrades}
+                carsByUpgrade={carsByUpgrade}
+                baseStorageCars={baseStorageCars}
+                setPickerTarget={setPickerTarget}
+                setPickerOpen={setPickerOpen}
+                handleRemoveFromStorage={handleRemoveFromStorage}
+                isPending={isPending}
+              />
+            </TabsContent>
+          </Tabs>
 
           <SheetFooter>
             <Button
@@ -435,6 +346,166 @@ export function PropertyDrawer({
         />
       )}
     </>
+  );
+}
+
+type UpgradeRow = OwnedPropertyDetail["upgrades"][number];
+
+function UpgradesSection({
+  storageUpgrades,
+  nonStorageUpgrades,
+  isInstalled,
+  handleToggleUpgrade,
+  property,
+}: {
+  storageUpgrades: UpgradeRow[];
+  nonStorageUpgrades: UpgradeRow[];
+  isInstalled: (id: string, fallback: boolean) => boolean;
+  handleToggleUpgrade: (id: string, currentlyInstalled: boolean) => void;
+  property: OwnedPropertyDetail;
+}) {
+  const renderRow = (u: UpgradeRow, showCapacityBadge: boolean) => {
+    const installed = isInstalled(u.id, u.is_installed);
+    const prereqMet =
+      !u.required_upgrade_id ||
+      isInstalled(
+        u.required_upgrade_id,
+        property.upgrades.find((x) => x.id === u.required_upgrade_id)
+          ?.is_installed ?? false,
+      );
+    return (
+      <label
+        key={u.id}
+        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50 cursor-pointer"
+        style={{ opacity: prereqMet ? 1 : 0.5 }}
+      >
+        <input
+          type="checkbox"
+          checked={installed}
+          disabled={!prereqMet}
+          onChange={() => handleToggleUpgrade(u.id, installed)}
+        />
+        <span className="text-sm flex-1">{u.display_name}</span>
+        {u.price !== null && (
+          <span
+            className="text-[10px] tabular-nums text-emerald-300/70"
+            title={formatMoneyFull(u.price)}
+          >
+            {formatMoneyCompact(u.price)}
+          </span>
+        )}
+        {showCapacityBadge && (
+          <Badge variant="outline" className="text-[10px]">
+            {u.capacity}
+          </Badge>
+        )}
+      </label>
+    );
+  };
+
+  return (
+    <>
+      {storageUpgrades.length > 0 && (
+        <section>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Storage upgrades
+          </p>
+          <div className="flex flex-col gap-1">
+            {storageUpgrades.map((u) => renderRow(u, true))}
+          </div>
+        </section>
+      )}
+      {nonStorageUpgrades.length > 0 && (
+        <section>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Equipment &amp; security
+          </p>
+          <div className="flex flex-col gap-1">
+            {nonStorageUpgrades.map((u) => renderRow(u, false))}
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
+function StorageSection({
+  property,
+  storageUpgrades,
+  carsByUpgrade,
+  baseStorageCars,
+  setPickerTarget,
+  setPickerOpen,
+  handleRemoveFromStorage,
+  isPending,
+}: {
+  property: OwnedPropertyDetail;
+  storageUpgrades: UpgradeRow[];
+  carsByUpgrade: Map<string | null, OwnedVehicleInstance[]>;
+  baseStorageCars: number;
+  setPickerTarget: (t: {
+    upgradeId: string | null;
+    label: string;
+    capacity: number;
+    current: number;
+  }) => void;
+  setPickerOpen: (o: boolean) => void;
+  handleRemoveFromStorage: (instanceId: string, displayName: string) => void;
+  isPending: boolean;
+}) {
+  const installed = storageUpgrades.filter((u) => u.is_installed);
+  const hasAny = property.base_capacity > 0 || installed.length > 0;
+  return (
+    <section>
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        Your storage
+      </p>
+      {!hasAny ? (
+        <p className="text-xs text-muted-foreground">
+          No storage available yet — install a storage upgrade in the Upgrades tab.
+        </p>
+      ) : (
+        <div className="flex flex-col gap-2">
+          {property.base_capacity > 0 && (
+            <StorageBlock
+              label={property.subtype_display}
+              capacity={property.base_capacity}
+              cars={carsByUpgrade.get(null) ?? []}
+              onAddCars={() => {
+                setPickerTarget({
+                  upgradeId: null,
+                  label: "Base storage",
+                  capacity: property.base_capacity,
+                  current: baseStorageCars,
+                });
+                setPickerOpen(true);
+              }}
+              onRemoveCar={handleRemoveFromStorage}
+              isPending={isPending}
+            />
+          )}
+          {installed.map((u) => (
+            <StorageBlock
+              key={u.id}
+              label={u.display_name}
+              capacity={u.capacity}
+              cars={carsByUpgrade.get(u.id) ?? []}
+              onAddCars={() => {
+                setPickerTarget({
+                  upgradeId: u.id,
+                  label: u.display_name,
+                  capacity: u.capacity,
+                  current: u.cars_here,
+                });
+                setPickerOpen(true);
+              }}
+              onRemoveCar={handleRemoveFromStorage}
+              isPending={isPending}
+            />
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 

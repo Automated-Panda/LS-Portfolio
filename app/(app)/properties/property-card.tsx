@@ -1,12 +1,13 @@
 "use client";
 
-import { Check, Plus } from "lucide-react";
+import { Check, Plus, Settings2, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { PropertySummary } from "@/lib/properties";
 import { formatPropertyType } from "@/lib/properties";
@@ -43,12 +44,38 @@ function PropertyCardImpl({
   tower,
 }: Props) {
   const router = useRouter();
+  const confirm = useConfirm();
   const [optimisticOwned, setOptimisticOwned] = useState(owned);
   const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const ownedDestPath =
     property.property_type === "business" ? "/my-businesses" : "/my-properties";
+  const kindLabel = property.property_type === "business" ? "business" : "property";
+
+  const openManagement = () => {
+    router.push(`${ownedDestPath}?open=${encodeURIComponent(property.id)}`);
+  };
+
+  const handleRemove = async () => {
+    const ok = await confirm({
+      title: `Remove ${property.display_name}?`,
+      description: `This ${kindLabel} will be removed from your portfolio. Any stored vehicles become unassigned.`,
+      confirmText: `Remove ${kindLabel}`,
+      destructive: true,
+    });
+    if (!ok) return;
+    setOptimisticOwned(false);
+    startTransition(async () => {
+      const result = await togglePropertyOwnership(property.id);
+      if ("error" in result && result.error) {
+        setOptimisticOwned(true);
+        toast.error(result.error);
+      } else if ("ok" in result && result.ok === false && "removed" in result) {
+        toast.success(`Removed ${property.display_name}.`);
+      }
+    });
+  };
 
   const handleToggle = () => {
     if (tower) {
@@ -60,9 +87,10 @@ function PropertyCardImpl({
       return;
     }
     // Already owned → jump into the management drawer instead of un-owning.
-    // Un-owning is then a deliberate action via the drawer's Remove button.
+    // Un-owning is then a deliberate action via the bin icon (or the drawer's
+    // Remove button), both of which use a confirm dialog.
     if (optimisticOwned) {
-      router.push(`${ownedDestPath}?open=${encodeURIComponent(property.id)}`);
+      openManagement();
       return;
     }
     const nextState = !optimisticOwned;
@@ -135,36 +163,6 @@ function PropertyCardImpl({
             : undefined
         }
       >
-        {tower ? (
-          <div
-            className={cn(
-              "absolute right-2 top-2 z-10 flex h-7 items-center gap-1 rounded-full px-2 text-xs font-semibold transition-all",
-              towerInteracted
-                ? "bg-emerald-500 text-white"
-                : "bg-background/90 text-foreground",
-            )}
-          >
-            {selectionMode === "multi"
-              ? `${tower.selectedCount ?? 0} / ${tower.totalUnits}`
-              : `${tower.ownedCount} / ${tower.totalUnits}`}
-          </div>
-        ) : (
-          <div
-            className={cn(
-              "absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all",
-              isHighlighted
-                ? "bg-emerald-500 text-white"
-                : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
-            )}
-          >
-            {isHighlighted ? (
-              <Check className="h-4 w-4" />
-            ) : (
-              <Plus className="h-4 w-4" />
-            )}
-          </div>
-        )}
-
         <div className="relative aspect-video w-full bg-muted">
           {imageUrl ? (
             <Image
@@ -217,6 +215,69 @@ function PropertyCardImpl({
           </div>
         </div>
       </button>
+
+      {/* Top-right control cluster. Towers show a count chip; owned cards
+          show settings + bin + check; unowned cards show a + on hover.
+          These overlay sit OUTSIDE the main button so their own clicks
+          don't bubble up to the toggle handler. */}
+      {tower ? (
+        <div
+          className={cn(
+            "pointer-events-none absolute right-2 top-2 z-20 flex h-7 items-center gap-1 rounded-full px-2 text-xs font-semibold transition-all",
+            towerInteracted
+              ? "bg-emerald-500 text-white"
+              : "bg-background/90 text-foreground",
+          )}
+        >
+          {selectionMode === "multi"
+            ? `${tower.selectedCount ?? 0} / ${tower.totalUnits}`
+            : `${tower.ownedCount} / ${tower.totalUnits}`}
+        </div>
+      ) : optimisticOwned && selectionMode !== "multi" ? (
+        <div className="absolute right-2 top-2 z-20 flex items-center gap-1">
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); openManagement(); }}
+            disabled={isPending}
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-background/90 text-foreground shadow hover:bg-accent/40 transition-colors"
+            aria-label={`Manage ${property.display_name}`}
+            title="Manage / add cars"
+          >
+            <Settings2 className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); void handleRemove(); }}
+            disabled={isPending}
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-background/90 text-foreground shadow hover:bg-red-500/20 hover:text-red-300 transition-colors"
+            aria-label={`Remove ${property.display_name}`}
+            title={`Remove ${kindLabel}`}
+          >
+            <Trash2 className="h-3.5 w-3.5" />
+          </button>
+          <div
+            className="pointer-events-none flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-white shadow"
+            aria-hidden
+          >
+            <Check className="h-4 w-4" />
+          </div>
+        </div>
+      ) : (
+        <div
+          className={cn(
+            "pointer-events-none absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full transition-all",
+            selected
+              ? "bg-emerald-500 text-white"
+              : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
+          )}
+        >
+          {selected ? (
+            <Check className="h-4 w-4" />
+          ) : (
+            <Plus className="h-4 w-4" />
+          )}
+        </div>
+      )}
     </div>
     <TradeInModal
       trigger={tradeInTrigger}
