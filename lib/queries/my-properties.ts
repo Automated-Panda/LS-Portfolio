@@ -10,6 +10,7 @@ export type OwnedPropertyDetail = {
   neighborhood: string | null;
   image_path: string | null;
   base_capacity: number;
+  counts_as_garage: boolean;  // false for hangars/yachts/etc. — filters out of vehicle storage pickers
   ownership_group: string;
   total_upgrades: number;
   installed_upgrades: number;
@@ -37,7 +38,7 @@ export async function getOwnedPropertiesWithStorage(
       property_id,
       properties!inner (
         display_name, subtype, subtype_display, neighborhood, image_path,
-        capacity, ownership_group,
+        capacity, ownership_group, counts_as_garage,
         property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
@@ -83,6 +84,7 @@ export async function getOwnedPropertiesWithStorage(
       neighborhood: p?.neighborhood ?? null,
       image_path: p?.image_path ?? null,
       base_capacity: p?.capacity ?? 0,
+      counts_as_garage: p?.counts_as_garage ?? false,
       ownership_group: p?.ownership_group ?? "",
       total_upgrades: allUpgrades.length,
       installed_upgrades: allUpgrades.filter((u) => installedIds.has(u.id))

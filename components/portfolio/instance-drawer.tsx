@@ -51,7 +51,10 @@ export function InstanceDrawer({
   );
   const [isPending, startTransition] = useTransition();
 
-  const selectedProperty = ownedProperties.find((p) => p.id === propertyId);
+  // Only show properties that can actually store vehicles — hides hangars,
+  // yachts, businesses without garages, etc. from the storage picker.
+  const storableProperties = ownedProperties.filter((p) => p.counts_as_garage);
+  const selectedProperty = storableProperties.find((p) => p.id === propertyId);
   const installedUpgrades =
     selectedProperty?.upgrades.filter(
       (u) => u.is_installed && u.capacity > 0,
@@ -135,7 +138,7 @@ export function InstanceDrawer({
               }}
             >
               <option value="">— Unassigned —</option>
-              {ownedProperties.map((p) => (
+              {storableProperties.map((p) => (
                 <option key={p.id} value={p.id}>
                   {p.display_name} ({p.subtype_display})
                 </option>
