@@ -121,12 +121,17 @@ function buildClubhouse(loc: LocationSeed): Omit<Property, "image_path"> {
     counts_as_garage: true,
     upgrades: [
       {
+        // The 10-bike Clubhouse Garage ships with every clubhouse (both
+        // 1-Story and 2-Story). It's not a separately-paid upgrade — the
+        // Custom Bike Shop is the only garage-related paid add-on.
         id: `${loc.id}-garage`,
         display_name: "Clubhouse Garage",
         tier: null,
         capacity: 10,
         required_upgrade_id: null,
-        notes: `${loc.stories}-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).`,
+        notes: `${loc.stories}-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.`,
+        price: 0,
+        included_on_purchase: true,
       },
       {
         id: `${loc.id}-gun-locker`,

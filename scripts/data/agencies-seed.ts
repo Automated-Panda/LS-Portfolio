@@ -58,12 +58,18 @@ function buildAgency(loc: LocationSeed): Omit<Property, "image_path"> {
     counts_as_garage: true,
     upgrades: [
       {
+        // The 20-car personal vehicle garage ships with every Agency — it's
+        // not a separately-paid upgrade. The Vehicle Workshop is the only
+        // garage-related paid add-on (it grants Imani Tech / mod access
+        // inside the existing garage, not extra capacity).
         id: `${loc.id}-garage`,
         display_name: "Agency Garage",
         tier: null,
         capacity: 20,
         required_upgrade_id: null,
-        notes: null,
+        notes: "20-car personal vehicle garage. Included with the agency purchase.",
+        price: 0,
+        included_on_purchase: true,
       },
       {
         id: `${loc.id}-armory`,

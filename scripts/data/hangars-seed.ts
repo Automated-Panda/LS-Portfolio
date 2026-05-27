@@ -65,12 +65,18 @@ function buildHangar(loc: LocationSeed): Omit<Property, "image_path"> {
     counts_as_garage: false,
     upgrades: [
       {
+        // Hangar aircraft storage is fixed at 20 slots and comes with every
+        // hangar. There is no capacity-tier upgrade — paid hangar upgrades
+        // (style, lighting, office, living quarters, workshop) add visuals
+        // and capability, not more slots.
         id: `${loc.id}-storage`,
         display_name: "Hangar Storage",
         tier: null,
         capacity: 20,
         required_upgrade_id: null,
-        notes: "Stores planes and helicopters; not garage vehicles",
+        notes: "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        price: 0,
+        included_on_purchase: true,
       },
       {
         id: `${loc.id}-workshop`,

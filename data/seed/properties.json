@@ -2949,8 +2949,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-great-chaparral-gun-locker",
@@ -2996,8 +2997,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-sandy-shores-gun-locker",
@@ -3043,8 +3045,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-paleto-bay-1story-gun-locker",
@@ -3090,8 +3093,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-del-perro-beach-gun-locker",
@@ -3137,8 +3141,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-rancho-gun-locker",
@@ -3184,8 +3189,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-pillbox-hill-gun-locker",
@@ -3231,8 +3237,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-grapeseed-gun-locker",
@@ -3278,8 +3285,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-paleto-bay-2story-gun-locker",
@@ -3325,8 +3333,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-vespucci-beach-gun-locker",
@@ -3372,8 +3381,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-la-mesa-gun-locker",
@@ -3419,8 +3429,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-downtown-vinewood-gun-locker",
@@ -3466,8 +3477,9 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
-        "price": 0
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7). Included with the clubhouse purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "mc-clubhouse-hawick-gun-locker",
@@ -4813,8 +4825,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null,
-        "price": 0
+        "notes": "20-car personal vehicle garage. Included with the agency purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "agency-little-seoul-armory",
@@ -4869,8 +4882,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null,
-        "price": 0
+        "notes": "20-car personal vehicle garage. Included with the agency purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "agency-vespucci-canals-armory",
@@ -4925,8 +4939,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null,
-        "price": 0
+        "notes": "20-car personal vehicle garage. Included with the agency purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "agency-rockford-hills-armory",
@@ -4981,8 +4996,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null,
-        "price": 0
+        "notes": "20-car personal vehicle garage. Included with the agency purchase.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "agency-hawick-armory",
@@ -7318,8 +7334,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles",
-        "price": 0
+        "notes": "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "hangar-lsia-a17-workshop",
@@ -7356,8 +7373,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles",
-        "price": 0
+        "notes": "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "hangar-lsia-1-workshop",
@@ -7394,8 +7412,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles",
-        "price": 0
+        "notes": "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "hangar-fort-zancudo-3497-workshop",
@@ -7432,8 +7451,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles",
-        "price": 0
+        "notes": "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "hangar-fort-zancudo-3499-workshop",
@@ -7470,8 +7490,9 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles",
-        "price": 0
+        "notes": "Stores planes and helicopters (20 total). Included with the hangar purchase — capacity does not scale with upgrades.",
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "hangar-fort-zancudo-a2-workshop",
@@ -7560,7 +7581,8 @@
         "capacity": 4,
         "required_upgrade_id": null,
         "notes": "Open-sided dirt-strip hangar. Stores small fixed-wing aircraft (crop-dusters, Velums). Included with purchase; no separate upgrade cost.",
-        "price": null
+        "price": 0,
+        "included_on_purchase": true
       }
     ],
     "verify": true,
@@ -7590,7 +7612,8 @@
         "capacity": 2,
         "required_upgrade_id": null,
         "notes": "Open helipad with two Mavericks. Included with purchase. Generates passive income from tour operations.",
-        "price": null
+        "price": 0,
+        "included_on_purchase": true
       }
     ],
     "verify": true,

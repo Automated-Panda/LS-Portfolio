@@ -57,6 +57,8 @@ export const MCKENZIE_HANGAR_SEED: Omit<Property, "image_path">[] = [
         notes:
           "Open-sided dirt-strip hangar. Stores small fixed-wing aircraft " +
           "(crop-dusters, Velums). Included with purchase; no separate upgrade cost.",
+        price: 0,
+        included_on_purchase: true,
       },
     ],
     // SP-only — no GTA Online equivalent.
@@ -102,6 +104,8 @@ export const HIGGINS_HELITOURS_SEED: Omit<Property, "image_path">[] = [
         notes:
           "Open helipad with two Mavericks. Included with purchase. " +
           "Generates passive income from tour operations.",
+        price: 0,
+        included_on_purchase: true,
       },
     ],
     // SP-only — no GTA Online equivalent.
