@@ -13,7 +13,10 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { toggleUpgradeInstalled } from "@/app/(app)/my-properties/actions";
+import {
+  setAllUpgradesInstalled,
+  toggleUpgradeInstalled,
+} from "@/app/(app)/my-properties/actions";
 import { assignVehicleStorage } from "@/app/(app)/my-vehicles/actions";
 import { unownProperty } from "@/app/(app)/properties/actions";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
@@ -45,6 +48,28 @@ export function PropertyDrawer({
     capacity: number;
     current: number;
   } | null>(null);
+
+  // Optimistic overrides for upgrade is_installed. Map<upgradeId, installed>.
+  // When set, takes precedence over the server-derived `u.is_installed`.
+  // Cleared per-key on server confirm/error so subsequent server data flows
+  // through naturally.
+  const [optimisticInstalled, setOptimisticInstalled] = useState<
+    Map<string, boolean>
+  >(new Map());
+
+  const isInstalled = (id: string, fallback: boolean) =>
+    optimisticInstalled.has(id)
+      ? (optimisticInstalled.get(id) as boolean)
+      : fallback;
+
+  const setOptimistic = (id: string, value: boolean | undefined) => {
+    setOptimisticInstalled((prev) => {
+      const next = new Map(prev);
+      if (value === undefined) next.delete(id);
+      else next.set(id, value);
+      return next;
+    });
+  };
 
   const storageUpgrades = property.upgrades.filter((u) => u.capacity > 0);
   const nonStorageUpgrades = property.upgrades.filter((u) => u.capacity === 0);
@@ -99,10 +124,42 @@ export function PropertyDrawer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, property.id]);
 
-  const handleToggleUpgrade = (upgradeId: string) => {
+  const handleToggleUpgrade = (upgradeId: string, currentlyInstalled: boolean) => {
+    // Optimistic flip — instant visual feedback.
+    setOptimistic(upgradeId, !currentlyInstalled);
     startTransition(async () => {
       const r = await toggleUpgradeInstalled(property.id, upgradeId);
-      if ("error" in r) toast.error(r.error);
+      if ("error" in r) {
+        // Rollback optimistic state on error.
+        setOptimistic(upgradeId, undefined);
+        toast.error(r.error);
+      } else {
+        // Server confirmed — drop the override so revalidated data takes over.
+        setOptimistic(upgradeId, undefined);
+      }
+    });
+  };
+
+  const handleSetAllUpgrades = (installed: boolean) => {
+    // Optimistic-set every upgrade for this property.
+    setOptimisticInstalled(() => {
+      const next = new Map<string, boolean>();
+      for (const u of property.upgrades) next.set(u.id, installed);
+      return next;
+    });
+    startTransition(async () => {
+      const r = await setAllUpgradesInstalled(property.id, installed);
+      if ("error" in r) {
+        setOptimisticInstalled(new Map());
+        toast.error(r.error);
+      } else {
+        setOptimisticInstalled(new Map());
+        toast.success(
+          installed
+            ? `Installed all upgrades (${r.changed})`
+            : `Uninstalled all upgrades (${r.changed})`,
+        );
+      }
     });
   };
 
@@ -139,6 +196,29 @@ export function PropertyDrawer({
           </SheetHeader>
 
           <div className="flex flex-col gap-4 py-4">
+            {property.upgrades.length > 0 && (
+              <div className="flex gap-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleSetAllUpgrades(true)}
+                  disabled={isPending}
+                  className="flex-1"
+                >
+                  ✓ Install all upgrades
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleSetAllUpgrades(false)}
+                  disabled={isPending}
+                  className="flex-1"
+                >
+                  Uninstall all
+                </Button>
+              </div>
+            )}
+
             {storageUpgrades.length > 0 && (
               <section>
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -146,21 +226,25 @@ export function PropertyDrawer({
                 </p>
                 <div className="flex flex-col gap-1">
                   {storageUpgrades.map((u) => {
+                    const installed = isInstalled(u.id, u.is_installed);
                     const prereqMet =
                       !u.required_upgrade_id ||
-                      property.upgrades.find((x) => x.id === u.required_upgrade_id)
-                        ?.is_installed;
+                      isInstalled(
+                        u.required_upgrade_id,
+                        property.upgrades.find((x) => x.id === u.required_upgrade_id)
+                          ?.is_installed ?? false,
+                      );
                     return (
                       <label
                         key={u.id}
-                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50"
+                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50 cursor-pointer"
                         style={{ opacity: prereqMet ? 1 : 0.5 }}
                       >
                         <input
                           type="checkbox"
-                          checked={u.is_installed}
-                          disabled={!prereqMet || isPending}
-                          onChange={() => handleToggleUpgrade(u.id)}
+                          checked={installed}
+                          disabled={!prereqMet}
+                          onChange={() => handleToggleUpgrade(u.id, installed)}
                         />
                         <span className="text-sm">{u.display_name}</span>
                         <Badge variant="outline" className="ml-auto text-[10px]">
@@ -180,21 +264,25 @@ export function PropertyDrawer({
                 </p>
                 <div className="flex flex-col gap-1">
                   {nonStorageUpgrades.map((u) => {
+                    const installed = isInstalled(u.id, u.is_installed);
                     const prereqMet =
                       !u.required_upgrade_id ||
-                      property.upgrades.find((x) => x.id === u.required_upgrade_id)
-                        ?.is_installed;
+                      isInstalled(
+                        u.required_upgrade_id,
+                        property.upgrades.find((x) => x.id === u.required_upgrade_id)
+                          ?.is_installed ?? false,
+                      );
                     return (
                       <label
                         key={u.id}
-                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50"
+                        className="flex items-center gap-2 rounded-md p-2 hover:bg-muted/50 cursor-pointer"
                         style={{ opacity: prereqMet ? 1 : 0.5 }}
                       >
                         <input
                           type="checkbox"
-                          checked={u.is_installed}
-                          disabled={!prereqMet || isPending}
-                          onChange={() => handleToggleUpgrade(u.id)}
+                          checked={installed}
+                          disabled={!prereqMet}
+                          onChange={() => handleToggleUpgrade(u.id, installed)}
                         />
                         <span className="text-sm">{u.display_name}</span>
                       </label>
