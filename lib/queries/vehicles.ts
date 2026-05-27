@@ -25,7 +25,7 @@ export async function getVehiclesBrowserData(
     supabase
       .from("vehicles")
       .select(
-        `id, internal_name, display_name, class, manufacturer_id, image_path,
+        `id, internal_name, display_name, class, manufacturer_id, image_path, price,
          manufacturers ( display ),
          vehicle_tag_links ( tag_id )`,
       )
@@ -56,6 +56,7 @@ export async function getVehiclesBrowserData(
     class: string;
     manufacturer_id: string;
     image_path: string | null;
+    price: number | null;
     manufacturers: { display: string } | { display: string }[] | null;
     vehicle_tag_links: Array<{ tag_id: string }> | null;
   };
@@ -107,6 +108,7 @@ export async function getVehiclesBrowserData(
         manufacturer_id: v.manufacturer_id,
         manufacturer_display: mfr?.display ?? v.manufacturer_id,
         image_path: v.image_path,
+        price: v.price ?? null,
         tag_ids: (v.vehicle_tag_links ?? []).map((l) => l.tag_id),
         owned_count: ownedCount.get(v.id) ?? 0,
         drift_variant: driftByBaseId.get(v.id) ?? null,

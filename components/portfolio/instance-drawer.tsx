@@ -23,6 +23,8 @@ import {
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
+import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
+
 import { CustomTagsInput } from "./custom-tags-input";
 
 type Props = {
@@ -149,6 +151,17 @@ export function InstanceDrawer({
           <SheetTitle>{nickname || instance.display_name}</SheetTitle>
           <SheetDescription>
             {instance.manufacturer_display} · {instance.class}
+            {instance.price !== null && (
+              <>
+                {" · "}
+                <span
+                  className="text-emerald-400 tabular-nums"
+                  title={formatMoneyFull(instance.price)}
+                >
+                  {formatMoneyCompact(instance.price)}
+                </span>
+              </>
+            )}
           </SheetDescription>
         </SheetHeader>
 

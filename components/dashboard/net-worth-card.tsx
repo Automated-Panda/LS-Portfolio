@@ -1,6 +1,7 @@
 import { DollarSign } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 
 type Props = {
   total: number;
@@ -10,19 +11,6 @@ type Props = {
   /** Vehicles + properties + upgrades with no price sourced yet. */
   unpricedItems: number;
 };
-
-const compactFmt = new Intl.NumberFormat("en-US", {
-  notation: "compact",
-  maximumFractionDigits: 1,
-  style: "currency",
-  currency: "USD",
-});
-
-const fullFmt = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
 
 export function NetWorthCard({
   total,
@@ -44,9 +32,9 @@ export function NetWorthCard({
         <div className="flex flex-col gap-1">
           <span
             className="text-4xl font-semibold tabular-nums"
-            title={fullFmt.format(total)}
+            title={formatMoneyFull(total)}
           >
-            {compactFmt.format(total)}
+            {formatMoneyCompact(total)}
           </span>
           <span className="text-xs text-muted-foreground">
             Sum of catalogue prices across everything you own.
@@ -78,9 +66,9 @@ function Breakdown({ label, amount }: { label: string; amount: number }) {
       </span>
       <span
         className="text-sm font-medium tabular-nums"
-        title={fullFmt.format(amount)}
+        title={formatMoneyFull(amount)}
       >
-        {compactFmt.format(amount)}
+        {formatMoneyCompact(amount)}
       </span>
     </div>
   );

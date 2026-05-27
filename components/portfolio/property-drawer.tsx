@@ -19,6 +19,7 @@ import {
 } from "@/app/(app)/my-properties/actions";
 import { assignVehicleStorage } from "@/app/(app)/my-vehicles/actions";
 import { unownProperty } from "@/app/(app)/properties/actions";
+import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
@@ -192,6 +193,17 @@ export function PropertyDrawer({
             <SheetDescription>
               {property.subtype_display}
               {property.neighborhood ? ` · ${property.neighborhood}` : ""}
+              {property.price !== null && (
+                <>
+                  {" · "}
+                  <span
+                    className="text-emerald-400 tabular-nums"
+                    title={formatMoneyFull(property.price)}
+                  >
+                    {formatMoneyCompact(property.price)}
+                  </span>
+                </>
+              )}
             </SheetDescription>
           </SheetHeader>
 
@@ -246,8 +258,16 @@ export function PropertyDrawer({
                           disabled={!prereqMet}
                           onChange={() => handleToggleUpgrade(u.id, installed)}
                         />
-                        <span className="text-sm">{u.display_name}</span>
-                        <Badge variant="outline" className="ml-auto text-[10px]">
+                        <span className="text-sm flex-1">{u.display_name}</span>
+                        {u.price !== null && (
+                          <span
+                            className="text-[10px] tabular-nums text-emerald-300/70"
+                            title={formatMoneyFull(u.price)}
+                          >
+                            {formatMoneyCompact(u.price)}
+                          </span>
+                        )}
+                        <Badge variant="outline" className="text-[10px]">
                           {u.capacity}
                         </Badge>
                       </label>
@@ -284,7 +304,15 @@ export function PropertyDrawer({
                           disabled={!prereqMet}
                           onChange={() => handleToggleUpgrade(u.id, installed)}
                         />
-                        <span className="text-sm">{u.display_name}</span>
+                        <span className="text-sm flex-1">{u.display_name}</span>
+                        {u.price !== null && (
+                          <span
+                            className="text-[10px] tabular-nums text-emerald-300/70"
+                            title={formatMoneyFull(u.price)}
+                          >
+                            {formatMoneyCompact(u.price)}
+                          </span>
+                        )}
                       </label>
                     );
                   })}

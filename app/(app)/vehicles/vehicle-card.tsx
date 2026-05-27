@@ -11,6 +11,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { VehicleSummary } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
@@ -223,6 +224,14 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
           <span className="absolute left-2 top-2 z-10 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
             {vehicle.class}
           </span>
+          {vehicle.price !== null && (
+            <span
+              className="absolute bottom-2 left-2 z-10 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] font-medium tabular-nums text-emerald-300 backdrop-blur-sm"
+              title={formatMoneyFull(vehicle.price)}
+            >
+              {formatMoneyCompact(vehicle.price)}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-1 flex-col gap-2 p-3">

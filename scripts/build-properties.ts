@@ -25,10 +25,11 @@ import type { Property } from "./schema";
 const SEED_DIR = path.join("data", "seed");
 const IMAGES_DIR = path.join("data", "images", "properties");
 const PRICES_PATH = path.join(SEED_DIR, "property-prices.json");
+const UPGRADE_PRICES_PATH = path.join(SEED_DIR, "upgrade-prices.json");
 
-function loadPriceOverlay(): Record<string, number> {
+function loadJsonMap(filePath: string): Record<string, number> {
   try {
-    const raw = readFileSync(PRICES_PATH, "utf8");
+    const raw = readFileSync(filePath, "utf8");
     const parsed = JSON.parse(raw) as Record<string, unknown>;
     const out: Record<string, number> = {};
     for (const [k, v] of Object.entries(parsed)) {
@@ -53,16 +54,26 @@ function resolveImagePath(prop: Omit<Property, "image_path">): string | null {
 }
 
 async function main(): Promise<void> {
-  const priceOverlay = loadPriceOverlay();
+  const propertyPriceOverlay = loadJsonMap(PRICES_PATH);
+  const upgradePriceOverlay = loadJsonMap(UPGRADE_PRICES_PATH);
 
   const properties: Property[] = PROPERTIES_SEED.map((p) => ({
     ...p,
     parent_building: p.parent_building ?? null,
     image_path: resolveImagePath(p),
-    price: priceOverlay[p.id] ?? p.price ?? null,
+    price: propertyPriceOverlay[p.id] ?? p.price ?? null,
+    upgrades: p.upgrades.map((u) => ({
+      ...u,
+      price: upgradePriceOverlay[u.id] ?? u.price ?? null,
+    })),
   }));
 
   const priced = properties.filter((p) => p.price !== null && p.price !== undefined).length;
+  const totalUpgrades = properties.reduce((s, p) => s + p.upgrades.length, 0);
+  const pricedUpgrades = properties.reduce(
+    (s, p) => s + p.upgrades.filter((u) => u.price !== null && u.price !== undefined).length,
+    0,
+  );
 
   const withInstanceImage = properties.filter(
     (p) => p.image_path && p.image_path.endsWith(`${p.id}.webp`),
@@ -79,7 +90,10 @@ async function main(): Promise<void> {
     `  ${withInstanceImage} unique · ${withSubtypeFallback} subtype fallback · ${noImage} no image`,
   );
   console.log(
-    `  ${priced} priced · ${properties.length - priced} unpriced`,
+    `  ${priced} priced · ${properties.length - priced} unpriced (properties)`,
+  );
+  console.log(
+    `  ${pricedUpgrades} / ${totalUpgrades} upgrade prices`,
   );
   if (verifyCount > 0) {
     console.log(

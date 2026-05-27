@@ -10,6 +10,7 @@ export type VehicleSummary = {
   manufacturer_id: string;
   manufacturer_display: string;
   image_path: string | null;
+  price: number | null;       // GTA$ purchase price, null = not for sale / mission-only / unsourced
   tag_ids: string[];
   owned_count: number;        // 0 if user owns no instances, N if N instances
   // When set, the vehicle has a "drift" handling variant in the game.

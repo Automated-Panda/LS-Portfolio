@@ -12,6 +12,7 @@ export type PropertySummary = {
   parent_building: string | null;
   image_path: string | null;
   counts_as_garage: boolean;
+  price: number | null;            // GTA$ purchase price, null if unsourced
   max_capacity: number;
   upgrade_count: number;
 };

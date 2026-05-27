@@ -6,6 +6,7 @@ import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
+import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { PropertySummary } from "@/lib/properties";
 import { formatPropertyType } from "@/lib/properties";
 import { cn } from "@/lib/utils";
@@ -145,6 +146,14 @@ function PropertyCardImpl({
           <span className="absolute left-2 top-2 z-10 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
             {formatPropertyType(property.property_type)}
           </span>
+          {property.price !== null && !tower && (
+            <span
+              className="absolute bottom-2 left-2 z-10 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] font-medium tabular-nums text-emerald-300 backdrop-blur-sm"
+              title={formatMoneyFull(property.price)}
+            >
+              {formatMoneyCompact(property.price)}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-1 flex-col gap-2 p-3">
