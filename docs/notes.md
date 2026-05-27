@@ -8,27 +8,31 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 Full-day session. Order: max-out → Vehicle Warehouse model → /my-businesses → Cargo Warehouses → vehicle image audit. Business upgrade audit captured separately as its own future session.
 
-### ⚡ #1 Max-out button + faster upgrade toggles (HIGH PRIORITY)
-- [ ] **Optimistic UI** for upgrade checkboxes in `PropertyDrawer` — current behavior waits for server roundtrip + revalidation before the checkbox visually flips. Add optimistic local state so toggles feel instant.
-- [ ] **"Install all" / "Uninstall all" buttons** at the top of the storage-upgrade section. Server action `setAllUpgradesInstalled(propertyId, installed: boolean)` does bulk insert/delete on `user_owned_property_upgrades`.
-- [ ] Same treatment for the "Equipment & security" (non-storage) upgrade section.
+### ⚡ #1 Max-out button + faster upgrade toggles ✅
+- [x] **Optimistic UI** for upgrade checkboxes in `PropertyDrawer` — toggles flip instantly via local optimistic state; rollback on server error.
+- [x] **"Install all" / "Uninstall all" buttons** wired to new `setAllUpgradesInstalled` action (single round-trip insert/delete).
+- [x] Both buttons cover storage AND non-storage upgrade sections (single bulk action across all upgrades).
 
-### 🔧 #2 Fix Vehicle Warehouse model
-- [ ] In `vehicle-warehouses-seed.ts`, move the 40-car capacity from the standalone upgrade row → `base_capacity: 40` (you get storage just by buying the warehouse, not as a separate upgrade).
-- [ ] Remove the `*-storage` upgrade row.
-- [ ] Optional: add cosmetic Interior Style upgrades (Basic / Urban / Branded) if we want to track those, but they don't affect capacity.
-- [ ] Rebuild + db:import.
+### 🔧 #2 Fix Vehicle Warehouse model ✅
+- [x] Moved 40-car storage from upgrade → `base_capacity` on all 9 Vehicle Warehouses.
+- [x] Dropped the `vehicle-warehouse-*-storage` upgrade rows (9 orphans cleaned).
+- [x] Extended `import-seed.ts` with orphan-property_upgrades cleanup so future seed restructures stay tidy.
+- [ ] **Future:** add cosmetic Interior Style upgrades (Basic / Urban / Branded) — deferred to business upgrade audit session.
 
-### 🏢 #3 Build the `/my-businesses` page (currently a stub)
-- [ ] Filter `/my-properties` to exclude `property_type = 'business'` rows (today businesses leak in via `getOwnedPropertiesWithStorage`).
-- [ ] Build real `/my-businesses` mirroring `/my-properties` (grid + drawer + empty state). Reuse `PropertyDrawer`.
-- [ ] Possibly a business-specific drawer variant later if their UX needs diverge (income, supplies, etc.) — defer for now.
+### 🏢 #3 Build the `/my-businesses` page ✅
+- [x] `getOwnedPropertiesWithStorage` now takes a `scope: 'all' | 'properties' | 'businesses'` arg matching the browse split.
+- [x] `/my-properties` passes `scope='properties'` — businesses no longer leak in.
+- [x] `/my-businesses` is real: grid + drawer + empty state, reusing `PropertyDrawer` with all today's upgrade UX (optimistic toggles, install-all).
+- [x] OwnedPropertyDetail now carries `property_type`.
 
-### 📦 #4 Add Special Cargo Warehouses
-- [ ] New seed file `scripts/data/cargo-warehouses-seed.ts` for CEO crate-mission warehouses (distinct from Vehicle Warehouses — those store stolen cars).
-- [ ] Three sizes: Small (16 crates) · Medium (42 crates) · Large (111 crates). Typically 5 of each = 15 total.
-- [ ] Source canonical addresses from gtabase + per-instance images.
-- [ ] Decide ownership model: limit 5 cargo warehouses owned total (matches in-game)? Or unlimited? Confirm before seeding.
+### 📦 #4 Add Special Cargo Warehouses ✅
+- [x] New seed file `scripts/data/cargo-warehouses-seed.ts` — 22 warehouses (canonical count) split 6/8/8 across Small/Medium/Large subtypes.
+- [x] All 3 subtypes pool into one `cargo-warehouse` ownership group via `CARGO_WAREHOUSE_POOL` in import-seed.
+- [x] Migration `0011_cargo_warehouse_ownership_group.sql` adds cap=5 (in-game maximum).
+- [x] Per-instance gtabase cover images for all 22.
+- [x] Hosted DB: 221 properties, 258 upgrades.
+- [ ] **Pending:** apply migration 0011 in Studio (paste the file). MCP can't reach the project so it's a manual step.
+- [ ] **Future:** address audit on the 17 verify:true rows; Interior Style upgrades.
 
 ### 🖼️ #5 Vehicle image audit
 - [ ] James walks `/vehicles` in the browser, lists bad/missing images.
