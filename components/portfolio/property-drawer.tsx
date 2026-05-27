@@ -14,14 +14,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toggleUpgradeInstalled } from "@/app/(app)/my-properties/actions";
+import { assignVehicleStorage } from "@/app/(app)/my-vehicles/actions";
 import { unownProperty } from "@/app/(app)/properties/actions";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
 import { VehiclePickerModal } from "./vehicle-picker-modal";
 
 type Props = {
   property: OwnedPropertyDetail;
   allOwnedProperties: OwnedPropertyDetail[];
+  /** Every owned vehicle instance in the user's portfolio — filtered down to this property's storage locations for rendering. */
+  instances: OwnedVehicleInstance[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
@@ -29,6 +33,7 @@ type Props = {
 export function PropertyDrawer({
   property,
   allOwnedProperties: _allOwnedProperties,
+  instances,
   open,
   onOpenChange,
 }: Props) {
@@ -44,11 +49,35 @@ export function PropertyDrawer({
   const storageUpgrades = property.upgrades.filter((u) => u.capacity > 0);
   const nonStorageUpgrades = property.upgrades.filter((u) => u.capacity === 0);
 
+  // Vehicles stored at THIS property, grouped by assigned_upgrade_id (null = base).
+  const carsHere = instances.filter(
+    (v) => v.storage?.owned_property_id === property.id,
+  );
+  const carsByUpgrade = new Map<string | null, OwnedVehicleInstance[]>();
+  for (const v of carsHere) {
+    const key = v.storage?.assigned_upgrade_id ?? null;
+    const arr = carsByUpgrade.get(key) ?? [];
+    arr.push(v);
+    carsByUpgrade.set(key, arr);
+  }
+
   const baseStorageCars =
     property.total_cars -
     storageUpgrades
       .filter((u) => u.is_installed)
       .reduce((sum, u) => sum + u.cars_here, 0);
+
+  const handleRemoveFromStorage = (instanceId: string, displayName: string) => {
+    startTransition(async () => {
+      const r = await assignVehicleStorage({
+        ownedVehicleId: instanceId,
+        ownedPropertyId: null,
+        assignedUpgradeId: null,
+      });
+      if ("error" in r) toast.error(r.error);
+      else toast.success(`Unassigned ${displayName}`);
+    });
+  };
 
   // Drawer-skip for simple properties: auto-open the vehicle picker ONCE when
   // the drawer opens for a property with no storage-tier choices and a base
@@ -177,13 +206,15 @@ export function PropertyDrawer({
 
             <section>
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Your storage (click to manage cars)
+                Your storage
               </p>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-2">
                 {property.base_capacity > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => {
+                  <StorageBlock
+                    label={property.subtype_display}
+                    capacity={property.base_capacity}
+                    cars={carsByUpgrade.get(null) ?? []}
+                    onAddCars={() => {
                       setPickerTarget({
                         upgradeId: null,
                         label: "Base storage",
@@ -192,21 +223,19 @@ export function PropertyDrawer({
                       });
                       setPickerOpen(true);
                     }}
-                    className="flex items-center justify-between rounded-md border p-3 text-sm hover:border-foreground/40"
-                  >
-                    <span>{property.subtype_display}</span>
-                    <span className="text-muted-foreground">
-                      {baseStorageCars} / {property.base_capacity} →
-                    </span>
-                  </button>
+                    onRemoveCar={handleRemoveFromStorage}
+                    isPending={isPending}
+                  />
                 )}
                 {storageUpgrades
                   .filter((u) => u.is_installed)
                   .map((u) => (
-                    <button
+                    <StorageBlock
                       key={u.id}
-                      type="button"
-                      onClick={() => {
+                      label={u.display_name}
+                      capacity={u.capacity}
+                      cars={carsByUpgrade.get(u.id) ?? []}
+                      onAddCars={() => {
                         setPickerTarget({
                           upgradeId: u.id,
                           label: u.display_name,
@@ -215,13 +244,9 @@ export function PropertyDrawer({
                         });
                         setPickerOpen(true);
                       }}
-                      className="flex items-center justify-between rounded-md border p-3 text-sm hover:border-foreground/40"
-                    >
-                      <span>{u.display_name}</span>
-                      <span className="text-muted-foreground">
-                        {u.cars_here} / {u.capacity} →
-                      </span>
-                    </button>
+                      onRemoveCar={handleRemoveFromStorage}
+                      isPending={isPending}
+                    />
                   ))}
               </div>
             </section>
@@ -252,5 +277,67 @@ export function PropertyDrawer({
         />
       )}
     </>
+  );
+}
+
+function StorageBlock({
+  label,
+  capacity,
+  cars,
+  onAddCars,
+  onRemoveCar,
+  isPending,
+}: {
+  label: string;
+  capacity: number;
+  cars: OwnedVehicleInstance[];
+  onAddCars: () => void;
+  onRemoveCar: (instanceId: string, displayName: string) => void;
+  isPending: boolean;
+}) {
+  return (
+    <div className="rounded-md border">
+      <button
+        type="button"
+        onClick={onAddCars}
+        className="flex w-full items-center justify-between p-3 text-sm hover:bg-muted/50"
+      >
+        <span className="font-medium">{label}</span>
+        <span className="text-muted-foreground">
+          {cars.length} / {capacity} · + Add cars
+        </span>
+      </button>
+      {cars.length > 0 && (
+        <ul className="flex flex-col border-t">
+          {cars.map((v) => {
+            const name = v.nickname || v.display_name;
+            return (
+              <li
+                key={v.id}
+                className="flex items-center justify-between px-3 py-1.5 text-sm hover:bg-muted/30"
+              >
+                <span className="flex flex-col min-w-0">
+                  <span className="truncate">{name}</span>
+                  {v.nickname && (
+                    <span className="text-[10px] text-muted-foreground truncate">
+                      {v.display_name}
+                    </span>
+                  )}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onRemoveCar(v.id, name)}
+                  disabled={isPending}
+                  className="ml-2 rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
+                  aria-label={`Unassign ${name}`}
+                >
+                  ✕
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
   );
 }

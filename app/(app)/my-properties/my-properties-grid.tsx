@@ -4,11 +4,15 @@ import { useState } from "react";
 
 import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { propertyImageUrl } from "@/lib/properties";
 
-type Props = { properties: OwnedPropertyDetail[] };
+type Props = {
+  properties: OwnedPropertyDetail[];
+  instances: OwnedVehicleInstance[];
+};
 
-export function MyPropertiesGrid({ properties }: Props) {
+export function MyPropertiesGrid({ properties, instances }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = properties.find((p) => p.id === selectedId);
 
@@ -58,6 +62,7 @@ export function MyPropertiesGrid({ properties }: Props) {
         <PropertyDrawer
           property={selected}
           allOwnedProperties={properties}
+          instances={instances}
           open={true}
           onOpenChange={(o) => !o && setSelectedId(null)}
         />

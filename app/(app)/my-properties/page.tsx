@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
+import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 
 import { MyPropertiesGrid } from "./my-properties-grid";
 import { MyPropertiesEmptyState } from "./empty-state";
@@ -13,7 +14,10 @@ export default async function MyPropertiesPage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const properties = await getOwnedPropertiesWithStorage(user.id);
+  const [properties, instances] = await Promise.all([
+    getOwnedPropertiesWithStorage(user.id),
+    getOwnedVehicleInstances(user.id),
+  ]);
 
   return (
     <div className="flex flex-col gap-4">
@@ -21,7 +25,7 @@ export default async function MyPropertiesPage() {
       {properties.length === 0 ? (
         <MyPropertiesEmptyState />
       ) : (
-        <MyPropertiesGrid properties={properties} />
+        <MyPropertiesGrid properties={properties} instances={instances} />
       )}
     </div>
   );

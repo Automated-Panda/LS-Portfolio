@@ -4,10 +4,14 @@ import { useState } from "react";
 
 import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
-type Props = { properties: OwnedPropertyDetail[] };
+type Props = {
+  properties: OwnedPropertyDetail[];
+  instances: OwnedVehicleInstance[];
+};
 
-export function PropertyHubList({ properties }: Props) {
+export function PropertyHubList({ properties, instances }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = properties.find((p) => p.id === selectedId);
 
@@ -52,6 +56,7 @@ export function PropertyHubList({ properties }: Props) {
         <PropertyDrawer
           property={selected}
           allOwnedProperties={properties}
+          instances={instances}
           open={true}
           onOpenChange={(o) => !o && setSelectedId(null)}
         />

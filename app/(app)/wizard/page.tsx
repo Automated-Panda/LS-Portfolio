@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getPropertiesBrowserData } from "@/lib/queries/properties";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
+import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 
 import { OnboardingWizard } from "./onboarding-wizard";
 
@@ -14,11 +15,13 @@ export default async function WizardPage() {
   if (!user) redirect("/login");
 
   // Fetch both scopes in parallel and merge for the picker step.
-  const [propsScope, bizScope, ownedProperties] = await Promise.all([
-    getPropertiesBrowserData(user.id, "properties"),
-    getPropertiesBrowserData(user.id, "businesses"),
-    getOwnedPropertiesWithStorage(user.id),
-  ]);
+  const [propsScope, bizScope, ownedProperties, ownedInstances] =
+    await Promise.all([
+      getPropertiesBrowserData(user.id, "properties"),
+      getPropertiesBrowserData(user.id, "businesses"),
+      getOwnedPropertiesWithStorage(user.id),
+      getOwnedVehicleInstances(user.id),
+    ]);
 
   // Merge: concat properties, union ownedPropertyIds, take properties' filters
   // (filters object structure is identical between scopes).
@@ -33,6 +36,7 @@ export default async function WizardPage() {
   return (
     <OnboardingWizard
       ownedProperties={ownedProperties}
+      ownedInstances={ownedInstances}
       pickerData={pickerData}
     />
   );
