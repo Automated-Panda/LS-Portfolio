@@ -4,6 +4,49 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 🔥 Today's batch — 2026-05-28
+
+Full-day session. Order: max-out → Vehicle Warehouse model → /my-businesses → Cargo Warehouses → vehicle image audit. Business upgrade audit captured separately as its own future session.
+
+### ⚡ #1 Max-out button + faster upgrade toggles (HIGH PRIORITY)
+- [ ] **Optimistic UI** for upgrade checkboxes in `PropertyDrawer` — current behavior waits for server roundtrip + revalidation before the checkbox visually flips. Add optimistic local state so toggles feel instant.
+- [ ] **"Install all" / "Uninstall all" buttons** at the top of the storage-upgrade section. Server action `setAllUpgradesInstalled(propertyId, installed: boolean)` does bulk insert/delete on `user_owned_property_upgrades`.
+- [ ] Same treatment for the "Equipment & security" (non-storage) upgrade section.
+
+### 🔧 #2 Fix Vehicle Warehouse model
+- [ ] In `vehicle-warehouses-seed.ts`, move the 40-car capacity from the standalone upgrade row → `base_capacity: 40` (you get storage just by buying the warehouse, not as a separate upgrade).
+- [ ] Remove the `*-storage` upgrade row.
+- [ ] Optional: add cosmetic Interior Style upgrades (Basic / Urban / Branded) if we want to track those, but they don't affect capacity.
+- [ ] Rebuild + db:import.
+
+### 🏢 #3 Build the `/my-businesses` page (currently a stub)
+- [ ] Filter `/my-properties` to exclude `property_type = 'business'` rows (today businesses leak in via `getOwnedPropertiesWithStorage`).
+- [ ] Build real `/my-businesses` mirroring `/my-properties` (grid + drawer + empty state). Reuse `PropertyDrawer`.
+- [ ] Possibly a business-specific drawer variant later if their UX needs diverge (income, supplies, etc.) — defer for now.
+
+### 📦 #4 Add Special Cargo Warehouses
+- [ ] New seed file `scripts/data/cargo-warehouses-seed.ts` for CEO crate-mission warehouses (distinct from Vehicle Warehouses — those store stolen cars).
+- [ ] Three sizes: Small (16 crates) · Medium (42 crates) · Large (111 crates). Typically 5 of each = 15 total.
+- [ ] Source canonical addresses from gtabase + per-instance images.
+- [ ] Decide ownership model: limit 5 cargo warehouses owned total (matches in-game)? Or unlimited? Confirm before seeding.
+
+### 🖼️ #5 Vehicle image audit
+- [ ] James walks `/vehicles` in the browser, lists bad/missing images.
+- [ ] Drop replacement source images into `docs/temp-images/<vehicle-id>.<ext>`.
+- [ ] `npx tsx scripts/normalize-temp-images.ts` → `npm run images:publish` → redeploy.
+
+---
+
+## 📋 Business upgrade audit (its own session)
+
+> Important but time-consuming — defer to a dedicated session.
+
+- [ ] Walk through each business subtype: nightclub, ceo-office, mc-clubhouse, bunker, facility, agency, arcade, auto-shop, salvage-yard, vehicle-warehouse, hangar, yacht, biker-business-{coke,meth,weed,cash,forgery}.
+- [ ] For each: cross-reference gtabase + Fandom to verify the upgrade list is complete and accurate. Some seeds may have placeholder data from the rushed Phase 4b fanout.
+- [ ] Pay particular attention to: capacity-bearing upgrades vs cosmetic ones, prerequisites (`required_upgrade_id`), and any post-DLC additions that landed after the initial seed pass.
+
+---
+
 ## 🚨 New TODOs — added 2026-05-27
 
 Soon-ish work batch. Group these together when picking next pieces.
