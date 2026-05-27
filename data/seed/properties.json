@@ -1576,7 +1576,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "image_path": "data/images/properties/stand-alone-garage-unit-2-popular-st.webp",
     "price": 25000
   },
   {
@@ -1692,7 +1692,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "image_path": "data/images/properties/stand-alone-garage-unit-76-greenwich-parkway.webp",
     "price": 35000
   },
   {
@@ -1721,7 +1721,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "image_path": "data/images/properties/stand-alone-garage-unit-14-popular-st.webp",
     "price": 62500
   },
   {
@@ -1750,7 +1750,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "image_path": "data/images/properties/stand-alone-garage-unit-1-olympic-fwy.webp",
     "price": 65000
   },
   {
@@ -2011,7 +2011,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "image_path": "data/images/properties/stand-alone-garage-unit-124-popular-st.webp",
     "price": 115000
   },
   {
@@ -5137,7 +5137,7 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade.webp",
+    "image_path": "data/images/properties/arcade-the-warehouse.webp",
     "price": 2135000
   },
   {
