@@ -20,17 +20,18 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
-## 📊 Phase 6 — Dashboard (next major piece)
+## 📊 Phase 6 — Dashboard ✅
 
-> Totals, capacity utilization, unassigned counts. Natural follow-on now that ownership + organization both work.
+> Shipped to main 2026-05-26. C1 story-stacked layout: totals → quick actions → needs-attention → breakdown → capacity + catalog → recent activity. Empty-state onboarding for brand-new accounts. Spec: `docs/specs/2026-05-26-dashboard-design.md` · Plan: `docs/plans/2026-05-26-dashboard.md`.
 
-- [ ] Brainstorm scope: which numbers + visuals matter most? (totals per asset class, capacity utilization, unassigned counts, biggest gaps, recent activity, quick links)
-- [ ] Lock layout — card grid? Hero stat strip + drill-down sections?
-- [ ] Wire `getDashboardData()` query (parallel fetch: vehicle/property/business counts, capacity rollups, unassigned set)
-- [ ] Build dashboard cards/widgets
-- [ ] Replace stub `/dashboard` page
-- [ ] Hook empty-state UX for brand-new users
-- [ ] Mobile responsive check
+- [x] Brainstorm scope (locked in: stats-led with secondary CTAs, equal weight for new vs returning users, all 4 widget groups)
+- [x] Lock layout (C1 — story-stacked with quick actions near top)
+- [x] Approach C data fetching — page-level Promise.all + derive in page + presentational widgets
+- [x] 7 widget components in `components/dashboard/`
+- [x] Replace stub `/dashboard` page (parallel fetch + derive + branch)
+- [x] Empty-state UX (`empty-dashboard.tsx` with wizard CTA + 3 secondary cards + disabled-with-tooltip organizer)
+- [x] Mobile responsive (3-col → 1-col stack)
+- [x] Piggyback: URL-driven `?unassigned=1` on `/my-vehicles` so NeedsAttention can deep-link
 
 ---
 
