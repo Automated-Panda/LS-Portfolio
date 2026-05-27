@@ -4,6 +4,60 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 🚨 New TODOs — added 2026-05-27
+
+Soon-ish work batch. Group these together when picking next pieces.
+
+### 🔐 Auth — username signin
+- [ ] Allow login by `username` in addition to `email`. Today `/login` only accepts email.
+- [ ] Update `signInAction` to detect input shape (contains `@` = email, else username) and look up the email from `profiles.username` before calling `signInWithPassword`.
+- [ ] Update label / placeholder on `/login` to read "Email or username".
+
+### 📩 Invite flow is broken
+- [ ] **Bug repro:** invite email lands on signup/signin instead of an invite-acceptance page. Signup says "account with that email exists"; sign-in won't work because the invited user has no password yet.
+- [ ] Investigate: is this Supabase's built-in `inviteUserByEmail` flow, or a custom invite path? (likely the Auth one — `supabase/templates/invite.html` already exists)
+- [ ] The invite email link should redirect to a "set your password" page (uses the invite token, sets password, signs the user in). Currently it appears to drop them on `/signup`.
+- [ ] Likely fix: the invite email's `{{ .ConfirmationURL }}` should point at `/auth/callback?next=/reset-password` (or a new `/auth/accept-invite` route) — verify and patch the template + the callback handler.
+
+### 🧙 Onboarding wizard — needs UX rework
+- [ ] **Soft-steer users to garage-bearing properties first** — highlight residential / garage options, dim or warn on non-garage picks (don't hard-block, but make it obvious which path leads to "can store cars")
+- [ ] **Replace the click-the-row hub interaction with explicit buttons.** Today after picking properties, clicking a row in the hub list to open upgrades/cars is non-obvious. Add visible CTAs per row like "Pick upgrades" + "Add cars" buttons.
+- [ ] Smoother flow from property → upgrades → cars (the current state-machine works but feels clunky)
+
+### 🅿️ Storage picker — hide non-garage properties
+- [ ] When assigning a vehicle to storage (`InstanceDrawer` → "Stored at"), filter the property dropdown to only owned properties where `counts_as_garage = true` (or capacity > 0). No point showing a Casino Penthouse without garage, or a Hangar, if the vehicle is a car.
+- [ ] Consider: should we also filter by asset class? (e.g. only show hangars when storing aircraft, only show yachts/marinas when storing boats — separate, bigger question)
+
+### 🏠 PropertyDrawer — show + remove assigned cars
+- [ ] In `PropertyDrawer` (used by wizard hub + `/my-properties`), under each storage upgrade, list the currently-assigned vehicles with a remove (✕) button per row.
+- [ ] Removing here calls `assignVehicleStorage(vehicleInstanceId, null, null)` (un-assigns but keeps the vehicle owned).
+
+### ➕ Vehicle browse — add a "-" alongside "+"
+- [ ] On `/vehicles` cards, today clicking the card / + button adds one more instance via `addVehicleInstance`. Add a way to decrement directly from the browse page — likely a small counter widget (`- N +`) on owned cards.
+- [ ] Need to confirm: should the "-" remove the **most recently added** instance, or any of them? (See clarifying Q below.)
+
+### 🏷️ InstanceDrawer rename + collapse-to-buttons
+- [ ] Rename **Nickname** → **Custom Name**
+- [ ] Rename **Custom Tags** → **Highlight Features** (button label can be just "Highlights")
+- [ ] Replace always-visible input boxes with collapsed "+" buttons:
+  - `+ Custom Name` — click reveals text input (or shows the current value with edit pencil if already set)
+  - `+ Highlights` — click reveals the tag chip-input
+  - `+ Notes` — click reveals the textarea
+- [ ] Buttons live in a row under the vehicle header; clicking expands the field inline.
+
+### 🧹 Bulk removal — clear-category + nuclear reset
+- [ ] **Remove-all-by-category** buttons:
+  - "Remove all planes"
+  - "Remove all boats"
+  - "Remove all businesses"
+  - "Remove all residences" / "Remove all garages"
+  - etc.
+- [ ] Each shows a confirm dialog with the count (e.g. "Remove 8 aircraft?") before firing
+- [ ] Server actions: `removeAllVehiclesInCategory(category)` and `removeAllPropertiesInGroup(ownershipGroup)`
+- [ ] **Nuclear reset** button on `/profile` or a settings page: "Reset portfolio" — unowns everything (vehicles + properties + businesses + organizer plans). Two-step confirm with typing "RESET" to enable.
+
+---
+
 ## 🔜 LSIA Vehicle Warehouse — missing from DB (first thing tomorrow)
 
 > The LSIA (Los Santos International Airport) Vehicle Warehouse is missing from the seed. Current seed has 5 vehicle-warehouse instances; should be 6.
@@ -138,6 +192,14 @@ Per-mansion config — user picks which of the 3 in-game AI assistants they have
 - [ ] Build the editor canvas + drag interactions
 - [ ] Wire assign/unassign actions
 - [ ] Visual indicator for empty vs filled slots
+
+---
+
+## 🌟 Bigger future features (longer-term)
+
+- **Drag vehicles into My Properties** — drag from the vehicle list, when dragging the `/my-properties` page opens automatically, then drop onto the destination property to assign it. Cross-page drag interaction; needs careful HTML5-drag-and-drop handling or a lib.
+- **Voice-to-text on the AI Organizer** — mic button on `/organize` chat input that uses Web Speech API to dictate the prompt. Probably gated to browsers that support it.
+- **Demo video** — record a polished walkthrough specifically showcasing the AI Organizer (chat → plan → apply → undo flow). Lives on the marketing site landing page.
 
 ---
 
