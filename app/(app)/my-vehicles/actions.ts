@@ -14,6 +14,7 @@ export async function assignVehicleStorage(opts: {
   ownedVehicleId: string;
   ownedPropertyId: string | null;
   assignedUpgradeId: string | null;
+  subSlot?: string | null;
 }): Promise<Result | { capacityExceeded: { capacity: number; current: number } }> {
   const supabase = await createClient();
   const {
@@ -25,7 +26,7 @@ export async function assignVehicleStorage(opts: {
   if (opts.ownedPropertyId === null) {
     const { error } = await supabase
       .from("user_owned_vehicles")
-      .update({ stored_in_property_id: null, assigned_upgrade_id: null })
+      .update({ stored_in_property_id: null, assigned_upgrade_id: null, sub_slot: null })
       .eq("id", opts.ownedVehicleId)
       .eq("user_id", user.id);
     if (error) return { error: error.message };
@@ -42,11 +43,39 @@ export async function assignVehicleStorage(opts: {
     return { capacityExceeded: { capacity, current } };
   }
 
+  // Sub-slot capacity check (when assigning to a specific labelled sub-slot)
+  if (opts.subSlot && opts.assignedUpgradeId) {
+    const { data: upgrade } = await supabase
+      .from("property_upgrades")
+      .select("sub_slots")
+      .eq("id", opts.assignedUpgradeId)
+      .maybeSingle();
+    type SubSlot = { label: string; capacity: number };
+    const slots = (upgrade?.sub_slots ?? null) as SubSlot[] | null;
+    const slot = slots?.find((s) => s.label === opts.subSlot) ?? null;
+    if (!slot) return { error: `Sub-slot ${opts.subSlot} not found on upgrade.` };
+
+    const { count: subCount } = await supabase
+      .from("user_owned_vehicles")
+      .select("id", { count: "exact", head: true })
+      .eq("stored_in_property_id", opts.ownedPropertyId)
+      .eq("assigned_upgrade_id", opts.assignedUpgradeId)
+      .eq("sub_slot", opts.subSlot)
+      .neq("id", opts.ownedVehicleId); // exclude self when re-saving same slot
+
+    if ((subCount ?? 0) >= slot.capacity) {
+      return {
+        capacityExceeded: { capacity: slot.capacity, current: subCount ?? 0 },
+      };
+    }
+  }
+
   const { error } = await supabase
     .from("user_owned_vehicles")
     .update({
       stored_in_property_id: opts.ownedPropertyId,
       assigned_upgrade_id: opts.assignedUpgradeId,
+      sub_slot: opts.subSlot ?? null,
     })
     .eq("id", opts.ownedVehicleId)
     .eq("user_id", user.id);

@@ -65,6 +65,11 @@ function buildOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         capacity: 20,
         required_upgrade_id: null,
         notes: null,
+        sub_slots: [
+          { label: "1A", capacity: 6 },
+          { label: "1B", capacity: 7 },
+          { label: "1C", capacity: 7 },
+        ],
       },
       {
         id: `${loc.id}-garage-2`,
@@ -73,6 +78,11 @@ function buildOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         capacity: 20,
         required_upgrade_id: `${loc.id}-garage-1`,
         notes: null,
+        sub_slots: [
+          { label: "2A", capacity: 6 },
+          { label: "2B", capacity: 7 },
+          { label: "2C", capacity: 7 },
+        ],
       },
       {
         id: `${loc.id}-garage-3`,
@@ -81,6 +91,11 @@ function buildOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         capacity: 20,
         required_upgrade_id: `${loc.id}-garage-2`,
         notes: "Fully upgraded Office Garage holds 60 vehicles total",
+        sub_slots: [
+          { label: "3A", capacity: 6 },
+          { label: "3B", capacity: 7 },
+          { label: "3C", capacity: 7 },
+        ],
       },
       {
         id: `${loc.id}-gun-locker`,

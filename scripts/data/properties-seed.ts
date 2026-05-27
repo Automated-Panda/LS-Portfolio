@@ -21,6 +21,7 @@ import { AGENCIES } from "./agencies-seed";
 import { ARCADES } from "./arcades-seed";
 import { AUTO_SHOPS } from "./auto-shops-seed";
 import { SALVAGE_YARDS } from "./salvage-yards-seed";
+import { BAIL_OFFICES_SEED } from "./bail-offices-seed";
 import { VEHICLE_WAREHOUSES } from "./vehicle-warehouses-seed";
 import { CARGO_WAREHOUSES } from "./cargo-warehouses-seed";
 import { HANGARS_SEED } from "./hangars-seed";
@@ -32,6 +33,15 @@ import {
   CASH_BUSINESSES,
   FORGERY_BUSINESSES,
 } from "./biker-businesses-seed";
+import {
+  MCKENZIE_HANGAR_SEED,
+  HIGGINS_HELITOURS_SEED,
+} from "./aviation-properties-seed";
+import {
+  GARMENT_FACTORY_SEED,
+  SMOKE_ON_THE_WATER_SEED,
+  HANDS_ON_CAR_WASH_SEED,
+} from "./sp-businesses-seed";
 
 /**
  * Phase 4b granular property seed — full fanout.
@@ -47,9 +57,11 @@ import {
  *                 casino-penthouse, mansion
  *   Garage      — stand-alone-garage, eclipse-blvd-garages
  *   Business    — nightclub, ceo-office, mc-clubhouse, bunker, facility,
- *                 agency, arcade, auto-shop, salvage-yard,
+ *                 agency, arcade, auto-shop, salvage-yard, bail-office,
  *                 vehicle-warehouse, hangar, yacht,
- *                 biker-business-{coke,meth,weed,cash,forgery}
+ *                 biker-business-{coke,meth,weed,cash,forgery},
+ *                 mckenzie-hangar (SP-only), higgins-helitours (SP-only),
+ *                 garment-factory, smoke-on-the-water, hands-on-car-wash
  */
 export const PROPERTIES_SEED: Omit<Property, "image_path">[] = [
   // Residential
@@ -71,11 +83,19 @@ export const PROPERTIES_SEED: Omit<Property, "image_path">[] = [
   ...ARCADES,
   ...AUTO_SHOPS,
   ...SALVAGE_YARDS,
+  ...BAIL_OFFICES_SEED,
   ...VEHICLE_WAREHOUSES,
   ...CARGO_WAREHOUSES,
   // Aircraft / boats
   ...HANGARS_SEED,
   ...YACHTS_SEED,
+  // SP-only aviation businesses
+  ...MCKENZIE_HANGAR_SEED,
+  ...HIGGINS_HELITOURS_SEED,
+  // SP / narrative-tied businesses (Garment Factory, Smoke on the Water, Hands On Car Wash)
+  ...GARMENT_FACTORY_SEED,
+  ...SMOKE_ON_THE_WATER_SEED,
+  ...HANDS_ON_CAR_WASH_SEED,
   // Nightclub + biker businesses
   ...NIGHTCLUBS_SEED,
   ...COKE_BUSINESSES,

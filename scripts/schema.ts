@@ -37,6 +37,13 @@ export const VehicleSchema = z.object({
 });
 export const VehiclesFileSchema = z.array(VehicleSchema);
 
+export const SubSlotSchema = z.object({
+  label: z.string().min(1),
+  capacity: z.number().int().min(0),
+  /** Optional: ID of another upgrade that must be installed for this sub-slot to exist (e.g. the mansion Podium upgrade unlocks the podium sub-slot). */
+  required_upgrade_id: z.string().nullable().optional(),
+});
+
 export const PropertyUpgradeSchema = z.object({
   id: z.string().min(1),
   display_name: z.string().min(1),
@@ -46,6 +53,8 @@ export const PropertyUpgradeSchema = z.object({
   notes: z.string().nullable(),
   // Upgrade purchase price in $. Null = unsourced.
   price: z.number().int().min(0).nullable().optional(),
+  /** Optional sub-slot breakdown. Sum of capacities should equal the upgrade's capacity (or, for an "always-on" upgrade like the mansion's base 20-car slot, the property's base_capacity). */
+  sub_slots: z.array(SubSlotSchema).nullable().optional(),
 });
 
 export const PropertySchema = z.object({

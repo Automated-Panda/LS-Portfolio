@@ -171,6 +171,7 @@ async function main(): Promise<void> {
       notes: u.notes,
       sort_order: ui,
       price: u.price ?? null,
+      sub_slots: u.sub_slots ?? null,
     })),
   );
   console.log(`Importing ${upgradeRows.length} property_upgrades...`);

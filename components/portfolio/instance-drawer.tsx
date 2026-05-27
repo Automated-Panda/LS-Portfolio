@@ -52,6 +52,7 @@ export function InstanceDrawer({
   const [upgradeId, setUpgradeId] = useState(
     instance.storage?.assigned_upgrade_id ?? "",
   );
+  const [subSlot, setSubSlot] = useState(instance.storage?.sub_slot ?? "");
   const [isPending, startTransition] = useTransition();
 
   // Auto-expand fields that already have content on open. Empty fields show
@@ -97,6 +98,8 @@ export function InstanceDrawer({
     selectedProperty?.upgrades.filter(
       (u) => u.is_installed && u.capacity > 0,
     ) ?? [];
+  const selectedUpgrade = installedUpgrades.find((u) => u.id === upgradeId);
+  const subSlotsAvailable = selectedUpgrade?.sub_slots ?? null;
 
   const handleSave = () => {
     startTransition(async () => {
@@ -115,6 +118,7 @@ export function InstanceDrawer({
         ownedVehicleId: instance.id,
         ownedPropertyId: propertyId || null,
         assignedUpgradeId: upgradeId || null,
+        subSlot: subSlot || null,
       });
       if ("error" in storage) {
         toast.error(storage.error);
@@ -175,6 +179,7 @@ export function InstanceDrawer({
               onChange={(e) => {
                 setPropertyId(e.target.value);
                 setUpgradeId("");
+                setSubSlot("");
               }}
             >
               <option value="">— Unassigned —</option>
@@ -188,12 +193,29 @@ export function InstanceDrawer({
               <select
                 className="rounded-md border bg-background px-3 py-2 text-sm"
                 value={upgradeId}
-                onChange={(e) => setUpgradeId(e.target.value)}
+                onChange={(e) => {
+                  setUpgradeId(e.target.value);
+                  setSubSlot("");
+                }}
               >
                 <option value="">Base storage</option>
                 {installedUpgrades.map((u) => (
                   <option key={u.id} value={u.id}>
                     {u.display_name} ({u.capacity})
+                  </option>
+                ))}
+              </select>
+            )}
+            {subSlotsAvailable && subSlotsAvailable.length > 0 && (
+              <select
+                className="rounded-md border bg-background px-3 py-2 text-sm"
+                value={subSlot}
+                onChange={(e) => setSubSlot(e.target.value)}
+              >
+                <option value="">— Anywhere in {selectedUpgrade?.display_name} —</option>
+                {subSlotsAvailable.map((s) => (
+                  <option key={s.label} value={s.label}>
+                    {s.label} ({s.cars_here} / {s.capacity})
                   </option>
                 ))}
               </select>

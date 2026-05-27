@@ -2343,6 +2343,20 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "1A",
+            "capacity": 6
+          },
+          {
+            "label": "1B",
+            "capacity": 7
+          },
+          {
+            "label": "1C",
+            "capacity": 7
+          }
+        ],
         "price": 1150000
       },
       {
@@ -2352,6 +2366,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-west-garage-1",
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "2A",
+            "capacity": 6
+          },
+          {
+            "label": "2B",
+            "capacity": 7
+          },
+          {
+            "label": "2C",
+            "capacity": 7
+          }
+        ],
         "price": 855000
       },
       {
@@ -2361,6 +2389,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-west-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "sub_slots": [
+          {
+            "label": "3A",
+            "capacity": 6
+          },
+          {
+            "label": "3B",
+            "capacity": 7
+          },
+          {
+            "label": "3C",
+            "capacity": 7
+          }
+        ],
         "price": 745000
       },
       {
@@ -2417,6 +2459,20 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "1A",
+            "capacity": 6
+          },
+          {
+            "label": "1B",
+            "capacity": 7
+          },
+          {
+            "label": "1C",
+            "capacity": 7
+          }
+        ],
         "price": 1150000
       },
       {
@@ -2426,6 +2482,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-arcadius-business-center-garage-1",
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "2A",
+            "capacity": 6
+          },
+          {
+            "label": "2B",
+            "capacity": 7
+          },
+          {
+            "label": "2C",
+            "capacity": 7
+          }
+        ],
         "price": 855000
       },
       {
@@ -2435,6 +2505,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-arcadius-business-center-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "sub_slots": [
+          {
+            "label": "3A",
+            "capacity": 6
+          },
+          {
+            "label": "3B",
+            "capacity": 7
+          },
+          {
+            "label": "3C",
+            "capacity": 7
+          }
+        ],
         "price": 745000
       },
       {
@@ -2491,6 +2575,20 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "1A",
+            "capacity": 6
+          },
+          {
+            "label": "1B",
+            "capacity": 7
+          },
+          {
+            "label": "1C",
+            "capacity": 7
+          }
+        ],
         "price": 1150000
       },
       {
@@ -2500,6 +2598,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-lombank-west-garage-1",
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "2A",
+            "capacity": 6
+          },
+          {
+            "label": "2B",
+            "capacity": 7
+          },
+          {
+            "label": "2C",
+            "capacity": 7
+          }
+        ],
         "price": 855000
       },
       {
@@ -2509,6 +2621,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-lombank-west-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "sub_slots": [
+          {
+            "label": "3A",
+            "capacity": 6
+          },
+          {
+            "label": "3B",
+            "capacity": 7
+          },
+          {
+            "label": "3C",
+            "capacity": 7
+          }
+        ],
         "price": 745000
       },
       {
@@ -2565,6 +2691,20 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "1A",
+            "capacity": 6
+          },
+          {
+            "label": "1B",
+            "capacity": 7
+          },
+          {
+            "label": "1C",
+            "capacity": 7
+          }
+        ],
         "price": 1150000
       },
       {
@@ -2574,6 +2714,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-tower-garage-1",
         "notes": null,
+        "sub_slots": [
+          {
+            "label": "2A",
+            "capacity": 6
+          },
+          {
+            "label": "2B",
+            "capacity": 7
+          },
+          {
+            "label": "2C",
+            "capacity": 7
+          }
+        ],
         "price": 855000
       },
       {
@@ -2583,6 +2737,20 @@
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-tower-garage-2",
         "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "sub_slots": [
+          {
+            "label": "3A",
+            "capacity": 6
+          },
+          {
+            "label": "3B",
+            "capacity": 7
+          },
+          {
+            "label": "3C",
+            "capacity": 7
+          }
+        ],
         "price": 745000
       },
       {
@@ -5705,6 +5873,466 @@
     "price": 1620000
   },
   {
+    "id": "bail-office-downtown-vinewood",
+    "display_name": "Downtown Vinewood Bail Office",
+    "property_type": "business",
+    "subtype": "bail-office",
+    "subtype_display": "Bail Office",
+    "location": "Downtown Vinewood, Los Santos",
+    "neighborhood": "Downtown Vinewood",
+    "price": 2620000,
+    "capacity": 3,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "bail-office-downtown-vinewood-style-penal-vintage",
+        "display_name": "Style: Penal Vintage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default interior style (free).",
+        "price": 0
+      },
+      {
+        "id": "bail-office-downtown-vinewood-style-criminal-patterns",
+        "display_name": "Style: Criminal Patterns",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($125,000).",
+        "price": 125000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-style-courtroom-teak",
+        "display_name": "Style: Courtroom Teak",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($145,000).",
+        "price": 145000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-enforcement-agent-1",
+        "display_name": "Enforcement Agent (1 Agent)",
+        "tier": 1,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Hire one enforcement agent to assist with bounty targets ($750,000).",
+        "price": 750000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-enforcement-agent-2",
+        "display_name": "Enforcement Agents (2 Agents)",
+        "tier": 2,
+        "capacity": 0,
+        "required_upgrade_id": "bail-office-downtown-vinewood-enforcement-agent-1",
+        "notes": "Upgrade to two agents; requires 1 Agent already hired ($1,500,000 total).",
+        "price": 1500000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Sleeping accommodations; adds wardrobe and respawn point ($295,000).",
+        "price": 295000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-gun-locker",
+        "display_name": "Gun Locker",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Allows loadout customisation and weapon hiding ($175,000).",
+        "price": 175000
+      },
+      {
+        "id": "bail-office-downtown-vinewood-armor-plating",
+        "display_name": "Armor Plating",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reinforces the office against attack ($125,000).",
+        "price": 125000
+      }
+    ],
+    "_sources": {
+      "fandom": null,
+      "gtabase": "https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/bail-office-downtown-vinewood.webp"
+  },
+  {
+    "id": "bail-office-mission-row",
+    "display_name": "Mission Row Bail Office",
+    "property_type": "business",
+    "subtype": "bail-office",
+    "subtype_display": "Bail Office",
+    "location": "Mission Row, Los Santos",
+    "neighborhood": "Mission Row",
+    "price": 2390000,
+    "capacity": 3,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "bail-office-mission-row-style-penal-vintage",
+        "display_name": "Style: Penal Vintage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default interior style (free).",
+        "price": 0
+      },
+      {
+        "id": "bail-office-mission-row-style-criminal-patterns",
+        "display_name": "Style: Criminal Patterns",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($125,000).",
+        "price": 125000
+      },
+      {
+        "id": "bail-office-mission-row-style-courtroom-teak",
+        "display_name": "Style: Courtroom Teak",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($145,000).",
+        "price": 145000
+      },
+      {
+        "id": "bail-office-mission-row-enforcement-agent-1",
+        "display_name": "Enforcement Agent (1 Agent)",
+        "tier": 1,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Hire one enforcement agent to assist with bounty targets ($750,000).",
+        "price": 750000
+      },
+      {
+        "id": "bail-office-mission-row-enforcement-agent-2",
+        "display_name": "Enforcement Agents (2 Agents)",
+        "tier": 2,
+        "capacity": 0,
+        "required_upgrade_id": "bail-office-mission-row-enforcement-agent-1",
+        "notes": "Upgrade to two agents; requires 1 Agent already hired ($1,500,000 total).",
+        "price": 1500000
+      },
+      {
+        "id": "bail-office-mission-row-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Sleeping accommodations; adds wardrobe and respawn point ($295,000).",
+        "price": 295000
+      },
+      {
+        "id": "bail-office-mission-row-gun-locker",
+        "display_name": "Gun Locker",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Allows loadout customisation and weapon hiding ($175,000).",
+        "price": 175000
+      },
+      {
+        "id": "bail-office-mission-row-armor-plating",
+        "display_name": "Armor Plating",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reinforces the office against attack ($125,000).",
+        "price": 125000
+      }
+    ],
+    "_sources": {
+      "fandom": null,
+      "gtabase": "https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/bail-office-mission-row.webp"
+  },
+  {
+    "id": "bail-office-del-perro",
+    "display_name": "Del Perro Bail Office",
+    "property_type": "business",
+    "subtype": "bail-office",
+    "subtype_display": "Bail Office",
+    "location": "Del Perro, Los Santos",
+    "neighborhood": "Del Perro",
+    "price": 2350000,
+    "capacity": 3,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "bail-office-del-perro-style-penal-vintage",
+        "display_name": "Style: Penal Vintage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default interior style (free).",
+        "price": 0
+      },
+      {
+        "id": "bail-office-del-perro-style-criminal-patterns",
+        "display_name": "Style: Criminal Patterns",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($125,000).",
+        "price": 125000
+      },
+      {
+        "id": "bail-office-del-perro-style-courtroom-teak",
+        "display_name": "Style: Courtroom Teak",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($145,000).",
+        "price": 145000
+      },
+      {
+        "id": "bail-office-del-perro-enforcement-agent-1",
+        "display_name": "Enforcement Agent (1 Agent)",
+        "tier": 1,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Hire one enforcement agent to assist with bounty targets ($750,000).",
+        "price": 750000
+      },
+      {
+        "id": "bail-office-del-perro-enforcement-agent-2",
+        "display_name": "Enforcement Agents (2 Agents)",
+        "tier": 2,
+        "capacity": 0,
+        "required_upgrade_id": "bail-office-del-perro-enforcement-agent-1",
+        "notes": "Upgrade to two agents; requires 1 Agent already hired ($1,500,000 total).",
+        "price": 1500000
+      },
+      {
+        "id": "bail-office-del-perro-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Sleeping accommodations; adds wardrobe and respawn point ($295,000).",
+        "price": 295000
+      },
+      {
+        "id": "bail-office-del-perro-gun-locker",
+        "display_name": "Gun Locker",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Allows loadout customisation and weapon hiding ($175,000).",
+        "price": 175000
+      },
+      {
+        "id": "bail-office-del-perro-armor-plating",
+        "display_name": "Armor Plating",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reinforces the office against attack ($125,000).",
+        "price": 125000
+      }
+    ],
+    "_sources": {
+      "fandom": null,
+      "gtabase": "https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/bail-office-del-perro.webp"
+  },
+  {
+    "id": "bail-office-davis",
+    "display_name": "Davis Bail Office",
+    "property_type": "business",
+    "subtype": "bail-office",
+    "subtype_display": "Bail Office",
+    "location": "Davis, Los Santos",
+    "neighborhood": "Davis",
+    "price": 2000000,
+    "capacity": 3,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "bail-office-davis-style-penal-vintage",
+        "display_name": "Style: Penal Vintage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default interior style (free).",
+        "price": 0
+      },
+      {
+        "id": "bail-office-davis-style-criminal-patterns",
+        "display_name": "Style: Criminal Patterns",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($125,000).",
+        "price": 125000
+      },
+      {
+        "id": "bail-office-davis-style-courtroom-teak",
+        "display_name": "Style: Courtroom Teak",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($145,000).",
+        "price": 145000
+      },
+      {
+        "id": "bail-office-davis-enforcement-agent-1",
+        "display_name": "Enforcement Agent (1 Agent)",
+        "tier": 1,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Hire one enforcement agent to assist with bounty targets ($750,000).",
+        "price": 750000
+      },
+      {
+        "id": "bail-office-davis-enforcement-agent-2",
+        "display_name": "Enforcement Agents (2 Agents)",
+        "tier": 2,
+        "capacity": 0,
+        "required_upgrade_id": "bail-office-davis-enforcement-agent-1",
+        "notes": "Upgrade to two agents; requires 1 Agent already hired ($1,500,000 total).",
+        "price": 1500000
+      },
+      {
+        "id": "bail-office-davis-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Sleeping accommodations; adds wardrobe and respawn point ($295,000).",
+        "price": 295000
+      },
+      {
+        "id": "bail-office-davis-gun-locker",
+        "display_name": "Gun Locker",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Allows loadout customisation and weapon hiding ($175,000).",
+        "price": 175000
+      },
+      {
+        "id": "bail-office-davis-armor-plating",
+        "display_name": "Armor Plating",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reinforces the office against attack ($125,000).",
+        "price": 125000
+      }
+    ],
+    "_sources": {
+      "fandom": null,
+      "gtabase": "https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/bail-office-davis.webp"
+  },
+  {
+    "id": "bail-office-paleto-bay",
+    "display_name": "Paleto Bay Bail Office",
+    "property_type": "business",
+    "subtype": "bail-office",
+    "subtype_display": "Bail Office",
+    "location": "Paleto Bay, Blaine County",
+    "neighborhood": "Paleto Bay",
+    "price": 1650000,
+    "capacity": 3,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "bail-office-paleto-bay-style-penal-vintage",
+        "display_name": "Style: Penal Vintage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default interior style (free).",
+        "price": 0
+      },
+      {
+        "id": "bail-office-paleto-bay-style-criminal-patterns",
+        "display_name": "Style: Criminal Patterns",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($125,000).",
+        "price": 125000
+      },
+      {
+        "id": "bail-office-paleto-bay-style-courtroom-teak",
+        "display_name": "Style: Courtroom Teak",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate interior style ($145,000).",
+        "price": 145000
+      },
+      {
+        "id": "bail-office-paleto-bay-enforcement-agent-1",
+        "display_name": "Enforcement Agent (1 Agent)",
+        "tier": 1,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Hire one enforcement agent to assist with bounty targets ($750,000).",
+        "price": 750000
+      },
+      {
+        "id": "bail-office-paleto-bay-enforcement-agent-2",
+        "display_name": "Enforcement Agents (2 Agents)",
+        "tier": 2,
+        "capacity": 0,
+        "required_upgrade_id": "bail-office-paleto-bay-enforcement-agent-1",
+        "notes": "Upgrade to two agents; requires 1 Agent already hired ($1,500,000 total).",
+        "price": 1500000
+      },
+      {
+        "id": "bail-office-paleto-bay-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Sleeping accommodations; adds wardrobe and respawn point ($295,000).",
+        "price": 295000
+      },
+      {
+        "id": "bail-office-paleto-bay-gun-locker",
+        "display_name": "Gun Locker",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Allows loadout customisation and weapon hiding ($175,000).",
+        "price": 175000
+      },
+      {
+        "id": "bail-office-paleto-bay-armor-plating",
+        "display_name": "Armor Plating",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Reinforces the office against attack ($125,000).",
+        "price": 125000
+      }
+    ],
+    "_sources": {
+      "fandom": null,
+      "gtabase": "https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/bail-office-paleto-bay.webp"
+  },
+  {
     "id": "vehicle-warehouse-murrieta-heights",
     "display_name": "Murrieta Heights Vehicle Warehouse",
     "property_type": "business",
@@ -6766,6 +7394,126 @@
     "parent_building": null,
     "image_path": "data/images/properties/yacht-galaxy-super-yacht.webp",
     "price": 6000000
+  },
+  {
+    "id": "mckenzie-field-hangar",
+    "display_name": "McKenzie Field Hangar",
+    "property_type": "business",
+    "subtype": "mckenzie-hangar",
+    "subtype_display": "McKenzie Hangar",
+    "location": "McKenzie Field, Grapeseed",
+    "neighborhood": "Grapeseed",
+    "price": 150000,
+    "capacity": 0,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mckenzie-field-hangar-hangar-storage",
+        "display_name": "Hangar Storage",
+        "tier": null,
+        "capacity": 4,
+        "required_upgrade_id": null,
+        "notes": "Open-sided dirt-strip hangar. Stores small fixed-wing aircraft (crop-dusters, Velums). Included with purchase; no separate upgrade cost.",
+        "price": null
+      }
+    ],
+    "verify": true,
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/McKenzie_Field_Hangar",
+      "gtabase": null
+    },
+    "parent_building": null,
+    "image_path": null
+  },
+  {
+    "id": "higgins-helitours",
+    "display_name": "Higgins Helitours",
+    "property_type": "business",
+    "subtype": "higgins-helitours",
+    "subtype_display": "Higgins Helitours",
+    "location": "LSIA, La Puerta, Los Santos",
+    "neighborhood": "La Puerta",
+    "price": 1620000,
+    "capacity": 0,
+    "counts_as_garage": false,
+    "upgrades": [
+      {
+        "id": "higgins-helitours-helipad",
+        "display_name": "Helipad",
+        "tier": null,
+        "capacity": 2,
+        "required_upgrade_id": null,
+        "notes": "Open helipad with two Mavericks. Included with purchase. Generates passive income from tour operations.",
+        "price": null
+      }
+    ],
+    "verify": true,
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Higgins_Helitours",
+      "gtabase": null
+    },
+    "parent_building": null,
+    "image_path": null
+  },
+  {
+    "id": "sp-garment-factory",
+    "display_name": "Garment Factory",
+    "property_type": "business",
+    "subtype": "garment-factory",
+    "subtype_display": "Garment Factory",
+    "location": "Popular Street, La Mesa",
+    "neighborhood": "La Mesa",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "price": 2350000,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Garment_Factory",
+      "gtabase": "https://www.gtabase.com/properties/gta-online/darnell-bros-garment-factory"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/sp-garment-factory.webp"
+  },
+  {
+    "id": "sp-smoke-on-the-water",
+    "display_name": "Smoke on the Water",
+    "property_type": "business",
+    "subtype": "smoke-on-the-water",
+    "subtype_display": "Smoke On The Water",
+    "location": "Vespucci Beach Sidewalk, Vespucci Beach",
+    "neighborhood": "Vespucci Beach",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "price": 204000,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Smoke_on_the_Water_(business)",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/story-mode/smoke-on-the-water"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/sp-smoke-on-the-water.webp"
+  },
+  {
+    "id": "sp-hands-on-car-wash",
+    "display_name": "Hands On Car Wash",
+    "property_type": "business",
+    "subtype": "hands-on-car-wash",
+    "subtype_display": "Hands On Car Wash",
+    "location": "Innocence Boulevard, Strawberry",
+    "neighborhood": "Strawberry",
+    "capacity": 0,
+    "counts_as_garage": false,
+    "price": 1000000,
+    "upgrades": [],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Hands_On_Car_Wash",
+      "gtabase": "https://www.gtabase.com/properties/gta-online/hands-on-car-wash"
+    },
+    "verify": true,
+    "parent_building": null,
+    "image_path": "data/images/properties/sp-hands-on-car-wash.webp"
   },
   {
     "id": "nightclub-la-mesa",

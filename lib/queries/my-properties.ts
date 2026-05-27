@@ -26,6 +26,13 @@ export type OwnedPropertyDetail = {
     is_installed: boolean;
     cars_here: number;        // only meaningful for storage-capacity upgrades
     price: number | null;     // upgrade purchase price in $, null if unsourced
+    /** When set, this upgrade is subdivided into addressable sub-slots (e.g. CEO Office floor → A/B/C, mansion → garage/driveway/podium). Sum of capacities matches the upgrade's capacity. */
+    sub_slots: Array<{
+      label: string;
+      capacity: number;
+      required_upgrade_id?: string | null;
+      cars_here: number;
+    }> | null;
   }>;
 };
 
@@ -55,11 +62,11 @@ export async function getOwnedPropertiesWithStorage(
       properties!inner (
         display_name, property_type, subtype, subtype_display, neighborhood, image_path,
         capacity, ownership_group, counts_as_garage, price,
-        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price )
+        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
       user_owned_vehicles!stored_in_property_id (
-        id, assigned_upgrade_id
+        id, assigned_upgrade_id, sub_slot
       )
     `)
     .eq("user_id", userId)
@@ -76,10 +83,12 @@ export async function getOwnedPropertiesWithStorage(
 
   return (data ?? []).map((row: Row) => {
     const p = Array.isArray(row.properties) ? row.properties[0] : row.properties;
+    type RawSubSlot = { label: string; capacity: number; required_upgrade_id?: string | null };
     const allUpgrades = (p?.property_upgrades ?? []) as Array<{
       id: string; display_name: string; capacity: number;
       required_upgrade_id: string | null; sort_order: number;
       price: number | null;
+      sub_slots: RawSubSlot[] | null;
     }>;
     const installedIds = new Set(
       (row.user_owned_property_upgrades ?? []).map(
@@ -87,14 +96,17 @@ export async function getOwnedPropertiesWithStorage(
       ),
     );
     const cars = (row.user_owned_vehicles ?? []) as Array<{
-      id: string; assigned_upgrade_id: string | null;
+      id: string; assigned_upgrade_id: string | null; sub_slot: string | null;
     }>;
     const carsByUpgrade = new Map<string | null, number>();
+    const carsByUpgradeSubSlot = new Map<string, number>(); // key = `${upgradeId ?? "base"}::${subSlot ?? ""}`
     for (const c of cars) {
       carsByUpgrade.set(
         c.assigned_upgrade_id,
         (carsByUpgrade.get(c.assigned_upgrade_id) ?? 0) + 1,
       );
+      const key = `${c.assigned_upgrade_id ?? "base"}::${c.sub_slot ?? ""}`;
+      carsByUpgradeSubSlot.set(key, (carsByUpgradeSubSlot.get(key) ?? 0) + 1);
     }
 
     return {
@@ -121,6 +133,14 @@ export async function getOwnedPropertiesWithStorage(
           price: u.price ?? null,
           is_installed: installedIds.has(u.id),
           cars_here: carsByUpgrade.get(u.id) ?? 0,
+          sub_slots: u.sub_slots
+            ? u.sub_slots.map((s) => ({
+                label: s.label,
+                capacity: s.capacity,
+                required_upgrade_id: s.required_upgrade_id ?? null,
+                cars_here: carsByUpgradeSubSlot.get(`${u.id}::${s.label}`) ?? 0,
+              }))
+            : null,
         })),
     };
   });

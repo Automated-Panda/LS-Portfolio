@@ -47,6 +47,7 @@ function v(
           property_subtype_display: "Mock",
           assigned_upgrade_id: storage.upgrade ?? null,
           upgrade_display_name: storage.upgrade ?? null,
+          sub_slot: null,
         }
       : null,
   };
@@ -83,6 +84,7 @@ function p(
       is_installed: u.installed,
       cars_here: 0,
       price: null,
+      sub_slots: null,
     })),
   };
 }
