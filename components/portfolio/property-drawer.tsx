@@ -74,8 +74,16 @@ export function PropertyDrawer({
     });
   };
 
+  // For the Storage section (Garage tab) we want every upgrade that holds
+  // cars — including ones that come with the property (Mansion Garage,
+  // Vinewood floors, MC Clubhouse garage, etc.).
   const storageUpgrades = property.upgrades.filter((u) => u.capacity > 0);
-  const nonStorageUpgrades = property.upgrades.filter((u) => u.capacity === 0);
+  // For the Upgrades tab CHECKLIST we hide included_on_purchase upgrades —
+  // they aren't user choices (the garage comes with the mansion; you can't
+  // un-buy it). They still render as storage blocks in the Garage tab.
+  const upgradeChecklistRows = property.upgrades.filter((u) => !u.included_on_purchase);
+  const storageChecklistRows = upgradeChecklistRows.filter((u) => u.capacity > 0);
+  const nonStorageUpgrades = upgradeChecklistRows.filter((u) => u.capacity === 0);
 
   // Vehicles stored at THIS property, grouped by assigned_upgrade_id (null = base).
   const carsHere = instances.filter(
@@ -177,10 +185,16 @@ export function PropertyDrawer({
   };
 
   const handleSetAllUpgrades = (installed: boolean) => {
-    // Optimistic-set every upgrade for this property.
+    // Optimistic-set every USER-TOGGLEABLE upgrade for this property. Skip
+    // included_on_purchase ones — they're not user choices (the Mansion
+    // Garage comes with the mansion; "Uninstall all" must not orphan its
+    // stored cars).
     setOptimisticInstalled(() => {
       const next = new Map<string, boolean>();
-      for (const u of property.upgrades) next.set(u.id, installed);
+      for (const u of property.upgrades) {
+        if (u.included_on_purchase) continue;
+        next.set(u.id, installed);
+      }
       return next;
     });
     startTransition(async () => {
@@ -269,7 +283,7 @@ export function PropertyDrawer({
                 </div>
               )}
               <UpgradesSection
-                storageUpgrades={storageUpgrades}
+                storageUpgrades={storageChecklistRows}
                 nonStorageUpgrades={nonStorageUpgrades}
                 isInstalled={isInstalled}
                 handleToggleUpgrade={handleToggleUpgrade}
@@ -288,7 +302,7 @@ export function PropertyDrawer({
             </TabsContent>
 
             <TabsContent value="upgrades" className="flex flex-col gap-4 mt-4">
-              {property.upgrades.length > 0 && (
+              {upgradeChecklistRows.length > 0 && (
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline" onClick={() => handleSetAllUpgrades(true)} disabled={isPending} className="flex-1">
                     ✓ Install all upgrades
@@ -299,7 +313,7 @@ export function PropertyDrawer({
                 </div>
               )}
               <UpgradesSection
-                storageUpgrades={storageUpgrades}
+                storageUpgrades={storageChecklistRows}
                 nonStorageUpgrades={nonStorageUpgrades}
                 isInstalled={isInstalled}
                 handleToggleUpgrade={handleToggleUpgrade}

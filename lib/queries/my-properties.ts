@@ -35,6 +35,8 @@ export type OwnedPropertyDetail = {
     }> | null;
     /** Mutex group label: upgrades sharing this label on the same property are mutually exclusive (e.g. yacht models). */
     mutex_group: string | null;
+    /** True when the upgrade unlocks automatically on purchase (e.g. Mansion Garage). Hidden from the Upgrades tab checklist but shown in Storage when it has capacity. */
+    included_on_purchase: boolean;
   }>;
 };
 
@@ -64,7 +66,7 @@ export async function getOwnedPropertiesWithStorage(
       properties!inner (
         display_name, property_type, subtype, subtype_display, neighborhood, image_path,
         capacity, ownership_group, counts_as_garage, price,
-        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots, mutex_group )
+        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots, mutex_group, included_on_purchase )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
       user_owned_vehicles!stored_in_property_id (
@@ -92,6 +94,7 @@ export async function getOwnedPropertiesWithStorage(
       price: number | null;
       sub_slots: RawSubSlot[] | null;
       mutex_group: string | null;
+      included_on_purchase: boolean | null;
     }>;
     const installedIds = new Set(
       (row.user_owned_property_upgrades ?? []).map(
@@ -125,9 +128,14 @@ export async function getOwnedPropertiesWithStorage(
       counts_as_garage: p?.counts_as_garage ?? false,
       ownership_group: p?.ownership_group ?? "",
       price: (p?.price ?? null) as number | null,
-      total_upgrades: allUpgrades.length,
-      installed_upgrades: allUpgrades.filter((u) => installedIds.has(u.id))
-        .length,
+      // Counts represent the USER-FACING upgrade checklist — included_on_purchase
+      // upgrades (Mansion Garage, Vinewood floors, etc.) are not user choices
+      // and are excluded so the "N / M upgrades" badge matches what the user
+      // sees in the Upgrades tab.
+      total_upgrades: allUpgrades.filter((u) => !u.included_on_purchase).length,
+      installed_upgrades: allUpgrades.filter(
+        (u) => !u.included_on_purchase && installedIds.has(u.id),
+      ).length,
       total_cars: cars.length,
       upgrades: allUpgrades
         .sort((a, b) => a.sort_order - b.sort_order)
@@ -135,6 +143,7 @@ export async function getOwnedPropertiesWithStorage(
           ...u,
           price: u.price ?? null,
           mutex_group: u.mutex_group ?? null,
+          included_on_purchase: u.included_on_purchase ?? false,
           is_installed: installedIds.has(u.id),
           cars_here: carsByUpgrade.get(u.id) ?? 0,
           sub_slots: u.sub_slots

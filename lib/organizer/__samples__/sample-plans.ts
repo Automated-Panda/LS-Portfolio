@@ -86,6 +86,7 @@ function p(
       price: null,
       sub_slots: null,
       mutex_group: null,
+      included_on_purchase: false,
     })),
   };
 }
