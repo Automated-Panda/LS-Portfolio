@@ -34,7 +34,7 @@ Soon-ish work batch. Group these together when picking next pieces.
 
 ### ➕ Vehicle browse — add a "-" alongside "+"
 - [ ] On `/vehicles` cards, today clicking the card / + button adds one more instance via `addVehicleInstance`. Add a way to decrement directly from the browse page — likely a small counter widget (`- N +`) on owned cards.
-- [ ] Need to confirm: should the "-" remove the **most recently added** instance, or any of them? (See clarifying Q below.)
+- [ ] **Confirmed UX:** clicking "-" opens a small picker of owned instances (nicknames if set, otherwise "#1", "#2"…). User picks which to remove. Safer for instances with custom metadata.
 
 ### 🏷️ InstanceDrawer rename + collapse-to-buttons
 - [ ] Rename **Nickname** → **Custom Name**
