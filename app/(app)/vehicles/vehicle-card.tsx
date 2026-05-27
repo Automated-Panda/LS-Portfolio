@@ -138,25 +138,22 @@ function VehicleCardImpl({
               type="button"
               onClick={async (e) => {
                 e.stopPropagation();
-                // Need an instance id to open InstanceDrawer. Lazy-fetch the
-                // list once; for N=1 jump straight to the drawer (no need to
-                // disambiguate), for N>1 fall back to the picker popover so
-                // the user can pick WHICH instance to edit.
-                let list = pickerInstances;
-                if (!list) {
-                  setPickerLoading(true);
-                  const r = await getOwnedInstancesForVehicle(vehicle.id);
-                  setPickerLoading(false);
-                  if ("error" in r) {
-                    toast.error(r.error);
-                    return;
-                  }
-                  setPickerInstances(r);
-                  list = r;
+                // Always refetch — the cached pickerInstances can be stale
+                // after +Add in the chip popover (which doesn't push the new
+                // row into the local cache). For N=1 open the drawer
+                // directly, for N>1 open the picker popover so the user can
+                // pick WHICH instance to edit.
+                setPickerLoading(true);
+                const r = await getOwnedInstancesForVehicle(vehicle.id);
+                setPickerLoading(false);
+                if ("error" in r) {
+                  toast.error(r.error);
+                  return;
                 }
-                if (list.length === 1) {
-                  setManagedInstanceId(list[0].id);
-                } else if (list.length > 1) {
+                setPickerInstances(r);
+                if (r.length === 1) {
+                  setManagedInstanceId(r[0].id);
+                } else if (r.length > 1) {
                   setPickerOpen(true);
                 }
               }}

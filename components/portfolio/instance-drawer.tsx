@@ -113,6 +113,33 @@ export function InstanceDrawer({
       })
     : null;
 
+  // Storage-area choice rules:
+  //   - "Base storage" is only an option when the property actually HAS base
+  //     capacity (e.g. apartments, bail offices). Properties whose storage
+  //     lives entirely on an upgrade (mansion, casino penthouse, vinewood
+  //     car club, MC clubhouse, hangar) don't get "Base storage" as a
+  //     phantom option — that confused users into thinking there were two
+  //     places to park when there's really one.
+  //   - If after applying that rule there's only ONE viable area, hide the
+  //     dropdown entirely and auto-select it. The "anywhere" still appears
+  //     when sub-slots exist (e.g. mansion garage/driveway/podium).
+  const hasBaseStorage = (selectedProperty?.base_capacity ?? 0) > 0;
+  const totalStorageAreas = (hasBaseStorage ? 1 : 0) + installedUpgrades.length;
+
+  // Auto-pick the only upgrade when there's no base + exactly 1 upgrade.
+  // useEffect-equivalent guard: only mutate when the current upgradeId is
+  // empty/invalid for the current property.
+  if (
+    selectedProperty &&
+    !hasBaseStorage &&
+    installedUpgrades.length === 1 &&
+    upgradeId !== installedUpgrades[0].id
+  ) {
+    // setState during render is OK when guarded — React will reschedule.
+    // Avoids a separate useEffect that would lag by a render.
+    setUpgradeId(installedUpgrades[0].id);
+  }
+
   const handleSave = () => {
     startTransition(async () => {
       const meta = await updateVehicleInstance({
@@ -207,7 +234,7 @@ export function InstanceDrawer({
                 </option>
               ))}
             </select>
-            {installedUpgrades.length > 0 && (
+            {totalStorageAreas > 1 && (
               <select
                 className="rounded-md border bg-background px-3 py-2 text-sm"
                 value={upgradeId}
@@ -216,7 +243,7 @@ export function InstanceDrawer({
                   setSubSlot("");
                 }}
               >
-                <option value="">Base storage</option>
+                {hasBaseStorage && <option value="">Base storage</option>}
                 {installedUpgrades.map((u) => (
                   <option key={u.id} value={u.id}>
                     {u.display_name} ({u.capacity})
