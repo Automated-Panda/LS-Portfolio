@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { Settings2 } from "lucide-react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import {
@@ -25,6 +26,7 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
+import { InstanceDrawer } from "./instance-drawer";
 import { VehiclePickerModal } from "./vehicle-picker-modal";
 
 type Props = {
@@ -38,7 +40,7 @@ type Props = {
 
 export function PropertyDrawer({
   property,
-  allOwnedProperties: _allOwnedProperties,
+  allOwnedProperties,
   instances,
   open,
   onOpenChange,
@@ -51,6 +53,19 @@ export function PropertyDrawer({
     capacity: number;
     current: number;
   } | null>(null);
+  // Inline car management — opens the same InstanceDrawer used on
+  // /my-vehicles so users can edit nickname / tags / notes without
+  // navigating away from the property drawer.
+  const [managedInstanceId, setManagedInstanceId] = useState<string | null>(null);
+  // Union of all custom_tags across the user's fleet, fed to the tag
+  // autocomplete inside InstanceDrawer.
+  const tagSuggestions = useMemo(
+    () =>
+      Array.from(new Set(instances.flatMap((i) => i.custom_tags))).sort((a, b) =>
+        a.localeCompare(b),
+      ),
+    [instances],
+  );
 
   // Optimistic overrides for upgrade is_installed. Map<upgradeId, installed>.
   // When set, takes precedence over the server-derived `u.is_installed`.
@@ -102,6 +117,10 @@ export function PropertyDrawer({
     storageUpgrades
       .filter((u) => u.is_installed)
       .reduce((sum, u) => sum + u.cars_here, 0);
+
+  const handleManageCar = (instanceId: string) => {
+    setManagedInstanceId(instanceId);
+  };
 
   const handleRemoveFromStorage = (instanceId: string, displayName: string) => {
     startTransition(async () => {
@@ -297,6 +316,7 @@ export function PropertyDrawer({
                 setPickerTarget={setPickerTarget}
                 setPickerOpen={setPickerOpen}
                 handleRemoveFromStorage={handleRemoveFromStorage}
+                handleManageCar={handleManageCar}
                 isPending={isPending}
               />
             </TabsContent>
@@ -330,6 +350,7 @@ export function PropertyDrawer({
                 setPickerTarget={setPickerTarget}
                 setPickerOpen={setPickerOpen}
                 handleRemoveFromStorage={handleRemoveFromStorage}
+                handleManageCar={handleManageCar}
                 isPending={isPending}
               />
             </TabsContent>
@@ -359,6 +380,20 @@ export function PropertyDrawer({
           onOpenChange={setPickerOpen}
         />
       )}
+
+      {managedInstanceId && (() => {
+        const managed = instances.find((v) => v.id === managedInstanceId);
+        if (!managed) return null;
+        return (
+          <InstanceDrawer
+            instance={managed}
+            ownedProperties={allOwnedProperties}
+            tagSuggestions={tagSuggestions}
+            open={true}
+            onOpenChange={(o) => !o && setManagedInstanceId(null)}
+          />
+        );
+      })()}
     </>
   );
 }
@@ -451,6 +486,7 @@ function StorageSection({
   setPickerTarget,
   setPickerOpen,
   handleRemoveFromStorage,
+  handleManageCar,
   isPending,
 }: {
   property: OwnedPropertyDetail;
@@ -465,6 +501,7 @@ function StorageSection({
   }) => void;
   setPickerOpen: (o: boolean) => void;
   handleRemoveFromStorage: (instanceId: string, displayName: string) => void;
+  handleManageCar: (instanceId: string) => void;
   isPending: boolean;
 }) {
   const installed = storageUpgrades.filter((u) => u.is_installed);
@@ -495,6 +532,7 @@ function StorageSection({
                 setPickerOpen(true);
               }}
               onRemoveCar={handleRemoveFromStorage}
+              onManageCar={handleManageCar}
               isPending={isPending}
             />
           )}
@@ -514,6 +552,7 @@ function StorageSection({
                 setPickerOpen(true);
               }}
               onRemoveCar={handleRemoveFromStorage}
+              onManageCar={handleManageCar}
               isPending={isPending}
             />
           ))}
@@ -529,6 +568,7 @@ function StorageBlock({
   cars,
   onAddCars,
   onRemoveCar,
+  onManageCar,
   isPending,
 }: {
   label: string;
@@ -536,6 +576,7 @@ function StorageBlock({
   cars: OwnedVehicleInstance[];
   onAddCars: () => void;
   onRemoveCar: (instanceId: string, displayName: string) => void;
+  onManageCar: (instanceId: string) => void;
   isPending: boolean;
 }) {
   return (
@@ -567,15 +608,28 @@ function StorageBlock({
                     </span>
                   )}
                 </span>
-                <button
-                  type="button"
-                  onClick={() => onRemoveCar(v.id, name)}
-                  disabled={isPending}
-                  className="ml-2 rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
-                  aria-label={`Unassign ${name}`}
-                >
-                  ✕
-                </button>
+                <span className="ml-2 flex items-center gap-0.5">
+                  <button
+                    type="button"
+                    onClick={() => onManageCar(v.id)}
+                    disabled={isPending}
+                    className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent/40 hover:text-foreground disabled:opacity-50"
+                    aria-label={`Manage ${name}`}
+                    title="Manage nickname, tags, notes"
+                  >
+                    <Settings2 className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onRemoveCar(v.id, name)}
+                    disabled={isPending}
+                    className="flex h-7 w-7 items-center justify-center rounded-md text-xs text-muted-foreground hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
+                    aria-label={`Unassign ${name}`}
+                    title="Remove from this slot"
+                  >
+                    ✕
+                  </button>
+                </span>
               </li>
             );
           })}

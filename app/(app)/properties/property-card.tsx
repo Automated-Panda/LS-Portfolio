@@ -34,6 +34,9 @@ type Props = {
   selectionMode?: "browse" | "multi";
   selected?: boolean;
   onSelect?: (propertyId: string) => void;
+  /** When set, the Settings icon (and clicking an owned card) opens the
+   * management drawer in place instead of routing to /my-properties. */
+  onOpenManagement?: (catalogueId: string) => void;
 } & Partial<TowerProps>;
 
 function PropertyCardImpl({
@@ -41,6 +44,7 @@ function PropertyCardImpl({
   selectionMode = "browse",
   selected = false,
   onSelect,
+  onOpenManagement,
   tower,
 }: Props) {
   const router = useRouter();
@@ -54,6 +58,14 @@ function PropertyCardImpl({
   const kindLabel = property.property_type === "business" ? "business" : "property";
 
   const openManagement = () => {
+    // Prefer the in-place handler (used by /properties + /businesses) so the
+    // user stays on the browse grid; fall back to routing for any consumer
+    // that hasn't been wired up to host a PropertyDrawer (e.g. /dashboard
+    // links or older deep links).
+    if (onOpenManagement) {
+      onOpenManagement(property.id);
+      return;
+    }
     router.push(`${ownedDestPath}?open=${encodeURIComponent(property.id)}`);
   };
 
@@ -109,17 +121,14 @@ function PropertyCardImpl({
         setOptimisticOwned(true);
         // For garage-bearing properties, offer a one-click jump straight into
         // the storage picker so the user doesn't have to navigate to
-        // /my-properties manually to start adding cars.
+        // /my-properties manually to start adding cars. Prefer the in-place
+        // drawer (when the parent provides onOpenManagement) so the user
+        // stays on /properties.
         if (property.counts_as_garage && property.max_capacity > 0) {
-          const destPath =
-            property.property_type === "business"
-              ? "/my-businesses"
-              : "/my-properties";
           toast.success(`Added ${property.display_name}`, {
             action: {
               label: "Add cars",
-              onClick: () =>
-                router.push(`${destPath}?open=${encodeURIComponent(property.id)}`),
+              onClick: () => openManagement(),
             },
           });
         }

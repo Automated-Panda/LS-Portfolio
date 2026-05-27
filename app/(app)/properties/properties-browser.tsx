@@ -8,7 +8,10 @@ import type {
   PropertySummary,
 } from "@/lib/properties";
 import { propertyImageUrl } from "@/lib/properties";
+import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { PropertyScope } from "@/lib/queries/properties";
+import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import { TowerUnitsDialog } from "@/components/portfolio/tower-units-dialog";
 
 import { FilterBar } from "./filter-bar";
@@ -19,6 +22,10 @@ type Props = {
   properties: PropertySummary[];
   ownedPropertyIds: string[];
   filters: PropertyFilterOptions;
+  /** Owned detail + instances power the in-place management drawer so the
+   * Settings icon on an owned card doesn't have to redirect to /my-properties. */
+  ownedProperties?: OwnedPropertyDetail[];
+  instances?: OwnedVehicleInstance[];
   selectionMode?: "browse" | "multi";
   selectedIds?: string[];
   onToggleSelection?: (propertyId: string) => void;
@@ -42,6 +49,8 @@ export function PropertiesBrowser({
   properties,
   ownedPropertyIds,
   filters,
+  ownedProperties,
+  instances,
   selectionMode,
   selectedIds,
   onToggleSelection,
@@ -49,6 +58,18 @@ export function PropertiesBrowser({
   const copy = COPY[scope];
   const searchParams = useSearchParams();
   const [openTowerId, setOpenTowerId] = useState<string | null>(null);
+  // Catalogue property_id of the owned property whose management drawer is
+  // open. Only enabled when ownedProperties + instances are supplied
+  // (the /properties + /businesses pages) — selection-mode flows like the
+  // onboarding wizard pass neither and keep the old non-drawer behaviour.
+  const [openOwnedCatalogueId, setOpenOwnedCatalogueId] = useState<
+    string | null
+  >(null);
+  const canOpenDrawerInPlace =
+    !!ownedProperties && !!instances && selectionMode !== "multi";
+  const openOwnedDetail = openOwnedCatalogueId
+    ? ownedProperties?.find((p) => p.property_id === openOwnedCatalogueId) ?? null
+    : null;
 
   const q = (searchParams.get("q") ?? "").toLowerCase().trim();
   const type = searchParams.get("type") ?? "";
@@ -145,6 +166,11 @@ export function PropertiesBrowser({
                 selectionMode={selectionMode ?? "browse"}
                 selected={selectedSet.has(p.id)}
                 onSelect={onToggleSelection}
+                onOpenManagement={
+                  canOpenDrawerInPlace
+                    ? (id) => setOpenOwnedCatalogueId(id)
+                    : undefined
+                }
                 tower={
                   isTower
                     ? {
@@ -171,6 +197,16 @@ export function PropertiesBrowser({
           selectionMode={selectionMode}
           selectedIds={selectedIds}
           onToggleSelection={onToggleSelection}
+        />
+      )}
+
+      {openOwnedDetail && ownedProperties && instances && (
+        <PropertyDrawer
+          property={openOwnedDetail}
+          allOwnedProperties={ownedProperties}
+          instances={instances}
+          open={true}
+          onOpenChange={(o) => !o && setOpenOwnedCatalogueId(null)}
         />
       )}
     </div>
