@@ -7,6 +7,7 @@ import {
   currentCarCountAt,
 } from "@/lib/capacity";
 import { createClient } from "@/lib/supabase/server";
+import { titleCaseTag } from "@/lib/format";
 
 type Result<T = {}> = ({ ok: true } & T) | { error: string };
 
@@ -113,9 +114,21 @@ export async function updateVehicleInstance(opts: {
   if (opts.nickname !== undefined) patch.nickname = opts.nickname;
   if (opts.notes !== undefined) patch.notes = opts.notes;
   if (opts.customTags !== undefined) {
-    patch.custom_tags = Array.from(
-      new Set(opts.customTags.map((t) => t.trim().toLowerCase()).filter(Boolean)),
-    );
+    // Normalize to Title Case (e.g. 'benny wheels' → 'Benny Wheels') and
+    // dedup case-insensitively. Mirrors the client-side titleCaseTag in
+    // CustomTagsInput, but enforces it server-side so direct API writes
+    // can't bypass.
+    const seen = new Set<string>();
+    const normalized: string[] = [];
+    for (const raw of opts.customTags) {
+      const t = titleCaseTag(raw);
+      if (!t) continue;
+      const key = t.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      normalized.push(t);
+    }
+    patch.custom_tags = normalized;
   }
   patch.updated_at = new Date().toISOString();
 

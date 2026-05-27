@@ -5,21 +5,8 @@ import { useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { titleCaseTag } from "@/lib/format";
 import { cn } from "@/lib/utils";
-
-/**
- * Normalize tags to Title Case so they read as "Benny Wheels" not
- * "benny wheels". Word boundaries include spaces, hyphens, and slashes.
- * Mirrors Postgres `initcap()` semantics: first char of each word goes
- * upper, everything else lower.
- */
-function titleCaseTag(raw: string): string {
-  const cleaned = raw.trim().toLowerCase();
-  if (!cleaned) return "";
-  return cleaned.replace(/(^|[\s\-/])(\p{L})/gu, (_, sep, ch) =>
-    sep + (ch as string).toUpperCase(),
-  );
-}
 
 type Props = {
   value: string[];
