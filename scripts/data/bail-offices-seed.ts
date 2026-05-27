@@ -75,6 +75,9 @@ function buildBailOffice(loc: LocationSeed): Omit<Property, "image_path"> {
     counts_as_garage: true,
     upgrades: [
       // ── Style ──────────────────────────────────────────────────────────────
+      // The 3 styles are mutually exclusive — only one interior style can be
+      // active at a time. The mutex_group is per-office so each location's
+      // styles only conflict with siblings on that same office.
       {
         id: `${loc.id}-style-penal-vintage`,
         display_name: "Style: Penal Vintage",
@@ -83,6 +86,7 @@ function buildBailOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         required_upgrade_id: null,
         notes: "Default interior style (free).",
         price: 0,
+        mutex_group: `${loc.id}-style`,
       },
       {
         id: `${loc.id}-style-criminal-patterns`,
@@ -92,6 +96,7 @@ function buildBailOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         required_upgrade_id: null,
         notes: "Alternate interior style ($125,000).",
         price: 125_000,
+        mutex_group: `${loc.id}-style`,
       },
       {
         id: `${loc.id}-style-courtroom-teak`,
@@ -101,6 +106,7 @@ function buildBailOffice(loc: LocationSeed): Omit<Property, "image_path"> {
         required_upgrade_id: null,
         notes: "Alternate interior style ($145,000).",
         price: 145_000,
+        mutex_group: `${loc.id}-style`,
       },
       // ── Staff ──────────────────────────────────────────────────────────────
       {

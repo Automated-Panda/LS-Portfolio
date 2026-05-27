@@ -6050,7 +6050,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Default interior style (free).",
-        "price": 0
+        "price": 0,
+        "mutex_group": "bail-office-downtown-vinewood-style"
       },
       {
         "id": "bail-office-downtown-vinewood-style-criminal-patterns",
@@ -6059,7 +6060,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($125,000).",
-        "price": 125000
+        "price": 125000,
+        "mutex_group": "bail-office-downtown-vinewood-style"
       },
       {
         "id": "bail-office-downtown-vinewood-style-courtroom-teak",
@@ -6068,7 +6070,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($145,000).",
-        "price": 145000
+        "price": 145000,
+        "mutex_group": "bail-office-downtown-vinewood-style"
       },
       {
         "id": "bail-office-downtown-vinewood-enforcement-agent-1",
@@ -6142,7 +6145,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Default interior style (free).",
-        "price": 0
+        "price": 0,
+        "mutex_group": "bail-office-mission-row-style"
       },
       {
         "id": "bail-office-mission-row-style-criminal-patterns",
@@ -6151,7 +6155,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($125,000).",
-        "price": 125000
+        "price": 125000,
+        "mutex_group": "bail-office-mission-row-style"
       },
       {
         "id": "bail-office-mission-row-style-courtroom-teak",
@@ -6160,7 +6165,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($145,000).",
-        "price": 145000
+        "price": 145000,
+        "mutex_group": "bail-office-mission-row-style"
       },
       {
         "id": "bail-office-mission-row-enforcement-agent-1",
@@ -6234,7 +6240,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Default interior style (free).",
-        "price": 0
+        "price": 0,
+        "mutex_group": "bail-office-del-perro-style"
       },
       {
         "id": "bail-office-del-perro-style-criminal-patterns",
@@ -6243,7 +6250,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($125,000).",
-        "price": 125000
+        "price": 125000,
+        "mutex_group": "bail-office-del-perro-style"
       },
       {
         "id": "bail-office-del-perro-style-courtroom-teak",
@@ -6252,7 +6260,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($145,000).",
-        "price": 145000
+        "price": 145000,
+        "mutex_group": "bail-office-del-perro-style"
       },
       {
         "id": "bail-office-del-perro-enforcement-agent-1",
@@ -6326,7 +6335,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Default interior style (free).",
-        "price": 0
+        "price": 0,
+        "mutex_group": "bail-office-davis-style"
       },
       {
         "id": "bail-office-davis-style-criminal-patterns",
@@ -6335,7 +6345,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($125,000).",
-        "price": 125000
+        "price": 125000,
+        "mutex_group": "bail-office-davis-style"
       },
       {
         "id": "bail-office-davis-style-courtroom-teak",
@@ -6344,7 +6355,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($145,000).",
-        "price": 145000
+        "price": 145000,
+        "mutex_group": "bail-office-davis-style"
       },
       {
         "id": "bail-office-davis-enforcement-agent-1",
@@ -6418,7 +6430,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Default interior style (free).",
-        "price": 0
+        "price": 0,
+        "mutex_group": "bail-office-paleto-bay-style"
       },
       {
         "id": "bail-office-paleto-bay-style-criminal-patterns",
@@ -6427,7 +6440,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($125,000).",
-        "price": 125000
+        "price": 125000,
+        "mutex_group": "bail-office-paleto-bay-style"
       },
       {
         "id": "bail-office-paleto-bay-style-courtroom-teak",
@@ -6436,7 +6450,8 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Alternate interior style ($145,000).",
-        "price": 145000
+        "price": 145000,
+        "mutex_group": "bail-office-paleto-bay-style"
       },
       {
         "id": "bail-office-paleto-bay-enforcement-agent-1",
