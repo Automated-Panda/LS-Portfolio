@@ -29,6 +29,46 @@ End-of-day push to add canonical pricing data so we can show users their portfol
 
 ---
 
+## 🛠️ Session refinements — 2026-05-28 (late)
+
+Cross-cutting polish on catalog data + management UX. A lot of small wins.
+
+### 🏰 Mansion / included-on-purchase data
+- [x] Fixed Mansion Garage capacity bug (a stray `replace_all` had set the new "Mansion Garage" upgrade's capacity to 0 → the storage block was being filtered out and users saw "No storage available yet").
+- [x] Hid `included_on_purchase: true` upgrades from the **Upgrades tab checklist** — auto-installed perks aren't user choices. They still render in the **Garage tab** when they hold cars. `Install all` / `Uninstall all` and the `N / M upgrades` card badges now also exclude them so the counts match what the user sees.
+- [x] Research-driven flag pass (gta.fandom.com + gtabase.com): marked **Agency Garage** (×4), **Clubhouse Garage** (×12), **Hangar Storage** (×5), **McKenzie + Higgins storage** as `included_on_purchase`. All 23 now hidden from checklists; existing owners' upgrades already installed so no backfill needed.
+- [x] Fixed Vinewood Car Club base price ($50K → $0 — it's a GTA+ perk, not an in-game cost).
+
+### 📊 Dashboard catalog widget
+- [x] Split the Catalog widget into **Vehicles / Properties / Businesses** (was Vehicles / Properties).
+- [x] **Cap-based scoring** for Properties + Businesses — denominator is the in-game ownership cap (10 apartments, 1 nightclub, etc.) instead of the catalogue total. James was right that "% of unique catalog" was misleading.
+- [x] **Expandable "Show details"** per scope shows each ownership group's progress + either ✓ Complete, "Pick N more from M options" (open-pool groups like residential), or "Missing: A, B, C" (specific-choice groups like mansions, hangars, agencies).
+- [x] Removed the "Properties by type" row from Portfolio breakdown (Arcade was leaking into the property section).
+- [x] DB: `dashboard_catalog_group_rows` RPC + cap fallback to ownable-count (migrations 0016 + 0017; safe to drop the RPC later — no longer called from app code).
+
+### 🏛️ Bail Office data fixes
+- [x] **Mutex'd the 3 interior styles** per office (`mutex_group`) — picking one auto-uninstalls siblings (same mechanism as yacht models).
+- [x] **Capped ownership at 1** (migration 0018) — buying a different bail office sells the current one in-game. Businesses cap dropped 32 → 28.
+
+### 🛞 Vehicle management UX
+- [x] **Gear icon on `/vehicles` owned cards** — sibling of the green ✓×N chip in the top-right cluster (mirrors PropertyCard). Opens InstanceDrawer directly for 1-instance vehicles, opens the picker popover for multi-instance vehicles.
+- [x] Always-fresh instance list — gear refetches on click so it doesn't see a stale cache after `+ Add`.
+- [x] **InstanceDrawer storage dropdown** — only shows "Base storage" when `base_capacity > 0`; hides the dropdown entirely when there's only one viable storage area (e.g. Mansion's Mansion Garage auto-selected). No more phantom "Base storage" on properties whose storage lives on an upgrade.
+- [x] **Per-car gear icon** inside PropertyDrawer storage blocks — manage nickname / tags / notes / storage without leaving the property drawer.
+- [x] **Custom-tag filter** (multi-select chip, AND match) on `/my-vehicles` next to the Locations filter. Auto-hides when the user has no custom tags.
+
+### 🔁 In-place management drawer on browse pages
+- [x] `/properties` + `/businesses` cards: settings icon (and clicking an owned card) now open the management drawer **in place** instead of routing to `/my-properties` / `/my-businesses`. The "+ Add cars" toast action also stays in place. PropertyCard now takes an optional `onOpenManagement` prop with a router-push fallback for legacy callers.
+
+### 🖼️ Aviation images
+- [x] Sourced + saved **Higgins Helitours** + **McKenzie Field Hangar** from Fandom via `static.wikia.nocookie.net`, normalized to 600w webp/q85 via the existing sharp pipeline. Cards no longer show "No image".
+
+### ⚠️ Out-of-scope / flagged for follow-up
+- [ ] **McKenzie Field Hangar — ownable in Online since 1.70 (Mar 2025)** at $1,475,000, 15 aircraft slots, no upgrades. Our seed still treats it as SP-only with 4 slots. Worth a data refresh: reclassify, update price + capacity, add to the `mckenzie-hangar` ownership group properly.
+- [ ] Style mutex coverage — only Bail Office has multi-row styles in our data today. If we add multi-style options later for other properties (Agency / Auto Shop / Hangar / Nightclub / Master Penthouse interior themes), each new group needs its own `mutex_group`.
+
+---
+
 ## 🪦 Phase E — Discontinued vehicles list (next session)
 
 > Surfaces vehicles that can no longer be purchased (excluding Simeon Premium Deluxe + LS Car Meet stock — those rotate weekly).
