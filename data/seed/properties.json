@@ -1197,6 +1197,167 @@
     "image_path": null
   },
   {
+    "id": "mansion-tongva",
+    "display_name": "The Tongva Estate",
+    "property_type": "residence",
+    "subtype": "mansion",
+    "subtype_display": "Mansion",
+    "location": "Tongva Hills, overlooking the vineyards and Pacific Ocean",
+    "neighborhood": "Tongva Hills",
+    "capacity": 22,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mansion-tongva-podium",
+        "display_name": "Car Podium",
+        "tier": null,
+        "capacity": 1,
+        "required_upgrade_id": null,
+        "notes": "Display platform for 1 showcase vehicle."
+      },
+      {
+        "id": "mansion-tongva-armory",
+        "display_name": "Armory",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-tongva-workshop",
+        "display_name": "Vehicle Workshop",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-tongva-arcade",
+        "display_name": "Arcade Room",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-tongva-security",
+        "display_name": "Security Team",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on a single mansion to represent owning the service set-wide."
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/The_Tongva_Estate",
+      "gtabase": "https://www.gtabase.com/properties/gta-online/the-tongva-estate-devin-weston-mansion"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/mansion-tongva.webp"
+  },
+  {
+    "id": "mansion-vinewood",
+    "display_name": "The Vinewood Residence",
+    "property_type": "residence",
+    "subtype": "mansion",
+    "subtype_display": "Mansion",
+    "location": "Across from the Vinewood sign, overlooking the city",
+    "neighborhood": "Vinewood Hills",
+    "capacity": 22,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mansion-vinewood-podium",
+        "display_name": "Car Podium",
+        "tier": null,
+        "capacity": 1,
+        "required_upgrade_id": null,
+        "notes": "Display platform for 1 showcase vehicle."
+      },
+      {
+        "id": "mansion-vinewood-armory",
+        "display_name": "Armory",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-vinewood-workshop",
+        "display_name": "Vehicle Workshop",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-vinewood-arcade",
+        "display_name": "Arcade Room",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/The_Vinewood_Residence",
+      "gtabase": "https://www.gtabase.com/properties/gta-online/the-vinewood-residence-mansion"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/mansion-vinewood.webp"
+  },
+  {
+    "id": "mansion-richman",
+    "display_name": "Richman Villa",
+    "property_type": "residence",
+    "subtype": "mansion",
+    "subtype_display": "Mansion",
+    "location": "Richman, the wealthiest neighborhood in Los Santos",
+    "neighborhood": "Richman",
+    "capacity": 22,
+    "counts_as_garage": true,
+    "upgrades": [
+      {
+        "id": "mansion-richman-podium",
+        "display_name": "Car Podium",
+        "tier": null,
+        "capacity": 1,
+        "required_upgrade_id": null,
+        "notes": "Display platform for 1 showcase vehicle."
+      },
+      {
+        "id": "mansion-richman-armory",
+        "display_name": "Armory",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-richman-workshop",
+        "display_name": "Vehicle Workshop",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      },
+      {
+        "id": "mansion-richman-arcade",
+        "display_name": "Arcade Room",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": null
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Richman_Villa",
+      "gtabase": "https://www.gtabase.com/properties/gta-online/richman-villa-mansion"
+    },
+    "parent_building": null,
+    "image_path": "data/images/properties/mansion-richman.webp"
+  },
+  {
     "id": "stand-alone-garage-0120-murrieta-heights",
     "display_name": "0120 Murrieta Heights",
     "property_type": "garage",

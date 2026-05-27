@@ -12,6 +12,7 @@ import {
   VINEWOOD_CAR_CLUB,
 } from "./garages-seed";
 import { CASINO_PENTHOUSE_SEED } from "./casino-penthouse-seed";
+import { MANSIONS_SEED } from "./mansions-seed";
 import { CEO_OFFICES } from "./offices-seed";
 import { MC_CLUBHOUSES } from "./clubhouses-seed";
 import { BUNKERS } from "./bunkers-seed";
@@ -42,7 +43,7 @@ import {
  *
  * Coverage (subtypes):
  *   Residential — high-end-apartment, mid-end-apartment, low-end-apartment,
- *                 casino-penthouse
+ *                 casino-penthouse, mansion
  *   Garage      — stand-alone-garage, eclipse-blvd-garages
  *   Business    — nightclub, ceo-office, mc-clubhouse, bunker, facility,
  *                 agency, arcade, auto-shop, salvage-yard,
@@ -55,6 +56,7 @@ export const PROPERTIES_SEED: Omit<Property, "image_path">[] = [
   ...MID_END_APARTMENTS,
   ...LOW_END_APARTMENTS,
   ...CASINO_PENTHOUSE_SEED,
+  ...MANSIONS_SEED,
   // Garages
   ...STANDALONE_GARAGES,
   ...ECLIPSE_BLVD_GARAGES,
