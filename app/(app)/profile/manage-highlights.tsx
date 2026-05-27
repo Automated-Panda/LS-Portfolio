@@ -13,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import { Input } from "@/components/ui/input";
 import type { UserHighlight } from "@/lib/queries/highlights";
 
@@ -29,6 +30,7 @@ export function ManageHighlights({ highlights }: Props) {
   const [editing, setEditing] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [isPending, startTransition] = useTransition();
+  const confirm = useConfirm();
 
   const startEdit = (tag: string) => {
     setEditing(tag);
@@ -59,13 +61,14 @@ export function ManageHighlights({ highlights }: Props) {
     });
   };
 
-  const handleDelete = (tag: string, usage: number) => {
-    if (
-      !confirm(
-        `Remove "${tag}" from ${usage} vehicle${usage === 1 ? "" : "s"}? This can't be undone.`,
-      )
-    )
-      return;
+  const handleDelete = async (tag: string, usage: number) => {
+    const ok = await confirm({
+      title: `Delete "${tag}"?`,
+      description: `This highlight is on ${usage} vehicle${usage === 1 ? "" : "s"}. It will be removed from all of them.`,
+      confirmText: "Delete",
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
       const r = await deleteHighlight(tag);
       if ("error" in r) {

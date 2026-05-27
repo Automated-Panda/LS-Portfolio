@@ -128,8 +128,37 @@ export async function togglePropertyOwnership(
     .select("id")
     .single();
   if (error) return { error: error.message };
+
+  // Auto-install any upgrades flagged included_on_purchase (e.g. Vinewood
+  // Car Club floors, MC Clubhouse / Auto Shop / Hangar / Facility garages —
+  // they all come with the property purchase, no separate install needed).
+  await installIncludedUpgrades(supabase, data.id, propertyId);
+
   revalidatePath("/", "layout");
   return { ok: true, ownedPropertyId: data.id };
+}
+
+async function installIncludedUpgrades(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  ownedPropertyId: string,
+  propertyId: string,
+): Promise<void> {
+  const { data: included } = await supabase
+    .from("property_upgrades")
+    .select("id")
+    .eq("property_id", propertyId)
+    .eq("included_on_purchase", true);
+  if (!included || included.length === 0) return;
+  const rows = included.map((u) => ({
+    user_owned_property_id: ownedPropertyId,
+    property_upgrade_id: u.id,
+  }));
+  await supabase
+    .from("user_owned_property_upgrades")
+    .upsert(rows, {
+      onConflict: "user_owned_property_id,property_upgrade_id",
+      ignoreDuplicates: true,
+    });
 }
 
 export type TradeInArgs = {
@@ -157,6 +186,9 @@ export async function tradeInProperty(
     .select("id")
     .single();
   if (newErr) return { error: newErr.message };
+
+  // Auto-install any included_on_purchase upgrades on the new property.
+  await installIncludedUpgrades(supabase, newRow.id, args.newPropertyId);
 
   // Empty destinations = "move-all-that-fit, unassign overflow" server-side
   // default. The TradeInModal uses this when the user just clicks Trade in

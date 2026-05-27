@@ -2278,7 +2278,8 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": "Included with GTA+ subscription.",
-        "price": 0
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "vinewood-car-club-floor-2",
@@ -2287,7 +2288,8 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": "Included with GTA+ subscription.",
-        "price": 0
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "vinewood-car-club-floor-3",
@@ -2296,7 +2298,8 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": "Included with GTA+ subscription.",
-        "price": 0
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "vinewood-car-club-floor-4",
@@ -2305,7 +2308,8 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": "Included with GTA+ subscription.",
-        "price": 0
+        "price": 0,
+        "included_on_purchase": true
       },
       {
         "id": "vinewood-car-club-floor-5",
@@ -2314,7 +2318,8 @@
         "capacity": 20,
         "required_upgrade_id": null,
         "notes": "Included with GTA+ subscription.",
-        "price": 0
+        "price": 0,
+        "included_on_purchase": true
       }
     ],
     "_sources": {

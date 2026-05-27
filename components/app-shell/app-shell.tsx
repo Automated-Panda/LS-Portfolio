@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ConfirmDialogHost } from "@/components/ui/confirm-dialog";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
@@ -96,6 +97,7 @@ export function AppShell({
         </header>
         <main className="flex-1 p-6">{children}</main>
       </div>
+      <ConfirmDialogHost />
     </div>
   );
 }

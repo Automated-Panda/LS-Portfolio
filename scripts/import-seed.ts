@@ -173,6 +173,7 @@ async function main(): Promise<void> {
       price: u.price ?? null,
       sub_slots: u.sub_slots ?? null,
       mutex_group: u.mutex_group ?? null,
+      included_on_purchase: u.included_on_purchase ?? false,
     })),
   );
   console.log(`Importing ${upgradeRows.length} property_upgrades...`);

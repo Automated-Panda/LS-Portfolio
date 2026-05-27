@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import {
   setAllUpgradesInstalled,
   toggleUpgradeInstalled,
@@ -198,18 +199,20 @@ export function PropertyDrawer({
   };
 
   const kindLabel = property.property_type === "business" ? "business" : "property";
+  const confirm = useConfirm();
 
-  const handleUnown = () => {
+  const handleUnown = async () => {
     const carsMsg =
       property.total_cars > 0
-        ? ` ${property.total_cars} cars will need to go somewhere.`
+        ? ` ${property.total_cars} stored ${property.total_cars === 1 ? "vehicle" : "vehicles"} will be unassigned.`
         : "";
-    if (
-      !confirm(
-        `Remove ${property.display_name} from your portfolio?${carsMsg}`,
-      )
-    )
-      return;
+    const ok = await confirm({
+      title: `Remove ${property.display_name}?`,
+      description: `This ${kindLabel} will be removed from your portfolio.${carsMsg}`,
+      confirmText: `Remove ${kindLabel}`,
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
       const r = await unownProperty({
         ownedPropertyId: property.id,

@@ -307,6 +307,7 @@ const VINEWOOD_FLOOR_UPGRADES = Array.from({ length: 5 }, (_, i) => ({
   required_upgrade_id: null,
   notes: "Included with GTA+ subscription.",
   price: 0,
+  included_on_purchase: true,
 }));
 
 export const VINEWOOD_CAR_CLUB: Omit<Property, "image_path">[] = [

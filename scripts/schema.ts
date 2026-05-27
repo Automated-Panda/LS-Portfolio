@@ -57,6 +57,8 @@ export const PropertyUpgradeSchema = z.object({
   sub_slots: z.array(SubSlotSchema).nullable().optional(),
   /** When set, this upgrade is mutually exclusive with other upgrades on the same property sharing the same mutex_group label. Installing one auto-uninstalls the others. E.g. Super Yacht model variants. */
   mutex_group: z.string().nullable().optional(),
+  /** When true, this upgrade is unlocked automatically when the property is purchased (e.g. Vinewood Car Club's 5 floors come with the GTA+ subscription). togglePropertyOwnership auto-inserts user_owned_property_upgrades rows for these. */
+  included_on_purchase: z.boolean().optional(),
 });
 
 export const PropertySchema = z.object({

@@ -5,6 +5,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { useConfirm } from "@/components/ui/confirm-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -54,6 +55,7 @@ export function InstanceDrawer({
   );
   const [subSlot, setSubSlot] = useState(instance.storage?.sub_slot ?? "");
   const [isPending, startTransition] = useTransition();
+  const confirm = useConfirm();
 
   // Auto-expand fields that already have content on open. Empty fields show
   // as `+ Field name` pill buttons; clicking expands the input inline.
@@ -135,8 +137,14 @@ export function InstanceDrawer({
     });
   };
 
-  const handleRemove = () => {
-    if (!confirm(`Remove this ${instance.display_name} from your portfolio?`)) return;
+  const handleRemove = async () => {
+    const ok = await confirm({
+      title: `Remove ${instance.display_name}?`,
+      description: "This vehicle will be removed from your portfolio. You can re-add it from the catalogue any time.",
+      confirmText: "Remove vehicle",
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
       const result = await removeVehicleInstance(instance.id);
       if ("error" in result) {

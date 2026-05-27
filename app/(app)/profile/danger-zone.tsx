@@ -13,6 +13,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { useConfirm } from "@/components/ui/confirm-dialog";
+
 import {
   removeAllVehiclesByCategory,
   removeAllPropertiesByGroup,
@@ -37,9 +39,16 @@ const PROPERTY_BUTTONS: Array<{ label: string; group: string }> = [
 export function DangerZone() {
   const [isPending, startTransition] = useTransition();
   const [resetArmed, setResetArmed] = useState(false);
+  const confirm = useConfirm();
 
-  const runRemoveVehicles = (category: VehicleCategory, label: string) => {
-    if (!confirm(`${label}? This will remove every matching vehicle from your portfolio.`)) return;
+  const runRemoveVehicles = async (category: VehicleCategory, label: string) => {
+    const ok = await confirm({
+      title: `${label}?`,
+      description: "Every matching vehicle in your portfolio will be removed.",
+      confirmText: label,
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
       const r = await removeAllVehiclesByCategory(category);
       if ("error" in r) toast.error(r.error);
@@ -48,8 +57,14 @@ export function DangerZone() {
     });
   };
 
-  const runRemoveProperties = (group: string, label: string) => {
-    if (!confirm(`${label}? Vehicles stored at those properties become unassigned (not deleted).`)) return;
+  const runRemoveProperties = async (group: string, label: string) => {
+    const ok = await confirm({
+      title: `${label}?`,
+      description: "Vehicles stored at those properties become unassigned (not deleted).",
+      confirmText: label,
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
       const r = await removeAllPropertiesByGroup(group);
       if ("error" in r) toast.error(r.error);
