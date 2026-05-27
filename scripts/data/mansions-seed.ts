@@ -1,12 +1,15 @@
 import type { Property } from "../schema";
 
 /**
- * GTA Online Mansions — "A Safehouse in the Hills" update (early 2025).
+ * GTA Online Mansions — "A Safehouse in the Hills" update (Dec 2025).
  *
- * Three standalone luxury residences in/around Vinewood Hills. Each carries
- * a 20-car garage + 2-car drive-up space (base) and a podium upgrade for
- * +1 display car. Other upgrades (Armory, Vehicle Workshop, Arcade Room)
- * are cosmetic and don't add storage capacity.
+ * Three standalone luxury residences in/around Vinewood Hills. Each holds
+ * 20 cars total: 17 regular garage slots + 2 driveway display slots + 1
+ * podium display slot. The podium upgrade unlocks the visual podium slot
+ * style — it doesn't add to the 20-car cap.
+ *
+ * Other upgrades (Armory, Vehicle Workshop, Arcade Room) are cosmetic and
+ * don't add storage capacity either.
  *
  * Security Team is a $1.75M one-time upgrade that covers all three mansions
  * once purchased. It's modeled on The Tongva Estate only — toggling it there
@@ -16,8 +19,8 @@ import type { Property } from "../schema";
  * The free Volatus helicopter on the rooftop helipad is not modeled as a
  * storage slot — it's a gift, not capacity.
  *
- * Ownership: new `mansion` ownership_group with cap 3 (added in migration
- * 0009). All three can be owned simultaneously.
+ * Ownership: new `mansion` ownership_group with cap 3 (migration 0010).
+ * All three can be owned simultaneously.
  *
  * Sources:
  *   - https://www.gtaboom.com/gta-online-a-safehouse-in-the-hills-dlc-guide-be82
@@ -29,9 +32,9 @@ const COMMON_UPGRADES = (mansionId: string) => [
     id: `${mansionId}-podium`,
     display_name: "Car Podium",
     tier: null,
-    capacity: 1,
+    capacity: 0,
     required_upgrade_id: null,
-    notes: "Display platform for 1 showcase vehicle.",
+    notes: "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
   },
   {
     id: `${mansionId}-armory`,
@@ -68,7 +71,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Tongva Hills, overlooking the vineyards and Pacific Ocean",
     neighborhood: "Tongva Hills",
-    capacity: 22, // 20-car garage + 2-car drive-up space
+    capacity: 20, // 17 garage + 2 driveway + 1 podium; podium upgrade is cosmetic-only
     counts_as_garage: true,
     upgrades: [
       ...COMMON_UPGRADES("mansion-tongva"),
@@ -95,7 +98,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Across from the Vinewood sign, overlooking the city",
     neighborhood: "Vinewood Hills",
-    capacity: 22,
+    capacity: 20,
     counts_as_garage: true,
     upgrades: COMMON_UPGRADES("mansion-vinewood"),
     _sources: {
@@ -111,7 +114,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Richman, the wealthiest neighborhood in Los Santos",
     neighborhood: "Richman",
-    capacity: 22,
+    capacity: 20,
     counts_as_garage: true,
     upgrades: COMMON_UPGRADES("mansion-richman"),
     _sources: {

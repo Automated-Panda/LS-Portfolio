@@ -1204,16 +1204,16 @@
     "subtype_display": "Mansion",
     "location": "Tongva Hills, overlooking the vineyards and Pacific Ocean",
     "neighborhood": "Tongva Hills",
-    "capacity": 22,
+    "capacity": 20,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "mansion-tongva-podium",
         "display_name": "Car Podium",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Display platform for 1 showcase vehicle."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
       },
       {
         "id": "mansion-tongva-armory",
@@ -1263,16 +1263,16 @@
     "subtype_display": "Mansion",
     "location": "Across from the Vinewood sign, overlooking the city",
     "neighborhood": "Vinewood Hills",
-    "capacity": 22,
+    "capacity": 20,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "mansion-vinewood-podium",
         "display_name": "Car Podium",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Display platform for 1 showcase vehicle."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
       },
       {
         "id": "mansion-vinewood-armory",
@@ -1314,16 +1314,16 @@
     "subtype_display": "Mansion",
     "location": "Richman, the wealthiest neighborhood in Los Santos",
     "neighborhood": "Richman",
-    "capacity": 22,
+    "capacity": 20,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "mansion-richman-podium",
         "display_name": "Car Podium",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Display platform for 1 showcase vehicle."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
       },
       {
         "id": "mansion-richman-armory",
