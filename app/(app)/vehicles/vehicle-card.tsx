@@ -128,9 +128,46 @@ function VehicleCardImpl({
         isPending && "opacity-80",
       )}
     >
-      {/* Owned-count chip (top-right). When owned > 0 it becomes a popover
-          trigger that opens the remove-instance picker. */}
+      {/* Top-right cluster for owned cards: gear (manage) + green ×N chip.
+          Mirrors the PropertyCard pattern so users see the management entry
+          point immediately instead of having to discover it inside a popover. */}
       {owned ? (
+        <div className="absolute right-2 top-2 z-10 flex items-center gap-1">
+          {canManageInline && (
+            <button
+              type="button"
+              onClick={async (e) => {
+                e.stopPropagation();
+                // Need an instance id to open InstanceDrawer. Lazy-fetch the
+                // list once; for N=1 jump straight to the drawer (no need to
+                // disambiguate), for N>1 fall back to the picker popover so
+                // the user can pick WHICH instance to edit.
+                let list = pickerInstances;
+                if (!list) {
+                  setPickerLoading(true);
+                  const r = await getOwnedInstancesForVehicle(vehicle.id);
+                  setPickerLoading(false);
+                  if ("error" in r) {
+                    toast.error(r.error);
+                    return;
+                  }
+                  setPickerInstances(r);
+                  list = r;
+                }
+                if (list.length === 1) {
+                  setManagedInstanceId(list[0].id);
+                } else if (list.length > 1) {
+                  setPickerOpen(true);
+                }
+              }}
+              disabled={isPending || pickerLoading}
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-background/90 text-foreground shadow transition-colors hover:bg-accent/40 disabled:opacity-50"
+              aria-label={`Manage ${vehicle.display_name}`}
+              title="Manage nickname, tags, notes, storage"
+            >
+              <Settings2 className="h-3.5 w-3.5" />
+            </button>
+          )}
         <Popover
           open={pickerOpen}
           onOpenChange={(o) => {
@@ -141,8 +178,8 @@ function VehicleCardImpl({
           <PopoverTrigger asChild>
             <button
               type="button"
-              aria-label={`Manage ${optimisticCount} owned ${vehicle.display_name}`}
-              className="absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full bg-emerald-500 px-2 text-white transition-all hover:bg-emerald-600"
+              aria-label={`Add or remove ${vehicle.display_name}`}
+              className="flex h-7 min-w-7 items-center justify-center gap-1 rounded-full bg-emerald-500 px-2 text-white transition-all hover:bg-emerald-600"
             >
               <Check className="h-4 w-4" />
               <span className="text-xs font-semibold">×{optimisticCount}</span>
@@ -228,6 +265,7 @@ function VehicleCardImpl({
             )}
           </PopoverContent>
         </Popover>
+        </div>
       ) : (
         <span
           className="absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full bg-background/80 px-2 text-muted-foreground opacity-0 transition-all group-hover:opacity-100"
