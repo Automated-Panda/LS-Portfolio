@@ -1,3 +1,4 @@
+import type { CatalogGroupDetail } from "@/lib/queries/dashboard";
 import type { PlanSummaryRow } from "@/lib/queries/organizer";
 
 import { BreakdownChips } from "@/components/dashboard/breakdown-chips";
@@ -18,11 +19,12 @@ export type DashboardData = {
   properties: { total: number; splits: SubSplit };
   businesses: { total: number; splits: SubSplit };
   capacity: { used: number; total: number; percent: number };
-  breakdown: { vehicleClasses: ChipRow; propertySubtypes: ChipRow };
+  breakdown: { vehicleClasses: ChipRow };
   catalog: {
     vehicles: { ownedUnique: number; total: number; percent: number };
     properties: { ownedUnique: number; total: number; percent: number };
     businesses: { ownedUnique: number; total: number; percent: number };
+    groups: CatalogGroupDetail[];
   };
   netWorth: {
     total: number;
@@ -77,10 +79,7 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
         activeUndoPlan={data.attention.activeUndoPlan}
       />
 
-      <BreakdownChips
-        vehicleClasses={data.breakdown.vehicleClasses}
-        propertySubtypes={data.breakdown.propertySubtypes}
-      />
+      <BreakdownChips vehicleClasses={data.breakdown.vehicleClasses} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <CapacityCard {...data.capacity} />
@@ -88,6 +87,7 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
           vehicles={data.catalog.vehicles}
           properties={data.catalog.properties}
           businesses={data.catalog.businesses}
+          groups={data.catalog.groups}
         />
       </div>
 

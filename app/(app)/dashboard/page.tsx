@@ -137,21 +137,6 @@ export default async function DashboardPage() {
     }),
   ) as ChipRow;
 
-  const propertySubtypeTop3 = topN(
-    ownedProperties,
-    (p) => p.subtype_display,
-    3,
-  ).map((r) => {
-    // Use the subtype slug (not the display label) for the URL.
-    const slug = ownedProperties.find((p) => p.subtype_display === r.label)
-      ?.subtype;
-    return {
-      ...r,
-      href: slug
-        ? `/properties?subtype=${encodeURIComponent(slug)}`
-        : "/properties",
-    };
-  }) as ChipRow;
 
   // Catalog coverage now uses cap-based denominators (e.g. residential cap of
   // 10, nightclub cap of 1) and splits properties from businesses — see
@@ -204,7 +189,6 @@ export default async function DashboardPage() {
     },
     breakdown: {
       vehicleClasses: vehicleClassTop5,
-      propertySubtypes: propertySubtypeTop3,
     },
     catalog: catalogCoverage,
     netWorth: {

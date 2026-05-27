@@ -8,7 +8,6 @@ type ChipRow = Array<{ label: string; count: number; href: string }>;
 
 type Props = {
   vehicleClasses: ChipRow;
-  propertySubtypes: ChipRow;
 };
 
 function ChipList({ rows }: { rows: ChipRow }) {
@@ -34,7 +33,7 @@ function ChipList({ rows }: { rows: ChipRow }) {
   );
 }
 
-export function BreakdownChips({ vehicleClasses, propertySubtypes }: Props) {
+export function BreakdownChips({ vehicleClasses }: Props) {
   return (
     <Card>
       <div className="flex flex-col gap-3 p-4">
@@ -48,11 +47,6 @@ export function BreakdownChips({ vehicleClasses, propertySubtypes }: Props) {
         <div className="flex flex-col gap-2">
           <p className="text-xs text-muted-foreground">Vehicles by class</p>
           <ChipList rows={vehicleClasses} />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="text-xs text-muted-foreground">Properties by type</p>
-          <ChipList rows={propertySubtypes} />
         </div>
       </div>
     </Card>
