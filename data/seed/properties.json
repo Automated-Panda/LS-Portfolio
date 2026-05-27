@@ -2466,7 +2466,7 @@
     },
     "parent_building": null,
     "image_path": "data/images/properties/vinewood-car-club.webp",
-    "price": 50000
+    "price": 0
   },
   {
     "id": "ceo-office-maze-bank-west",
