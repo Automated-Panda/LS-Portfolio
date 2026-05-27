@@ -29,13 +29,15 @@ Soon-ish work batch. Group these together when picking next pieces.
 - [x] When assigning a vehicle to storage (`InstanceDrawer` → "Stored at"), filter the property dropdown to only owned properties where `counts_as_garage = true`. No more hangars / yachts / businesses-without-garages in the car-storage dropdown.
 - [ ] **Future:** also filter by asset class so hangars only show when storing aircraft, yachts only for boats, etc. Separate, bigger question — deferred.
 
-### 🏠 PropertyDrawer — show + remove assigned cars
-- [ ] In `PropertyDrawer` (used by wizard hub + `/my-properties`), under each storage upgrade, list the currently-assigned vehicles with a remove (✕) button per row.
-- [ ] Removing here calls `assignVehicleStorage(vehicleInstanceId, null, null)` (un-assigns but keeps the vehicle owned).
+### 🏠 PropertyDrawer — show + remove assigned cars ✅
+- [x] Under each storage upgrade (and base storage), the assigned vehicles render in a list with their nickname (and base display name if different) plus a ✕ button per row.
+- [x] ✕ click un-assigns via existing `assignVehicleStorage(..., null, null)`. Vehicle stays owned, just becomes unassigned.
+- [x] Threaded `instances: OwnedVehicleInstance[]` prop through MyPropertiesGrid + PropertyHubList + OnboardingWizard from the page-level fetches.
 
-### ➕ Vehicle browse — add a "-" alongside "+"
-- [ ] On `/vehicles` cards, today clicking the card / + button adds one more instance via `addVehicleInstance`. Add a way to decrement directly from the browse page — likely a small counter widget (`- N +`) on owned cards.
-- [ ] **Confirmed UX:** clicking "-" opens a small picker of owned instances (nicknames if set, otherwise "#1", "#2"…). User picks which to remove. Safer for instances with custom metadata.
+### ➕ Vehicle browse — add a "-" alongside "+" ✅
+- [x] Owned-count chip on `/vehicles` cards is now a popover trigger. Popover shows the user's instances of that vehicle (nickname or "#N" with storage location) — each row has a `-` button to remove that specific instance. Popover also has an `Add` button for adding another.
+- [x] Lazy-loaded via new `getOwnedInstancesForVehicle(vehicleId)` action so the 800-vehicle browse doesn't pre-fetch.
+- [x] Optimistic count updates + rollback on error.
 
 ### 🏷️ InstanceDrawer rename + collapse-to-buttons (partial ✅)
 - [x] Rename **Nickname** → **Custom Name**
@@ -46,16 +48,13 @@ Soon-ish work batch. Group these together when picking next pieces.
   - `+ Notes` — click reveals the textarea
 - [ ] Buttons live in a row under the vehicle header; clicking expands the field inline.
 
-### 🧹 Bulk removal — clear-category + nuclear reset
-- [ ] **Remove-all-by-category** buttons:
-  - "Remove all planes"
-  - "Remove all boats"
-  - "Remove all businesses"
-  - "Remove all residences" / "Remove all garages"
-  - etc.
-- [ ] Each shows a confirm dialog with the count (e.g. "Remove 8 aircraft?") before firing
-- [ ] Server actions: `removeAllVehiclesInCategory(category)` and `removeAllPropertiesInGroup(ownershipGroup)`
-- [ ] **Nuclear reset** button on `/profile` or a settings page: "Reset portfolio" — unowns everything (vehicles + properties + businesses + organizer plans). Two-step confirm with typing "RESET" to enable.
+### 🧹 Bulk removal — clear-category + nuclear reset ✅
+- [x] **Remove-all-by-category** buttons in a new "Danger zone" card on `/profile`:
+  - Vehicles: Remove all cars + bikes / Remove all aircraft / Remove all boats
+  - Properties: Remove all residences / mansions / garages / businesses
+- [x] Each button has a confirm dialog before firing.
+- [x] Server actions: `removeAllVehiclesByCategory(category)` and `removeAllPropertiesByGroup(group)` in `app/(app)/profile/danger-zone-actions.ts`.
+- [x] **Nuclear reset** button — two-click arming (click once arms with toast warning, click again within 5s to commit). Wipes owned vehicles + properties + organizer plans (profile + auth user untouched).
 
 ---
 
