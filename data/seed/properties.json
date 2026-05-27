@@ -1251,7 +1251,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 1500000
       }
     ],
     "_sources": {
@@ -1279,7 +1280,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "price": 650000
       },
       {
         "id": "mansion-tongva-armory",
@@ -1287,7 +1289,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 720000
       },
       {
         "id": "mansion-tongva-workshop",
@@ -1295,7 +1298,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 880000
       },
       {
         "id": "mansion-tongva-arcade",
@@ -1303,7 +1307,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 950000
       },
       {
         "id": "mansion-tongva-security",
@@ -1311,7 +1316,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
+        "price": 1750000
       }
     ],
     "_sources": {
@@ -1339,7 +1345,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "price": 650000
       },
       {
         "id": "mansion-vinewood-armory",
@@ -1347,7 +1354,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 720000
       },
       {
         "id": "mansion-vinewood-workshop",
@@ -1355,7 +1363,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 880000
       },
       {
         "id": "mansion-vinewood-arcade",
@@ -1363,7 +1372,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 950000
       },
       {
         "id": "mansion-vinewood-security",
@@ -1371,7 +1381,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
+        "price": 1750000
       }
     ],
     "_sources": {
@@ -1399,7 +1410,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity."
+        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "price": 650000
       },
       {
         "id": "mansion-richman-armory",
@@ -1407,7 +1419,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 720000
       },
       {
         "id": "mansion-richman-workshop",
@@ -1415,7 +1428,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 880000
       },
       {
         "id": "mansion-richman-arcade",
@@ -1423,7 +1437,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 950000
       },
       {
         "id": "mansion-richman-security",
@@ -1431,7 +1446,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
+        "price": 1750000
       }
     ],
     "_sources": {
@@ -1459,7 +1475,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 35000
       }
     ],
     "_sources": {
@@ -1487,7 +1504,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 25000
       }
     ],
     "_sources": {
@@ -1515,7 +1533,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 27500
       }
     ],
     "_sources": {
@@ -1543,7 +1562,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 30000
       }
     ],
     "_sources": {
@@ -1571,7 +1591,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 32500
       }
     ],
     "_sources": {
@@ -1599,7 +1620,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 35000
       }
     ],
     "_sources": {
@@ -1627,7 +1649,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 62500
       }
     ],
     "_sources": {
@@ -1655,7 +1678,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 65000
       }
     ],
     "_sources": {
@@ -1683,7 +1707,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 67500
       }
     ],
     "_sources": {
@@ -1711,7 +1736,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 70000
       }
     ],
     "_sources": {
@@ -1739,7 +1765,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 72500
       }
     ],
     "_sources": {
@@ -1767,7 +1794,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 75000
       }
     ],
     "_sources": {
@@ -1795,7 +1823,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 77500
       }
     ],
     "_sources": {
@@ -1823,7 +1852,8 @@
         "tier": null,
         "capacity": 6,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 80000
       }
     ],
     "_sources": {
@@ -1851,7 +1881,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 105000
       }
     ],
     "_sources": {
@@ -1879,7 +1910,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 110000
       }
     ],
     "_sources": {
@@ -1907,7 +1939,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 115000
       }
     ],
     "_sources": {
@@ -1935,7 +1968,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 120000
       }
     ],
     "_sources": {
@@ -1963,7 +1997,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 122500
       }
     ],
     "_sources": {
@@ -1991,7 +2026,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 125000
       }
     ],
     "_sources": {
@@ -2019,7 +2055,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 127500
       }
     ],
     "_sources": {
@@ -2047,7 +2084,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 130000
       }
     ],
     "_sources": {
@@ -2075,7 +2113,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 135000
       }
     ],
     "_sources": {
@@ -2103,7 +2142,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       }
     ],
     "_sources": {
@@ -2131,7 +2171,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 145000
       }
     ],
     "_sources": {
@@ -2159,7 +2200,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 147500
       }
     ],
     "_sources": {
@@ -2187,7 +2229,8 @@
         "tier": null,
         "capacity": 2,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 150000
       }
     ],
     "_sources": {
@@ -2253,7 +2296,8 @@
         "tier": 1,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 1150000
       },
       {
         "id": "ceo-office-maze-bank-west-garage-2",
@@ -2261,7 +2305,8 @@
         "tier": 2,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-west-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 855000
       },
       {
         "id": "ceo-office-maze-bank-west-garage-3",
@@ -2269,7 +2314,8 @@
         "tier": 3,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-west-garage-2",
-        "notes": "Fully upgraded Office Garage holds 60 vehicles total"
+        "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "price": 745000
       },
       {
         "id": "ceo-office-maze-bank-west-gun-locker",
@@ -2277,7 +2323,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000)."
+        "notes": "Weapon loadout storage ($520,000).",
+        "price": 520000
       },
       {
         "id": "ceo-office-maze-bank-west-money-safe",
@@ -2285,7 +2332,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000)."
+        "notes": "Decorative cash safe in the office ($335,000).",
+        "price": 335000
       },
       {
         "id": "ceo-office-maze-bank-west-accommodation",
@@ -2293,7 +2341,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000)."
+        "notes": "Bed, shower, changing room ($795,000).",
+        "price": 795000
       }
     ],
     "_sources": {
@@ -2321,7 +2370,8 @@
         "tier": 1,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 1150000
       },
       {
         "id": "ceo-office-arcadius-business-center-garage-2",
@@ -2329,7 +2379,8 @@
         "tier": 2,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-arcadius-business-center-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 855000
       },
       {
         "id": "ceo-office-arcadius-business-center-garage-3",
@@ -2337,7 +2388,8 @@
         "tier": 3,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-arcadius-business-center-garage-2",
-        "notes": "Fully upgraded Office Garage holds 60 vehicles total"
+        "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "price": 745000
       },
       {
         "id": "ceo-office-arcadius-business-center-gun-locker",
@@ -2345,7 +2397,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000)."
+        "notes": "Weapon loadout storage ($520,000).",
+        "price": 520000
       },
       {
         "id": "ceo-office-arcadius-business-center-money-safe",
@@ -2353,7 +2406,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000)."
+        "notes": "Decorative cash safe in the office ($335,000).",
+        "price": 335000
       },
       {
         "id": "ceo-office-arcadius-business-center-accommodation",
@@ -2361,7 +2415,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000)."
+        "notes": "Bed, shower, changing room ($795,000).",
+        "price": 795000
       }
     ],
     "_sources": {
@@ -2389,7 +2444,8 @@
         "tier": 1,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 1150000
       },
       {
         "id": "ceo-office-lombank-west-garage-2",
@@ -2397,7 +2453,8 @@
         "tier": 2,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-lombank-west-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 855000
       },
       {
         "id": "ceo-office-lombank-west-garage-3",
@@ -2405,7 +2462,8 @@
         "tier": 3,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-lombank-west-garage-2",
-        "notes": "Fully upgraded Office Garage holds 60 vehicles total"
+        "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "price": 745000
       },
       {
         "id": "ceo-office-lombank-west-gun-locker",
@@ -2413,7 +2471,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000)."
+        "notes": "Weapon loadout storage ($520,000).",
+        "price": 520000
       },
       {
         "id": "ceo-office-lombank-west-money-safe",
@@ -2421,7 +2480,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000)."
+        "notes": "Decorative cash safe in the office ($335,000).",
+        "price": 335000
       },
       {
         "id": "ceo-office-lombank-west-accommodation",
@@ -2429,7 +2489,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000)."
+        "notes": "Bed, shower, changing room ($795,000).",
+        "price": 795000
       }
     ],
     "_sources": {
@@ -2457,7 +2518,8 @@
         "tier": 1,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 1150000
       },
       {
         "id": "ceo-office-maze-bank-tower-garage-2",
@@ -2465,7 +2527,8 @@
         "tier": 2,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-tower-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 855000
       },
       {
         "id": "ceo-office-maze-bank-tower-garage-3",
@@ -2473,7 +2536,8 @@
         "tier": 3,
         "capacity": 20,
         "required_upgrade_id": "ceo-office-maze-bank-tower-garage-2",
-        "notes": "Fully upgraded Office Garage holds 60 vehicles total"
+        "notes": "Fully upgraded Office Garage holds 60 vehicles total",
+        "price": 745000
       },
       {
         "id": "ceo-office-maze-bank-tower-gun-locker",
@@ -2481,7 +2545,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000)."
+        "notes": "Weapon loadout storage ($520,000).",
+        "price": 520000
       },
       {
         "id": "ceo-office-maze-bank-tower-money-safe",
@@ -2489,7 +2554,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000)."
+        "notes": "Decorative cash safe in the office ($335,000).",
+        "price": 335000
       },
       {
         "id": "ceo-office-maze-bank-tower-accommodation",
@@ -2497,7 +2563,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000)."
+        "notes": "Bed, shower, changing room ($795,000).",
+        "price": 795000
       }
     ],
     "_sources": {
@@ -2525,7 +2592,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-great-chaparral-gun-locker",
@@ -2533,7 +2601,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-great-chaparral-custom-bike-shop",
@@ -2541,7 +2610,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2569,7 +2639,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-sandy-shores-gun-locker",
@@ -2577,7 +2648,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-sandy-shores-custom-bike-shop",
@@ -2585,7 +2657,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2613,7 +2686,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-paleto-bay-1story-gun-locker",
@@ -2621,7 +2695,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-paleto-bay-1story-custom-bike-shop",
@@ -2629,7 +2704,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2657,7 +2733,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-del-perro-beach-gun-locker",
@@ -2665,7 +2742,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-del-perro-beach-custom-bike-shop",
@@ -2673,7 +2751,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2701,7 +2780,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-rancho-gun-locker",
@@ -2709,7 +2789,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-rancho-custom-bike-shop",
@@ -2717,7 +2798,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2745,7 +2827,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "1-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-pillbox-hill-gun-locker",
@@ -2753,7 +2836,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-pillbox-hill-custom-bike-shop",
@@ -2761,7 +2845,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2789,7 +2874,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-grapeseed-gun-locker",
@@ -2797,7 +2883,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-grapeseed-custom-bike-shop",
@@ -2805,7 +2892,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2833,7 +2921,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-paleto-bay-2story-gun-locker",
@@ -2841,7 +2930,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-paleto-bay-2story-custom-bike-shop",
@@ -2849,7 +2939,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2877,7 +2968,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-vespucci-beach-gun-locker",
@@ -2885,7 +2977,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-vespucci-beach-custom-bike-shop",
@@ -2893,7 +2986,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2921,7 +3015,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-la-mesa-gun-locker",
@@ -2929,7 +3024,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-la-mesa-custom-bike-shop",
@@ -2937,7 +3033,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -2965,7 +3062,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-downtown-vinewood-gun-locker",
@@ -2973,7 +3071,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-downtown-vinewood-custom-bike-shop",
@@ -2981,7 +3080,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -3009,7 +3109,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7)."
+        "notes": "2-Story Clubhouse. 10 personal bike slots + 7 member bike slots (1 per MC member, up to 7).",
+        "price": 0
       },
       {
         "id": "mc-clubhouse-hawick-gun-locker",
@@ -3017,7 +3118,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000)."
+        "notes": "Weapon loadout storage ($320,000).",
+        "price": 320000
       },
       {
         "id": "mc-clubhouse-hawick-custom-bike-shop",
@@ -3025,7 +3127,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000)."
+        "notes": "Full motorcycle customization + customer bike service ($530,000).",
+        "price": 530000
       }
     ],
     "_sources": {
@@ -3053,7 +3156,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-chumash-staff",
@@ -3061,7 +3165,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-chumash-security",
@@ -3069,7 +3174,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-chumash-personal-quarters",
@@ -3077,7 +3183,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-chumash-gun-locker",
@@ -3085,7 +3192,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3113,7 +3221,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-paleto-forest-staff",
@@ -3121,7 +3230,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-paleto-forest-security",
@@ -3129,7 +3239,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-paleto-forest-personal-quarters",
@@ -3137,7 +3248,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-paleto-forest-gun-locker",
@@ -3145,7 +3257,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3173,7 +3286,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-raton-canyon-staff",
@@ -3181,7 +3295,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-raton-canyon-security",
@@ -3189,7 +3304,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-raton-canyon-personal-quarters",
@@ -3197,7 +3313,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-raton-canyon-gun-locker",
@@ -3205,7 +3322,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3233,7 +3351,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-lago-zancudo-staff",
@@ -3241,7 +3360,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-lago-zancudo-security",
@@ -3249,7 +3369,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-lago-zancudo-personal-quarters",
@@ -3257,7 +3378,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-lago-zancudo-gun-locker",
@@ -3265,7 +3387,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3293,7 +3416,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-smoke-tree-road-staff",
@@ -3301,7 +3425,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-smoke-tree-road-security",
@@ -3309,7 +3434,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-smoke-tree-road-personal-quarters",
@@ -3317,7 +3443,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-smoke-tree-road-gun-locker",
@@ -3325,7 +3452,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3353,7 +3481,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-thomson-scrapyard-staff",
@@ -3361,7 +3490,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-thomson-scrapyard-security",
@@ -3369,7 +3499,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-thomson-scrapyard-personal-quarters",
@@ -3377,7 +3508,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-thomson-scrapyard-gun-locker",
@@ -3385,7 +3517,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3413,7 +3546,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-grapeseed-staff",
@@ -3421,7 +3555,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-grapeseed-security",
@@ -3429,7 +3564,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-grapeseed-personal-quarters",
@@ -3437,7 +3573,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-grapeseed-gun-locker",
@@ -3445,7 +3582,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3473,7 +3611,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-route-68-staff",
@@ -3481,7 +3620,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-route-68-security",
@@ -3489,7 +3629,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-route-68-personal-quarters",
@@ -3497,7 +3638,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-route-68-gun-locker",
@@ -3505,7 +3647,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3533,7 +3676,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-farmhouse-staff",
@@ -3541,7 +3685,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-farmhouse-security",
@@ -3549,7 +3694,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-farmhouse-personal-quarters",
@@ -3557,7 +3703,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-farmhouse-gun-locker",
@@ -3565,7 +3712,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3593,7 +3741,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-grand-senora-desert-staff",
@@ -3601,7 +3750,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-grand-senora-desert-security",
@@ -3609,7 +3759,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-grand-senora-desert-personal-quarters",
@@ -3617,7 +3768,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-grand-senora-desert-gun-locker",
@@ -3625,7 +3777,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3653,7 +3806,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
+        "price": 1155000
       },
       {
         "id": "bunker-grand-senora-oilfields-staff",
@@ -3661,7 +3815,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
+        "price": 598500
       },
       {
         "id": "bunker-grand-senora-oilfields-security",
@@ -3669,7 +3824,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000)."
+        "notes": "Reduces chance of stock theft ($351,000).",
+        "price": 351000
       },
       {
         "id": "bunker-grand-senora-oilfields-personal-quarters",
@@ -3677,7 +3833,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000)."
+        "notes": "Bunk + shower; respawn point ($265,000).",
+        "price": 265000
       },
       {
         "id": "bunker-grand-senora-oilfields-gun-locker",
@@ -3685,7 +3842,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000)."
+        "notes": "Weapon loadout storage ($175,000).",
+        "price": 175000
       }
     ],
     "_sources": {
@@ -3713,7 +3871,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-land-act-reservoir-orbital-cannon",
@@ -3721,7 +3880,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-land-act-reservoir-security-room",
@@ -3729,7 +3889,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-land-act-reservoir-lounge",
@@ -3737,7 +3898,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-land-act-reservoir-sleeping-quarters",
@@ -3745,7 +3907,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -3773,7 +3936,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-lago-zancudo-orbital-cannon",
@@ -3781,7 +3945,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-lago-zancudo-security-room",
@@ -3789,7 +3954,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-lago-zancudo-lounge",
@@ -3797,7 +3963,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-lago-zancudo-sleeping-quarters",
@@ -3805,7 +3972,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -3833,7 +4001,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-mount-gordo-orbital-cannon",
@@ -3841,7 +4010,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-mount-gordo-security-room",
@@ -3849,7 +4019,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-mount-gordo-lounge",
@@ -3857,7 +4028,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-mount-gordo-sleeping-quarters",
@@ -3865,7 +4037,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -3893,7 +4066,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-paleto-bay-orbital-cannon",
@@ -3901,7 +4075,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-paleto-bay-security-room",
@@ -3909,7 +4084,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-paleto-bay-lounge",
@@ -3917,7 +4093,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-paleto-bay-sleeping-quarters",
@@ -3925,7 +4102,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -3953,7 +4131,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-ron-alternates-wind-farm-orbital-cannon",
@@ -3961,7 +4140,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-ron-alternates-wind-farm-security-room",
@@ -3969,7 +4149,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-ron-alternates-wind-farm-lounge",
@@ -3977,7 +4158,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-ron-alternates-wind-farm-sleeping-quarters",
@@ -3985,7 +4167,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -4013,7 +4196,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-zancudo-river-orbital-cannon",
@@ -4021,7 +4205,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-zancudo-river-security-room",
@@ -4029,7 +4214,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-zancudo-river-lounge",
@@ -4037,7 +4223,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-zancudo-river-sleeping-quarters",
@@ -4045,7 +4232,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -4073,7 +4261,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-sandy-shores-orbital-cannon",
@@ -4081,7 +4270,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-sandy-shores-security-room",
@@ -4089,7 +4279,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-sandy-shores-lounge",
@@ -4097,7 +4288,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-sandy-shores-sleeping-quarters",
@@ -4105,7 +4297,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -4133,7 +4326,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-route-68-orbital-cannon",
@@ -4141,7 +4335,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-route-68-security-room",
@@ -4149,7 +4344,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-route-68-lounge",
@@ -4157,7 +4353,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-route-68-sleeping-quarters",
@@ -4165,7 +4362,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -4193,7 +4391,8 @@
         "tier": null,
         "capacity": 7,
         "required_upgrade_id": null,
-        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.)."
+        "notes": "7 personal vehicle slots + dedicated weaponized bays for Doomsday vehicles (Avenger, TM-02 Khanjali, RCV, etc.).",
+        "price": 0
       },
       {
         "id": "facility-grand-senora-desert-orbital-cannon",
@@ -4201,7 +4400,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
+        "price": 900000
       },
       {
         "id": "facility-grand-senora-desert-security-room",
@@ -4209,7 +4409,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
+        "price": 775000
       },
       {
         "id": "facility-grand-senora-desert-lounge",
@@ -4217,7 +4418,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($185k–$245k)."
+        "notes": "Style upgrade — 3 tiers ($185k–$245k).",
+        "price": 185500
       },
       {
         "id": "facility-grand-senora-desert-sleeping-quarters",
@@ -4225,7 +4427,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Style upgrade — 3 tiers ($150k–$290k)."
+        "notes": "Style upgrade — 3 tiers ($150k–$290k).",
+        "price": 150000
       }
     ],
     "_sources": {
@@ -4253,7 +4456,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 0
       },
       {
         "id": "agency-little-seoul-armory",
@@ -4261,7 +4465,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
+        "price": 720000
       },
       {
         "id": "agency-little-seoul-personal-quarters",
@@ -4269,7 +4474,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000)."
+        "notes": "Sleeping accommodations ($275,000).",
+        "price": 275000
       },
       {
         "id": "agency-little-seoul-vehicle-workshop",
@@ -4277,7 +4483,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
+        "price": 800000
       }
     ],
     "_sources": {
@@ -4305,7 +4512,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 0
       },
       {
         "id": "agency-vespucci-canals-armory",
@@ -4313,7 +4521,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
+        "price": 720000
       },
       {
         "id": "agency-vespucci-canals-personal-quarters",
@@ -4321,7 +4530,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000)."
+        "notes": "Sleeping accommodations ($275,000).",
+        "price": 275000
       },
       {
         "id": "agency-vespucci-canals-vehicle-workshop",
@@ -4329,7 +4539,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
+        "price": 800000
       }
     ],
     "_sources": {
@@ -4357,7 +4568,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 0
       },
       {
         "id": "agency-rockford-hills-armory",
@@ -4365,7 +4577,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
+        "price": 720000
       },
       {
         "id": "agency-rockford-hills-personal-quarters",
@@ -4373,7 +4586,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000)."
+        "notes": "Sleeping accommodations ($275,000).",
+        "price": 275000
       },
       {
         "id": "agency-rockford-hills-vehicle-workshop",
@@ -4381,7 +4595,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
+        "price": 800000
       }
     ],
     "_sources": {
@@ -4409,7 +4624,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 0
       },
       {
         "id": "agency-hawick-armory",
@@ -4417,7 +4633,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
+        "price": 720000
       },
       {
         "id": "agency-hawick-personal-quarters",
@@ -4425,7 +4642,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000)."
+        "notes": "Sleeping accommodations ($275,000).",
+        "price": 275000
       },
       {
         "id": "agency-hawick-vehicle-workshop",
@@ -4433,7 +4651,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
+        "price": 800000
       }
     ],
     "_sources": {
@@ -4461,7 +4680,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-pixel-petes-master-control-terminal",
@@ -4469,7 +4689,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-pixel-petes-drone-station",
@@ -4477,7 +4698,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-pixel-petes-personal-quarters",
@@ -4485,7 +4707,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-pixel-petes-high-score-screens",
@@ -4493,7 +4716,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4521,7 +4745,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-wonderama-master-control-terminal",
@@ -4529,7 +4754,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-wonderama-drone-station",
@@ -4537,7 +4763,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-wonderama-personal-quarters",
@@ -4545,7 +4772,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-wonderama-high-score-screens",
@@ -4553,7 +4781,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4581,7 +4810,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-the-warehouse-master-control-terminal",
@@ -4589,7 +4819,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-the-warehouse-drone-station",
@@ -4597,7 +4828,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-the-warehouse-personal-quarters",
@@ -4605,7 +4837,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-the-warehouse-high-score-screens",
@@ -4613,7 +4846,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4641,7 +4875,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-videogeddon-master-control-terminal",
@@ -4649,7 +4884,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-videogeddon-drone-station",
@@ -4657,7 +4893,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-videogeddon-personal-quarters",
@@ -4665,7 +4902,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-videogeddon-high-score-screens",
@@ -4673,7 +4911,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4701,7 +4940,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-insert-coin-master-control-terminal",
@@ -4709,7 +4949,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-insert-coin-drone-station",
@@ -4717,7 +4958,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-insert-coin-personal-quarters",
@@ -4725,7 +4967,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-insert-coin-high-score-screens",
@@ -4733,7 +4976,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4761,7 +5005,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
+        "price": 215000
       },
       {
         "id": "arcade-eight-bit-master-control-terminal",
@@ -4769,7 +5014,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
+        "price": 1740000
       },
       {
         "id": "arcade-eight-bit-drone-station",
@@ -4777,7 +5023,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
+        "price": 1460000
       },
       {
         "id": "arcade-eight-bit-personal-quarters",
@@ -4785,7 +5032,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
+        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
+        "price": 150000
       },
       {
         "id": "arcade-eight-bit-high-score-screens",
@@ -4793,7 +5041,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
+        "price": 295000
       }
     ],
     "_sources": {
@@ -4821,7 +5070,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Included with purchase; 10 customer car slots."
+        "notes": "Included with purchase; 10 customer car slots.",
+        "price": 0
       },
       {
         "id": "auto-shop-mission-row-extra-car-lift",
@@ -4829,7 +5079,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000)."
+        "notes": "Extra service bay; increases job throughput ($650,000).",
+        "price": 650000
       },
       {
         "id": "auto-shop-mission-row-staff-1",
@@ -4837,7 +5088,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-mission-row-staff-2",
@@ -4845,7 +5097,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-mission-row-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000)."
+        "notes": "Second employee; requires Staff Member 1 ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-mission-row-personal-quarters",
@@ -4853,7 +5106,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
+        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
+        "price": 340000
       }
     ],
     "_sources": {
@@ -4881,7 +5135,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Included with purchase; 10 customer car slots."
+        "notes": "Included with purchase; 10 customer car slots.",
+        "price": 0
       },
       {
         "id": "auto-shop-la-mesa-extra-car-lift",
@@ -4889,7 +5144,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000)."
+        "notes": "Extra service bay; increases job throughput ($650,000).",
+        "price": 650000
       },
       {
         "id": "auto-shop-la-mesa-staff-1",
@@ -4897,7 +5153,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-la-mesa-staff-2",
@@ -4905,7 +5162,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-la-mesa-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000)."
+        "notes": "Second employee; requires Staff Member 1 ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-la-mesa-personal-quarters",
@@ -4913,7 +5171,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
+        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
+        "price": 340000
       }
     ],
     "_sources": {
@@ -4941,7 +5200,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Included with purchase; 10 customer car slots."
+        "notes": "Included with purchase; 10 customer car slots.",
+        "price": 0
       },
       {
         "id": "auto-shop-strawberry-extra-car-lift",
@@ -4949,7 +5209,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000)."
+        "notes": "Extra service bay; increases job throughput ($650,000).",
+        "price": 650000
       },
       {
         "id": "auto-shop-strawberry-staff-1",
@@ -4957,7 +5218,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-strawberry-staff-2",
@@ -4965,7 +5227,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-strawberry-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000)."
+        "notes": "Second employee; requires Staff Member 1 ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-strawberry-personal-quarters",
@@ -4973,7 +5236,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
+        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
+        "price": 340000
       }
     ],
     "_sources": {
@@ -5001,7 +5265,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Included with purchase; 10 customer car slots."
+        "notes": "Included with purchase; 10 customer car slots.",
+        "price": 0
       },
       {
         "id": "auto-shop-rancho-extra-car-lift",
@@ -5009,7 +5274,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000)."
+        "notes": "Extra service bay; increases job throughput ($650,000).",
+        "price": 650000
       },
       {
         "id": "auto-shop-rancho-staff-1",
@@ -5017,7 +5283,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-rancho-staff-2",
@@ -5025,7 +5292,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-rancho-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000)."
+        "notes": "Second employee; requires Staff Member 1 ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-rancho-personal-quarters",
@@ -5033,7 +5301,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
+        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
+        "price": 340000
       }
     ],
     "_sources": {
@@ -5061,7 +5330,8 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Included with purchase; 10 customer car slots."
+        "notes": "Included with purchase; 10 customer car slots.",
+        "price": 0
       },
       {
         "id": "auto-shop-burton-extra-car-lift",
@@ -5069,7 +5339,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000)."
+        "notes": "Extra service bay; increases job throughput ($650,000).",
+        "price": 650000
       },
       {
         "id": "auto-shop-burton-staff-1",
@@ -5077,7 +5348,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-burton-staff-2",
@@ -5085,7 +5357,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-burton-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000)."
+        "notes": "Second employee; requires Staff Member 1 ($385,000).",
+        "price": 385000
       },
       {
         "id": "auto-shop-burton-personal-quarters",
@@ -5093,7 +5366,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
+        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
+        "price": 340000
       }
     ],
     "_sources": {
@@ -5121,7 +5395,8 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+        "price": 650000
       },
       {
         "id": "salvage-yard-murrieta-heights-wall-safe",
@@ -5129,7 +5404,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000)."
+        "notes": "Stores up to $250k in passive earnings ($750,000).",
+        "price": 750000
       },
       {
         "id": "salvage-yard-murrieta-heights-staff",
@@ -5137,7 +5413,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000)."
+        "notes": "Accelerates passive salvage income ($625,000).",
+        "price": 625000
       },
       {
         "id": "salvage-yard-murrieta-heights-trade-rates",
@@ -5145,7 +5422,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
+        "price": 450000
       }
     ],
     "_sources": {
@@ -5173,7 +5451,8 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+        "price": 650000
       },
       {
         "id": "salvage-yard-sandy-shores-wall-safe",
@@ -5181,7 +5460,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000)."
+        "notes": "Stores up to $250k in passive earnings ($750,000).",
+        "price": 750000
       },
       {
         "id": "salvage-yard-sandy-shores-staff",
@@ -5189,7 +5469,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000)."
+        "notes": "Accelerates passive salvage income ($625,000).",
+        "price": 625000
       },
       {
         "id": "salvage-yard-sandy-shores-trade-rates",
@@ -5197,7 +5478,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
+        "price": 450000
       }
     ],
     "_sources": {
@@ -5225,7 +5507,8 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+        "price": 650000
       },
       {
         "id": "salvage-yard-la-puerta-wall-safe",
@@ -5233,7 +5516,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000)."
+        "notes": "Stores up to $250k in passive earnings ($750,000).",
+        "price": 750000
       },
       {
         "id": "salvage-yard-la-puerta-staff",
@@ -5241,7 +5525,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000)."
+        "notes": "Accelerates passive salvage income ($625,000).",
+        "price": 625000
       },
       {
         "id": "salvage-yard-la-puerta-trade-rates",
@@ -5249,7 +5534,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
+        "price": 450000
       }
     ],
     "_sources": {
@@ -5277,7 +5563,8 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+        "price": 650000
       },
       {
         "id": "salvage-yard-strawberry-wall-safe",
@@ -5285,7 +5572,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000)."
+        "notes": "Stores up to $250k in passive earnings ($750,000).",
+        "price": 750000
       },
       {
         "id": "salvage-yard-strawberry-staff",
@@ -5293,7 +5581,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000)."
+        "notes": "Accelerates passive salvage income ($625,000).",
+        "price": 625000
       },
       {
         "id": "salvage-yard-strawberry-trade-rates",
@@ -5301,7 +5590,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
+        "price": 450000
       }
     ],
     "_sources": {
@@ -5329,7 +5619,8 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+        "price": 650000
       },
       {
         "id": "salvage-yard-paleto-bay-wall-safe",
@@ -5337,7 +5628,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000)."
+        "notes": "Stores up to $250k in passive earnings ($750,000).",
+        "price": 750000
       },
       {
         "id": "salvage-yard-paleto-bay-staff",
@@ -5345,7 +5637,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000)."
+        "notes": "Accelerates passive salvage income ($625,000).",
+        "price": 625000
       },
       {
         "id": "salvage-yard-paleto-bay-trade-rates",
@@ -5353,7 +5646,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
+        "price": 450000
       }
     ],
     "_sources": {
@@ -5552,7 +5846,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5581,7 +5876,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5610,7 +5906,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5639,7 +5936,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5668,7 +5966,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5697,7 +5996,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5726,7 +6026,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5754,7 +6055,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5783,7 +6085,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5812,7 +6115,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5840,7 +6144,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5869,7 +6174,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5897,7 +6203,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5926,7 +6233,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5954,7 +6262,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -5983,7 +6292,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6012,7 +6322,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6041,7 +6352,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6070,7 +6382,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6099,7 +6412,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6127,7 +6441,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6156,7 +6471,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded."
+        "notes": "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+        "price": 0
       }
     ],
     "_sources": {
@@ -6185,7 +6501,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
+        "notes": "Stores planes and helicopters; not garage vehicles",
+        "price": 0
       },
       {
         "id": "hangar-lsia-a17-workshop",
@@ -6193,7 +6510,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000)."
+        "notes": "Enables aircraft customization / respraying ($1,150,000).",
+        "price": 1150000
       }
     ],
     "_sources": {
@@ -6221,7 +6539,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
+        "notes": "Stores planes and helicopters; not garage vehicles",
+        "price": 0
       },
       {
         "id": "hangar-lsia-1-workshop",
@@ -6229,7 +6548,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000)."
+        "notes": "Enables aircraft customization / respraying ($1,150,000).",
+        "price": 1150000
       }
     ],
     "_sources": {
@@ -6257,7 +6577,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
+        "notes": "Stores planes and helicopters; not garage vehicles",
+        "price": 0
       },
       {
         "id": "hangar-fort-zancudo-3497-workshop",
@@ -6265,7 +6586,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000)."
+        "notes": "Enables aircraft customization / respraying ($1,150,000).",
+        "price": 1150000
       }
     ],
     "_sources": {
@@ -6293,7 +6615,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
+        "notes": "Stores planes and helicopters; not garage vehicles",
+        "price": 0
       },
       {
         "id": "hangar-fort-zancudo-3499-workshop",
@@ -6301,7 +6624,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000)."
+        "notes": "Enables aircraft customization / respraying ($1,150,000).",
+        "price": 1150000
       }
     ],
     "_sources": {
@@ -6329,7 +6653,8 @@
         "tier": null,
         "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Stores planes and helicopters; not garage vehicles"
+        "notes": "Stores planes and helicopters; not garage vehicles",
+        "price": 0
       },
       {
         "id": "hangar-fort-zancudo-a2-workshop",
@@ -6337,7 +6662,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000)."
+        "notes": "Enables aircraft customization / respraying ($1,150,000).",
+        "price": 1150000
       }
     ],
     "_sources": {
@@ -6365,7 +6691,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Entry-level ($6,000,000)."
+        "notes": "Entry-level ($6,000,000).",
+        "price": 6000000
       },
       {
         "id": "yacht-galaxy-super-yacht-pisces",
@@ -6373,7 +6700,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Mid-tier ($7,000,000)."
+        "notes": "Mid-tier ($7,000,000).",
+        "price": 7000000
       },
       {
         "id": "yacht-galaxy-super-yacht-aquarius",
@@ -6381,7 +6709,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Top-tier, premium ($8,000,000); includes hot tubs."
+        "notes": "Top-tier, premium ($8,000,000); includes hot tubs.",
+        "price": 8000000
       }
     ],
     "_sources": {
@@ -6409,7 +6738,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-la-mesa-garage-2",
@@ -6417,7 +6747,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-la-mesa-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-la-mesa-garage-3",
@@ -6425,7 +6756,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-la-mesa-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-la-mesa-equipment",
@@ -6433,7 +6765,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-la-mesa-security",
@@ -6441,7 +6774,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-la-mesa-dry-ice",
@@ -6449,7 +6783,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-la-mesa-staff",
@@ -6457,7 +6792,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6485,7 +6821,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-mission-row-garage-2",
@@ -6493,7 +6830,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-mission-row-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-mission-row-garage-3",
@@ -6501,7 +6839,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-mission-row-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-mission-row-equipment",
@@ -6509,7 +6848,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-mission-row-security",
@@ -6517,7 +6857,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-mission-row-dry-ice",
@@ -6525,7 +6866,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-mission-row-staff",
@@ -6533,7 +6875,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6561,7 +6904,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-del-perro-garage-2",
@@ -6569,7 +6913,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-del-perro-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-del-perro-garage-3",
@@ -6577,7 +6922,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-del-perro-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-del-perro-equipment",
@@ -6585,7 +6931,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-del-perro-security",
@@ -6593,7 +6940,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-del-perro-dry-ice",
@@ -6601,7 +6949,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-del-perro-staff",
@@ -6609,7 +6958,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6637,7 +6987,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-downtown-vinewood-garage-2",
@@ -6645,7 +6996,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-downtown-vinewood-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-downtown-vinewood-garage-3",
@@ -6653,7 +7005,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-downtown-vinewood-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-downtown-vinewood-equipment",
@@ -6661,7 +7014,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-downtown-vinewood-security",
@@ -6669,7 +7023,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-downtown-vinewood-dry-ice",
@@ -6677,7 +7032,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-downtown-vinewood-staff",
@@ -6685,7 +7041,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6713,7 +7070,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-strawberry-garage-2",
@@ -6721,7 +7079,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-strawberry-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-strawberry-garage-3",
@@ -6729,7 +7088,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-strawberry-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-strawberry-equipment",
@@ -6737,7 +7097,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-strawberry-security",
@@ -6745,7 +7106,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-strawberry-dry-ice",
@@ -6753,7 +7115,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-strawberry-staff",
@@ -6761,7 +7124,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6789,7 +7153,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-vespucci-canals-garage-2",
@@ -6797,7 +7162,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-vespucci-canals-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-vespucci-canals-garage-3",
@@ -6805,7 +7171,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-vespucci-canals-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-vespucci-canals-equipment",
@@ -6813,7 +7180,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-vespucci-canals-security",
@@ -6821,7 +7189,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-vespucci-canals-dry-ice",
@@ -6829,7 +7198,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-vespucci-canals-staff",
@@ -6837,7 +7207,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6865,7 +7236,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-west-vinewood-garage-2",
@@ -6873,7 +7245,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-west-vinewood-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-west-vinewood-garage-3",
@@ -6881,7 +7254,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-west-vinewood-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-west-vinewood-equipment",
@@ -6889,7 +7263,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-west-vinewood-security",
@@ -6897,7 +7272,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-west-vinewood-dry-ice",
@@ -6905,7 +7281,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-west-vinewood-staff",
@@ -6913,7 +7290,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -6941,7 +7319,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-elysian-island-garage-2",
@@ -6949,7 +7328,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-elysian-island-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-elysian-island-garage-3",
@@ -6957,7 +7337,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-elysian-island-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-elysian-island-equipment",
@@ -6965,7 +7346,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-elysian-island-security",
@@ -6973,7 +7355,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-elysian-island-dry-ice",
@@ -6981,7 +7364,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-elysian-island-staff",
@@ -6989,7 +7373,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -7017,7 +7402,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-cypress-flats-garage-2",
@@ -7025,7 +7411,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-cypress-flats-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-cypress-flats-garage-3",
@@ -7033,7 +7420,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-cypress-flats-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-cypress-flats-equipment",
@@ -7041,7 +7429,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-cypress-flats-security",
@@ -7049,7 +7438,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-cypress-flats-dry-ice",
@@ -7057,7 +7447,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-cypress-flats-staff",
@@ -7065,7 +7456,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -7093,7 +7485,8 @@
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": null
+        "notes": null,
+        "price": 140000
       },
       {
         "id": "nightclub-la-puerta-garage-2",
@@ -7101,7 +7494,8 @@
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-la-puerta-garage-1",
-        "notes": null
+        "notes": null,
+        "price": 287000
       },
       {
         "id": "nightclub-la-puerta-garage-3",
@@ -7109,7 +7503,8 @@
         "tier": 3,
         "capacity": 11,
         "required_upgrade_id": "nightclub-la-puerta-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot"
+        "notes": "Includes the MTL Pounder Custom slot",
+        "price": 441350
       },
       {
         "id": "nightclub-la-puerta-equipment",
@@ -7117,7 +7512,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases nightclub income generation"
+        "notes": "Increases nightclub income generation",
+        "price": 1425000
       },
       {
         "id": "nightclub-la-puerta-security",
@@ -7125,7 +7521,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency"
+        "notes": "Reduces raid frequency",
+        "price": 695000
       },
       {
         "id": "nightclub-la-puerta-dry-ice",
@@ -7133,7 +7530,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Cosmetic / perk"
+        "notes": "Cosmetic / perk",
+        "price": 345000
       },
       {
         "id": "nightclub-la-puerta-staff",
@@ -7141,7 +7539,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000)."
+        "notes": "Reduces daily popularity loss ($475,000).",
+        "price": 475000
       }
     ],
     "_sources": {
@@ -7169,7 +7568,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 935000
       },
       {
         "id": "biker-business-coke-alamo-sea-staff",
@@ -7177,7 +7577,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 390000
       },
       {
         "id": "biker-business-coke-alamo-sea-security",
@@ -7185,7 +7586,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 570000
       }
     ],
     "_sources": {
@@ -7213,7 +7615,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 935000
       },
       {
         "id": "biker-business-coke-elysian-island-staff",
@@ -7221,7 +7624,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 390000
       },
       {
         "id": "biker-business-coke-elysian-island-security",
@@ -7229,7 +7633,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 570000
       }
     ],
     "_sources": {
@@ -7257,7 +7662,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 935000
       },
       {
         "id": "biker-business-coke-morningwood-staff",
@@ -7265,7 +7671,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 390000
       },
       {
         "id": "biker-business-coke-morningwood-security",
@@ -7273,7 +7680,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 570000
       }
     ],
     "_sources": {
@@ -7301,7 +7709,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 935000
       },
       {
         "id": "biker-business-coke-paleto-bay-staff",
@@ -7309,7 +7718,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 390000
       },
       {
         "id": "biker-business-coke-paleto-bay-security",
@@ -7317,7 +7727,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 570000
       }
     ],
     "_sources": {
@@ -7345,7 +7756,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 1100000
       },
       {
         "id": "biker-business-meth-el-burro-heights-staff",
@@ -7353,7 +7765,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 331500
       },
       {
         "id": "biker-business-meth-el-burro-heights-security",
@@ -7361,7 +7774,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 513000
       }
     ],
     "_sources": {
@@ -7389,7 +7803,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 1100000
       },
       {
         "id": "biker-business-meth-grand-senora-desert-staff",
@@ -7397,7 +7812,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 331500
       },
       {
         "id": "biker-business-meth-grand-senora-desert-security",
@@ -7405,7 +7821,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 513000
       }
     ],
     "_sources": {
@@ -7433,7 +7850,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 1100000
       },
       {
         "id": "biker-business-meth-paleto-bay-staff",
@@ -7441,7 +7859,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 331500
       },
       {
         "id": "biker-business-meth-paleto-bay-security",
@@ -7449,7 +7868,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 513000
       }
     ],
     "_sources": {
@@ -7477,7 +7897,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 1100000
       },
       {
         "id": "biker-business-meth-terminal-staff",
@@ -7485,7 +7906,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 331500
       },
       {
         "id": "biker-business-meth-terminal-security",
@@ -7493,7 +7915,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 513000
       }
     ],
     "_sources": {
@@ -7521,7 +7944,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 990000
       },
       {
         "id": "biker-business-weed-vinewood-downtown-staff",
@@ -7529,7 +7953,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-weed-vinewood-downtown-security",
@@ -7537,7 +7962,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 313500
       }
     ],
     "_sources": {
@@ -7565,7 +7991,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 990000
       },
       {
         "id": "biker-business-weed-elysian-island-staff",
@@ -7573,7 +8000,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-weed-elysian-island-security",
@@ -7581,7 +8009,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 313500
       }
     ],
     "_sources": {
@@ -7609,7 +8038,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 990000
       },
       {
         "id": "biker-business-weed-mount-chiliad-staff",
@@ -7617,7 +8047,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-weed-mount-chiliad-security",
@@ -7625,7 +8056,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 313500
       }
     ],
     "_sources": {
@@ -7653,7 +8085,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 990000
       },
       {
         "id": "biker-business-weed-san-chianski-staff",
@@ -7661,7 +8094,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-weed-san-chianski-security",
@@ -7669,7 +8103,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 313500
       }
     ],
     "_sources": {
@@ -7697,7 +8132,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 800000
       },
       {
         "id": "biker-business-cash-cypress-flats-staff",
@@ -7705,7 +8141,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-cash-cypress-flats-security",
@@ -7713,7 +8150,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 456000
       }
     ],
     "_sources": {
@@ -7741,7 +8179,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 800000
       },
       {
         "id": "biker-business-cash-grand-senora-desert-staff",
@@ -7749,7 +8188,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-cash-grand-senora-desert-security",
@@ -7757,7 +8197,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 456000
       }
     ],
     "_sources": {
@@ -7785,7 +8226,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 800000
       },
       {
         "id": "biker-business-cash-paleto-bay-staff",
@@ -7793,7 +8235,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-cash-paleto-bay-security",
@@ -7801,7 +8244,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 456000
       }
     ],
     "_sources": {
@@ -7829,7 +8273,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 800000
       },
       {
         "id": "biker-business-cash-vespucci-canals-staff",
@@ -7837,7 +8282,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 273000
       },
       {
         "id": "biker-business-cash-vespucci-canals-security",
@@ -7845,7 +8291,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 456000
       }
     ],
     "_sources": {
@@ -7873,7 +8320,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 550000
       },
       {
         "id": "biker-business-forgery-elysian-island-staff",
@@ -7881,7 +8329,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 195000
       },
       {
         "id": "biker-business-forgery-elysian-island-security",
@@ -7889,7 +8338,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 285000
       }
     ],
     "_sources": {
@@ -7917,7 +8367,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 550000
       },
       {
         "id": "biker-business-forgery-grapeseed-staff",
@@ -7925,7 +8376,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 195000
       },
       {
         "id": "biker-business-forgery-grapeseed-security",
@@ -7933,7 +8385,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 285000
       }
     ],
     "_sources": {
@@ -7961,7 +8414,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 550000
       },
       {
         "id": "biker-business-forgery-paleto-bay-staff",
@@ -7969,7 +8423,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 195000
       },
       {
         "id": "biker-business-forgery-paleto-bay-security",
@@ -7977,7 +8432,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 285000
       }
     ],
     "_sources": {
@@ -8005,7 +8461,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production speed and product value."
+        "notes": "Increases production speed and product value.",
+        "price": 550000
       },
       {
         "id": "biker-business-forgery-textile-city-staff",
@@ -8013,7 +8470,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Increases production efficiency and quality."
+        "notes": "Increases production efficiency and quality.",
+        "price": 195000
       },
       {
         "id": "biker-business-forgery-textile-city-security",
@@ -8021,7 +8479,8 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces raid frequency."
+        "notes": "Reduces raid frequency.",
+        "price": 285000
       }
     ],
     "_sources": {
