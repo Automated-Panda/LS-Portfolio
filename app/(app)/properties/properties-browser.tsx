@@ -28,12 +28,12 @@ const COPY: Record<PropertyScope, { title: string; noun: string; searchPlacehold
   properties: {
     title: "All Properties",
     noun: "properties",
-    searchPlaceholder: "Search properties…",
+    searchPlaceholder: "Search property name…",
   },
   businesses: {
     title: "All Businesses",
     noun: "businesses",
-    searchPlaceholder: "Search businesses…",
+    searchPlaceholder: "Search business name…",
   },
 };
 
@@ -91,12 +91,9 @@ export function PropertiesBrowser({
     return properties.filter((p) => {
       // Hide units from the main grid — they live inside their tower dialog.
       if (p.parent_building) return false;
-      if (
-        q &&
-        !p.display_name.toLowerCase().includes(q) &&
-        !(p.neighborhood ?? "").toLowerCase().includes(q) &&
-        !(p.subtype_display ?? "").toLowerCase().includes(q)
-      ) {
+      // Search matches the property NAME only — location / subtype filters
+      // have their own dedicated pills (Neighborhood + Subtype).
+      if (q && !p.display_name.toLowerCase().includes(q)) {
         return false;
       }
       if (type && p.property_type !== type) return false;
