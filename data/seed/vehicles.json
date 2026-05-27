@@ -1873,7 +1873,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/cargobob.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cargobob"
@@ -3027,7 +3027,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/dinghy.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Dinghy"
@@ -3091,7 +3091,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/dodo.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Dodo"
@@ -4390,22 +4390,6 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Faggio_Mod"
-    }
-  },
-  {
-    "id": "fbi",
-    "internal_name": "FBI",
-    "display_name": "Federal Investigation Bureau",
-    "manufacturer_id": "unknown",
-    "class": "EMERGENCY",
-    "release_update": null,
-    "is_garage_storable": true,
-    "variant_of": null,
-    "tags": [],
-    "image_path": "data/images/vehicles/fbi.webp",
-    "_sources": {
-      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
-      "fandom": "https://gta.fandom.com/wiki/FIB"
     }
   },
   {
@@ -7036,7 +7020,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/maverick.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Maverick"
@@ -8712,7 +8696,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/polmav.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Maverick"
@@ -10191,7 +10175,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/seasparrow.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sea_Sparrow"
@@ -10207,7 +10191,7 @@
     "is_garage_storable": false,
     "variant_of": "seasparrow",
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/seasparrow2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sparrow"
@@ -10762,7 +10746,7 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [],
-    "image_path": null,
+    "image_path": "data/images/vehicles/squalo.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Squalo"
