@@ -162,6 +162,29 @@ async function main(): Promise<void> {
   console.log(`Importing ${upgradeRows.length} property_upgrades...`);
   await upsert("property_upgrades", upgradeRows);
 
+  // Cleanup: delete any property_upgrades whose id is no longer in the seed
+  // (e.g. when an upgrade is restructured into base_capacity or removed).
+  // Scoped to the currently-seeded property_ids so we don't touch unrelated
+  // legacy data. user_owned_property_upgrades FK ON DELETE CASCADE handles
+  // any user-installed orphans.
+  const seedUpgradeIds = new Set(upgradeRows.map((r) => r.id as string));
+  const propertyIds = properties.map((p) => p.id);
+  const { data: dbUpgradeRows } = await supabase
+    .from("property_upgrades")
+    .select("id")
+    .in("property_id", propertyIds);
+  const orphans = (dbUpgradeRows ?? [])
+    .map((r) => r.id as string)
+    .filter((id) => !seedUpgradeIds.has(id));
+  if (orphans.length > 0) {
+    console.log(`  cleaning up ${orphans.length} orphan property_upgrades...`);
+    const { error: delErr } = await supabase
+      .from("property_upgrades")
+      .delete()
+      .in("id", orphans);
+    if (delErr) throw new Error(`delete orphan property_upgrades: ${delErr.message}`);
+  }
+
   const upgradeRequires = properties
     .flatMap((p) => p.upgrades)
     .filter((u) => u.required_upgrade_id)

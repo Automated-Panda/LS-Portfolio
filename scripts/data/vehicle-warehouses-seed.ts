@@ -98,19 +98,10 @@ function buildVehicleWarehouse(loc: LocationSeed): Omit<Property, "image_path"> 
     subtype_display: "Vehicle Warehouse",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    // 40-car source-vehicle storage is included on purchase, not an upgrade.
+    capacity: 40,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: `${loc.id}-storage`,
-        display_name: "Vehicle Warehouse Storage",
-        tier: null,
-        capacity: 40,
-        required_upgrade_id: null,
-        notes:
-          "Stores up to 40 source vehicles for CEO Special Cargo missions",
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       gtabase: gtabaseUrlFor(loc.id),

@@ -3898,18 +3898,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Murrieta Heights, Los Santos",
     "neighborhood": "Murrieta Heights",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-murrieta-heights-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
@@ -3925,18 +3916,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "La Mesa, Los Santos",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-la-mesa-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
@@ -3952,18 +3934,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "La Puerta, Los Santos",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-la-puerta-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
@@ -3979,18 +3952,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Davis, Los Santos",
     "neighborhood": "Davis",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-davis-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
@@ -4006,18 +3970,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Cypress Flats, Los Santos",
     "neighborhood": "Cypress Flats",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-cypress-flats-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": null
@@ -4033,18 +3988,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Los Santos International Airport, South Los Santos",
     "neighborhood": "Los Santos International Airport",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-lsia-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse"
@@ -4060,18 +4006,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Los Santos International Airport, South Los Santos",
     "neighborhood": "Los Santos International Airport",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-lsia-2-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse-2"
@@ -4087,18 +4024,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "El Burro Heights, East Los Santos",
     "neighborhood": "El Burro Heights",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-el-burro-heights-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/el-burro-heights-vehicle-warehouse"
@@ -4114,18 +4042,9 @@
     "subtype_display": "Vehicle Warehouse",
     "location": "Elysian Island, South Los Santos",
     "neighborhood": "Elysian Island",
-    "capacity": 0,
+    "capacity": 40,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "vehicle-warehouse-elysian-island-storage",
-        "display_name": "Vehicle Warehouse Storage",
-        "tier": null,
-        "capacity": 40,
-        "required_upgrade_id": null,
-        "notes": "Stores up to 40 source vehicles for CEO Special Cargo missions"
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Vehicle_Warehouse",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/elysian-island-vehicle-warehouse"
