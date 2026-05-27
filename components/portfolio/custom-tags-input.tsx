@@ -7,6 +7,20 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
+/**
+ * Normalize tags to Title Case so they read as "Benny Wheels" not
+ * "benny wheels". Word boundaries include spaces, hyphens, and slashes.
+ * Mirrors Postgres `initcap()` semantics: first char of each word goes
+ * upper, everything else lower.
+ */
+function titleCaseTag(raw: string): string {
+  const cleaned = raw.trim().toLowerCase();
+  if (!cleaned) return "";
+  return cleaned.replace(/(^|[\s\-/])(\p{L})/gu, (_, sep, ch) =>
+    sep + (ch as string).toUpperCase(),
+  );
+}
+
 type Props = {
   value: string[];
   onChange: (next: string[]) => void;
@@ -29,8 +43,14 @@ export function CustomTagsInput({
   const [focused, setFocused] = useState(false);
 
   const addTag = (raw: string) => {
-    const t = raw.trim().toLowerCase();
-    if (!t || value.includes(t)) {
+    const t = titleCaseTag(raw);
+    if (!t) {
+      setDraft("");
+      return;
+    }
+    // Case-insensitive dedup so "Drift" + "drift" don't both end up stored.
+    const tLower = t.toLowerCase();
+    if (value.some((existing) => existing.toLowerCase() === tLower)) {
       setDraft("");
       return;
     }
@@ -44,9 +64,10 @@ export function CustomTagsInput({
 
   const filteredSuggestions = useMemo(() => {
     const q = draft.trim().toLowerCase();
+    const valueLower = new Set(value.map((v) => v.toLowerCase()));
     return suggestions
-      .filter((s) => !value.includes(s))
-      .filter((s) => (q ? s.includes(q) : true))
+      .filter((s) => !valueLower.has(s.toLowerCase()))
+      .filter((s) => (q ? s.toLowerCase().includes(q) : true))
       .slice(0, 8);
   }, [suggestions, value, draft]);
 
@@ -90,23 +111,26 @@ export function CustomTagsInput({
           }}
           placeholder={
             value.length === 0
-              ? "drift, gymkhana, f1-wheels..."
-              : "Add another tag..."
+              ? "Drift, Gymkhana, F1 Wheels..."
+              : "Add another highlight..."
           }
         />
         {focused && filteredSuggestions.length > 0 && (
           <div className="absolute left-0 right-0 top-full z-50 mt-1 max-h-48 overflow-y-auto rounded-md border bg-popover shadow-md">
-            {filteredSuggestions.map((s) => (
-              <button
-                key={s}
-                type="button"
-                className="block w-full px-3 py-1.5 text-left text-sm hover:bg-muted"
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => addTag(s)}
-              >
-                {s}
-              </button>
-            ))}
+            {filteredSuggestions.map((s) => {
+              const display = titleCaseTag(s);
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  className="block w-full px-3 py-1.5 text-left text-sm hover:bg-muted"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => addTag(s)}
+                >
+                  {display}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
