@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/server";
 
+import { DangerZone } from "./danger-zone";
 import { ProfileForm } from "./profile-form";
 
 export default async function ProfilePage() {
@@ -51,6 +52,8 @@ export default async function ProfilePage() {
           />
         </CardContent>
       </Card>
+
+      <DangerZone />
     </div>
   );
 }
