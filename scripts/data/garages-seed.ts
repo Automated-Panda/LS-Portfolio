@@ -295,6 +295,20 @@ export const ECLIPSE_BLVD_GARAGES: Omit<Property, "image_path">[] = [
 // — without it, stored vehicles persist but new storage is suspended. We
 // model it as a single property with base capacity 100 and no upgrade tiers.
 
+// 5 floors × 20 cars = 100 total. Each floor becomes its own pickable
+// upgrade row so users can choose which floor a vehicle parks on. The GTA+
+// subscription includes all 5 floors on day one — they're not separate
+// purchases — so the rows install together (no required_upgrade_id chain).
+const VINEWOOD_FLOOR_UPGRADES = Array.from({ length: 5 }, (_, i) => ({
+  id: `vinewood-car-club-floor-${i + 1}`,
+  display_name: `Floor ${i + 1}`,
+  tier: i + 1,
+  capacity: 20,
+  required_upgrade_id: null,
+  notes: "Included with GTA+ subscription.",
+  price: 0,
+}));
+
 export const VINEWOOD_CAR_CLUB: Omit<Property, "image_path">[] = [
   {
     id: "vinewood-car-club",
@@ -304,9 +318,9 @@ export const VINEWOOD_CAR_CLUB: Omit<Property, "image_path">[] = [
     subtype_display: "Vinewood Club Garage",
     location: "West Eclipse Boulevard, Pillbox Hill",
     neighborhood: "Pillbox Hill",
-    capacity: 100,
+    capacity: 0,
     counts_as_garage: true,
-    upgrades: [],
+    upgrades: VINEWOOD_FLOOR_UPGRADES,
     _sources: {
       fandom: "https://gta.fandom.com/wiki/The_Vinewood_Club",
       gtabase: "https://www.gtabase.com/gta-online/properties/the-vinewood-club-garage",

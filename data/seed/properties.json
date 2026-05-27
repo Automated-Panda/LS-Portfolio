@@ -2268,9 +2268,55 @@
     "subtype_display": "Vinewood Club Garage",
     "location": "West Eclipse Boulevard, Pillbox Hill",
     "neighborhood": "Pillbox Hill",
-    "capacity": 100,
+    "capacity": 0,
     "counts_as_garage": true,
-    "upgrades": [],
+    "upgrades": [
+      {
+        "id": "vinewood-car-club-floor-1",
+        "display_name": "Floor 1",
+        "tier": 1,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Included with GTA+ subscription.",
+        "price": 0
+      },
+      {
+        "id": "vinewood-car-club-floor-2",
+        "display_name": "Floor 2",
+        "tier": 2,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Included with GTA+ subscription.",
+        "price": 0
+      },
+      {
+        "id": "vinewood-car-club-floor-3",
+        "display_name": "Floor 3",
+        "tier": 3,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Included with GTA+ subscription.",
+        "price": 0
+      },
+      {
+        "id": "vinewood-car-club-floor-4",
+        "display_name": "Floor 4",
+        "tier": 4,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Included with GTA+ subscription.",
+        "price": 0
+      },
+      {
+        "id": "vinewood-car-club-floor-5",
+        "display_name": "Floor 5",
+        "tier": 5,
+        "capacity": 20,
+        "required_upgrade_id": null,
+        "notes": "Included with GTA+ subscription.",
+        "price": 0
+      }
+    ],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/The_Vinewood_Club",
       "gtabase": "https://www.gtabase.com/gta-online/properties/the-vinewood-club-garage"
@@ -6729,12 +6775,12 @@
     "subtype_display": "Nightclub",
     "location": "1618 Popular St",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-la-mesa-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -6743,7 +6789,7 @@
       },
       {
         "id": "nightclub-la-mesa-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-la-mesa-garage-1",
@@ -6752,11 +6798,11 @@
       },
       {
         "id": "nightclub-la-mesa-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-la-mesa-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -6812,12 +6858,12 @@
     "subtype_display": "Nightclub",
     "location": "South Mo Milton Drive",
     "neighborhood": "Mission Row",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-mission-row-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -6826,7 +6872,7 @@
       },
       {
         "id": "nightclub-mission-row-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-mission-row-garage-1",
@@ -6835,11 +6881,11 @@
       },
       {
         "id": "nightclub-mission-row-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-mission-row-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -6895,12 +6941,12 @@
     "subtype_display": "Nightclub",
     "location": "Bay City Avenue",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-del-perro-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -6909,7 +6955,7 @@
       },
       {
         "id": "nightclub-del-perro-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-del-perro-garage-1",
@@ -6918,11 +6964,11 @@
       },
       {
         "id": "nightclub-del-perro-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-del-perro-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -6978,12 +7024,12 @@
     "subtype_display": "Nightclub",
     "location": "Vinewood Boulevard",
     "neighborhood": "Downtown Vinewood",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-downtown-vinewood-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -6992,7 +7038,7 @@
       },
       {
         "id": "nightclub-downtown-vinewood-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-downtown-vinewood-garage-1",
@@ -7001,11 +7047,11 @@
       },
       {
         "id": "nightclub-downtown-vinewood-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-downtown-vinewood-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7061,12 +7107,12 @@
     "subtype_display": "Nightclub",
     "location": "Strawberry Avenue",
     "neighborhood": "Strawberry",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-strawberry-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7075,7 +7121,7 @@
       },
       {
         "id": "nightclub-strawberry-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-strawberry-garage-1",
@@ -7084,11 +7130,11 @@
       },
       {
         "id": "nightclub-strawberry-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-strawberry-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7144,12 +7190,12 @@
     "subtype_display": "Nightclub",
     "location": "Cougar Avenue",
     "neighborhood": "Vespucci Canals",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-vespucci-canals-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7158,7 +7204,7 @@
       },
       {
         "id": "nightclub-vespucci-canals-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-vespucci-canals-garage-1",
@@ -7167,11 +7213,11 @@
       },
       {
         "id": "nightclub-vespucci-canals-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-vespucci-canals-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7227,12 +7273,12 @@
     "subtype_display": "Nightclub",
     "location": "Eclipse Boulevard",
     "neighborhood": "West Vinewood",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-west-vinewood-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7241,7 +7287,7 @@
       },
       {
         "id": "nightclub-west-vinewood-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-west-vinewood-garage-1",
@@ -7250,11 +7296,11 @@
       },
       {
         "id": "nightclub-west-vinewood-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-west-vinewood-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7310,12 +7356,12 @@
     "subtype_display": "Nightclub",
     "location": "Norton Place",
     "neighborhood": "Elysian Island",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-elysian-island-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7324,7 +7370,7 @@
       },
       {
         "id": "nightclub-elysian-island-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-elysian-island-garage-1",
@@ -7333,11 +7379,11 @@
       },
       {
         "id": "nightclub-elysian-island-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-elysian-island-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7393,12 +7439,12 @@
     "subtype_display": "Nightclub",
     "location": "Carson Avenue",
     "neighborhood": "Cypress Flats",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-cypress-flats-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7407,7 +7453,7 @@
       },
       {
         "id": "nightclub-cypress-flats-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-cypress-flats-garage-1",
@@ -7416,11 +7462,11 @@
       },
       {
         "id": "nightclub-cypress-flats-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-cypress-flats-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {
@@ -7476,12 +7522,12 @@
     "subtype_display": "Nightclub",
     "location": "Adam's Apple Boulevard",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 1,
     "counts_as_garage": true,
     "upgrades": [
       {
         "id": "nightclub-la-puerta-garage-1",
-        "display_name": "Storage Garage Level 1",
+        "display_name": "Garage B2",
         "tier": 1,
         "capacity": 10,
         "required_upgrade_id": null,
@@ -7490,7 +7536,7 @@
       },
       {
         "id": "nightclub-la-puerta-garage-2",
-        "display_name": "Storage Garage Level 2",
+        "display_name": "Garage B3",
         "tier": 2,
         "capacity": 10,
         "required_upgrade_id": "nightclub-la-puerta-garage-1",
@@ -7499,11 +7545,11 @@
       },
       {
         "id": "nightclub-la-puerta-garage-3",
-        "display_name": "Storage Garage Level 3",
+        "display_name": "Garage B4",
         "tier": 3,
-        "capacity": 11,
+        "capacity": 10,
         "required_upgrade_id": "nightclub-la-puerta-garage-2",
-        "notes": "Includes the MTL Pounder Custom slot",
+        "notes": null,
         "price": 441350
       },
       {

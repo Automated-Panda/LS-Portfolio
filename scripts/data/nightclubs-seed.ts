@@ -40,12 +40,13 @@ function buildNightclub(loc: LocationSeed): Omit<Property, "image_path"> {
     subtype_display: "Nightclub",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0, // capacity comes from the garage upgrades
+    // Service Entrance — 1 car slot available without any upgrade.
+    capacity: 1,
     counts_as_garage: true,
     upgrades: [
       {
         id: `${loc.id}-garage-1`,
-        display_name: "Storage Garage Level 1",
+        display_name: "Garage B2",
         tier: 1,
         capacity: 10,
         required_upgrade_id: null,
@@ -53,7 +54,7 @@ function buildNightclub(loc: LocationSeed): Omit<Property, "image_path"> {
       },
       {
         id: `${loc.id}-garage-2`,
-        display_name: "Storage Garage Level 2",
+        display_name: "Garage B3",
         tier: 2,
         capacity: 10,
         required_upgrade_id: `${loc.id}-garage-1`,
@@ -61,11 +62,11 @@ function buildNightclub(loc: LocationSeed): Omit<Property, "image_path"> {
       },
       {
         id: `${loc.id}-garage-3`,
-        display_name: "Storage Garage Level 3",
+        display_name: "Garage B4",
         tier: 3,
-        capacity: 11,
+        capacity: 10,
         required_upgrade_id: `${loc.id}-garage-2`,
-        notes: "Includes the MTL Pounder Custom slot",
+        notes: null,
       },
       {
         id: `${loc.id}-equipment`,
