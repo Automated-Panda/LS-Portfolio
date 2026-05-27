@@ -9,6 +9,7 @@ export type OwnedVehicleInstance = {
   class: string;
   manufacturer_display: string;
   image_path: string | null;
+  price: number | null;                  // GTA Online purchase price in $, null if unsourced
   nickname: string | null;
   notes: string | null;
   custom_tags: string[];
@@ -33,7 +34,7 @@ export async function getOwnedVehicleInstances(
       id, vehicle_id, nickname, notes, custom_tags,
       stored_in_property_id, assigned_upgrade_id,
       vehicles!inner (
-        display_name, class, image_path, manufacturer_id,
+        display_name, class, image_path, manufacturer_id, price,
         manufacturers ( display ),
         vehicle_tag_links ( tag_id )
       ),
@@ -73,6 +74,7 @@ export async function getOwnedVehicleInstances(
       class: formatClass(v?.class ?? ""),
       manufacturer_display: mfr?.display ?? "",
       image_path: v?.image_path ?? null,
+      price: (v?.price ?? null) as number | null,
       nickname: row.nickname,
       notes: row.notes,
       custom_tags: row.custom_tags ?? [],

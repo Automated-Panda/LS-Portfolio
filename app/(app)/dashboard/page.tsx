@@ -168,6 +168,29 @@ export default async function DashboardPage() {
       ? 0
       : Math.round((uniquePropertyTypes / catalogTotals.properties) * 100);
 
+  // --- Net worth ---
+  // Sum vehicle prices over instances, property prices over owned, and
+  // upgrade prices over installed upgrades. Null prices = not sourced yet —
+  // count them so the widget can flag potential underestimate.
+  let vehiclesValue = 0;
+  let propertiesValue = 0;
+  let upgradesValue = 0;
+  let unpricedItems = 0;
+  for (const v of vehicleInstances) {
+    if (v.price === null) unpricedItems += 1;
+    else vehiclesValue += v.price;
+  }
+  for (const p of ownedProperties) {
+    if (p.price === null) unpricedItems += 1;
+    else propertiesValue += p.price;
+    for (const u of p.upgrades) {
+      if (!u.is_installed) continue;
+      if (u.price === null) unpricedItems += 1;
+      else upgradesValue += u.price;
+    }
+  }
+  const netWorthTotal = vehiclesValue + propertiesValue + upgradesValue;
+
   // --- Needs attention ---
   const unassignedVehicles = vehicleInstances.filter((v) => v.storage === null)
     .length;
@@ -205,6 +228,13 @@ export default async function DashboardPage() {
         total: catalogTotals.properties,
         percent: catalogPropertyPercent,
       },
+    },
+    netWorth: {
+      total: netWorthTotal,
+      vehicles: vehiclesValue,
+      properties: propertiesValue,
+      upgrades: upgradesValue,
+      unpricedItems,
     },
     attention: {
       unassignedVehicles,

@@ -13,6 +13,7 @@ export type OwnedPropertyDetail = {
   base_capacity: number;
   counts_as_garage: boolean;  // false for hangars/yachts/etc. — filters out of vehicle storage pickers
   ownership_group: string;
+  price: number | null;       // base property purchase price in $, null if unsourced
   total_upgrades: number;
   installed_upgrades: number;
   total_cars: number;         // sum across base + all sub-garages
@@ -24,6 +25,7 @@ export type OwnedPropertyDetail = {
     sort_order: number;
     is_installed: boolean;
     cars_here: number;        // only meaningful for storage-capacity upgrades
+    price: number | null;     // upgrade purchase price in $, null if unsourced
   }>;
 };
 
@@ -52,8 +54,8 @@ export async function getOwnedPropertiesWithStorage(
       property_id,
       properties!inner (
         display_name, property_type, subtype, subtype_display, neighborhood, image_path,
-        capacity, ownership_group, counts_as_garage,
-        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order )
+        capacity, ownership_group, counts_as_garage, price,
+        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
       user_owned_vehicles!stored_in_property_id (
@@ -77,6 +79,7 @@ export async function getOwnedPropertiesWithStorage(
     const allUpgrades = (p?.property_upgrades ?? []) as Array<{
       id: string; display_name: string; capacity: number;
       required_upgrade_id: string | null; sort_order: number;
+      price: number | null;
     }>;
     const installedIds = new Set(
       (row.user_owned_property_upgrades ?? []).map(
@@ -106,6 +109,7 @@ export async function getOwnedPropertiesWithStorage(
       base_capacity: p?.capacity ?? 0,
       counts_as_garage: p?.counts_as_garage ?? false,
       ownership_group: p?.ownership_group ?? "",
+      price: (p?.price ?? null) as number | null,
       total_upgrades: allUpgrades.length,
       installed_upgrades: allUpgrades.filter((u) => installedIds.has(u.id))
         .length,
@@ -114,6 +118,7 @@ export async function getOwnedPropertiesWithStorage(
         .sort((a, b) => a.sort_order - b.sort_order)
         .map((u) => ({
           ...u,
+          price: u.price ?? null,
           is_installed: installedIds.has(u.id),
           cars_here: carsByUpgrade.get(u.id) ?? 0,
         })),

@@ -35,6 +35,7 @@ function v(
     class: className,
     manufacturer_display: "Mock",
     image_path: null,
+    price: null,
     nickname: null,
     notes: null,
     custom_tags: [],
@@ -69,6 +70,7 @@ function p(
     counts_as_garage: true,
     property_type: "residence",
     ownership_group: id,
+    price: null,
     total_upgrades: upgrades.length,
     installed_upgrades: upgrades.filter((u) => u.installed).length,
     total_cars: 0,
@@ -80,6 +82,7 @@ function p(
       sort_order: i,
       is_installed: u.installed,
       cars_here: 0,
+      price: null,
     })),
   };
 }

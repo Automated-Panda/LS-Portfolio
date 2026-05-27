@@ -4,6 +4,7 @@ import { BreakdownChips } from "@/components/dashboard/breakdown-chips";
 import { CapacityCard } from "@/components/dashboard/capacity-card";
 import { CatalogCard } from "@/components/dashboard/catalog-card";
 import { NeedsAttention } from "@/components/dashboard/needs-attention";
+import { NetWorthCard } from "@/components/dashboard/net-worth-card";
 import { QuickActions } from "@/components/dashboard/quick-actions";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
 import { TotalsStrip } from "@/components/dashboard/totals-strip";
@@ -21,6 +22,13 @@ export type DashboardData = {
   catalog: {
     vehicles: { ownedUnique: number; total: number; percent: number };
     properties: { ownedUnique: number; total: number; percent: number };
+  };
+  netWorth: {
+    total: number;
+    vehicles: number;
+    properties: number;
+    upgrades: number;
+    unpricedItems: number;
   };
   attention: {
     unassignedVehicles: number;
@@ -51,6 +59,14 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
         vehicles={data.vehicles}
         properties={data.properties}
         businesses={data.businesses}
+      />
+
+      <NetWorthCard
+        total={data.netWorth.total}
+        vehicles={data.netWorth.vehicles}
+        properties={data.netWorth.properties}
+        upgrades={data.netWorth.upgrades}
+        unpricedItems={data.netWorth.unpricedItems}
       />
 
       <QuickActions />
