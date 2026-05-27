@@ -47,6 +47,9 @@ function PropertyCardImpl({
   const [tradeInTrigger, setTradeInTrigger] = useState<TradeInTrigger | null>(null);
   const [isPending, startTransition] = useTransition();
 
+  const ownedDestPath =
+    property.property_type === "business" ? "/my-businesses" : "/my-properties";
+
   const handleToggle = () => {
     if (tower) {
       tower.onOpen();
@@ -54,6 +57,12 @@ function PropertyCardImpl({
     }
     if (selectionMode === "multi") {
       onSelect?.(property.id);
+      return;
+    }
+    // Already owned → jump into the management drawer instead of un-owning.
+    // Un-owning is then a deliberate action via the drawer's Remove button.
+    if (optimisticOwned) {
+      router.push(`${ownedDestPath}?open=${encodeURIComponent(property.id)}`);
       return;
     }
     const nextState = !optimisticOwned;
@@ -115,6 +124,16 @@ function PropertyCardImpl({
         onClick={handleToggle}
         disabled={isPending}
         className="flex flex-1 flex-col text-left"
+        aria-label={
+          optimisticOwned && selectionMode !== "multi" && !tower
+            ? `Manage ${property.display_name}`
+            : `Add ${property.display_name} to portfolio`
+        }
+        title={
+          optimisticOwned && selectionMode !== "multi" && !tower
+            ? "Click to manage / add cars"
+            : undefined
+        }
       >
         {tower ? (
           <div
