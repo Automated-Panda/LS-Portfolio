@@ -1,10 +1,11 @@
 "use client";
 
-import { Check, Minus, Plus } from "lucide-react";
+import { Check, Minus, Plus, Settings2 } from "lucide-react";
 import Image from "next/image";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
+import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import { Badge } from "@/components/ui/badge";
 import {
   Popover,
@@ -12,6 +13,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
+import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { VehicleSummary } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
@@ -19,16 +22,26 @@ import {
   addVehicleInstance,
   getOwnedInstancesForVehicle,
   removeOwnedInstance,
-  type InstanceForPicker,
 } from "./actions";
 
 type Props = {
   vehicle: VehicleSummary;
   imageUrl: string | null;
   tagLookup: Record<string, string>;
+  /** Optional. When supplied, the popover's instance rows get a gear icon
+   * that opens InstanceDrawer for inline nickname / tag / notes / storage
+   * management. /vehicles passes these in; legacy callers can omit. */
+  ownedProperties?: OwnedPropertyDetail[];
+  tagSuggestions?: string[];
 };
 
-function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
+function VehicleCardImpl({
+  vehicle,
+  imageUrl,
+  tagLookup,
+  ownedProperties,
+  tagSuggestions,
+}: Props) {
   const [optimisticCount, setOptimisticCount] = useState(vehicle.owned_count);
   const [isPending, startTransition] = useTransition();
   const [driftCount, setDriftCount] = useState(
@@ -37,9 +50,13 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
   const [driftPending, startDriftTransition] = useTransition();
   const [pickerOpen, setPickerOpen] = useState(false);
   const [pickerInstances, setPickerInstances] = useState<
-    InstanceForPicker[] | null
+    OwnedVehicleInstance[] | null
   >(null);
   const [pickerLoading, setPickerLoading] = useState(false);
+  // Inline car management — opens the same InstanceDrawer used on
+  // /my-vehicles / PropertyDrawer. Closed initially; gear-click sets the id.
+  const [managedInstanceId, setManagedInstanceId] = useState<string | null>(null);
+  const canManageInline = Boolean(ownedProperties);
 
   const handleAdd = () => {
     setOptimisticCount(optimisticCount + 1);
@@ -157,16 +174,37 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
               <ul className="flex max-h-64 flex-col overflow-y-auto py-1">
                 {pickerInstances.map((inst, i) => {
                   const label = inst.nickname || `#${i + 1}`;
+                  const storageLabel = inst.storage
+                    ? inst.storage.upgrade_display_name
+                      ? `${inst.storage.property_display_name} · ${inst.storage.upgrade_display_name}`
+                      : inst.storage.property_display_name
+                    : null;
                   return (
                     <li key={inst.id} className="flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-muted/40 rounded-md">
                       <span className="flex-1 min-w-0">
                         <span className="block truncate">{label}</span>
-                        {inst.storage_label && (
+                        {storageLabel && (
                           <span className="block text-[10px] text-muted-foreground truncate">
-                            📍 {inst.storage_label}
+                            📍 {storageLabel}
                           </span>
                         )}
                       </span>
+                      {canManageInline && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setManagedInstanceId(inst.id);
+                            setPickerOpen(false);
+                          }}
+                          disabled={isPending}
+                          className="rounded-md p-1 text-muted-foreground hover:bg-accent/30 hover:text-foreground disabled:opacity-50"
+                          aria-label={`Manage ${label}`}
+                          title="Manage nickname, tags, notes, storage"
+                        >
+                          <Settings2 className="h-3.5 w-3.5" />
+                        </button>
+                      )}
                       <button
                         type="button"
                         onClick={(e) => {
@@ -282,6 +320,20 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
           </div>
         </div>
       </button>
+
+      {managedInstanceId && ownedProperties && (() => {
+        const managed = pickerInstances?.find((v) => v.id === managedInstanceId);
+        if (!managed) return null;
+        return (
+          <InstanceDrawer
+            instance={managed}
+            ownedProperties={ownedProperties}
+            tagSuggestions={tagSuggestions}
+            open={true}
+            onOpenChange={(o) => !o && setManagedInstanceId(null)}
+          />
+        );
+      })()}
     </div>
   );
 }

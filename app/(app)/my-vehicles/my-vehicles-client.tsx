@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CustomTagFilter } from "@/components/portfolio/custom-tag-filter";
 import { LocationFilter } from "@/components/portfolio/location-filter";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
@@ -39,6 +40,7 @@ export function MyVehiclesClient({
   const [search, setSearch] = useState("");
   const [selectedPropertyIds, setSelectedPropertyIds] = useState<string[]>([]);
   const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   useEffect(() => {
     const v = localStorage.getItem(VIEW_KEY);
@@ -70,6 +72,11 @@ export function MyVehiclesClient({
   const filtered = instances.filter((i) => {
     if (unassignedOnly && i.storage) return false;
     if (selectedPropertyIds.length > 0 && (!i.storage || !selectedPropertyIds.includes(i.storage.owned_property_id))) return false;
+    if (selectedTags.length > 0) {
+      // AND match — instance must carry every selected custom_tag.
+      const owned = new Set(i.custom_tags);
+      if (!selectedTags.every((t) => owned.has(t))) return false;
+    }
     if (search) {
       const q = search.toLowerCase();
       if (!i.display_name.toLowerCase().includes(q) && !(i.nickname ?? "").toLowerCase().includes(q)) return false;
@@ -98,6 +105,11 @@ export function MyVehiclesClient({
               setSelectedPropertyIds(properties);
               setUnassignedOnly(unassignedOnly);
             }}
+          />
+          <CustomTagFilter
+            tags={tagSuggestions}
+            selectedTags={selectedTags}
+            onChange={setSelectedTags}
           />
           <div className="flex rounded-md border">
             <Button

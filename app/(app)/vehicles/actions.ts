@@ -3,6 +3,8 @@
 import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/lib/supabase/server";
+import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
+import { formatClass } from "@/lib/vehicles";
 
 export type AddInstanceResult = {
   vehicleId: string;
@@ -34,20 +36,16 @@ export async function addVehicleInstance(
   return { vehicleId, createdInstanceId: data.id };
 }
 
-export type InstanceForPicker = {
-  id: string;
-  nickname: string | null;
-  created_at: string;
-  storage_label: string | null; // "Mansion · Driveway" if assigned, else null
-};
-
 /**
- * Returns the current user's owned instances of a given vehicle, ordered
- * oldest-first. Used by the `-` picker on /vehicles cards.
+ * Returns the user's owned instances of a vehicle as full OwnedVehicleInstance
+ * records — same shape as /my-vehicles uses — so the /vehicles popover can
+ * pass them straight into InstanceDrawer for inline management (nickname,
+ * custom tags, notes, storage). Scoped to the signed-in user's vehicle_id
+ * and ordered oldest-first.
  */
 export async function getOwnedInstancesForVehicle(
   vehicleId: string,
-): Promise<InstanceForPicker[] | { error: string }> {
+): Promise<OwnedVehicleInstance[] | { error: string }> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -56,13 +54,19 @@ export async function getOwnedInstancesForVehicle(
 
   const { data, error } = await supabase
     .from("user_owned_vehicles")
-    .select(
-      `id, nickname, created_at,
-       user_owned_properties!stored_in_property_id (
-         properties!inner ( display_name )
-       ),
-       property_upgrades!assigned_upgrade_id ( display_name )`,
-    )
+    .select(`
+      id, vehicle_id, nickname, notes, custom_tags,
+      stored_in_property_id, assigned_upgrade_id, sub_slot,
+      vehicles!inner (
+        display_name, class, image_path, manufacturer_id, price,
+        manufacturers ( display ),
+        vehicle_tag_links ( tag_id )
+      ),
+      user_owned_properties!stored_in_property_id (
+        properties!inner ( display_name, subtype_display )
+      ),
+      property_upgrades!assigned_upgrade_id ( display_name )
+    `)
     .eq("user_id", user.id)
     .eq("vehicle_id", vehicleId)
     .order("created_at", { ascending: true });
@@ -70,7 +74,11 @@ export async function getOwnedInstancesForVehicle(
   if (error) return { error: error.message };
 
   type Row = NonNullable<typeof data>[number];
-  return (data ?? []).map((row: Row) => {
+  return (data ?? []).map((row: Row): OwnedVehicleInstance => {
+    const v = Array.isArray(row.vehicles) ? row.vehicles[0] : row.vehicles;
+    const mfr = Array.isArray(v?.manufacturers)
+      ? v?.manufacturers[0]
+      : v?.manufacturers;
     const op = Array.isArray(row.user_owned_properties)
       ? row.user_owned_properties[0]
       : row.user_owned_properties;
@@ -82,17 +90,31 @@ export async function getOwnedInstancesForVehicle(
     const up = Array.isArray(row.property_upgrades)
       ? row.property_upgrades[0]
       : row.property_upgrades;
-    const storageLabel = opP
-      ? up
-        ? `${opP.display_name} · ${up.display_name}`
-        : opP.display_name
-      : null;
 
     return {
       id: row.id,
+      vehicle_id: row.vehicle_id,
+      display_name: v?.display_name ?? "",
+      class: formatClass(v?.class ?? ""),
+      manufacturer_display: mfr?.display ?? "",
+      image_path: v?.image_path ?? null,
+      price: (v?.price ?? null) as number | null,
       nickname: row.nickname,
-      created_at: row.created_at,
-      storage_label: storageLabel,
+      notes: row.notes,
+      custom_tags: row.custom_tags ?? [],
+      tag_ids: (v?.vehicle_tag_links ?? []).map(
+        (l: { tag_id: string }) => l.tag_id,
+      ),
+      storage: row.stored_in_property_id
+        ? {
+            owned_property_id: row.stored_in_property_id,
+            property_display_name: opP?.display_name ?? "",
+            property_subtype_display: opP?.subtype_display ?? "",
+            assigned_upgrade_id: row.assigned_upgrade_id,
+            upgrade_display_name: up?.display_name ?? null,
+            sub_slot: row.sub_slot ?? null,
+          }
+        : null,
     };
   });
 }

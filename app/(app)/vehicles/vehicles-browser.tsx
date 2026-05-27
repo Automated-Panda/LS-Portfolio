@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
+import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { AssetCategory, FilterOptions, VehicleSummary } from "@/lib/vehicles";
 import { assetCategoryOf, vehicleImageUrl } from "@/lib/vehicles";
 
@@ -15,6 +16,11 @@ type Props = {
   filters: FilterOptions;
   // "all" (default) = full catalogue at /vehicles; "owned" = /my-vehicles
   mode?: "all" | "owned";
+  /** Powers the inline InstanceDrawer opened from a vehicle card's popover.
+   * Optional because legacy /my-vehicles callers don't supply them — only
+   * /vehicles needs them for the new gear-icon manage flow. */
+  ownedProperties?: OwnedPropertyDetail[];
+  tagSuggestions?: string[];
 };
 
 export function VehiclesBrowser({
@@ -22,6 +28,8 @@ export function VehiclesBrowser({
   ownedVehicleIds,
   filters,
   mode = "all",
+  ownedProperties,
+  tagSuggestions,
 }: Props) {
   const searchParams = useSearchParams();
 
@@ -112,6 +120,8 @@ export function VehiclesBrowser({
               vehicle={v}
               imageUrl={vehicleImageUrl(v.image_path)}
               tagLookup={tagLookup}
+              ownedProperties={ownedProperties}
+              tagSuggestions={tagSuggestions}
             />
           ))}
         </div>
