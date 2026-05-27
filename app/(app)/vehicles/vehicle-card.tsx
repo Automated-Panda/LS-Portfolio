@@ -1,15 +1,25 @@
 "use client";
 
-import { Check, Plus } from "lucide-react";
+import { Check, Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Badge } from "@/components/ui/badge";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import type { VehicleSummary } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
-import { addVehicleInstance } from "./actions";
+import {
+  addVehicleInstance,
+  getOwnedInstancesForVehicle,
+  removeOwnedInstance,
+  type InstanceForPicker,
+} from "./actions";
 
 type Props = {
   vehicle: VehicleSummary;
@@ -24,6 +34,11 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
     vehicle.drift_variant?.owned ? 1 : 0,
   );
   const [driftPending, startDriftTransition] = useTransition();
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [pickerInstances, setPickerInstances] = useState<
+    InstanceForPicker[] | null
+  >(null);
+  const [pickerLoading, setPickerLoading] = useState(false);
 
   const handleAdd = () => {
     setOptimisticCount(optimisticCount + 1);
@@ -38,7 +53,7 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
     });
   };
 
-  const handleDriftAdd = (e: React.MouseEvent) => {
+  const handleDriftAdd = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.stopPropagation();
     if (!vehicle.drift_variant) return;
     setDriftCount(driftCount + 1);
@@ -53,6 +68,38 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
     });
   };
 
+  const openPicker = async () => {
+    setPickerOpen(true);
+    if (pickerInstances) return; // already loaded — refresh on next open
+    setPickerLoading(true);
+    const r = await getOwnedInstancesForVehicle(vehicle.id);
+    setPickerLoading(false);
+    if ("error" in r) {
+      toast.error(r.error);
+      setPickerOpen(false);
+      return;
+    }
+    setPickerInstances(r);
+  };
+
+  const handleRemoveInstance = (instanceId: string, label: string) => {
+    setOptimisticCount(Math.max(0, optimisticCount - 1));
+    setPickerInstances((prev) =>
+      prev ? prev.filter((i) => i.id !== instanceId) : prev,
+    );
+    startTransition(async () => {
+      const r = await removeOwnedInstance(instanceId);
+      if ("error" in r) {
+        // restore optimistic state
+        setOptimisticCount(optimisticCount);
+        setPickerInstances(null); // force refetch next open
+        toast.error(r.error);
+      } else {
+        toast.success(`Removed ${label}`);
+      }
+    });
+  };
+
   const owned = optimisticCount > 0;
 
   return (
@@ -63,6 +110,94 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
         isPending && "opacity-80",
       )}
     >
+      {/* Owned-count chip (top-right). When owned > 0 it becomes a popover
+          trigger that opens the remove-instance picker. */}
+      {owned ? (
+        <Popover
+          open={pickerOpen}
+          onOpenChange={(o) => {
+            setPickerOpen(o);
+            if (o) void openPicker();
+          }}
+        >
+          <PopoverTrigger asChild>
+            <button
+              type="button"
+              aria-label={`Manage ${optimisticCount} owned ${vehicle.display_name}`}
+              className="absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full bg-emerald-500 px-2 text-white transition-all hover:bg-emerald-600"
+            >
+              <Check className="h-4 w-4" />
+              <span className="text-xs font-semibold">×{optimisticCount}</span>
+            </button>
+          </PopoverTrigger>
+          <PopoverContent className="w-64 p-2" align="end">
+            <div className="flex items-center justify-between gap-2 px-2 pb-2 border-b">
+              <p className="text-xs font-semibold">
+                {vehicle.display_name} ({optimisticCount})
+              </p>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAdd();
+                }}
+                disabled={isPending}
+                className="inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs hover:bg-accent/30 disabled:opacity-50"
+                aria-label={`Add another ${vehicle.display_name}`}
+              >
+                <Plus className="h-3 w-3" /> Add
+              </button>
+            </div>
+            {pickerLoading ? (
+              <p className="px-2 py-3 text-xs text-muted-foreground">
+                Loading…
+              </p>
+            ) : pickerInstances && pickerInstances.length > 0 ? (
+              <ul className="flex max-h-64 flex-col overflow-y-auto py-1">
+                {pickerInstances.map((inst, i) => {
+                  const label = inst.nickname || `#${i + 1}`;
+                  return (
+                    <li key={inst.id} className="flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-muted/40 rounded-md">
+                      <span className="flex-1 min-w-0">
+                        <span className="block truncate">{label}</span>
+                        {inst.storage_label && (
+                          <span className="block text-[10px] text-muted-foreground truncate">
+                            📍 {inst.storage_label}
+                          </span>
+                        )}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleRemoveInstance(inst.id, label);
+                        }}
+                        disabled={isPending}
+                        className="rounded-md p-1 text-muted-foreground hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
+                        aria-label={`Remove ${label}`}
+                      >
+                        <Minus className="h-3.5 w-3.5" />
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="px-2 py-3 text-xs text-muted-foreground">
+                No instances found.
+              </p>
+            )}
+          </PopoverContent>
+        </Popover>
+      ) : (
+        <span
+          className="absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full bg-background/80 px-2 text-muted-foreground opacity-0 transition-all group-hover:opacity-100"
+          aria-hidden
+        >
+          <Plus className="h-4 w-4" />
+        </span>
+      )}
+
       <button
         type="button"
         onClick={handleAdd}
@@ -70,24 +205,6 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
         className="flex flex-1 flex-col text-left"
         aria-label={`Add ${vehicle.display_name} to portfolio`}
       >
-        <div
-          className={cn(
-            "absolute right-2 top-2 z-10 flex h-7 min-w-7 items-center justify-center gap-1 rounded-full px-2 transition-all",
-            owned
-              ? "bg-emerald-500 text-white"
-              : "bg-background/80 text-muted-foreground opacity-0 group-hover:opacity-100",
-          )}
-        >
-          {owned ? (
-            <>
-              <Check className="h-4 w-4" />
-              <span className="text-xs font-semibold">×{optimisticCount}</span>
-            </>
-          ) : (
-            <Plus className="h-4 w-4" />
-          )}
-        </div>
-
         <div className="relative aspect-video w-full bg-muted">
           {imageUrl ? (
             <Image
@@ -136,7 +253,7 @@ function VehicleCardImpl({ vehicle, imageUrl, tagLookup }: Props) {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    handleDriftAdd(e as unknown as React.MouseEvent);
+                    handleDriftAdd(e);
                   }
                 }}
                 className={cn(
