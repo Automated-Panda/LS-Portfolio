@@ -28,6 +28,8 @@ export const VehicleSchema = z.object({
   variant_of: z.string().nullable(),
   tags: z.array(z.string()),
   image_path: z.string().min(1).nullable(),
+  // Base GTA Online purchase price in $. Null = not for sale / mission-only / unsourced.
+  price: z.number().int().min(0).nullable().optional(),
   _sources: z.object({
     durtyfree: z.string().url(),
     fandom: z.string().url(),
@@ -42,6 +44,8 @@ export const PropertyUpgradeSchema = z.object({
   capacity: z.number().int().min(0),
   required_upgrade_id: z.string().nullable(),
   notes: z.string().nullable(),
+  // Upgrade purchase price in $. Null = unsourced.
+  price: z.number().int().min(0).nullable().optional(),
 });
 
 export const PropertySchema = z.object({
@@ -53,6 +57,8 @@ export const PropertySchema = z.object({
   location: z.string().nullable(),
   neighborhood: z.string().nullable(),
   capacity: z.number().int().min(0),
+  // Base GTA Online purchase price in $. Null = unsourced.
+  price: z.number().int().min(0).nullable().optional(),
   // Self-referencing FK: when set, this row is a unit (e.g. apartment 3 of
   // Eclipse Towers) and the tower's row id lives here. Towers themselves
   // carry parent_building=null and are non-ownable in the UI — clicking

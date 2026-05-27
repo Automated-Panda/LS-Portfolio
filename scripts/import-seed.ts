@@ -71,6 +71,7 @@ async function main(): Promise<void> {
     is_garage_storable: v.is_garage_storable,
     variant_of: null as string | null, // set in second pass so parent rows exist
     image_path: v.image_path,
+    price: v.price ?? null,
     source_durtyfree: v._sources.durtyfree,
     source_fandom: v._sources.fandom,
   }));
@@ -144,6 +145,7 @@ async function main(): Promise<void> {
     location: p.location,
     neighborhood: p.neighborhood,
     capacity: p.capacity,
+    price: p.price ?? null,
     ownership_group: RESIDENTIAL_POOL.has(p.subtype)
       ? "residential"
       : CARGO_WAREHOUSE_POOL.has(p.subtype)
@@ -168,6 +170,7 @@ async function main(): Promise<void> {
       required_upgrade_id: null as string | null, // second pass
       notes: u.notes,
       sort_order: ui,
+      price: u.price ?? null,
     })),
   );
   console.log(`Importing ${upgradeRows.length} property_upgrades...`);
