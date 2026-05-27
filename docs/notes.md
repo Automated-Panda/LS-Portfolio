@@ -8,10 +8,11 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 Soon-ish work batch. Group these together when picking next pieces.
 
-### 🔐 Auth — username signin
-- [ ] Allow login by `username` in addition to `email`. Today `/login` only accepts email.
-- [ ] Update `signInAction` to detect input shape (contains `@` = email, else username) and look up the email from `profiles.username` before calling `signInWithPassword`.
-- [ ] Update label / placeholder on `/login` to read "Email or username".
+### 🔐 Auth — username signin ✅
+- [x] Allow login by `username` in addition to `email`. Today `/login` only accepts email.
+- [x] Update `signInAction` to detect input shape (contains `@` = email, else username) and look up the email from `profiles.username` before calling `signInWithPassword`. (Uses service-role admin client since `auth.users` isn't publicly readable.)
+- [x] Update label / placeholder on `/login` to read "Email or username".
+- ⚠️ **Vercel deploy:** confirm `SUPABASE_SERVICE_ROLE_KEY` is set in Vercel env vars or username signin will fail in prod.
 
 ### 📩 Invite flow is broken
 - [ ] **Bug repro:** invite email lands on signup/signin instead of an invite-acceptance page. Signup says "account with that email exists"; sign-in won't work because the invited user has no password yet.
@@ -24,9 +25,9 @@ Soon-ish work batch. Group these together when picking next pieces.
 - [ ] **Replace the click-the-row hub interaction with explicit buttons.** Today after picking properties, clicking a row in the hub list to open upgrades/cars is non-obvious. Add visible CTAs per row like "Pick upgrades" + "Add cars" buttons.
 - [ ] Smoother flow from property → upgrades → cars (the current state-machine works but feels clunky)
 
-### 🅿️ Storage picker — hide non-garage properties
-- [ ] When assigning a vehicle to storage (`InstanceDrawer` → "Stored at"), filter the property dropdown to only owned properties where `counts_as_garage = true` (or capacity > 0). No point showing a Casino Penthouse without garage, or a Hangar, if the vehicle is a car.
-- [ ] Consider: should we also filter by asset class? (e.g. only show hangars when storing aircraft, only show yachts/marinas when storing boats — separate, bigger question)
+### 🅿️ Storage picker — hide non-garage properties ✅
+- [x] When assigning a vehicle to storage (`InstanceDrawer` → "Stored at"), filter the property dropdown to only owned properties where `counts_as_garage = true`. No more hangars / yachts / businesses-without-garages in the car-storage dropdown.
+- [ ] **Future:** also filter by asset class so hangars only show when storing aircraft, yachts only for boats, etc. Separate, bigger question — deferred.
 
 ### 🏠 PropertyDrawer — show + remove assigned cars
 - [ ] In `PropertyDrawer` (used by wizard hub + `/my-properties`), under each storage upgrade, list the currently-assigned vehicles with a remove (✕) button per row.
@@ -36,10 +37,10 @@ Soon-ish work batch. Group these together when picking next pieces.
 - [ ] On `/vehicles` cards, today clicking the card / + button adds one more instance via `addVehicleInstance`. Add a way to decrement directly from the browse page — likely a small counter widget (`- N +`) on owned cards.
 - [ ] **Confirmed UX:** clicking "-" opens a small picker of owned instances (nicknames if set, otherwise "#1", "#2"…). User picks which to remove. Safer for instances with custom metadata.
 
-### 🏷️ InstanceDrawer rename + collapse-to-buttons
-- [ ] Rename **Nickname** → **Custom Name**
-- [ ] Rename **Custom Tags** → **Highlight Features** (button label can be just "Highlights")
-- [ ] Replace always-visible input boxes with collapsed "+" buttons:
+### 🏷️ InstanceDrawer rename + collapse-to-buttons (partial ✅)
+- [x] Rename **Nickname** → **Custom Name**
+- [x] Rename **Custom Tags** → **Highlight features**
+- [ ] **Still TODO:** replace always-visible input boxes with collapsed "+" buttons:
   - `+ Custom Name` — click reveals text input (or shows the current value with edit pencil if already set)
   - `+ Highlights` — click reveals the tag chip-input
   - `+ Notes` — click reveals the textarea
