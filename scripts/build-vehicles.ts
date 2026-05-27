@@ -199,6 +199,28 @@ async function main(): Promise<void> {
   // Drop vehicles with no image for now — reportable via validate
   const missingImages = vehicles.filter((v) => !v.image_path);
 
+  // Price overlay: data/seed/vehicle-prices.json is a flat { id: priceUSD }
+  // sidecar — keeps prices out of the heavy build-from-raw pipeline while
+  // still surviving a full rebuild.
+  try {
+    const overlayRaw = await fs.readFile(
+      path.join(SEED_DIR, "vehicle-prices.json"),
+      "utf8",
+    );
+    const overlay = JSON.parse(overlayRaw) as Record<string, unknown>;
+    let priced = 0;
+    for (const v of vehicles) {
+      const raw = overlay[v.id];
+      if (typeof raw === "number" && Number.isFinite(raw) && raw >= 0) {
+        v.price = raw;
+        priced += 1;
+      }
+    }
+    console.log(`Applied price overlay: ${priced} / ${vehicles.length} priced.`);
+  } catch {
+    // Overlay file missing — that's fine, prices will just be null.
+  }
+
   await writeJson(path.join(SEED_DIR, "vehicles.json"), vehicles);
   await writeJson(path.join(SEED_DIR, "manufacturers.json"), manufacturers);
 
