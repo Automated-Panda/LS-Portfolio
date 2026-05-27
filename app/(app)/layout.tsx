@@ -18,13 +18,13 @@ export default async function AppLayout({
     redirect("/login");
   }
 
-  const { headers } = await import("next/headers");
-  const pathname = (await headers()).get("x-pathname") ?? "";
-  const { isWizardCompleted } = await import("@/lib/queries/wizard");
-  const completed = await isWizardCompleted(user.id);
-  if (!completed && pathname !== "/wizard" && pathname !== "/dashboard") {
-    redirect("/wizard");
-  }
+  // Note: the prior wizard-redirect (force /wizard if isWizardCompleted=false
+  // on any route except /dashboard or /wizard) has been removed. The Phase 6
+  // EmptyDashboard now handles first-login onboarding with its own wizard
+  // CTA + browse paths, so the layout-level bouncer was breaking sidebar nav
+  // and EmptyDashboard's "Browse all vehicles/properties" CTAs for any user
+  // in a partial-onboarding state. Users still reach /wizard via the
+  // EmptyDashboard hero or manual navigation.
 
   const [{ data: profile }, counts] = await Promise.all([
     supabase
