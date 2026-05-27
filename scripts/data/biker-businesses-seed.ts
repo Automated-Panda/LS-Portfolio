@@ -42,7 +42,7 @@ function buildMcBusiness(
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Increases production speed",
+        notes: "Increases production speed and product value.",
       },
       {
         id: `${loc.id}-staff`,
@@ -50,7 +50,7 @@ function buildMcBusiness(
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Increases production quality",
+        notes: "Increases production efficiency and quality.",
       },
       {
         id: `${loc.id}-security`,
@@ -58,7 +58,7 @@ function buildMcBusiness(
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Reduces raid frequency",
+        notes: "Reduces raid frequency.",
       },
     ],
     _sources: {

@@ -25,20 +25,12 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
     counts_as_garage: false,
     upgrades: [
       {
-        id: `${YACHT_ID}-aquarius`,
-        display_name: "Aquarius Model",
-        tier: null,
-        capacity: 0,
-        required_upgrade_id: null,
-        notes: "Entry-level Galaxy Super Yacht model",
-      },
-      {
         id: `${YACHT_ID}-orion`,
         display_name: "Orion Model",
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Mid-tier Galaxy Super Yacht model",
+        notes: "Entry-level ($6,000,000).",
       },
       {
         id: `${YACHT_ID}-pisces`,
@@ -46,15 +38,15 @@ export const YACHTS_SEED: Omit<Property, "image_path">[] = [
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Top-tier Galaxy Super Yacht model",
+        notes: "Mid-tier ($7,000,000).",
       },
       {
-        id: `${YACHT_ID}-helipad`,
-        display_name: "Helipad",
+        id: `${YACHT_ID}-aquarius`,
+        display_name: "Aquarius Model",
         tier: null,
         capacity: 0,
         required_upgrade_id: null,
-        notes: "Spawn point for helicopters tied to the yacht",
+        notes: "Top-tier, premium ($8,000,000); includes hot tubs.",
       },
     ],
     _sources: {

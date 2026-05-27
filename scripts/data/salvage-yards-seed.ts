@@ -65,11 +65,35 @@ function buildSalvageYard(loc: LocationSeed): Omit<Property, "image_path"> {
     upgrades: [
       {
         id: `${loc.id}-tow-truck`,
-        display_name: "Tow Truck Bay",
+        display_name: "Tow Truck",
         tier: null,
         capacity: 1,
         required_upgrade_id: null,
-        notes: "Stores the Salvage Yard tow truck",
+        notes: "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
+      },
+      {
+        id: `${loc.id}-wall-safe`,
+        display_name: "Wall Safe",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Stores up to $250k in passive earnings ($750,000).",
+      },
+      {
+        id: `${loc.id}-staff`,
+        display_name: "Staff",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Accelerates passive salvage income ($625,000).",
+      },
+      {
+        id: `${loc.id}-trade-rates`,
+        display_name: "Trade Rates",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
       },
     ],
     _sources: {

@@ -91,6 +91,14 @@ function buildNightclub(loc: LocationSeed): Omit<Property, "image_path"> {
         required_upgrade_id: null,
         notes: "Cosmetic / perk",
       },
+      {
+        id: `${loc.id}-staff`,
+        display_name: "Staff Upgrade",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Reduces daily popularity loss ($475,000).",
+      },
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Nightclubs",

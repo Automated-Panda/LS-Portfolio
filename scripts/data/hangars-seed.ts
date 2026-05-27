@@ -72,6 +72,14 @@ function buildHangar(loc: LocationSeed): Omit<Property, "image_path"> {
         required_upgrade_id: null,
         notes: "Stores planes and helicopters; not garage vehicles",
       },
+      {
+        id: `${loc.id}-workshop`,
+        display_name: "Aircraft Workshop",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Enables aircraft customization / respraying ($1,150,000).",
+      },
     ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Hangar",

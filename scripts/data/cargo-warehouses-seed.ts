@@ -88,7 +88,16 @@ function buildCargoWarehouse(w: WarehouseSeed): Omit<Property, "image_path"> {
     // Cargo Warehouses hold crates (Special Cargo), not vehicles.
     capacity: 0,
     counts_as_garage: false,
-    upgrades: [], // upgrade audit pending — Interior Style and Equipment additions TBD
+    upgrades: [
+      {
+        id: `${w.id}-interior-style`,
+        display_name: "Interior Style",
+        tier: null,
+        capacity: 0,
+        required_upgrade_id: null,
+        notes: "Cosmetic — 3 options: Basic (included) / Worn / Branded.",
+      },
+    ],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Warehouses",
       gtabase: `https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/${w.slug}`,
