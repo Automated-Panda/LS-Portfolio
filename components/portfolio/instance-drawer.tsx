@@ -101,7 +101,17 @@ export function InstanceDrawer({
       (u) => u.is_installed && u.capacity > 0,
     ) ?? [];
   const selectedUpgrade = installedUpgrades.find((u) => u.id === upgradeId);
-  const subSlotsAvailable = selectedUpgrade?.sub_slots ?? null;
+  // Sub-slots: filter out any whose required_upgrade_id isn't installed
+  // (e.g. mansion Podium slot only shows when the Car Podium upgrade is on).
+  const subSlotsAvailable = selectedUpgrade?.sub_slots
+    ? selectedUpgrade.sub_slots.filter((s) => {
+        if (!s.required_upgrade_id) return true;
+        const req = selectedProperty?.upgrades.find(
+          (u) => u.id === s.required_upgrade_id,
+        );
+        return req?.is_installed ?? false;
+      })
+    : null;
 
   const handleSave = () => {
     startTransition(async () => {

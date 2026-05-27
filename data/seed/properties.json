@@ -1334,16 +1334,41 @@
     "subtype_display": "Mansion",
     "location": "Tongva Hills, overlooking the vineyards and Pacific Ocean",
     "neighborhood": "Tongva Hills",
-    "capacity": 20,
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
+      {
+        "id": "mansion-tongva-garage",
+        "display_name": "Mansion Garage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "17 garage slots + 2 driveway + 1 podium (podium slot requires the Car Podium upgrade).",
+        "price": 0,
+        "included_on_purchase": true,
+        "sub_slots": [
+          {
+            "label": "Garage",
+            "capacity": 17
+          },
+          {
+            "label": "Driveway",
+            "capacity": 2
+          },
+          {
+            "label": "Podium",
+            "capacity": 1,
+            "required_upgrade_id": "mansion-tongva-podium"
+          }
+        ]
+      },
       {
         "id": "mansion-tongva-podium",
         "display_name": "Car Podium",
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "notes": "Unlocks the rotating-podium display slot inside the Mansion Garage.",
         "price": 650000
       },
       {
@@ -1399,16 +1424,41 @@
     "subtype_display": "Mansion",
     "location": "Across from the Vinewood sign, overlooking the city",
     "neighborhood": "Vinewood Hills",
-    "capacity": 20,
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
+      {
+        "id": "mansion-vinewood-garage",
+        "display_name": "Mansion Garage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "17 garage slots + 2 driveway + 1 podium (podium slot requires the Car Podium upgrade).",
+        "price": 0,
+        "included_on_purchase": true,
+        "sub_slots": [
+          {
+            "label": "Garage",
+            "capacity": 17
+          },
+          {
+            "label": "Driveway",
+            "capacity": 2
+          },
+          {
+            "label": "Podium",
+            "capacity": 1,
+            "required_upgrade_id": "mansion-vinewood-podium"
+          }
+        ]
+      },
       {
         "id": "mansion-vinewood-podium",
         "display_name": "Car Podium",
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "notes": "Unlocks the rotating-podium display slot inside the Mansion Garage.",
         "price": 650000
       },
       {
@@ -1464,16 +1514,41 @@
     "subtype_display": "Mansion",
     "location": "Richman, the wealthiest neighborhood in Los Santos",
     "neighborhood": "Richman",
-    "capacity": 20,
+    "capacity": 0,
     "counts_as_garage": true,
     "upgrades": [
+      {
+        "id": "mansion-richman-garage",
+        "display_name": "Mansion Garage",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "17 garage slots + 2 driveway + 1 podium (podium slot requires the Car Podium upgrade).",
+        "price": 0,
+        "included_on_purchase": true,
+        "sub_slots": [
+          {
+            "label": "Garage",
+            "capacity": 17
+          },
+          {
+            "label": "Driveway",
+            "capacity": 2
+          },
+          {
+            "label": "Podium",
+            "capacity": 1,
+            "required_upgrade_id": "mansion-richman-podium"
+          }
+        ]
+      },
       {
         "id": "mansion-richman-podium",
         "display_name": "Car Podium",
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+        "notes": "Unlocks the rotating-podium display slot inside the Mansion Garage.",
         "price": 650000
       },
       {

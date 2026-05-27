@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
@@ -14,7 +15,17 @@ type Props = {
 };
 
 export function MyBusinessesGrid({ businesses, instances }: Props) {
+  const searchParams = useSearchParams();
   const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  // Deep-link: /my-businesses?open=<catalogue property_id> auto-opens.
+  useEffect(() => {
+    const focus = searchParams.get("open");
+    if (!focus) return;
+    const match = businesses.find((b) => b.property_id === focus);
+    if (match) setSelectedId(match.id);
+  }, [searchParams, businesses]);
+
   const selected = businesses.find((b) => b.id === selectedId);
 
   return (

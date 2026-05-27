@@ -30,12 +30,33 @@ import type { Property } from "../schema";
 
 const COMMON_UPGRADES = (mansionId: string) => [
   {
+    // The Mansion Garage is the 20-slot storage area that comes with the
+    // property itself. We model it as an always-installed upgrade (rather
+    // than base_capacity) so it can carry sub_slots — garage / driveway /
+    // podium are visually distinct slot types within the 20.
+    // included_on_purchase: true means togglePropertyOwnership auto-installs
+    // it the moment a user adds the mansion.
+    id: `${mansionId}-garage`,
+    display_name: "Mansion Garage",
+    tier: null,
+    capacity: 0,
+    required_upgrade_id: null,
+    notes: "17 garage slots + 2 driveway + 1 podium (podium slot requires the Car Podium upgrade).",
+    price: 0,
+    included_on_purchase: true,
+    sub_slots: [
+      { label: "Garage", capacity: 17 },
+      { label: "Driveway", capacity: 2 },
+      { label: "Podium", capacity: 1, required_upgrade_id: `${mansionId}-podium` },
+    ],
+  },
+  {
     id: `${mansionId}-podium`,
     display_name: "Car Podium",
     tier: null,
     capacity: 0,
     required_upgrade_id: null,
-    notes: "Unlocks the rotating-podium display style for 1 of the 20 slots. Doesn't add capacity.",
+    notes: "Unlocks the rotating-podium display slot inside the Mansion Garage.",
   },
   {
     id: `${mansionId}-armory`,
@@ -80,7 +101,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Tongva Hills, overlooking the vineyards and Pacific Ocean",
     neighborhood: "Tongva Hills",
-    capacity: 20, // 17 garage + 2 driveway + 1 podium; podium upgrade is cosmetic-only
+    capacity: 0, // 20-slot Mansion Garage is modelled as an always-installed upgrade so it can carry sub_slots
     counts_as_garage: true,
     upgrades: COMMON_UPGRADES("mansion-tongva"),
     _sources: {
@@ -96,7 +117,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Across from the Vinewood sign, overlooking the city",
     neighborhood: "Vinewood Hills",
-    capacity: 20,
+    capacity: 0,
     counts_as_garage: true,
     upgrades: COMMON_UPGRADES("mansion-vinewood"),
     _sources: {
@@ -112,7 +133,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Mansion",
     location: "Richman, the wealthiest neighborhood in Los Santos",
     neighborhood: "Richman",
-    capacity: 20,
+    capacity: 0,
     counts_as_garage: true,
     upgrades: COMMON_UPGRADES("mansion-richman"),
     _sources: {
