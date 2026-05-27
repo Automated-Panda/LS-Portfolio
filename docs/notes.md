@@ -28,26 +28,46 @@ Full-day session. Order: max-out → Vehicle Warehouse model → /my-businesses 
 ### 📦 #4 Add Special Cargo Warehouses ✅
 - [x] New seed file `scripts/data/cargo-warehouses-seed.ts` — 22 warehouses (canonical count) split 6/8/8 across Small/Medium/Large subtypes.
 - [x] All 3 subtypes pool into one `cargo-warehouse` ownership group via `CARGO_WAREHOUSE_POOL` in import-seed.
-- [x] Migration `0011_cargo_warehouse_ownership_group.sql` adds cap=5 (in-game maximum).
+- [x] Migration `0011_cargo_warehouse_ownership_group.sql` applied via MCP (cap=5).
 - [x] Per-instance gtabase cover images for all 22.
-- [x] Hosted DB: 221 properties, 258 upgrades.
-- [ ] **Pending:** apply migration 0011 in Studio (paste the file). MCP can't reach the project so it's a manual step.
-- [ ] **Future:** address audit on the 17 verify:true rows; Interior Style upgrades.
+- [x] Interior Style upgrade added per instance via business audit.
+- [ ] **Future:** address audit on the 17 verify:true rows.
 
-### 🖼️ #5 Vehicle image audit
-- [ ] James walks `/vehicles` in the browser, lists bad/missing images.
-- [ ] Drop replacement source images into `docs/temp-images/<vehicle-id>.<ext>`.
-- [ ] `npx tsx scripts/normalize-temp-images.ts` → `npm run images:publish` → redeploy.
+### 🖼️ #5 Vehicle image audit ✅
+- [x] 8 no-image vehicles sourced from gtabase: Cargobob, Dinghy, Dodo, Maverick, Police Maverick, Sea Sparrow, Sparrow, Squalo.
+- [x] 2 wrong-image vehicles replaced: Pegassi Speeder, Tug.
+- [x] Dropped bogus `fbi` row (Fandom faction-page artifact, not an ownable vehicle).
+- [x] Fixed manufacturer display: `Lcc` → `LCC` (and `Mtl` → `MTL`).
+- [x] Validate: 0 errors, 0 warnings.
 
 ---
 
-## 📋 Business upgrade audit (its own session)
+## 📋 Business upgrade audit ✅ — landed 2026-05-28
 
-> Important but time-consuming — defer to a dedicated session.
+Cross-source audit (gtabase + Fandom) via 6 parallel agents. Functional/capacity-bearing upgrades added across 12 property types. Cosmetic-only items (lighting, hull colours, flags, etc.) intentionally deferred.
 
-- [ ] Walk through each business subtype: nightclub, ceo-office, mc-clubhouse, bunker, facility, agency, arcade, auto-shop, salvage-yard, vehicle-warehouse, hangar, yacht, biker-business-{coke,meth,weed,cash,forgery}.
-- [ ] For each: cross-reference gtabase + Fandom to verify the upgrade list is complete and accurate. Some seeds may have placeholder data from the rushed Phase 4b fanout.
-- [ ] Pay particular attention to: capacity-bearing upgrades vs cosmetic ones, prerequisites (`required_upgrade_id`), and any post-DLC additions that landed after the initial seed pass.
+- [x] **Nightclub** — added Staff Upgrade
+- [x] **CEO Office** — added Gun Locker, Safe, Accommodation
+- [x] **Agency** — added Armory, Personal Quarters, Vehicle Workshop
+- [x] **MC Clubhouse** — added Gun Locker, Custom Bike Shop; clarified base garage notes (10 personal + 7 member bikes)
+- [x] **Bunker** — added Equipment, Staff, Security, Personal Quarters; **removed misclassified `vehicle-workshop`** (MOC is a separate vehicle, not a bunker upgrade)
+- [x] **Facility** — added Orbital Cannon, Security Room, Lounge, Sleeping Quarters; clarified garage notes
+- [x] **Arcade** — added Master Control Terminal, Drone Station, Personal Quarters, High Score Screens
+- [x] **Auto Shop** — added Additional Car Lift, Staff 1, Staff 2 (requires Staff 1), Personal Quarters
+- [x] **Salvage Yard** — added Wall Safe, Staff, Trade Rates; clarified tow-truck options
+- [x] **Hangar** — added Aircraft Workshop
+- [x] **Yacht** — fixed Orion/Pisces tier swap; removed `helipad` (built-in, not an upgrade)
+- [x] **Cargo Warehouse** — added Interior Style upgrade per instance
+- [x] **Biker Businesses** — notes refinements (no structural changes)
+
+**Hosted DB:** 459 property_upgrades (up from 258), 33 dependency chains. 12 orphan rows auto-cleaned by import-seed.
+
+**Deferred follow-ups** (cosmetic, not blocking):
+- [ ] Interior Style options on Vehicle Warehouses (Basic/Urban/Branded)
+- [ ] Hangar cosmetics (lighting, floor graphics, office furniture, living quarters)
+- [ ] Yacht cosmetics (fittings, lighting, hull colour, flag, name)
+- [ ] Arcade machines (14 individual machines — model as one combined entry or skip)
+- [ ] Salvage Yard "Beater" tow truck variant (currently bundled into one entry)
 
 ---
 
@@ -86,14 +106,14 @@ Soon-ish work batch. Group these together when picking next pieces.
 - [x] Lazy-loaded via new `getOwnedInstancesForVehicle(vehicleId)` action so the 800-vehicle browse doesn't pre-fetch.
 - [x] Optimistic count updates + rollback on error.
 
-### 🏷️ InstanceDrawer rename + collapse-to-buttons (partial ✅)
+### 🏷️ InstanceDrawer rename + collapse-to-buttons ✅
 - [x] Rename **Nickname** → **Custom Name**
 - [x] Rename **Custom Tags** → **Highlight features**
-- [ ] **Still TODO:** replace always-visible input boxes with collapsed "+" buttons:
-  - `+ Custom Name` — click reveals text input (or shows the current value with edit pencil if already set)
-  - `+ Highlights` — click reveals the tag chip-input
-  - `+ Notes` — click reveals the textarea
-- [ ] Buttons live in a row under the vehicle header; clicking expands the field inline.
+- [x] Empty fields render as `+ Custom Name` / `+ Highlights` / `+ Notes` pill buttons in a row under the storage section.
+- [x] Click a pill → expands the input inline with auto-focus.
+- [x] Fields with existing values auto-expand on drawer open.
+- [x] Each expanded field has an X to clear-and-collapse.
+- [x] Storage location stays always-visible (functional core).
 
 ### 🧹 Bulk removal — clear-category + nuclear reset ✅
 - [x] **Remove-all-by-category** buttons in a new "Danger zone" card on `/profile`:
