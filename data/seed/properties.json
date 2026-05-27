@@ -15,7 +15,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-eclipse-towers-apt-3",
@@ -33,7 +34,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 200000
   },
   {
     "id": "high-end-apartment-eclipse-towers-apt-5",
@@ -51,7 +53,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 235000
   },
   {
     "id": "high-end-apartment-eclipse-towers-apt-9",
@@ -69,7 +72,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 350000
   },
   {
     "id": "high-end-apartment-eclipse-towers-apt-31",
@@ -87,7 +91,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 399000
   },
   {
     "id": "high-end-apartment-eclipse-towers-apt-40",
@@ -105,7 +110,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 476000
   },
   {
     "id": "high-end-apartment-eclipse-towers-penthouse-suite-1",
@@ -123,7 +129,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 1100000
   },
   {
     "id": "high-end-apartment-eclipse-towers-penthouse-suite-2",
@@ -141,7 +148,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 1100000
   },
   {
     "id": "high-end-apartment-eclipse-towers-penthouse-suite-3",
@@ -159,7 +167,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-eclipse-towers.webp",
+    "price": 1100000
   },
   {
     "id": "high-end-apartment-3-alta-st",
@@ -177,7 +186,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-3-alta-st-apt-10",
@@ -195,7 +205,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp",
+    "price": 214000
   },
   {
     "id": "high-end-apartment-3-alta-st-apt-57",
@@ -213,7 +224,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp"
+    "image_path": "data/images/properties/high-end-apartment-3-alta-st.webp",
+    "price": 223000
   },
   {
     "id": "high-end-apartment-del-perro-heights",
@@ -231,7 +243,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-del-perro-heights-apt-4",
@@ -249,7 +262,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp",
+    "price": 200000
   },
   {
     "id": "high-end-apartment-del-perro-heights-apt-7",
@@ -267,7 +281,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp",
+    "price": 222000
   },
   {
     "id": "high-end-apartment-del-perro-heights-apt-20",
@@ -285,7 +300,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp"
+    "image_path": "data/images/properties/high-end-apartment-del-perro-heights.webp",
+    "price": 231000
   },
   {
     "id": "high-end-apartment-4-integrity-way",
@@ -303,7 +319,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-4-integrity-way-apt-28",
@@ -321,7 +338,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp",
+    "price": 235000
   },
   {
     "id": "high-end-apartment-4-integrity-way-apt-30",
@@ -339,7 +357,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp",
+    "price": 260000
   },
   {
     "id": "high-end-apartment-4-integrity-way-apt-35",
@@ -357,7 +376,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp"
+    "image_path": "data/images/properties/high-end-apartment-4-integrity-way.webp",
+    "price": 360000
   },
   {
     "id": "high-end-apartment-weazel-plaza",
@@ -375,7 +395,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-weazel-plaza-apt-26",
@@ -393,7 +414,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp",
+    "price": 215000
   },
   {
     "id": "high-end-apartment-weazel-plaza-apt-70",
@@ -411,7 +433,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp",
+    "price": 367000
   },
   {
     "id": "high-end-apartment-weazel-plaza-apt-101",
@@ -429,7 +452,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp"
+    "image_path": "data/images/properties/high-end-apartment-weazel-plaza.webp",
+    "price": 476000
   },
   {
     "id": "high-end-apartment-richards-majestic",
@@ -447,7 +471,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-richards-majestic-apt-2",
@@ -465,7 +490,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp",
+    "price": 241000
   },
   {
     "id": "high-end-apartment-richards-majestic-apt-4",
@@ -483,7 +509,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp",
+    "price": 341000
   },
   {
     "id": "high-end-apartment-richards-majestic-apt-51",
@@ -501,7 +528,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp"
+    "image_path": "data/images/properties/high-end-apartment-richards-majestic.webp",
+    "price": 476000
   },
   {
     "id": "high-end-apartment-tinsel-towers",
@@ -519,7 +547,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp",
+    "price": null
   },
   {
     "id": "high-end-apartment-tinsel-towers-apt-29",
@@ -537,7 +566,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp",
+    "price": 310000
   },
   {
     "id": "high-end-apartment-tinsel-towers-apt-42",
@@ -555,7 +585,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp",
+    "price": 394000
   },
   {
     "id": "high-end-apartment-tinsel-towers-apt-45",
@@ -573,7 +604,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp"
+    "image_path": "data/images/properties/high-end-apartment-tinsel-towers.webp",
+    "price": 468000
   },
   {
     "id": "high-end-apartment-2862-hillcrest-ave",
@@ -591,7 +623,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2862-hillcrest-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2862-hillcrest-ave.webp",
+    "price": 449000
   },
   {
     "id": "high-end-apartment-2866-hillcrest-ave",
@@ -609,7 +642,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2866-hillcrest-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2866-hillcrest-ave.webp",
+    "price": 497000
   },
   {
     "id": "high-end-apartment-2868-hillcrest-ave",
@@ -627,7 +661,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2868-hillcrest-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2868-hillcrest-ave.webp",
+    "price": 523000
   },
   {
     "id": "high-end-apartment-2874-hillcrest-ave",
@@ -645,7 +680,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2874-hillcrest-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2874-hillcrest-ave.webp",
+    "price": 576000
   },
   {
     "id": "high-end-apartment-2044-north-conker-ave",
@@ -663,7 +699,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2044-north-conker-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2044-north-conker-ave.webp",
+    "price": 613000
   },
   {
     "id": "high-end-apartment-2045-north-conker-ave",
@@ -681,7 +718,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2045-north-conker-ave.webp"
+    "image_path": "data/images/properties/high-end-apartment-2045-north-conker-ave.webp",
+    "price": 660000
   },
   {
     "id": "high-end-apartment-2117-milton-rd",
@@ -699,7 +737,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2117-milton-rd.webp"
+    "image_path": "data/images/properties/high-end-apartment-2117-milton-rd.webp",
+    "price": 690000
   },
   {
     "id": "high-end-apartment-2113-mad-wayne-thunder-dr",
@@ -717,7 +756,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-2113-mad-wayne-thunder-dr.webp"
+    "image_path": "data/images/properties/high-end-apartment-2113-mad-wayne-thunder-dr.webp",
+    "price": 715000
   },
   {
     "id": "high-end-apartment-3655-wild-oats-dr",
@@ -735,7 +775,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-3655-wild-oats-dr.webp"
+    "image_path": "data/images/properties/high-end-apartment-3655-wild-oats-dr.webp",
+    "price": 750000
   },
   {
     "id": "high-end-apartment-3677-whispymound-dr",
@@ -753,7 +794,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/high-end-apartment-3677-whispymound-dr.webp"
+    "image_path": "data/images/properties/high-end-apartment-3677-whispymound-dr.webp",
+    "price": 800000
   },
   {
     "id": "mid-end-apartment-1162-power-st-apt-3",
@@ -771,7 +813,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-1162-power-st-apt-3.webp"
+    "image_path": "data/images/properties/mid-end-apartment-1162-power-st-apt-3.webp",
+    "price": 132000
   },
   {
     "id": "mid-end-apartment-0605-spanish-ave-apt-1",
@@ -789,7 +832,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0605-spanish-ave-apt-1.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0605-spanish-ave-apt-1.webp",
+    "price": 137000
   },
   {
     "id": "mid-end-apartment-0604-las-lagunas-blvd-apt-4",
@@ -807,7 +851,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0604-las-lagunas-blvd-apt-4.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0604-las-lagunas-blvd-apt-4.webp",
+    "price": 141000
   },
   {
     "id": "mid-end-apartment-0184-milton-rd-apt-13",
@@ -825,7 +870,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0184-milton-rd-apt-13.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0184-milton-rd-apt-13.webp",
+    "price": 145000
   },
   {
     "id": "mid-end-apartment-the-royale-apt-19",
@@ -843,7 +889,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-the-royale-apt-19.webp"
+    "image_path": "data/images/properties/mid-end-apartment-the-royale-apt-19.webp",
+    "price": 150000
   },
   {
     "id": "mid-end-apartment-0504-s-mo-milton-dr",
@@ -861,7 +908,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0504-s-mo-milton-dr.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0504-s-mo-milton-dr.webp",
+    "price": 153000
   },
   {
     "id": "mid-end-apartment-0115-bay-city-ave-apt-45",
@@ -879,7 +927,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0115-bay-city-ave-apt-45.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0115-bay-city-ave-apt-45.webp",
+    "price": 158000
   },
   {
     "id": "mid-end-apartment-0325-south-rockford-dr",
@@ -897,7 +946,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-0325-south-rockford-dr.webp"
+    "image_path": "data/images/properties/mid-end-apartment-0325-south-rockford-dr.webp",
+    "price": 162000
   },
   {
     "id": "mid-end-apartment-dream-tower-apt-15",
@@ -915,7 +965,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-dream-tower-apt-15.webp"
+    "image_path": "data/images/properties/mid-end-apartment-dream-tower-apt-15.webp",
+    "price": 166000
   },
   {
     "id": "mid-end-apartment-4-hangman-ave",
@@ -933,7 +984,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-4-hangman-ave.webp"
+    "image_path": "data/images/properties/mid-end-apartment-4-hangman-ave.webp",
+    "price": 169000
   },
   {
     "id": "mid-end-apartment-12-sustancia-rd",
@@ -951,7 +1003,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-12-sustancia-rd.webp"
+    "image_path": "data/images/properties/mid-end-apartment-12-sustancia-rd.webp",
+    "price": 172000
   },
   {
     "id": "mid-end-apartment-4584-procopio-dr",
@@ -969,7 +1022,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-4584-procopio-dr.webp"
+    "image_path": "data/images/properties/mid-end-apartment-4584-procopio-dr.webp",
+    "price": 174000
   },
   {
     "id": "mid-end-apartment-4401-procopio-dr",
@@ -987,7 +1041,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/mid-end-apartment-4401-procopio-dr.webp"
+    "image_path": "data/images/properties/mid-end-apartment-4401-procopio-dr.webp",
+    "price": 175000
   },
   {
     "id": "low-end-apartment-2143-las-lagunas-blvd-apt-9",
@@ -1005,7 +1060,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-2143-las-lagunas-blvd-apt-9.webp"
+    "image_path": "data/images/properties/low-end-apartment-2143-las-lagunas-blvd-apt-9.webp",
+    "price": 80000
   },
   {
     "id": "low-end-apartment-1561-san-vitas-st-apt-2",
@@ -1023,7 +1079,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-1561-san-vitas-st-apt-2.webp"
+    "image_path": "data/images/properties/low-end-apartment-1561-san-vitas-st-apt-2.webp",
+    "price": 86000
   },
   {
     "id": "low-end-apartment-0112-s-rockford-dr-apt-13",
@@ -1041,7 +1098,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-0112-s-rockford-dr-apt-13.webp"
+    "image_path": "data/images/properties/low-end-apartment-0112-s-rockford-dr-apt-13.webp",
+    "price": 90000
   },
   {
     "id": "low-end-apartment-2057-vespucci-blvd-apt-1",
@@ -1059,7 +1117,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-2057-vespucci-blvd-apt-1.webp"
+    "image_path": "data/images/properties/low-end-apartment-2057-vespucci-blvd-apt-1.webp",
+    "price": 97000
   },
   {
     "id": "low-end-apartment-0069-cougar-ave-apt-19",
@@ -1077,7 +1136,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-0069-cougar-ave-apt-19.webp"
+    "image_path": "data/images/properties/low-end-apartment-0069-cougar-ave-apt-19.webp",
+    "price": 102000
   },
   {
     "id": "low-end-apartment-1237-prosperity-st-apt-21",
@@ -1095,7 +1155,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-1237-prosperity-st-apt-21.webp"
+    "image_path": "data/images/properties/low-end-apartment-1237-prosperity-st-apt-21.webp",
+    "price": 108000
   },
   {
     "id": "low-end-apartment-1115-blvd-del-perro-apt-18",
@@ -1113,7 +1174,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-1115-blvd-del-perro-apt-18.webp"
+    "image_path": "data/images/properties/low-end-apartment-1115-blvd-del-perro-apt-18.webp",
+    "price": 112000
   },
   {
     "id": "low-end-apartment-0232-paleto-blvd",
@@ -1131,7 +1193,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-0232-paleto-blvd.webp"
+    "image_path": "data/images/properties/low-end-apartment-0232-paleto-blvd.webp",
+    "price": 115000
   },
   {
     "id": "low-end-apartment-140-zancudo-ave",
@@ -1149,7 +1212,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-140-zancudo-ave.webp"
+    "image_path": "data/images/properties/low-end-apartment-140-zancudo-ave.webp",
+    "price": 118000
   },
   {
     "id": "low-end-apartment-1893-grapeseed-ave",
@@ -1167,7 +1231,8 @@
       "fandom": "https://gta.fandom.com/wiki/Apartments",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/apartments"
     },
-    "image_path": "data/images/properties/low-end-apartment-1893-grapeseed-ave.webp"
+    "image_path": "data/images/properties/low-end-apartment-1893-grapeseed-ave.webp",
+    "price": 121000
   },
   {
     "id": "casino-penthouse",
@@ -1194,7 +1259,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/casino-penthouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/casino-penthouse.webp"
+    "image_path": "data/images/properties/casino-penthouse.webp",
+    "price": 1500000
   },
   {
     "id": "mansion-tongva",
@@ -1245,8 +1311,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
-        "price": 1750000
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {
@@ -1254,7 +1319,8 @@
       "gtabase": "https://www.gtabase.com/properties/gta-online/the-tongva-estate-devin-weston-mansion"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mansion-tongva.webp"
+    "image_path": "data/images/properties/mansion-tongva.webp",
+    "price": 11500000
   },
   {
     "id": "mansion-vinewood",
@@ -1305,8 +1371,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
-        "price": 1750000
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {
@@ -1314,7 +1379,8 @@
       "gtabase": "https://www.gtabase.com/properties/gta-online/the-vinewood-residence-mansion"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mansion-vinewood.webp"
+    "image_path": "data/images/properties/mansion-vinewood.webp",
+    "price": 12200000
   },
   {
     "id": "mansion-richman",
@@ -1365,8 +1431,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
-        "price": 1750000
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {
@@ -1374,7 +1439,8 @@
       "gtabase": "https://www.gtabase.com/properties/gta-online/richman-villa-mansion"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mansion-richman.webp"
+    "image_path": "data/images/properties/mansion-richman.webp",
+    "price": 12800000
   },
   {
     "id": "stand-alone-garage-0120-murrieta-heights",
@@ -1401,7 +1467,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-0120-murrieta-heights.webp"
+    "image_path": "data/images/properties/stand-alone-garage-0120-murrieta-heights.webp",
+    "price": 35000
   },
   {
     "id": "stand-alone-garage-unit-2-popular-st",
@@ -1428,7 +1495,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "price": 25000
   },
   {
     "id": "stand-alone-garage-331-supply-st",
@@ -1455,7 +1523,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-331-supply-st.webp"
+    "image_path": "data/images/properties/stand-alone-garage-331-supply-st.webp",
+    "price": 27500
   },
   {
     "id": "stand-alone-garage-1623-south-shambles-st",
@@ -1482,7 +1551,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1623-south-shambles-st.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1623-south-shambles-st.webp",
+    "price": 30000
   },
   {
     "id": "stand-alone-garage-1337-exceptionalists-way",
@@ -1509,7 +1579,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1337-exceptionalists-way.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1337-exceptionalists-way.webp",
+    "price": 32500
   },
   {
     "id": "stand-alone-garage-unit-76-greenwich-parkway",
@@ -1536,7 +1607,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "price": 35000
   },
   {
     "id": "stand-alone-garage-unit-14-popular-st",
@@ -1563,7 +1635,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "price": 62500
   },
   {
     "id": "stand-alone-garage-unit-1-olympic-fwy",
@@ -1590,7 +1663,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "price": 65000
   },
   {
     "id": "stand-alone-garage-0552-roy-lowenstein-blvd",
@@ -1617,7 +1691,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-0552-roy-lowenstein-blvd.webp"
+    "image_path": "data/images/properties/stand-alone-garage-0552-roy-lowenstein-blvd.webp",
+    "price": 67500
   },
   {
     "id": "stand-alone-garage-0432-davis-ave",
@@ -1644,7 +1719,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-0432-davis-ave.webp"
+    "image_path": "data/images/properties/stand-alone-garage-0432-davis-ave.webp",
+    "price": 70000
   },
   {
     "id": "stand-alone-garage-870-route-68-approach",
@@ -1671,7 +1747,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-870-route-68-approach.webp"
+    "image_path": "data/images/properties/stand-alone-garage-870-route-68-approach.webp",
+    "price": 72500
   },
   {
     "id": "stand-alone-garage-8754-route-68",
@@ -1698,7 +1775,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-8754-route-68.webp"
+    "image_path": "data/images/properties/stand-alone-garage-8754-route-68.webp",
+    "price": 75000
   },
   {
     "id": "stand-alone-garage-1905-davis-ave",
@@ -1725,7 +1803,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1905-davis-ave.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1905-davis-ave.webp",
+    "price": 77500
   },
   {
     "id": "stand-alone-garage-4531-dry-dock-st",
@@ -1752,7 +1831,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-4531-dry-dock-st.webp"
+    "image_path": "data/images/properties/stand-alone-garage-4531-dry-dock-st.webp",
+    "price": 80000
   },
   {
     "id": "stand-alone-garage-0754-roy-lowenstein-blvd",
@@ -1779,7 +1859,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-0754-roy-lowenstein-blvd.webp"
+    "image_path": "data/images/properties/stand-alone-garage-0754-roy-lowenstein-blvd.webp",
+    "price": 105000
   },
   {
     "id": "stand-alone-garage-12-little-bighorn-ave",
@@ -1806,7 +1887,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-12-little-bighorn-ave.webp"
+    "image_path": "data/images/properties/stand-alone-garage-12-little-bighorn-ave.webp",
+    "price": 110000
   },
   {
     "id": "stand-alone-garage-unit-124-popular-st",
@@ -1833,7 +1915,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage.webp"
+    "image_path": "data/images/properties/stand-alone-garage.webp",
+    "price": 115000
   },
   {
     "id": "stand-alone-garage-142-paleto-blvd",
@@ -1860,7 +1943,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-142-paleto-blvd.webp"
+    "image_path": "data/images/properties/stand-alone-garage-142-paleto-blvd.webp",
+    "price": 120000
   },
   {
     "id": "stand-alone-garage-1-strawberry-ave",
@@ -1887,7 +1971,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1-strawberry-ave.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1-strawberry-ave.webp",
+    "price": 122500
   },
   {
     "id": "stand-alone-garage-1932-grapeseed-ave",
@@ -1914,7 +1999,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1932-grapeseed-ave.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1932-grapeseed-ave.webp",
+    "price": 125000
   },
   {
     "id": "stand-alone-garage-1920-senora-way",
@@ -1941,7 +2027,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1920-senora-way.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1920-senora-way.webp",
+    "price": 127500
   },
   {
     "id": "stand-alone-garage-2000-great-ocean-hwy",
@@ -1968,7 +2055,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-2000-great-ocean-hwy.webp"
+    "image_path": "data/images/properties/stand-alone-garage-2000-great-ocean-hwy.webp",
+    "price": 130000
   },
   {
     "id": "stand-alone-garage-197-route-68",
@@ -1995,7 +2083,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-197-route-68.webp"
+    "image_path": "data/images/properties/stand-alone-garage-197-route-68.webp",
+    "price": 135000
   },
   {
     "id": "stand-alone-garage-1200-route-68",
@@ -2022,7 +2111,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-1200-route-68.webp"
+    "image_path": "data/images/properties/stand-alone-garage-1200-route-68.webp",
+    "price": 140000
   },
   {
     "id": "stand-alone-garage-innocence-blvd",
@@ -2049,7 +2139,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-innocence-blvd.webp"
+    "image_path": "data/images/properties/stand-alone-garage-innocence-blvd.webp",
+    "price": 145000
   },
   {
     "id": "stand-alone-garage-634-blvd-del-perro",
@@ -2076,7 +2167,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-634-blvd-del-perro.webp"
+    "image_path": "data/images/properties/stand-alone-garage-634-blvd-del-perro.webp",
+    "price": 147500
   },
   {
     "id": "stand-alone-garage-0897-mirror-park-blvd",
@@ -2103,7 +2195,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/stand-alone-garage-0897-mirror-park-blvd.webp"
+    "image_path": "data/images/properties/stand-alone-garage-0897-mirror-park-blvd.webp",
+    "price": 150000
   },
   {
     "id": "eclipse-blvd-garages-all",
@@ -2121,7 +2214,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/eclipse-blvd-garages-all.webp"
+    "image_path": "data/images/properties/eclipse-blvd-garages-all.webp",
+    "price": 1500000
   },
   {
     "id": "vinewood-car-club",
@@ -2139,7 +2233,8 @@
       "gtabase": "https://www.gtabase.com/gta-online/properties/the-vinewood-club-garage"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vinewood-car-club.webp"
+    "image_path": "data/images/properties/vinewood-car-club.webp",
+    "price": 50000
   },
   {
     "id": "ceo-office-maze-bank-west",
@@ -2182,8 +2277,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000).",
-        "price": 520000
+        "notes": "Weapon loadout storage ($520,000)."
       },
       {
         "id": "ceo-office-maze-bank-west-money-safe",
@@ -2191,8 +2285,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000).",
-        "price": 335000
+        "notes": "Decorative cash safe in the office ($335,000)."
       },
       {
         "id": "ceo-office-maze-bank-west-accommodation",
@@ -2200,8 +2293,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000).",
-        "price": 795000
+        "notes": "Bed, shower, changing room ($795,000)."
       }
     ],
     "_sources": {
@@ -2209,7 +2301,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/ceo-office-maze-bank-west.webp"
+    "image_path": "data/images/properties/ceo-office-maze-bank-west.webp",
+    "price": 1000000
   },
   {
     "id": "ceo-office-arcadius-business-center",
@@ -2252,8 +2345,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000).",
-        "price": 520000
+        "notes": "Weapon loadout storage ($520,000)."
       },
       {
         "id": "ceo-office-arcadius-business-center-money-safe",
@@ -2261,8 +2353,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000).",
-        "price": 335000
+        "notes": "Decorative cash safe in the office ($335,000)."
       },
       {
         "id": "ceo-office-arcadius-business-center-accommodation",
@@ -2270,8 +2361,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000).",
-        "price": 795000
+        "notes": "Bed, shower, changing room ($795,000)."
       }
     ],
     "_sources": {
@@ -2279,7 +2369,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/ceo-office-arcadius-business-center.webp"
+    "image_path": "data/images/properties/ceo-office-arcadius-business-center.webp",
+    "price": 2250000
   },
   {
     "id": "ceo-office-lombank-west",
@@ -2322,8 +2413,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000).",
-        "price": 520000
+        "notes": "Weapon loadout storage ($520,000)."
       },
       {
         "id": "ceo-office-lombank-west-money-safe",
@@ -2331,8 +2421,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000).",
-        "price": 335000
+        "notes": "Decorative cash safe in the office ($335,000)."
       },
       {
         "id": "ceo-office-lombank-west-accommodation",
@@ -2340,8 +2429,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000).",
-        "price": 795000
+        "notes": "Bed, shower, changing room ($795,000)."
       }
     ],
     "_sources": {
@@ -2349,7 +2437,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/ceo-office-lombank-west.webp"
+    "image_path": "data/images/properties/ceo-office-lombank-west.webp",
+    "price": 3100000
   },
   {
     "id": "ceo-office-maze-bank-tower",
@@ -2392,8 +2481,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($520,000).",
-        "price": 520000
+        "notes": "Weapon loadout storage ($520,000)."
       },
       {
         "id": "ceo-office-maze-bank-tower-money-safe",
@@ -2401,8 +2489,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Decorative cash safe in the office ($335,000).",
-        "price": 335000
+        "notes": "Decorative cash safe in the office ($335,000)."
       },
       {
         "id": "ceo-office-maze-bank-tower-accommodation",
@@ -2410,8 +2497,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bed, shower, changing room ($795,000).",
-        "price": 795000
+        "notes": "Bed, shower, changing room ($795,000)."
       }
     ],
     "_sources": {
@@ -2419,7 +2505,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/offices"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/ceo-office-maze-bank-tower.webp"
+    "image_path": "data/images/properties/ceo-office-maze-bank-tower.webp",
+    "price": 4000000
   },
   {
     "id": "mc-clubhouse-great-chaparral",
@@ -2446,8 +2533,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-great-chaparral-custom-bike-shop",
@@ -2455,8 +2541,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2464,7 +2549,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-great-chaparral.webp"
+    "image_path": "data/images/properties/mc-clubhouse-great-chaparral.webp",
+    "price": 200000
   },
   {
     "id": "mc-clubhouse-sandy-shores",
@@ -2491,8 +2577,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-sandy-shores-custom-bike-shop",
@@ -2500,8 +2585,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2509,7 +2593,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-sandy-shores.webp"
+    "image_path": "data/images/properties/mc-clubhouse-sandy-shores.webp",
+    "price": 210000
   },
   {
     "id": "mc-clubhouse-paleto-bay-1story",
@@ -2536,8 +2621,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-paleto-bay-1story-custom-bike-shop",
@@ -2545,8 +2629,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2554,7 +2637,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-1story.webp"
+    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-1story.webp",
+    "price": 242000
   },
   {
     "id": "mc-clubhouse-del-perro-beach",
@@ -2581,8 +2665,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-del-perro-beach-custom-bike-shop",
@@ -2590,8 +2673,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2599,7 +2681,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-del-perro-beach.webp"
+    "image_path": "data/images/properties/mc-clubhouse-del-perro-beach.webp",
+    "price": 365000
   },
   {
     "id": "mc-clubhouse-rancho",
@@ -2626,8 +2709,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-rancho-custom-bike-shop",
@@ -2635,8 +2717,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2644,7 +2725,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-rancho.webp"
+    "image_path": "data/images/properties/mc-clubhouse-rancho.webp",
+    "price": 420000
   },
   {
     "id": "mc-clubhouse-pillbox-hill",
@@ -2671,8 +2753,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-pillbox-hill-custom-bike-shop",
@@ -2680,8 +2761,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2689,7 +2769,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-pillbox-hill.webp"
+    "image_path": "data/images/properties/mc-clubhouse-pillbox-hill.webp",
+    "price": 455000
   },
   {
     "id": "mc-clubhouse-grapeseed",
@@ -2716,8 +2797,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-grapeseed-custom-bike-shop",
@@ -2725,8 +2805,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2734,7 +2813,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-grapeseed.webp"
+    "image_path": "data/images/properties/mc-clubhouse-grapeseed.webp",
+    "price": 225000
   },
   {
     "id": "mc-clubhouse-paleto-bay-2story",
@@ -2761,8 +2841,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-paleto-bay-2story-custom-bike-shop",
@@ -2770,8 +2849,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2779,7 +2857,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-2story.webp"
+    "image_path": "data/images/properties/mc-clubhouse-paleto-bay-2story.webp",
+    "price": 250000
   },
   {
     "id": "mc-clubhouse-vespucci-beach",
@@ -2806,8 +2885,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-vespucci-beach-custom-bike-shop",
@@ -2815,8 +2893,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2824,7 +2901,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-vespucci-beach.webp"
+    "image_path": "data/images/properties/mc-clubhouse-vespucci-beach.webp",
+    "price": 395000
   },
   {
     "id": "mc-clubhouse-la-mesa",
@@ -2851,8 +2929,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-la-mesa-custom-bike-shop",
@@ -2860,8 +2937,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2869,7 +2945,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-la-mesa.webp"
+    "image_path": "data/images/properties/mc-clubhouse-la-mesa.webp",
+    "price": 449000
   },
   {
     "id": "mc-clubhouse-downtown-vinewood",
@@ -2896,8 +2973,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-downtown-vinewood-custom-bike-shop",
@@ -2905,8 +2981,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2914,7 +2989,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-downtown-vinewood.webp"
+    "image_path": "data/images/properties/mc-clubhouse-downtown-vinewood.webp",
+    "price": 472000
   },
   {
     "id": "mc-clubhouse-hawick",
@@ -2941,8 +3017,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($320,000).",
-        "price": 320000
+        "notes": "Weapon loadout storage ($320,000)."
       },
       {
         "id": "mc-clubhouse-hawick-custom-bike-shop",
@@ -2950,8 +3025,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Full motorcycle customization + customer bike service ($530,000).",
-        "price": 530000
+        "notes": "Full motorcycle customization + customer bike service ($530,000)."
       }
     ],
     "_sources": {
@@ -2959,7 +3033,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-clubhouses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/mc-clubhouse-hawick.webp"
+    "image_path": "data/images/properties/mc-clubhouse-hawick.webp",
+    "price": 495000
   },
   {
     "id": "bunker-chumash",
@@ -2978,8 +3053,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-chumash-staff",
@@ -2987,8 +3061,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-chumash-security",
@@ -2996,8 +3069,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-chumash-personal-quarters",
@@ -3005,8 +3077,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-chumash-gun-locker",
@@ -3014,8 +3085,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3023,7 +3093,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-chumash.webp"
+    "image_path": "data/images/properties/bunker-chumash.webp",
+    "price": 1650000
   },
   {
     "id": "bunker-paleto-forest",
@@ -3042,8 +3113,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-paleto-forest-staff",
@@ -3051,8 +3121,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-paleto-forest-security",
@@ -3060,8 +3129,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-paleto-forest-personal-quarters",
@@ -3069,8 +3137,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-paleto-forest-gun-locker",
@@ -3078,8 +3145,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3087,7 +3153,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-paleto-forest.webp"
+    "image_path": "data/images/properties/bunker-paleto-forest.webp",
+    "price": 1165000
   },
   {
     "id": "bunker-raton-canyon",
@@ -3106,8 +3173,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-raton-canyon-staff",
@@ -3115,8 +3181,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-raton-canyon-security",
@@ -3124,8 +3189,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-raton-canyon-personal-quarters",
@@ -3133,8 +3197,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-raton-canyon-gun-locker",
@@ -3142,8 +3205,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3151,7 +3213,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-raton-canyon.webp"
+    "image_path": "data/images/properties/bunker-raton-canyon.webp",
+    "price": 1450000
   },
   {
     "id": "bunker-lago-zancudo",
@@ -3170,8 +3233,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-lago-zancudo-staff",
@@ -3179,8 +3241,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-lago-zancudo-security",
@@ -3188,8 +3249,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-lago-zancudo-personal-quarters",
@@ -3197,8 +3257,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-lago-zancudo-gun-locker",
@@ -3206,8 +3265,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3215,7 +3273,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-lago-zancudo.webp"
+    "image_path": "data/images/properties/bunker-lago-zancudo.webp",
+    "price": 1550000
   },
   {
     "id": "bunker-smoke-tree-road",
@@ -3234,8 +3293,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-smoke-tree-road-staff",
@@ -3243,8 +3301,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-smoke-tree-road-security",
@@ -3252,8 +3309,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-smoke-tree-road-personal-quarters",
@@ -3261,8 +3317,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-smoke-tree-road-gun-locker",
@@ -3270,8 +3325,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3279,7 +3333,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-smoke-tree-road.webp"
+    "image_path": "data/images/properties/bunker-smoke-tree-road.webp",
+    "price": 2205000
   },
   {
     "id": "bunker-thomson-scrapyard",
@@ -3298,8 +3353,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-thomson-scrapyard-staff",
@@ -3307,8 +3361,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-thomson-scrapyard-security",
@@ -3316,8 +3369,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-thomson-scrapyard-personal-quarters",
@@ -3325,8 +3377,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-thomson-scrapyard-gun-locker",
@@ -3334,8 +3385,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3343,7 +3393,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-thomson-scrapyard.webp"
+    "image_path": "data/images/properties/bunker-thomson-scrapyard.webp",
+    "price": 2290000
   },
   {
     "id": "bunker-grapeseed",
@@ -3362,8 +3413,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-grapeseed-staff",
@@ -3371,8 +3421,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-grapeseed-security",
@@ -3380,8 +3429,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-grapeseed-personal-quarters",
@@ -3389,8 +3437,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-grapeseed-gun-locker",
@@ -3398,8 +3445,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3407,7 +3453,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-grapeseed.webp"
+    "image_path": "data/images/properties/bunker-grapeseed.webp",
+    "price": 1750000
   },
   {
     "id": "bunker-route-68",
@@ -3426,8 +3473,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-route-68-staff",
@@ -3435,8 +3481,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-route-68-security",
@@ -3444,8 +3489,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-route-68-personal-quarters",
@@ -3453,8 +3497,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-route-68-gun-locker",
@@ -3462,8 +3505,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3471,7 +3513,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-route-68.webp"
+    "image_path": "data/images/properties/bunker-route-68.webp",
+    "price": 1950000
   },
   {
     "id": "bunker-farmhouse",
@@ -3490,8 +3533,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-farmhouse-staff",
@@ -3499,8 +3541,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-farmhouse-security",
@@ -3508,8 +3549,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-farmhouse-personal-quarters",
@@ -3517,8 +3557,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-farmhouse-gun-locker",
@@ -3526,8 +3565,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3535,7 +3573,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-farmhouse.webp"
+    "image_path": "data/images/properties/bunker-farmhouse.webp",
+    "price": 2375000
   },
   {
     "id": "bunker-grand-senora-desert",
@@ -3554,8 +3593,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-grand-senora-desert-staff",
@@ -3563,8 +3601,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-grand-senora-desert-security",
@@ -3572,8 +3609,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-grand-senora-desert-personal-quarters",
@@ -3581,8 +3617,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-grand-senora-desert-gun-locker",
@@ -3590,8 +3625,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3599,7 +3633,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-grand-senora-desert.webp"
+    "image_path": "data/images/properties/bunker-grand-senora-desert.webp",
+    "price": 2120000
   },
   {
     "id": "bunker-grand-senora-oilfields",
@@ -3618,8 +3653,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000).",
-        "price": 1155000
+        "notes": "Speeds manufacturing/research, improves stock value ($1,155,000)."
       },
       {
         "id": "bunker-grand-senora-oilfields-staff",
@@ -3627,8 +3661,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500).",
-        "price": 598500
+        "notes": "Accelerates manufacturing/research, boosts inventory value ($598,500)."
       },
       {
         "id": "bunker-grand-senora-oilfields-security",
@@ -3636,8 +3669,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces chance of stock theft ($351,000).",
-        "price": 351000
+        "notes": "Reduces chance of stock theft ($351,000)."
       },
       {
         "id": "bunker-grand-senora-oilfields-personal-quarters",
@@ -3645,8 +3677,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bunk + shower; respawn point ($265,000).",
-        "price": 265000
+        "notes": "Bunk + shower; respawn point ($265,000)."
       },
       {
         "id": "bunker-grand-senora-oilfields-gun-locker",
@@ -3654,8 +3685,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Weapon loadout storage ($175,000).",
-        "price": 175000
+        "notes": "Weapon loadout storage ($175,000)."
       }
     ],
     "_sources": {
@@ -3663,7 +3693,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/bunker-grand-senora-oilfields.webp"
+    "image_path": "data/images/properties/bunker-grand-senora-oilfields.webp",
+    "price": 2035000
   },
   {
     "id": "facility-land-act-reservoir",
@@ -3690,8 +3721,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-land-act-reservoir-security-room",
@@ -3699,8 +3729,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-land-act-reservoir-lounge",
@@ -3724,7 +3753,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-land-act-reservoir.webp"
+    "image_path": "data/images/properties/facility-land-act-reservoir.webp",
+    "price": 2950000
   },
   {
     "id": "facility-lago-zancudo",
@@ -3751,8 +3781,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-lago-zancudo-security-room",
@@ -3760,8 +3789,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-lago-zancudo-lounge",
@@ -3785,7 +3813,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-lago-zancudo.webp"
+    "image_path": "data/images/properties/facility-lago-zancudo.webp",
+    "price": 1670000
   },
   {
     "id": "facility-mount-gordo",
@@ -3812,8 +3841,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-mount-gordo-security-room",
@@ -3821,8 +3849,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-mount-gordo-lounge",
@@ -3846,7 +3873,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-mount-gordo.webp"
+    "image_path": "data/images/properties/facility-mount-gordo.webp",
+    "price": 1465000
   },
   {
     "id": "facility-paleto-bay",
@@ -3873,8 +3901,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-paleto-bay-security-room",
@@ -3882,8 +3909,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-paleto-bay-lounge",
@@ -3907,7 +3933,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-paleto-bay.webp"
+    "image_path": "data/images/properties/facility-paleto-bay.webp",
+    "price": 1250000
   },
   {
     "id": "facility-ron-alternates-wind-farm",
@@ -3934,8 +3961,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-ron-alternates-wind-farm-security-room",
@@ -3943,8 +3969,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-ron-alternates-wind-farm-lounge",
@@ -3968,7 +3993,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-ron-alternates-wind-farm.webp"
+    "image_path": "data/images/properties/facility-ron-alternates-wind-farm.webp",
+    "price": 1855000
   },
   {
     "id": "facility-zancudo-river",
@@ -3995,8 +4021,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-zancudo-river-security-room",
@@ -4004,8 +4029,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-zancudo-river-lounge",
@@ -4029,7 +4053,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-zancudo-river.webp"
+    "image_path": "data/images/properties/facility-zancudo-river.webp",
+    "price": 2100000
   },
   {
     "id": "facility-sandy-shores",
@@ -4056,8 +4081,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-sandy-shores-security-room",
@@ -4065,8 +4089,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-sandy-shores-lounge",
@@ -4090,7 +4113,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-sandy-shores.webp"
+    "image_path": "data/images/properties/facility-sandy-shores.webp",
+    "price": 2740000
   },
   {
     "id": "facility-route-68",
@@ -4117,8 +4141,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-route-68-security-room",
@@ -4126,8 +4149,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-route-68-lounge",
@@ -4151,7 +4173,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-route-68.webp"
+    "image_path": "data/images/properties/facility-route-68.webp",
+    "price": 2312500
   },
   {
     "id": "facility-grand-senora-desert",
@@ -4178,8 +4201,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Single-use strike from low orbit ($900,000; per-shot fee).",
-        "price": 900000
+        "notes": "Single-use strike from low orbit ($900,000; per-shot fee)."
       },
       {
         "id": "facility-grand-senora-desert-security-room",
@@ -4187,8 +4209,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Surveillance + Strike Team access + gun locker ($775,000).",
-        "price": 775000
+        "notes": "Surveillance + Strike Team access + gun locker ($775,000)."
       },
       {
         "id": "facility-grand-senora-desert-lounge",
@@ -4212,7 +4233,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/facility-grand-senora-desert.webp"
+    "image_path": "data/images/properties/facility-grand-senora-desert.webp",
+    "price": 2525000
   },
   {
     "id": "agency-little-seoul",
@@ -4239,8 +4261,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
-        "price": 720000
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
       },
       {
         "id": "agency-little-seoul-personal-quarters",
@@ -4248,8 +4269,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000).",
-        "price": 275000
+        "notes": "Sleeping accommodations ($275,000)."
       },
       {
         "id": "agency-little-seoul-vehicle-workshop",
@@ -4257,8 +4277,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
-        "price": 800000
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
       }
     ],
     "_sources": {
@@ -4266,7 +4285,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/agency-little-seoul.webp"
+    "image_path": "data/images/properties/agency-little-seoul.webp",
+    "price": 2010000
   },
   {
     "id": "agency-vespucci-canals",
@@ -4293,8 +4313,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
-        "price": 720000
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
       },
       {
         "id": "agency-vespucci-canals-personal-quarters",
@@ -4302,8 +4321,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000).",
-        "price": 275000
+        "notes": "Sleeping accommodations ($275,000)."
       },
       {
         "id": "agency-vespucci-canals-vehicle-workshop",
@@ -4311,8 +4329,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
-        "price": 800000
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
       }
     ],
     "_sources": {
@@ -4320,7 +4337,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/agency-vespucci-canals.webp"
+    "image_path": "data/images/properties/agency-vespucci-canals.webp",
+    "price": 2145000
   },
   {
     "id": "agency-rockford-hills",
@@ -4347,8 +4365,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
-        "price": 720000
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
       },
       {
         "id": "agency-rockford-hills-personal-quarters",
@@ -4356,8 +4373,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000).",
-        "price": 275000
+        "notes": "Sleeping accommodations ($275,000)."
       },
       {
         "id": "agency-rockford-hills-vehicle-workshop",
@@ -4365,8 +4381,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
-        "price": 800000
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
       }
     ],
     "_sources": {
@@ -4374,7 +4389,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/agency-rockford-hills.webp"
+    "image_path": "data/images/properties/agency-rockford-hills.webp",
+    "price": 2415000
   },
   {
     "id": "agency-hawick",
@@ -4401,8 +4417,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000).",
-        "price": 720000
+        "notes": "Unlocks in-house Ammu-Nation, exclusive weapons (EMP Launcher, Stun Gun), Gun Locker, weapon mod discounts ($720,000)."
       },
       {
         "id": "agency-hawick-personal-quarters",
@@ -4410,8 +4425,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Sleeping accommodations ($275,000).",
-        "price": 275000
+        "notes": "Sleeping accommodations ($275,000)."
       },
       {
         "id": "agency-hawick-vehicle-workshop",
@@ -4419,8 +4433,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000).",
-        "price": 800000
+        "notes": "Vehicle customization bench + exclusive mods (Missile Lock-on Jammer, Remote Control) ($800,000)."
       }
     ],
     "_sources": {
@@ -4428,7 +4441,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/agency-hawick.webp"
+    "image_path": "data/images/properties/agency-hawick.webp",
+    "price": 2830000
   },
   {
     "id": "arcade-pixel-petes",
@@ -4447,8 +4461,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-pixel-petes-master-control-terminal",
@@ -4456,8 +4469,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-pixel-petes-drone-station",
@@ -4465,8 +4477,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-pixel-petes-personal-quarters",
@@ -4474,8 +4485,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-pixel-petes-high-score-screens",
@@ -4483,8 +4493,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4492,7 +4501,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade-pixel-petes.webp"
+    "image_path": "data/images/properties/arcade-pixel-petes.webp",
+    "price": 1235000
   },
   {
     "id": "arcade-wonderama",
@@ -4511,8 +4521,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-wonderama-master-control-terminal",
@@ -4520,8 +4529,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-wonderama-drone-station",
@@ -4529,8 +4537,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-wonderama-personal-quarters",
@@ -4538,8 +4545,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-wonderama-high-score-screens",
@@ -4547,8 +4553,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4556,7 +4561,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade-wonderama.webp"
+    "image_path": "data/images/properties/arcade-wonderama.webp",
+    "price": 1565000
   },
   {
     "id": "arcade-the-warehouse",
@@ -4575,8 +4581,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-the-warehouse-master-control-terminal",
@@ -4584,8 +4589,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-the-warehouse-drone-station",
@@ -4593,8 +4597,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-the-warehouse-personal-quarters",
@@ -4602,8 +4605,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-the-warehouse-high-score-screens",
@@ -4611,8 +4613,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4620,7 +4621,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade.webp"
+    "image_path": "data/images/properties/arcade.webp",
+    "price": 2135000
   },
   {
     "id": "arcade-videogeddon",
@@ -4639,8 +4641,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-videogeddon-master-control-terminal",
@@ -4648,8 +4649,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-videogeddon-drone-station",
@@ -4657,8 +4657,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-videogeddon-personal-quarters",
@@ -4666,8 +4665,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-videogeddon-high-score-screens",
@@ -4675,8 +4673,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4684,7 +4681,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade-videogeddon.webp"
+    "image_path": "data/images/properties/arcade-videogeddon.webp",
+    "price": 1875000
   },
   {
     "id": "arcade-insert-coin",
@@ -4703,8 +4701,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-insert-coin-master-control-terminal",
@@ -4712,8 +4709,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-insert-coin-drone-station",
@@ -4721,8 +4717,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-insert-coin-personal-quarters",
@@ -4730,8 +4725,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-insert-coin-high-score-screens",
@@ -4739,8 +4733,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4748,7 +4741,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade-insert-coin.webp"
+    "image_path": "data/images/properties/arcade-insert-coin.webp",
+    "price": 2345000
   },
   {
     "id": "arcade-eight-bit",
@@ -4767,8 +4761,7 @@
         "tier": null,
         "capacity": 10,
         "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
+        "notes": "Underground garage for Casino Heist prep vehicles ($215,000)."
       },
       {
         "id": "arcade-eight-bit-master-control-terminal",
@@ -4776,8 +4769,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000).",
-        "price": 1740000
+        "notes": "Manage all CEO/MC businesses from the arcade basement ($1,740,000)."
       },
       {
         "id": "arcade-eight-bit-drone-station",
@@ -4785,8 +4777,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000).",
-        "price": 1460000
+        "notes": "Freemode aerial drone w/ stun gun + self-destruct ($1,460,000)."
       },
       {
         "id": "arcade-eight-bit-personal-quarters",
@@ -4794,8 +4785,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Bedroom, gun locker, wardrobe ($150,000).",
-        "price": 150000
+        "notes": "Bedroom, gun locker, wardrobe ($150,000)."
       },
       {
         "id": "arcade-eight-bit-high-score-screens",
@@ -4803,8 +4793,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Leaderboard displays; boosts arcade earnings ($295,000).",
-        "price": 295000
+        "notes": "Leaderboard displays; boosts arcade earnings ($295,000)."
       }
     ],
     "_sources": {
@@ -4812,7 +4801,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/arcade-eight-bit.webp"
+    "image_path": "data/images/properties/arcade-eight-bit.webp",
+    "price": 2530000
   },
   {
     "id": "auto-shop-mission-row",
@@ -4839,8 +4829,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000).",
-        "price": 650000
+        "notes": "Extra service bay; increases job throughput ($650,000)."
       },
       {
         "id": "auto-shop-mission-row-staff-1",
@@ -4848,8 +4837,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
-        "price": 385000
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
       },
       {
         "id": "auto-shop-mission-row-staff-2",
@@ -4857,8 +4845,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-mission-row-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000).",
-        "price": 385000
+        "notes": "Second employee; requires Staff Member 1 ($385,000)."
       },
       {
         "id": "auto-shop-mission-row-personal-quarters",
@@ -4866,8 +4853,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
-        "price": 340000
+        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
       }
     ],
     "_sources": {
@@ -4875,7 +4861,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/auto-shop-mission-row.webp"
+    "image_path": "data/images/properties/auto-shop-mission-row.webp",
+    "price": 1670000
   },
   {
     "id": "auto-shop-la-mesa",
@@ -4902,8 +4889,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000).",
-        "price": 650000
+        "notes": "Extra service bay; increases job throughput ($650,000)."
       },
       {
         "id": "auto-shop-la-mesa-staff-1",
@@ -4911,8 +4897,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
-        "price": 385000
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
       },
       {
         "id": "auto-shop-la-mesa-staff-2",
@@ -4920,8 +4905,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-la-mesa-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000).",
-        "price": 385000
+        "notes": "Second employee; requires Staff Member 1 ($385,000)."
       },
       {
         "id": "auto-shop-la-mesa-personal-quarters",
@@ -4929,8 +4913,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
-        "price": 340000
+        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
       }
     ],
     "_sources": {
@@ -4938,7 +4921,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/auto-shop-la-mesa.webp"
+    "image_path": "data/images/properties/auto-shop-la-mesa.webp",
+    "price": 1920000
   },
   {
     "id": "auto-shop-strawberry",
@@ -4965,8 +4949,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000).",
-        "price": 650000
+        "notes": "Extra service bay; increases job throughput ($650,000)."
       },
       {
         "id": "auto-shop-strawberry-staff-1",
@@ -4974,8 +4957,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
-        "price": 385000
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
       },
       {
         "id": "auto-shop-strawberry-staff-2",
@@ -4983,8 +4965,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-strawberry-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000).",
-        "price": 385000
+        "notes": "Second employee; requires Staff Member 1 ($385,000)."
       },
       {
         "id": "auto-shop-strawberry-personal-quarters",
@@ -4992,8 +4973,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
-        "price": 340000
+        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
       }
     ],
     "_sources": {
@@ -5001,7 +4981,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/auto-shop-strawberry.webp"
+    "image_path": "data/images/properties/auto-shop-strawberry.webp",
+    "price": 1705000
   },
   {
     "id": "auto-shop-rancho",
@@ -5028,8 +5009,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000).",
-        "price": 650000
+        "notes": "Extra service bay; increases job throughput ($650,000)."
       },
       {
         "id": "auto-shop-rancho-staff-1",
@@ -5037,8 +5017,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
-        "price": 385000
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
       },
       {
         "id": "auto-shop-rancho-staff-2",
@@ -5046,8 +5025,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-rancho-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000).",
-        "price": 385000
+        "notes": "Second employee; requires Staff Member 1 ($385,000)."
       },
       {
         "id": "auto-shop-rancho-personal-quarters",
@@ -5055,8 +5033,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
-        "price": 340000
+        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
       }
     ],
     "_sources": {
@@ -5064,7 +5041,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/auto-shop-rancho.webp"
+    "image_path": "data/images/properties/auto-shop-rancho.webp",
+    "price": 1750000
   },
   {
     "id": "auto-shop-burton",
@@ -5091,8 +5069,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Extra service bay; increases job throughput ($650,000).",
-        "price": 650000
+        "notes": "Extra service bay; increases job throughput ($650,000)."
       },
       {
         "id": "auto-shop-burton-staff-1",
@@ -5100,8 +5077,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Speeds up vehicle mods + adds passive income ($385,000).",
-        "price": 385000
+        "notes": "Speeds up vehicle mods + adds passive income ($385,000)."
       },
       {
         "id": "auto-shop-burton-staff-2",
@@ -5109,8 +5085,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": "auto-shop-burton-staff-1",
-        "notes": "Second employee; requires Staff Member 1 ($385,000).",
-        "price": 385000
+        "notes": "Second employee; requires Staff Member 1 ($385,000)."
       },
       {
         "id": "auto-shop-burton-personal-quarters",
@@ -5118,8 +5093,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Wardrobe, gun locker, respawn point ($340,000).",
-        "price": 340000
+        "notes": "Wardrobe, gun locker, respawn point ($340,000)."
       }
     ],
     "_sources": {
@@ -5127,7 +5101,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/auto-shop-burton.webp"
+    "image_path": "data/images/properties/auto-shop-burton.webp",
+    "price": 1830000
   },
   {
     "id": "salvage-yard-murrieta-heights",
@@ -5146,8 +5121,7 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
-        "price": 650000
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
       },
       {
         "id": "salvage-yard-murrieta-heights-wall-safe",
@@ -5155,8 +5129,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000).",
-        "price": 750000
+        "notes": "Stores up to $250k in passive earnings ($750,000)."
       },
       {
         "id": "salvage-yard-murrieta-heights-staff",
@@ -5164,8 +5137,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000).",
-        "price": 625000
+        "notes": "Accelerates passive salvage income ($625,000)."
       },
       {
         "id": "salvage-yard-murrieta-heights-trade-rates",
@@ -5173,8 +5145,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
-        "price": 450000
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
       }
     ],
     "_sources": {
@@ -5182,7 +5153,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/salvage-yard-murrieta-heights.webp"
+    "image_path": "data/images/properties/salvage-yard-murrieta-heights.webp",
+    "price": 2420000
   },
   {
     "id": "salvage-yard-sandy-shores",
@@ -5201,8 +5173,7 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
-        "price": 650000
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
       },
       {
         "id": "salvage-yard-sandy-shores-wall-safe",
@@ -5210,8 +5181,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000).",
-        "price": 750000
+        "notes": "Stores up to $250k in passive earnings ($750,000)."
       },
       {
         "id": "salvage-yard-sandy-shores-staff",
@@ -5219,8 +5189,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000).",
-        "price": 625000
+        "notes": "Accelerates passive salvage income ($625,000)."
       },
       {
         "id": "salvage-yard-sandy-shores-trade-rates",
@@ -5228,8 +5197,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
-        "price": 450000
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
       }
     ],
     "_sources": {
@@ -5237,7 +5205,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/salvage-yard-sandy-shores.webp"
+    "image_path": "data/images/properties/salvage-yard-sandy-shores.webp",
+    "price": 2030000
   },
   {
     "id": "salvage-yard-la-puerta",
@@ -5256,8 +5225,7 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
-        "price": 650000
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
       },
       {
         "id": "salvage-yard-la-puerta-wall-safe",
@@ -5265,8 +5233,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000).",
-        "price": 750000
+        "notes": "Stores up to $250k in passive earnings ($750,000)."
       },
       {
         "id": "salvage-yard-la-puerta-staff",
@@ -5274,8 +5241,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000).",
-        "price": 625000
+        "notes": "Accelerates passive salvage income ($625,000)."
       },
       {
         "id": "salvage-yard-la-puerta-trade-rates",
@@ -5283,8 +5249,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
-        "price": 450000
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
       }
     ],
     "_sources": {
@@ -5292,7 +5257,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/salvage-yard-la-puerta.webp"
+    "image_path": "data/images/properties/salvage-yard-la-puerta.webp",
+    "price": 2690000
   },
   {
     "id": "salvage-yard-strawberry",
@@ -5311,8 +5277,7 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
-        "price": 650000
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
       },
       {
         "id": "salvage-yard-strawberry-wall-safe",
@@ -5320,8 +5285,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000).",
-        "price": 750000
+        "notes": "Stores up to $250k in passive earnings ($750,000)."
       },
       {
         "id": "salvage-yard-strawberry-staff",
@@ -5329,8 +5293,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000).",
-        "price": 625000
+        "notes": "Accelerates passive salvage income ($625,000)."
       },
       {
         "id": "salvage-yard-strawberry-trade-rates",
@@ -5338,8 +5301,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
-        "price": 450000
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
       }
     ],
     "_sources": {
@@ -5347,7 +5309,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/salvage-yard-strawberry.webp"
+    "image_path": "data/images/properties/salvage-yard-strawberry.webp",
+    "price": 2570000
   },
   {
     "id": "salvage-yard-paleto-bay",
@@ -5366,8 +5329,7 @@
         "tier": null,
         "capacity": 1,
         "required_upgrade_id": null,
-        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
-        "price": 650000
+        "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot."
       },
       {
         "id": "salvage-yard-paleto-bay-wall-safe",
@@ -5375,8 +5337,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Stores up to $250k in passive earnings ($750,000).",
-        "price": 750000
+        "notes": "Stores up to $250k in passive earnings ($750,000)."
       },
       {
         "id": "salvage-yard-paleto-bay-staff",
@@ -5384,8 +5345,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Accelerates passive salvage income ($625,000).",
-        "price": 625000
+        "notes": "Accelerates passive salvage income ($625,000)."
       },
       {
         "id": "salvage-yard-paleto-bay-trade-rates",
@@ -5393,8 +5353,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000).",
-        "price": 450000
+        "notes": "Discounts on Mors Mutual + LS Customs repairs ($450,000)."
       }
     ],
     "_sources": {
@@ -5402,7 +5361,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/salvage-yard-paleto-bay.webp"
+    "image_path": "data/images/properties/salvage-yard-paleto-bay.webp",
+    "price": 1620000
   },
   {
     "id": "vehicle-warehouse-murrieta-heights",
@@ -5420,7 +5380,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-murrieta-heights.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-murrieta-heights.webp",
+    "price": 2850000
   },
   {
     "id": "vehicle-warehouse-la-mesa",
@@ -5438,7 +5399,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-la-mesa.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-la-mesa.webp",
+    "price": 1500000
   },
   {
     "id": "vehicle-warehouse-la-puerta",
@@ -5456,7 +5418,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-la-puerta.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-la-puerta.webp",
+    "price": 2735000
   },
   {
     "id": "vehicle-warehouse-davis",
@@ -5474,7 +5437,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-davis.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-davis.webp",
+    "price": 2495000
   },
   {
     "id": "vehicle-warehouse-cypress-flats",
@@ -5492,7 +5456,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-cypress-flats.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-cypress-flats.webp",
+    "price": 2675000
   },
   {
     "id": "vehicle-warehouse-lsia",
@@ -5510,7 +5475,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-lsia.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-lsia.webp",
+    "price": 2170000
   },
   {
     "id": "vehicle-warehouse-lsia-2",
@@ -5528,7 +5494,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/lsia-vehicle-warehouse-2"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-lsia-2.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-lsia-2.webp",
+    "price": 2300000
   },
   {
     "id": "vehicle-warehouse-el-burro-heights",
@@ -5546,7 +5513,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/el-burro-heights-vehicle-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-el-burro-heights.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-el-burro-heights.webp",
+    "price": 1635000
   },
   {
     "id": "vehicle-warehouse-elysian-island",
@@ -5564,7 +5532,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/elysian-island-vehicle-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/vehicle-warehouse-elysian-island.webp"
+    "image_path": "data/images/properties/vehicle-warehouse-elysian-island.webp",
+    "price": 1950000
   },
   {
     "id": "cargo-warehouse-convenience-store-lockup",
@@ -5592,7 +5561,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-convenience-store-lockup.webp"
+    "image_path": "data/images/properties/cargo-warehouse-convenience-store-lockup.webp",
+    "price": 250000
   },
   {
     "id": "cargo-warehouse-celltowa-unit",
@@ -5620,7 +5590,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-celltowa-unit.webp"
+    "image_path": "data/images/properties/cargo-warehouse-celltowa-unit.webp",
+    "price": 318000
   },
   {
     "id": "cargo-warehouse-white-widow-garage",
@@ -5648,7 +5619,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-white-widow-garage.webp"
+    "image_path": "data/images/properties/cargo-warehouse-white-widow-garage.webp",
+    "price": 360000
   },
   {
     "id": "cargo-warehouse-pacific-bait-storage",
@@ -5676,7 +5648,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-pacific-bait-storage.webp"
+    "image_path": "data/images/properties/cargo-warehouse-pacific-bait-storage.webp",
+    "price": 376000
   },
   {
     "id": "cargo-warehouse-pier-400-utility-building",
@@ -5704,7 +5677,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-pier-400-utility-building.webp"
+    "image_path": "data/images/properties/cargo-warehouse-pier-400-utility-building.webp",
+    "price": 392000
   },
   {
     "id": "cargo-warehouse-foreclosed-garage",
@@ -5732,7 +5706,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-foreclosed-garage.webp"
+    "image_path": "data/images/properties/cargo-warehouse-foreclosed-garage.webp",
+    "price": 400000
   },
   {
     "id": "cargo-warehouse-gee-warehouse",
@@ -5759,7 +5734,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/gee-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-gee-warehouse.webp"
+    "image_path": "data/images/properties/cargo-warehouse-gee-warehouse.webp",
+    "price": 880000
   },
   {
     "id": "cargo-warehouse-derriere-lingerie-backlot",
@@ -5787,7 +5763,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-derriere-lingerie-backlot.webp"
+    "image_path": "data/images/properties/cargo-warehouse-derriere-lingerie-backlot.webp",
+    "price": 902000
   },
   {
     "id": "cargo-warehouse-fridgit-annexe",
@@ -5815,7 +5792,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-fridgit-annexe.webp"
+    "image_path": "data/images/properties/cargo-warehouse-fridgit-annexe.webp",
+    "price": 925000
   },
   {
     "id": "cargo-warehouse-discount-retail-unit",
@@ -5842,7 +5820,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/discount-retail-unit"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-discount-retail-unit.webp"
+    "image_path": "data/images/properties/cargo-warehouse-discount-retail-unit.webp",
+    "price": 948000
   },
   {
     "id": "cargo-warehouse-disused-factory-outlet",
@@ -5870,7 +5849,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-disused-factory-outlet.webp"
+    "image_path": "data/images/properties/cargo-warehouse-disused-factory-outlet.webp",
+    "price": 971000
   },
   {
     "id": "cargo-warehouse-ls-marine-building-3",
@@ -5897,7 +5877,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/ls-marine-building-3"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-ls-marine-building-3.webp"
+    "image_path": "data/images/properties/cargo-warehouse-ls-marine-building-3.webp",
+    "price": 994000
   },
   {
     "id": "cargo-warehouse-old-power-station",
@@ -5925,7 +5906,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-old-power-station.webp"
+    "image_path": "data/images/properties/cargo-warehouse-old-power-station.webp",
+    "price": 1000000
   },
   {
     "id": "cargo-warehouse-railyard-warehouse",
@@ -5952,7 +5934,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/railyard-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-railyard-warehouse.webp"
+    "image_path": "data/images/properties/cargo-warehouse-railyard-warehouse.webp",
+    "price": 1017000
   },
   {
     "id": "cargo-warehouse-wholesale-furniture",
@@ -5980,7 +5963,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-wholesale-furniture.webp"
+    "image_path": "data/images/properties/cargo-warehouse-wholesale-furniture.webp",
+    "price": 1900000
   },
   {
     "id": "cargo-warehouse-west-vinewood-backlot",
@@ -6008,7 +5992,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-west-vinewood-backlot.webp"
+    "image_path": "data/images/properties/cargo-warehouse-west-vinewood-backlot.webp",
+    "price": 2135000
   },
   {
     "id": "cargo-warehouse-xero-gas-factory",
@@ -6036,7 +6021,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-xero-gas-factory.webp"
+    "image_path": "data/images/properties/cargo-warehouse-xero-gas-factory.webp",
+    "price": 2365000
   },
   {
     "id": "cargo-warehouse-logistics-depot",
@@ -6064,7 +6050,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-logistics-depot.webp"
+    "image_path": "data/images/properties/cargo-warehouse-logistics-depot.webp",
+    "price": 2600000
   },
   {
     "id": "cargo-warehouse-bilgeco-warehouse",
@@ -6092,7 +6079,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-bilgeco-warehouse.webp"
+    "image_path": "data/images/properties/cargo-warehouse-bilgeco-warehouse.webp",
+    "price": 2825000
   },
   {
     "id": "cargo-warehouse-walker-sons-warehouse",
@@ -6119,7 +6107,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/properties/gta-online/walker-sons-warehouse"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-walker-sons-warehouse.webp"
+    "image_path": "data/images/properties/cargo-warehouse-walker-sons-warehouse.webp",
+    "price": 3040000
   },
   {
     "id": "cargo-warehouse-cypress-warehouses",
@@ -6147,7 +6136,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-cypress-warehouses.webp"
+    "image_path": "data/images/properties/cargo-warehouse-cypress-warehouses.webp",
+    "price": 3265000
   },
   {
     "id": "cargo-warehouse-darnel-bros-warehouse",
@@ -6175,7 +6165,8 @@
     },
     "verify": true,
     "parent_building": null,
-    "image_path": "data/images/properties/cargo-warehouse-darnel-bros-warehouse.webp"
+    "image_path": "data/images/properties/cargo-warehouse-darnel-bros-warehouse.webp",
+    "price": 3500000
   },
   {
     "id": "hangar-lsia-a17",
@@ -6202,8 +6193,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000).",
-        "price": 1150000
+        "notes": "Enables aircraft customization / respraying ($1,150,000)."
       }
     ],
     "_sources": {
@@ -6211,7 +6201,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/hangar-lsia-a17.webp"
+    "image_path": "data/images/properties/hangar-lsia-a17.webp",
+    "price": 1200000
   },
   {
     "id": "hangar-lsia-1",
@@ -6238,8 +6229,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000).",
-        "price": 1150000
+        "notes": "Enables aircraft customization / respraying ($1,150,000)."
       }
     ],
     "_sources": {
@@ -6247,7 +6237,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/hangar-lsia-1.webp"
+    "image_path": "data/images/properties/hangar-lsia-1.webp",
+    "price": 1525000
   },
   {
     "id": "hangar-fort-zancudo-3497",
@@ -6274,8 +6265,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000).",
-        "price": 1150000
+        "notes": "Enables aircraft customization / respraying ($1,150,000)."
       }
     ],
     "_sources": {
@@ -6283,7 +6273,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/hangar-fort-zancudo-3497.webp"
+    "image_path": "data/images/properties/hangar-fort-zancudo-3497.webp",
+    "price": 2085000
   },
   {
     "id": "hangar-fort-zancudo-3499",
@@ -6310,8 +6301,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000).",
-        "price": 1150000
+        "notes": "Enables aircraft customization / respraying ($1,150,000)."
       }
     ],
     "_sources": {
@@ -6319,7 +6309,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/hangar-fort-zancudo-3499.webp"
+    "image_path": "data/images/properties/hangar-fort-zancudo-3499.webp",
+    "price": 2650000
   },
   {
     "id": "hangar-fort-zancudo-a2",
@@ -6346,8 +6337,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Enables aircraft customization / respraying ($1,150,000).",
-        "price": 1150000
+        "notes": "Enables aircraft customization / respraying ($1,150,000)."
       }
     ],
     "_sources": {
@@ -6355,7 +6345,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/hangar-fort-zancudo-a2.webp"
+    "image_path": "data/images/properties/hangar-fort-zancudo-a2.webp",
+    "price": 3250000
   },
   {
     "id": "yacht-galaxy-super-yacht",
@@ -6374,8 +6365,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Entry-level ($6,000,000).",
-        "price": 6000000
+        "notes": "Entry-level ($6,000,000)."
       },
       {
         "id": "yacht-galaxy-super-yacht-pisces",
@@ -6383,8 +6373,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Mid-tier ($7,000,000).",
-        "price": 7000000
+        "notes": "Mid-tier ($7,000,000)."
       },
       {
         "id": "yacht-galaxy-super-yacht-aquarius",
@@ -6392,8 +6381,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Top-tier, premium ($8,000,000); includes hot tubs.",
-        "price": 8000000
+        "notes": "Top-tier, premium ($8,000,000); includes hot tubs."
       }
     ],
     "_sources": {
@@ -6401,7 +6389,8 @@
       "gtabase": null
     },
     "parent_building": null,
-    "image_path": "data/images/properties/yacht-galaxy-super-yacht.webp"
+    "image_path": "data/images/properties/yacht-galaxy-super-yacht.webp",
+    "price": 6000000
   },
   {
     "id": "nightclub-la-mesa",
@@ -6468,8 +6457,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6477,7 +6465,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-la-mesa.webp"
+    "image_path": "data/images/properties/nightclub-la-mesa.webp",
+    "price": 1500000
   },
   {
     "id": "nightclub-mission-row",
@@ -6544,8 +6533,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6553,7 +6541,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-mission-row.webp"
+    "image_path": "data/images/properties/nightclub-mission-row.webp",
+    "price": 1440000
   },
   {
     "id": "nightclub-del-perro",
@@ -6620,8 +6609,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6629,7 +6617,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-del-perro.webp"
+    "image_path": "data/images/properties/nightclub-del-perro.webp",
+    "price": 1645000
   },
   {
     "id": "nightclub-downtown-vinewood",
@@ -6696,8 +6685,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6705,7 +6693,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-downtown-vinewood.webp"
+    "image_path": "data/images/properties/nightclub-downtown-vinewood.webp",
+    "price": 1670000
   },
   {
     "id": "nightclub-strawberry",
@@ -6772,8 +6761,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6781,7 +6769,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-strawberry.webp"
+    "image_path": "data/images/properties/nightclub-strawberry.webp",
+    "price": 1525000
   },
   {
     "id": "nightclub-vespucci-canals",
@@ -6848,8 +6837,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6857,7 +6845,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-vespucci-canals.webp"
+    "image_path": "data/images/properties/nightclub-vespucci-canals.webp",
+    "price": 1320000
   },
   {
     "id": "nightclub-west-vinewood",
@@ -6924,8 +6913,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -6933,7 +6921,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-west-vinewood.webp"
+    "image_path": "data/images/properties/nightclub-west-vinewood.webp",
+    "price": 1700000
   },
   {
     "id": "nightclub-elysian-island",
@@ -7000,8 +6989,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -7009,7 +6997,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-elysian-island.webp"
+    "image_path": "data/images/properties/nightclub-elysian-island.webp",
+    "price": 1080000
   },
   {
     "id": "nightclub-cypress-flats",
@@ -7076,8 +7065,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -7085,7 +7073,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-cypress-flats.webp"
+    "image_path": "data/images/properties/nightclub-cypress-flats.webp",
+    "price": 1370000
   },
   {
     "id": "nightclub-la-puerta",
@@ -7152,8 +7141,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Reduces daily popularity loss ($475,000).",
-        "price": 475000
+        "notes": "Reduces daily popularity loss ($475,000)."
       }
     ],
     "_sources": {
@@ -7161,7 +7149,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/nightclubs"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/nightclub-la-puerta.webp"
+    "image_path": "data/images/properties/nightclub-la-puerta.webp",
+    "price": 1135000
   },
   {
     "id": "biker-business-coke-alamo-sea",
@@ -7204,7 +7193,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-coke-alamo-sea.webp"
+    "image_path": "data/images/properties/biker-business-coke-alamo-sea.webp",
+    "price": 975000
   },
   {
     "id": "biker-business-coke-elysian-island",
@@ -7247,7 +7237,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-coke-elysian-island.webp"
+    "image_path": "data/images/properties/biker-business-coke-elysian-island.webp",
+    "price": 1462500
   },
   {
     "id": "biker-business-coke-morningwood",
@@ -7290,7 +7281,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-coke-morningwood.webp"
+    "image_path": "data/images/properties/biker-business-coke-morningwood.webp",
+    "price": 1852500
   },
   {
     "id": "biker-business-coke-paleto-bay",
@@ -7333,7 +7325,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-coke-paleto-bay.webp"
+    "image_path": "data/images/properties/biker-business-coke-paleto-bay.webp",
+    "price": 1098000
   },
   {
     "id": "biker-business-meth-el-burro-heights",
@@ -7376,7 +7369,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-meth-el-burro-heights.webp"
+    "image_path": "data/images/properties/biker-business-meth-el-burro-heights.webp",
+    "price": 1729000
   },
   {
     "id": "biker-business-meth-grand-senora-desert",
@@ -7419,7 +7413,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-meth-grand-senora-desert.webp"
+    "image_path": "data/images/properties/biker-business-meth-grand-senora-desert.webp",
+    "price": 910000
   },
   {
     "id": "biker-business-meth-paleto-bay",
@@ -7462,7 +7457,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-meth-paleto-bay.webp"
+    "image_path": "data/images/properties/biker-business-meth-paleto-bay.webp",
+    "price": 1024800
   },
   {
     "id": "biker-business-meth-terminal",
@@ -7505,7 +7501,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-meth-terminal.webp"
+    "image_path": "data/images/properties/biker-business-meth-terminal.webp",
+    "price": 1365000
   },
   {
     "id": "biker-business-weed-vinewood-downtown",
@@ -7548,7 +7545,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-weed-vinewood-downtown.webp"
+    "image_path": "data/images/properties/biker-business-weed-vinewood-downtown.webp",
+    "price": 1358500
   },
   {
     "id": "biker-business-weed-elysian-island",
@@ -7591,7 +7589,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-weed-elysian-island.webp"
+    "image_path": "data/images/properties/biker-business-weed-elysian-island.webp",
+    "price": 1072500
   },
   {
     "id": "biker-business-weed-mount-chiliad",
@@ -7634,7 +7633,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-weed-mount-chiliad.webp"
+    "image_path": "data/images/properties/biker-business-weed-mount-chiliad.webp",
+    "price": 805200
   },
   {
     "id": "biker-business-weed-san-chianski",
@@ -7677,7 +7677,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-weed-san-chianski.webp"
+    "image_path": "data/images/properties/biker-business-weed-san-chianski.webp",
+    "price": 715000
   },
   {
     "id": "biker-business-cash-cypress-flats",
@@ -7720,7 +7721,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-cash-cypress-flats.webp"
+    "image_path": "data/images/properties/biker-business-cash-cypress-flats.webp",
+    "price": 1267500
   },
   {
     "id": "biker-business-cash-grand-senora-desert",
@@ -7763,7 +7765,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-cash-grand-senora-desert.webp"
+    "image_path": "data/images/properties/biker-business-cash-grand-senora-desert.webp",
+    "price": 845000
   },
   {
     "id": "biker-business-cash-paleto-bay",
@@ -7806,7 +7809,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-cash-paleto-bay.webp"
+    "image_path": "data/images/properties/biker-business-cash-paleto-bay.webp",
+    "price": 951600
   },
   {
     "id": "biker-business-cash-vespucci-canals",
@@ -7849,7 +7853,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-cash-vespucci-canals.webp"
+    "image_path": "data/images/properties/biker-business-cash-vespucci-canals.webp",
+    "price": 1074500
   },
   {
     "id": "biker-business-forgery-elysian-island",
@@ -7892,7 +7897,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-forgery-elysian-island.webp"
+    "image_path": "data/images/properties/biker-business-forgery-elysian-island.webp",
+    "price": 975000
   },
   {
     "id": "biker-business-forgery-grapeseed",
@@ -7935,7 +7941,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-forgery-grapeseed.webp"
+    "image_path": "data/images/properties/biker-business-forgery-grapeseed.webp",
+    "price": 650000
   },
   {
     "id": "biker-business-forgery-paleto-bay",
@@ -7978,7 +7985,8 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-forgery-paleto-bay.webp"
+    "image_path": "data/images/properties/biker-business-forgery-paleto-bay.webp",
+    "price": 732000
   },
   {
     "id": "biker-business-forgery-textile-city",
@@ -8021,6 +8029,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/mc-businesses"
     },
     "parent_building": null,
-    "image_path": "data/images/properties/biker-business-forgery-textile-city.webp"
+    "image_path": "data/images/properties/biker-business-forgery-textile-city.webp",
+    "price": 1235000
   }
 ]
