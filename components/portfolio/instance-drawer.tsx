@@ -132,7 +132,7 @@ export function InstanceDrawer({
   };
 
   const handleRemove = () => {
-    if (!confirm("Remove this vehicle instance from your portfolio?")) return;
+    if (!confirm(`Remove this ${instance.display_name} from your portfolio?`)) return;
     startTransition(async () => {
       const result = await removeVehicleInstance(instance.id);
       if ("error" in result) {
@@ -281,7 +281,7 @@ export function InstanceDrawer({
             disabled={isPending}
             className="w-full border-red-500/50 text-red-300 hover:bg-red-500/10"
           >
-            Remove this instance
+            Remove vehicle
           </Button>
         </SheetFooter>
       </SheetContent>

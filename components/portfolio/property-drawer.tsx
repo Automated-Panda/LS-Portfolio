@@ -164,10 +164,16 @@ export function PropertyDrawer({
     });
   };
 
+  const kindLabel = property.property_type === "business" ? "business" : "property";
+
   const handleUnown = () => {
+    const carsMsg =
+      property.total_cars > 0
+        ? ` ${property.total_cars} cars will need to go somewhere.`
+        : "";
     if (
       !confirm(
-        `Remove ${property.display_name} from your portfolio? ${property.total_cars} cars will need to go somewhere.`,
+        `Remove ${property.display_name} from your portfolio?${carsMsg}`,
       )
     )
       return;
@@ -375,7 +381,7 @@ export function PropertyDrawer({
               disabled={isPending}
               className="w-full border-red-500/50 text-red-300 hover:bg-red-500/10"
             >
-              Un-own / trade in this property
+              Remove {kindLabel}
             </Button>
           </SheetFooter>
         </SheetContent>
