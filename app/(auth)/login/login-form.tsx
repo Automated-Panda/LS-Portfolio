@@ -21,16 +21,18 @@ export function LoginForm({ next }: { next?: string }) {
       {next && <input type="hidden" name="next" value={next} />}
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="identifier">Email or username</Label>
         <Input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
+          id="identifier"
+          name="identifier"
+          type="text"
+          autoComplete="username"
           required
         />
-        {state.fieldErrors?.email && (
-          <p className="text-sm text-destructive">{state.fieldErrors.email}</p>
+        {state.fieldErrors?.identifier && (
+          <p className="text-sm text-destructive">
+            {state.fieldErrors.identifier}
+          </p>
         )}
       </div>
 
