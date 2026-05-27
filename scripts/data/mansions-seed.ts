@@ -12,9 +12,10 @@ import type { Property } from "../schema";
  * don't add storage capacity either.
  *
  * Security Team is a $1.75M one-time upgrade that covers all three mansions
- * once purchased. It's modeled on The Tongva Estate only — toggling it there
- * represents owning the service across the set. (Awkward but keeps the data
- * model simple; revisit if a "global upgrades" pattern becomes worth it.)
+ * once purchased. Listed on every mansion so the user can toggle it on
+ * whichever one they bought it for; in-game it's free on the other two. We
+ * don't enforce the "buy once" semantic in data — that's communicated via
+ * the upgrade notes string and trusted to the user.
  *
  * The free Volatus helicopter on the rooftop helipad is not modeled as a
  * storage slot — it's a gift, not capacity.
@@ -60,6 +61,14 @@ const COMMON_UPGRADES = (mansionId: string) => [
     required_upgrade_id: null,
     notes: null,
   },
+  {
+    id: `${mansionId}-security`,
+    display_name: "Security Team",
+    tier: null,
+    capacity: 0,
+    required_upgrade_id: null,
+    notes: "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game.",
+  },
 ];
 
 export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
@@ -73,18 +82,7 @@ export const MANSIONS_SEED: Omit<Property, "image_path">[] = [
     neighborhood: "Tongva Hills",
     capacity: 20, // 17 garage + 2 driveway + 1 podium; podium upgrade is cosmetic-only
     counts_as_garage: true,
-    upgrades: [
-      ...COMMON_UPGRADES("mansion-tongva"),
-      {
-        id: "mansion-tongva-security",
-        display_name: "Security Team",
-        tier: null,
-        capacity: 0,
-        required_upgrade_id: null,
-        notes:
-          "One-time purchase ($1.75M) that covers all three mansions. Toggle on a single mansion to represent owning the service set-wide.",
-      },
-    ],
+    upgrades: COMMON_UPGRADES("mansion-tongva"),
     _sources: {
       fandom: "https://gta.fandom.com/wiki/The_Tongva_Estate",
       gtabase: "https://www.gtabase.com/properties/gta-online/the-tongva-estate-devin-weston-mansion",

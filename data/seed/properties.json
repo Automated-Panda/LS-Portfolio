@@ -1245,7 +1245,7 @@
         "tier": null,
         "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on a single mansion to represent owning the service set-wide."
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {
@@ -1297,6 +1297,14 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": null
+      },
+      {
+        "id": "mansion-vinewood-security",
+        "display_name": "Security Team",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {
@@ -1348,6 +1356,14 @@
         "capacity": 0,
         "required_upgrade_id": null,
         "notes": null
+      },
+      {
+        "id": "mansion-richman-security",
+        "display_name": "Security Team",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "One-time purchase ($1.75M) that covers all three mansions. Toggle on whichever mansion you bought it for; the others are covered for free in-game."
       }
     ],
     "_sources": {

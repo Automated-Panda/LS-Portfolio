@@ -57,7 +57,35 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] Migration `0010_mansion_ownership_group.sql` (still needs paste into hosted Studio)
 - [x] Per-instance cover images from gtabase + normalize-temp-images workflow
 - [x] `npm run db:import` ran — 195 properties / 261 upgrades on hosted
-- [ ] **You verify:** apply migration 0010 in Studio + visit `/properties?subtype=mansion` + `/wizard` picker shows them under "Mansion" group
+- [x] **You verify:** apply migration 0010 in Studio + visit `/properties?subtype=mansion` + `/wizard` picker shows them under "Mansion" group
+
+---
+
+## 🏰 Mansion polish — Piece 1.6 follow-ups
+
+> Mansion data is in but the rich per-mansion UX needs more work. Both items need schema + UI changes.
+
+### Slot typing within the 20
+
+Each mansion holds 20 cars total. Inside that 20, the user can designate:
+- **Driveway** — 1 or 2 of the slots, free choice
+- **Podium** — 1 slot, only available if the Car Podium upgrade is installed
+- **Garage** — everything else (17 or 18 depending on driveway count)
+
+- [ ] Migration: add `mansion_slot_type text` (nullable, check constraint `in ('driveway', 'podium')`) to `user_owned_vehicles`, or a small lookup table for property-specific slot kinds
+- [ ] Capacity validation: enforce driveway ≤ 2 and podium ≤ 1 per `stored_in_property_id` when assigning a slot type
+- [ ] Capacity validation: podium can only be set if `user_owned_property_upgrades` has the corresponding `mansion-*-podium` row
+- [ ] UI: when storing a vehicle in a mansion via `InstanceDrawer`, show a slot-kind picker (Garage / Driveway / Podium) with availability based on the rules above
+- [ ] `PropertyDrawer` / `/my-properties` mansion detail: show breakdown like `Garage 8/17 · Driveway 1/2 · Podium 1/1`
+
+### AI Assistant choice (Angel / Haviland / OG)
+
+Per-mansion config — user picks which of the 3 in-game AI assistants they have. Cosmetic but tracked.
+
+- [ ] Migration: add `mansion_ai_assistant text` (nullable, check constraint `in ('angel', 'haviland', 'og')`) to `user_owned_properties`
+- [ ] UI: dropdown / radio in `PropertyDrawer` when the property's subtype is `mansion`
+- [ ] Server action: `setMansionAiAssistant(ownedPropertyId, assistant)`
+- [ ] Render the chosen assistant on the mansion detail card
 
 ---
 
