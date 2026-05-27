@@ -4,6 +4,46 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 💰 Portfolio pricing + Net Worth ✅ — landed 2026-05-28 (late)
+
+End-of-day push to add canonical pricing data so we can show users their portfolio value.
+
+### Phase A ✅ — Schema + extract existing upgrade prices
+- [x] Migration `0012_add_price_columns.sql` — nullable bigint price column on vehicles / properties / property_upgrades.
+- [x] Zod schemas + import-seed pipeline thread the price field through.
+- [x] `scripts/extract-upgrade-prices.ts` parses `$N` / `$1.75M` / `$320K` patterns out of existing upgrade notes — 212 upgrade prices extracted automatically from the business audit's notes strings.
+
+### Phase B ✅ — Vehicle prices
+- [x] **732 / 807 vehicles priced (100% of purchasable)**. The 75 unpriced are intentionally non-purchasable (police/emergency, military, service, mission-only, removed-and-no-longer-buyable).
+- [x] Sourced from Fandom infoboxes (bulk MediaWiki API) + gtabase for disambiguation cases.
+- [x] Sidecar `data/seed/vehicle-prices.json` overlays prices during `npm run build:vehicles` so future raw-data rebuilds don't lose the data.
+
+### Phase C ✅ — Property prices
+- [x] **214 / 221 properties priced (100% of purchasable)**. The 7 unpriced are apartment-tower parent containers (capacity 0, not directly purchasable).
+- [x] Sourced from gtabase property-type guides + the data we'd already pulled this session for mansions, vehicle warehouses, cargo warehouses.
+- [x] Sidecar `data/seed/property-prices.json` overlayed in `build-properties.ts`.
+
+### Phase D ✅ — Net Worth dashboard widget
+- [x] `components/dashboard/net-worth-card.tsx` — hero card with compact USD formatting (e.g. `$87.4M`), per-category breakdown (Vehicles · Properties · Upgrades).
+- [x] Page-level derivation sums prices over owned items; null prices counted separately as `unpricedItems` and surfaced in a footnote so users know it might be an underestimate.
+
+---
+
+## 🪦 Phase E — Discontinued vehicles list (next session)
+
+> Surfaces vehicles that can no longer be purchased (excluding Simeon Premium Deluxe + LS Car Meet stock — those rotate weekly).
+
+- [ ] Migration: add `availability` enum to `vehicles`: `in_store` / `discontinued` / `rotating` / `mission_only` / `unobtainable`
+- [ ] Add `availability_updated_at` timestamp so we can date the snapshot
+- [ ] Source the discontinued list — GTA Wiki "Discontinued Vehicles" page lists them DLC-by-DLC; gtabase tags some as "Removed" / "Unobtainable"
+- [ ] **Explicitly exclude:** Simeon Premium Deluxe stock + LS Car Meet (rotating, not discontinued) — model as `rotating`
+- [ ] UI: filter on `/vehicles` (e.g. `?availability=discontinued`); new chip near the existing filters
+- [ ] Dashboard widget? A "grail count" stat — "you own 4 / 27 discontinued vehicles"
+
+**Estimated effort:** 3-4 hours research + verification. Data goes stale on Rockstar updates so the workflow needs a "rebuild from latest patch" path.
+
+---
+
 ## 🔥 Today's batch — 2026-05-28
 
 Full-day session. Order: max-out → Vehicle Warehouse model → /my-businesses → Cargo Warehouses → vehicle image audit. Business upgrade audit captured separately as its own future session.
