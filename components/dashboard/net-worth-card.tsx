@@ -10,6 +10,12 @@ type Props = {
   upgrades: number;
   /** Vehicles + properties + upgrades with no price sourced yet. */
   unpricedItems: number;
+  /** Names of the unpriced owned items, grouped by type, for the expandable list. */
+  unpriced: {
+    vehicles: string[];
+    properties: string[];
+    upgrades: string[];
+  };
 };
 
 export function NetWorthCard({
@@ -18,6 +24,7 @@ export function NetWorthCard({
   properties,
   upgrades,
   unpricedItems,
+  unpriced,
 }: Props) {
   return (
     <Card className="border-emerald-500/40 bg-gradient-to-br from-emerald-500/10 via-accent/5 to-transparent">
@@ -48,13 +55,33 @@ export function NetWorthCard({
         </div>
 
         {unpricedItems > 0 && (
-          <p className="text-[10px] text-muted-foreground">
-            {unpricedItems} item{unpricedItems === 1 ? "" : "s"} missing a
-            price — actual net worth is higher.
-          </p>
+          <details className="group/unpriced text-[10px] text-muted-foreground">
+            <summary className="cursor-pointer list-none marker:hidden hover:text-foreground">
+              <span className="inline-block transition-transform group-open/unpriced:rotate-90">
+                ▸
+              </span>{" "}
+              {unpricedItems} item{unpricedItems === 1 ? "" : "s"} missing a
+              price — actual net worth is higher.
+            </summary>
+            <div className="mt-2 flex flex-col gap-1.5 pl-3">
+              <UnpricedGroup label="Vehicles" items={unpriced.vehicles} />
+              <UnpricedGroup label="Properties" items={unpriced.properties} />
+              <UnpricedGroup label="Upgrades" items={unpriced.upgrades} />
+            </div>
+          </details>
         )}
       </div>
     </Card>
+  );
+}
+
+function UnpricedGroup({ label, items }: { label: string; items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <div>
+      <span className="font-medium text-foreground/70">{label}:</span>{" "}
+      <span>{items.join(", ")}</span>
+    </div>
   );
 }
 

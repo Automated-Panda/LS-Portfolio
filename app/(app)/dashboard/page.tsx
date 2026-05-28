@@ -150,20 +150,38 @@ export default async function DashboardPage() {
   let propertiesValue = 0;
   let upgradesValue = 0;
   let unpricedItems = 0;
+  // Names of the owned items missing a price, so the card can list which ones.
+  const unpricedVehicleCounts = new Map<string, number>();
+  const unpricedProperties: string[] = [];
+  const unpricedUpgrades: string[] = [];
   for (const v of vehicleInstances) {
-    if (v.price === null) unpricedItems += 1;
-    else vehiclesValue += v.price;
+    if (v.price === null) {
+      unpricedItems += 1;
+      unpricedVehicleCounts.set(
+        v.display_name,
+        (unpricedVehicleCounts.get(v.display_name) ?? 0) + 1,
+      );
+    } else vehiclesValue += v.price;
   }
   for (const p of ownedProperties) {
-    if (p.price === null) unpricedItems += 1;
-    else propertiesValue += p.price;
+    if (p.price === null) {
+      unpricedItems += 1;
+      unpricedProperties.push(p.display_name);
+    } else propertiesValue += p.price;
     for (const u of p.upgrades) {
       if (!u.is_installed) continue;
-      if (u.price === null) unpricedItems += 1;
-      else upgradesValue += u.price;
+      if (u.price === null) {
+        unpricedItems += 1;
+        unpricedUpgrades.push(`${p.display_name} · ${u.display_name}`);
+      } else upgradesValue += u.price;
     }
   }
   const netWorthTotal = vehiclesValue + propertiesValue + upgradesValue;
+  const unpricedVehicles = Array.from(unpricedVehicleCounts.entries())
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([name, n]) => (n > 1 ? `${name} ×${n}` : name));
+  unpricedProperties.sort((a, b) => a.localeCompare(b));
+  unpricedUpgrades.sort((a, b) => a.localeCompare(b));
 
   // --- Needs attention ---
   const unassignedVehicles = vehicleInstances.filter((v) => v.storage === null)
@@ -197,6 +215,11 @@ export default async function DashboardPage() {
       properties: propertiesValue,
       upgrades: upgradesValue,
       unpricedItems,
+      unpriced: {
+        vehicles: unpricedVehicles,
+        properties: unpricedProperties,
+        upgrades: unpricedUpgrades,
+      },
     },
     attention: {
       unassignedVehicles,

@@ -32,6 +32,11 @@ export type DashboardData = {
     properties: number;
     upgrades: number;
     unpricedItems: number;
+    unpriced: {
+      vehicles: string[];
+      properties: string[];
+      upgrades: string[];
+    };
   };
   attention: {
     unassignedVehicles: number;
@@ -70,6 +75,7 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
         properties={data.netWorth.properties}
         upgrades={data.netWorth.upgrades}
         unpricedItems={data.netWorth.unpricedItems}
+        unpriced={data.netWorth.unpriced}
       />
 
       <QuickActions />
