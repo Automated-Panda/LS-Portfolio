@@ -5766,7 +5766,7 @@
         "id": "salvage-yard-murrieta-heights-tow-truck",
         "display_name": "Tow Truck",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
         "price": 650000
@@ -5822,7 +5822,7 @@
         "id": "salvage-yard-sandy-shores-tow-truck",
         "display_name": "Tow Truck",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
         "price": 650000
@@ -5878,7 +5878,7 @@
         "id": "salvage-yard-la-puerta-tow-truck",
         "display_name": "Tow Truck",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
         "price": 650000
@@ -5934,7 +5934,7 @@
         "id": "salvage-yard-strawberry-tow-truck",
         "display_name": "Tow Truck",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
         "price": 650000
@@ -5990,7 +5990,7 @@
         "id": "salvage-yard-paleto-bay-tow-truck",
         "display_name": "Tow Truck",
         "tier": null,
-        "capacity": 1,
+        "capacity": 0,
         "required_upgrade_id": null,
         "notes": "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
         "price": 650000
@@ -6040,7 +6040,7 @@
     "location": "Downtown Vinewood, Los Santos",
     "neighborhood": "Downtown Vinewood",
     "price": 2620000,
-    "capacity": 3,
+    "capacity": 2,
     "counts_as_garage": true,
     "upgrades": [
       {
@@ -6135,7 +6135,7 @@
     "location": "Mission Row, Los Santos",
     "neighborhood": "Mission Row",
     "price": 2390000,
-    "capacity": 3,
+    "capacity": 2,
     "counts_as_garage": true,
     "upgrades": [
       {
@@ -6230,7 +6230,7 @@
     "location": "Del Perro, Los Santos",
     "neighborhood": "Del Perro",
     "price": 2350000,
-    "capacity": 3,
+    "capacity": 2,
     "counts_as_garage": true,
     "upgrades": [
       {
@@ -6325,7 +6325,7 @@
     "location": "Davis, Los Santos",
     "neighborhood": "Davis",
     "price": 2000000,
-    "capacity": 3,
+    "capacity": 2,
     "counts_as_garage": true,
     "upgrades": [
       {
@@ -6420,7 +6420,7 @@
     "location": "Paleto Bay, Blaine County",
     "neighborhood": "Paleto Bay",
     "price": 1650000,
-    "capacity": 3,
+    "capacity": 2,
     "counts_as_garage": true,
     "upgrades": [
       {
@@ -7624,9 +7624,9 @@
         "id": "higgins-helitours-helipad",
         "display_name": "Helipad",
         "tier": null,
-        "capacity": 2,
+        "capacity": 0,
         "required_upgrade_id": null,
-        "notes": "Open helipad with two Mavericks. Included with purchase. Generates passive income from tour operations.",
+        "notes": "Open helipad with two tour Mavericks. Included with purchase. Generates passive income from tour operations. Not personal storage.",
         "price": 0,
         "included_on_purchase": true
       }
@@ -7647,8 +7647,8 @@
     "subtype_display": "Garment Factory",
     "location": "Popular Street, La Mesa",
     "neighborhood": "La Mesa",
-    "capacity": 0,
-    "counts_as_garage": false,
+    "capacity": 10,
+    "counts_as_garage": true,
     "price": 2350000,
     "upgrades": [],
     "_sources": {

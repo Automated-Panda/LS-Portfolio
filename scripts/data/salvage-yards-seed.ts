@@ -67,7 +67,9 @@ function buildSalvageYard(loc: LocationSeed): Omit<Property, "image_path"> {
         id: `${loc.id}-tow-truck`,
         display_name: "Tow Truck",
         tier: null,
-        capacity: 1,
+        // The tow truck is the business's mission vehicle, not a personal
+        // storage slot — capacity 0 keeps the yard out of vehicle pickers.
+        capacity: 0,
         required_upgrade_id: null,
         notes: "Standard tow truck purchase ($1,100,000). A budget 'Beater' variant is also available ($650,000) — same slot.",
       },

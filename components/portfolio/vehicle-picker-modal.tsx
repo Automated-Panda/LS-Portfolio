@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { assignVehiclesToSubGarage } from "@/app/(app)/my-vehicles/actions";
-import { assetCategoryOf, formatClass, type AssetCategory } from "@/lib/vehicles";
+import { assetCategoryOf, formatClass, ASSET_NOUN, type AssetCategory } from "@/lib/vehicles";
 
 type Props = {
   ownedPropertyId: string;
@@ -26,12 +26,6 @@ type Props = {
   assetCategory: AssetCategory;
   open: boolean;
   onOpenChange: (open: boolean) => void;
-};
-
-const CATEGORY_NOUN: Record<AssetCategory, string> = {
-  land: "cars",
-  air: "aircraft",
-  sea: "boats",
 };
 
 type LightVehicle = {
@@ -51,7 +45,7 @@ export function VehiclePickerModal({
   open,
   onOpenChange,
 }: Props) {
-  const noun = CATEGORY_NOUN[assetCategory];
+  const noun = ASSET_NOUN[assetCategory];
   const [vehicles, setVehicles] = useState<LightVehicle[] | null>(null);
   const [search, setSearch] = useState("");
   const [counts, setCounts] = useState<Map<string, number>>(new Map());

@@ -23,7 +23,7 @@ import {
 import { assignVehicleStorage } from "@/app/(app)/my-vehicles/actions";
 import { unownProperty } from "@/app/(app)/properties/actions";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
-import { storageAssetCategory } from "@/lib/vehicles";
+import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
@@ -508,6 +508,7 @@ function StorageSection({
 }) {
   const installed = storageUpgrades.filter((u) => u.is_installed);
   const hasAny = property.base_capacity > 0 || installed.length > 0;
+  const noun = ASSET_NOUN[storageAssetCategory(property.subtype)];
   return (
     <section>
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -524,6 +525,7 @@ function StorageSection({
               label={property.subtype_display}
               capacity={property.base_capacity}
               cars={carsByUpgrade.get(null) ?? []}
+              noun={noun}
               onAddCars={() => {
                 setPickerTarget({
                   upgradeId: null,
@@ -544,6 +546,7 @@ function StorageSection({
               label={u.display_name}
               capacity={u.capacity}
               cars={carsByUpgrade.get(u.id) ?? []}
+              noun={noun}
               onAddCars={() => {
                 setPickerTarget({
                   upgradeId: u.id,
@@ -568,6 +571,7 @@ function StorageBlock({
   label,
   capacity,
   cars,
+  noun,
   onAddCars,
   onRemoveCar,
   onManageCar,
@@ -576,6 +580,7 @@ function StorageBlock({
   label: string;
   capacity: number;
   cars: OwnedVehicleInstance[];
+  noun: string;
   onAddCars: () => void;
   onRemoveCar: (instanceId: string, displayName: string) => void;
   onManageCar: (instanceId: string) => void;
@@ -590,7 +595,7 @@ function StorageBlock({
       >
         <span className="font-medium">{label}</span>
         <span className="text-muted-foreground">
-          {cars.length} / {capacity} · + Add cars
+          {cars.length} / {capacity} · + Add {noun}
         </span>
       </button>
       {cars.length > 0 && (

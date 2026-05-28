@@ -22,7 +22,8 @@ import type { Property } from "../schema";
  *     purchasable property in story mode.
  *
  * All three are seeded with verify: true so the UI flags them for review.
- * None store personal vehicles — counts_as_garage: false.
+ * Garment Factory has a 10-slot basement garage (counts_as_garage: true);
+ * Smoke on the Water and Hands On Car Wash store no personal vehicles.
  * No purchasable upgrades exist for any of these properties; upgrades: [].
  *
  * Sources:
@@ -49,8 +50,10 @@ export const GARMENT_FACTORY_SEED: Omit<Property, "image_path">[] = [
     subtype_display: "Garment Factory",
     location: "Popular Street, La Mesa",
     neighborhood: "La Mesa",
-    capacity: 0,
-    counts_as_garage: false,
+    // Agents of Sabotage added a basement garage with 10 vehicle slots
+    // (two rows of 5 split by a brick wall).
+    capacity: 10,
+    counts_as_garage: true,
     price: 2350000,
     upgrades: [],
     _sources: {

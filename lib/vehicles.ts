@@ -49,6 +49,13 @@ export const ASSET_CATEGORY_LABEL: Record<AssetCategory, string> = {
   sea: "Sea",
 };
 
+// Plural noun used in storage UI ("Add cars" / "Add aircraft" / "Add boats").
+export const ASSET_NOUN: Record<AssetCategory, string> = {
+  land: "cars",
+  air: "aircraft",
+  sea: "boats",
+};
+
 // Derived from the formatted class (formatClass output).
 export function assetCategoryOf(formattedClass: string): AssetCategory {
   if (formattedClass === "Plane" || formattedClass === "Helicopter") return "air";

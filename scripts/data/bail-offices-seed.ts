@@ -3,8 +3,10 @@ import type { Property } from "../schema";
 /**
  * GTA Online Bail Offices — 5 per-location instances.
  * Introduced in the Bottom Dollar Bounties update (1.69, June 25 2024).
- * Each office includes 3 vehicle storage slots and serves as the base for
- * bounty-hunting / bail enforcement missions with Maude Eccles.
+ * Each office stores 2 personal vehicles and serves as the base for
+ * bounty-hunting / bail enforcement missions with Maude Eccles. (The
+ * included Bail Enforcement van sits in a 3rd bay but is not a player
+ * storage slot, so capacity is 2.)
  *
  * Sources:
  *   https://www.gtabase.com/gta-online/property-types/bottom-dollar-bail-enforcement
@@ -71,7 +73,7 @@ function buildBailOffice(loc: LocationSeed): Omit<Property, "image_path"> {
     location: loc.address,
     neighborhood: loc.neighborhood,
     price: loc.price,
-    capacity: 3,
+    capacity: 2,
     counts_as_garage: true,
     upgrades: [
       // ── Style ──────────────────────────────────────────────────────────────

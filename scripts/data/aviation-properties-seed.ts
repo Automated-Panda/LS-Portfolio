@@ -98,12 +98,13 @@ export const HIGGINS_HELITOURS_SEED: Omit<Property, "image_path">[] = [
         id: `${HELITOURS_ID}-helipad`,
         display_name: "Helipad",
         tier: null,
-        // Two Maverick helicopters parked on the pad.
-        capacity: 2,
+        // The two tour Mavericks are business assets, not player storage —
+        // you cannot park your own aircraft here, so capacity is 0.
+        capacity: 0,
         required_upgrade_id: null,
         notes:
-          "Open helipad with two Mavericks. Included with purchase. " +
-          "Generates passive income from tour operations.",
+          "Open helipad with two tour Mavericks. Included with purchase. " +
+          "Generates passive income from tour operations. Not personal storage.",
         price: 0,
         included_on_purchase: true,
       },
