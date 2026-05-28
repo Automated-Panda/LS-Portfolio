@@ -3,6 +3,29 @@ export type DriftVariant = {
   owned: boolean;
 };
 
+export type AvailabilityStatus =
+  | "available"
+  | "discontinued"
+  | "unobtainable"
+  | "blacklisted";
+
+export const AVAILABILITY_LABEL: Record<AvailabilityStatus, string> = {
+  available: "Available",
+  discontinued: "Discontinued",
+  unobtainable: "Unobtainable",
+  blacklisted: "Blacklisted",
+};
+
+// Tailwind classes for the status badge. "available" has no badge (it's the norm).
+export const AVAILABILITY_BADGE_CLASS: Record<
+  Exclude<AvailabilityStatus, "available">,
+  string
+> = {
+  discontinued: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+  unobtainable: "bg-zinc-500/15 text-zinc-300 border-zinc-500/30",
+  blacklisted: "bg-red-500/15 text-red-300 border-red-500/30",
+};
+
 export type VehicleSummary = {
   id: string;
   display_name: string;
@@ -12,6 +35,7 @@ export type VehicleSummary = {
   image_path: string | null;
   price: number | null;       // GTA$ purchase price, null = not for sale / mission-only / unsourced
   tag_ids: string[];
+  availability: AvailabilityStatus;
   owned_count: number;        // 0 if user owns no instances, N if N instances
   // When set, the vehicle has a "drift" handling variant in the game.
   // Ownership of the drift variant is tracked as a separate user_owned_vehicles

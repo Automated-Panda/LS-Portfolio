@@ -30,6 +30,11 @@ export const VehicleSchema = z.object({
   image_path: z.string().min(1).nullable(),
   // Base GTA Online purchase price in $. Null = not for sale / mission-only / unsourced.
   price: z.number().int().min(0).nullable().optional(),
+  // How the vehicle can currently be obtained. Default 'available'; exceptions
+  // come from data/seed/vehicle-availability.json.
+  availability: z
+    .enum(["available", "discontinued", "unobtainable", "blacklisted"])
+    .optional(),
   _sources: z.object({
     durtyfree: z.string().url(),
     fandom: z.string().url(),

@@ -27,12 +27,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { AssetCategory, FilterOptions } from "@/lib/vehicles";
+import type {
+  AssetCategory,
+  AvailabilityStatus,
+  FilterOptions,
+} from "@/lib/vehicles";
 import {
   ASSET_CATEGORIES,
   ASSET_CATEGORY_LABEL,
+  AVAILABILITY_LABEL,
   assetCategoryOf,
 } from "@/lib/vehicles";
+
+const AVAILABILITY_OPTIONS: AvailabilityStatus[] = [
+  "available",
+  "discontinued",
+  "unobtainable",
+  "blacklisted",
+];
 import { cn } from "@/lib/utils";
 
 export function FilterBar({ filters }: { filters: FilterOptions }) {
@@ -45,6 +57,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
   const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
+  const avail = searchParams.get("avail") ?? "";
   const selectedTags = (searchParams.get("tags") ?? "")
     .split(",")
     .filter(Boolean);
@@ -88,7 +101,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   };
 
   const selectedMfr = filters.manufacturers.find((m) => m.id === mfr);
-  const hasAny = q || cls || mfr || cat || selectedTags.length > 0;
+  const hasAny = q || cls || mfr || cat || avail || selectedTags.length > 0;
 
   // Classes available in the currently-selected category — switching to Air
   // narrows the Class dropdown to Plane/Helicopter, etc.
@@ -165,6 +178,23 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
             {visibleClasses.map((c) => (
               <SelectItem key={c} value={c}>
                 {c}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select
+          value={avail || "__all"}
+          onValueChange={(v) => update({ avail: v === "__all" ? null : v })}
+        >
+          <SelectTrigger className="w-[170px]">
+            <SelectValue placeholder="Availability" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__all">All availability</SelectItem>
+            {AVAILABILITY_OPTIONS.map((s) => (
+              <SelectItem key={s} value={s}>
+                {AVAILABILITY_LABEL[s]}
               </SelectItem>
             ))}
           </SelectContent>

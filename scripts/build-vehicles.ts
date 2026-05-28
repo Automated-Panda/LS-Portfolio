@@ -238,6 +238,34 @@ async function main(): Promise<void> {
     // Overlay file missing — that's fine, prices will just be null.
   }
 
+  // Availability overlay: data/seed/vehicle-availability.json is a flat
+  // { id: status } sidecar listing only the non-available exceptions. Everything
+  // else defaults to "available".
+  const VALID_AVAILABILITY = new Set([
+    "available",
+    "discontinued",
+    "unobtainable",
+    "blacklisted",
+  ]);
+  try {
+    const overlayRaw = await fs.readFile(
+      path.join(SEED_DIR, "vehicle-availability.json"),
+      "utf8",
+    );
+    const overlay = JSON.parse(overlayRaw) as Record<string, unknown>;
+    let flagged = 0;
+    for (const v of vehicles) {
+      const raw = overlay[v.id];
+      if (typeof raw === "string" && VALID_AVAILABILITY.has(raw) && raw !== "available") {
+        v.availability = raw as typeof v.availability;
+        flagged += 1;
+      }
+    }
+    console.log(`Applied availability overlay: ${flagged} non-available.`);
+  } catch {
+    // Overlay file missing — fine, everything stays "available".
+  }
+
   await writeJson(path.join(SEED_DIR, "vehicles.json"), vehicles);
   await writeJson(path.join(SEED_DIR, "manufacturers.json"), manufacturers);
 

@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import {
   formatClass,
+  type AvailabilityStatus,
   type FilterOptions,
   type VehicleSummary,
 } from "@/lib/vehicles";
@@ -25,7 +26,7 @@ export async function getVehiclesBrowserData(
     supabase
       .from("vehicles")
       .select(
-        `id, internal_name, display_name, class, manufacturer_id, image_path, price,
+        `id, internal_name, display_name, class, manufacturer_id, image_path, price, availability,
          manufacturers ( display ),
          vehicle_tag_links ( tag_id )`,
       )
@@ -57,6 +58,7 @@ export async function getVehiclesBrowserData(
     manufacturer_id: string;
     image_path: string | null;
     price: number | null;
+    availability: AvailabilityStatus | null;
     manufacturers: { display: string } | { display: string }[] | null;
     vehicle_tag_links: Array<{ tag_id: string }> | null;
   };
@@ -110,6 +112,7 @@ export async function getVehiclesBrowserData(
         image_path: v.image_path,
         price: v.price ?? null,
         tag_ids: (v.vehicle_tag_links ?? []).map((l) => l.tag_id),
+        availability: v.availability ?? "available",
         owned_count: ownedCount.get(v.id) ?? 0,
         drift_variant: driftByBaseId.get(v.id) ?? null,
       };

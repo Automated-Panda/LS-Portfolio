@@ -15,7 +15,11 @@ import {
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
-import type { VehicleSummary } from "@/lib/vehicles";
+import {
+  AVAILABILITY_BADGE_CLASS,
+  AVAILABILITY_LABEL,
+  type VehicleSummary,
+} from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 
 import {
@@ -303,6 +307,16 @@ function VehicleCardImpl({
               title={formatMoneyFull(vehicle.price)}
             >
               {formatMoneyCompact(vehicle.price)}
+            </span>
+          )}
+          {vehicle.availability !== "available" && (
+            <span
+              className={cn(
+                "absolute bottom-2 right-2 z-10 rounded-md border px-1.5 py-0.5 text-[10px] font-medium backdrop-blur-sm",
+                AVAILABILITY_BADGE_CLASS[vehicle.availability],
+              )}
+            >
+              {AVAILABILITY_LABEL[vehicle.availability]}
             </span>
           )}
         </div>

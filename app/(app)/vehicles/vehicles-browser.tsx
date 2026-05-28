@@ -37,6 +37,7 @@ export function VehiclesBrowser({
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
   const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
+  const avail = searchParams.get("avail") ?? "";
   const tagParam = searchParams.get("tags") ?? "";
 
   const ownedSet = useMemo(
@@ -75,6 +76,7 @@ export function VehiclesBrowser({
         return false;
       }
       if (cat && assetCategoryOf(v.class) !== cat) return false;
+      if (avail && v.availability !== avail) return false;
       if (cls && v.class !== cls) return false;
       if (mfr && v.manufacturer_id !== mfr) return false;
       if (
@@ -85,7 +87,7 @@ export function VehiclesBrowser({
       }
       return true;
     });
-  }, [vehicles, q, cat, cls, mfr, tagParam]);
+  }, [vehicles, q, cat, avail, cls, mfr, tagParam]);
 
   const isOwnedMode = mode === "owned";
   const title = isOwnedMode ? "My Vehicles" : "All Vehicles";

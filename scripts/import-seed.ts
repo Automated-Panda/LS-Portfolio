@@ -72,6 +72,7 @@ async function main(): Promise<void> {
     variant_of: null as string | null, // set in second pass so parent rows exist
     image_path: v.image_path,
     price: v.price ?? null,
+    availability: v.availability ?? "available",
     source_durtyfree: v._sources.durtyfree,
     source_fandom: v._sources.fandom,
   }));
