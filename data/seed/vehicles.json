@@ -15,7 +15,10 @@
       "fandom": "https://gta.fandom.com/wiki/Adder"
     },
     "price": 1000000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "airbus",
@@ -33,7 +36,10 @@
       "fandom": "https://gta.fandom.com/wiki/Airport_Bus"
     },
     "price": 550000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "airtug",
@@ -67,7 +73,10 @@
       "fandom": "https://gta.fandom.com/wiki/Akula"
     },
     "price": 4500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "akuma",
@@ -88,7 +97,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "aleutian",
@@ -108,7 +120,10 @@
       "fandom": "https://gta.fandom.com/wiki/Aleutian"
     },
     "price": 1835000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "alkonost",
@@ -128,7 +143,10 @@
       "fandom": "https://gta.fandom.com/wiki/RO-86_Alkonost"
     },
     "price": 4350000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "alpha",
@@ -165,7 +183,10 @@
       "fandom": "https://gta.fandom.com/wiki/Alpha-Z1"
     },
     "price": 2121350,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "ambulance",
@@ -200,7 +221,10 @@
       "fandom": "https://gta.fandom.com/wiki/Annihilator"
     },
     "price": 1825000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "annihilator2",
@@ -220,7 +244,10 @@
       "fandom": "https://gta.fandom.com/wiki/Annihilator_Stealth"
     },
     "price": 3870000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "apc",
@@ -240,7 +267,10 @@
       "fandom": "https://gta.fandom.com/wiki/APC"
     },
     "price": 3092250,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "arbitergt",
@@ -260,7 +290,10 @@
       "fandom": "https://gta.fandom.com/wiki/Arbiter_GT"
     },
     "price": 1580000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ardent",
@@ -281,7 +314,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ardent"
     },
     "price": 1150000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "asbo",
@@ -299,7 +335,10 @@
       "fandom": "https://gta.fandom.com/wiki/Asbo"
     },
     "price": 408000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "asea",
@@ -318,7 +357,10 @@
     },
     "price": 12000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "asterope",
@@ -337,7 +379,10 @@
     },
     "price": 26000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "asterope2",
@@ -355,7 +400,10 @@
       "fandom": "https://gta.fandom.com/wiki/Asterope_GZ"
     },
     "price": 459000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "astrale",
@@ -376,7 +424,10 @@
       "fandom": "https://gta.fandom.com/wiki/Astrale"
     },
     "price": 1475500,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "astron",
@@ -394,7 +445,10 @@
       "fandom": "https://gta.fandom.com/wiki/Astron"
     },
     "price": 1580000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "astron2",
@@ -414,7 +468,10 @@
       "fandom": "https://gta.fandom.com/wiki/Astron_Custom"
     },
     "price": 1720000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "autarch",
@@ -432,7 +489,10 @@
       "fandom": "https://gta.fandom.com/wiki/Autarch"
     },
     "price": 1955000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "avarus",
@@ -451,7 +511,10 @@
     },
     "price": 116000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "avenger",
@@ -469,7 +532,10 @@
       "fandom": "https://gta.fandom.com/wiki/Avenger"
     },
     "price": 3450000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "avisa",
@@ -507,7 +573,10 @@
     },
     "price": 16000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "baller",
@@ -525,7 +594,10 @@
       "fandom": "https://gta.fandom.com/wiki/Baller"
     },
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "baller3",
@@ -546,7 +618,10 @@
     },
     "price": 149000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "baller4",
@@ -566,7 +641,10 @@
       "fandom": "https://gta.fandom.com/wiki/Baller_LE_LWB"
     },
     "price": 247000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "baller5",
@@ -587,7 +665,10 @@
     },
     "price": 374000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "baller6",
@@ -607,7 +688,10 @@
       "fandom": "https://gta.fandom.com/wiki/Baller_LE_LWB_(Armored)"
     },
     "price": 513000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "baller7",
@@ -625,7 +709,10 @@
       "fandom": "https://gta.fandom.com/wiki/Baller_ST"
     },
     "price": 890000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "baller8",
@@ -645,7 +732,10 @@
       "fandom": "https://gta.fandom.com/wiki/Baller_ST-D"
     },
     "price": 1715000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "banshee",
@@ -702,7 +792,10 @@
       "fandom": "https://gta.fandom.com/wiki/Banshee_GTS"
     },
     "price": 1989500,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "barracks",
@@ -719,7 +812,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Barracks"
     },
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "barracks2",
@@ -755,7 +851,10 @@
       "fandom": "https://gta.fandom.com/wiki/Barrage"
     },
     "price": 2121350,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "bati",
@@ -775,7 +874,10 @@
       "fandom": "https://gta.fandom.com/wiki/Bati_801"
     },
     "price": 15000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "bati2",
@@ -796,7 +898,10 @@
     },
     "price": 15000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "benson",
@@ -830,7 +935,10 @@
       "fandom": "https://gta.fandom.com/wiki/Benson_(Cluckin'_Bell)"
     },
     "price": 685000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "besra",
@@ -850,7 +958,10 @@
       "fandom": "https://gta.fandom.com/wiki/Besra"
     },
     "price": 658000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "bestiagts",
@@ -868,7 +979,10 @@
       "fandom": "https://gta.fandom.com/wiki/Bestia_GTS"
     },
     "price": 610000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "bf400",
@@ -940,7 +1054,10 @@
     },
     "price": 75000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "bison",
@@ -958,7 +1075,10 @@
       "fandom": "https://gta.fandom.com/wiki/Bison"
     },
     "price": 30000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "bjxl",
@@ -977,7 +1097,10 @@
     },
     "price": 27000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "blade",
@@ -1016,7 +1139,10 @@
     },
     "price": 8000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "blazer2",
@@ -1035,7 +1161,10 @@
     },
     "price": 62000,
     "availability": "discontinued",
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "blazer3",
@@ -1054,7 +1183,10 @@
     },
     "price": 69000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "blazer4",
@@ -1072,7 +1204,10 @@
       "fandom": "https://gta.fandom.com/wiki/Street_Blazer"
     },
     "price": 81000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "blazer5",
@@ -1090,7 +1225,10 @@
       "fandom": "https://gta.fandom.com/wiki/Blazer_Aqua"
     },
     "price": 1755600,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "blimp",
@@ -1140,7 +1278,10 @@
       "fandom": "https://gta.fandom.com/wiki/Blimp"
     },
     "price": 1190350,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "blista",
@@ -1225,7 +1366,10 @@
       "fandom": "https://gta.fandom.com/wiki/Bobcat_XL"
     },
     "price": 23000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "bodhi2",
@@ -1246,7 +1390,10 @@
     },
     "price": 25000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "bombushka",
@@ -1264,7 +1411,10 @@
       "fandom": "https://gta.fandom.com/wiki/RM-10_Bombushka"
     },
     "price": 4750000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "boor",
@@ -1282,7 +1432,10 @@
       "fandom": "https://gta.fandom.com/wiki/Boor"
     },
     "price": 1280000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "boxville",
@@ -1317,7 +1470,10 @@
       "fandom": "https://gta.fandom.com/wiki/Armored_Boxville"
     },
     "price": 1300000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "boxville6",
@@ -1335,7 +1491,10 @@
       "fandom": "https://gta.fandom.com/wiki/Boxville_(LSDS)"
     },
     "price": 475000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "brawler",
@@ -1356,7 +1515,10 @@
     },
     "price": 715000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "brickade",
@@ -1374,7 +1536,10 @@
       "fandom": "https://gta.fandom.com/wiki/Brickade"
     },
     "price": 555000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "brickade2",
@@ -1392,7 +1557,10 @@
       "fandom": "https://gta.fandom.com/wiki/Brickade_6x6"
     },
     "price": 1450000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "brigham",
@@ -1410,7 +1578,10 @@
       "fandom": "https://gta.fandom.com/wiki/Brigham"
     },
     "price": 1499000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "brioso",
@@ -1430,7 +1601,10 @@
       "fandom": "https://gta.fandom.com/wiki/Brioso_R%2FA"
     },
     "price": 155000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "brioso2",
@@ -1450,7 +1624,11 @@
       "fandom": "https://gta.fandom.com/wiki/Brioso_300"
     },
     "price": 610000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "brioso3",
@@ -1490,7 +1668,10 @@
       "fandom": "https://gta.fandom.com/wiki/Broadway"
     },
     "price": 925000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "bruiser",
@@ -1628,7 +1809,10 @@
     },
     "price": 750000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "btype2",
@@ -1647,7 +1831,10 @@
     },
     "price": 550000,
     "availability": "seasonal",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "btype3",
@@ -1668,7 +1855,10 @@
     },
     "price": 982000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "buccaneer",
@@ -1743,7 +1933,10 @@
     },
     "price": 96000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "buffalo3",
@@ -1781,7 +1974,10 @@
       "fandom": "https://gta.fandom.com/wiki/Buffalo_STX"
     },
     "price": 2150000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "buffalo5",
@@ -1802,7 +1998,10 @@
       "fandom": "https://gta.fandom.com/wiki/Buffalo_EVX"
     },
     "price": 2140000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "bulldozer",
@@ -1839,7 +2038,10 @@
     },
     "price": 84000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "burrito",
@@ -1873,7 +2075,10 @@
       "fandom": "https://gta.fandom.com/wiki/Bugstars_Burrito"
     },
     "price": 598500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "bus",
@@ -1907,7 +2112,10 @@
       "fandom": "https://gta.fandom.com/wiki/Buzzard_Attack_Chopper"
     },
     "price": 2000000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "buzzard2",
@@ -1960,7 +2168,10 @@
       "fandom": "https://gta.fandom.com/wiki/Calico_GTF"
     },
     "price": 1995000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "camper",
@@ -1996,7 +2207,10 @@
       "fandom": "https://gta.fandom.com/wiki/Caracara"
     },
     "price": 1775000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "caracara2",
@@ -2016,7 +2230,10 @@
       "fandom": "https://gta.fandom.com/wiki/Caracara_4x4"
     },
     "price": 875000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "carbonizzare",
@@ -2035,7 +2252,10 @@
     },
     "price": 195000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "carbonrs",
@@ -2053,7 +2273,10 @@
       "fandom": "https://gta.fandom.com/wiki/Carbon_RS"
     },
     "price": 40000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cargobob",
@@ -2123,7 +2346,10 @@
       "fandom": "https://gta.fandom.com/wiki/Casco"
     },
     "price": 904400,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "castigator",
@@ -2141,7 +2367,10 @@
       "fandom": "https://gta.fandom.com/wiki/Castigator"
     },
     "price": 1650000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "cavalcade",
@@ -2160,7 +2389,10 @@
     },
     "price": 60000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "cavalcade3",
@@ -2180,7 +2412,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cavalcade_XL"
     },
     "price": 1665000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "cerberus",
@@ -2261,7 +2496,10 @@
       "fandom": "https://gta.fandom.com/wiki/Champion"
     },
     "price": 3750000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "chavosv6",
@@ -2279,7 +2517,10 @@
       "fandom": "https://gta.fandom.com/wiki/Chavos_V6"
     },
     "price": 1420000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "cheburek",
@@ -2300,7 +2541,10 @@
     },
     "price": 145000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "cheetah",
@@ -2335,7 +2579,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cheetah_Classic"
     },
     "price": 865000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cheetah3",
@@ -2372,7 +2619,10 @@
       "fandom": "https://gta.fandom.com/wiki/Chernobog"
     },
     "price": 1500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "chimera",
@@ -2390,7 +2640,10 @@
       "fandom": "https://gta.fandom.com/wiki/Chimera"
     },
     "price": 210000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "chino",
@@ -2410,7 +2663,11 @@
       "fandom": "https://gta.fandom.com/wiki/Chino"
     },
     "price": 225000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport",
+      "bennys"
+    ]
   },
   {
     "id": "chino2",
@@ -2448,7 +2705,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cinquemila"
     },
     "price": 1740000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cliffhanger",
@@ -2467,7 +2727,10 @@
     },
     "price": 225000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "clique",
@@ -2488,7 +2751,10 @@
     },
     "price": 909000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "clique2",
@@ -2506,7 +2772,10 @@
       "fandom": "https://gta.fandom.com/wiki/Clique_Wagon"
     },
     "price": 1205000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "club",
@@ -2524,7 +2793,10 @@
       "fandom": "https://gta.fandom.com/wiki/Club"
     },
     "price": 28000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "coach",
@@ -2542,7 +2814,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dashound"
     },
     "price": 525000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "cog55",
@@ -2563,7 +2838,10 @@
     },
     "price": 154000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cog552",
@@ -2584,7 +2862,10 @@
     },
     "price": 396000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cogcabrio",
@@ -2603,7 +2884,10 @@
     },
     "price": 185000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cognoscenti",
@@ -2624,7 +2908,10 @@
     },
     "price": 254000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cognoscenti2",
@@ -2645,7 +2932,10 @@
     },
     "price": 558000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "comet2",
@@ -2667,7 +2957,12 @@
     },
     "price": 28000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport",
+      "bennys"
+    ]
   },
   {
     "id": "comet3",
@@ -2707,7 +3002,10 @@
       "fandom": "https://gta.fandom.com/wiki/Comet_Safari"
     },
     "price": 710000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "comet5",
@@ -2728,7 +3026,10 @@
     },
     "price": 1145000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "comet6",
@@ -2748,7 +3049,10 @@
       "fandom": "https://gta.fandom.com/wiki/Comet_S2"
     },
     "price": 1878000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "comet7",
@@ -2768,7 +3072,10 @@
       "fandom": "https://gta.fandom.com/wiki/Comet_S2_Cabrio"
     },
     "price": 1797000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "conada",
@@ -2788,7 +3095,10 @@
       "fandom": "https://gta.fandom.com/wiki/Conada"
     },
     "price": 2450000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "conada2",
@@ -2806,7 +3116,10 @@
       "fandom": "https://gta.fandom.com/wiki/Weaponized_Conada"
     },
     "price": 3385000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "contender",
@@ -2827,7 +3140,10 @@
     },
     "price": 250000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "coquette",
@@ -2846,7 +3162,10 @@
     },
     "price": 138000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coquette2",
@@ -2864,7 +3183,10 @@
       "fandom": "https://gta.fandom.com/wiki/Coquette_Classic"
     },
     "price": 395000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coquette3",
@@ -2883,7 +3205,10 @@
     },
     "price": 695000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coquette4",
@@ -2901,7 +3226,10 @@
       "fandom": "https://gta.fandom.com/wiki/Coquette_D10"
     },
     "price": 1510000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coquette5",
@@ -2919,7 +3247,10 @@
       "fandom": "https://gta.fandom.com/wiki/Coquette_D1"
     },
     "price": 1500000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coquette6",
@@ -2954,7 +3285,10 @@
       "fandom": "https://gta.fandom.com/wiki/Corsita"
     },
     "price": 1795000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "coureur",
@@ -2975,7 +3309,10 @@
       "fandom": "https://gta.fandom.com/wiki/La_Coureuse"
     },
     "price": 1990000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cruiser",
@@ -3009,7 +3346,10 @@
       "fandom": "https://gta.fandom.com/wiki/Crusader"
     },
     "price": 225000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "cuban800",
@@ -3027,7 +3367,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cuban_800"
     },
     "price": 240000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "cutter",
@@ -3064,7 +3407,10 @@
     },
     "price": 1890000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cyclone2",
@@ -3084,7 +3430,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cyclone_II"
     },
     "price": 2250000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "cypher",
@@ -3102,7 +3451,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cypher"
     },
     "price": 1550000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "daemon",
@@ -3197,7 +3549,10 @@
       "fandom": "https://gta.fandom.com/wiki/Defiler"
     },
     "price": 412000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "deity",
@@ -3218,7 +3573,10 @@
       "fandom": "https://gta.fandom.com/wiki/Deity"
     },
     "price": 1845000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "deluxo",
@@ -3236,7 +3594,10 @@
       "fandom": "https://gta.fandom.com/wiki/Deluxo"
     },
     "price": 5750000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "deveste",
@@ -3258,7 +3619,10 @@
       "fandom": "https://gta.fandom.com/wiki/Deveste_Eight"
     },
     "price": 1795000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "deviant",
@@ -3280,7 +3644,10 @@
     },
     "price": 512000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "diablous",
@@ -3299,7 +3666,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Diabolus"
     },
-    "price": 169000
+    "price": 169000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "diablous2",
@@ -3337,7 +3707,10 @@
     },
     "price": 39999,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dinghy",
@@ -3372,7 +3745,10 @@
       "fandom": "https://gta.fandom.com/wiki/Weaponized_Dinghy"
     },
     "price": 1850000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "dloader",
@@ -3442,7 +3818,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator"
     },
     "price": 35000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator10",
@@ -3460,7 +3839,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_FX"
     },
     "price": 1550000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator2",
@@ -3478,7 +3860,10 @@
       "fandom": "https://gta.fandom.com/wiki/Pisswasser_Dominator"
     },
     "price": 315000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator3",
@@ -3496,7 +3881,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_GTX"
     },
     "price": 725000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator4",
@@ -3576,7 +3964,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_ASP"
     },
     "price": 1775000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator8",
@@ -3596,7 +3987,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_GTT"
     },
     "price": 1220000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dominator9",
@@ -3614,7 +4008,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_GT"
     },
     "price": 2195000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dorado",
@@ -3632,7 +4029,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dorado"
     },
     "price": 1375000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "double",
@@ -3653,7 +4053,10 @@
     },
     "price": 12000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "drafter",
@@ -3671,7 +4074,10 @@
       "fandom": "https://gta.fandom.com/wiki/8F_Drafter"
     },
     "price": 718000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "draugur",
@@ -3689,7 +4095,10 @@
       "fandom": "https://gta.fandom.com/wiki/Draugur"
     },
     "price": 1870000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftchavosv6",
@@ -3707,7 +4116,10 @@
       "fandom": "https://gta.fandom.com/wiki/Chavos_V6"
     },
     "price": 1420000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftcheburek",
@@ -3728,7 +4140,10 @@
     },
     "price": 145000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftcypher",
@@ -3746,7 +4161,10 @@
       "fandom": "https://gta.fandom.com/wiki/Cypher"
     },
     "price": 1550000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "driftdominator10",
@@ -3764,7 +4182,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_FX"
     },
     "price": 1550000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftdominator9",
@@ -3782,7 +4203,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_GT"
     },
     "price": 2195000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "drifteuros",
@@ -3802,7 +4226,10 @@
       "fandom": "https://gta.fandom.com/wiki/Euros"
     },
     "price": 1800000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "driftfr36",
@@ -3820,7 +4247,10 @@
       "fandom": "https://gta.fandom.com/wiki/FR36"
     },
     "price": 1610000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftfuto",
@@ -3838,7 +4268,10 @@
       "fandom": "https://gta.fandom.com/wiki/Futo_GTX"
     },
     "price": 1590000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftfuto2",
@@ -3859,7 +4292,10 @@
     },
     "price": 1590000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftgauntlet4",
@@ -3879,7 +4315,10 @@
       "fandom": "https://gta.fandom.com/wiki/Gauntlet_Hellfire"
     },
     "price": 745000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "drifthardy",
@@ -3916,7 +4355,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jester_RR"
     },
     "price": 1970000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "driftjester3",
@@ -3934,7 +4376,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jester_Classic"
     },
     "price": 790000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "driftkeitora",
@@ -3954,7 +4399,10 @@
       "fandom": "https://gta.fandom.com/wiki/Keitora"
     },
     "price": 810000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftl352",
@@ -3992,7 +4440,10 @@
     },
     "price": 797000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftremus",
@@ -4012,7 +4463,10 @@
       "fandom": "https://gta.fandom.com/wiki/Remus"
     },
     "price": 1370000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftrt3000",
@@ -4030,7 +4484,10 @@
       "fandom": "https://gta.fandom.com/wiki/RT3000"
     },
     "price": 1715000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftsentinel",
@@ -4084,7 +4541,10 @@
       "fandom": "https://gta.fandom.com/wiki/Drift_Tampa"
     },
     "price": 1308000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftvorschlag",
@@ -4102,7 +4562,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vorschlaghammer"
     },
     "price": 1790000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftyosemite",
@@ -4120,7 +4583,10 @@
       "fandom": "https://gta.fandom.com/wiki/Drift_Yosemite"
     },
     "price": 1308000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "driftzr350",
@@ -4138,7 +4604,10 @@
       "fandom": "https://gta.fandom.com/wiki/ZR350"
     },
     "price": 1615000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "dubsta",
@@ -4174,7 +4643,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dubsta_6x6"
     },
     "price": 249000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "dukes",
@@ -4209,7 +4681,10 @@
       "fandom": "https://gta.fandom.com/wiki/Duke_O'Death"
     },
     "price": 279000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "dukes3",
@@ -4227,7 +4702,10 @@
       "fandom": "https://gta.fandom.com/wiki/Beater_Dukes"
     },
     "price": 378000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dump",
@@ -4245,7 +4723,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dump"
     },
     "price": 1000000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "dune",
@@ -4264,7 +4745,10 @@
     },
     "price": 20000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "dune2",
@@ -4300,7 +4784,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dune_FAV"
     },
     "price": 1130500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "dune4",
@@ -4318,7 +4805,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ramp_Buggy"
     },
     "price": 3192000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "duster",
@@ -4336,7 +4826,10 @@
       "fandom": "https://gta.fandom.com/wiki/Duster"
     },
     "price": 275000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "duster2",
@@ -4372,7 +4865,10 @@
     },
     "price": 450000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "elegy",
@@ -4412,7 +4908,11 @@
       "fandom": "https://gta.fandom.com/wiki/Elegy_RH8"
     },
     "price": 95000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport",
+      "bennys"
+    ]
   },
   {
     "id": "ellie",
@@ -4430,7 +4930,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ellie"
     },
     "price": 565000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "emerus",
@@ -4448,7 +4951,10 @@
       "fandom": "https://gta.fandom.com/wiki/Emerus"
     },
     "price": 2750000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "emperor",
@@ -4483,7 +4989,10 @@
     },
     "price": 48000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "entity2",
@@ -4501,7 +5010,10 @@
       "fandom": "https://gta.fandom.com/wiki/Entity_XXR"
     },
     "price": 2305000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "entity3",
@@ -4522,7 +5034,10 @@
       "fandom": "https://gta.fandom.com/wiki/Entity_MT"
     },
     "price": 2355000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "entityxf",
@@ -4541,7 +5056,10 @@
     },
     "price": 795000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "envisage",
@@ -4561,7 +5079,10 @@
       "fandom": "https://gta.fandom.com/wiki/Envisage"
     },
     "price": 2472000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "esskey",
@@ -4580,7 +5101,10 @@
     },
     "price": 264000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "eudora",
@@ -4600,7 +5124,10 @@
       "fandom": "https://gta.fandom.com/wiki/Eudora"
     },
     "price": 1250000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "euros",
@@ -4620,7 +5147,10 @@
       "fandom": "https://gta.fandom.com/wiki/Euros"
     },
     "price": 28000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "eurosx32",
@@ -4640,7 +5170,10 @@
       "fandom": "https://gta.fandom.com/wiki/Euros_X32"
     },
     "price": 1499000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "everon",
@@ -4658,7 +5191,10 @@
       "fandom": "https://gta.fandom.com/wiki/Everon"
     },
     "price": 1475000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "everon2",
@@ -4676,7 +5212,10 @@
       "fandom": "https://gta.fandom.com/wiki/Hotring_Everon"
     },
     "price": 1790000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "everon3",
@@ -4714,7 +5253,11 @@
     },
     "price": 205000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "f620",
@@ -4733,7 +5276,10 @@
     },
     "price": 80000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "faction",
@@ -4753,7 +5299,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Faction"
     },
-    "price": 36000
+    "price": 36000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "faction2",
@@ -4809,7 +5358,10 @@
     },
     "price": 335000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "faggio",
@@ -4828,7 +5380,10 @@
     },
     "price": 47500,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "faggio2",
@@ -4864,7 +5419,10 @@
     },
     "price": 55000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "fcr",
@@ -4883,7 +5441,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/FCR_1000"
     },
-    "price": 135000
+    "price": 135000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "fcr2",
@@ -4921,7 +5482,10 @@
     },
     "price": 100000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "felon2",
@@ -4940,7 +5504,10 @@
     },
     "price": 95000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "feltzer2",
@@ -4959,7 +5526,11 @@
     },
     "price": 28000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "feltzer3",
@@ -5045,7 +5616,10 @@
       "fandom": "https://gta.fandom.com/wiki/Flash_GT"
     },
     "price": 1675000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "flatbed",
@@ -5098,7 +5672,10 @@
     },
     "price": 1750000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "fmj2",
@@ -5119,7 +5696,10 @@
       "fandom": "https://gta.fandom.com/wiki/FMJ_MK_V"
     },
     "price": 2965000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "forklift",
@@ -5155,7 +5735,10 @@
       "fandom": "https://gta.fandom.com/wiki/PR4"
     },
     "price": 3515000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "formula2",
@@ -5175,7 +5758,10 @@
       "fandom": "https://gta.fandom.com/wiki/R88"
     },
     "price": 3115000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "fq2",
@@ -5194,7 +5780,10 @@
     },
     "price": 50000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "fr36",
@@ -5212,7 +5801,10 @@
       "fandom": "https://gta.fandom.com/wiki/FR36"
     },
     "price": 1610000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "freecrawler",
@@ -5230,7 +5822,10 @@
       "fandom": "https://gta.fandom.com/wiki/Freecrawler"
     },
     "price": 597000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "frogger",
@@ -5248,7 +5843,10 @@
       "fandom": "https://gta.fandom.com/wiki/Frogger"
     },
     "price": 1300000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "fugitive",
@@ -5267,7 +5865,10 @@
     },
     "price": 24000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "furia",
@@ -5285,7 +5886,10 @@
       "fandom": "https://gta.fandom.com/wiki/Furia"
     },
     "price": 2740000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "furoregt",
@@ -5304,7 +5908,10 @@
     },
     "price": 448000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "fusilade",
@@ -5323,7 +5930,10 @@
     },
     "price": 36000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "futo",
@@ -5344,7 +5954,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "futo2",
@@ -5362,7 +5975,10 @@
       "fandom": "https://gta.fandom.com/wiki/Futo_GTX"
     },
     "price": 1590000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gargoyle",
@@ -5380,7 +5996,10 @@
       "fandom": "https://gta.fandom.com/wiki/Gargoyle"
     },
     "price": 120000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gauntlet",
@@ -5401,7 +6020,10 @@
     },
     "price": 32000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gauntlet2",
@@ -5419,7 +6041,10 @@
       "fandom": "https://gta.fandom.com/wiki/Redwood_Gauntlet"
     },
     "price": 230000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gauntlet3",
@@ -5439,7 +6064,11 @@
       "fandom": "https://gta.fandom.com/wiki/Gauntlet_Classic"
     },
     "price": 615000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "gauntlet4",
@@ -5459,7 +6088,10 @@
       "fandom": "https://gta.fandom.com/wiki/Gauntlet_Hellfire"
     },
     "price": 745000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gauntlet5",
@@ -5496,7 +6128,10 @@
       "fandom": "https://gta.fandom.com/wiki/Hotring_Hellfire"
     },
     "price": 1810000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "gb200",
@@ -5514,7 +6149,10 @@
       "fandom": "https://gta.fandom.com/wiki/GB200"
     },
     "price": 940000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "gburrito",
@@ -5531,7 +6169,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Gang_Burrito"
     },
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "glendale",
@@ -5588,7 +6229,10 @@
     },
     "price": 1260000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "granger",
@@ -5607,7 +6251,10 @@
     },
     "price": 35000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "granger2",
@@ -5627,7 +6274,10 @@
       "fandom": "https://gta.fandom.com/wiki/Granger_3600LX"
     },
     "price": 2000000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "greenwood",
@@ -5663,7 +6313,10 @@
     },
     "price": 29000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "growler",
@@ -5681,7 +6334,10 @@
       "fandom": "https://gta.fandom.com/wiki/Growler"
     },
     "price": 1627000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "gt500",
@@ -5700,7 +6356,10 @@
     },
     "price": 785000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "gt750",
@@ -5720,7 +6379,10 @@
       "fandom": "https://gta.fandom.com/wiki/GT750"
     },
     "price": 1247000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "guardian",
@@ -5738,7 +6400,10 @@
       "fandom": "https://gta.fandom.com/wiki/Guardian"
     },
     "price": 375000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "habanero",
@@ -5757,7 +6422,10 @@
     },
     "price": 42000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "hakuchou",
@@ -5778,7 +6446,10 @@
     },
     "price": 82000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "hakuchou2",
@@ -5799,7 +6470,10 @@
       "fandom": "https://gta.fandom.com/wiki/Hakuchou_Drag"
     },
     "price": 976000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "halftrack",
@@ -5819,7 +6493,10 @@
       "fandom": "https://gta.fandom.com/wiki/Half-track"
     },
     "price": 2254350,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "handler",
@@ -5905,7 +6582,10 @@
       "fandom": "https://gta.fandom.com/wiki/Havok"
     },
     "price": 2300900,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "hellion",
@@ -5926,7 +6606,10 @@
     },
     "price": 835000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "hermes",
@@ -5948,7 +6631,10 @@
     },
     "price": 535000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "hexer",
@@ -5969,7 +6655,10 @@
     },
     "price": 15000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "hotknife",
@@ -5987,7 +6676,10 @@
       "fandom": "https://gta.fandom.com/wiki/Hotknife"
     },
     "price": 90000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "hotring",
@@ -6005,7 +6697,10 @@
       "fandom": "https://gta.fandom.com/wiki/Hotring_Sabre"
     },
     "price": 830000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "howard",
@@ -6025,7 +6720,10 @@
       "fandom": "https://gta.fandom.com/wiki/Howard_NX-25"
     },
     "price": 1296750,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "hunter",
@@ -6043,7 +6741,10 @@
       "fandom": "https://gta.fandom.com/wiki/FH-1_Hunter"
     },
     "price": 4123000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "huntley",
@@ -6061,7 +6762,10 @@
       "fandom": "https://gta.fandom.com/wiki/Huntley_S"
     },
     "price": 195000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "hustler",
@@ -6080,7 +6784,10 @@
     },
     "price": 625000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "hydra",
@@ -6117,7 +6824,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ignus"
     },
     "price": 2765000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "ignus2",
@@ -6138,7 +6848,10 @@
       "fandom": "https://gta.fandom.com/wiki/Weaponized_Ignus"
     },
     "price": 4500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "imorgon",
@@ -6159,7 +6872,10 @@
     },
     "price": 2165000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "impaler",
@@ -6179,7 +6895,10 @@
       "fandom": "https://gta.fandom.com/wiki/Impaler"
     },
     "price": 331835,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "impaler2",
@@ -6257,7 +6976,10 @@
       "fandom": "https://gta.fandom.com/wiki/Impaler_SZ"
     },
     "price": 1280000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "impaler6",
@@ -6277,7 +6999,10 @@
       "fandom": "https://gta.fandom.com/wiki/Impaler_LX"
     },
     "price": 1465000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "imperator",
@@ -6392,7 +7117,11 @@
     },
     "price": 440000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "infernus2",
@@ -6410,7 +7139,10 @@
       "fandom": "https://gta.fandom.com/wiki/Infernus_Classic"
     },
     "price": 915000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "ingot",
@@ -6429,7 +7161,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "innovation",
@@ -6448,7 +7183,10 @@
     },
     "price": 92500,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "insurgent",
@@ -6466,7 +7204,10 @@
       "fandom": "https://gta.fandom.com/wiki/Insurgent_Pick-Up"
     },
     "price": 1795000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "insurgent2",
@@ -6484,7 +7225,10 @@
       "fandom": "https://gta.fandom.com/wiki/Insurgent"
     },
     "price": 897750,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "insurgent3",
@@ -6541,7 +7285,10 @@
     },
     "price": 18000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "issi3",
@@ -6559,7 +7306,10 @@
       "fandom": "https://gta.fandom.com/wiki/Issi_Classic"
     },
     "price": 360000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "issi4",
@@ -6640,7 +7390,10 @@
     },
     "price": 897000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "issi8",
@@ -6660,7 +7413,10 @@
       "fandom": "https://gta.fandom.com/wiki/Issi_Rally"
     },
     "price": 1835000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "itali2",
@@ -6680,7 +7436,10 @@
       "fandom": "https://gta.fandom.com/wiki/Itali_Classic"
     },
     "price": 2025000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "italigtb",
@@ -6751,7 +7510,10 @@
       "fandom": "https://gta.fandom.com/wiki/Itali_RSX"
     },
     "price": 3465000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "iwagen",
@@ -6769,7 +7531,10 @@
       "fandom": "https://gta.fandom.com/wiki/I-Wagen"
     },
     "price": 1720000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "jackal",
@@ -6788,7 +7553,10 @@
     },
     "price": 60000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "jb700",
@@ -6807,7 +7575,10 @@
     },
     "price": 475000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jb7002",
@@ -6828,7 +7599,10 @@
       "fandom": "https://gta.fandom.com/wiki/JB_700W"
     },
     "price": 1470000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "jester",
@@ -6847,7 +7621,10 @@
     },
     "price": 28000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jester2",
@@ -6866,7 +7643,10 @@
     },
     "price": 350000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "jester3",
@@ -6884,7 +7664,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jester_Classic"
     },
     "price": 790000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jester4",
@@ -6902,7 +7685,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jester_RR"
     },
     "price": 1970000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jester5",
@@ -6920,7 +7706,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jester_RR_Widebody"
     },
     "price": 2290000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jet",
@@ -6954,7 +7743,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jetmax"
     },
     "price": 299000,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "journey",
@@ -6972,7 +7764,10 @@
       "fandom": "https://gta.fandom.com/wiki/Journey"
     },
     "price": 17600,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "journey2",
@@ -6990,7 +7785,10 @@
       "fandom": "https://gta.fandom.com/wiki/Journey_II"
     },
     "price": 790000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "jubilee",
@@ -7011,7 +7809,10 @@
       "fandom": "https://gta.fandom.com/wiki/Jubilee"
     },
     "price": 1650000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "jugular",
@@ -7047,7 +7848,10 @@
     },
     "price": 40000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "kamacho",
@@ -7065,7 +7869,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kamacho"
     },
     "price": 345000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "kanjo",
@@ -7083,7 +7890,10 @@
       "fandom": "https://gta.fandom.com/wiki/Blista_Kanjo"
     },
     "price": 580000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "kanjosj",
@@ -7101,7 +7911,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kanjo_SJ"
     },
     "price": 1370000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "keitora",
@@ -7121,7 +7934,10 @@
       "fandom": "https://gta.fandom.com/wiki/Keitora"
     },
     "price": 810000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "khamelion",
@@ -7139,7 +7955,10 @@
       "fandom": "https://gta.fandom.com/wiki/Khamelion"
     },
     "price": 100000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "khanjali",
@@ -7157,7 +7976,10 @@
       "fandom": "https://gta.fandom.com/wiki/TM-02_Khanjali"
     },
     "price": 3850350,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "komoda",
@@ -7177,7 +7999,10 @@
       "fandom": "https://gta.fandom.com/wiki/Komoda"
     },
     "price": 1700000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "kosatka",
@@ -7195,7 +8020,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kosatka"
     },
     "price": 2200000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "krieger",
@@ -7213,7 +8041,10 @@
       "fandom": "https://gta.fandom.com/wiki/Krieger"
     },
     "price": 2875000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "kuruma",
@@ -7248,7 +8079,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kuruma_(Armored)"
     },
     "price": 698250,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "l35",
@@ -7266,7 +8100,10 @@
       "fandom": "https://gta.fandom.com/wiki/Walton_L35"
     },
     "price": 1670000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "l352",
@@ -7286,7 +8123,10 @@
       "fandom": "https://gta.fandom.com/wiki/Walton_L35_Stock"
     },
     "price": 1303700,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "landstalker",
@@ -7305,7 +8145,10 @@
     },
     "price": 58000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "landstalker2",
@@ -7324,7 +8167,10 @@
     },
     "price": 1220000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "lazer",
@@ -7342,7 +8188,10 @@
       "fandom": "https://gta.fandom.com/wiki/P-996_LAZER"
     },
     "price": 6500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "le7b",
@@ -7363,7 +8212,10 @@
     },
     "price": 2475000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "lectro",
@@ -7381,7 +8233,10 @@
       "fandom": "https://gta.fandom.com/wiki/Lectro"
     },
     "price": 997500,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "lguard",
@@ -7400,7 +8255,10 @@
     },
     "price": 865000,
     "availability": "discontinued",
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "limo2",
@@ -7418,7 +8276,10 @@
       "fandom": "https://gta.fandom.com/wiki/Turreted_Limo"
     },
     "price": 1650000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "lm87",
@@ -7438,7 +8299,10 @@
       "fandom": "https://gta.fandom.com/wiki/LM87"
     },
     "price": 2915000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "locust",
@@ -7473,7 +8337,10 @@
       "fandom": "https://gta.fandom.com/wiki/Longfin"
     },
     "price": 2125000,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "luiva",
@@ -7493,7 +8360,10 @@
       "fandom": "https://gta.fandom.com/wiki/Luiva"
     },
     "price": 2697500,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "lurcher",
@@ -7512,7 +8382,10 @@
     },
     "price": 650000,
     "availability": "seasonal",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "luxor",
@@ -7532,7 +8405,10 @@
       "fandom": "https://gta.fandom.com/wiki/Luxor"
     },
     "price": 1500000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "luxor2",
@@ -7552,7 +8428,10 @@
       "fandom": "https://gta.fandom.com/wiki/Luxor_Deluxe"
     },
     "price": 10000000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "lynx",
@@ -7571,7 +8450,10 @@
     },
     "price": 1735000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "mamba",
@@ -7589,7 +8471,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mamba"
     },
     "price": 995000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "mammatus",
@@ -7607,7 +8492,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mammatus"
     },
     "price": 300000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "manana",
@@ -7627,7 +8515,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Manana"
     },
-    "price": 10000
+    "price": 10000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "manana2",
@@ -7667,7 +8558,10 @@
       "fandom": "https://gta.fandom.com/wiki/Manchez"
     },
     "price": 67000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "manchez2",
@@ -7685,7 +8579,10 @@
       "fandom": "https://gta.fandom.com/wiki/Manchez_Scout"
     },
     "price": 225000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "manchez3",
@@ -7719,7 +8616,10 @@
       "fandom": "https://gta.fandom.com/wiki/Marquis"
     },
     "price": 413990,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "marshall",
@@ -7737,7 +8637,10 @@
       "fandom": "https://gta.fandom.com/wiki/Marshall"
     },
     "price": 250000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "massacro",
@@ -7758,7 +8661,10 @@
     },
     "price": 275000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "massacro2",
@@ -7779,7 +8685,10 @@
     },
     "price": 385000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "maverick",
@@ -7833,7 +8742,10 @@
       "fandom": "https://gta.fandom.com/wiki/Menacer"
     },
     "price": 1775000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "mesa",
@@ -7868,7 +8780,10 @@
     },
     "price": 1225000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "microlight",
@@ -7886,7 +8801,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ultralight"
     },
     "price": 665000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "miljet",
@@ -7904,7 +8822,10 @@
       "fandom": "https://gta.fandom.com/wiki/Miljet"
     },
     "price": 1750000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "minimus",
@@ -7941,7 +8862,10 @@
       "fandom": "https://gta.fandom.com/wiki/Invade_and_Persuade_Tank"
     },
     "price": 2275000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "minivan",
@@ -7961,7 +8885,11 @@
       "fandom": "https://gta.fandom.com/wiki/Minivan"
     },
     "price": 30000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "minivan2",
@@ -8015,7 +8943,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mogul"
     },
     "price": 3125500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "molotok",
@@ -8033,7 +8964,10 @@
       "fandom": "https://gta.fandom.com/wiki/V-65_Molotok"
     },
     "price": 4788000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "monroe",
@@ -8051,7 +8985,10 @@
       "fandom": "https://gta.fandom.com/wiki/Monroe"
     },
     "price": 490000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "monster",
@@ -8148,7 +9085,10 @@
       "fandom": "https://gta.fandom.com/wiki/MonstroCiti"
     },
     "price": 1485000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "moonbeam",
@@ -8218,7 +9158,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mule"
     },
     "price": 27000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "mule4",
@@ -8236,7 +9179,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mule_Custom"
     },
     "price": 95760,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "nebula",
@@ -8255,7 +9201,10 @@
     },
     "price": 797000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "nemesis",
@@ -8274,7 +9223,10 @@
     },
     "price": 12000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "neo",
@@ -8295,7 +9247,10 @@
     },
     "price": 1875000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "neon",
@@ -8313,7 +9268,10 @@
       "fandom": "https://gta.fandom.com/wiki/Neon"
     },
     "price": 1500000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "nero",
@@ -8332,7 +9290,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Nero"
     },
-    "price": 1440000
+    "price": 1440000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "nero2",
@@ -8369,7 +9330,10 @@
       "fandom": "https://gta.fandom.com/wiki/Nightblade"
     },
     "price": 100000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "nightshade",
@@ -8387,7 +9351,10 @@
       "fandom": "https://gta.fandom.com/wiki/Nightshade"
     },
     "price": 585000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "nightshark",
@@ -8407,7 +9374,10 @@
       "fandom": "https://gta.fandom.com/wiki/Nightshark"
     },
     "price": 1245000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "nimbus",
@@ -8425,7 +9395,10 @@
       "fandom": "https://gta.fandom.com/wiki/Nimbus"
     },
     "price": 1900000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "ninef",
@@ -8446,7 +9419,11 @@
     },
     "price": 120000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "ninef2",
@@ -8467,7 +9444,10 @@
     },
     "price": 130000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "niobe",
@@ -8488,7 +9468,10 @@
       "fandom": "https://gta.fandom.com/wiki/Niobe"
     },
     "price": 1880000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "nokota",
@@ -8506,7 +9489,10 @@
       "fandom": "https://gta.fandom.com/wiki/P-45_Nokota"
     },
     "price": 2653350,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "novak",
@@ -8524,7 +9510,10 @@
       "fandom": "https://gta.fandom.com/wiki/Novak"
     },
     "price": 608000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "omnis",
@@ -8542,7 +9531,10 @@
       "fandom": "https://gta.fandom.com/wiki/Omnis"
     },
     "price": 701000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "omnisegt",
@@ -8562,7 +9554,10 @@
       "fandom": "https://gta.fandom.com/wiki/Omnis_e-GT"
     },
     "price": 1795000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "openwheel1",
@@ -8582,7 +9577,10 @@
       "fandom": "https://gta.fandom.com/wiki/BR8"
     },
     "price": 3400000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "openwheel2",
@@ -8602,7 +9600,10 @@
       "fandom": "https://gta.fandom.com/wiki/DR1"
     },
     "price": 2997000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "oppressor",
@@ -8622,7 +9623,10 @@
       "fandom": "https://gta.fandom.com/wiki/Oppressor"
     },
     "price": 2750000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "oppressor2",
@@ -8640,7 +9644,10 @@
       "fandom": "https://gta.fandom.com/wiki/Oppressor_Mk_II"
     },
     "price": 8000000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "oracle",
@@ -8659,7 +9666,10 @@
     },
     "price": 82000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "oracle2",
@@ -8678,7 +9688,10 @@
     },
     "price": 80000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "osiris",
@@ -8696,7 +9709,10 @@
       "fandom": "https://gta.fandom.com/wiki/Osiris"
     },
     "price": 1950000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "outlaw",
@@ -8714,7 +9730,10 @@
       "fandom": "https://gta.fandom.com/wiki/Outlaw"
     },
     "price": 1268000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "packer",
@@ -8748,7 +9767,10 @@
       "fandom": "https://gta.fandom.com/wiki/Panthere"
     },
     "price": 2170000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "panto",
@@ -8766,7 +9788,10 @@
       "fandom": "https://gta.fandom.com/wiki/Panto"
     },
     "price": 85000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "paradise",
@@ -8784,7 +9809,10 @@
       "fandom": "https://gta.fandom.com/wiki/Paradise"
     },
     "price": 50000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "paragon",
@@ -8805,7 +9833,10 @@
     },
     "price": 905000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "paragon2",
@@ -8843,7 +9874,10 @@
       "fandom": "https://gta.fandom.com/wiki/Paragon_S"
     },
     "price": 2010000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "pariah",
@@ -8861,7 +9895,10 @@
       "fandom": "https://gta.fandom.com/wiki/Pariah"
     },
     "price": 1420000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "patriot",
@@ -8882,7 +9919,10 @@
     },
     "price": 32000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "patriot2",
@@ -8900,7 +9940,10 @@
       "fandom": "https://gta.fandom.com/wiki/Patriot_Stretch"
     },
     "price": 611800,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "patriot3",
@@ -8921,7 +9964,10 @@
       "fandom": "https://gta.fandom.com/wiki/Patriot_Mil-Spec"
     },
     "price": 1710000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "patrolboat",
@@ -8939,7 +9985,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kurtz_31_Patrol_Boat"
     },
     "price": 2955000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "pbus",
@@ -8957,7 +10006,10 @@
       "fandom": "https://gta.fandom.com/wiki/Police_Prison_Bus"
     },
     "price": 731500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "pbus2",
@@ -8975,7 +10027,10 @@
       "fandom": "https://gta.fandom.com/wiki/Festival_Bus"
     },
     "price": 1842050,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "pcj",
@@ -8994,7 +10049,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "penetrator",
@@ -9012,7 +10070,10 @@
       "fandom": "https://gta.fandom.com/wiki/Penetrator"
     },
     "price": 880000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "penumbra",
@@ -9031,7 +10092,10 @@
     },
     "price": 24000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "penumbra2",
@@ -9049,7 +10113,10 @@
       "fandom": "https://gta.fandom.com/wiki/Penumbra_FF"
     },
     "price": 1380000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "peyote",
@@ -9069,7 +10136,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Peyote"
     },
-    "price": 38000
+    "price": 38000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "peyote2",
@@ -9090,7 +10160,10 @@
     },
     "price": 805000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "peyote3",
@@ -9131,7 +10204,10 @@
     },
     "price": 1135000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "phantom",
@@ -9165,7 +10241,10 @@
       "fandom": "https://gta.fandom.com/wiki/Phantom_Wedge"
     },
     "price": 2553600,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "phantom3",
@@ -9217,7 +10296,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "pigalle",
@@ -9236,7 +10318,10 @@
     },
     "price": 400000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "pipistrello",
@@ -9256,7 +10341,10 @@
       "fandom": "https://gta.fandom.com/wiki/Pipistrello"
     },
     "price": 2950000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "pizzaboy",
@@ -9292,7 +10380,10 @@
       "fandom": "https://gta.fandom.com/wiki/Buffalo_Cruiser"
     },
     "price": 4435000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polbuffalo6",
@@ -9312,7 +10403,10 @@
       "fandom": "https://gta.fandom.com/wiki/Buffalo_STX_Pursuit"
     },
     "price": 5370000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polcaracara",
@@ -9332,7 +10426,10 @@
       "fandom": "https://gta.fandom.com/wiki/Caracara_Pursuit"
     },
     "price": 5335000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polcoquette4",
@@ -9350,7 +10447,10 @@
       "fandom": "https://gta.fandom.com/wiki/Coquette_D10_Pursuit"
     },
     "price": 5620000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "poldominator10",
@@ -9370,7 +10470,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dominator_FX_Interceptor"
     },
     "price": 4950000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "poldorado",
@@ -9390,7 +10493,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dorado_Cruiser"
     },
     "price": 5005000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polfaction2",
@@ -9408,7 +10514,10 @@
       "fandom": "https://gta.fandom.com/wiki/Outreach_Faction"
     },
     "price": 4150000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polgauntlet",
@@ -9428,7 +10537,10 @@
       "fandom": "https://gta.fandom.com/wiki/Gauntlet_Interceptor"
     },
     "price": 5420000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polgreenwood",
@@ -9448,7 +10560,10 @@
       "fandom": "https://gta.fandom.com/wiki/Greenwood_Cruiser"
     },
     "price": 4910000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "police",
@@ -9485,7 +10600,10 @@
       "fandom": "https://gta.fandom.com/wiki/Unmarked_Cruiser"
     },
     "price": 3950000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "police5",
@@ -9505,7 +10623,10 @@
       "fandom": "https://gta.fandom.com/wiki/Stanier_LE_Cruiser"
     },
     "price": 4690000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "policeb",
@@ -9610,7 +10731,10 @@
       "fandom": "https://gta.fandom.com/wiki/Impaler_SZ_Cruiser"
     },
     "price": 4720000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polimpaler6",
@@ -9630,7 +10754,10 @@
       "fandom": "https://gta.fandom.com/wiki/Impaler_LX_Cruiser"
     },
     "price": 4800000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "polmav",
@@ -9664,7 +10791,10 @@
       "fandom": "https://gta.fandom.com/wiki/Terminus_Patrol"
     },
     "price": 5125000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "pony",
@@ -9698,7 +10828,10 @@
       "fandom": "https://gta.fandom.com/wiki/Postlude"
     },
     "price": 1310000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "pounder",
@@ -9732,7 +10865,10 @@
       "fandom": "https://gta.fandom.com/wiki/Pounder_Custom"
     },
     "price": 320530,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "powersurge",
@@ -9750,7 +10886,10 @@
       "fandom": "https://gta.fandom.com/wiki/Powersurge"
     },
     "price": 1605000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "prairie",
@@ -9769,7 +10908,10 @@
     },
     "price": 25000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "pranger",
@@ -9804,7 +10946,10 @@
       "fandom": "https://gta.fandom.com/wiki/Police_Predator"
     },
     "price": 3780000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "premier",
@@ -9823,7 +10968,10 @@
     },
     "price": 10000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "previon",
@@ -9841,7 +10989,10 @@
       "fandom": "https://gta.fandom.com/wiki/Previon"
     },
     "price": 1490000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "primo",
@@ -9896,7 +11047,10 @@
       "fandom": "https://gta.fandom.com/wiki/X80_Proto"
     },
     "price": 2700000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "pyro",
@@ -9914,7 +11068,10 @@
       "fandom": "https://gta.fandom.com/wiki/Pyro"
     },
     "price": 4455500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "r300",
@@ -9934,7 +11091,10 @@
       "fandom": "https://gta.fandom.com/wiki/300R"
     },
     "price": 2075000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "radi",
@@ -9953,7 +11113,10 @@
     },
     "price": 32000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "raiden",
@@ -9974,7 +11137,10 @@
     },
     "price": 1375000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "raiju",
@@ -9992,7 +11158,10 @@
       "fandom": "https://gta.fandom.com/wiki/F-160_Raiju"
     },
     "price": 8500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "rallytruck",
@@ -10010,7 +11179,10 @@
       "fandom": "https://gta.fandom.com/wiki/Dune"
     },
     "price": 1300000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rancherxl",
@@ -10029,7 +11201,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rapidgt",
@@ -10048,7 +11223,10 @@
     },
     "price": 132000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "rapidgt3",
@@ -10067,7 +11245,10 @@
     },
     "price": 885000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "rapidgt4",
@@ -10107,7 +11288,10 @@
     },
     "price": 648000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "ratbike",
@@ -10126,7 +11310,10 @@
     },
     "price": 48000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ratel",
@@ -10144,7 +11331,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ratel"
     },
     "price": 1873000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ratloader",
@@ -10163,7 +11353,10 @@
     },
     "price": 6000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ratloader2",
@@ -10181,7 +11374,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rat-Truck"
     },
     "price": 37500,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rcbandito",
@@ -10201,7 +11397,10 @@
       "fandom": "https://gta.fandom.com/wiki/RC_Bandito"
     },
     "price": 1590000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "reaper",
@@ -10219,7 +11418,10 @@
       "fandom": "https://gta.fandom.com/wiki/Reaper"
     },
     "price": 1595000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "rebel",
@@ -10238,7 +11440,10 @@
     },
     "price": 22000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rebel2",
@@ -10257,7 +11462,10 @@
     },
     "price": 22000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rebla",
@@ -10275,7 +11483,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rebla_GTS"
     },
     "price": 1175000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "reever",
@@ -10295,7 +11506,10 @@
       "fandom": "https://gta.fandom.com/wiki/Reever"
     },
     "price": 1900000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "regina",
@@ -10314,7 +11528,10 @@
     },
     "price": 8000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "remus",
@@ -10334,7 +11551,10 @@
       "fandom": "https://gta.fandom.com/wiki/Remus"
     },
     "price": 1370000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rentalbus",
@@ -10352,7 +11572,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rental_Shuttle_Bus"
     },
     "price": 30000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "retinue",
@@ -10371,7 +11594,10 @@
     },
     "price": 615000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "retinue2",
@@ -10389,7 +11615,10 @@
       "fandom": "https://gta.fandom.com/wiki/Retinue_Mk_II"
     },
     "price": 1620000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "revolter",
@@ -10411,7 +11640,10 @@
     },
     "price": 1610000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "rhapsody",
@@ -10429,7 +11661,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rhapsody"
     },
     "price": 140000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rhinehart",
@@ -10463,7 +11698,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rhino_Tank"
     },
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "riata",
@@ -10482,7 +11720,10 @@
     },
     "price": 380000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "riot",
@@ -10500,7 +11741,10 @@
       "fandom": "https://gta.fandom.com/wiki/Police_Riot"
     },
     "price": 4800000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "riot2",
@@ -10518,7 +11762,10 @@
       "fandom": "https://gta.fandom.com/wiki/RCV"
     },
     "price": 3125500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "ripley",
@@ -10553,7 +11800,10 @@
     },
     "price": 85000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rogue",
@@ -10571,7 +11821,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rogue"
     },
     "price": 1596000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "romero",
@@ -10590,7 +11843,10 @@
     },
     "price": 45000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rrocket",
@@ -10608,7 +11864,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rampant_Rocket"
     },
     "price": 925000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "rt3000",
@@ -10626,7 +11885,10 @@
       "fandom": "https://gta.fandom.com/wiki/RT3000"
     },
     "price": 1715000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rubble",
@@ -10661,7 +11923,10 @@
     },
     "price": 10000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ruiner",
@@ -10680,7 +11945,10 @@
     },
     "price": 10000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ruiner2",
@@ -10698,7 +11966,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ruiner_2000"
     },
     "price": 3750000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "ruiner4",
@@ -10716,7 +11987,10 @@
       "fandom": "https://gta.fandom.com/wiki/Ruiner_ZZ-8"
     },
     "price": 1320000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "rumpo",
@@ -10751,7 +12025,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rumpo_Custom"
     },
     "price": 130000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "ruston",
@@ -10770,7 +12047,10 @@
     },
     "price": 430000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "s80",
@@ -10791,7 +12071,10 @@
     },
     "price": 2575000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "s95",
@@ -10811,7 +12094,10 @@
       "fandom": "https://gta.fandom.com/wiki/S95"
     },
     "price": 1995000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sabregt",
@@ -10865,7 +12151,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sadler"
     },
     "price": 35000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sanchez",
@@ -10886,7 +12175,10 @@
     },
     "price": 8000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sanctus",
@@ -10905,7 +12197,10 @@
     },
     "price": 1995000,
     "availability": "seasonal",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sandking",
@@ -10923,7 +12218,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sandking_XL"
     },
     "price": 45000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sandking2",
@@ -10942,7 +12240,10 @@
     },
     "price": 38000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "savage",
@@ -10960,7 +12261,10 @@
       "fandom": "https://gta.fandom.com/wiki/Savage"
     },
     "price": 2593500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "savestra",
@@ -10982,7 +12286,10 @@
     },
     "price": 990000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "sc1",
@@ -11003,7 +12310,10 @@
     },
     "price": 1603000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "scarab",
@@ -11100,7 +12410,10 @@
       "fandom": "https://gta.fandom.com/wiki/Schafter_V12"
     },
     "price": 116000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "schafter4",
@@ -11121,7 +12434,10 @@
     },
     "price": 208000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "schafter5",
@@ -11141,7 +12457,10 @@
       "fandom": "https://gta.fandom.com/wiki/Schafter_V12_(Armored)"
     },
     "price": 325000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "schafter6",
@@ -11162,7 +12481,10 @@
     },
     "price": 438000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "schlagen",
@@ -11182,7 +12504,10 @@
       "fandom": "https://gta.fandom.com/wiki/Schlagen_GT"
     },
     "price": 1300000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "schwarzer",
@@ -11201,7 +12526,10 @@
     },
     "price": 80000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "scorcher",
@@ -11219,7 +12547,10 @@
       "fandom": "https://gta.fandom.com/wiki/Scorcher"
     },
     "price": 2000,
-    "vendor": "pedal_metal"
+    "vendor": "pedal_metal",
+    "vendors": [
+      "pedal_metal"
+    ]
   },
   {
     "id": "scramjet",
@@ -11272,7 +12603,10 @@
       "fandom": "https://gta.fandom.com/wiki/Seabreeze"
     },
     "price": 1130500,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "seashark",
@@ -11290,7 +12624,10 @@
       "fandom": "https://gta.fandom.com/wiki/Seashark"
     },
     "price": 16899,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "seasparrow",
@@ -11343,7 +12680,10 @@
     },
     "price": 30000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "seminole2",
@@ -11362,7 +12702,10 @@
     },
     "price": 678000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sentinel",
@@ -11400,7 +12743,10 @@
     },
     "price": 28000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sentinel4",
@@ -11458,7 +12804,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sentinel_XS4"
     },
     "price": 1429000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "serrano",
@@ -11477,7 +12826,10 @@
     },
     "price": 60000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "seven70",
@@ -11496,7 +12848,10 @@
     },
     "price": 695000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "shamal",
@@ -11514,7 +12869,10 @@
       "fandom": "https://gta.fandom.com/wiki/Shamal"
     },
     "price": 1150000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "sheava",
@@ -11535,7 +12893,10 @@
     },
     "price": 1995000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "sheriff",
@@ -11589,7 +12950,10 @@
       "fandom": "https://gta.fandom.com/wiki/Shinobi"
     },
     "price": 2480500,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "shotaro",
@@ -11607,7 +12971,10 @@
       "fandom": "https://gta.fandom.com/wiki/Shotaro"
     },
     "price": 2225000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "skylift",
@@ -11641,7 +13008,10 @@
       "fandom": "https://gta.fandom.com/wiki/Slamtruck"
     },
     "price": 1310000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "slamvan",
@@ -11771,7 +13141,10 @@
       "fandom": "https://gta.fandom.com/wiki/SM722"
     },
     "price": 2115000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "sovereign",
@@ -11790,7 +13163,10 @@
     },
     "price": 120000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "specter",
@@ -11809,7 +13185,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Specter"
     },
-    "price": 599000
+    "price": 599000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "specter2",
@@ -11895,7 +13274,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Speedo_Custom"
     },
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "squaddie",
@@ -11914,7 +13296,10 @@
     },
     "price": 1130000,
     "availability": "discontinued",
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "squalo",
@@ -11950,7 +13335,10 @@
     },
     "price": 28000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "stalion",
@@ -11968,7 +13356,10 @@
       "fandom": "https://gta.fandom.com/wiki/Stallion"
     },
     "price": 15200,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "stalion2",
@@ -11986,7 +13377,10 @@
       "fandom": "https://gta.fandom.com/wiki/Burger_Shot_Stallion"
     },
     "price": 277000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "stanier",
@@ -12007,7 +13401,10 @@
     },
     "price": 10000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "starling",
@@ -12025,7 +13422,10 @@
       "fandom": "https://gta.fandom.com/wiki/LF-22_Starling"
     },
     "price": 3657500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "stinger",
@@ -12044,7 +13444,10 @@
     },
     "price": 1000000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "stingergt",
@@ -12065,7 +13468,10 @@
     },
     "price": 875000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "stingertt",
@@ -12086,7 +13492,10 @@
       "fandom": "https://gta.fandom.com/wiki/Itali_GTO_Stinger_TT"
     },
     "price": 2380000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "stockade",
@@ -12103,7 +13512,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stockade"
     },
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "stockade4",
@@ -12155,7 +13567,10 @@
       "fandom": "https://gta.fandom.com/wiki/Streamer216"
     },
     "price": 2238000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "streiter",
@@ -12174,7 +13589,10 @@
     },
     "price": 500000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "stretch",
@@ -12192,7 +13610,10 @@
       "fandom": "https://gta.fandom.com/wiki/Stretch"
     },
     "price": 32000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "strikeforce",
@@ -12210,7 +13631,10 @@
       "fandom": "https://gta.fandom.com/wiki/B-11_Strikeforce"
     },
     "price": 3800000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "stromberg",
@@ -12245,7 +13669,10 @@
       "fandom": "https://gta.fandom.com/wiki/Stryder"
     },
     "price": 670000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "stunt",
@@ -12263,7 +13690,10 @@
       "fandom": "https://gta.fandom.com/wiki/Mallard"
     },
     "price": 250000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "submersible",
@@ -12297,7 +13727,10 @@
       "fandom": "https://gta.fandom.com/wiki/Kraken"
     },
     "price": 1325000,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "sugoi",
@@ -12315,7 +13748,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sugoi"
     },
     "price": 1224000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sultan",
@@ -12350,7 +13786,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sultan_Classic"
     },
     "price": 1718000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sultan3",
@@ -12368,7 +13807,10 @@
       "fandom": "https://gta.fandom.com/wiki/Sultan_RS_Classic"
     },
     "price": 1789000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "sultanrs",
@@ -12405,7 +13847,10 @@
       "fandom": "https://gta.fandom.com/wiki/Suntrap"
     },
     "price": 25160,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "superd",
@@ -12424,7 +13869,11 @@
     },
     "price": 250000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "supervolito",
@@ -12444,7 +13893,10 @@
       "fandom": "https://gta.fandom.com/wiki/SuperVolito"
     },
     "price": 2113000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "supervolito2",
@@ -12464,7 +13916,10 @@
       "fandom": "https://gta.fandom.com/wiki/SuperVolito_Carbon"
     },
     "price": 3330000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "surano",
@@ -12483,7 +13938,11 @@
     },
     "price": 99000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "surfer",
@@ -12501,7 +13960,10 @@
       "fandom": "https://gta.fandom.com/wiki/Surfer"
     },
     "price": 11000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "surfer3",
@@ -12519,7 +13981,10 @@
       "fandom": "https://gta.fandom.com/wiki/Surfer_Custom"
     },
     "price": 590000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "surge",
@@ -12538,7 +14003,10 @@
     },
     "price": 38000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "suzume",
@@ -12575,7 +14043,10 @@
       "fandom": "https://gta.fandom.com/wiki/Swift"
     },
     "price": 1500000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "swift2",
@@ -12595,7 +14066,10 @@
       "fandom": "https://gta.fandom.com/wiki/Swift_Deluxe"
     },
     "price": 5150000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "swinger",
@@ -12616,7 +14090,10 @@
     },
     "price": 909000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "t20",
@@ -12634,7 +14111,10 @@
       "fandom": "https://gta.fandom.com/wiki/T20"
     },
     "price": 2200000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "taco",
@@ -12652,7 +14132,10 @@
       "fandom": "https://gta.fandom.com/wiki/Taco_Van"
     },
     "price": 345000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "tahoma",
@@ -12672,7 +14155,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tahoma_Coupe"
     },
     "price": 1500000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tailgater",
@@ -12691,7 +14177,10 @@
     },
     "price": 55000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tailgater2",
@@ -12709,7 +14198,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tailgater_S"
     },
     "price": 1495000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "taipan",
@@ -12727,7 +14219,10 @@
       "fandom": "https://gta.fandom.com/wiki/Taipan"
     },
     "price": 1980000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tampa",
@@ -12745,7 +14240,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tampa"
     },
     "price": 375000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tampa2",
@@ -12763,7 +14261,10 @@
       "fandom": "https://gta.fandom.com/wiki/Drift_Tampa"
     },
     "price": 995000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tampa3",
@@ -12837,7 +14338,10 @@
       "fandom": "https://gta.fandom.com/wiki/Technical"
     },
     "price": 1263500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "technical2",
@@ -12855,7 +14359,10 @@
       "fandom": "https://gta.fandom.com/wiki/Technical_Aqua"
     },
     "price": 1489600,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "technical3",
@@ -12892,7 +14399,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tempesta"
     },
     "price": 1329000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tenf",
@@ -12913,7 +14423,11 @@
       "fandom": "https://gta.fandom.com/wiki/10F"
     },
     "price": 1675000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport",
+      "bennys"
+    ]
   },
   {
     "id": "tenf2",
@@ -12951,7 +14465,10 @@
       "fandom": "https://gta.fandom.com/wiki/Terrorbyte"
     },
     "price": 1375000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "terminus",
@@ -12971,7 +14488,10 @@
       "fandom": "https://gta.fandom.com/wiki/Terminus"
     },
     "price": 1877500,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tezeract",
@@ -12989,7 +14509,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tezeract"
     },
     "price": 2825000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "thrax",
@@ -13007,7 +14530,10 @@
       "fandom": "https://gta.fandom.com/wiki/Thrax"
     },
     "price": 2325000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "thrust",
@@ -13026,7 +14552,10 @@
     },
     "price": 75000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "thruster",
@@ -13044,7 +14573,10 @@
       "fandom": "https://gta.fandom.com/wiki/Thruster"
     },
     "price": 2500000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "tigon",
@@ -13065,7 +14597,10 @@
     },
     "price": 2310000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tiptruck",
@@ -13099,7 +14634,10 @@
       "fandom": "https://gta.fandom.com/wiki/Titan"
     },
     "price": 2000000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "titan2",
@@ -13134,7 +14672,10 @@
       "fandom": "https://gta.fandom.com/wiki/Toreador"
     },
     "price": 4250000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "torero",
@@ -13155,7 +14696,10 @@
     },
     "price": 998000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "torero2",
@@ -13175,7 +14719,10 @@
       "fandom": "https://gta.fandom.com/wiki/Torero_XO"
     },
     "price": 2890000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tornado",
@@ -13195,7 +14742,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tornado"
     },
-    "price": 30000
+    "price": 30000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "tornado5",
@@ -13234,7 +14784,10 @@
     },
     "price": 378000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "toro",
@@ -13252,7 +14805,10 @@
       "fandom": "https://gta.fandom.com/wiki/Toro"
     },
     "price": 1750000,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "toros",
@@ -13272,7 +14828,10 @@
       "fandom": "https://gta.fandom.com/wiki/Toros"
     },
     "price": 498000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tourbus",
@@ -13370,7 +14929,10 @@
       "fandom": "https://gta.fandom.com/wiki/Whippet_Race_Bike"
     },
     "price": 10000,
-    "vendor": "pedal_metal"
+    "vendor": "pedal_metal",
+    "vendors": [
+      "pedal_metal"
+    ]
   },
   {
     "id": "tribike2",
@@ -13388,7 +14950,10 @@
       "fandom": "https://gta.fandom.com/wiki/Endurex_Race_Bike"
     },
     "price": 10000,
-    "vendor": "pedal_metal"
+    "vendor": "pedal_metal",
+    "vendors": [
+      "pedal_metal"
+    ]
   },
   {
     "id": "tribike3",
@@ -13406,7 +14971,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tri-Cycles_Race_Bike"
     },
     "price": 10000,
-    "vendor": "pedal_metal"
+    "vendor": "pedal_metal",
+    "vendors": [
+      "pedal_metal"
+    ]
   },
   {
     "id": "trophytruck",
@@ -13424,7 +14992,10 @@
       "fandom": "https://gta.fandom.com/wiki/Trophy_Truck"
     },
     "price": 550000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "trophytruck2",
@@ -13442,7 +15013,10 @@
       "fandom": "https://gta.fandom.com/wiki/Desert_Raid"
     },
     "price": 695000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tropic",
@@ -13460,7 +15034,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tropic"
     },
     "price": 22000,
-    "vendor": "dock_tease"
+    "vendor": "dock_tease",
+    "vendors": [
+      "dock_tease"
+    ]
   },
   {
     "id": "tropos",
@@ -13478,7 +15055,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tropos_Rallye"
     },
     "price": 816000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tug",
@@ -13512,7 +15092,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tula"
     },
     "price": 4100000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "tulip",
@@ -13533,7 +15116,10 @@
     },
     "price": 718000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "tulip2",
@@ -13551,7 +15137,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tulip_M-100"
     },
     "price": 1658000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "turismo2",
@@ -13571,7 +15160,10 @@
       "fandom": "https://gta.fandom.com/wiki/Turismo_Classic"
     },
     "price": 705000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "turismo3",
@@ -13591,7 +15183,10 @@
       "fandom": "https://gta.fandom.com/wiki/Turismo_Omaggio"
     },
     "price": 2845000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "turismor",
@@ -13609,7 +15204,10 @@
       "fandom": "https://gta.fandom.com/wiki/Turismo_R"
     },
     "price": 500000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tyrant",
@@ -13627,7 +15225,10 @@
       "fandom": "https://gta.fandom.com/wiki/Tyrant"
     },
     "price": 2515000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "tyrus",
@@ -13648,7 +15249,10 @@
     },
     "price": 2550000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "uranus",
@@ -13702,7 +15306,10 @@
     },
     "price": 240000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "vader",
@@ -13721,7 +15328,10 @@
     },
     "price": 9000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vagner",
@@ -13739,7 +15349,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vagner"
     },
     "price": 1535000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "vagrant",
@@ -13757,7 +15370,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vagrant"
     },
     "price": 2214000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "valkyrie",
@@ -13775,7 +15391,10 @@
       "fandom": "https://gta.fandom.com/wiki/Valkyrie"
     },
     "price": 3790500,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "valkyrie2",
@@ -13813,7 +15432,10 @@
     },
     "price": 596000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vectre",
@@ -13831,7 +15453,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vectre"
     },
     "price": 1785000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "velum",
@@ -13849,7 +15474,10 @@
       "fandom": "https://gta.fandom.com/wiki/Velum"
     },
     "price": 450000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "velum2",
@@ -13867,7 +15495,10 @@
       "fandom": "https://gta.fandom.com/wiki/Velum_5-Seater"
     },
     "price": 1323350,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "verlierer2",
@@ -13886,7 +15517,10 @@
     },
     "price": 695000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "verus",
@@ -13905,7 +15539,10 @@
     },
     "price": 192000,
     "availability": "discontinued",
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "vestra",
@@ -13923,7 +15560,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vestra"
     },
     "price": 950000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "vetir",
@@ -13941,7 +15581,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vetir"
     },
     "price": 1630000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "veto",
@@ -13961,7 +15604,10 @@
       "fandom": "https://gta.fandom.com/wiki/Veto_Classic"
     },
     "price": 895000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "veto2",
@@ -13981,7 +15627,10 @@
       "fandom": "https://gta.fandom.com/wiki/Veto_Modern"
     },
     "price": 995000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vigero",
@@ -14000,7 +15649,10 @@
     },
     "price": 21000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vigero2",
@@ -14021,7 +15673,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vigero_ZX"
     },
     "price": 1947000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vigero3",
@@ -14041,7 +15696,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vigero_ZX_Convertible"
     },
     "price": 2295000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vigilante",
@@ -14076,7 +15734,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vindicator"
     },
     "price": 630000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "virgo",
@@ -14133,7 +15794,10 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Virgo_Classic"
     },
-    "price": 165000
+    "price": 165000,
+    "vendors": [
+      "bennys"
+    ]
   },
   {
     "id": "virtue",
@@ -14153,7 +15817,10 @@
       "fandom": "https://gta.fandom.com/wiki/Virtue"
     },
     "price": 2980000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "viseris",
@@ -14175,7 +15842,10 @@
     },
     "price": 875000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "visione",
@@ -14193,7 +15863,10 @@
       "fandom": "https://gta.fandom.com/wiki/Visione"
     },
     "price": 2250000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "vivanite",
@@ -14213,7 +15886,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vivanite"
     },
     "price": 1605000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "volatol",
@@ -14231,7 +15907,10 @@
       "fandom": "https://gta.fandom.com/wiki/Volatol"
     },
     "price": 3724000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "volatus",
@@ -14251,7 +15930,10 @@
       "fandom": "https://gta.fandom.com/wiki/Volatus"
     },
     "price": 2295000,
-    "vendor": "elitas_travel"
+    "vendor": "elitas_travel",
+    "vendors": [
+      "elitas_travel"
+    ]
   },
   {
     "id": "voltic",
@@ -14270,7 +15952,10 @@
     },
     "price": 150000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "voltic2",
@@ -14288,7 +15973,10 @@
       "fandom": "https://gta.fandom.com/wiki/Rocket_Voltic"
     },
     "price": 3830400,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "voodoo",
@@ -14343,7 +16031,10 @@
       "fandom": "https://gta.fandom.com/wiki/Vorschlaghammer"
     },
     "price": 1790000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "vortex",
@@ -14380,7 +16071,10 @@
       "fandom": "https://gta.fandom.com/wiki/V-STR"
     },
     "price": 1285000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "warrener",
@@ -14399,7 +16093,10 @@
     },
     "price": 120000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "warrener2",
@@ -14417,7 +16114,10 @@
       "fandom": "https://gta.fandom.com/wiki/Warrener_HKR"
     },
     "price": 1260000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "washington",
@@ -14436,7 +16136,10 @@
     },
     "price": 15000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "wastelander",
@@ -14454,7 +16157,10 @@
       "fandom": "https://gta.fandom.com/wiki/Wastelander"
     },
     "price": 658350,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "weevil",
@@ -14474,7 +16180,11 @@
       "fandom": "https://gta.fandom.com/wiki/Weevil"
     },
     "price": 870000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "weevil2",
@@ -14511,7 +16221,10 @@
       "fandom": "https://gta.fandom.com/wiki/Windsor"
     },
     "price": 28000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "windsor2",
@@ -14529,7 +16242,10 @@
       "fandom": "https://gta.fandom.com/wiki/Windsor_Drop"
     },
     "price": 900000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "winky",
@@ -14547,7 +16263,10 @@
       "fandom": "https://gta.fandom.com/wiki/Winky"
     },
     "price": 1100000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "wolfsbane",
@@ -14566,7 +16285,10 @@
     },
     "price": 95000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "woodlander",
@@ -14607,7 +16329,10 @@
     },
     "price": 2375000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "xls",
@@ -14628,7 +16353,10 @@
     },
     "price": 253000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "xls2",
@@ -14649,7 +16377,10 @@
     },
     "price": 522000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "xtreme",
@@ -14669,7 +16400,10 @@
       "fandom": "https://gta.fandom.com/wiki/X-treme"
     },
     "price": 2885000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "yosemite",
@@ -14689,7 +16423,11 @@
       "fandom": "https://gta.fandom.com/wiki/Yosemite"
     },
     "price": 485000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "yosemite1500",
@@ -14707,7 +16445,10 @@
       "fandom": "https://gta.fandom.com/wiki/Yosemite_1500"
     },
     "price": 1205000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "yosemite2",
@@ -14725,7 +16466,10 @@
       "fandom": "https://gta.fandom.com/wiki/Drift_Yosemite"
     },
     "price": 1308000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "yosemite3",
@@ -14762,7 +16506,10 @@
       "fandom": "https://gta.fandom.com/wiki/Youga"
     },
     "price": 16000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "youga2",
@@ -14782,7 +16529,11 @@
       "fandom": "https://gta.fandom.com/wiki/Youga_Classic"
     },
     "price": 195000,
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas",
+      "bennys"
+    ]
   },
   {
     "id": "youga3",
@@ -14837,7 +16588,10 @@
     },
     "price": 900000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "zeno",
@@ -14855,7 +16609,10 @@
       "fandom": "https://gta.fandom.com/wiki/Zeno"
     },
     "price": 2820000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "zentorno",
@@ -14875,7 +16632,10 @@
       "fandom": "https://gta.fandom.com/wiki/Zentorno"
     },
     "price": 725000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "zhaba",
@@ -14893,7 +16653,10 @@
       "fandom": "https://gta.fandom.com/wiki/Zhaba"
     },
     "price": 2400000,
-    "vendor": "warstock"
+    "vendor": "warstock",
+    "vendors": [
+      "warstock"
+    ]
   },
   {
     "id": "zion",
@@ -14912,7 +16675,10 @@
     },
     "price": 50000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "zion2",
@@ -14931,7 +16697,10 @@
     },
     "price": 65000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "zion3",
@@ -14952,7 +16721,10 @@
     },
     "price": 812000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "zombiea",
@@ -14971,7 +16743,10 @@
     },
     "price": 99000,
     "availability": "discontinued",
-    "vendor": "southern_san_andreas"
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
   },
   {
     "id": "zombieb",
@@ -15011,7 +16786,10 @@
     },
     "price": 1925000,
     "availability": "discontinued",
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "zr350",
@@ -15029,7 +16807,10 @@
       "fandom": "https://gta.fandom.com/wiki/ZR350"
     },
     "price": 1615000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   },
   {
     "id": "zr380",
@@ -15109,6 +16890,9 @@
       "fandom": "https://gta.fandom.com/wiki/Z-Type"
     },
     "price": 10000000,
-    "vendor": "legendary_motorsport"
+    "vendor": "legendary_motorsport",
+    "vendors": [
+      "legendary_motorsport"
+    ]
   }
 ]

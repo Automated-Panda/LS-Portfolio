@@ -1,582 +1,1786 @@
 {
-  "adder": "legendary_motorsport",
-  "airbus": "warstock",
-  "akula": "warstock",
-  "akuma": "southern_san_andreas",
-  "aleutian": "legendary_motorsport",
-  "alkonost": "warstock",
-  "alphaz1": "elitas_travel",
-  "annihilator": "elitas_travel",
-  "annihilator2": "warstock",
-  "apc": "warstock",
-  "arbitergt": "southern_san_andreas",
-  "ardent": "warstock",
-  "asbo": "southern_san_andreas",
-  "asea": "southern_san_andreas",
-  "asterope": "southern_san_andreas",
-  "asterope2": "southern_san_andreas",
-  "astrale": "legendary_motorsport",
-  "astron": "legendary_motorsport",
-  "astron2": "legendary_motorsport",
-  "autarch": "legendary_motorsport",
-  "avarus": "southern_san_andreas",
-  "avenger": "warstock",
-  "bagger": "southern_san_andreas",
-  "baller": "southern_san_andreas",
-  "baller3": "legendary_motorsport",
-  "baller4": "legendary_motorsport",
-  "baller5": "legendary_motorsport",
-  "baller6": "legendary_motorsport",
-  "baller7": "legendary_motorsport",
-  "baller8": "legendary_motorsport",
-  "banshee3": "legendary_motorsport",
-  "barracks": "warstock",
-  "barrage": "warstock",
-  "bati": "southern_san_andreas",
-  "bati2": "southern_san_andreas",
-  "benson2": "warstock",
-  "besra": "elitas_travel",
-  "bestiagts": "legendary_motorsport",
-  "bifta": "southern_san_andreas",
-  "bison": "southern_san_andreas",
-  "bjxl": "southern_san_andreas",
-  "blazer": "southern_san_andreas",
-  "blazer2": "warstock",
-  "blazer3": "southern_san_andreas",
-  "blazer4": "southern_san_andreas",
-  "blazer5": "warstock",
-  "blimp3": "elitas_travel",
-  "bobcatxl": "southern_san_andreas",
-  "bodhi2": "southern_san_andreas",
-  "bombushka": "warstock",
-  "boor": "southern_san_andreas",
-  "boxville5": "warstock",
-  "boxville6": "warstock",
-  "brawler": "legendary_motorsport",
-  "brickade": "warstock",
-  "brickade2": "warstock",
-  "brigham": "southern_san_andreas",
-  "brioso": "southern_san_andreas",
-  "brioso2": "southern_san_andreas",
-  "broadway": "legendary_motorsport",
-  "btype": "legendary_motorsport",
-  "btype2": "southern_san_andreas",
-  "btype3": "legendary_motorsport",
-  "buffalo2": "southern_san_andreas",
-  "buffalo4": "southern_san_andreas",
-  "buffalo5": "legendary_motorsport",
-  "bullet": "legendary_motorsport",
-  "burrito2": "warstock",
-  "buzzard": "warstock",
-  "calico": "southern_san_andreas",
-  "caracara": "warstock",
-  "caracara2": "southern_san_andreas",
-  "carbonizzare": "legendary_motorsport",
-  "carbonrs": "legendary_motorsport",
-  "casco": "legendary_motorsport",
-  "castigator": "southern_san_andreas",
-  "cavalcade": "southern_san_andreas",
-  "cavalcade3": "southern_san_andreas",
-  "champion": "legendary_motorsport",
-  "chavosv6": "southern_san_andreas",
-  "cheburek": "southern_san_andreas",
-  "cheetah2": "legendary_motorsport",
-  "chernobog": "warstock",
-  "chimera": "southern_san_andreas",
-  "chino": "legendary_motorsport",
-  "cinquemila": "legendary_motorsport",
-  "cliffhanger": "southern_san_andreas",
-  "clique": "legendary_motorsport",
-  "clique2": "southern_san_andreas",
-  "club": "southern_san_andreas",
-  "coach": "warstock",
-  "cog55": "legendary_motorsport",
-  "cog552": "legendary_motorsport",
-  "cogcabrio": "legendary_motorsport",
-  "cognoscenti": "legendary_motorsport",
-  "cognoscenti2": "legendary_motorsport",
-  "comet2": "southern_san_andreas",
-  "comet4": "legendary_motorsport",
-  "comet5": "legendary_motorsport",
-  "comet6": "legendary_motorsport",
-  "comet7": "legendary_motorsport",
-  "conada": "elitas_travel",
-  "conada2": "warstock",
-  "contender": "southern_san_andreas",
-  "coquette": "legendary_motorsport",
-  "coquette2": "legendary_motorsport",
-  "coquette3": "legendary_motorsport",
-  "coquette4": "legendary_motorsport",
-  "coquette5": "legendary_motorsport",
-  "corsita": "legendary_motorsport",
-  "coureur": "legendary_motorsport",
-  "crusader": "warstock",
-  "cuban800": "elitas_travel",
-  "cyclone": "legendary_motorsport",
-  "cyclone2": "legendary_motorsport",
-  "cypher": "legendary_motorsport",
-  "defiler": "southern_san_andreas",
-  "deity": "legendary_motorsport",
-  "deluxo": "warstock",
-  "deveste": "legendary_motorsport",
-  "deviant": "legendary_motorsport",
-  "dilettante": "southern_san_andreas",
-  "dinghy5": "warstock",
-  "dominator": "southern_san_andreas",
-  "dominator10": "southern_san_andreas",
-  "dominator2": "southern_san_andreas",
-  "dominator3": "southern_san_andreas",
-  "dominator7": "southern_san_andreas",
-  "dominator8": "southern_san_andreas",
-  "dominator9": "southern_san_andreas",
-  "dorado": "southern_san_andreas",
-  "double": "southern_san_andreas",
-  "drafter": "legendary_motorsport",
-  "draugur": "southern_san_andreas",
-  "driftchavosv6": "southern_san_andreas",
-  "driftcheburek": "southern_san_andreas",
-  "driftcypher": "legendary_motorsport",
-  "driftdominator10": "southern_san_andreas",
-  "driftdominator9": "southern_san_andreas",
-  "drifteuros": "legendary_motorsport",
-  "driftfr36": "southern_san_andreas",
-  "driftfuto": "southern_san_andreas",
-  "driftfuto2": "southern_san_andreas",
-  "driftgauntlet4": "southern_san_andreas",
-  "driftjester": "legendary_motorsport",
-  "driftjester3": "legendary_motorsport",
-  "driftkeitora": "southern_san_andreas",
-  "driftnebula": "southern_san_andreas",
-  "driftremus": "southern_san_andreas",
-  "driftrt3000": "southern_san_andreas",
-  "drifttampa": "southern_san_andreas",
-  "driftvorschlag": "southern_san_andreas",
-  "driftyosemite": "southern_san_andreas",
-  "driftzr350": "legendary_motorsport",
-  "dubsta3": "warstock",
-  "dukes2": "warstock",
-  "dukes3": "southern_san_andreas",
-  "dump": "warstock",
-  "dune": "southern_san_andreas",
-  "dune3": "warstock",
-  "dune4": "warstock",
-  "duster": "elitas_travel",
-  "dynasty": "southern_san_andreas",
-  "elegy2": "legendary_motorsport",
-  "ellie": "southern_san_andreas",
-  "emerus": "legendary_motorsport",
-  "enduro": "southern_san_andreas",
-  "entity2": "legendary_motorsport",
-  "entity3": "legendary_motorsport",
-  "entityxf": "legendary_motorsport",
-  "envisage": "legendary_motorsport",
-  "esskey": "southern_san_andreas",
-  "eudora": "southern_san_andreas",
-  "euros": "legendary_motorsport",
-  "eurosx32": "legendary_motorsport",
-  "everon": "southern_san_andreas",
-  "everon2": "southern_san_andreas",
-  "exemplar": "southern_san_andreas",
-  "f620": "southern_san_andreas",
-  "fagaloa": "southern_san_andreas",
-  "faggio": "southern_san_andreas",
-  "faggio3": "southern_san_andreas",
-  "felon": "southern_san_andreas",
-  "felon2": "southern_san_andreas",
-  "feltzer2": "southern_san_andreas",
-  "flashgt": "legendary_motorsport",
-  "fmj": "legendary_motorsport",
-  "fmj2": "legendary_motorsport",
-  "formula": "legendary_motorsport",
-  "formula2": "legendary_motorsport",
-  "fq2": "southern_san_andreas",
-  "fr36": "southern_san_andreas",
-  "freecrawler": "legendary_motorsport",
-  "frogger": "elitas_travel",
-  "fugitive": "southern_san_andreas",
-  "furia": "legendary_motorsport",
-  "furoregt": "legendary_motorsport",
-  "fusilade": "southern_san_andreas",
-  "futo": "southern_san_andreas",
-  "futo2": "southern_san_andreas",
-  "gargoyle": "southern_san_andreas",
-  "gauntlet": "southern_san_andreas",
-  "gauntlet2": "southern_san_andreas",
-  "gauntlet3": "southern_san_andreas",
-  "gauntlet4": "southern_san_andreas",
-  "gauntlet6": "southern_san_andreas",
-  "gb200": "legendary_motorsport",
-  "gburrito": "southern_san_andreas",
-  "gp1": "legendary_motorsport",
-  "granger": "southern_san_andreas",
-  "granger2": "southern_san_andreas",
-  "gresley": "southern_san_andreas",
-  "growler": "legendary_motorsport",
-  "gt500": "legendary_motorsport",
-  "gt750": "legendary_motorsport",
-  "guardian": "southern_san_andreas",
-  "habanero": "southern_san_andreas",
-  "hakuchou": "southern_san_andreas",
-  "hakuchou2": "legendary_motorsport",
-  "halftrack": "warstock",
-  "havok": "elitas_travel",
-  "hellion": "southern_san_andreas",
-  "hermes": "southern_san_andreas",
-  "hexer": "southern_san_andreas",
-  "hotknife": "legendary_motorsport",
-  "hotring": "southern_san_andreas",
-  "howard": "elitas_travel",
-  "hunter": "warstock",
-  "huntley": "legendary_motorsport",
-  "hustler": "legendary_motorsport",
-  "ignus": "legendary_motorsport",
-  "ignus2": "warstock",
-  "imorgon": "legendary_motorsport",
-  "impaler": "southern_san_andreas",
-  "impaler5": "southern_san_andreas",
-  "impaler6": "southern_san_andreas",
-  "infernus": "southern_san_andreas",
-  "infernus2": "legendary_motorsport",
-  "ingot": "southern_san_andreas",
-  "innovation": "southern_san_andreas",
-  "insurgent": "warstock",
-  "insurgent2": "warstock",
-  "issi2": "southern_san_andreas",
-  "issi3": "southern_san_andreas",
-  "issi7": "southern_san_andreas",
-  "issi8": "southern_san_andreas",
-  "itali2": "legendary_motorsport",
-  "italirsx": "legendary_motorsport",
-  "iwagen": "southern_san_andreas",
-  "jackal": "southern_san_andreas",
-  "jb700": "legendary_motorsport",
-  "jb7002": "warstock",
-  "jester": "legendary_motorsport",
-  "jester2": "southern_san_andreas",
-  "jester3": "legendary_motorsport",
-  "jester4": "legendary_motorsport",
-  "jester5": "legendary_motorsport",
-  "jetmax": "dock_tease",
-  "journey": "warstock",
-  "journey2": "southern_san_andreas",
-  "jubilee": "legendary_motorsport",
-  "kalahari": "southern_san_andreas",
-  "kamacho": "southern_san_andreas",
-  "kanjo": "southern_san_andreas",
-  "kanjosj": "southern_san_andreas",
-  "keitora": "southern_san_andreas",
-  "khamelion": "legendary_motorsport",
-  "khanjali": "warstock",
-  "komoda": "legendary_motorsport",
-  "kosatka": "warstock",
-  "krieger": "legendary_motorsport",
-  "kuruma2": "southern_san_andreas",
-  "l35": "southern_san_andreas",
-  "l352": "southern_san_andreas",
-  "landstalker": "southern_san_andreas",
-  "landstalker2": "southern_san_andreas",
-  "lazer": "warstock",
-  "le7b": "legendary_motorsport",
-  "lectro": "legendary_motorsport",
-  "lguard": "warstock",
-  "limo2": "warstock",
-  "lm87": "legendary_motorsport",
-  "longfin": "dock_tease",
-  "luiva": "legendary_motorsport",
-  "lurcher": "southern_san_andreas",
-  "luxor": "elitas_travel",
-  "luxor2": "elitas_travel",
-  "lynx": "legendary_motorsport",
-  "mamba": "legendary_motorsport",
-  "mammatus": "elitas_travel",
-  "manchez": "southern_san_andreas",
-  "manchez2": "warstock",
-  "marquis": "dock_tease",
-  "marshall": "warstock",
-  "massacro": "legendary_motorsport",
-  "massacro2": "southern_san_andreas",
-  "menacer": "warstock",
-  "michelli": "southern_san_andreas",
-  "microlight": "elitas_travel",
-  "miljet": "elitas_travel",
-  "minitank": "warstock",
-  "minivan": "southern_san_andreas",
-  "mogul": "warstock",
-  "molotok": "warstock",
-  "monroe": "legendary_motorsport",
-  "monstrociti": "southern_san_andreas",
-  "mule": "warstock",
-  "mule4": "warstock",
-  "nebula": "southern_san_andreas",
-  "nemesis": "southern_san_andreas",
-  "neo": "legendary_motorsport",
-  "neon": "legendary_motorsport",
-  "nightblade": "southern_san_andreas",
-  "nightshade": "legendary_motorsport",
-  "nightshark": "warstock",
-  "nimbus": "elitas_travel",
-  "ninef": "southern_san_andreas",
-  "ninef2": "legendary_motorsport",
-  "niobe": "legendary_motorsport",
-  "nokota": "warstock",
-  "novak": "legendary_motorsport",
-  "omnis": "southern_san_andreas",
-  "omnisegt": "legendary_motorsport",
-  "openwheel1": "legendary_motorsport",
-  "openwheel2": "legendary_motorsport",
-  "oppressor": "warstock",
-  "oppressor2": "warstock",
-  "oracle": "southern_san_andreas",
-  "oracle2": "southern_san_andreas",
-  "osiris": "legendary_motorsport",
-  "outlaw": "southern_san_andreas",
-  "panthere": "legendary_motorsport",
-  "panto": "southern_san_andreas",
-  "paradise": "southern_san_andreas",
-  "paragon": "legendary_motorsport",
-  "paragon3": "legendary_motorsport",
-  "pariah": "legendary_motorsport",
-  "patriot": "southern_san_andreas",
-  "patriot2": "southern_san_andreas",
-  "patriot3": "southern_san_andreas",
-  "patrolboat": "warstock",
-  "pbus": "warstock",
-  "pbus2": "southern_san_andreas",
-  "pcj": "southern_san_andreas",
-  "penetrator": "legendary_motorsport",
-  "penumbra": "southern_san_andreas",
-  "penumbra2": "southern_san_andreas",
-  "peyote2": "southern_san_andreas",
-  "pfister811": "legendary_motorsport",
-  "phantom2": "warstock",
-  "picador": "southern_san_andreas",
-  "pigalle": "southern_san_andreas",
-  "pipistrello": "legendary_motorsport",
-  "polbuffalo": "warstock",
-  "polbuffalo6": "warstock",
-  "polcaracara": "warstock",
-  "polcoquette4": "warstock",
-  "poldominator10": "warstock",
-  "poldorado": "warstock",
-  "polfaction2": "warstock",
-  "polgauntlet": "warstock",
-  "polgreenwood": "warstock",
-  "police4": "warstock",
-  "police5": "warstock",
-  "polimpaler5": "warstock",
-  "polimpaler6": "warstock",
-  "polterminus": "warstock",
-  "postlude": "southern_san_andreas",
-  "pounder2": "warstock",
-  "powersurge": "legendary_motorsport",
-  "prairie": "southern_san_andreas",
-  "predator": "warstock",
-  "premier": "southern_san_andreas",
-  "previon": "southern_san_andreas",
-  "prototipo": "legendary_motorsport",
-  "pyro": "warstock",
-  "r300": "legendary_motorsport",
-  "radi": "southern_san_andreas",
-  "raiden": "legendary_motorsport",
-  "raiju": "warstock",
-  "rallytruck": "southern_san_andreas",
-  "rancherxl": "southern_san_andreas",
-  "rapidgt": "legendary_motorsport",
-  "rapidgt3": "legendary_motorsport",
-  "raptor": "legendary_motorsport",
-  "ratbike": "southern_san_andreas",
-  "ratel": "southern_san_andreas",
-  "ratloader": "southern_san_andreas",
-  "ratloader2": "southern_san_andreas",
-  "rcbandito": "southern_san_andreas",
-  "reaper": "legendary_motorsport",
-  "rebel": "southern_san_andreas",
-  "rebel2": "southern_san_andreas",
-  "rebla": "legendary_motorsport",
-  "reever": "legendary_motorsport",
-  "regina": "southern_san_andreas",
-  "remus": "southern_san_andreas",
-  "rentalbus": "warstock",
-  "retinue": "southern_san_andreas",
-  "retinue2": "southern_san_andreas",
-  "revolter": "legendary_motorsport",
-  "rhapsody": "southern_san_andreas",
-  "rhino": "warstock",
-  "riata": "southern_san_andreas",
-  "riot": "warstock",
-  "riot2": "warstock",
-  "rocoto": "southern_san_andreas",
-  "rogue": "warstock",
-  "romero": "southern_san_andreas",
-  "rrocket": "legendary_motorsport",
-  "rt3000": "southern_san_andreas",
-  "ruffian": "southern_san_andreas",
-  "ruiner": "southern_san_andreas",
-  "ruiner2": "warstock",
-  "ruiner4": "southern_san_andreas",
-  "rumpo3": "southern_san_andreas",
-  "ruston": "legendary_motorsport",
-  "s80": "legendary_motorsport",
-  "s95": "southern_san_andreas",
-  "sadler": "southern_san_andreas",
-  "sanchez": "southern_san_andreas",
-  "sanctus": "southern_san_andreas",
-  "sandking": "southern_san_andreas",
-  "sandking2": "southern_san_andreas",
-  "savage": "warstock",
-  "savestra": "legendary_motorsport",
-  "sc1": "legendary_motorsport",
-  "schafter3": "legendary_motorsport",
-  "schafter4": "legendary_motorsport",
-  "schafter5": "legendary_motorsport",
-  "schafter6": "legendary_motorsport",
-  "schlagen": "legendary_motorsport",
-  "schwarzer": "southern_san_andreas",
-  "scorcher": "pedal_metal",
-  "seabreeze": "elitas_travel",
-  "seashark": "dock_tease",
-  "seminole": "southern_san_andreas",
-  "seminole2": "southern_san_andreas",
-  "sentinel2": "southern_san_andreas",
-  "sentinel6": "southern_san_andreas",
-  "serrano": "southern_san_andreas",
-  "seven70": "legendary_motorsport",
-  "shamal": "elitas_travel",
-  "sheava": "legendary_motorsport",
-  "shinobi": "legendary_motorsport",
-  "shotaro": "legendary_motorsport",
-  "slamtruck": "southern_san_andreas",
-  "sm722": "legendary_motorsport",
-  "sovereign": "southern_san_andreas",
-  "speedo4": "warstock",
-  "squaddie": "warstock",
-  "stafford": "legendary_motorsport",
-  "stalion": "southern_san_andreas",
-  "stalion2": "southern_san_andreas",
-  "stanier": "southern_san_andreas",
-  "starling": "warstock",
-  "stinger": "legendary_motorsport",
-  "stingergt": "legendary_motorsport",
-  "stingertt": "legendary_motorsport",
-  "stockade": "warstock",
-  "streamer216": "warstock",
-  "streiter": "southern_san_andreas",
-  "stretch": "southern_san_andreas",
-  "strikeforce": "warstock",
-  "stryder": "legendary_motorsport",
-  "stunt": "elitas_travel",
-  "submersible2": "dock_tease",
-  "sugoi": "southern_san_andreas",
-  "sultan2": "southern_san_andreas",
-  "sultan3": "southern_san_andreas",
-  "suntrap": "dock_tease",
-  "superd": "southern_san_andreas",
-  "supervolito": "elitas_travel",
-  "supervolito2": "elitas_travel",
-  "surano": "southern_san_andreas",
-  "surfer": "southern_san_andreas",
-  "surfer3": "southern_san_andreas",
-  "surge": "southern_san_andreas",
-  "swift": "elitas_travel",
-  "swift2": "elitas_travel",
-  "swinger": "legendary_motorsport",
-  "t20": "legendary_motorsport",
-  "taco": "warstock",
-  "tahoma": "southern_san_andreas",
-  "tailgater": "southern_san_andreas",
-  "tailgater2": "legendary_motorsport",
-  "taipan": "legendary_motorsport",
-  "tampa": "southern_san_andreas",
-  "tampa2": "southern_san_andreas",
-  "technical": "warstock",
-  "technical2": "warstock",
-  "tempesta": "legendary_motorsport",
-  "tenf": "legendary_motorsport",
-  "terbyte": "warstock",
-  "terminus": "southern_san_andreas",
-  "tezeract": "legendary_motorsport",
-  "thrax": "legendary_motorsport",
-  "thrust": "legendary_motorsport",
-  "thruster": "warstock",
-  "tigon": "legendary_motorsport",
-  "titan": "elitas_travel",
-  "toreador": "warstock",
-  "torero": "legendary_motorsport",
-  "torero2": "legendary_motorsport",
-  "tornado6": "southern_san_andreas",
-  "toro": "dock_tease",
-  "toros": "legendary_motorsport",
-  "tribike": "pedal_metal",
-  "tribike2": "pedal_metal",
-  "tribike3": "pedal_metal",
-  "trophytruck": "southern_san_andreas",
-  "trophytruck2": "southern_san_andreas",
-  "tropic": "dock_tease",
-  "tropos": "southern_san_andreas",
-  "tula": "warstock",
-  "tulip": "southern_san_andreas",
-  "tulip2": "southern_san_andreas",
-  "turismo2": "legendary_motorsport",
-  "turismo3": "legendary_motorsport",
-  "turismor": "legendary_motorsport",
-  "tyrant": "legendary_motorsport",
-  "tyrus": "legendary_motorsport",
-  "vacca": "legendary_motorsport",
-  "vader": "southern_san_andreas",
-  "vagner": "legendary_motorsport",
-  "vagrant": "southern_san_andreas",
-  "valkyrie": "warstock",
-  "vamos": "southern_san_andreas",
-  "vectre": "legendary_motorsport",
-  "velum": "elitas_travel",
-  "velum2": "elitas_travel",
-  "verlierer2": "legendary_motorsport",
-  "verus": "warstock",
-  "vestra": "elitas_travel",
-  "vetir": "warstock",
-  "veto": "southern_san_andreas",
-  "veto2": "southern_san_andreas",
-  "vigero": "southern_san_andreas",
-  "vigero2": "southern_san_andreas",
-  "vigero3": "southern_san_andreas",
-  "vindicator": "legendary_motorsport",
-  "virtue": "legendary_motorsport",
-  "viseris": "legendary_motorsport",
-  "visione": "legendary_motorsport",
-  "vivanite": "southern_san_andreas",
-  "volatol": "warstock",
-  "volatus": "elitas_travel",
-  "voltic": "legendary_motorsport",
-  "voltic2": "warstock",
-  "vorschlaghammer": "southern_san_andreas",
-  "vstr": "legendary_motorsport",
-  "warrener": "southern_san_andreas",
-  "warrener2": "southern_san_andreas",
-  "washington": "southern_san_andreas",
-  "wastelander": "warstock",
-  "weevil": "southern_san_andreas",
-  "windsor": "legendary_motorsport",
-  "windsor2": "legendary_motorsport",
-  "winky": "warstock",
-  "wolfsbane": "southern_san_andreas",
-  "xa21": "legendary_motorsport",
-  "xls": "legendary_motorsport",
-  "xls2": "legendary_motorsport",
-  "xtreme": "legendary_motorsport",
-  "yosemite": "southern_san_andreas",
-  "yosemite1500": "southern_san_andreas",
-  "yosemite2": "southern_san_andreas",
-  "youga": "southern_san_andreas",
-  "youga2": "southern_san_andreas",
-  "z190": "legendary_motorsport",
-  "zeno": "legendary_motorsport",
-  "zentorno": "legendary_motorsport",
-  "zhaba": "warstock",
-  "zion": "southern_san_andreas",
-  "zion2": "southern_san_andreas",
-  "zion3": "southern_san_andreas",
-  "zombiea": "southern_san_andreas",
-  "zorrusso": "legendary_motorsport",
-  "zr350": "legendary_motorsport",
-  "ztype": "legendary_motorsport"
+  "adder": [
+    "legendary_motorsport"
+  ],
+  "airbus": [
+    "warstock"
+  ],
+  "akula": [
+    "warstock"
+  ],
+  "akuma": [
+    "southern_san_andreas"
+  ],
+  "aleutian": [
+    "legendary_motorsport"
+  ],
+  "alkonost": [
+    "warstock"
+  ],
+  "alphaz1": [
+    "elitas_travel"
+  ],
+  "annihilator": [
+    "elitas_travel"
+  ],
+  "annihilator2": [
+    "warstock"
+  ],
+  "apc": [
+    "warstock"
+  ],
+  "arbitergt": [
+    "southern_san_andreas"
+  ],
+  "ardent": [
+    "warstock"
+  ],
+  "asbo": [
+    "southern_san_andreas"
+  ],
+  "asea": [
+    "southern_san_andreas"
+  ],
+  "asterope": [
+    "southern_san_andreas"
+  ],
+  "asterope2": [
+    "southern_san_andreas"
+  ],
+  "astrale": [
+    "legendary_motorsport"
+  ],
+  "astron": [
+    "legendary_motorsport"
+  ],
+  "astron2": [
+    "legendary_motorsport"
+  ],
+  "autarch": [
+    "legendary_motorsport"
+  ],
+  "avarus": [
+    "southern_san_andreas"
+  ],
+  "avenger": [
+    "warstock"
+  ],
+  "bagger": [
+    "southern_san_andreas"
+  ],
+  "baller": [
+    "southern_san_andreas"
+  ],
+  "baller3": [
+    "legendary_motorsport"
+  ],
+  "baller4": [
+    "legendary_motorsport"
+  ],
+  "baller5": [
+    "legendary_motorsport"
+  ],
+  "baller6": [
+    "legendary_motorsport"
+  ],
+  "baller7": [
+    "legendary_motorsport"
+  ],
+  "baller8": [
+    "legendary_motorsport"
+  ],
+  "banshee3": [
+    "legendary_motorsport"
+  ],
+  "barracks": [
+    "warstock"
+  ],
+  "barrage": [
+    "warstock"
+  ],
+  "bati": [
+    "southern_san_andreas"
+  ],
+  "bati2": [
+    "southern_san_andreas"
+  ],
+  "benson2": [
+    "warstock"
+  ],
+  "besra": [
+    "elitas_travel"
+  ],
+  "bestiagts": [
+    "legendary_motorsport"
+  ],
+  "bifta": [
+    "southern_san_andreas"
+  ],
+  "bison": [
+    "southern_san_andreas"
+  ],
+  "bjxl": [
+    "southern_san_andreas"
+  ],
+  "blazer": [
+    "southern_san_andreas"
+  ],
+  "blazer2": [
+    "warstock"
+  ],
+  "blazer3": [
+    "southern_san_andreas"
+  ],
+  "blazer4": [
+    "southern_san_andreas"
+  ],
+  "blazer5": [
+    "warstock"
+  ],
+  "blimp3": [
+    "elitas_travel"
+  ],
+  "bobcatxl": [
+    "southern_san_andreas"
+  ],
+  "bodhi2": [
+    "southern_san_andreas"
+  ],
+  "bombushka": [
+    "warstock"
+  ],
+  "boor": [
+    "southern_san_andreas"
+  ],
+  "boxville5": [
+    "warstock"
+  ],
+  "boxville6": [
+    "warstock"
+  ],
+  "brawler": [
+    "legendary_motorsport"
+  ],
+  "brickade": [
+    "warstock"
+  ],
+  "brickade2": [
+    "warstock"
+  ],
+  "brigham": [
+    "southern_san_andreas"
+  ],
+  "brioso": [
+    "southern_san_andreas"
+  ],
+  "brioso2": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "broadway": [
+    "legendary_motorsport"
+  ],
+  "btype": [
+    "legendary_motorsport"
+  ],
+  "btype2": [
+    "southern_san_andreas"
+  ],
+  "btype3": [
+    "legendary_motorsport"
+  ],
+  "buffalo2": [
+    "southern_san_andreas"
+  ],
+  "buffalo4": [
+    "southern_san_andreas"
+  ],
+  "buffalo5": [
+    "legendary_motorsport"
+  ],
+  "bullet": [
+    "legendary_motorsport"
+  ],
+  "burrito2": [
+    "warstock"
+  ],
+  "buzzard": [
+    "warstock"
+  ],
+  "calico": [
+    "southern_san_andreas"
+  ],
+  "caracara": [
+    "warstock"
+  ],
+  "caracara2": [
+    "southern_san_andreas"
+  ],
+  "carbonizzare": [
+    "legendary_motorsport"
+  ],
+  "carbonrs": [
+    "legendary_motorsport"
+  ],
+  "casco": [
+    "legendary_motorsport"
+  ],
+  "castigator": [
+    "southern_san_andreas"
+  ],
+  "cavalcade": [
+    "southern_san_andreas"
+  ],
+  "cavalcade3": [
+    "southern_san_andreas"
+  ],
+  "champion": [
+    "legendary_motorsport"
+  ],
+  "chavosv6": [
+    "southern_san_andreas"
+  ],
+  "cheburek": [
+    "southern_san_andreas"
+  ],
+  "cheetah2": [
+    "legendary_motorsport"
+  ],
+  "chernobog": [
+    "warstock"
+  ],
+  "chimera": [
+    "southern_san_andreas"
+  ],
+  "chino": [
+    "legendary_motorsport",
+    "bennys"
+  ],
+  "cinquemila": [
+    "legendary_motorsport"
+  ],
+  "cliffhanger": [
+    "southern_san_andreas"
+  ],
+  "clique": [
+    "legendary_motorsport"
+  ],
+  "clique2": [
+    "southern_san_andreas"
+  ],
+  "club": [
+    "southern_san_andreas"
+  ],
+  "coach": [
+    "warstock"
+  ],
+  "cog55": [
+    "legendary_motorsport"
+  ],
+  "cog552": [
+    "legendary_motorsport"
+  ],
+  "cogcabrio": [
+    "legendary_motorsport"
+  ],
+  "cognoscenti": [
+    "legendary_motorsport"
+  ],
+  "cognoscenti2": [
+    "legendary_motorsport"
+  ],
+  "comet2": [
+    "southern_san_andreas",
+    "legendary_motorsport",
+    "bennys"
+  ],
+  "comet4": [
+    "legendary_motorsport"
+  ],
+  "comet5": [
+    "legendary_motorsport"
+  ],
+  "comet6": [
+    "legendary_motorsport"
+  ],
+  "comet7": [
+    "legendary_motorsport"
+  ],
+  "conada": [
+    "elitas_travel"
+  ],
+  "conada2": [
+    "warstock"
+  ],
+  "contender": [
+    "southern_san_andreas"
+  ],
+  "coquette": [
+    "legendary_motorsport"
+  ],
+  "coquette2": [
+    "legendary_motorsport"
+  ],
+  "coquette3": [
+    "legendary_motorsport"
+  ],
+  "coquette4": [
+    "legendary_motorsport"
+  ],
+  "coquette5": [
+    "legendary_motorsport"
+  ],
+  "corsita": [
+    "legendary_motorsport"
+  ],
+  "coureur": [
+    "legendary_motorsport"
+  ],
+  "crusader": [
+    "warstock"
+  ],
+  "cuban800": [
+    "elitas_travel"
+  ],
+  "cyclone": [
+    "legendary_motorsport"
+  ],
+  "cyclone2": [
+    "legendary_motorsport"
+  ],
+  "cypher": [
+    "legendary_motorsport"
+  ],
+  "defiler": [
+    "southern_san_andreas"
+  ],
+  "deity": [
+    "legendary_motorsport"
+  ],
+  "deluxo": [
+    "warstock"
+  ],
+  "deveste": [
+    "legendary_motorsport"
+  ],
+  "deviant": [
+    "legendary_motorsport"
+  ],
+  "diablous": [
+    "bennys"
+  ],
+  "dilettante": [
+    "southern_san_andreas"
+  ],
+  "dinghy5": [
+    "warstock"
+  ],
+  "dominator": [
+    "southern_san_andreas"
+  ],
+  "dominator10": [
+    "southern_san_andreas"
+  ],
+  "dominator2": [
+    "southern_san_andreas"
+  ],
+  "dominator3": [
+    "southern_san_andreas"
+  ],
+  "dominator7": [
+    "southern_san_andreas"
+  ],
+  "dominator8": [
+    "southern_san_andreas"
+  ],
+  "dominator9": [
+    "southern_san_andreas"
+  ],
+  "dorado": [
+    "southern_san_andreas"
+  ],
+  "double": [
+    "southern_san_andreas"
+  ],
+  "drafter": [
+    "legendary_motorsport"
+  ],
+  "draugur": [
+    "southern_san_andreas"
+  ],
+  "driftchavosv6": [
+    "southern_san_andreas"
+  ],
+  "driftcheburek": [
+    "southern_san_andreas"
+  ],
+  "driftcypher": [
+    "legendary_motorsport"
+  ],
+  "driftdominator10": [
+    "southern_san_andreas"
+  ],
+  "driftdominator9": [
+    "southern_san_andreas"
+  ],
+  "drifteuros": [
+    "legendary_motorsport"
+  ],
+  "driftfr36": [
+    "southern_san_andreas"
+  ],
+  "driftfuto": [
+    "southern_san_andreas"
+  ],
+  "driftfuto2": [
+    "southern_san_andreas"
+  ],
+  "driftgauntlet4": [
+    "southern_san_andreas"
+  ],
+  "driftjester": [
+    "legendary_motorsport"
+  ],
+  "driftjester3": [
+    "legendary_motorsport"
+  ],
+  "driftkeitora": [
+    "southern_san_andreas"
+  ],
+  "driftnebula": [
+    "southern_san_andreas"
+  ],
+  "driftremus": [
+    "southern_san_andreas"
+  ],
+  "driftrt3000": [
+    "southern_san_andreas"
+  ],
+  "drifttampa": [
+    "southern_san_andreas"
+  ],
+  "driftvorschlag": [
+    "southern_san_andreas"
+  ],
+  "driftyosemite": [
+    "southern_san_andreas"
+  ],
+  "driftzr350": [
+    "legendary_motorsport"
+  ],
+  "dubsta3": [
+    "warstock"
+  ],
+  "dukes2": [
+    "warstock"
+  ],
+  "dukes3": [
+    "southern_san_andreas"
+  ],
+  "dump": [
+    "warstock"
+  ],
+  "dune": [
+    "southern_san_andreas"
+  ],
+  "dune3": [
+    "warstock"
+  ],
+  "dune4": [
+    "warstock"
+  ],
+  "duster": [
+    "elitas_travel"
+  ],
+  "dynasty": [
+    "southern_san_andreas"
+  ],
+  "elegy2": [
+    "legendary_motorsport",
+    "bennys"
+  ],
+  "ellie": [
+    "southern_san_andreas"
+  ],
+  "emerus": [
+    "legendary_motorsport"
+  ],
+  "enduro": [
+    "southern_san_andreas"
+  ],
+  "entity2": [
+    "legendary_motorsport"
+  ],
+  "entity3": [
+    "legendary_motorsport"
+  ],
+  "entityxf": [
+    "legendary_motorsport"
+  ],
+  "envisage": [
+    "legendary_motorsport"
+  ],
+  "esskey": [
+    "southern_san_andreas"
+  ],
+  "eudora": [
+    "southern_san_andreas"
+  ],
+  "euros": [
+    "legendary_motorsport"
+  ],
+  "eurosx32": [
+    "legendary_motorsport"
+  ],
+  "everon": [
+    "southern_san_andreas"
+  ],
+  "everon2": [
+    "southern_san_andreas"
+  ],
+  "exemplar": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "f620": [
+    "southern_san_andreas"
+  ],
+  "faction": [
+    "bennys"
+  ],
+  "fagaloa": [
+    "southern_san_andreas"
+  ],
+  "faggio": [
+    "southern_san_andreas"
+  ],
+  "faggio3": [
+    "southern_san_andreas"
+  ],
+  "fcr": [
+    "bennys"
+  ],
+  "felon": [
+    "southern_san_andreas"
+  ],
+  "felon2": [
+    "southern_san_andreas"
+  ],
+  "feltzer2": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "flashgt": [
+    "legendary_motorsport"
+  ],
+  "fmj": [
+    "legendary_motorsport"
+  ],
+  "fmj2": [
+    "legendary_motorsport"
+  ],
+  "formula": [
+    "legendary_motorsport"
+  ],
+  "formula2": [
+    "legendary_motorsport"
+  ],
+  "fq2": [
+    "southern_san_andreas"
+  ],
+  "fr36": [
+    "southern_san_andreas"
+  ],
+  "freecrawler": [
+    "legendary_motorsport"
+  ],
+  "frogger": [
+    "elitas_travel"
+  ],
+  "fugitive": [
+    "southern_san_andreas"
+  ],
+  "furia": [
+    "legendary_motorsport"
+  ],
+  "furoregt": [
+    "legendary_motorsport"
+  ],
+  "fusilade": [
+    "southern_san_andreas"
+  ],
+  "futo": [
+    "southern_san_andreas"
+  ],
+  "futo2": [
+    "southern_san_andreas"
+  ],
+  "gargoyle": [
+    "southern_san_andreas"
+  ],
+  "gauntlet": [
+    "southern_san_andreas"
+  ],
+  "gauntlet2": [
+    "southern_san_andreas"
+  ],
+  "gauntlet3": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "gauntlet4": [
+    "southern_san_andreas"
+  ],
+  "gauntlet6": [
+    "southern_san_andreas"
+  ],
+  "gb200": [
+    "legendary_motorsport"
+  ],
+  "gburrito": [
+    "southern_san_andreas"
+  ],
+  "gp1": [
+    "legendary_motorsport"
+  ],
+  "granger": [
+    "southern_san_andreas"
+  ],
+  "granger2": [
+    "southern_san_andreas"
+  ],
+  "gresley": [
+    "southern_san_andreas"
+  ],
+  "growler": [
+    "legendary_motorsport"
+  ],
+  "gt500": [
+    "legendary_motorsport"
+  ],
+  "gt750": [
+    "legendary_motorsport"
+  ],
+  "guardian": [
+    "southern_san_andreas"
+  ],
+  "habanero": [
+    "southern_san_andreas"
+  ],
+  "hakuchou": [
+    "southern_san_andreas"
+  ],
+  "hakuchou2": [
+    "legendary_motorsport"
+  ],
+  "halftrack": [
+    "warstock"
+  ],
+  "havok": [
+    "elitas_travel"
+  ],
+  "hellion": [
+    "southern_san_andreas"
+  ],
+  "hermes": [
+    "southern_san_andreas"
+  ],
+  "hexer": [
+    "southern_san_andreas"
+  ],
+  "hotknife": [
+    "legendary_motorsport"
+  ],
+  "hotring": [
+    "southern_san_andreas"
+  ],
+  "howard": [
+    "elitas_travel"
+  ],
+  "hunter": [
+    "warstock"
+  ],
+  "huntley": [
+    "legendary_motorsport"
+  ],
+  "hustler": [
+    "legendary_motorsport"
+  ],
+  "ignus": [
+    "legendary_motorsport"
+  ],
+  "ignus2": [
+    "warstock"
+  ],
+  "imorgon": [
+    "legendary_motorsport"
+  ],
+  "impaler": [
+    "southern_san_andreas"
+  ],
+  "impaler5": [
+    "southern_san_andreas"
+  ],
+  "impaler6": [
+    "southern_san_andreas"
+  ],
+  "infernus": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "infernus2": [
+    "legendary_motorsport"
+  ],
+  "ingot": [
+    "southern_san_andreas"
+  ],
+  "innovation": [
+    "southern_san_andreas"
+  ],
+  "insurgent": [
+    "warstock"
+  ],
+  "insurgent2": [
+    "warstock"
+  ],
+  "issi2": [
+    "southern_san_andreas"
+  ],
+  "issi3": [
+    "southern_san_andreas"
+  ],
+  "issi7": [
+    "southern_san_andreas"
+  ],
+  "issi8": [
+    "southern_san_andreas"
+  ],
+  "itali2": [
+    "legendary_motorsport"
+  ],
+  "italirsx": [
+    "legendary_motorsport"
+  ],
+  "iwagen": [
+    "southern_san_andreas"
+  ],
+  "jackal": [
+    "southern_san_andreas"
+  ],
+  "jb700": [
+    "legendary_motorsport"
+  ],
+  "jb7002": [
+    "warstock"
+  ],
+  "jester": [
+    "legendary_motorsport"
+  ],
+  "jester2": [
+    "southern_san_andreas"
+  ],
+  "jester3": [
+    "legendary_motorsport"
+  ],
+  "jester4": [
+    "legendary_motorsport"
+  ],
+  "jester5": [
+    "legendary_motorsport"
+  ],
+  "jetmax": [
+    "dock_tease"
+  ],
+  "journey": [
+    "warstock"
+  ],
+  "journey2": [
+    "southern_san_andreas"
+  ],
+  "jubilee": [
+    "legendary_motorsport"
+  ],
+  "kalahari": [
+    "southern_san_andreas"
+  ],
+  "kamacho": [
+    "southern_san_andreas"
+  ],
+  "kanjo": [
+    "southern_san_andreas"
+  ],
+  "kanjosj": [
+    "southern_san_andreas"
+  ],
+  "keitora": [
+    "southern_san_andreas"
+  ],
+  "khamelion": [
+    "legendary_motorsport"
+  ],
+  "khanjali": [
+    "warstock"
+  ],
+  "komoda": [
+    "legendary_motorsport"
+  ],
+  "kosatka": [
+    "warstock"
+  ],
+  "krieger": [
+    "legendary_motorsport"
+  ],
+  "kuruma2": [
+    "southern_san_andreas"
+  ],
+  "l35": [
+    "southern_san_andreas"
+  ],
+  "l352": [
+    "southern_san_andreas"
+  ],
+  "landstalker": [
+    "southern_san_andreas"
+  ],
+  "landstalker2": [
+    "southern_san_andreas"
+  ],
+  "lazer": [
+    "warstock"
+  ],
+  "le7b": [
+    "legendary_motorsport"
+  ],
+  "lectro": [
+    "legendary_motorsport"
+  ],
+  "lguard": [
+    "warstock"
+  ],
+  "limo2": [
+    "warstock"
+  ],
+  "lm87": [
+    "legendary_motorsport"
+  ],
+  "longfin": [
+    "dock_tease"
+  ],
+  "luiva": [
+    "legendary_motorsport"
+  ],
+  "lurcher": [
+    "southern_san_andreas"
+  ],
+  "luxor": [
+    "elitas_travel"
+  ],
+  "luxor2": [
+    "elitas_travel"
+  ],
+  "lynx": [
+    "legendary_motorsport"
+  ],
+  "mamba": [
+    "legendary_motorsport"
+  ],
+  "mammatus": [
+    "elitas_travel"
+  ],
+  "manana": [
+    "bennys"
+  ],
+  "manchez": [
+    "southern_san_andreas"
+  ],
+  "manchez2": [
+    "warstock"
+  ],
+  "marquis": [
+    "dock_tease"
+  ],
+  "marshall": [
+    "warstock"
+  ],
+  "massacro": [
+    "legendary_motorsport"
+  ],
+  "massacro2": [
+    "southern_san_andreas"
+  ],
+  "menacer": [
+    "warstock"
+  ],
+  "michelli": [
+    "southern_san_andreas"
+  ],
+  "microlight": [
+    "elitas_travel"
+  ],
+  "miljet": [
+    "elitas_travel"
+  ],
+  "minitank": [
+    "warstock"
+  ],
+  "minivan": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "mogul": [
+    "warstock"
+  ],
+  "molotok": [
+    "warstock"
+  ],
+  "monroe": [
+    "legendary_motorsport"
+  ],
+  "monstrociti": [
+    "southern_san_andreas"
+  ],
+  "mule": [
+    "warstock"
+  ],
+  "mule4": [
+    "warstock"
+  ],
+  "nebula": [
+    "southern_san_andreas"
+  ],
+  "nemesis": [
+    "southern_san_andreas"
+  ],
+  "neo": [
+    "legendary_motorsport"
+  ],
+  "neon": [
+    "legendary_motorsport"
+  ],
+  "nero": [
+    "bennys"
+  ],
+  "nightblade": [
+    "southern_san_andreas"
+  ],
+  "nightshade": [
+    "legendary_motorsport"
+  ],
+  "nightshark": [
+    "warstock"
+  ],
+  "nimbus": [
+    "elitas_travel"
+  ],
+  "ninef": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "ninef2": [
+    "legendary_motorsport"
+  ],
+  "niobe": [
+    "legendary_motorsport"
+  ],
+  "nokota": [
+    "warstock"
+  ],
+  "novak": [
+    "legendary_motorsport"
+  ],
+  "omnis": [
+    "southern_san_andreas"
+  ],
+  "omnisegt": [
+    "legendary_motorsport"
+  ],
+  "openwheel1": [
+    "legendary_motorsport"
+  ],
+  "openwheel2": [
+    "legendary_motorsport"
+  ],
+  "oppressor": [
+    "warstock"
+  ],
+  "oppressor2": [
+    "warstock"
+  ],
+  "oracle": [
+    "southern_san_andreas"
+  ],
+  "oracle2": [
+    "southern_san_andreas"
+  ],
+  "osiris": [
+    "legendary_motorsport"
+  ],
+  "outlaw": [
+    "southern_san_andreas"
+  ],
+  "panthere": [
+    "legendary_motorsport"
+  ],
+  "panto": [
+    "southern_san_andreas"
+  ],
+  "paradise": [
+    "southern_san_andreas"
+  ],
+  "paragon": [
+    "legendary_motorsport"
+  ],
+  "paragon3": [
+    "legendary_motorsport"
+  ],
+  "pariah": [
+    "legendary_motorsport"
+  ],
+  "patriot": [
+    "southern_san_andreas"
+  ],
+  "patriot2": [
+    "southern_san_andreas"
+  ],
+  "patriot3": [
+    "southern_san_andreas"
+  ],
+  "patrolboat": [
+    "warstock"
+  ],
+  "pbus": [
+    "warstock"
+  ],
+  "pbus2": [
+    "southern_san_andreas"
+  ],
+  "pcj": [
+    "southern_san_andreas"
+  ],
+  "penetrator": [
+    "legendary_motorsport"
+  ],
+  "penumbra": [
+    "southern_san_andreas"
+  ],
+  "penumbra2": [
+    "southern_san_andreas"
+  ],
+  "peyote": [
+    "bennys"
+  ],
+  "peyote2": [
+    "southern_san_andreas"
+  ],
+  "pfister811": [
+    "legendary_motorsport"
+  ],
+  "phantom2": [
+    "warstock"
+  ],
+  "picador": [
+    "southern_san_andreas"
+  ],
+  "pigalle": [
+    "southern_san_andreas"
+  ],
+  "pipistrello": [
+    "legendary_motorsport"
+  ],
+  "polbuffalo": [
+    "warstock"
+  ],
+  "polbuffalo6": [
+    "warstock"
+  ],
+  "polcaracara": [
+    "warstock"
+  ],
+  "polcoquette4": [
+    "warstock"
+  ],
+  "poldominator10": [
+    "warstock"
+  ],
+  "poldorado": [
+    "warstock"
+  ],
+  "polfaction2": [
+    "warstock"
+  ],
+  "polgauntlet": [
+    "warstock"
+  ],
+  "polgreenwood": [
+    "warstock"
+  ],
+  "police4": [
+    "warstock"
+  ],
+  "police5": [
+    "warstock"
+  ],
+  "polimpaler5": [
+    "warstock"
+  ],
+  "polimpaler6": [
+    "warstock"
+  ],
+  "polterminus": [
+    "warstock"
+  ],
+  "postlude": [
+    "southern_san_andreas"
+  ],
+  "pounder2": [
+    "warstock"
+  ],
+  "powersurge": [
+    "legendary_motorsport"
+  ],
+  "prairie": [
+    "southern_san_andreas"
+  ],
+  "predator": [
+    "warstock"
+  ],
+  "premier": [
+    "southern_san_andreas"
+  ],
+  "previon": [
+    "southern_san_andreas"
+  ],
+  "prototipo": [
+    "legendary_motorsport"
+  ],
+  "pyro": [
+    "warstock"
+  ],
+  "r300": [
+    "legendary_motorsport"
+  ],
+  "radi": [
+    "southern_san_andreas"
+  ],
+  "raiden": [
+    "legendary_motorsport"
+  ],
+  "raiju": [
+    "warstock"
+  ],
+  "rallytruck": [
+    "southern_san_andreas"
+  ],
+  "rancherxl": [
+    "southern_san_andreas"
+  ],
+  "rapidgt": [
+    "legendary_motorsport"
+  ],
+  "rapidgt3": [
+    "legendary_motorsport"
+  ],
+  "raptor": [
+    "legendary_motorsport"
+  ],
+  "ratbike": [
+    "southern_san_andreas"
+  ],
+  "ratel": [
+    "southern_san_andreas"
+  ],
+  "ratloader": [
+    "southern_san_andreas"
+  ],
+  "ratloader2": [
+    "southern_san_andreas"
+  ],
+  "rcbandito": [
+    "southern_san_andreas"
+  ],
+  "reaper": [
+    "legendary_motorsport"
+  ],
+  "rebel": [
+    "southern_san_andreas"
+  ],
+  "rebel2": [
+    "southern_san_andreas"
+  ],
+  "rebla": [
+    "legendary_motorsport"
+  ],
+  "reever": [
+    "legendary_motorsport"
+  ],
+  "regina": [
+    "southern_san_andreas"
+  ],
+  "remus": [
+    "southern_san_andreas"
+  ],
+  "rentalbus": [
+    "warstock"
+  ],
+  "retinue": [
+    "southern_san_andreas"
+  ],
+  "retinue2": [
+    "southern_san_andreas"
+  ],
+  "revolter": [
+    "legendary_motorsport"
+  ],
+  "rhapsody": [
+    "southern_san_andreas"
+  ],
+  "rhino": [
+    "warstock"
+  ],
+  "riata": [
+    "southern_san_andreas"
+  ],
+  "riot": [
+    "warstock"
+  ],
+  "riot2": [
+    "warstock"
+  ],
+  "rocoto": [
+    "southern_san_andreas"
+  ],
+  "rogue": [
+    "warstock"
+  ],
+  "romero": [
+    "southern_san_andreas"
+  ],
+  "rrocket": [
+    "legendary_motorsport"
+  ],
+  "rt3000": [
+    "southern_san_andreas"
+  ],
+  "ruffian": [
+    "southern_san_andreas"
+  ],
+  "ruiner": [
+    "southern_san_andreas"
+  ],
+  "ruiner2": [
+    "warstock"
+  ],
+  "ruiner4": [
+    "southern_san_andreas"
+  ],
+  "rumpo3": [
+    "southern_san_andreas"
+  ],
+  "ruston": [
+    "legendary_motorsport"
+  ],
+  "s80": [
+    "legendary_motorsport"
+  ],
+  "s95": [
+    "southern_san_andreas"
+  ],
+  "sadler": [
+    "southern_san_andreas"
+  ],
+  "sanchez": [
+    "southern_san_andreas"
+  ],
+  "sanctus": [
+    "southern_san_andreas"
+  ],
+  "sandking": [
+    "southern_san_andreas"
+  ],
+  "sandking2": [
+    "southern_san_andreas"
+  ],
+  "savage": [
+    "warstock"
+  ],
+  "savestra": [
+    "legendary_motorsport"
+  ],
+  "sc1": [
+    "legendary_motorsport"
+  ],
+  "schafter3": [
+    "legendary_motorsport"
+  ],
+  "schafter4": [
+    "legendary_motorsport"
+  ],
+  "schafter5": [
+    "legendary_motorsport"
+  ],
+  "schafter6": [
+    "legendary_motorsport"
+  ],
+  "schlagen": [
+    "legendary_motorsport"
+  ],
+  "schwarzer": [
+    "southern_san_andreas"
+  ],
+  "scorcher": [
+    "pedal_metal"
+  ],
+  "seabreeze": [
+    "elitas_travel"
+  ],
+  "seashark": [
+    "dock_tease"
+  ],
+  "seminole": [
+    "southern_san_andreas"
+  ],
+  "seminole2": [
+    "southern_san_andreas"
+  ],
+  "sentinel2": [
+    "southern_san_andreas"
+  ],
+  "sentinel6": [
+    "southern_san_andreas"
+  ],
+  "serrano": [
+    "southern_san_andreas"
+  ],
+  "seven70": [
+    "legendary_motorsport"
+  ],
+  "shamal": [
+    "elitas_travel"
+  ],
+  "sheava": [
+    "legendary_motorsport"
+  ],
+  "shinobi": [
+    "legendary_motorsport"
+  ],
+  "shotaro": [
+    "legendary_motorsport"
+  ],
+  "slamtruck": [
+    "southern_san_andreas"
+  ],
+  "sm722": [
+    "legendary_motorsport"
+  ],
+  "sovereign": [
+    "southern_san_andreas"
+  ],
+  "specter": [
+    "bennys"
+  ],
+  "speedo4": [
+    "warstock"
+  ],
+  "squaddie": [
+    "warstock"
+  ],
+  "stafford": [
+    "legendary_motorsport"
+  ],
+  "stalion": [
+    "southern_san_andreas"
+  ],
+  "stalion2": [
+    "southern_san_andreas"
+  ],
+  "stanier": [
+    "southern_san_andreas"
+  ],
+  "starling": [
+    "warstock"
+  ],
+  "stinger": [
+    "legendary_motorsport"
+  ],
+  "stingergt": [
+    "legendary_motorsport"
+  ],
+  "stingertt": [
+    "legendary_motorsport"
+  ],
+  "stockade": [
+    "warstock"
+  ],
+  "streamer216": [
+    "warstock"
+  ],
+  "streiter": [
+    "southern_san_andreas"
+  ],
+  "stretch": [
+    "southern_san_andreas"
+  ],
+  "strikeforce": [
+    "warstock"
+  ],
+  "stryder": [
+    "legendary_motorsport"
+  ],
+  "stunt": [
+    "elitas_travel"
+  ],
+  "submersible2": [
+    "dock_tease"
+  ],
+  "sugoi": [
+    "southern_san_andreas"
+  ],
+  "sultan2": [
+    "southern_san_andreas"
+  ],
+  "sultan3": [
+    "southern_san_andreas"
+  ],
+  "suntrap": [
+    "dock_tease"
+  ],
+  "superd": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "supervolito": [
+    "elitas_travel"
+  ],
+  "supervolito2": [
+    "elitas_travel"
+  ],
+  "surano": [
+    "southern_san_andreas",
+    "legendary_motorsport"
+  ],
+  "surfer": [
+    "southern_san_andreas"
+  ],
+  "surfer3": [
+    "southern_san_andreas"
+  ],
+  "surge": [
+    "southern_san_andreas"
+  ],
+  "swift": [
+    "elitas_travel"
+  ],
+  "swift2": [
+    "elitas_travel"
+  ],
+  "swinger": [
+    "legendary_motorsport"
+  ],
+  "t20": [
+    "legendary_motorsport"
+  ],
+  "taco": [
+    "warstock"
+  ],
+  "tahoma": [
+    "southern_san_andreas"
+  ],
+  "tailgater": [
+    "southern_san_andreas"
+  ],
+  "tailgater2": [
+    "legendary_motorsport"
+  ],
+  "taipan": [
+    "legendary_motorsport"
+  ],
+  "tampa": [
+    "southern_san_andreas"
+  ],
+  "tampa2": [
+    "southern_san_andreas"
+  ],
+  "technical": [
+    "warstock"
+  ],
+  "technical2": [
+    "warstock"
+  ],
+  "tempesta": [
+    "legendary_motorsport"
+  ],
+  "tenf": [
+    "legendary_motorsport",
+    "bennys"
+  ],
+  "terbyte": [
+    "warstock"
+  ],
+  "terminus": [
+    "southern_san_andreas"
+  ],
+  "tezeract": [
+    "legendary_motorsport"
+  ],
+  "thrax": [
+    "legendary_motorsport"
+  ],
+  "thrust": [
+    "legendary_motorsport"
+  ],
+  "thruster": [
+    "warstock"
+  ],
+  "tigon": [
+    "legendary_motorsport"
+  ],
+  "titan": [
+    "elitas_travel"
+  ],
+  "toreador": [
+    "warstock"
+  ],
+  "torero": [
+    "legendary_motorsport"
+  ],
+  "torero2": [
+    "legendary_motorsport"
+  ],
+  "tornado": [
+    "bennys"
+  ],
+  "tornado6": [
+    "southern_san_andreas"
+  ],
+  "toro": [
+    "dock_tease"
+  ],
+  "toros": [
+    "legendary_motorsport"
+  ],
+  "tribike": [
+    "pedal_metal"
+  ],
+  "tribike2": [
+    "pedal_metal"
+  ],
+  "tribike3": [
+    "pedal_metal"
+  ],
+  "trophytruck": [
+    "southern_san_andreas"
+  ],
+  "trophytruck2": [
+    "southern_san_andreas"
+  ],
+  "tropic": [
+    "dock_tease"
+  ],
+  "tropos": [
+    "southern_san_andreas"
+  ],
+  "tula": [
+    "warstock"
+  ],
+  "tulip": [
+    "southern_san_andreas"
+  ],
+  "tulip2": [
+    "southern_san_andreas"
+  ],
+  "turismo2": [
+    "legendary_motorsport"
+  ],
+  "turismo3": [
+    "legendary_motorsport"
+  ],
+  "turismor": [
+    "legendary_motorsport"
+  ],
+  "tyrant": [
+    "legendary_motorsport"
+  ],
+  "tyrus": [
+    "legendary_motorsport"
+  ],
+  "vacca": [
+    "legendary_motorsport"
+  ],
+  "vader": [
+    "southern_san_andreas"
+  ],
+  "vagner": [
+    "legendary_motorsport"
+  ],
+  "vagrant": [
+    "southern_san_andreas"
+  ],
+  "valkyrie": [
+    "warstock"
+  ],
+  "vamos": [
+    "southern_san_andreas"
+  ],
+  "vectre": [
+    "legendary_motorsport"
+  ],
+  "velum": [
+    "elitas_travel"
+  ],
+  "velum2": [
+    "elitas_travel"
+  ],
+  "verlierer2": [
+    "legendary_motorsport"
+  ],
+  "verus": [
+    "warstock"
+  ],
+  "vestra": [
+    "elitas_travel"
+  ],
+  "vetir": [
+    "warstock"
+  ],
+  "veto": [
+    "southern_san_andreas"
+  ],
+  "veto2": [
+    "southern_san_andreas"
+  ],
+  "vigero": [
+    "southern_san_andreas"
+  ],
+  "vigero2": [
+    "southern_san_andreas"
+  ],
+  "vigero3": [
+    "southern_san_andreas"
+  ],
+  "vindicator": [
+    "legendary_motorsport"
+  ],
+  "virgo3": [
+    "bennys"
+  ],
+  "virtue": [
+    "legendary_motorsport"
+  ],
+  "viseris": [
+    "legendary_motorsport"
+  ],
+  "visione": [
+    "legendary_motorsport"
+  ],
+  "vivanite": [
+    "southern_san_andreas"
+  ],
+  "volatol": [
+    "warstock"
+  ],
+  "volatus": [
+    "elitas_travel"
+  ],
+  "voltic": [
+    "legendary_motorsport"
+  ],
+  "voltic2": [
+    "warstock"
+  ],
+  "vorschlaghammer": [
+    "southern_san_andreas"
+  ],
+  "vstr": [
+    "legendary_motorsport"
+  ],
+  "warrener": [
+    "southern_san_andreas"
+  ],
+  "warrener2": [
+    "southern_san_andreas"
+  ],
+  "washington": [
+    "southern_san_andreas"
+  ],
+  "wastelander": [
+    "warstock"
+  ],
+  "weevil": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "windsor": [
+    "legendary_motorsport"
+  ],
+  "windsor2": [
+    "legendary_motorsport"
+  ],
+  "winky": [
+    "warstock"
+  ],
+  "wolfsbane": [
+    "southern_san_andreas"
+  ],
+  "xa21": [
+    "legendary_motorsport"
+  ],
+  "xls": [
+    "legendary_motorsport"
+  ],
+  "xls2": [
+    "legendary_motorsport"
+  ],
+  "xtreme": [
+    "legendary_motorsport"
+  ],
+  "yosemite": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "yosemite1500": [
+    "southern_san_andreas"
+  ],
+  "yosemite2": [
+    "southern_san_andreas"
+  ],
+  "youga": [
+    "southern_san_andreas"
+  ],
+  "youga2": [
+    "southern_san_andreas",
+    "bennys"
+  ],
+  "z190": [
+    "legendary_motorsport"
+  ],
+  "zeno": [
+    "legendary_motorsport"
+  ],
+  "zentorno": [
+    "legendary_motorsport"
+  ],
+  "zhaba": [
+    "warstock"
+  ],
+  "zion": [
+    "southern_san_andreas"
+  ],
+  "zion2": [
+    "southern_san_andreas"
+  ],
+  "zion3": [
+    "southern_san_andreas"
+  ],
+  "zombiea": [
+    "southern_san_andreas"
+  ],
+  "zorrusso": [
+    "legendary_motorsport"
+  ],
+  "zr350": [
+    "legendary_motorsport"
+  ],
+  "ztype": [
+    "legendary_motorsport"
+  ]
 }

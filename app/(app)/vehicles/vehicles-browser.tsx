@@ -78,7 +78,7 @@ export function VehiclesBrowser({
       }
       if (cat && assetCategoryOf(v.class) !== cat) return false;
       if (avail && v.availability !== avail) return false;
-      if (vendor && v.vendor !== vendor) return false;
+      if (vendor && !v.vendors.includes(vendor as (typeof v.vendors)[number])) return false;
       if (cls && v.class !== cls) return false;
       if (mfr && v.manufacturer_id !== mfr) return false;
       if (

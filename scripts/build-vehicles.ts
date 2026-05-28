@@ -267,7 +267,7 @@ async function main(): Promise<void> {
     // Overlay file missing — fine, everything stays "available".
   }
 
-  // Vendor overlay: data/seed/vehicle-vendors.json maps id -> storefront,
+  // Vendor overlay: data/seed/vehicle-vendors.json maps id -> storefront[],
   // derived from the cached Fandom "purchasable from X" categories.
   const VALID_VENDORS = new Set([
     "southern_san_andreas",
@@ -276,6 +276,7 @@ async function main(): Promise<void> {
     "warstock",
     "dock_tease",
     "pedal_metal",
+    "bennys",
   ]);
   try {
     const overlayRaw = await fs.readFile(
@@ -286,14 +287,19 @@ async function main(): Promise<void> {
     let withVendor = 0;
     for (const v of vehicles) {
       const raw = overlay[v.id];
-      if (typeof raw === "string" && VALID_VENDORS.has(raw)) {
-        v.vendor = raw as typeof v.vendor;
-        withVendor += 1;
+      if (Array.isArray(raw)) {
+        const vendors = raw.filter(
+          (x): x is string => typeof x === "string" && VALID_VENDORS.has(x),
+        );
+        if (vendors.length > 0) {
+          v.vendors = vendors as typeof v.vendors;
+          withVendor += 1;
+        }
       }
     }
     console.log(`Applied vendor overlay: ${withVendor} with a vendor.`);
   } catch {
-    // Overlay file missing — fine, vendors will just be null.
+    // Overlay file missing — fine, vendors will just be empty.
   }
 
   await writeJson(path.join(SEED_DIR, "vehicles.json"), vehicles);

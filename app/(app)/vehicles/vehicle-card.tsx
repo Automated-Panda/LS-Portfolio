@@ -327,7 +327,8 @@ function VehicleCardImpl({
             <p className="text-sm font-medium leading-tight">{vehicle.display_name}</p>
             <p className="text-xs text-muted-foreground truncate">
               {vehicle.manufacturer_display}
-              {vehicle.vendor && ` · ${VENDOR_LABEL[vehicle.vendor]}`}
+              {vehicle.vendors.length > 0 &&
+                ` · ${vehicle.vendors.map((vn) => VENDOR_LABEL[vn]).join(", ")}`}
             </p>
           </div>
           <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">

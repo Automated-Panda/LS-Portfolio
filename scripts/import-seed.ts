@@ -73,7 +73,7 @@ async function main(): Promise<void> {
     image_path: v.image_path,
     price: v.price ?? null,
     availability: v.availability ?? "available",
-    vendor: v.vendor ?? null,
+    vendors: v.vendors ?? [],
     source_durtyfree: v._sources.durtyfree,
     source_fandom: v._sources.fandom,
   }));
