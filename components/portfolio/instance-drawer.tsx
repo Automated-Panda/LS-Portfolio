@@ -25,6 +25,7 @@ import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
+import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
 
 import { CustomTagsInput } from "./custom-tags-input";
 
@@ -92,9 +93,18 @@ export function InstanceDrawer({
   ];
   const anyCollapsed = collapsedButtons.some((b) => !b.expanded);
 
-  // Only show properties that can actually store vehicles — hides hangars,
-  // yachts, businesses without garages, etc. from the storage picker.
-  const storableProperties = ownedProperties.filter((p) => p.counts_as_garage);
+  // Only show properties that can store THIS vehicle's category — a car only
+  // lists garages, an aircraft only lists hangars, etc. counts_as_garage still
+  // gates out non-storage properties (businesses, warehouses). The vehicle's
+  // current location is always kept selectable so an already-misplaced vehicle
+  // can be moved out.
+  const vehicleCategory = assetCategoryOf(instance.class);
+  const currentPropertyId = instance.storage?.owned_property_id ?? null;
+  const storableProperties = ownedProperties.filter(
+    (p) =>
+      (p.counts_as_garage && storageAssetCategory(p.subtype) === vehicleCategory) ||
+      p.id === currentPropertyId,
+  );
   const selectedProperty = storableProperties.find((p) => p.id === propertyId);
   const installedUpgrades =
     selectedProperty?.upgrades.filter(
