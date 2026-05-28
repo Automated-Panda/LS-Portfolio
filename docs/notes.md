@@ -4,6 +4,47 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 🗂️ Catalog data, filters & admin editor — 2026-05-29
+
+Big session: catalog corrections, two new data dimensions (availability + vendor), UX fixes, and a self-serve admin editor.
+
+### 🧰 Admin catalog editor (`/admin`) ✅
+- [x] Email-gated `/admin` (`ADMIN_EMAIL` env, checked in layout + every server action). Writes via service-role server actions; catalog RLS stays read-only for everyone else.
+- [x] Inline-editable tabs: **Vehicles** (name/price/availability/vendors), **Properties & Businesses** (name/price/capacity/counts-as-garage/subtype/neighborhood), **Upgrades** (grouped by property: name/capacity/price).
+- [x] **DB is source of truth** for curated fields. `import-seed` made non-destructive (preserves curated columns on existing rows; new rows seed in full) so re-imports/rebuilds never clobber admin edits.
+- [x] **⬇ Export backup** route downloads a JSON snapshot of all curated values to commit to git.
+- [ ] ⚠️ **James TODO:** set `ADMIN_EMAIL` (= your app login email) + `SUPABASE_SERVICE_ROLE_KEY` in Vercel env, then redeploy — admin won't work live until then.
+- 🔭 Deferred: add/delete records, edit upgrade structure (sub-slots/mutex/new upgrades), tag management, audit log.
+
+### 🏷️ Vehicle availability — 5 statuses ✅
+- [x] Migrations 0019 + 0020: `availability` (available / discontinued / unobtainable / blacklisted / seasonal). Sidecar `vehicle-availability.json` + build overlay + `npm run availability:apply`.
+- [x] Status badge on cards + availability filter on `/vehicles`.
+- [x] Seeded **182 discontinued** (Fandom "removed in San Andreas Mercenaries" June-2023 category), **9 blacklisted** (police/sheriff/ambulance dev vehicles), **3 seasonal** (Franken Stange / Lurcher / Sanctus).
+- [ ] ⚠️ Discontinued list is June-2023 — some have since returned (Z-Type already fixed); prune as noticed (admin makes this easy now).
+
+### 🛒 Vehicle vendor — multi-value ✅
+- [x] Migrations 0021 + 0022: `vendors text[]`, auto-derived from cached Fandom "purchasable from X" categories into `vehicle-vendors.json`.
+- [x] 7 storefronts (Southern San Andreas, Legendary Motorsport, Elitás Travel, Warstock, Dock Tease, Pedal & Metal, Benny's). A car lists all its stores (e.g. Comet → SSA + Legendary + Benny's). Vendor shown on the card maker line + vendor filter on `/vehicles`.
+- Excluded Luxury Autos + Premium Deluxe Motorsport (weekly rotation, not worth maintaining).
+
+### 🏠 Property storage data fixes ✅
+- [x] Bail Office 3 → 2 (3rd bay is the included van); Higgins Helitours → no personal storage; Garment Factory → 10-car garage (counts_as_garage); Salvage Yard tow truck → 0 (mission vehicle, not a slot); McKenzie Hangar → aircraft not cars.
+- [x] **Added Arena Workshop** (Arena War) — $995k, 10-car base garage + B1/B2 floors (30 max) + styles/quarters/Benny's mechanic/weapons expert. ⚠️ no image yet (gtabase 403s scripted fetch).
+
+### 🔧 Manufacturers + search ✅
+- [x] Merged duplicate manufacturers: Benefac → Benefactor, Lampada → Lampadati; renamed Dewbauch → Dewbauchee (build-pipeline guard prevents re-introduction).
+- [x] **Accent-insensitive catalog search** — "franken" now finds "Fränken Stange" (it was never missing, just unsearchable).
+
+### 🚗 Storage-aware picker + filters ✅
+- [x] Property "Add cars" picker filters by storage type (garages → land, hangars → aircraft, yachts → boats); wording follows. InstanceDrawer location dropdown is category-aware + lists only garage-capable properties.
+- [x] Picker name-wrap fix (3-col, no truncation) + drift-variant dedupe (one "Cypher").
+- [x] Net-worth card: "N items missing a price" expands to list the actual unpriced owned items.
+- [x] My Vehicles **Locations filter**: hides non-garage places; multi-level properties expand to per-level checkboxes (occupied levels only).
+- [x] Z-Type price 10M → 950k (10M was the story-mode price).
+- [x] **Bug fix:** editing a vehicle's tags no longer fails when its garage is full (capacity check now excludes the vehicle itself when re-saving in place).
+
+---
+
 ## 💰 Portfolio pricing + Net Worth ✅ — landed 2026-05-28 (late)
 
 End-of-day push to add canonical pricing data so we can show users their portfolio value.
