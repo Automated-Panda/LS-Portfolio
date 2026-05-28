@@ -76,3 +76,111 @@ export async function updateVehicleAdmin(
   revalidatePath("/", "layout"); // keep public pages in sync
   return { ok: true };
 }
+
+export type PropertyPatch = {
+  display_name?: string;
+  price?: number | null;
+  capacity?: number;
+  counts_as_garage?: boolean;
+  subtype_display?: string;
+  neighborhood?: string | null;
+};
+
+export async function updatePropertyAdmin(
+  id: string,
+  patch: PropertyPatch,
+): Promise<Result> {
+  await requireAdmin();
+
+  const update: Record<string, unknown> = {};
+  if (patch.display_name !== undefined) {
+    const name = patch.display_name.trim();
+    if (!name) return { error: "Name can't be empty." };
+    update.display_name = name;
+  }
+  if (patch.price !== undefined) {
+    if (
+      patch.price !== null &&
+      (!Number.isFinite(patch.price) || patch.price < 0)
+    ) {
+      return { error: "Price must be a number ≥ 0 (or empty)." };
+    }
+    update.price = patch.price;
+  }
+  if (patch.capacity !== undefined) {
+    if (!Number.isInteger(patch.capacity) || patch.capacity < 0) {
+      return { error: "Capacity must be a whole number ≥ 0." };
+    }
+    update.capacity = patch.capacity;
+  }
+  if (patch.counts_as_garage !== undefined) {
+    update.counts_as_garage = patch.counts_as_garage;
+  }
+  if (patch.subtype_display !== undefined) {
+    const v = patch.subtype_display.trim();
+    if (!v) return { error: "Subtype label can't be empty." };
+    update.subtype_display = v;
+  }
+  if (patch.neighborhood !== undefined) {
+    const v = patch.neighborhood?.trim();
+    update.neighborhood = v ? v : null;
+  }
+
+  if (Object.keys(update).length === 0) return { ok: true };
+
+  const supabase = createAdminClient();
+  const { error } = await supabase.from("properties").update(update).eq("id", id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/admin/properties");
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
+
+export type UpgradePatch = {
+  display_name?: string;
+  capacity?: number;
+  price?: number | null;
+};
+
+export async function updateUpgradeAdmin(
+  id: string,
+  patch: UpgradePatch,
+): Promise<Result> {
+  await requireAdmin();
+
+  const update: Record<string, unknown> = {};
+  if (patch.display_name !== undefined) {
+    const name = patch.display_name.trim();
+    if (!name) return { error: "Name can't be empty." };
+    update.display_name = name;
+  }
+  if (patch.capacity !== undefined) {
+    if (!Number.isInteger(patch.capacity) || patch.capacity < 0) {
+      return { error: "Capacity must be a whole number ≥ 0." };
+    }
+    update.capacity = patch.capacity;
+  }
+  if (patch.price !== undefined) {
+    if (
+      patch.price !== null &&
+      (!Number.isFinite(patch.price) || patch.price < 0)
+    ) {
+      return { error: "Price must be a number ≥ 0 (or empty)." };
+    }
+    update.price = patch.price;
+  }
+
+  if (Object.keys(update).length === 0) return { ok: true };
+
+  const supabase = createAdminClient();
+  const { error } = await supabase
+    .from("property_upgrades")
+    .update(update)
+    .eq("id", id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/admin/upgrades");
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
