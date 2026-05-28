@@ -7,10 +7,6 @@
     "display": "Annis",
     "country": null
   },
-  "benefac": {
-    "display": "Benefac",
-    "country": null
-  },
   "benefactor": {
     "display": "Benefactor",
     "country": null
@@ -60,7 +56,7 @@
     "country": null
   },
   "dewbauch": {
-    "display": "Dewbauch",
+    "display": "Dewbauchee",
     "country": null
   },
   "dinka": {
@@ -121,10 +117,6 @@
   },
   "kraken": {
     "display": "Kraken",
-    "country": null
-  },
-  "lampada": {
-    "display": "Lampada",
     "country": null
   },
   "lampadati": {

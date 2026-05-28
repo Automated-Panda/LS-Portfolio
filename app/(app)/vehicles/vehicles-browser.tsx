@@ -5,7 +5,7 @@ import { useMemo } from "react";
 
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { AssetCategory, FilterOptions, VehicleSummary } from "@/lib/vehicles";
-import { assetCategoryOf, vehicleImageUrl } from "@/lib/vehicles";
+import { assetCategoryOf, normalizeSearch, vehicleImageUrl } from "@/lib/vehicles";
 
 import { FilterBar } from "./filter-bar";
 import { VehicleCard } from "./vehicle-card";
@@ -33,7 +33,7 @@ export function VehiclesBrowser({
 }: Props) {
   const searchParams = useSearchParams();
 
-  const q = (searchParams.get("q") ?? "").toLowerCase().trim();
+  const q = normalizeSearch(searchParams.get("q") ?? "").trim();
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
   const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
@@ -69,8 +69,8 @@ export function VehiclesBrowser({
     return vehicles.filter((v) => {
       if (
         q &&
-        !v.display_name.toLowerCase().includes(q) &&
-        !v.manufacturer_display.toLowerCase().includes(q)
+        !normalizeSearch(v.display_name).includes(q) &&
+        !normalizeSearch(v.manufacturer_display).includes(q)
       ) {
         return false;
       }

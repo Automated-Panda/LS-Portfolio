@@ -47,6 +47,19 @@ const GARAGE_STORABLE_TYPES = new Set([
 const DURTYFREE_SOURCE_URL =
   "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json";
 
+// DurtyFree's per-vehicle Manufacturer strings are truncated for some cars
+// ("BENEFAC", "LAMPADA"), producing a duplicate manufacturer that collides with
+// the correct one. Canonicalize the id so those vehicles fold onto the right
+// manufacturer. DISPLAY overrides fix names that can't be recovered by
+// title-casing the source string (e.g. "DEWBAUCH" -> "Dewbauchee").
+const MANUFACTURER_ID_ALIASES: Record<string, string> = {
+  benefac: "benefactor",
+  lampada: "lampadati",
+};
+const MANUFACTURER_DISPLAY_OVERRIDES: Record<string, string> = {
+  dewbauch: "Dewbauchee",
+};
+
 interface DurtyFreeName {
   English?: string;
   Name?: string;
@@ -143,9 +156,10 @@ async function main(): Promise<void> {
     }
 
     // Manufacturer id
-    const manufacturerId = toSlug(
+    let manufacturerId = toSlug(
       v.Manufacturer || englishOf(v.ManufacturerDisplayName, "unknown"),
     );
+    manufacturerId = MANUFACTURER_ID_ALIASES[manufacturerId] ?? manufacturerId;
     usedManufacturers.add(manufacturerId);
 
     // Variant detection
@@ -185,14 +199,17 @@ async function main(): Promise<void> {
     const id = toSlug(name);
     if (usedManufacturers.has(id)) {
       manufacturers[id] = {
-        display: titleCase(name),
+        display: MANUFACTURER_DISPLAY_OVERRIDES[id] ?? titleCase(name),
         country: null,
       };
     }
   }
   for (const id of usedManufacturers) {
     if (!manufacturers[id]) {
-      manufacturers[id] = { display: titleCase(id.replace(/-/g, " ")), country: null };
+      manufacturers[id] = {
+        display: MANUFACTURER_DISPLAY_OVERRIDES[id] ?? titleCase(id.replace(/-/g, " ")),
+        country: null,
+      };
     }
   }
 

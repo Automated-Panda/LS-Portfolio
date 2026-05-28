@@ -31,6 +31,15 @@ export function vehicleImageUrl(imagePath: string | null): string | null {
   return basename ? `/vehicles/${basename}` : null;
 }
 
+// Lowercase + strip diacritics so a search for "franken" matches "Fränken
+// Stange". Used by the catalogue search so accented names are findable.
+export function normalizeSearch(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
+}
+
 // Turn "SPORT_CLASSIC" into "Sport Classic", "MUSCLE" into "Muscle".
 export function formatClass(raw: string): string {
   return raw
