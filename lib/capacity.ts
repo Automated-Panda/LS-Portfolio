@@ -44,13 +44,18 @@ export async function capacityForStorageLocation(
 export async function currentCarCountAt(
   ownedPropertyId: string,
   assignedUpgradeId: string | null,
+  /** When set, this vehicle is excluded from the count — so re-saving a
+   * vehicle that's already in a (full) location doesn't count against itself. */
+  excludeVehicleId?: string,
 ): Promise<number> {
   const supabase = await createClient();
 
-  const q = supabase
+  let q = supabase
     .from("user_owned_vehicles")
     .select("id", { count: "exact", head: true })
     .eq("stored_in_property_id", ownedPropertyId);
+
+  if (excludeVehicleId) q = q.neq("id", excludeVehicleId);
 
   const { count, error } =
     assignedUpgradeId === null

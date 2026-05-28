@@ -34,10 +34,12 @@ export async function assignVehicleStorage(opts: {
     return { ok: true };
   }
 
-  // Capacity check
+  // Capacity check — exclude the vehicle itself so re-saving a car that's
+  // already parked in a full location (e.g. just editing its tags) isn't
+  // rejected for being "over capacity" against its own slot.
   const [capacity, current] = await Promise.all([
     capacityForStorageLocation(opts.ownedPropertyId, opts.assignedUpgradeId),
-    currentCarCountAt(opts.ownedPropertyId, opts.assignedUpgradeId),
+    currentCarCountAt(opts.ownedPropertyId, opts.assignedUpgradeId, opts.ownedVehicleId),
   ]);
   if (current >= capacity) {
     return { capacityExceeded: { capacity, current } };
