@@ -83,7 +83,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Akuma"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "aleutian",
@@ -302,7 +303,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Asea"
     },
-    "price": 12000
+    "price": 12000,
+    "availability": "discontinued"
   },
   {
     "id": "asterope",
@@ -319,7 +321,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Asterope"
     },
-    "price": 26000
+    "price": 26000,
+    "availability": "discontinued"
   },
   {
     "id": "asterope2",
@@ -426,7 +429,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Avarus"
     },
-    "price": 116000
+    "price": 116000,
+    "availability": "discontinued"
   },
   {
     "id": "avenger",
@@ -479,7 +483,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bagger"
     },
-    "price": 16000
+    "price": 16000,
+    "availability": "discontinued"
   },
   {
     "id": "baller",
@@ -495,7 +500,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Baller"
-    }
+    },
+    "availability": "discontinued"
   },
   {
     "id": "baller3",
@@ -514,7 +520,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Baller_LE"
     },
-    "price": 149000
+    "price": 149000,
+    "availability": "discontinued"
   },
   {
     "id": "baller4",
@@ -552,7 +559,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Baller_LE_(Armored)"
     },
-    "price": 374000
+    "price": 374000,
+    "availability": "discontinued"
   },
   {
     "id": "baller6",
@@ -752,7 +760,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bati_801RR"
     },
-    "price": 15000
+    "price": 15000,
+    "availability": "discontinued"
   },
   {
     "id": "benson",
@@ -857,7 +866,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Injection"
     },
-    "price": 16000
+    "price": 16000,
+    "availability": "discontinued"
   },
   {
     "id": "biff",
@@ -890,7 +900,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bifta"
     },
-    "price": 75000
+    "price": 75000,
+    "availability": "discontinued"
   },
   {
     "id": "bison",
@@ -924,7 +935,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/BeeJay_XL"
     },
-    "price": 27000
+    "price": 27000,
+    "availability": "discontinued"
   },
   {
     "id": "blade",
@@ -941,7 +953,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Blade"
     },
-    "price": 160000
+    "price": 160000,
+    "availability": "discontinued"
   },
   {
     "id": "blazer",
@@ -960,7 +973,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Blazer"
     },
-    "price": 8000
+    "price": 8000,
+    "availability": "discontinued"
   },
   {
     "id": "blazer2",
@@ -977,7 +991,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Blazer_Lifeguard"
     },
-    "price": 62000
+    "price": 62000,
+    "availability": "discontinued"
   },
   {
     "id": "blazer3",
@@ -994,7 +1009,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hot_Rod_Blazer"
     },
-    "price": 69000
+    "price": 69000,
+    "availability": "discontinued"
   },
   {
     "id": "blazer4",
@@ -1180,7 +1196,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bodhi"
     },
-    "price": 25000
+    "price": 25000,
+    "availability": "discontinued"
   },
   {
     "id": "bombushka",
@@ -1284,7 +1301,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Brawler"
     },
-    "price": 715000
+    "price": 715000,
+    "availability": "discontinued"
   },
   {
     "id": "brickade",
@@ -1548,7 +1566,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Roosevelt"
     },
-    "price": 750000
+    "price": 750000,
+    "availability": "discontinued"
   },
   {
     "id": "btype2",
@@ -1585,7 +1604,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Roosevelt_Valor"
     },
-    "price": 982000
+    "price": 982000,
+    "availability": "discontinued"
   },
   {
     "id": "buccaneer",
@@ -1658,7 +1678,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Buffalo_S"
     },
-    "price": 96000
+    "price": 96000,
+    "availability": "discontinued"
   },
   {
     "id": "buffalo3",
@@ -1750,7 +1771,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Bullet"
     },
-    "price": 84000
+    "price": 84000,
+    "availability": "discontinued"
   },
   {
     "id": "burrito",
@@ -1939,7 +1961,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Carbonizzare"
     },
-    "price": 195000
+    "price": 195000,
+    "availability": "discontinued"
   },
   {
     "id": "carbonrs",
@@ -2059,7 +2082,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cavalcade"
     },
-    "price": 60000
+    "price": 60000,
+    "availability": "discontinued"
   },
   {
     "id": "cavalcade3",
@@ -2194,7 +2218,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cheburek"
     },
-    "price": 145000
+    "price": 145000,
+    "availability": "discontinued"
   },
   {
     "id": "cheetah",
@@ -2354,7 +2379,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cliffhanger"
     },
-    "price": 225000
+    "price": 225000,
+    "availability": "discontinued"
   },
   {
     "id": "clique",
@@ -2373,7 +2399,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Clique"
     },
-    "price": 909000
+    "price": 909000,
+    "availability": "discontinued"
   },
   {
     "id": "clique2",
@@ -2443,7 +2470,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cognoscenti_55"
     },
-    "price": 154000
+    "price": 154000,
+    "availability": "discontinued"
   },
   {
     "id": "cog552",
@@ -2462,7 +2490,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cognoscenti_55_(Armored)"
     },
-    "price": 396000
+    "price": 396000,
+    "availability": "discontinued"
   },
   {
     "id": "cogcabrio",
@@ -2479,7 +2508,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cognoscenti_Cabrio"
     },
-    "price": 185000
+    "price": 185000,
+    "availability": "discontinued"
   },
   {
     "id": "cognoscenti",
@@ -2498,7 +2528,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cognoscenti"
     },
-    "price": 254000
+    "price": 254000,
+    "availability": "discontinued"
   },
   {
     "id": "cognoscenti2",
@@ -2517,7 +2548,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cognoscenti_(Armored)"
     },
-    "price": 558000
+    "price": 558000,
+    "availability": "discontinued"
   },
   {
     "id": "comet2",
@@ -2537,7 +2569,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Comet"
     },
-    "price": 28000
+    "price": 28000,
+    "availability": "discontinued"
   },
   {
     "id": "comet3",
@@ -2556,7 +2589,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Comet_Retro_Custom"
     },
-    "price": 645000
+    "price": 645000,
+    "availability": "discontinued"
   },
   {
     "id": "comet4",
@@ -2594,7 +2628,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Comet_SR"
     },
-    "price": 1145000
+    "price": 1145000,
+    "availability": "discontinued"
   },
   {
     "id": "comet6",
@@ -2687,7 +2722,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Contender"
     },
-    "price": 250000
+    "price": 250000,
+    "availability": "discontinued"
   },
   {
     "id": "coquette",
@@ -2704,7 +2740,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Coquette"
     },
-    "price": 138000
+    "price": 138000,
+    "availability": "discontinued"
   },
   {
     "id": "coquette2",
@@ -2738,7 +2775,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Coquette_BlackFin"
     },
-    "price": 695000
+    "price": 695000,
+    "availability": "discontinued"
   },
   {
     "id": "coquette4",
@@ -2911,7 +2949,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cyclone"
     },
-    "price": 1890000
+    "price": 1890000,
+    "availability": "discontinued"
   },
   {
     "id": "cyclone2",
@@ -3119,7 +3158,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Deviant"
     },
-    "price": 512000
+    "price": 512000,
+    "availability": "discontinued"
   },
   {
     "id": "diablous",
@@ -3174,7 +3214,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Dilettante"
     },
-    "price": 39999
+    "price": 39999,
+    "availability": "discontinued"
   },
   {
     "id": "dinghy",
@@ -3479,7 +3520,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Double-T"
     },
-    "price": 12000
+    "price": 12000,
+    "availability": "discontinued"
   },
   {
     "id": "drafter",
@@ -3549,7 +3591,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Cheburek"
     },
-    "price": 145000
+    "price": 145000,
+    "availability": "discontinued"
   },
   {
     "id": "driftcypher",
@@ -3672,7 +3715,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Futo"
     },
-    "price": 1590000
+    "price": 1590000,
+    "availability": "discontinued"
   },
   {
     "id": "driftgauntlet4",
@@ -3799,7 +3843,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Nebula_Turbo"
     },
-    "price": 797000
+    "price": 797000,
+    "availability": "discontinued"
   },
   {
     "id": "driftremus",
@@ -4059,7 +4104,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Dune_Buggy"
     },
-    "price": 20000
+    "price": 20000,
+    "availability": "discontinued"
   },
   {
     "id": "dune2",
@@ -4162,7 +4208,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Dynasty"
     },
-    "price": 450000
+    "price": 450000,
+    "availability": "discontinued"
   },
   {
     "id": "elegy",
@@ -4268,7 +4315,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Enduro"
     },
-    "price": 48000
+    "price": 48000,
+    "availability": "discontinued"
   },
   {
     "id": "entity2",
@@ -4322,7 +4370,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Entity_XF"
     },
-    "price": 795000
+    "price": 795000,
+    "availability": "discontinued"
   },
   {
     "id": "envisage",
@@ -4358,7 +4407,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Esskey"
     },
-    "price": 264000
+    "price": 264000,
+    "availability": "discontinued"
   },
   {
     "id": "eudora",
@@ -4485,7 +4535,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Exemplar"
     },
-    "price": 205000
+    "price": 205000,
+    "availability": "discontinued"
   },
   {
     "id": "f620",
@@ -4502,7 +4553,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/F620"
     },
-    "price": 80000
+    "price": 80000,
+    "availability": "discontinued"
   },
   {
     "id": "faction",
@@ -4576,7 +4628,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Fagaloa"
     },
-    "price": 335000
+    "price": 335000,
+    "availability": "discontinued"
   },
   {
     "id": "faggio",
@@ -4593,7 +4646,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Faggio_Sport"
     },
-    "price": 47500
+    "price": 47500,
+    "availability": "discontinued"
   },
   {
     "id": "faggio2",
@@ -4627,7 +4681,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Faggio_Mod"
     },
-    "price": 55000
+    "price": 55000,
+    "availability": "discontinued"
   },
   {
     "id": "fcr",
@@ -4682,7 +4737,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Felon"
     },
-    "price": 100000
+    "price": 100000,
+    "availability": "discontinued"
   },
   {
     "id": "felon2",
@@ -4699,7 +4755,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Felon_GT"
     },
-    "price": 95000
+    "price": 95000,
+    "availability": "discontinued"
   },
   {
     "id": "feltzer2",
@@ -4716,7 +4773,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Feltzer"
     },
-    "price": 28000
+    "price": 28000,
+    "availability": "discontinued"
   },
   {
     "id": "feltzer3",
@@ -4852,7 +4910,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/FMJ"
     },
-    "price": 1750000
+    "price": 1750000,
+    "availability": "discontinued"
   },
   {
     "id": "fmj2",
@@ -4943,7 +5002,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/FQ_2"
     },
-    "price": 50000
+    "price": 50000,
+    "availability": "discontinued"
   },
   {
     "id": "fr36",
@@ -5011,7 +5071,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Fugitive"
     },
-    "price": 24000
+    "price": 24000,
+    "availability": "discontinued"
   },
   {
     "id": "furia",
@@ -5045,7 +5106,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Furore_GT"
     },
-    "price": 448000
+    "price": 448000,
+    "availability": "discontinued"
   },
   {
     "id": "fusilade",
@@ -5062,7 +5124,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Fusilade"
     },
-    "price": 36000
+    "price": 36000,
+    "availability": "discontinued"
   },
   {
     "id": "futo",
@@ -5081,7 +5144,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Futo"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "futo2",
@@ -5134,7 +5198,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Gauntlet"
     },
-    "price": 32000
+    "price": 32000,
+    "availability": "discontinued"
   },
   {
     "id": "gauntlet2",
@@ -5313,7 +5378,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/GP1"
     },
-    "price": 1260000
+    "price": 1260000,
+    "availability": "discontinued"
   },
   {
     "id": "granger",
@@ -5330,7 +5396,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Granger"
     },
-    "price": 35000
+    "price": 35000,
+    "availability": "discontinued"
   },
   {
     "id": "granger2",
@@ -5383,7 +5450,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Gresley"
     },
-    "price": 29000
+    "price": 29000,
+    "availability": "discontinued"
   },
   {
     "id": "growler",
@@ -5417,7 +5485,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/GT500"
     },
-    "price": 785000
+    "price": 785000,
+    "availability": "discontinued"
   },
   {
     "id": "gt750",
@@ -5470,7 +5539,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Habanero"
     },
-    "price": 42000
+    "price": 42000,
+    "availability": "discontinued"
   },
   {
     "id": "hakuchou",
@@ -5489,7 +5559,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hakuchou"
     },
-    "price": 82000
+    "price": 82000,
+    "availability": "discontinued"
   },
   {
     "id": "hakuchou2",
@@ -5632,7 +5703,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hellion"
     },
-    "price": 835000
+    "price": 835000,
+    "availability": "discontinued"
   },
   {
     "id": "hermes",
@@ -5652,7 +5724,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hermes"
     },
-    "price": 535000
+    "price": 535000,
+    "availability": "discontinued"
   },
   {
     "id": "hexer",
@@ -5671,7 +5744,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hexer"
     },
-    "price": 15000
+    "price": 15000,
+    "availability": "discontinued"
   },
   {
     "id": "hotknife",
@@ -5775,7 +5849,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Hustler"
     },
-    "price": 625000
+    "price": 625000,
+    "availability": "discontinued"
   },
   {
     "id": "hydra",
@@ -5850,7 +5925,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Imorgon"
     },
-    "price": 2165000
+    "price": 2165000,
+    "availability": "discontinued"
   },
   {
     "id": "impaler",
@@ -6078,7 +6154,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Infernus"
     },
-    "price": 440000
+    "price": 440000,
+    "availability": "discontinued"
   },
   {
     "id": "infernus2",
@@ -6112,7 +6189,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ingot"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "innovation",
@@ -6129,7 +6207,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Innovation"
     },
-    "price": 92500
+    "price": 92500,
+    "availability": "discontinued"
   },
   {
     "id": "insurgent",
@@ -6218,7 +6297,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Issi"
     },
-    "price": 18000
+    "price": 18000,
+    "availability": "discontinued"
   },
   {
     "id": "issi3",
@@ -6314,7 +6394,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Issi_Sport"
     },
-    "price": 897000
+    "price": 897000,
+    "availability": "discontinued"
   },
   {
     "id": "issi8",
@@ -6456,7 +6537,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Jackal"
     },
-    "price": 60000
+    "price": 60000,
+    "availability": "discontinued"
   },
   {
     "id": "jb700",
@@ -6473,7 +6555,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/JB_700"
     },
-    "price": 475000
+    "price": 475000,
+    "availability": "discontinued"
   },
   {
     "id": "jb7002",
@@ -6510,7 +6593,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Jester"
     },
-    "price": 28000
+    "price": 28000,
+    "availability": "discontinued"
   },
   {
     "id": "jester2",
@@ -6527,7 +6611,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Jester_(Racecar)"
     },
-    "price": 350000
+    "price": 350000,
+    "availability": "discontinued"
   },
   {
     "id": "jester3",
@@ -6699,7 +6784,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Kalahari"
     },
-    "price": 40000
+    "price": 40000,
+    "availability": "discontinued"
   },
   {
     "id": "kamacho",
@@ -6943,7 +7029,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Landstalker"
     },
-    "price": 58000
+    "price": 58000,
+    "availability": "discontinued"
   },
   {
     "id": "landstalker2",
@@ -6960,7 +7047,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Landstalker_XL"
     },
-    "price": 1220000
+    "price": 1220000,
+    "availability": "discontinued"
   },
   {
     "id": "lazer",
@@ -6996,7 +7084,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/RE-7B"
     },
-    "price": 2475000
+    "price": 2475000,
+    "availability": "discontinued"
   },
   {
     "id": "lectro",
@@ -7030,7 +7119,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Lifeguard"
     },
-    "price": 865000
+    "price": 865000,
+    "availability": "discontinued"
   },
   {
     "id": "limo2",
@@ -7192,7 +7282,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Lynx"
     },
-    "price": 1735000
+    "price": 1735000,
+    "availability": "discontinued"
   },
   {
     "id": "mamba",
@@ -7371,7 +7462,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Massacro"
     },
-    "price": 275000
+    "price": 275000,
+    "availability": "discontinued"
   },
   {
     "id": "massacro2",
@@ -7390,7 +7482,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Massacro_(Racecar)"
     },
-    "price": 385000
+    "price": 385000,
+    "availability": "discontinued"
   },
   {
     "id": "maverick",
@@ -7476,7 +7569,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Michelli_GT"
     },
-    "price": 1225000
+    "price": 1225000,
+    "availability": "discontinued"
   },
   {
     "id": "microlight",
@@ -7851,7 +7945,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Nebula_Turbo"
     },
-    "price": 797000
+    "price": 797000,
+    "availability": "discontinued"
   },
   {
     "id": "nemesis",
@@ -7868,7 +7963,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Nemesis"
     },
-    "price": 12000
+    "price": 12000,
+    "availability": "discontinued"
   },
   {
     "id": "neo",
@@ -7887,7 +7983,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Neo"
     },
-    "price": 1875000
+    "price": 1875000,
+    "availability": "discontinued"
   },
   {
     "id": "neon",
@@ -8031,7 +8128,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/9F"
     },
-    "price": 120000
+    "price": 120000,
+    "availability": "discontinued"
   },
   {
     "id": "ninef2",
@@ -8050,7 +8148,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/9F_Cabrio"
     },
-    "price": 130000
+    "price": 130000,
+    "availability": "discontinued"
   },
   {
     "id": "niobe",
@@ -8231,7 +8330,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Oracle_XS"
     },
-    "price": 82000
+    "price": 82000,
+    "availability": "discontinued"
   },
   {
     "id": "oracle2",
@@ -8248,7 +8348,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Oracle"
     },
-    "price": 80000
+    "price": 80000,
+    "availability": "discontinued"
   },
   {
     "id": "osiris",
@@ -8368,7 +8469,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Paragon_R"
     },
-    "price": 905000
+    "price": 905000,
+    "availability": "discontinued"
   },
   {
     "id": "paragon2",
@@ -8441,7 +8543,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Patriot"
     },
-    "price": 32000
+    "price": 32000,
+    "availability": "discontinued"
   },
   {
     "id": "patriot2",
@@ -8546,7 +8649,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/PCJ_600"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "penetrator",
@@ -8580,7 +8684,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Penumbra"
     },
-    "price": 24000
+    "price": 24000,
+    "availability": "discontinued"
   },
   {
     "id": "penumbra2",
@@ -8636,7 +8741,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Peyote_Gasser"
     },
-    "price": 805000
+    "price": 805000,
+    "availability": "discontinued"
   },
   {
     "id": "peyote3",
@@ -8675,7 +8781,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/811"
     },
-    "price": 1135000
+    "price": 1135000,
+    "availability": "discontinued"
   },
   {
     "id": "phantom",
@@ -8758,7 +8865,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Picador"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "pigalle",
@@ -8775,7 +8883,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Pigalle"
     },
-    "price": 400000
+    "price": 400000,
+    "availability": "discontinued"
   },
   {
     "id": "pipistrello",
@@ -9288,7 +9397,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Prairie"
     },
-    "price": 25000
+    "price": 25000,
+    "availability": "discontinued"
   },
   {
     "id": "pranger",
@@ -9339,7 +9449,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Premier"
     },
-    "price": 10000
+    "price": 10000,
+    "availability": "discontinued"
   },
   {
     "id": "previon",
@@ -9463,7 +9574,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Radius"
     },
-    "price": 32000
+    "price": 32000,
+    "availability": "discontinued"
   },
   {
     "id": "raiden",
@@ -9482,7 +9594,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Raiden"
     },
-    "price": 1375000
+    "price": 1375000,
+    "availability": "discontinued"
   },
   {
     "id": "raiju",
@@ -9533,7 +9646,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rancher_XL"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "rapidgt",
@@ -9550,7 +9664,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rapid_GT"
     },
-    "price": 132000
+    "price": 132000,
+    "availability": "discontinued"
   },
   {
     "id": "rapidgt3",
@@ -9567,7 +9682,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rapid_GT_Classic"
     },
-    "price": 885000
+    "price": 885000,
+    "availability": "discontinued"
   },
   {
     "id": "rapidgt4",
@@ -9605,7 +9721,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Raptor"
     },
-    "price": 648000
+    "price": 648000,
+    "availability": "discontinued"
   },
   {
     "id": "ratbike",
@@ -9622,7 +9739,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rat_Bike"
     },
-    "price": 48000
+    "price": 48000,
+    "availability": "discontinued"
   },
   {
     "id": "ratel",
@@ -9656,7 +9774,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rat-Loader"
     },
-    "price": 6000
+    "price": 6000,
+    "availability": "discontinued"
   },
   {
     "id": "ratloader2",
@@ -9726,7 +9845,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rusty_Rebel"
     },
-    "price": 22000
+    "price": 22000,
+    "availability": "discontinued"
   },
   {
     "id": "rebel2",
@@ -9743,7 +9863,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rebel"
     },
-    "price": 22000
+    "price": 22000,
+    "availability": "discontinued"
   },
   {
     "id": "rebla",
@@ -9796,7 +9917,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Regina"
     },
-    "price": 8000
+    "price": 8000,
+    "availability": "discontinued"
   },
   {
     "id": "remus",
@@ -9849,7 +9971,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Retinue"
     },
-    "price": 615000
+    "price": 615000,
+    "availability": "discontinued"
   },
   {
     "id": "retinue2",
@@ -9886,7 +10009,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Revolter"
     },
-    "price": 1610000
+    "price": 1610000,
+    "availability": "discontinued"
   },
   {
     "id": "rhapsody",
@@ -9953,7 +10077,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Riata"
     },
-    "price": 380000
+    "price": 380000,
+    "availability": "discontinued"
   },
   {
     "id": "riot",
@@ -10020,7 +10145,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Rocoto"
     },
-    "price": 85000
+    "price": 85000,
+    "availability": "discontinued"
   },
   {
     "id": "rogue",
@@ -10054,7 +10180,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Romero_Hearse"
     },
-    "price": 45000
+    "price": 45000,
+    "availability": "discontinued"
   },
   {
     "id": "rrocket",
@@ -10121,7 +10248,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ruffian"
     },
-    "price": 10000
+    "price": 10000,
+    "availability": "discontinued"
   },
   {
     "id": "ruiner",
@@ -10138,7 +10266,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ruiner"
     },
-    "price": 10000
+    "price": 10000,
+    "availability": "discontinued"
   },
   {
     "id": "ruiner2",
@@ -10223,7 +10352,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ruston"
     },
-    "price": 430000
+    "price": 430000,
+    "availability": "discontinued"
   },
   {
     "id": "s80",
@@ -10242,7 +10372,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/S80RR"
     },
-    "price": 2575000
+    "price": 2575000,
+    "availability": "discontinued"
   },
   {
     "id": "s95",
@@ -10333,7 +10464,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sanchez_(livery)"
     },
-    "price": 8000
+    "price": 8000,
+    "availability": "discontinued"
   },
   {
     "id": "sanctus",
@@ -10385,7 +10517,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sandking_SWB"
     },
-    "price": 38000
+    "price": 38000,
+    "availability": "discontinued"
   },
   {
     "id": "savage",
@@ -10422,7 +10555,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Savestra"
     },
-    "price": 990000
+    "price": 990000,
+    "availability": "discontinued"
   },
   {
     "id": "sc1",
@@ -10441,7 +10575,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/SC1"
     },
-    "price": 1603000
+    "price": 1603000,
+    "availability": "discontinued"
   },
   {
     "id": "scarab",
@@ -10556,7 +10691,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Schafter_LWB"
     },
-    "price": 208000
+    "price": 208000,
+    "availability": "discontinued"
   },
   {
     "id": "schafter5",
@@ -10594,7 +10730,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Schafter_LWB_(Armored)"
     },
-    "price": 438000
+    "price": 438000,
+    "availability": "discontinued"
   },
   {
     "id": "schlagen",
@@ -10630,7 +10767,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Schwartzer"
     },
-    "price": 80000
+    "price": 80000,
+    "availability": "discontinued"
   },
   {
     "id": "scorcher",
@@ -10767,7 +10905,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Seminole"
     },
-    "price": 30000
+    "price": 30000,
+    "availability": "discontinued"
   },
   {
     "id": "seminole2",
@@ -10784,7 +10923,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Seminole_Frontier"
     },
-    "price": 678000
+    "price": 678000,
+    "availability": "discontinued"
   },
   {
     "id": "sentinel",
@@ -10820,7 +10960,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sentinel"
     },
-    "price": 28000
+    "price": 28000,
+    "availability": "discontinued"
   },
   {
     "id": "sentinel4",
@@ -10894,7 +11035,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Serrano"
     },
-    "price": 60000
+    "price": 60000,
+    "availability": "discontinued"
   },
   {
     "id": "seven70",
@@ -10911,7 +11053,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Seven-70"
     },
-    "price": 695000
+    "price": 695000,
+    "availability": "discontinued"
   },
   {
     "id": "shamal",
@@ -10947,7 +11090,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/ETR1"
     },
-    "price": 1995000
+    "price": 1995000,
+    "availability": "discontinued"
   },
   {
     "id": "sheriff",
@@ -11196,7 +11340,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sovereign"
     },
-    "price": 120000
+    "price": 120000,
+    "availability": "discontinued"
   },
   {
     "id": "specter",
@@ -11317,7 +11462,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Squaddie"
     },
-    "price": 1130000
+    "price": 1130000,
+    "availability": "discontinued"
   },
   {
     "id": "squalo",
@@ -11351,7 +11497,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stafford"
     },
-    "price": 28000
+    "price": 28000,
+    "availability": "discontinued"
   },
   {
     "id": "stalion",
@@ -11404,7 +11551,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stanier"
     },
-    "price": 10000
+    "price": 10000,
+    "availability": "discontinued"
   },
   {
     "id": "starling",
@@ -11438,7 +11586,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stinger"
     },
-    "price": 1000000
+    "price": 1000000,
+    "availability": "discontinued"
   },
   {
     "id": "stingergt",
@@ -11457,7 +11606,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Stinger_GT"
     },
-    "price": 875000
+    "price": 875000,
+    "availability": "discontinued"
   },
   {
     "id": "stingertt",
@@ -11561,7 +11711,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Streiter"
     },
-    "price": 500000
+    "price": 500000,
+    "availability": "discontinued"
   },
   {
     "id": "stretch",
@@ -11800,7 +11951,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Super_Diamond"
     },
-    "price": 250000
+    "price": 250000,
+    "availability": "discontinued"
   },
   {
     "id": "supervolito",
@@ -11855,7 +12007,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Surano"
     },
-    "price": 99000
+    "price": 99000,
+    "availability": "discontinued"
   },
   {
     "id": "surfer",
@@ -11906,7 +12059,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Surge"
     },
-    "price": 38000
+    "price": 38000,
+    "availability": "discontinued"
   },
   {
     "id": "suzume",
@@ -11980,7 +12134,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Swinger"
     },
-    "price": 909000
+    "price": 909000,
+    "availability": "discontinued"
   },
   {
     "id": "t20",
@@ -12050,7 +12205,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tailgater"
     },
-    "price": 55000
+    "price": 55000,
+    "availability": "discontinued"
   },
   {
     "id": "tailgater2",
@@ -12371,7 +12527,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Thrust"
     },
-    "price": 75000
+    "price": 75000,
+    "availability": "discontinued"
   },
   {
     "id": "thruster",
@@ -12407,7 +12564,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tigon"
     },
-    "price": 2310000
+    "price": 2310000,
+    "availability": "discontinued"
   },
   {
     "id": "tiptruck",
@@ -12493,7 +12651,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Torero"
     },
-    "price": 998000
+    "price": 998000,
+    "availability": "discontinued"
   },
   {
     "id": "torero2",
@@ -12569,7 +12728,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tornado_Rat_Rod"
     },
-    "price": 378000
+    "price": 378000,
+    "availability": "discontinued"
   },
   {
     "id": "toro",
@@ -12856,7 +13016,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tulip"
     },
-    "price": 718000
+    "price": 718000,
+    "availability": "discontinued"
   },
   {
     "id": "tulip2",
@@ -12964,7 +13125,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Tyrus"
     },
-    "price": 2550000
+    "price": 2550000,
+    "availability": "discontinued"
   },
   {
     "id": "uranus",
@@ -13016,7 +13178,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Vacca"
     },
-    "price": 240000
+    "price": 240000,
+    "availability": "discontinued"
   },
   {
     "id": "vader",
@@ -13033,7 +13196,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Vader"
     },
-    "price": 9000
+    "price": 9000,
+    "availability": "discontinued"
   },
   {
     "id": "vagner",
@@ -13120,7 +13284,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Vamos"
     },
-    "price": 596000
+    "price": 596000,
+    "availability": "discontinued"
   },
   {
     "id": "vectre",
@@ -13188,7 +13353,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Verlierer"
     },
-    "price": 695000
+    "price": 695000,
+    "availability": "discontinued"
   },
   {
     "id": "verus",
@@ -13205,7 +13371,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Verus"
     },
-    "price": 192000
+    "price": 192000,
+    "availability": "discontinued"
   },
   {
     "id": "vestra",
@@ -13294,7 +13461,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Vigero"
     },
-    "price": 21000
+    "price": 21000,
+    "availability": "discontinued"
   },
   {
     "id": "vigero2",
@@ -13463,7 +13631,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Viseris"
     },
-    "price": 875000
+    "price": 875000,
+    "availability": "discontinued"
   },
   {
     "id": "visione",
@@ -13552,7 +13721,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Voltic"
     },
-    "price": 150000
+    "price": 150000,
+    "availability": "discontinued"
   },
   {
     "id": "voltic2",
@@ -13676,7 +13846,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Warrener"
     },
-    "price": 120000
+    "price": 120000,
+    "availability": "discontinued"
   },
   {
     "id": "warrener2",
@@ -13710,7 +13881,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Washington"
     },
-    "price": 15000
+    "price": 15000,
+    "availability": "discontinued"
   },
   {
     "id": "wastelander",
@@ -13833,7 +14005,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Wolfsbane"
     },
-    "price": 95000
+    "price": 95000,
+    "availability": "discontinued"
   },
   {
     "id": "woodlander",
@@ -13872,7 +14045,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/XA-21"
     },
-    "price": 2375000
+    "price": 2375000,
+    "availability": "discontinued"
   },
   {
     "id": "xls",
@@ -13891,7 +14065,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/XLS"
     },
-    "price": 253000
+    "price": 253000,
+    "availability": "discontinued"
   },
   {
     "id": "xls2",
@@ -13910,7 +14085,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/XLS_(Armored)"
     },
-    "price": 522000
+    "price": 522000,
+    "availability": "discontinued"
   },
   {
     "id": "xtreme",
@@ -14090,7 +14266,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/190z"
     },
-    "price": 900000
+    "price": 900000,
+    "availability": "discontinued"
   },
   {
     "id": "zeno",
@@ -14160,7 +14337,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Zion"
     },
-    "price": 50000
+    "price": 50000,
+    "availability": "discontinued"
   },
   {
     "id": "zion2",
@@ -14177,7 +14355,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Zion_Cabrio"
     },
-    "price": 65000
+    "price": 65000,
+    "availability": "discontinued"
   },
   {
     "id": "zion3",
@@ -14196,7 +14375,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Zion_Classic"
     },
-    "price": 812000
+    "price": 812000,
+    "availability": "discontinued"
   },
   {
     "id": "zombiea",
@@ -14213,7 +14393,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Zombie_Bobber"
     },
-    "price": 99000
+    "price": 99000,
+    "availability": "discontinued"
   },
   {
     "id": "zombieb",
@@ -14251,7 +14432,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Zorrusso"
     },
-    "price": 1925000
+    "price": 1925000,
+    "availability": "discontinued"
   },
   {
     "id": "zr350",
