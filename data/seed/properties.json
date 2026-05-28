@@ -5752,6 +5752,101 @@
     "price": 1830000
   },
   {
+    "id": "arena-workshop",
+    "display_name": "Arena Workshop",
+    "property_type": "business",
+    "subtype": "arena-workshop",
+    "subtype_display": "Arena Workshop",
+    "location": "Maze Bank Arena, La Puerta",
+    "neighborhood": "La Puerta",
+    "capacity": 10,
+    "counts_as_garage": true,
+    "price": 995000,
+    "upgrades": [
+      {
+        "id": "arena-workshop-garage-b1",
+        "display_name": "Garage Floor B1",
+        "tier": 1,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "Adds a second 10-car garage floor.",
+        "price": 195000
+      },
+      {
+        "id": "arena-workshop-garage-b2",
+        "display_name": "Garage Floor B2",
+        "tier": 2,
+        "capacity": 10,
+        "required_upgrade_id": null,
+        "notes": "Adds a third 10-car garage floor (30 personal vehicles total).",
+        "price": 265000
+      },
+      {
+        "id": "arena-workshop-style-business",
+        "display_name": "Style: Business",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Default office style (free).",
+        "price": 0,
+        "mutex_group": "arena-workshop-style"
+      },
+      {
+        "id": "arena-workshop-style-modern",
+        "display_name": "Style: Modern",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate office style.",
+        "price": 180000,
+        "mutex_group": "arena-workshop-style"
+      },
+      {
+        "id": "arena-workshop-style-urbane",
+        "display_name": "Style: Urbane",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Alternate office style.",
+        "price": 265000,
+        "mutex_group": "arena-workshop-style"
+      },
+      {
+        "id": "arena-workshop-personal-quarters",
+        "display_name": "Personal Quarters",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Living quarters; adds a spawn point at the workshop.",
+        "price": 220000
+      },
+      {
+        "id": "arena-workshop-bennys-mechanic",
+        "display_name": "Benny's O.M.W. Mechanic",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Guest mechanic enabling Benny's lowrider modifications.",
+        "price": 247500
+      },
+      {
+        "id": "arena-workshop-weapons-expert",
+        "display_name": "Weapons Expert",
+        "tier": null,
+        "capacity": 0,
+        "required_upgrade_id": null,
+        "notes": "Enables weaponized-vehicle and weapon upgrades.",
+        "price": 727500
+      }
+    ],
+    "_sources": {
+      "fandom": "https://gta.fandom.com/wiki/Arena_Workshop",
+      "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/arena-war-workshop"
+    },
+    "parent_building": null,
+    "image_path": null
+  },
+  {
     "id": "salvage-yard-murrieta-heights",
     "display_name": "Murrieta Heights Salvage Yard",
     "property_type": "business",

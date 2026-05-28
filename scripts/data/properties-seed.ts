@@ -20,6 +20,7 @@ import { FACILITIES } from "./facilities-seed";
 import { AGENCIES } from "./agencies-seed";
 import { ARCADES } from "./arcades-seed";
 import { AUTO_SHOPS } from "./auto-shops-seed";
+import { ARENA_WORKSHOP_SEED } from "./arena-workshop-seed";
 import { SALVAGE_YARDS } from "./salvage-yards-seed";
 import { BAIL_OFFICES_SEED } from "./bail-offices-seed";
 import { VEHICLE_WAREHOUSES } from "./vehicle-warehouses-seed";
@@ -82,6 +83,7 @@ export const PROPERTIES_SEED: Omit<Property, "image_path">[] = [
   ...AGENCIES,
   ...ARCADES,
   ...AUTO_SHOPS,
+  ...ARENA_WORKSHOP_SEED,
   ...SALVAGE_YARDS,
   ...BAIL_OFFICES_SEED,
   ...VEHICLE_WAREHOUSES,

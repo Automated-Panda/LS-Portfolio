@@ -51,6 +51,7 @@ const GROUP_LABELS: Record<string, string> = {
   mansion: "Mansions",
   agency: "Agency",
   arcade: "Arcade",
+  "arena-workshop": "Arena Workshop",
   "auto-shop": "Auto Shop",
   "bail-office": "Bail Office",
   "biker-business-cash": "Counterfeit Cash Factory",
