@@ -36,6 +36,8 @@ import {
   ASSET_CATEGORIES,
   ASSET_CATEGORY_LABEL,
   AVAILABILITY_LABEL,
+  VENDOR_LABEL,
+  VENDOR_OPTIONS,
   assetCategoryOf,
 } from "@/lib/vehicles";
 
@@ -59,6 +61,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   const mfr = searchParams.get("mfr") ?? "";
   const cat = (searchParams.get("cat") ?? "") as AssetCategory | "";
   const avail = searchParams.get("avail") ?? "";
+  const vendor = searchParams.get("vendor") ?? "";
   const selectedTags = (searchParams.get("tags") ?? "")
     .split(",")
     .filter(Boolean);
@@ -102,7 +105,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   };
 
   const selectedMfr = filters.manufacturers.find((m) => m.id === mfr);
-  const hasAny = q || cls || mfr || cat || avail || selectedTags.length > 0;
+  const hasAny = q || cls || mfr || cat || avail || vendor || selectedTags.length > 0;
 
   // Classes available in the currently-selected category — switching to Air
   // narrows the Class dropdown to Plane/Helicopter, etc.
@@ -196,6 +199,23 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
             {AVAILABILITY_OPTIONS.map((s) => (
               <SelectItem key={s} value={s}>
                 {AVAILABILITY_LABEL[s]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select
+          value={vendor || "__all"}
+          onValueChange={(v) => update({ vendor: v === "__all" ? null : v })}
+        >
+          <SelectTrigger className="w-[190px]">
+            <SelectValue placeholder="Vendor" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__all">All vendors</SelectItem>
+            {VENDOR_OPTIONS.map((vn) => (
+              <SelectItem key={vn} value={vn}>
+                {VENDOR_LABEL[vn]}
               </SelectItem>
             ))}
           </SelectContent>

@@ -18,6 +18,7 @@ import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import {
   AVAILABILITY_BADGE_CLASS,
   AVAILABILITY_LABEL,
+  VENDOR_LABEL,
   type VehicleSummary,
 } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
@@ -324,7 +325,10 @@ function VehicleCardImpl({
         <div className="flex flex-1 flex-col gap-2 p-3">
           <div>
             <p className="text-sm font-medium leading-tight">{vehicle.display_name}</p>
-            <p className="text-xs text-muted-foreground">{vehicle.manufacturer_display}</p>
+            <p className="text-xs text-muted-foreground truncate">
+              {vehicle.manufacturer_display}
+              {vehicle.vendor && ` · ${VENDOR_LABEL[vehicle.vendor]}`}
+            </p>
           </div>
           <div className="mt-auto flex h-[22px] items-center gap-1 overflow-hidden">
             {vehicle.tag_ids.slice(0, 2).map((id) => (

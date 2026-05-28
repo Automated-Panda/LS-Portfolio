@@ -267,6 +267,35 @@ async function main(): Promise<void> {
     // Overlay file missing — fine, everything stays "available".
   }
 
+  // Vendor overlay: data/seed/vehicle-vendors.json maps id -> storefront,
+  // derived from the cached Fandom "purchasable from X" categories.
+  const VALID_VENDORS = new Set([
+    "southern_san_andreas",
+    "legendary_motorsport",
+    "elitas_travel",
+    "warstock",
+    "dock_tease",
+    "pedal_metal",
+  ]);
+  try {
+    const overlayRaw = await fs.readFile(
+      path.join(SEED_DIR, "vehicle-vendors.json"),
+      "utf8",
+    );
+    const overlay = JSON.parse(overlayRaw) as Record<string, unknown>;
+    let withVendor = 0;
+    for (const v of vehicles) {
+      const raw = overlay[v.id];
+      if (typeof raw === "string" && VALID_VENDORS.has(raw)) {
+        v.vendor = raw as typeof v.vendor;
+        withVendor += 1;
+      }
+    }
+    console.log(`Applied vendor overlay: ${withVendor} with a vendor.`);
+  } catch {
+    // Overlay file missing — fine, vendors will just be null.
+  }
+
   await writeJson(path.join(SEED_DIR, "vehicles.json"), vehicles);
   await writeJson(path.join(SEED_DIR, "manufacturers.json"), manufacturers);
 

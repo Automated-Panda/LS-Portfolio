@@ -29,6 +29,32 @@ export const AVAILABILITY_BADGE_CLASS: Record<
   seasonal: "bg-orange-500/15 text-orange-300 border-orange-500/30",
 };
 
+export type VehicleVendor =
+  | "southern_san_andreas"
+  | "legendary_motorsport"
+  | "elitas_travel"
+  | "warstock"
+  | "dock_tease"
+  | "pedal_metal";
+
+export const VENDOR_LABEL: Record<VehicleVendor, string> = {
+  southern_san_andreas: "Southern San Andreas",
+  legendary_motorsport: "Legendary Motorsport",
+  elitas_travel: "Elitás Travel",
+  warstock: "Warstock Cache & Carry",
+  dock_tease: "Dock Tease",
+  pedal_metal: "Pedal & Metal",
+};
+
+export const VENDOR_OPTIONS: VehicleVendor[] = [
+  "southern_san_andreas",
+  "legendary_motorsport",
+  "elitas_travel",
+  "warstock",
+  "dock_tease",
+  "pedal_metal",
+];
+
 export type VehicleSummary = {
   id: string;
   display_name: string;
@@ -39,6 +65,7 @@ export type VehicleSummary = {
   price: number | null;       // GTA$ purchase price, null = not for sale / mission-only / unsourced
   tag_ids: string[];
   availability: AvailabilityStatus;
+  vendor: VehicleVendor | null;
   owned_count: number;        // 0 if user owns no instances, N if N instances
   // When set, the vehicle has a "drift" handling variant in the game.
   // Ownership of the drift variant is tracked as a separate user_owned_vehicles

@@ -4,6 +4,7 @@ import {
   type AvailabilityStatus,
   type FilterOptions,
   type VehicleSummary,
+  type VehicleVendor,
 } from "@/lib/vehicles";
 
 export type VehiclesBrowserData = {
@@ -26,7 +27,7 @@ export async function getVehiclesBrowserData(
     supabase
       .from("vehicles")
       .select(
-        `id, internal_name, display_name, class, manufacturer_id, image_path, price, availability,
+        `id, internal_name, display_name, class, manufacturer_id, image_path, price, availability, vendor,
          manufacturers ( display ),
          vehicle_tag_links ( tag_id )`,
       )
@@ -59,6 +60,7 @@ export async function getVehiclesBrowserData(
     image_path: string | null;
     price: number | null;
     availability: AvailabilityStatus | null;
+    vendor: VehicleVendor | null;
     manufacturers: { display: string } | { display: string }[] | null;
     vehicle_tag_links: Array<{ tag_id: string }> | null;
   };
@@ -113,6 +115,7 @@ export async function getVehiclesBrowserData(
         price: v.price ?? null,
         tag_ids: (v.vehicle_tag_links ?? []).map((l) => l.tag_id),
         availability: v.availability ?? "available",
+        vendor: v.vendor ?? null,
         owned_count: ownedCount.get(v.id) ?? 0,
         drift_variant: driftByBaseId.get(v.id) ?? null,
       };

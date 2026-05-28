@@ -35,6 +35,19 @@ export const VehicleSchema = z.object({
   availability: z
     .enum(["available", "discontinued", "unobtainable", "blacklisted", "seasonal"])
     .optional(),
+  // In-game purchase storefront. Derived from Fandom vendor categories;
+  // exceptions in data/seed/vehicle-vendors.json. Null = no standard vendor.
+  vendor: z
+    .enum([
+      "southern_san_andreas",
+      "legendary_motorsport",
+      "elitas_travel",
+      "warstock",
+      "dock_tease",
+      "pedal_metal",
+    ])
+    .nullable()
+    .optional(),
   _sources: z.object({
     durtyfree: z.string().url(),
     fandom: z.string().url(),
