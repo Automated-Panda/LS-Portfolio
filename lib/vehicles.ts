@@ -55,3 +55,21 @@ export function assetCategoryOf(formattedClass: string): AssetCategory {
   if (formattedClass === "Boat") return "sea";
   return "land";
 }
+
+// Property subtypes whose storage holds aircraft / boats rather than ground
+// vehicles. Used to filter the vehicle picker so a hangar offers planes &
+// helis, a yacht offers boats, and everything else offers cars + bikes.
+// Keep in sync with the seed subtypes (scripts/data/*-seed.ts).
+const AIR_STORAGE_SUBTYPES = new Set([
+  "hangar",
+  "mckenzie-hangar",
+  "higgins-helitours",
+]);
+const SEA_STORAGE_SUBTYPES = new Set(["yacht"]);
+
+// Which asset category a property's storage accepts, by subtype.
+export function storageAssetCategory(subtype: string): AssetCategory {
+  if (AIR_STORAGE_SUBTYPES.has(subtype)) return "air";
+  if (SEA_STORAGE_SUBTYPES.has(subtype)) return "sea";
+  return "land";
+}

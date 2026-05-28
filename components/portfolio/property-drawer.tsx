@@ -23,6 +23,7 @@ import {
 import { assignVehicleStorage } from "@/app/(app)/my-vehicles/actions";
 import { unownProperty } from "@/app/(app)/properties/actions";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
+import { storageAssetCategory } from "@/lib/vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 
@@ -376,6 +377,7 @@ export function PropertyDrawer({
           label={`${property.display_name} · ${pickerTarget.label}`}
           capacity={pickerTarget.capacity}
           currentCount={pickerTarget.current}
+          assetCategory={storageAssetCategory(property.subtype)}
           open={pickerOpen}
           onOpenChange={setPickerOpen}
         />
