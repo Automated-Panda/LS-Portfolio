@@ -77,7 +77,14 @@ async function main(): Promise<void> {
     source_durtyfree: v._sources.durtyfree,
     source_fandom: v._sources.fandom,
   }));
-  await upsert("vehicles", vehicleRows);
+  // Curated fields are owned by the /admin editor (DB is source of truth), so
+  // a re-import must not clobber them on existing rows — new rows still get
+  // their seed values. See upsertPreservingCurated.
+  await upsertPreservingCurated("vehicles", vehicleRows, [
+    "price",
+    "availability",
+    "vendors",
+  ]);
 
   // second pass: attach variant_of now that all rows exist
   const variantUpdates = vehicles
@@ -159,7 +166,11 @@ async function main(): Promise<void> {
     source_fandom: p._sources.fandom,
     source_gtabase: p._sources.gtabase,
   }));
-  await upsert("properties", propertyRows);
+  await upsertPreservingCurated("properties", propertyRows, [
+    "price",
+    "capacity",
+    "counts_as_garage",
+  ]);
 
   // ---- property_upgrades ----
   const upgradeRows = properties.flatMap((p, _pi) =>
@@ -179,7 +190,11 @@ async function main(): Promise<void> {
     })),
   );
   console.log(`Importing ${upgradeRows.length} property_upgrades...`);
-  await upsert("property_upgrades", upgradeRows);
+  await upsertPreservingCurated("property_upgrades", upgradeRows, [
+    "display_name",
+    "capacity",
+    "price",
+  ]);
 
   // Cleanup: delete any property_upgrades whose id is no longer in the seed
   // (e.g. when an upgrade is restructured into base_capacity or removed).
@@ -237,6 +252,45 @@ async function upsert(
       throw new Error(`upsert ${table} (chunk ${i}): ${error.message}`);
     }
   }
+}
+
+/**
+ * Upsert that preserves admin-curated fields. NEW rows (id not yet in the DB)
+ * are inserted in full, including the curated columns' seed values. EXISTING
+ * rows are upserted with the curated columns OMITTED, so the on-conflict UPDATE
+ * never overwrites values edited in the /admin editor (DB is source of truth).
+ */
+async function upsertPreservingCurated(
+  table: string,
+  rows: Record<string, unknown>[],
+  curatedCols: string[],
+  onConflict = "id",
+): Promise<void> {
+  if (!rows.length) return;
+
+  const ids = rows.map((r) => r.id as string);
+  const existing = new Set<string>();
+  for (let i = 0; i < ids.length; i += 500) {
+    const chunk = ids.slice(i, i + 500);
+    const { data, error } = await supabase.from(table).select("id").in("id", chunk);
+    if (error) throw new Error(`fetch existing ${table}: ${error.message}`);
+    for (const r of data ?? []) existing.add(r.id as string);
+  }
+
+  const newRows = rows.filter((r) => !existing.has(r.id as string));
+  const existingRows = rows
+    .filter((r) => existing.has(r.id as string))
+    .map((r) => {
+      const copy = { ...r };
+      for (const c of curatedCols) delete copy[c];
+      return copy;
+    });
+
+  await upsert(table, newRows, onConflict); // full, incl. curated seed values
+  await upsert(table, existingRows, onConflict); // structural only
+  console.log(
+    `  ${table}: ${newRows.length} new (full), ${existingRows.length} existing (curated fields preserved: ${curatedCols.join(", ")})`,
+  );
 }
 
 main().catch((err) => {

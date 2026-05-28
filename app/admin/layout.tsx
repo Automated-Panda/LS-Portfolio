@@ -27,9 +27,15 @@ export default async function AdminLayout({
             Upgrades
           </Link>
         </nav>
+        <a
+          href="/admin/export"
+          className="ml-auto text-sm text-muted-foreground hover:underline"
+        >
+          ⬇ Export backup
+        </a>
         <Link
           href="/"
-          className="ml-auto text-sm text-muted-foreground hover:underline"
+          className="text-sm text-muted-foreground hover:underline"
         >
           ← Back to app
         </Link>
