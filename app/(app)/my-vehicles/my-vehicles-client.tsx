@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CustomTagFilter } from "@/components/portfolio/custom-tag-filter";
-import { LocationFilter } from "@/components/portfolio/location-filter";
+import { LocationFilter, type LocationOption } from "@/components/portfolio/location-filter";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
@@ -38,9 +38,59 @@ export function MyVehiclesClient({
   );
   const [view, setView] = useState<"cards" | "table">("cards");
   const [search, setSearch] = useState("");
-  const [selectedPropertyIds, setSelectedPropertyIds] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  // Location filter tree: garage-capable properties (or any with a stored
+  // vehicle), each with the occupied levels within it (shown only when its
+  // cars span 2+ distinct levels — upgrade/floor and/or sub-slot).
+  const locations = useMemo<LocationOption[]>(() => {
+    type Entry = {
+      count: number;
+      levels: Map<string, { key: string; label: string; count: number }>;
+    };
+    const byProp = new Map<string, Entry>();
+    for (const i of instances) {
+      if (!i.storage) continue;
+      const pid = i.storage.owned_property_id;
+      const entry = byProp.get(pid) ?? { count: 0, levels: new Map() };
+      entry.count += 1;
+      const key = `lvl:${pid}::${i.storage.assigned_upgrade_id ?? "base"}::${i.storage.sub_slot ?? ""}`;
+      const label =
+        [i.storage.upgrade_display_name, i.storage.sub_slot]
+          .filter(Boolean)
+          .join(" · ") || "Base storage";
+      const lvl = entry.levels.get(key) ?? { key, label, count: 0 };
+      lvl.count += 1;
+      entry.levels.set(key, lvl);
+      byProp.set(pid, entry);
+    }
+    const hasStorage = (p: OwnedPropertyDetail) =>
+      p.base_capacity > 0 ||
+      p.upgrades.some((u) => u.is_installed && u.capacity > 0);
+    const shown = new Set<string>();
+    for (const p of ownedProperties) if (hasStorage(p)) shown.add(p.id);
+    for (const pid of byProp.keys()) shown.add(pid);
+    const nameById = new Map(ownedProperties.map((p) => [p.id, p.display_name]));
+    return Array.from(shown)
+      .map((pid) => {
+        const entry = byProp.get(pid);
+        const levels =
+          entry && entry.levels.size >= 2
+            ? Array.from(entry.levels.values()).sort((a, b) =>
+                a.label.localeCompare(b.label),
+              )
+            : [];
+        return {
+          propertyId: pid,
+          propertyName: nameById.get(pid) ?? "Unknown",
+          count: entry?.count ?? 0,
+          levels,
+        };
+      })
+      .sort((a, b) => a.propertyName.localeCompare(b.propertyName));
+  }, [instances, ownedProperties]);
 
   useEffect(() => {
     const v = localStorage.getItem(VIEW_KEY);
@@ -71,7 +121,15 @@ export function MyVehiclesClient({
 
   const filtered = instances.filter((i) => {
     if (unassignedOnly && i.storage) return false;
-    if (selectedPropertyIds.length > 0 && (!i.storage || !selectedPropertyIds.includes(i.storage.owned_property_id))) return false;
+    if (selectedLocations.length > 0) {
+      if (!i.storage) return false;
+      const pid = i.storage.owned_property_id;
+      const propKey = `prop:${pid}`;
+      const lvlKey = `lvl:${pid}::${i.storage.assigned_upgrade_id ?? "base"}::${i.storage.sub_slot ?? ""}`;
+      if (!selectedLocations.includes(propKey) && !selectedLocations.includes(lvlKey)) {
+        return false;
+      }
+    }
     if (selectedTags.length > 0) {
       // AND match — instance must carry every selected custom_tag.
       const owned = new Set(i.custom_tags);
@@ -98,11 +156,11 @@ export function MyVehiclesClient({
             className="w-48"
           />
           <LocationFilter
-            properties={ownedProperties.map((p) => ({ id: p.id, display_name: p.display_name }))}
-            selectedPropertyIds={selectedPropertyIds}
+            locations={locations}
+            selected={selectedLocations}
             unassignedOnly={unassignedOnly}
-            onChange={({ properties, unassignedOnly }) => {
-              setSelectedPropertyIds(properties);
+            onChange={({ selected, unassignedOnly }) => {
+              setSelectedLocations(selected);
               setUnassignedOnly(unassignedOnly);
             }}
           />
