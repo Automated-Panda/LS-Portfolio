@@ -7,13 +7,15 @@ export type AvailabilityStatus =
   | "available"
   | "discontinued"
   | "unobtainable"
-  | "blacklisted";
+  | "blacklisted"
+  | "seasonal";
 
 export const AVAILABILITY_LABEL: Record<AvailabilityStatus, string> = {
   available: "Available",
   discontinued: "Discontinued",
   unobtainable: "Unobtainable",
   blacklisted: "Blacklisted",
+  seasonal: "Seasonal",
 };
 
 // Tailwind classes for the status badge. "available" has no badge (it's the norm).
@@ -24,6 +26,7 @@ export const AVAILABILITY_BADGE_CLASS: Record<
   discontinued: "bg-amber-500/15 text-amber-300 border-amber-500/30",
   unobtainable: "bg-zinc-500/15 text-zinc-300 border-zinc-500/30",
   blacklisted: "bg-red-500/15 text-red-300 border-red-500/30",
+  seasonal: "bg-orange-500/15 text-orange-300 border-orange-500/30",
 };
 
 export type VehicleSummary = {

@@ -1,3 +1,14 @@
 {
-  "btype2": "unobtainable"
+  "ambulance": "blacklisted",
+  "police": "blacklisted",
+  "policeb": "blacklisted",
+  "policeold1": "blacklisted",
+  "policeold2": "blacklisted",
+  "policet": "blacklisted",
+  "policet3": "blacklisted",
+  "sheriff": "blacklisted",
+  "sheriff2": "blacklisted",
+  "btype2": "seasonal",
+  "lurcher": "seasonal",
+  "sanctus": "seasonal"
 }

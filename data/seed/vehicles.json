@@ -173,7 +173,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Ambulance"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "annihilator",
@@ -1564,7 +1565,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Fr%C3%A4nken_Stange"
     },
-    "price": 550000
+    "price": 550000,
+    "availability": "seasonal"
   },
   {
     "id": "btype3",
@@ -7134,7 +7136,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Lurcher"
     },
-    "price": 650000
+    "price": 650000,
+    "availability": "seasonal"
   },
   {
     "id": "luxor",
@@ -8990,7 +8993,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Cruiser"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "police4",
@@ -9044,7 +9048,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Bike"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "policeold1",
@@ -9060,7 +9065,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Rancher"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "policeold2",
@@ -9076,7 +9082,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Roadcruiser"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "policet",
@@ -9092,7 +9099,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Police_Transporter"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "policet3",
@@ -9108,7 +9116,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Burrito_(Bail_Enforcement)"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "polimpaler5",
@@ -10341,7 +10350,8 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sanctus"
     },
-    "price": 1995000
+    "price": 1995000,
+    "availability": "seasonal"
   },
   {
     "id": "sandking",
@@ -10953,7 +10963,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sheriff_Cruiser"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "sheriff2",
@@ -10969,7 +10980,8 @@
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sheriff_SUV"
-    }
+    },
+    "availability": "blacklisted"
   },
   {
     "id": "shinobi",

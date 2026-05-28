@@ -246,6 +246,7 @@ async function main(): Promise<void> {
     "discontinued",
     "unobtainable",
     "blacklisted",
+    "seasonal",
   ]);
   try {
     const overlayRaw = await fs.readFile(

@@ -18,7 +18,8 @@
     "images:publish": "node scripts/publish-images.mjs",
     "images:fetch-missing": "tsx --env-file=.env.local scripts/fetch-missing-images.ts",
     "vehicles:prune-variants": "tsx --env-file=.env.local scripts/prune-redundant-variants.ts",
-    "mfr:fix-acronyms": "tsx --env-file=.env.local scripts/fix-manufacturer-display.ts"
+    "mfr:fix-acronyms": "tsx --env-file=.env.local scripts/fix-manufacturer-display.ts",
+    "availability:apply": "tsx --env-file=.env.local scripts/apply-availability.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",

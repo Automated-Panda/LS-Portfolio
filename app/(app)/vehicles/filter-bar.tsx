@@ -44,6 +44,7 @@ const AVAILABILITY_OPTIONS: AvailabilityStatus[] = [
   "discontinued",
   "unobtainable",
   "blacklisted",
+  "seasonal",
 ];
 import { cn } from "@/lib/utils";
 

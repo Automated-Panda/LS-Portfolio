@@ -33,7 +33,7 @@ export const VehicleSchema = z.object({
   // How the vehicle can currently be obtained. Default 'available'; exceptions
   // come from data/seed/vehicle-availability.json.
   availability: z
-    .enum(["available", "discontinued", "unobtainable", "blacklisted"])
+    .enum(["available", "discontinued", "unobtainable", "blacklisted", "seasonal"])
     .optional(),
   _sources: z.object({
     durtyfree: z.string().url(),
