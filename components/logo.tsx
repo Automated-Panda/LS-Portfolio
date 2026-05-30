@@ -13,8 +13,8 @@ type LogoProps = {
   theme?: LogoTheme;
 };
 
-// public/logo.png is the horizontal "GT VAULT" lockup (600×264, ratio ~2.27:1).
-const RATIO = 600 / 264;
+// public/logo.png is the horizontal "GT VAULT" lockup (600×192, ratio ~3.13:1).
+const RATIO = 600 / 192;
 const WIDTHS: Record<LogoSize, number> = {
   sm: 120,
   md: 180,
