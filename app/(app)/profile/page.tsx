@@ -38,7 +38,7 @@ export default async function ProfilePage() {
       <div>
         <h1 className="text-3xl font-semibold tracking-tight">Profile</h1>
         <p className="text-sm text-muted-foreground">
-          Your public identity inside LS Portfolio.
+          Your public identity inside GT Vault.
         </p>
       </div>
 

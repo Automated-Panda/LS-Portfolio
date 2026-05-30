@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
 type LogoSize = "sm" | "md" | "lg" | "xl";
@@ -6,70 +8,33 @@ type LogoTheme = "dark" | "light";
 type LogoProps = {
   className?: string;
   size?: LogoSize;
+  // Kept for API compatibility. The lockup is the white/green transparent
+  // mark, designed for the dark UI; no separate light variant today.
   theme?: LogoTheme;
 };
 
-const SIZES: Record<
-  LogoSize,
-  { ls: string; stars: string; word: string; gap: string; stack: string }
-> = {
-  sm: {
-    ls: "text-2xl",
-    stars: "text-[10px]",
-    word: "text-[8px]",
-    gap: "gap-1.5",
-    stack: "gap-0.5",
-  },
-  md: {
-    ls: "text-4xl",
-    stars: "text-sm",
-    word: "text-[10px]",
-    gap: "gap-2",
-    stack: "gap-0.5",
-  },
-  lg: {
-    ls: "text-6xl",
-    stars: "text-xl",
-    word: "text-sm",
-    gap: "gap-3",
-    stack: "gap-1",
-  },
-  xl: {
-    ls: "text-8xl",
-    stars: "text-3xl",
-    word: "text-lg",
-    gap: "gap-4",
-    stack: "gap-1.5",
-  },
+// public/logo.png is the horizontal "GT VAULT" lockup (600×264, ratio ~2.27:1).
+const RATIO = 600 / 264;
+const WIDTHS: Record<LogoSize, number> = {
+  sm: 120,
+  md: 180,
+  lg: 300,
+  xl: 420,
 };
 
-export function Logo({ className, size = "md", theme = "dark" }: LogoProps) {
-  const s = SIZES[size];
-  const lsColor = theme === "dark" ? "text-neutral-100" : "text-neutral-950";
-  const starColor = theme === "dark" ? "text-amber-400" : "text-amber-600";
-  const wordColor = theme === "dark" ? "text-neutral-400" : "text-neutral-600";
+export function Logo({ className, size = "md" }: LogoProps) {
+  const width = WIDTHS[size];
+  const height = Math.round(width / RATIO);
 
   return (
-    <span
-      className={cn(
-        "inline-flex items-center font-display leading-none",
-        s.gap,
-        className,
-      )}
-      aria-label="LS Portfolio"
-      role="img"
-    >
-      <span className={cn(s.ls, lsColor)} aria-hidden>
-        LS
-      </span>
-      <span className={cn("flex flex-col", s.stack)} aria-hidden>
-        <span className={cn(s.stars, starColor, "tracking-[0.05em]")}>
-          ★★★★★
-        </span>
-        <span className={cn(s.word, wordColor, "tracking-[0.22em]")}>
-          PORTFOLIO
-        </span>
-      </span>
-    </span>
+    <Image
+      src="/logo.png"
+      alt="GT Vault"
+      width={width}
+      height={height}
+      priority={size === "xl"}
+      sizes={`${width}px`}
+      className={cn("select-none", className)}
+    />
   );
 }

@@ -34,7 +34,7 @@ export function AppShell({
     <div className="flex min-h-screen">
       <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r bg-card md:flex">
         <div className="flex h-14 shrink-0 items-center border-b px-4">
-          <Link href="/dashboard" aria-label="LS Portfolio — Dashboard">
+          <Link href="/dashboard" aria-label="GT Vault — Dashboard">
             <Logo size="sm" />
           </Link>
         </div>
@@ -53,7 +53,7 @@ export function AppShell({
           <Link
             href="/dashboard"
             onClick={() => setOpen(false)}
-            aria-label="LS Portfolio — Dashboard"
+            aria-label="GT Vault — Dashboard"
           >
             <Logo size="sm" />
           </Link>

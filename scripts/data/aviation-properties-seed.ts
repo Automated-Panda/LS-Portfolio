@@ -5,7 +5,7 @@ import type { Property } from "../schema";
  *
  * ⚠️  BOTH properties are GTA V single-player only.
  *     Neither is purchasable in GTA Online.
- *     They are included because LS Portfolio tracks all GTA V assets,
+ *     They are included because GT Vault tracks all GTA V assets,
  *     including story-mode businesses owned by Franklin, Michael, or Trevor.
  *
  * McKenzie Field Hangar

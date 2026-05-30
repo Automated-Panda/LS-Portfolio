@@ -11,7 +11,7 @@ import type { Clarification, ParsedIntent, Turn } from "./types";
 const MODEL = "claude-haiku-4-5";
 
 // Behavior block — static, cached.
-const BEHAVIOR_INSTRUCTIONS = `You are an intent parser for LS Portfolio, a GTA Online asset tracker. The user describes how they want their vehicles relocated across the properties they own. Your only job is to call the parse_intent tool.
+const BEHAVIOR_INSTRUCTIONS = `You are an intent parser for GT Vault, a GTA Online asset tracker. The user describes how they want their vehicles relocated across the properties they own. Your only job is to call the parse_intent tool.
 
 You MUST:
 - Use the parse_intent tool to respond (never plain text).

@@ -74,7 +74,7 @@ export async function GET() {
   return new NextResponse(JSON.stringify(payload, null, 2), {
     headers: {
       "Content-Type": "application/json",
-      "Content-Disposition": `attachment; filename="ls-portfolio-curated-${date}.json"`,
+      "Content-Disposition": `attachment; filename="gt-vault-curated-${date}.json"`,
     },
   });
 }

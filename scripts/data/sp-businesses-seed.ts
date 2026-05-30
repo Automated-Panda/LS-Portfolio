@@ -4,7 +4,7 @@ import type { Property } from "../schema";
  * Story-mode & narrative-tied businesses — 3 properties.
  *
  * These are properties closely associated with GTA V's single-player story
- * and are included in LS Portfolio with a "story-mode" narrative context.
+ * and are included in GT Vault with a "story-mode" narrative context.
  * In practice their purchasable versions exist as follows:
  *
  *   • Garment Factory (Darnell Bros) — GTA Online only (Agents of Sabotage,

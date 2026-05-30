@@ -11,7 +11,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  title: "LS Portfolio",
+  title: "GT Vault",
   description:
     "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft, and more.",
 };

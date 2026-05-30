@@ -16,8 +16,8 @@ type Props = {
 
 export function EmptyDashboard({ userName }: Props) {
   const greeting = userName
-    ? `Welcome to LS Portfolio, ${userName}.`
-    : "Welcome to LS Portfolio.";
+    ? `Welcome to GT Vault, ${userName}.`
+    : "Welcome to GT Vault.";
 
   return (
     <div className="flex flex-col gap-6 max-w-3xl mx-auto">

@@ -1,6 +1,17 @@
-# LS Portfolio — Notes & Followups
+# GT Vault — Notes & Followups
 
 Running working checklist of what's next. Tick items off as we go. Roughly ordered by priority but feel free to jump around.
+
+---
+
+## 🏁 Rebrand: LS Portfolio → GT Vault — 2026-05-30
+
+Name locked and **`gtvault.app` purchased** ✅. "GT" reads as *Grand Tourer* (deniable, on-theme) with the GTA wink for fans — legally clean. Make the GTA connection in taglines/marketing (nominative fair use), never in the brand name itself.
+
+- [ ] 🎨 **Design / create a logo** — *James* (GT-badge / vault motif)
+- [x] ✍️ **Rename to GT Vault** across the app (2026-05-30) — swept every code/config/asset string: page title + metadata, sidebar + email logo wordmarks (interim `GT ★★★★★ VAULT`, awaiting real badge), favicon (`app/icon.svg`), `public/logo*.svg`, 6 email templates + `config.toml` subjects, `package.json`/`package-lock.json` name, admin export filename, profile/dashboard/intent-parser copy, seed comments. Historical docs (plan/specs/plans) left as a dated record. typecheck green.
+- [ ] ▲ **Set up `gtvault.app` domain on Vercel** (add domain + DNS, set as primary, update any hardcoded URLs / `NEXT_PUBLIC_*` base URLs)
+- [ ] 🌐 **Marketing site** — kick off once the above land (James: "we can start pretty soon!")
 
 ---
 

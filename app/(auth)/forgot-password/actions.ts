@@ -28,8 +28,10 @@ export async function forgotPasswordAction(
     };
   }
 
-  const origin =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://127.0.0.1:3000";
+  // Strip any trailing slash so we don't build `https://host//auth/callback`.
+  const origin = (
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://127.0.0.1:3000"
+  ).replace(/\/+$/, "");
 
   const supabase = await createClient();
   const { error } = await supabase.auth.resetPasswordForEmail(
