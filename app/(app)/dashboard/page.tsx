@@ -89,15 +89,35 @@ export default async function DashboardPage() {
   // owned via the same table). Use ownership_group from the row to bucket;
   // businesses get their own card via getOwnedCounts. Property card excludes
   // businesses.
+  // Businesses bucket into MC / Executive / Other for a clean compositional
+  // split (mirrors the vehicle + property cards). "Other" catches standalone
+  // businesses not tied to the MC or CEO/VIP loops (Nightclub, Arcade, Bunker,
+  // Auto Shop, Hangar, Facility, Salvage Yard, Yacht, SP businesses, …).
+  const MC_GROUPS = new Set([
+    "mc-clubhouse",
+    "biker-business-weed",
+    "biker-business-coke",
+    "biker-business-meth",
+    "biker-business-cash",
+    "biker-business-forgery",
+  ]);
+  const EXEC_GROUPS = new Set([
+    "ceo-office",
+    "agency",
+    "vehicle-warehouse",
+    "cargo-warehouse",
+  ]);
+
   let residential = 0, garage = 0, otherProp = 0;
-  const businessSubtypes: string[] = [];
+  let mcBiz = 0, execBiz = 0, otherBiz = 0;
   for (const p of ownedProperties) {
     // Businesses live in this same table but each carries its own
     // ownership_group (nightclub, agency, bunker…), so key off property_type —
-    // not ownership_group === "business" — to split them out. They get their
-    // own KPI card (counts.businesses); the Properties card excludes them.
+    // not ownership_group === "business" — to split them out.
     if (p.property_type === "business") {
-      businessSubtypes.push(p.subtype_display);
+      if (MC_GROUPS.has(p.ownership_group)) mcBiz += 1;
+      else if (EXEC_GROUPS.has(p.ownership_group)) execBiz += 1;
+      else otherBiz += 1;
       continue;
     }
     if (p.ownership_group === "residential") residential += 1;
@@ -109,13 +129,11 @@ export default async function DashboardPage() {
     { label: "garages", count: garage },
     { label: "other", count: otherProp },
   ];
-
-  // Top 3 business subtypes by count.
-  const businessSplits: SubSplit = topN(
-    businessSubtypes,
-    (s) => s,
-    3,
-  );
+  const businessSplits: SubSplit = [
+    { label: "MC", count: mcBiz },
+    { label: "Executive", count: execBiz },
+    { label: "Other", count: otherBiz },
+  ];
 
   // --- Capacity ---
   let capacityTotal = 0;

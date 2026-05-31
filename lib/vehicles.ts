@@ -115,9 +115,12 @@ export const ASSET_CATEGORY_LABEL: Record<AssetCategory, string> = {
   sea: "Sea",
 };
 
-// Plural noun used in storage UI ("Add cars" / "Add aircraft" / "Add boats").
+// Generic plural noun for storage UI ("Add vehicles" / "Add aircraft" /
+// "Add boats"). Land storage holds cars AND bikes, so "vehicles" is the
+// umbrella term — the picker refines to "cars"/"bikes" based on the actual
+// selection (see VehiclePickerModal).
 export const ASSET_NOUN: Record<AssetCategory, string> = {
-  land: "cars",
+  land: "vehicles",
   air: "aircraft",
   sea: "boats",
 };

@@ -77,6 +77,23 @@ export function VehiclePickerModal({
       : inCategory;
   }, [vehicles, search, assetCategory]);
 
+  // Plural noun for the current selection. Land storage holds cars + bikes, so
+  // reflect what's picked: only bikes → "bikes", only cars → "cars", a mix (or
+  // nothing yet) → the umbrella noun ("vehicles"). Air/sea are single-category.
+  const selectionNoun = useMemo(() => {
+    if (assetCategory !== "land" || !vehicles) return noun;
+    const classById = new Map(vehicles.map((v) => [v.id, formatClass(v.class)]));
+    let hasBike = false;
+    let hasCar = false;
+    for (const id of counts.keys()) {
+      if (classById.get(id) === "Motorcycles") hasBike = true;
+      else hasCar = true;
+    }
+    if (hasBike && !hasCar) return "bikes";
+    if (hasCar && !hasBike) return "cars";
+    return noun;
+  }, [assetCategory, vehicles, counts, noun]);
+
   const bump = (id: string, delta: number) => {
     setCounts((prev) => {
       const next = new Map(prev);
@@ -107,7 +124,7 @@ export function VehiclePickerModal({
       else if ("capacityExceeded" in r)
         toast.error(`Over capacity: ${r.capacityExceeded.wouldBeAfter} / ${r.capacityExceeded.capacity}`);
       else {
-        toast.success(`Added ${ids.length} ${noun}`);
+        toast.success(`Added ${ids.length} ${selectionNoun}`);
         setCounts(new Map());
         onOpenChange(false);
       }
@@ -180,7 +197,7 @@ export function VehiclePickerModal({
             Cancel
           </Button>
           <Button onClick={handleSave} disabled={isPending || totalSelected === 0}>
-            Save {totalSelected} {noun}
+            Save {totalSelected} {selectionNoun}
           </Button>
         </DialogFooter>
       </DialogContent>
