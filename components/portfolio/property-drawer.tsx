@@ -514,6 +514,13 @@ function StorageSection({
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
         Your storage
       </p>
+      {property.subtype === "mckenzie-hangar" && (
+        <p className="mb-3 rounded-md border border-[#84cc16]/30 bg-[#84cc16]/5 p-3 text-xs text-muted-foreground">
+          The McKenzie Field Hangar has no storage of its own. While you own it,
+          your Hangar holds <span className="text-[#84cc16]">+15 aircraft</span>{" "}
+          (<span className="text-[#84cc16]">+20</span> with GTA+).
+        </p>
+      )}
       {!hasAny ? (
         <p className="text-xs text-muted-foreground">
           No storage available yet — install a storage upgrade in the Upgrades tab.
