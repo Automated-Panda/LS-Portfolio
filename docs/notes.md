@@ -4,6 +4,55 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## ✅ Session — 2026-05-31 / 06-01
+
+Big multi-part session. Highlights:
+
+### 🌐 Marketing site — BUILT & live
+- [x] Full landing page shipped (path-based on `gtvault.app/`, app stays at `/dashboard` etc.; logged-in users redirect to dashboard). Sections: hero ("Track your entire GTA V empire") → stat bar → features → **AI Organizer "Pro · Coming soon"** → screenshot showcase → pricing teaser → FAQ → final CTA → footer (Rockstar disclaimer).
+- [x] Real app **screenshots** captured + normalized to webp (dashboard/vehicles/property/organizer) + a 1200×630 **OG share image**. Regen via `scripts/place-marketing-shots.mjs` + `scripts/make-og-image.mjs`; source PNGs in `docs/temp-images/`.
+- [x] Spec/plan in `docs/superpowers/`. Built subagent-driven.
+
+### 🧠 AI Organizer — chat/assistant redesign
+- [x] Rebuilt `/organize` as a two-panel ChatGPT-style UI: thread rail + conversation with iMessage-style bubbles, animated thinking state, fills the page.
+- [x] **Persisted, continuable threads** — new `conversations` table (migration `0024_organizer_conversations`), `organizer_plans.conversation_id`. Transcript rebuilt from plan rows.
+- [x] **Pending-plan refinement** ("actually not the Zentorno") — refines the on-screen plan vs live portfolio; resets on apply/cancel/new.
+- [x] **Rename + delete** chats (rail hover controls); **smarter auto-titles** from parsed intent ("Drift cars → Mission Row"), no extra API cost.
+- [x] Plan list **no longer caps at 8** — shows all steps in a scrollable list.
+- [x] Spec/plan in `docs/superpowers/`.
+
+### ✈️ Hangar capacity boost (McKenzie + GTA+)
+- [x] Regular Hangar's 20 slots moved to `base_capacity` (storage upgrade dropped). McKenzie has NO own storage — owning it boosts a Hangar 20→35 (40 for GTA+).
+- [x] `lib/hangar-boost.ts` applies the boost in BOTH display + enforcement layers. `profiles.gta_plus` flag (migration `0023_add_gta_plus`) + a GTA+ toggle on `/profile`.
+
+### 🛠️ Fixes
+- [x] Dashboard Vehicles KPI counts **bikes** separately (was lumping motorcycles as cars — class is `MOTORCYCLE`→"Motorcycle"). Shared `isBikeClass` helper.
+- [x] Storage UI shows asset-correct nouns (aircraft/boats/vehicles, not always "cars") on property cards/grids/picker.
+- [x] McKenzie Field Hangar reclassified to its GTA Online reality (price $1,475,000).
+- [x] Dashboard Businesses KPI split into **MC / Executive / Other**; Properties KPI no longer counts businesses.
+- [x] Organizer delete-chat button fixed (confirm dialog was awaited inside `startTransition`).
+
+---
+
+## 🗓️ TOMORROW — next session priorities
+
+1. **Pro feature gating** — gate/disable the AI Organizer before sending friends to the site (each run costs real API money; it's marketed as "Pro · Coming soon" but is currently fully usable). Potentially start **Stripe** setup for the one-time Pro unlock (~$7.99).
+2. **Price filtering** — add a price filter (range/min-max) on `/vehicles`, `/properties`, and `/businesses`.
+3. **Marketing copy** — bulk up / improve the text across the marketing site (it's a bit thin right now).
+
+---
+
+## 💡 Idea backlog (James brain-dump 2026-06-01 — discuss/scope later)
+
+- **Suggestion / bug ticket submissions** — let users submit suggestions or bug reports from within the app.
+- **Editor roles** — trusted people get limited edit access (see admin items below). Not full admin.
+- **Better admin dashboard** — easier to use; **add/remove records** (James/owner only).
+- **Editors editing existing data** — let trusted editors edit existing prices etc. (not add/delete records — that stays owner-only).
+- **On-screen tour / "How it Works" doc** — new users have asked "how do I add another business?" / "how do I put cars in a business?". The onboarding wizard is okay but discovery is weak. Options: an interactive on-screen tour for new users, and/or an in-app reference doc ("How it Works"). Discuss approach later.
+- _(More to come — James notes he's "exploding with thoughts", so expect additions.)_
+
+---
+
 ## 🏁 Rebrand: LS Portfolio → GT Vault — 2026-05-30
 
 Name locked and **`gtvault.app` purchased** ✅. "GT" reads as *Grand Tourer* (deniable, on-theme) with the GTA wink for fans — legally clean. Make the GTA connection in taglines/marketing (nominative fair use), never in the brand name itself.
