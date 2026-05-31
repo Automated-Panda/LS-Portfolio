@@ -87,3 +87,13 @@ export type Clarification = {
 export type Turn =
   | { role: "user"; content: string }
   | { role: "assistant"; clarification: Clarification };
+
+// ----- Rendered transcript entry (one request + its plan), UI-side -----
+
+export type TranscriptEntry = {
+  planId: string;
+  prompt: string;
+  steps: PlanStep[];
+  summary: PlanSummary;
+  status: string; // organizer_plan_status
+};
