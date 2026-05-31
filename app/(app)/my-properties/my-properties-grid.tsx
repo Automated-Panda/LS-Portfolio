@@ -8,6 +8,9 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { propertyImageUrl } from "@/lib/properties";
+import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
+
+const STORAGE_ICON = { land: "🚗", air: "✈️", sea: "🛥️" } as const;
 
 type Props = {
   properties: OwnedPropertyDetail[];
@@ -38,6 +41,8 @@ export function MyPropertiesGrid({ properties, instances }: Props) {
           const totalCapacity =
             p.base_capacity +
             p.upgrades.filter((u) => u.is_installed).reduce((s, u) => s + u.capacity, 0);
+          const storageCat = storageAssetCategory(p.subtype);
+          const storageNoun = ASSET_NOUN[storageCat];
           const installedUpgradeCost = p.upgrades
             .filter((u) => u.is_installed && u.price !== null)
             .reduce((s, u) => s + (u.price ?? 0), 0);
@@ -70,7 +75,7 @@ export function MyPropertiesGrid({ properties, instances }: Props) {
                 </p>
                 {totalCapacity > 0 && (
                   <p className="mt-1 text-xs text-emerald-400">
-                    🚗 {p.total_cars} / {totalCapacity} cars stored
+                    {STORAGE_ICON[storageCat]} {p.total_cars} / {totalCapacity} {storageNoun} stored
                   </p>
                 )}
                 {totalCost > 0 && (

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
+import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
 
 type Props = {
   properties: OwnedPropertyDetail[];
@@ -25,11 +26,12 @@ export function PropertyHubList({ properties, instances }: Props) {
             const totalCap =
               p.base_capacity +
               p.upgrades.filter((u) => u.is_installed).reduce((s, u) => s + u.capacity, 0);
+            const noun = ASSET_NOUN[storageAssetCategory(p.subtype)];
             const status =
               p.total_cars === 0
                 ? "Empty"
                 : p.total_cars >= totalCap && p.installed_upgrades === p.total_upgrades
-                  ? `✓ Complete (${p.total_cars} cars)`
+                  ? `✓ Complete (${p.total_cars} ${noun})`
                   : `⏳ In progress (${p.total_cars} of ~${totalCap})`;
             const borderColor =
               status.startsWith("✓") ? "hsl(142 65% 38%)" :

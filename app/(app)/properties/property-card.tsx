@@ -11,6 +11,7 @@ import { useConfirm } from "@/components/ui/confirm-dialog";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { PropertySummary } from "@/lib/properties";
 import { formatPropertyType } from "@/lib/properties";
+import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
 import { cn } from "@/lib/utils";
 import { TradeInModal, type TradeInTrigger } from "@/components/portfolio/trade-in-modal";
 
@@ -56,6 +57,7 @@ function PropertyCardImpl({
   const ownedDestPath =
     property.property_type === "business" ? "/my-businesses" : "/my-properties";
   const kindLabel = property.property_type === "business" ? "business" : "property";
+  const storageNoun = ASSET_NOUN[storageAssetCategory(property.subtype)];
 
   const openManagement = () => {
     // Prefer the in-place handler (used by /properties + /businesses) so the
@@ -127,7 +129,7 @@ function PropertyCardImpl({
         if (property.counts_as_garage && property.max_capacity > 0) {
           toast.success(`Added ${property.display_name}`, {
             action: {
-              label: "Add cars",
+              label: `Add ${storageNoun}`,
               onClick: () => openManagement(),
             },
           });
@@ -168,7 +170,7 @@ function PropertyCardImpl({
         }
         title={
           optimisticOwned && selectionMode !== "multi" && !tower
-            ? "Click to manage / add cars"
+            ? `Click to manage / add ${storageNoun}`
             : undefined
         }
       >
@@ -217,7 +219,7 @@ function PropertyCardImpl({
             ) : (
               property.max_capacity > 0 && (
                 <Badge variant="outline" className="shrink-0 text-[10px]">
-                  Up to {property.max_capacity} cars
+                  Up to {property.max_capacity} {storageNoun}
                 </Badge>
               )
             )}
@@ -250,7 +252,7 @@ function PropertyCardImpl({
             disabled={isPending}
             className="flex h-7 w-7 items-center justify-center rounded-full bg-background/90 text-foreground shadow hover:bg-accent/40 transition-colors"
             aria-label={`Manage ${property.display_name}`}
-            title="Manage / add cars"
+            title={`Manage / add ${storageNoun}`}
           >
             <Settings2 className="h-3.5 w-3.5" />
           </button>
