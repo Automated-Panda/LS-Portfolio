@@ -31,8 +31,8 @@ export function PlanCard({
           {summary.conflicts.map((c, i) => <li key={i}>⚠ {c}</li>)}
         </ul>
       )}
-      <div className="mb-3 max-h-48 overflow-y-auto font-mono text-xs leading-relaxed text-neutral-400">
-        {steps.slice(0, 8).map((s) => (
+      <div className="mb-3 max-h-64 overflow-y-auto font-mono text-xs leading-relaxed text-neutral-400">
+        {steps.map((s) => (
           <div key={s.index}>
             <span className={cn(s.reason === "displaced" ? "text-red-400" : "text-emerald-400")}>
               {s.reason === "displaced" ? "🔴 Displace" : "🟢 Move"}
@@ -40,9 +40,6 @@ export function PlanCard({
             {s.vehicle_label} · {s.from.label} → {s.to.label}
           </div>
         ))}
-        {steps.length > 8 && (
-          <div className="text-neutral-600">…{steps.length - 8} more</div>
-        )}
       </div>
       {!readOnly && (
         <div className="flex flex-wrap gap-2">
