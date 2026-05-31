@@ -51,7 +51,7 @@ function buildAgency(loc: LocationSeed): Omit<Property, "image_path"> {
     display_name: loc.display_name,
     property_type: "business",
     subtype: "agency",
-    subtype_display: "The Agency",
+    subtype_display: "Agency",
     location: loc.address,
     neighborhood: loc.neighborhood,
     capacity: 0,

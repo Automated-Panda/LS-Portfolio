@@ -92,10 +92,11 @@ export default async function DashboardPage() {
   let residential = 0, garage = 0, otherProp = 0;
   const businessSubtypes: string[] = [];
   for (const p of ownedProperties) {
-    // ownership_group "business" lives here too; counts.businesses already
-    // splits it out for the Businesses card. For the Properties card splits
-    // we group only non-business groups.
-    if (p.ownership_group === "business") {
+    // Businesses live in this same table but each carries its own
+    // ownership_group (nightclub, agency, bunker…), so key off property_type —
+    // not ownership_group === "business" — to split them out. They get their
+    // own KPI card (counts.businesses); the Properties card excludes them.
+    if (p.property_type === "business") {
       businessSubtypes.push(p.subtype_display);
       continue;
     }
