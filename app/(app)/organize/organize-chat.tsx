@@ -51,7 +51,8 @@ type Props = {
 
 export function OrganizeChat({ initialConversations, initialUndoablePlan }: Props) {
   const router = useRouter();
-  const [conversations, setConversations] = useState(initialConversations);
+  // Rail data comes from the server; new/bumped threads surface via router.refresh().
+  const conversations = initialConversations;
   const [activeConversationId, setActiveConversationId] = useState<string | null>(null);
   const [transcript, setTranscript] = useState<TranscriptEntry[]>([]);
   const [input, setInput] = useState("");
