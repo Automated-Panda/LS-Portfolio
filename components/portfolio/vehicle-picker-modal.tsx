@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { assignVehiclesToSubGarage } from "@/app/(app)/my-vehicles/actions";
-import { assetCategoryOf, formatClass, ASSET_NOUN, type AssetCategory } from "@/lib/vehicles";
+import { assetCategoryOf, formatClass, isBikeClass, ASSET_NOUN, type AssetCategory } from "@/lib/vehicles";
 
 type Props = {
   ownedPropertyId: string;
@@ -86,7 +86,7 @@ export function VehiclePickerModal({
     let hasBike = false;
     let hasCar = false;
     for (const id of counts.keys()) {
-      if (classById.get(id) === "Motorcycles") hasBike = true;
+      if (isBikeClass(classById.get(id) ?? "")) hasBike = true;
       else hasCar = true;
     }
     if (hasBike && !hasCar) return "bikes";

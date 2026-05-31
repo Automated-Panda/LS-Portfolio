@@ -9,7 +9,7 @@ import {
   getRecentPlans,
 } from "@/lib/queries/organizer";
 import { getCatalogCoverage } from "@/lib/queries/dashboard";
-import { assetCategoryOf } from "@/lib/vehicles";
+import { assetCategoryOf, isBikeClass } from "@/lib/vehicles";
 
 import { DashboardLayout, type DashboardData } from "./dashboard-layout";
 import { EmptyDashboard } from "./empty-dashboard";
@@ -77,7 +77,7 @@ export default async function DashboardPage() {
     const cat = assetCategoryOf(v.class);
     if (cat === "air") aircraft += 1;
     else if (cat === "sea") boats += 1;
-    else if (v.class === "Motorcycles") bikes += 1;
+    else if (isBikeClass(v.class)) bikes += 1;
     else cars += 1;
   }
   const vehicleSplits: SubSplit = [

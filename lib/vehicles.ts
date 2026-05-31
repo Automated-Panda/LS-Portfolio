@@ -125,6 +125,13 @@ export const ASSET_NOUN: Record<AssetCategory, string> = {
   sea: "boats",
 };
 
+// True for two-wheelers — motorbikes (class MOTORCYCLE → "Motorcycle") and
+// pedal cycles (class CYCLE → "Cycle"). Takes the formatClass() output. Used to
+// label land vehicles as "bikes" vs "cars" in storage UI and dashboard splits.
+export function isBikeClass(formattedClass: string): boolean {
+  return formattedClass === "Motorcycle" || formattedClass === "Cycle";
+}
+
 // Derived from the formatted class (formatClass output).
 export function assetCategoryOf(formattedClass: string): AssetCategory {
   if (formattedClass === "Plane" || formattedClass === "Helicopter") return "air";
