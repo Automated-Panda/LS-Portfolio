@@ -123,7 +123,7 @@ export async function generatePlan(
     // Touch the thread so it floats to the top of the rail.
     await supabase
       .from("conversations")
-      .update({ title: undefined })
+      .update({ updated_at: new Date().toISOString() })
       .eq("id", conversationId)
       .eq("user_id", user.id);
   }

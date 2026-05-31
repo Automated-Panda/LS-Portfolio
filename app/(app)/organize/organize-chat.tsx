@@ -10,14 +10,12 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type {
   Clarification,
-  ParsedIntent,
   PlanStep,
   PlanSummary,
   TranscriptEntry,
   Turn,
 } from "@/lib/organizer/types";
-import type { ConversationRow } from "@/lib/queries/organizer";
-import type { OrganizerPlan } from "@/lib/queries/organizer";
+import type { ConversationRow, OrganizerPlan } from "@/lib/queries/organizer";
 
 import {
   applyPlan,
@@ -143,6 +141,19 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         return;
       }
       setActiveConversationId(planResult.conversationId);
+      setTranscript((t) => {
+        const next = [...t];
+        if (next.length > 0) {
+          next[next.length - 1] = {
+            planId: planResult.planId,
+            prompt: parsePrompt,
+            steps: planResult.steps,
+            summary: planResult.summary,
+            status: "pending",
+          };
+        }
+        return next;
+      });
       setPhase({
         kind: "plan-ready",
         planId: planResult.planId,

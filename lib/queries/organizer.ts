@@ -104,6 +104,7 @@ export async function getConversationTranscript(
     .select("id, prompt, plan_steps, status")
     .eq("conversation_id", conversationId)
     .eq("user_id", user.id)
+    .neq("status", "dismissed")
     .order("created_at", { ascending: true });
   if (error || !data) return [];
 
