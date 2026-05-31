@@ -1,7 +1,7 @@
 // lib/queries/organizer.ts
 import { createClient } from "@/lib/supabase/server";
 
-import type { PlanStep } from "@/lib/organizer/types";
+import type { PlanStep, PlanSummary } from "@/lib/organizer/types";
 
 export type PlanSummaryRow = {
   id: string;
@@ -67,6 +67,58 @@ export async function getPlan(planId: string): Promise<OrganizerPlan | null> {
     ...data,
     plan_steps: (data.plan_steps as PlanStep[]) ?? [],
   };
+}
+
+export type ConversationRow = {
+  id: string;
+  title: string;
+  updated_at: string;
+};
+
+export async function getConversations(
+  userId: string,
+  limit = 30,
+): Promise<ConversationRow[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("conversations")
+    .select("id, title, updated_at")
+    .eq("user_id", userId)
+    .order("updated_at", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return data ?? [];
+}
+
+// Rebuilds a thread's transcript from its ordered plan rows. Summary is
+// derived from plan_steps (matches how the planner computes it).
+export async function getConversationTranscript(
+  conversationId: string,
+): Promise<import("@/lib/organizer/types").TranscriptEntry[]> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from("organizer_plans")
+    .select("id, prompt, plan_steps, status")
+    .eq("conversation_id", conversationId)
+    .eq("user_id", user.id)
+    .neq("status", "dismissed")
+    .order("created_at", { ascending: true });
+  if (error || !data) return [];
+
+  return data.map((row) => {
+    const steps = (row.plan_steps as PlanStep[]) ?? [];
+    const summary: PlanSummary = {
+      total_steps: steps.length,
+      cars_moved: steps.filter((s) => s.type === "move" && s.reason === "user-asked").length,
+      cars_unassigned: steps.filter((s) => s.type === "unassign").length,
+      displacements: steps.filter((s) => s.reason === "displaced").length,
+      conflicts: [],
+    };
+    return { planId: row.id, prompt: row.prompt, steps, summary, status: row.status };
+  });
 }
 
 export async function getActiveUndoablePlan(
