@@ -17,11 +17,15 @@ import type {
 } from "@/lib/organizer/types";
 import type { ConversationRow, OrganizerPlan } from "@/lib/queries/organizer";
 
+import { useConfirm } from "@/components/ui/confirm-dialog";
+
 import {
   applyPlan,
+  deleteConversation,
   dismissPlan,
   generatePlan,
   parseIntent,
+  renameConversation,
 } from "./actions";
 import { getTranscript } from "./transcript-action";
 import { ChecklistProgress } from "./checklist-progress";
@@ -49,6 +53,7 @@ type Props = {
 
 export function OrganizeChat({ initialConversations, initialUndoablePlan }: Props) {
   const router = useRouter();
+  const confirm = useConfirm();
   // Rail data comes from the server; new/bumped threads surface via router.refresh().
   const conversations = initialConversations;
   const [activeConversationId, setActiveConversationId] = useState<string | null>(null);
@@ -188,6 +193,33 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
     });
   };
 
+  const handleRename = (id: string, title: string) => {
+    startTransition(async () => {
+      const r = await renameConversation(id, title);
+      if ("error" in r) toast.error(r.error);
+      else router.refresh();
+    });
+  };
+
+  const handleDelete = (id: string, title: string) => {
+    startTransition(async () => {
+      const ok = await confirm({
+        title: "Delete this plan?",
+        description: `"${title}" and its history will be permanently removed.`,
+        confirmText: "Delete",
+        destructive: true,
+      });
+      if (!ok) return;
+      const r = await deleteConversation(id);
+      if ("error" in r) {
+        toast.error(r.error);
+        return;
+      }
+      if (id === activeConversationId) resetToNew();
+      router.refresh();
+    });
+  };
+
   // The settled plan that belongs to the latest transcript turn, if any.
   const liveCard =
     phase.kind === "plan-ready"
@@ -203,6 +235,8 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
           activeId={activeConversationId}
           onSelect={selectThread}
           onNew={resetToNew}
+          onRename={handleRename}
+          onDelete={handleDelete}
         />
       </aside>
       {railOpen && (
@@ -214,6 +248,8 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
               activeId={activeConversationId}
               onSelect={selectThread}
               onNew={resetToNew}
+              onRename={handleRename}
+              onDelete={handleDelete}
             />
           </aside>
         </div>

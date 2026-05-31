@@ -7,6 +7,7 @@ import { formatFailure } from "@/lib/organizer/format-failure";
 import { parseIntent as parseIntentLib } from "@/lib/organizer/intent-parser";
 import { generatePlan as generatePlanLib } from "@/lib/organizer/planner";
 import { buildPortfolioContext } from "@/lib/organizer/portfolio-context";
+import { conversationTitle } from "@/lib/organizer/conversation-title";
 import type {
   Clarification,
   ParsedIntent,
@@ -106,13 +107,15 @@ export async function generatePlan(
     return { ok: false, message };
   }
 
-  // Resolve the conversation: reuse the passed thread, else create one titled
-  // from this prompt (first request of a new thread).
+  // Resolve the conversation: reuse the passed thread, else create one with a
+  // title derived from the parsed intent (e.g. "Drift cars → Mission Row").
   let conversationId: string | null = opts?.conversationId ?? null;
   if (!conversationId) {
+    const propertyNameById = new Map(properties.map((p) => [p.id, p.display_name]));
+    const title = conversationTitle(intent, propertyNameById, prompt);
     const { data: convo, error: convoErr } = await supabase
       .from("conversations")
-      .insert({ user_id: user.id, title: prompt.slice(0, 80) })
+      .insert({ user_id: user.id, title })
       .select("id")
       .single();
     if (convoErr || !convo) {
@@ -161,6 +164,52 @@ export async function generatePlan(
     steps: result.steps,
     summary: result.summary,
   };
+}
+
+// ----- renameConversation / deleteConversation -----
+
+export type ConversationActionResult = { ok: true } | { error: string };
+
+export async function renameConversation(
+  conversationId: string,
+  title: string,
+): Promise<ConversationActionResult> {
+  const trimmed = title.trim().slice(0, 80);
+  if (!trimmed) return { error: "Title can't be empty." };
+
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return { error: "Not signed in." };
+
+  const { error } = await supabase
+    .from("conversations")
+    .update({ title: trimmed })
+    .eq("id", conversationId)
+    .eq("user_id", user.id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/organize");
+  return { ok: true };
+}
+
+export async function deleteConversation(
+  conversationId: string,
+): Promise<ConversationActionResult> {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return { error: "Not signed in." };
+
+  // organizer_plans.conversation_id is ON DELETE CASCADE, so the thread's
+  // plans go with it.
+  const { error } = await supabase
+    .from("conversations")
+    .delete()
+    .eq("id", conversationId)
+    .eq("user_id", user.id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/organize");
+  return { ok: true };
 }
 
 // ----- applyPlan -----
