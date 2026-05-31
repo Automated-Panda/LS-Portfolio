@@ -195,7 +195,7 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
       : null;
 
   return (
-    <div className="mx-auto flex h-[calc(100vh-3.5rem)] max-w-5xl overflow-hidden rounded-lg border border-[#1f1f1f]">
+    <div className="flex h-[calc(100vh-3.5rem-3rem)] w-full overflow-hidden rounded-lg border border-[#1f1f1f]">
       {/* RAIL — desktop static, mobile drawer */}
       <aside className="hidden w-60 shrink-0 border-r border-[#1f1f1f] md:block">
         <ConversationRail
