@@ -39,21 +39,47 @@ Hangar at 20 instead of 35/40.
 
 ---
 
-## 2. Key structural fact (drives the whole design)
+## 2. Restructure the Hangar's storage onto base_capacity (precedent: Vehicle Warehouse)
 
-The Hangar's 20 slots are **not** on `properties.capacity` (that's 0). They live on the
-Hangar's `Hangar Storage` **upgrade** (`hangar-<loc>-storage`, capacity 20,
-`included_on_purchase`). Aircraft are assigned to that upgrade.
+**Today** the Hangar's 20 slots live on a `Hangar Storage` **upgrade**
+(`hangar-<loc>-storage`, capacity 20, `included_on_purchase`), with
+`properties.capacity = 0`. Per James's decision, restructure so the **Hangar's 20 is
+its `base_capacity`** and the storage upgrade row is removed — exactly the change
+already made for Vehicle Warehouses ("moved storage from upgrade → base_capacity,
+dropped the `*-storage` rows, import-seed cleans orphans"; see `docs/notes.md`). This
+makes the boost a simple addition to a property's base capacity rather than a
+special-cased upgrade.
 
-Therefore the boost must adjust the **effective capacity of the Hangar Storage upgrade**,
-and it must be applied in **two independent layers that must agree**:
+This part is a prerequisite restructure (Tasks early in the plan), separate from the
+boost logic:
 
-1. **Display layer** — the capacity numbers shown on property cards, the property
-   drawer storage block, and the dashboard capacity total.
+- Seed: set the 5 regular `hangar` rows' `capacity` to 20 and delete their
+  `hangar-<loc>-storage` upgrade rows (keep the Aircraft Workshop upgrade).
+- `import-seed.ts` already cleans orphaned `property_upgrades` not present in the seed,
+  so a re-import drops the storage rows from the DB. `user_owned_vehicles.assigned_
+  upgrade_id` is `ON DELETE SET NULL`, and **base storage is represented by
+  `assigned_upgrade_id = null`** — so any aircraft currently parked in a hangar's
+  storage upgrade automatically fall back to that hangar's base storage. No aircraft are
+  un-stored from the property (`stored_in_property_id` is untouched); they remain in the
+  hangar at base level. No manual re-linking needed.
+- The hosted DB has curated columns preserved by `upsertPreservingCurated` (price,
+  capacity, counts_as_garage). Because `capacity` is curated, the 0→20 change must be
+  applied to the live DB directly (a one-off update, like the McKenzie fix), not relied
+  on via re-import.
+
+After the restructure, the boost adjusts the Hangar's **effective base capacity**, and
+must be applied in **two independent layers that must agree**:
+
+1. **Display layer** — capacity numbers on property cards, the property drawer storage
+   block, and the dashboard capacity total.
 2. **Enforcement layer** — `lib/capacity.ts` `capacityForStorageLocation`, which the
    server actions (`assignVehiclesToSubGarage`, `assignVehicleStorage`) use to decide
    whether an aircraft can be parked. If display says 35 but enforcement still says 20,
    the user sees "12/35" but gets rejected at 20. Both must use the same rule.
+
+Because the boost now targets **base storage** (`assignedUpgradeId === null`) on a
+Hangar, the rule keys off the **property** being a regular hangar
+(`ownership_group = 'hangar'` / `subtype = 'hangar'`), not an upgrade id.
 
 ---
 
@@ -77,11 +103,12 @@ hangarBoost(ownsMckenzie: boolean, gtaPlus: boolean): number
   = ownsMckenzie ? (gtaPlus ? 20 : 15) : 0
 ```
 
-It applies **only** to the Hangar Storage upgrade. Identify the target by upgrade id
-pattern `hangar-%-storage` (the regular-hangar storage upgrade), NOT McKenzie's own
-rows and NOT other hangar upgrades (Aircraft Workshop). McKenzie is `subtype =
-mckenzie-hangar` / ownership group `mckenzie-hangar`; "owns McKenzie" = the user has a
-`user_owned_properties` row for the `mckenzie-field-hangar` catalogue id.
+It applies **only** to a regular Hangar's **base storage**. Identify the target by the
+property: `ownership_group = 'hangar'` (equivalently `subtype = 'hangar'`), and the
+base-storage location (`assignedUpgradeId === null`). It does NOT apply to McKenzie
+itself, nor to other hangar upgrades (Aircraft Workshop). McKenzie is `subtype =
+mckenzie-hangar`; "owns McKenzie" = the user has a `user_owned_properties` row for the
+`mckenzie-field-hangar` catalogue id.
 
 Because capacity computations happen both per-user (display, enforcement) we need, for
 a given user:
@@ -94,6 +121,15 @@ These are looked up once per request and threaded into the capacity computations
 
 ## 5. Components & data flow
 
+### 5.0 Hangar storage restructure (prerequisite)
+- Seed (`scripts/data/*` hangar seed + `data/seed/properties.json`): regular `hangar`
+  rows get `capacity: 20`; remove their `hangar-<loc>-storage` upgrade objects.
+- Live DB one-off: set `capacity = 20` on the 5 `hangar` rows and delete the
+  `hangar-%-storage` `property_upgrades` (cascade sets parked aircraft to base via
+  `assigned_upgrade_id` null). Mirrors the McKenzie one-off pattern.
+- Verify `npm run validate` passes and the property drawer shows the 20 as base
+  storage (not an upgrade row).
+
 ### 5.1 Migration
 `supabase/migrations/0023_add_gta_plus.sql` — add `gta_plus boolean not null default false`
 to `profiles`. Apply to hosted DB.
@@ -105,14 +141,13 @@ to `profiles`. Apply to hosted DB.
   (checkbox → boolean).
 
 ### 5.3 Boost helper (single source of truth)
-- `lib/hangar-boost.ts` (new):
-  - `HANGAR_STORAGE_UPGRADE_RE = /^hangar-.+-storage$/` — matches regular-hangar
-    storage upgrades only.
+- `lib/hangar-boost.ts` (new), pure (no DB) so both layers can use it:
+  - `HANGAR_OWNERSHIP_GROUP = "hangar"` — the regular-hangar group.
   - `hangarBoostSlots(ownsMckenzie, gtaPlus)` → `0 | 15 | 20`.
-  - `isHangarStorageUpgrade(upgradeId)` → boolean.
-  - A pure function `applyHangarBoost({ upgradeId, baseCapacity, ownsMckenzie, gtaPlus })`
-    → effective capacity (adds the boost only when `isHangarStorageUpgrade` is true).
-  - Pure (no DB) so both layers and tests can use it.
+  - `applyHangarBoost({ ownershipGroup, assignedUpgradeId, baseCapacity, ownsMckenzie, gtaPlus })`
+    → effective capacity: adds the boost only when `ownershipGroup === "hangar"` AND
+    `assignedUpgradeId == null` (base storage of a regular hangar). Otherwise returns
+    `baseCapacity` unchanged.
 
 ### 5.4 Per-user context
 - `lib/hangar-boost.ts` (server side) or a small query helper: given a `userId`,
@@ -121,26 +156,29 @@ to `profiles`. Apply to hosted DB.
 
 ### 5.5 Enforcement layer
 - `lib/capacity.ts` `capacityForStorageLocation(ownedPropertyId, assignedUpgradeId)`:
-  after reading the upgrade's base capacity, if `isHangarStorageUpgrade(assignedUpgradeId)`,
-  add `hangarBoostSlots(ownsMckenzie, gtaPlus)` for the **owning user**. Needs the
-  user's `{ownsMckenzie, gtaPlus}` — either fetch inside (it already has a Supabase
-  client and the owned-property row identifies the user) or accept it as a param from
-  the calling action. Both `assignVehicleStorage` and `assignVehiclesToSubGarage` route
-  through this, so fixing it here fixes enforcement everywhere.
+  in the base-storage branch (`assignedUpgradeId === null`) it already reads the
+  property's `capacity`; also select `ownership_group`, and if it's `hangar`, add
+  `hangarBoostSlots(ownsMckenzie, gtaPlus)` for the **owning user**. It fetches the
+  user's `{ownsMckenzie, gtaPlus}` internally (it has a Supabase client, and the
+  owned-property row identifies the user) so call sites stay unchanged. Both
+  `assignVehicleStorage` and `assignVehiclesToSubGarage` route through this, so fixing
+  it here fixes enforcement everywhere.
 
 ### 5.6 Display layer
 The owned-property shape comes from `getOwnedPropertiesWithStorage`
-(`lib/queries/my-properties.ts`), which builds each upgrade's `capacity`. Apply the
-boost to the Hangar Storage upgrade's `capacity` (and the derived `total_cars`/capacity
-sums) at this query boundary, so every consumer — `/my-properties` grid,
-`/my-businesses` grid (McKenzie is a business-type but the Hangar is too), property
-drawer storage block, wizard hub, dashboard capacity total — shows the boosted number
-without each needing its own logic.
+(`lib/queries/my-properties.ts`), which sets each row's `base_capacity`. Apply the
+boost to the Hangar's `base_capacity` (and the derived `total_cars`/capacity sums) at
+this query boundary, so every consumer — `/my-properties` grid, `/my-businesses` grid,
+property drawer storage block, wizard hub, dashboard capacity total — shows the boosted
+number without each needing its own logic.
 - `getOwnedPropertiesWithStorage` takes the user id already; fetch
-  `{ownsMckenzie, gtaPlus}` once and boost the matching upgrade row's `capacity` in the
-  mapped result.
-- Dashboard capacity total (`dashboard/page.tsx`) sums `u.capacity` over installed
-  upgrades — it consumes the same boosted query, so it's covered automatically.
+  `{ownsMckenzie, gtaPlus}` once and, for rows with `ownership_group === "hangar"`, set
+  `base_capacity = applyHangarBoost(...)` in the mapped result.
+- Dashboard capacity total (`dashboard/page.tsx`) sums `p.base_capacity` plus installed
+  upgrade capacities — it consumes the same boosted query, so it's covered
+  automatically.
+- Property drawer's `baseStorageCars` / base-storage block reads `property.base_capacity`
+  — boosted value flows through.
 
 ### 5.7 McKenzie presentation
 - McKenzie stays an ownable property (already corrected: 0 own storage, $1,475,000,
@@ -196,8 +234,9 @@ No unit-test runner exists in this repo (verification = `npm run typecheck`,
 
 ## 9. Open items for implementation
 
-- Confirm the regular-hangar storage upgrade id pattern in seed is exactly
-  `hangar-<location>-storage` (validate the regex against all hangar rows).
-- Decide whether `capacityForStorageLocation` fetches `{ownsMckenzie, gtaPlus}` itself
-  or receives them from the action (lean: fetch inside, keyed off the owned-property's
-  user, to keep call sites unchanged).
+- Confirm all 5 regular-hangar rows use `subtype = "hangar"` / `ownership_group =
+  "hangar"` and that only their `hangar-<loc>-storage` upgrade (not Aircraft Workshop)
+  is removed in the restructure.
+- The hosted DB's `capacity` is a curated column (preserved by import-seed), so the
+  Hangar 0→20 base-capacity change and the storage-upgrade deletion are applied to the
+  live DB via a one-off script (like the McKenzie fix), in addition to the seed edit.
