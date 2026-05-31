@@ -72,12 +72,13 @@ export async function parseIntent(
 // ----- generatePlan -----
 
 export type GeneratePlanResult =
-  | { ok: true; planId: string; steps: PlanStep[]; summary: PlanSummary }
+  | { ok: true; planId: string; conversationId: string; steps: PlanStep[]; summary: PlanSummary }
   | { ok: false; message: string };
 
 export async function generatePlan(
   intent: ParsedIntent,
   prompt: string,
+  opts?: { conversationId?: string; supersedePlanId?: string },
 ): Promise<GeneratePlanResult> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -105,11 +106,43 @@ export async function generatePlan(
     return { ok: false, message };
   }
 
-  // Persist the plan with status='pending'.
+  // Resolve the conversation: reuse the passed thread, else create one titled
+  // from this prompt (first request of a new thread).
+  let conversationId: string | null = opts?.conversationId ?? null;
+  if (!conversationId) {
+    const { data: convo, error: convoErr } = await supabase
+      .from("conversations")
+      .insert({ user_id: user.id, title: prompt.slice(0, 80) })
+      .select("id")
+      .single();
+    if (convoErr || !convo) {
+      return { ok: false, message: convoErr?.message ?? "Failed to start conversation." };
+    }
+    conversationId = convo.id;
+  } else {
+    // Touch the thread so it floats to the top of the rail.
+    await supabase
+      .from("conversations")
+      .update({ title: undefined })
+      .eq("id", conversationId)
+      .eq("user_id", user.id);
+  }
+
+  // Refinement: drop the superseded pending plan so dead rows don't accumulate.
+  if (opts?.supersedePlanId) {
+    await supabase
+      .from("organizer_plans")
+      .delete()
+      .eq("id", opts.supersedePlanId)
+      .eq("user_id", user.id)
+      .eq("status", "pending");
+  }
+
   const { data: insertRow, error: insertErr } = await supabase
     .from("organizer_plans")
     .insert({
       user_id: user.id,
+      conversation_id: conversationId,
       prompt,
       parsed_intent: intent,
       plan_steps: result.steps,
@@ -124,6 +157,7 @@ export async function generatePlan(
   return {
     ok: true,
     planId: insertRow.id,
+    conversationId: conversationId as string,
     steps: result.steps,
     summary: result.summary,
   };
