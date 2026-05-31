@@ -515,10 +515,10 @@ function StorageSection({
         Your storage
       </p>
       {property.subtype === "mckenzie-hangar" && (
-        <p className="mb-3 rounded-md border border-[#84cc16]/30 bg-[#84cc16]/5 p-3 text-xs text-muted-foreground">
+        <p className="mb-3 rounded-md border border-emerald-500/30 bg-emerald-500/5 p-3 text-xs text-muted-foreground">
           The McKenzie Field Hangar has no storage of its own. While you own it,
-          your Hangar holds <span className="text-[#84cc16]">+15 aircraft</span>{" "}
-          (<span className="text-[#84cc16]">+20</span> with GTA+).
+          your Hangar holds <span className="text-emerald-400">+15 aircraft</span>{" "}
+          (<span className="text-emerald-400">+20</span> with GTA+).
         </p>
       )}
       {!hasAny ? (
