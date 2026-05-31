@@ -201,15 +201,18 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
     });
   };
 
-  const handleDelete = (id: string, title: string) => {
+  const handleDelete = async (id: string, title: string) => {
+    // Confirm OUTSIDE the transition — awaiting a user-interaction promise
+    // inside startTransition breaks the transition scope so the post-confirm
+    // updates get dropped. Only the server action goes in the transition.
+    const ok = await confirm({
+      title: "Delete this plan?",
+      description: `"${title}" and its history will be permanently removed.`,
+      confirmText: "Delete",
+      destructive: true,
+    });
+    if (!ok) return;
     startTransition(async () => {
-      const ok = await confirm({
-        title: "Delete this plan?",
-        description: `"${title}" and its history will be permanently removed.`,
-        confirmText: "Delete",
-        destructive: true,
-      });
-      if (!ok) return;
       const r = await deleteConversation(id);
       if ("error" in r) {
         toast.error(r.error);
