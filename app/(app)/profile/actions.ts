@@ -18,6 +18,7 @@ const schema = z.object({
     .string()
     .max(60, "Display name must be 60 characters or fewer.")
     .optional(),
+  gtaPlus: z.boolean(),
 });
 
 export type ProfileState = {
@@ -33,6 +34,7 @@ export async function updateProfileAction(
   const parsed = schema.safeParse({
     username: formData.get("username"),
     displayName: formData.get("displayName") || undefined,
+    gtaPlus: formData.get("gtaPlus") === "on",
   });
 
   if (!parsed.success) {
@@ -60,6 +62,7 @@ export async function updateProfileAction(
     .update({
       username: parsed.data.username,
       display_name: parsed.data.displayName ?? null,
+      gta_plus: parsed.data.gtaPlus,
     })
     .eq("id", user.id);
 

@@ -1,5 +1,6 @@
 // lib/queries/my-properties.ts
 import { createClient } from "@/lib/supabase/server";
+import { applyHangarBoost, getHangarBoostContext } from "@/lib/hangar-boost";
 
 export type OwnedPropertyDetail = {
   id: string;                 // user_owned_properties.id (uuid)
@@ -57,6 +58,8 @@ export async function getOwnedPropertiesWithStorage(
   scope: OwnedScope = "all",
 ): Promise<OwnedPropertyDetail[]> {
   const supabase = await createClient();
+
+  const boost = await getHangarBoostContext(userId);
 
   const query = supabase
     .from("user_owned_properties")
@@ -124,7 +127,13 @@ export async function getOwnedPropertiesWithStorage(
       subtype_display: p?.subtype_display ?? "",
       neighborhood: p?.neighborhood ?? null,
       image_path: p?.image_path ?? null,
-      base_capacity: p?.capacity ?? 0,
+      base_capacity: applyHangarBoost({
+        ownershipGroup: p?.ownership_group ?? "",
+        assignedUpgradeId: null,
+        baseCapacity: p?.capacity ?? 0,
+        ownsMckenzie: boost.ownsMckenzie,
+        gtaPlus: boost.gtaPlus,
+      }),
       counts_as_garage: p?.counts_as_garage ?? false,
       ownership_group: p?.ownership_group ?? "",
       price: (p?.price ?? null) as number | null,

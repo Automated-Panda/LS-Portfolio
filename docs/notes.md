@@ -116,7 +116,7 @@ Cross-cutting polish on catalog data + management UX. A lot of small wins.
 - [x] Sourced + saved **Higgins Helitours** + **McKenzie Field Hangar** from Fandom via `static.wikia.nocookie.net`, normalized to 600w webp/q85 via the existing sharp pipeline. Cards no longer show "No image".
 
 ### ⚠️ Out-of-scope / flagged for follow-up
-- [ ] **McKenzie Field Hangar — ownable in Online since 1.70 (Mar 2025)** at $1,475,000, 15 aircraft slots, no upgrades. Our seed still treats it as SP-only with 4 slots. Worth a data refresh: reclassify, update price + capacity, add to the `mckenzie-hangar` ownership group properly.
+- [x] **McKenzie Field Hangar** — ✅ **Resolved 2026-05-31.** Corrected to its GTA Online reality: it has NO storage of its own; owning it **boosts a regular Hangar 20→35 (40 for GTA+)**. Hangar's 20 slots moved to `base_capacity` (storage upgrade dropped, Vehicle-Warehouse pattern). Boost modeled via `lib/hangar-boost.ts`, applied in both display (`getOwnedPropertiesWithStorage`) and enforcement (`capacityForStorageLocation`). Added `profiles.gta_plus` (migration 0023) + a GTA+ toggle on `/profile`. Spec/plan in `docs/superpowers/`.
 - [ ] Style mutex coverage — only Bail Office has multi-row styles in our data today. If we add multi-style options later for other properties (Agency / Auto Shop / Hangar / Nightclub / Master Penthouse interior themes), each new group needs its own `mutex_group`.
 
 ---

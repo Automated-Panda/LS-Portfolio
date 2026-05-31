@@ -1,5 +1,6 @@
 // lib/capacity.ts
 import { createClient } from "@/lib/supabase/server";
+import { applyHangarBoost, getHangarBoostContext } from "@/lib/hangar-boost";
 
 /**
  * Returns the maximum number of vehicles that can be stored at the given
@@ -16,7 +17,7 @@ export async function capacityForStorageLocation(
   if (assignedUpgradeId === null) {
     const { data, error } = await supabase
       .from("user_owned_properties")
-      .select("properties!inner(capacity)")
+      .select("user_id, properties!inner(capacity, ownership_group)")
       .eq("id", ownedPropertyId)
       .maybeSingle();
 
@@ -24,7 +25,16 @@ export async function capacityForStorageLocation(
     const p = Array.isArray(data?.properties)
       ? data?.properties[0]
       : data?.properties;
-    return p?.capacity ?? 0;
+    const baseCapacity = p?.capacity ?? 0;
+    if (p?.ownership_group !== "hangar" || !data?.user_id) return baseCapacity;
+    const boost = await getHangarBoostContext(data.user_id);
+    return applyHangarBoost({
+      ownershipGroup: p.ownership_group,
+      assignedUpgradeId: null,
+      baseCapacity,
+      ownsMckenzie: boost.ownsMckenzie,
+      gtaPlus: boost.gtaPlus,
+    });
   }
 
   const { data, error } = await supabase
