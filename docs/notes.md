@@ -36,7 +36,8 @@ Big multi-part session. Highlights:
 
 ## 🗓️ TOMORROW — next session priorities
 
-1. **Pro feature gating** — gate/disable the AI Organizer before sending friends to the site (each run costs real API money; it's marketed as "Pro · Coming soon" but is currently fully usable). Potentially start **Stripe** setup for the one-time Pro unlock (~$7.99).
+1. **Pro feature gating** — gate/disable the AI Organizer before sending friends to the site (each run costs real API money; it's marketed as "Pro · Coming soon" but is currently fully usable). Potentially start **Stripe** setup for the Pro unlock.
+   - 💬 **First, discuss Pro pricing strategy** — James has ideas. Settle the model before touching Stripe: one-time unlock (~$7.99) vs subscription vs usage credits for the AI Organizer (it has real per-run API cost, which may argue against a flat one-time unlock). Also lock what's free vs Pro.
 2. **Price filtering** — add a price filter (range/min-max) on `/vehicles`, `/properties`, and `/businesses`.
 3. **Marketing copy** — bulk up / improve the text across the marketing site (it's a bit thin right now).
 
