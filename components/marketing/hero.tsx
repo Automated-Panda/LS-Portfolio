@@ -46,8 +46,8 @@ export function Hero() {
           <Image
             src="/marketing/dashboard.webp"
             alt="GT Vault dashboard showing net worth, vehicle and property counts, and catalog coverage"
-            width={1600}
-            height={900}
+            width={1211}
+            height={580}
             priority
             className="h-auto w-full"
           />

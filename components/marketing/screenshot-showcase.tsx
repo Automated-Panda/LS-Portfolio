@@ -45,8 +45,8 @@ export function ScreenshotShowcase() {
               <Image
                 src={shot.src}
                 alt={shot.alt}
-                width={1200}
-                height={800}
+                width={1211}
+                height={580}
                 loading="lazy"
                 className="h-auto w-full"
               />

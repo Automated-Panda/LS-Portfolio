@@ -36,8 +36,8 @@ export function OrganizerSpotlight() {
           <Image
             src="/marketing/organizer.webp"
             alt="GT Vault AI Organizer turning a natural-language request into a plan of vehicle moves"
-            width={1200}
-            height={900}
+            width={1211}
+            height={580}
             loading="lazy"
             className="h-auto w-full"
           />
