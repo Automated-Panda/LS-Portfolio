@@ -2,17 +2,22 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { Menu } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import type {
   Clarification,
+  ParsedIntent,
   PlanStep,
   PlanSummary,
+  TranscriptEntry,
   Turn,
 } from "@/lib/organizer/types";
-import type { OrganizerPlan, PlanSummaryRow } from "@/lib/queries/organizer";
+import type { ConversationRow } from "@/lib/queries/organizer";
+import type { OrganizerPlan } from "@/lib/queries/organizer";
 
 import {
   applyPlan,
@@ -20,31 +25,39 @@ import {
   generatePlan,
   parseIntent,
 } from "./actions";
+import { getTranscript } from "./transcript-action";
 import { ChecklistProgress } from "./checklist-progress";
 import { ClarificationPills } from "./clarification-pills";
+import { ConversationRail } from "./conversation-rail";
 import { ExamplePills } from "./example-pills";
-import { PlanRenderer } from "./plan-renderer";
-import { RecentPlansList } from "./recent-plans-list";
+import { MessageBubble } from "./message-bubble";
+import { PlanCard } from "./plan-card";
+import { ThinkingBubble } from "./thinking-bubble";
 import { UndoBanner } from "./undo-banner";
 
-type ChatPhase =
-  | { kind: "idle" }                                         // empty input, no plan in flight
-  | { kind: "thinking" }                                     // parseIntent or generatePlan running
+type Phase =
+  | { kind: "idle" }
+  | { kind: "thinking" }
   | { kind: "clarifying"; clarification: Clarification; history: Turn[]; originalPrompt: string }
-  | { kind: "plan-ready"; planId: string; prompt: string; steps: PlanStep[]; summary: PlanSummary }
+  | { kind: "plan-ready"; planId: string; prompt: string; steps: PlanStep[]; summary: PlanSummary; priorTurns: Turn[] }
   | { kind: "applied"; planId: string; carsMoved: number; undoExpiresAt: string }
   | { kind: "checklist"; planId: string; steps: PlanStep[] }
   | { kind: "failed"; message: string };
 
 type Props = {
-  initialPlans: PlanSummaryRow[];
+  initialConversations: ConversationRow[];
   initialUndoablePlan: OrganizerPlan | null;
 };
 
-export function OrganizeChat({ initialPlans, initialUndoablePlan }: Props) {
+export function OrganizeChat({ initialConversations, initialUndoablePlan }: Props) {
   const router = useRouter();
+  const [conversations, setConversations] = useState(initialConversations);
+  const [activeConversationId, setActiveConversationId] = useState<string | null>(null);
+  const [transcript, setTranscript] = useState<TranscriptEntry[]>([]);
   const [input, setInput] = useState("");
-  const [phase, setPhase] = useState<ChatPhase>(() => {
+  const [railOpen, setRailOpen] = useState(false);
+  const [pending, startTransition] = useTransition();
+  const [phase, setPhase] = useState<Phase>(() => {
     if (initialUndoablePlan) {
       const carsMoved = initialUndoablePlan.plan_steps.filter(
         (s) => s.type === "move" && s.reason === "user-asked",
@@ -58,26 +71,53 @@ export function OrganizeChat({ initialPlans, initialUndoablePlan }: Props) {
     }
     return { kind: "idle" };
   });
-  const [pending, startTransition] = useTransition();
+
+  const resetToNew = () => {
+    setActiveConversationId(null);
+    setTranscript([]);
+    setPhase({ kind: "idle" });
+    setInput("");
+    setRailOpen(false);
+  };
+
+  const selectThread = (id: string) => {
+    setRailOpen(false);
+    startTransition(async () => {
+      const entries = await getTranscript(id);
+      setActiveConversationId(id);
+      setTranscript(entries);
+      setPhase({ kind: "idle" });
+    });
+  };
 
   const submit = (promptText: string) => {
-    setPhase({ kind: "thinking" });
-    setInput("");
-
-    startTransition(async () => {
-      const history: Turn[] =
-        phase.kind === "clarifying"
-          ? [
-              ...phase.history,
-              { role: "assistant", clarification: phase.clarification },
-              { role: "user", content: promptText },
-            ]
+    // Refinement: a follow-up while a plan is pending refines that same plan.
+    const refining = phase.kind === "plan-ready";
+    const priorTurns: Turn[] =
+      phase.kind === "clarifying"
+        ? [
+            ...phase.history,
+            { role: "assistant", clarification: phase.clarification },
+            { role: "user", content: promptText },
+          ]
+        : phase.kind === "plan-ready"
+          ? [...phase.priorTurns, { role: "user", content: promptText }]
           : [];
 
-      const parsePrompt =
-        phase.kind === "clarifying" ? phase.originalPrompt : promptText;
+    const parsePrompt =
+      phase.kind === "clarifying" ? phase.originalPrompt : promptText;
+    const supersedePlanId = refining && phase.kind === "plan-ready" ? phase.planId : undefined;
 
-      const parsed = await parseIntent(parsePrompt, history);
+    // Push the user's message into the transcript immediately.
+    setTranscript((t) => [
+      ...t,
+      { planId: `tmp-${t.length}`, prompt: promptText, steps: [], summary: emptySummary(), status: "pending" },
+    ]);
+    setInput("");
+    setPhase({ kind: "thinking" });
+
+    startTransition(async () => {
+      const parsed = await parseIntent(parsePrompt, priorTurns.length ? priorTurns : undefined);
       if ("error" in parsed) {
         toast.error(parsed.error);
         setPhase({ kind: "idle" });
@@ -87,24 +127,31 @@ export function OrganizeChat({ initialPlans, initialUndoablePlan }: Props) {
         setPhase({
           kind: "clarifying",
           clarification: parsed.clarification,
-          history,
+          history: priorTurns,
           originalPrompt: parsePrompt,
         });
         return;
       }
 
-      const planResult = await generatePlan(parsed.intent, parsePrompt);
+      const planResult = await generatePlan(parsed.intent, parsePrompt, {
+        conversationId: activeConversationId ?? undefined,
+        supersedePlanId,
+      });
       if (!planResult.ok) {
         setPhase({ kind: "failed", message: planResult.message });
         return;
       }
+      setActiveConversationId(planResult.conversationId);
       setPhase({
         kind: "plan-ready",
         planId: planResult.planId,
         prompt: parsePrompt,
         steps: planResult.steps,
         summary: planResult.summary,
+        priorTurns,
       });
+      // Refresh the rail (new thread / bumped order).
+      router.refresh();
     });
   };
 
@@ -121,10 +168,6 @@ export function OrganizeChat({ initialPlans, initialUndoablePlan }: Props) {
     });
   };
 
-  const handleChecklist = (planId: string, steps: PlanStep[]) => {
-    setPhase({ kind: "checklist", planId, steps });
-  };
-
   const handleCancel = (planId: string) => {
     startTransition(async () => {
       await dismissPlan(planId);
@@ -133,112 +176,160 @@ export function OrganizeChat({ initialPlans, initialUndoablePlan }: Props) {
     });
   };
 
+  // The settled plan that belongs to the latest transcript turn, if any.
+  const liveCard =
+    phase.kind === "plan-ready"
+      ? { steps: phase.steps, summary: phase.summary }
+      : null;
+
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-4">
-      <div>
-        <h1 className="text-2xl font-bold">Organize</h1>
-        <p className="text-sm text-muted-foreground">
-          Describe how you want your cars laid out. AI parses your request, the
-          planner computes the moves, you choose how to apply.
-        </p>
-      </div>
-
-      {/* APPLIED state: undo banner pinned at top */}
-      {phase.kind === "applied" && (
-        <UndoBanner
-          planId={phase.planId}
-          undoExpiresAt={phase.undoExpiresAt}
-          carsMoved={phase.carsMoved}
+    <div className="mx-auto flex h-[calc(100vh-3.5rem)] max-w-5xl overflow-hidden rounded-lg border border-[#1f1f1f]">
+      {/* RAIL — desktop static, mobile drawer */}
+      <aside className="hidden w-60 shrink-0 border-r border-[#1f1f1f] md:block">
+        <ConversationRail
+          conversations={conversations}
+          activeId={activeConversationId}
+          onSelect={selectThread}
+          onNew={resetToNew}
         />
-      )}
-
-      {/* IDLE: example pills */}
-      {phase.kind === "idle" && (
-        <ExamplePills onPick={(p) => submit(p)} />
-      )}
-
-      {/* THINKING */}
-      {phase.kind === "thinking" && (
-        <div className="rounded-md border bg-card p-4 text-sm text-muted-foreground">
-          Thinking...
+      </aside>
+      {railOpen && (
+        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setRailOpen(false)}>
+          <div className="absolute inset-0 bg-black/60" />
+          <aside className="absolute inset-y-0 left-0 w-64 border-r border-[#1f1f1f]" onClick={(e) => e.stopPropagation()}>
+            <ConversationRail
+              conversations={conversations}
+              activeId={activeConversationId}
+              onSelect={selectThread}
+              onNew={resetToNew}
+            />
+          </aside>
         </div>
       )}
 
-      {/* CLARIFYING */}
-      {phase.kind === "clarifying" && (
-        <div className="rounded-md border-l-4 border-amber-500 bg-card p-3">
-          <div className="mb-1 text-[10px] uppercase tracking-wider text-muted-foreground">Question</div>
-          <p className="mb-2 text-sm">{phase.clarification.question}</p>
-          {phase.clarification.suggestions.length > 0 && (
-            <ClarificationPills
-              suggestions={phase.clarification.suggestions}
-              onPick={(s) => submit(s)}
-            />
+      {/* CONVERSATION */}
+      <div className="flex flex-1 flex-col bg-[#0a0a0a]">
+        {/* header */}
+        <div className="flex items-center gap-2 border-b border-[#1f1f1f] px-4 py-3">
+          <button type="button" className="text-neutral-300 md:hidden" onClick={() => setRailOpen(true)} aria-label="Open plans">
+            <Menu className="h-5 w-5" />
+          </button>
+          <div>
+            <div className="text-sm font-bold text-neutral-100">AI Organizer</div>
+            <div className="text-[11px] text-[#84cc16]">
+              {phase.kind === "thinking" ? "● Thinking…" : "● Ready"}
+            </div>
+          </div>
+        </div>
+
+        {/* transcript */}
+        <div className="flex flex-1 flex-col gap-3.5 overflow-y-auto p-4">
+          {transcript.length === 0 && phase.kind === "idle" && (
+            <div className="flex flex-col gap-3">
+              <MessageBubble role="assistant">
+                Describe how you want your cars laid out — I&apos;ll plan the moves.
+              </MessageBubble>
+              <ExamplePills onPick={(p) => submit(p)} />
+            </div>
+          )}
+
+          {transcript.map((entry, idx) => {
+            const isLast = idx === transcript.length - 1;
+            return (
+              <div key={entry.planId} className="flex flex-col gap-3.5">
+                <MessageBubble role="user">{entry.prompt}</MessageBubble>
+                {/* settled (historical) plans render read-only; the live pending one renders with actions below */}
+                {!(isLast && (phase.kind === "thinking" || phase.kind === "plan-ready")) &&
+                  entry.steps.length > 0 && (
+                    <MessageBubble role="assistant">
+                      <PlanCard summary={entry.summary} steps={entry.steps} readOnly />
+                    </MessageBubble>
+                  )}
+              </div>
+            );
+          })}
+
+          {phase.kind === "thinking" && <ThinkingBubble />}
+
+          {phase.kind === "clarifying" && (
+            <MessageBubble role="assistant">
+              <p className="mb-2">{phase.clarification.question}</p>
+              {phase.clarification.suggestions.length > 0 && (
+                <ClarificationPills
+                  suggestions={phase.clarification.suggestions}
+                  onPick={(s) => submit(s)}
+                />
+              )}
+            </MessageBubble>
+          )}
+
+          {phase.kind === "plan-ready" && liveCard && (
+            <MessageBubble role="assistant">
+              <PlanCard
+                summary={liveCard.summary}
+                steps={liveCard.steps}
+                onApply={() => handleApply(phase.planId, liveCard.summary.cars_moved)}
+                onChecklist={() => setPhase({ kind: "checklist", planId: phase.planId, steps: liveCard.steps })}
+                onCancel={() => handleCancel(phase.planId)}
+                isPending={pending}
+              />
+            </MessageBubble>
+          )}
+
+          {phase.kind === "checklist" && (
+            <MessageBubble role="assistant">
+              <ChecklistProgress planId={phase.planId} steps={phase.steps} />
+            </MessageBubble>
+          )}
+
+          {phase.kind === "applied" && (
+            <UndoBanner planId={phase.planId} undoExpiresAt={phase.undoExpiresAt} carsMoved={phase.carsMoved} />
+          )}
+
+          {phase.kind === "failed" && (
+            <MessageBubble role="assistant">
+              <p className="mb-2 whitespace-pre-line">{phase.message}</p>
+              <Button size="sm" variant="outline" onClick={() => setPhase({ kind: "idle" })}>
+                Try a different plan
+              </Button>
+            </MessageBubble>
           )}
         </div>
-      )}
 
-      {/* PLAN-READY */}
-      {phase.kind === "plan-ready" && (
-        <PlanRenderer
-          summary={phase.summary}
-          steps={phase.steps}
-          onApply={() => handleApply(phase.planId, phase.summary.cars_moved)}
-          onChecklist={() => handleChecklist(phase.planId, phase.steps)}
-          onCancel={() => handleCancel(phase.planId)}
-          isPending={pending}
-        />
-      )}
-
-      {/* CHECKLIST */}
-      {phase.kind === "checklist" && (
-        <ChecklistProgress planId={phase.planId} steps={phase.steps} />
-      )}
-
-      {/* FAILED */}
-      {phase.kind === "failed" && (
-        <div className="rounded-md border-l-4 border-red-500 bg-card p-3">
-          <div className="mb-1 text-[10px] uppercase tracking-wider text-muted-foreground">Can&apos;t fit that one</div>
-          <p className="text-sm whitespace-pre-line">{phase.message}</p>
+        {/* input */}
+        <div className="flex gap-2 border-t border-[#1f1f1f] p-3">
+          <Input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && input.trim()) {
+                e.preventDefault();
+                submit(input.trim());
+              }
+            }}
+            placeholder={
+              phase.kind === "clarifying"
+                ? "Answer the question…"
+                : phase.kind === "plan-ready"
+                  ? "Refine this plan, or apply it…"
+                  : "Describe how to organize…"
+            }
+            disabled={pending || phase.kind === "thinking"}
+            className="rounded-full"
+          />
           <Button
-            size="sm"
-            variant="outline"
-            className="mt-2"
-            onClick={() => setPhase({ kind: "idle" })}
+            onClick={() => input.trim() && submit(input.trim())}
+            disabled={!input.trim() || pending || phase.kind === "thinking"}
+            className={cn("shrink-0 rounded-full bg-[#84cc16] text-black hover:bg-[#84cc16]/90")}
           >
-            Try a different plan
+            ↑
           </Button>
         </div>
-      )}
-
-      {/* INPUT */}
-      <div className="flex gap-2 border-t pt-3">
-        <Input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && input.trim()) {
-              e.preventDefault();
-              submit(input.trim());
-            }
-          }}
-          placeholder={
-            phase.kind === "clarifying"
-              ? "Answer the question or type a different reply..."
-              : "Describe how to organize..."
-          }
-          disabled={pending || phase.kind === "thinking"}
-        />
-        <Button
-          onClick={() => input.trim() && submit(input.trim())}
-          disabled={!input.trim() || pending || phase.kind === "thinking"}
-        >
-          Send
-        </Button>
       </div>
-
-      {/* HISTORY */}
-      <RecentPlansList plans={initialPlans} onRerun={(p) => setInput(p)} />
     </div>
   );
+}
+
+function emptySummary(): PlanSummary {
+  return { total_steps: 0, cars_moved: 0, cars_unassigned: 0, displacements: 0, conflicts: [] };
 }
