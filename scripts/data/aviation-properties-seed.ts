@@ -10,9 +10,12 @@ import type { Property } from "../schema";
  *
  * McKenzie Field Hangar (GTA Online)
  *   Grapeseed airstrip property, added to GTA Online on 4 March 2025
- *   (Oscar Guzman Flies Again). A standalone aircraft-storage business with
- *   20 personal aircraft slots and built-in living quarters; no paid upgrades.
- *   Ownable independently of (and alongside) a regular Hangar.
+ *   (Oscar Guzman Flies Again). It has NO standalone aircraft storage of its
+ *   own — owning it BOOSTS a regular Hangar's capacity from 20 to 35 slots
+ *   (40 for GTA+ members). If the player owns no regular Hangar, McKenzie
+ *   grants no aircraft slots. Modeled here with 0 personal storage; the
+ *   conditional cross-property boost is not yet represented (needs a derived-
+ *   capacity feature + GTA+ membership tracking — see follow-up).
  *   Sources:
  *     https://gta.fandom.com/wiki/McKenzie_Field_Hangar_(GTA_Online)
  *     https://rockstarintel.com/gta-online-mckenzie-field-hangar-price-details/
@@ -44,24 +47,11 @@ export const MCKENZIE_HANGAR_SEED: Omit<Property, "image_path">[] = [
     // GTA Online purchase price via Maze Bank Foreclosures ($1,000,000 for GTA+).
     price: 1475000,
     capacity: 0,
-    // Stores personal aircraft, like a regular Hangar (counts_as_garage is
-    // false: aircraft, not cars — matches the `hangar` subtype rows).
+    // No standalone storage. counts_as_garage stays false (it's aircraft-
+    // related, and never holds the player's cars). Its real effect — boosting
+    // a regular Hangar to 35/40 slots — isn't modeled yet.
     counts_as_garage: false,
-    upgrades: [
-      {
-        id: `${MCKENZIE_ID}-hangar-storage`,
-        display_name: "Hangar Storage",
-        tier: null,
-        // 20 personal aircraft slots, included with purchase.
-        capacity: 20,
-        required_upgrade_id: null,
-        notes:
-          "Stores personal aircraft (20 total). Included with purchase; " +
-          "no separate upgrade cost. Ownable alongside a regular Hangar.",
-        price: 0,
-        included_on_purchase: true,
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/McKenzie_Field_Hangar_(GTA_Online)",
       gtabase: null,
