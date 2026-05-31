@@ -1,4 +1,5 @@
 // app/(marketing)/page.tsx
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
@@ -12,6 +13,28 @@ import { ScreenshotShowcase } from "@/components/marketing/screenshot-showcase";
 import { PricingTeaser } from "@/components/marketing/pricing-teaser";
 import { Faq } from "@/components/marketing/faq";
 import { FinalCta } from "@/components/marketing/final-cta";
+
+export const metadata: Metadata = {
+  title: "GT Vault — Track your entire GTA V empire",
+  description:
+    "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft and boats — and see your net worth. Free to use.",
+  openGraph: {
+    title: "GT Vault — Track your entire GTA V empire",
+    description:
+      "Your full GTA V portfolio and its net worth, in one place. Free to use.",
+    url: "https://www.gtvault.app",
+    siteName: "GT Vault",
+    images: [{ url: "/marketing/og.webp", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GT Vault — Track your entire GTA V empire",
+    description:
+      "Your full GTA V portfolio and its net worth, in one place. Free to use.",
+    images: ["/marketing/og.webp"],
+  },
+};
 
 export default async function HomePage() {
   const supabase = await createClient();
