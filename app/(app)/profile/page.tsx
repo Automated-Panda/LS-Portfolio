@@ -27,7 +27,7 @@ export default async function ProfilePage() {
   const [{ data: profile }, highlights] = await Promise.all([
     supabase
       .from("profiles")
-      .select("username, display_name")
+      .select("username, display_name, gta_plus")
       .eq("id", user.id)
       .maybeSingle(),
     getUserHighlights(user.id),
@@ -54,6 +54,7 @@ export default async function ProfilePage() {
             email={user.email ?? ""}
             username={profile?.username ?? ""}
             displayName={profile?.display_name ?? ""}
+            gtaPlus={profile?.gta_plus ?? false}
           />
         </CardContent>
       </Card>
