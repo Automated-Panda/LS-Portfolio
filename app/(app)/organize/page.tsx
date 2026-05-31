@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import {
   getActiveUndoablePlan,
-  getRecentPlans,
+  getConversations,
 } from "@/lib/queries/organizer";
 
 import { OrganizeChat } from "./organize-chat";
@@ -15,14 +15,14 @@ export default async function OrganizePage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const [initialPlans, initialUndoablePlan] = await Promise.all([
-    getRecentPlans(user.id),
+  const [initialConversations, initialUndoablePlan] = await Promise.all([
+    getConversations(user.id),
     getActiveUndoablePlan(user.id),
   ]);
 
   return (
     <OrganizeChat
-      initialPlans={initialPlans}
+      initialConversations={initialConversations}
       initialUndoablePlan={initialUndoablePlan}
     />
   );
