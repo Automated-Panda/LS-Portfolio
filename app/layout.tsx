@@ -11,6 +11,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gtvault.app"),
   title: "GT Vault",
   description:
     "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft, and more.",

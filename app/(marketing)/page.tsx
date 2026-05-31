@@ -1,29 +1,60 @@
-import Link from "next/link";
+// app/(marketing)/page.tsx
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-import { Logo } from "@/components/logo";
-import { Button } from "@/components/ui/button";
+import { createClient } from "@/lib/supabase/server";
+import { getMarketingStats } from "@/lib/marketing/stats";
 
-export default function HomePage() {
+import { Hero } from "@/components/marketing/hero";
+import { StatBar } from "@/components/marketing/stat-bar";
+import { FeatureCards } from "@/components/marketing/feature-cards";
+import { OrganizerSpotlight } from "@/components/marketing/organizer-spotlight";
+import { ScreenshotShowcase } from "@/components/marketing/screenshot-showcase";
+import { PricingTeaser } from "@/components/marketing/pricing-teaser";
+import { Faq } from "@/components/marketing/faq";
+import { FinalCta } from "@/components/marketing/final-cta";
+
+export const metadata: Metadata = {
+  title: "GT Vault — Track your entire GTA V empire",
+  description:
+    "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft and boats — and see your net worth. Free to use.",
+  openGraph: {
+    title: "GT Vault — Track your entire GTA V empire",
+    description:
+      "Your full GTA V portfolio and its net worth, in one place. Free to use.",
+    url: "https://www.gtvault.app",
+    siteName: "GT Vault",
+    images: [{ url: "/marketing/og.webp", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GT Vault — Track your entire GTA V empire",
+    description:
+      "Your full GTA V portfolio and its net worth, in one place. Free to use.",
+    images: ["/marketing/og.webp"],
+  },
+};
+
+export default async function HomePage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) redirect("/dashboard");
+
+  const stats = await getMarketingStats();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8 text-center">
-      <div className="flex flex-col items-center gap-6">
-        <Logo size="xl" />
-        <p className="max-w-md text-lg text-muted-foreground">
-          Track your full GTA V asset portfolio — vehicles, properties,
-          businesses, aircraft, and everything else you own.
-        </p>
-      </div>
-      <div className="flex gap-3">
-        <Button asChild size="lg">
-          <Link href="/signup">Get started</Link>
-        </Button>
-        <Button asChild size="lg" variant="outline">
-          <Link href="/login">Sign in</Link>
-        </Button>
-      </div>
-      <p className="text-xs text-muted-foreground">
-        Early access — Phase 2 build.
-      </p>
-    </main>
+    <>
+      <Hero />
+      <StatBar stats={stats} />
+      <FeatureCards />
+      <OrganizerSpotlight />
+      <ScreenshotShowcase />
+      <PricingTeaser />
+      <Faq />
+      <FinalCta />
+    </>
   );
 }
