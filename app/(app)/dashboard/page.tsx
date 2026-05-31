@@ -69,16 +69,20 @@ export default async function DashboardPage() {
     return <EmptyDashboard userName={greetingName} />;
   }
 
-  // --- Vehicle splits (cars / aircraft / boats) ---
-  let cars = 0, aircraft = 0, boats = 0;
+  // --- Vehicle splits (cars / bikes / aircraft / boats) ---
+  // assetCategoryOf only separates air/sea; on land, Motorcycles split out as
+  // "bikes" so they aren't miscounted as cars.
+  let cars = 0, bikes = 0, aircraft = 0, boats = 0;
   for (const v of vehicleInstances) {
     const cat = assetCategoryOf(v.class);
     if (cat === "air") aircraft += 1;
     else if (cat === "sea") boats += 1;
+    else if (v.class === "Motorcycles") bikes += 1;
     else cars += 1;
   }
   const vehicleSplits: SubSplit = [
     { label: "cars", count: cars },
+    { label: "bikes", count: bikes },
     { label: "aircraft", count: aircraft },
     { label: "boats", count: boats },
   ];
