@@ -8,13 +8,14 @@ import type { Property } from "../schema";
  *     They are included because GT Vault tracks all GTA V assets,
  *     including story-mode businesses owned by Franklin, Michael, or Trevor.
  *
- * McKenzie Field Hangar
- *   Trevor Philips Enterprises acquisition. Dirt-strip airfield in Grapeseed
- *   used for arms/drug air-freight missions (Tinkle / Makoute / Chem contracts).
- *   Stores small fixed-wing aircraft. Introduced in base GTA V (2013).
+ * McKenzie Field Hangar (GTA Online)
+ *   Grapeseed airstrip property, added to GTA Online on 4 March 2025
+ *   (Oscar Guzman Flies Again). A standalone aircraft-storage business with
+ *   20 personal aircraft slots and built-in living quarters; no paid upgrades.
+ *   Ownable independently of (and alongside) a regular Hangar.
  *   Sources:
- *     https://gta.fandom.com/wiki/McKenzie_Field_Hangar
- *     https://gta.fandom.com/wiki/Trevor_Philips_Enterprises
+ *     https://gta.fandom.com/wiki/McKenzie_Field_Hangar_(GTA_Online)
+ *     https://rockstarintel.com/gta-online-mckenzie-field-hangar-price-details/
  *
  * Higgins Helitours
  *   LSIA helipad / helicopter tour business. Any protagonist can purchase.
@@ -40,31 +41,29 @@ export const MCKENZIE_HANGAR_SEED: Omit<Property, "image_path">[] = [
     // Grapeseed airstrip, east of the town of Grapeseed near the Alamo Sea.
     location: "McKenzie Field, Grapeseed",
     neighborhood: "Grapeseed",
-    // Purchase price: GTA$150,000 (paid to Oscar Guzman via Trevor's phone).
-    price: 150000,
+    // GTA Online purchase price via Maze Bank Foreclosures ($1,000,000 for GTA+).
+    price: 1475000,
     capacity: 0,
-    // Stores small fixed-wing aircraft (crop-dusters, Velums, etc.) in the
-    // open-sided corrugated hangar at the airstrip.
-    counts_as_garage: true,
+    // Stores personal aircraft, like a regular Hangar (counts_as_garage is
+    // false: aircraft, not cars — matches the `hangar` subtype rows).
+    counts_as_garage: false,
     upgrades: [
       {
         id: `${MCKENZIE_ID}-hangar-storage`,
         display_name: "Hangar Storage",
         tier: null,
-        // Accommodates a handful of small planes; exact slot count unconfirmed.
-        capacity: 4,
+        // 20 personal aircraft slots, included with purchase.
+        capacity: 20,
         required_upgrade_id: null,
         notes:
-          "Open-sided dirt-strip hangar. Stores small fixed-wing aircraft " +
-          "(crop-dusters, Velums). Included with purchase; no separate upgrade cost.",
+          "Stores personal aircraft (20 total). Included with purchase; " +
+          "no separate upgrade cost. Ownable alongside a regular Hangar.",
         price: 0,
         included_on_purchase: true,
       },
     ],
-    // SP-only — no GTA Online equivalent.
-    verify: true,
     _sources: {
-      fandom: "https://gta.fandom.com/wiki/McKenzie_Field_Hangar",
+      fandom: "https://gta.fandom.com/wiki/McKenzie_Field_Hangar_(GTA_Online)",
       gtabase: null,
     },
   },

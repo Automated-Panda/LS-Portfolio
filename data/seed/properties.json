@@ -7681,24 +7681,23 @@
     "subtype_display": "McKenzie Hangar",
     "location": "McKenzie Field, Grapeseed",
     "neighborhood": "Grapeseed",
-    "price": 150000,
+    "price": 1475000,
     "capacity": 0,
-    "counts_as_garage": true,
+    "counts_as_garage": false,
     "upgrades": [
       {
         "id": "mckenzie-field-hangar-hangar-storage",
         "display_name": "Hangar Storage",
         "tier": null,
-        "capacity": 4,
+        "capacity": 20,
         "required_upgrade_id": null,
-        "notes": "Open-sided dirt-strip hangar. Stores small fixed-wing aircraft (crop-dusters, Velums). Included with purchase; no separate upgrade cost.",
+        "notes": "Stores personal aircraft (20 total). Included with purchase; no separate upgrade cost. Ownable alongside a regular Hangar.",
         "price": 0,
         "included_on_purchase": true
       }
     ],
-    "verify": true,
     "_sources": {
-      "fandom": "https://gta.fandom.com/wiki/McKenzie_Field_Hangar",
+      "fandom": "https://gta.fandom.com/wiki/McKenzie_Field_Hangar_(GTA_Online)",
       "gtabase": null
     },
     "parent_building": null,
