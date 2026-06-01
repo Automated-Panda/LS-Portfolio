@@ -27,6 +27,7 @@ export function normalize(s: CreditState, nowMs: number): CreditState {
 
   if (next.subPeriodEnd !== null && nowMs > next.subPeriodEnd) {
     next.subMonthly = 0;
+    next.hasActiveSub = false; // sub lapsed → free-refill eligibility resumes below
   }
 
   if (!next.hasActiveSub && nowMs - next.freePeriodStart >= FREE_REFILL_INTERVAL_MS) {
@@ -47,9 +48,13 @@ export type SpendResult =
 
 /** Spend `amount` credits, draining free → sub → purchased. */
 export function spend(s: CreditState, amount: number, nowMs: number): SpendResult {
+  if (!Number.isInteger(amount) || amount < 0) {
+    throw new RangeError(`spend: amount must be a non-negative integer, got ${amount}`);
+  }
+
   const state = normalize(s, nowMs);
 
-  if (amount <= 0) {
+  if (amount === 0) {
     return { ok: true, next: state, debits: { free: 0, sub: 0, purchased: 0 } };
   }
 
@@ -63,7 +68,7 @@ export function spend(s: CreditState, amount: number, nowMs: number): SpendResul
   remaining -= fromFree;
   const fromSub = Math.min(state.subMonthly, remaining);
   remaining -= fromSub;
-  const fromPurchased = remaining; // guaranteed <= balanceCredits by the total check
+  const fromPurchased = remaining; // safe: total >= amount, so what's left after free+sub fits within balanceCredits
 
   return {
     ok: true,

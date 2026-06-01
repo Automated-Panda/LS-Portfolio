@@ -45,6 +45,19 @@ describe("normalize", () => {
     const s = state({ subMonthly: 250, subPeriodEnd: NOW + 1000 });
     expect(normalize(s, NOW).subMonthly).toBe(250);
   });
+  it("clears hasActiveSub when the sub period lapses and resumes free refill", () => {
+    const s = state({
+      subMonthly: 250,
+      subPeriodEnd: NOW - 1,
+      hasActiveSub: true,
+      freeMonthly: 0,
+      freePeriodStart: NOW - FREE_REFILL_INTERVAL_MS,
+    });
+    const n = normalize(s, NOW);
+    expect(n.subMonthly).toBe(0);
+    expect(n.hasActiveSub).toBe(false);
+    expect(n.freeMonthly).toBe(10); // free refill resumes now that they're not subscribed
+  });
 });
 
 describe("spend", () => {
@@ -75,5 +88,29 @@ describe("spend", () => {
     const r = spend(s, 5, NOW); // refill gives 10 free, then spend 5
     expect(r.ok).toBe(true);
     if (r.ok) expect(r.next.freeMonthly).toBe(5);
+  });
+  it("handles spending exactly the full balance", () => {
+    const s = state({ freeMonthly: 3, subMonthly: 2, balanceCredits: 5 });
+    const r = spend(s, 10, NOW);
+    expect(r.ok).toBe(true);
+    if (r.ok) {
+      expect(r.debits).toEqual({ free: 3, sub: 2, purchased: 5 });
+      expect(r.next.freeMonthly).toBe(0);
+      expect(r.next.subMonthly).toBe(0);
+      expect(r.next.balanceCredits).toBe(0);
+    }
+  });
+  it("draws only from purchased when free and sub are empty", () => {
+    const s = state({ freeMonthly: 0, subMonthly: 0, balanceCredits: 10 });
+    const r = spend(s, 5, NOW);
+    expect(r.ok).toBe(true);
+    if (r.ok) {
+      expect(r.debits).toEqual({ free: 0, sub: 0, purchased: 5 });
+      expect(r.next.balanceCredits).toBe(5);
+    }
+  });
+  it("throws on negative or non-integer amounts", () => {
+    expect(() => spend(state(), -1, NOW)).toThrow(RangeError);
+    expect(() => spend(state(), 2.5, NOW)).toThrow(RangeError);
   });
 });
