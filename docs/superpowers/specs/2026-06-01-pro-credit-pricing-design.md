@@ -55,12 +55,16 @@ intent-count is known before charging.
 - *"how do I max the Mr. Faber payout?"* → **2 credits**
 
 **Rules:**
-- **Only the API call costs credits.** Applying, undoing, browsing, net-worth, etc. are local
-  DB work = always free.
-- **Show the cost before committing.** The parsed move list lets the UI say *"This will cost 3
-  credits — proceed?"* before applying. No surprise drains.
-- **Failed parse / 0 valid moves → 0 credits charged.** Users only pay when they get something
-  real.
+- **The charge lands at plan *generation*, not at apply.** Every submitted message fires a Haiku
+  parse call (the real cost ~1¢), so the charge attaches to producing the plan — applying/undoing
+  it is free. A user who generates a plan and then doesn't apply it has **already paid**; refusing
+  to apply never refunds and never dodges the charge.
+- **1-credit conversation floor.** Messages that produce *no* plan (the AI asks a clarifying
+  question, or the parse fails) still cost a Haiku call, so they charge **1 credit** to cover it.
+  Net rule in code: **`charge = max(1, planCost(intentCount))` per message** (intentCount = 0 for
+  clarify/fail → the 1-credit floor). Since ~95% of messages yield a plan, the floor rarely bites
+  but guarantees no out-of-pocket runs.
+- **Applying, undoing, browsing, net-worth, etc. are local DB work = always free.**
 - **Chat is priced at 2 (not 1)** as cheap insurance against the future Sonnet-powered knowledge
   base costing 5–20× a Haiku run.
 
