@@ -20,7 +20,10 @@
     "vehicles:prune-variants": "tsx --env-file=.env.local scripts/prune-redundant-variants.ts",
     "mfr:fix-acronyms": "tsx --env-file=.env.local scripts/fix-manufacturer-display.ts",
     "availability:apply": "tsx --env-file=.env.local scripts/apply-availability.ts",
-    "stripe:setup": "tsx --env-file=.env.local scripts/stripe-setup.ts"
+    "stripe:setup": "tsx --env-file=.env.local scripts/stripe-setup.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "credits:check": "tsx --env-file=.env.local scripts/credits-check.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
@@ -64,6 +67,7 @@
     "supabase": "^2.91.1",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.8"
   }
 }
