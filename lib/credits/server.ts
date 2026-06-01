@@ -59,7 +59,11 @@ export async function getCreditState(
     normalized.freePeriodStart !== raw.freePeriodStart ||
     normalized.hasActiveSub !== raw.hasActiveSub;
   if (changed) {
-    await supabase.from("user_credits").update(stateToUpdate(normalized)).eq("user_id", userId);
+    const { error } = await supabase
+      .from("user_credits")
+      .update(stateToUpdate(normalized))
+      .eq("user_id", userId);
+    if (error) throw new Error(`getCreditState persist failed: ${error.message}`);
   }
 
   return { state: normalized, total: totalBalance(normalized) };
@@ -77,7 +81,7 @@ export async function getBalance(userId: string): Promise<number> {
 export async function spendCredits(
   userId: string,
   amount: number,
-  reason: "spend",
+  reason: "spend" = "spend",
   metadata: Record<string, unknown> = {},
 ): Promise<{ ok: true; remaining: number } | { ok: false; shortfall: number }> {
   const supabase = createAdminClient();
@@ -96,6 +100,7 @@ export async function spendCredits(
       .update(stateToUpdate(result.next))
       .eq("user_id", userId)
       .eq("free_monthly", row.free_monthly)
+      .eq("free_period_start", row.free_period_start)
       .eq("sub_monthly", row.sub_monthly)
       .eq("balance_credits", row.balance_credits)
       .select("user_id");
@@ -131,7 +136,8 @@ async function recordDebits(
       metadata,
     }));
   if (rows.length > 0) {
-    await supabase.from("credit_transactions").insert(rows);
+    const { error } = await supabase.from("credit_transactions").insert(rows);
+    if (error) throw new Error(`recordDebits insert failed: ${error.message}`);
   }
 }
 
@@ -152,13 +158,14 @@ export async function grantCredits(
 ): Promise<{ ok: true; alreadyApplied: boolean; total: number }> {
   const supabase = createAdminClient();
 
-  // Idempotency: if we've already recorded this Stripe event, do nothing.
+  // Fast-path idempotency: if we've already recorded this Stripe event, no-op.
   if (opts.stripeEventId) {
-    const { data: existing } = await supabase
+    const { data: existing, error } = await supabase
       .from("credit_transactions")
       .select("id")
       .eq("stripe_event_id", opts.stripeEventId)
       .maybeSingle();
+    if (error) throw new Error(`grantCredits idempotency check failed: ${error.message}`);
     if (existing) {
       return { ok: true, alreadyApplied: true, total: await getBalance(userId) };
     }
@@ -178,8 +185,13 @@ export async function grantCredits(
     bucket = "sub";
   }
 
-  await supabase.from("user_credits").update(stateToUpdate(next)).eq("user_id", userId);
-  await supabase.from("credit_transactions").insert({
+  // ⚠️ NOT atomic. grantCredits has no callers yet — Stripe wiring is Plan 3.
+  // Before real money flows through it, this MUST become a single transactional
+  // Postgres RPC. The audit row is inserted FIRST so a mid-operation failure
+  // leaves a detectable orphan transaction (under-grant) rather than a silently
+  // double-granted balance. The unique constraint on stripe_event_id also makes
+  // concurrent duplicate deliveries safe (handled below).
+  const { error: insertError } = await supabase.from("credit_transactions").insert({
     user_id: userId,
     delta: opts.amount,
     reason: opts.reason,
@@ -187,6 +199,19 @@ export async function grantCredits(
     balance_after: totalBalance(next),
     stripe_event_id: opts.stripeEventId ?? null,
   });
+  if (insertError) {
+    if ((insertError as { code?: string }).code === "23505") {
+      // A concurrent delivery already recorded this event.
+      return { ok: true, alreadyApplied: true, total: await getBalance(userId) };
+    }
+    throw new Error(`grantCredits insert failed: ${insertError.message}`);
+  }
+
+  const { error: updateError } = await supabase
+    .from("user_credits")
+    .update(stateToUpdate(next))
+    .eq("user_id", userId);
+  if (updateError) throw new Error(`grantCredits update failed: ${updateError.message}`);
 
   return { ok: true, alreadyApplied: false, total: totalBalance(next) };
 }
