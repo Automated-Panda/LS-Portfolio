@@ -20,12 +20,16 @@ import { validateIntent } from "@/lib/organizer/validate-intent";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 import { createClient } from "@/lib/supabase/server";
+import { planCost, TWEAK_COST } from "@/lib/credits/constants";
+import { organizerBalance, chargeOrganizer } from "@/lib/credits/gate";
+import type { CreditDisplay } from "@/lib/credits/access";
 
 // ----- parseIntent -----
 
 export type ParseIntentResult =
-  | { ok: true; intent: ParsedIntent }
-  | { ok: false; clarification: Clarification }
+  | { ok: true; intent: ParsedIntent; balance: CreditDisplay }
+  | { ok: false; clarification: Clarification; balance: CreditDisplay }
+  | { outOfCredits: true; needed: number; balance: CreditDisplay }
   | { error: string };
 
 export async function parseIntent(
@@ -35,6 +39,12 @@ export async function parseIntent(
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+
+  // Pre-check: need at least 1 credit to send a message at all (owner bypassed).
+  const balance = await organizerBalance(user.id, user.email);
+  if (!balance.unlimited && balance.total < 1) {
+    return { outOfCredits: true, needed: 1, balance };
+  }
 
   // Load everything the LLM needs.
   const [vehicles, properties, { data: systemTags }, { data: manufacturers }] = await Promise.all([
@@ -58,7 +68,11 @@ export async function parseIntent(
   });
 
   if ("error" in result) return result;
-  if (!result.ok) return { ok: false, clarification: result.clarification };
+  if (!result.ok) {
+    // Clarifying question = no plan, but a Haiku call fired → charge the floor.
+    const charge = await chargeOrganizer(user.id, user.email, 1, "clarify");
+    return { ok: false, clarification: result.clarification, balance: charge.balance };
+  }
 
   // Server-side validation.
   const systemTagIds = new Set((systemTags ?? []).map((t) => t.id));
@@ -67,14 +81,16 @@ export async function parseIntent(
   const validation = validateIntent(result.intent, properties, systemTagIds, manufacturerIds, classNames);
   if (!validation.ok) return { error: validation.reason };
 
-  return { ok: true, intent: result.intent };
+  // Intent parsed — the plan charge happens in generatePlan. No charge here.
+  return { ok: true, intent: result.intent, balance };
 }
 
 // ----- generatePlan -----
 
 export type GeneratePlanResult =
-  | { ok: true; planId: string; conversationId: string; steps: PlanStep[]; summary: PlanSummary }
-  | { ok: false; message: string };
+  | { ok: true; planId: string; conversationId: string; steps: PlanStep[]; summary: PlanSummary; charged: number; balance: CreditDisplay }
+  | { ok: false; message: string; balance: CreditDisplay }
+  | { outOfCredits: true; needed: number; balance: CreditDisplay };
 
 export async function generatePlan(
   intent: ParsedIntent,
@@ -83,7 +99,7 @@ export async function generatePlan(
 ): Promise<GeneratePlanResult> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return { ok: false, message: "Not signed in." };
+  if (!user) return { ok: false, message: "Not signed in.", balance: { total: 0, unlimited: false } };
 
   const [vehicles, properties, { data: manufacturers }] = await Promise.all([
     getOwnedVehicleInstances(user.id),
@@ -102,9 +118,18 @@ export async function generatePlan(
   });
 
   if (!result.ok) {
-    // Use the LLM to rewrite the failure into a friendly message.
+    // Planner failure = no usable plan, but Haiku calls fired → charge the floor.
+    const charge = await chargeOrganizer(user.id, user.email, 1, "failure");
     const message = await formatFailure({ failure: result.failure, promptText: prompt });
-    return { ok: false, message };
+    return { ok: false, message, balance: charge.balance };
+  }
+
+  // Plan is generatable — charge for it BEFORE persisting (the spend is the gate).
+  // Tweak (refinement) is a flat TWEAK_COST; a fresh plan is planCost(intents).
+  const cost = opts?.supersedePlanId ? TWEAK_COST : planCost(intent.criteria.length);
+  const charge = await chargeOrganizer(user.id, user.email, cost, opts?.supersedePlanId ? "tweak" : "plan");
+  if (!charge.ok) {
+    return { outOfCredits: true, needed: charge.needed, balance: charge.balance };
   }
 
   // Resolve the conversation: reuse the passed thread, else create one with a
@@ -119,7 +144,7 @@ export async function generatePlan(
       .select("id")
       .single();
     if (convoErr || !convo) {
-      return { ok: false, message: convoErr?.message ?? "Failed to start conversation." };
+      return { ok: false, message: convoErr?.message ?? "Failed to start conversation.", balance: charge.balance };
     }
     conversationId = convo.id;
   } else {
@@ -154,7 +179,7 @@ export async function generatePlan(
     .select("id")
     .single();
   if (insertErr || !insertRow) {
-    return { ok: false, message: insertErr?.message ?? "Failed to save plan." };
+    return { ok: false, message: insertErr?.message ?? "Failed to save plan.", balance: charge.balance };
   }
 
   return {
@@ -163,6 +188,8 @@ export async function generatePlan(
     conversationId: conversationId as string,
     steps: result.steps,
     summary: result.summary,
+    charged: cost,
+    balance: charge.balance,
   };
 }
 

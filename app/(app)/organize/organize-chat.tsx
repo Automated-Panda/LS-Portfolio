@@ -127,6 +127,11 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         setPhase({ kind: "idle" });
         return;
       }
+      if ("outOfCredits" in parsed) {
+        toast.error(`Not enough credits. You need ${parsed.needed} but have ${parsed.balance.total}.`);
+        setPhase({ kind: "idle" });
+        return;
+      }
       if (!parsed.ok) {
         setPhase({
           kind: "clarifying",
@@ -141,6 +146,11 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         conversationId: activeConversationId ?? undefined,
         supersedePlanId,
       });
+      if ("outOfCredits" in planResult) {
+        toast.error(`Not enough credits. You need ${planResult.needed} but have ${planResult.balance.total}.`);
+        setPhase({ kind: "idle" });
+        return;
+      }
       if (!planResult.ok) {
         setPhase({ kind: "failed", message: planResult.message });
         return;
