@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
@@ -20,10 +21,15 @@ export default async function CreditsPage() {
   ]);
 
   return (
-    <CreditsView
-      balance={balance}
-      hasActiveSub={Boolean(row?.has_active_sub)}
-      hasBillingAccount={Boolean(row?.stripe_customer_id)}
-    />
+    // Suspense boundary: CreditsView reads useSearchParams() for the
+    // ?status=success|cancel banner — Next requires it wrapped to avoid a
+    // build-time bailout.
+    <Suspense fallback={null}>
+      <CreditsView
+        balance={balance}
+        hasActiveSub={Boolean(row?.has_active_sub)}
+        hasBillingAccount={Boolean(row?.stripe_customer_id)}
+      />
+    </Suspense>
   );
 }
