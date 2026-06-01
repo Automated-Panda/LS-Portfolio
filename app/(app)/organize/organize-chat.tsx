@@ -368,20 +368,36 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan, initia
 
           {phase.kind === "out-of-credits" && (
             <MessageBubble role="assistant">
-              <p className="mb-2">
-                You&apos;re out of credits ⚡ — top-ups and Pro are coming soon!
-              </p>
-              <Button size="sm" variant="outline" onClick={() => setPhase({ kind: "idle" })}>
-                Got it
-              </Button>
+              <p className="mb-2">You&apos;re out of credits ⚡</p>
+              <div className="flex gap-2">
+                <Button
+                  size="sm"
+                  className="rounded-full bg-[#84cc16] text-black hover:bg-[#84cc16]/90"
+                  onClick={() => router.push("/credits")}
+                >
+                  Get credits →
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => setPhase({ kind: "idle" })}>
+                  Dismiss
+                </Button>
+              </div>
             </MessageBubble>
           )}
         </div>
 
         {/* input */}
         <div className="border-t border-[#1f1f1f] p-3">
-          <div className="mb-1.5 px-1 text-[11px] text-neutral-400">
-            {balance.unlimited ? "Unlimited ⚡" : `⚡ ${balance.total} credit${balance.total === 1 ? "" : "s"}`}
+          <div className="mb-1.5 flex items-center justify-between px-1 text-[11px] text-neutral-400">
+            <span>{balance.unlimited ? "Unlimited ⚡" : `⚡ ${balance.total} credit${balance.total === 1 ? "" : "s"}`}</span>
+            {!balance.unlimited && (
+              <button
+                type="button"
+                className="text-[#84cc16] hover:underline"
+                onClick={() => router.push("/credits")}
+              >
+                Get more
+              </button>
+            )}
           </div>
           <div className="flex gap-2">
             <Input
