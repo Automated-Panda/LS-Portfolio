@@ -18,7 +18,13 @@ const AUTH_ONLY_PATHS = new Set([
 ]);
 
 function isPublic(pathname: string): boolean {
-  return PUBLIC_PATHS.has(pathname) || pathname.startsWith("/auth/");
+  return (
+    PUBLIC_PATHS.has(pathname) ||
+    pathname.startsWith("/auth/") ||
+    // The Stripe webhook authenticates via its own signature check, not a
+    // session cookie — it must bypass the auth redirect or it 307s to /login.
+    pathname === "/api/stripe/webhook"
+  );
 }
 
 export async function updateSession(request: NextRequest) {
