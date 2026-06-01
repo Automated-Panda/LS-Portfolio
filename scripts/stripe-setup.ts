@@ -64,18 +64,33 @@ async function findOrCreateProduct(
   stripe: Stripe,
   item: CatalogItem,
 ): Promise<Stripe.Product> {
-  const search = await stripe.products.search({
-    query: `metadata['gtvault_id']:'${item.id}'`,
-  });
-
   const metadata = {
     gtvault_id: item.id,
     credits: String(item.credits),
     kind: item.kind,
   };
 
-  if (search.data.length > 0) {
-    const existing = search.data[0];
+  // 1. Find by our stable id.
+  let existing = (
+    await stripe.products.search({
+      query: `metadata['gtvault_id']:'${item.id}'`,
+    })
+  ).data[0];
+
+  // 2. Fallback: match by exact name. The dashboard "copy test → live" feature
+  //    may not carry our metadata, so adopt the copied product by name instead
+  //    of creating a duplicate.
+  if (!existing) {
+    const byName = await stripe.products.search({
+      query: `name:'${item.name}'`,
+    });
+    existing = byName.data.find((p) => p.active) ?? byName.data[0];
+    if (existing) {
+      console.log(`  ⇪ matched existing product by name — tagging metadata`);
+    }
+  }
+
+  if (existing) {
     const updated = await stripe.products.update(existing.id, {
       name: item.name,
       description: item.description,
@@ -111,17 +126,17 @@ async function findOrCreatePrice(
       ? ({ interval: "month" } as const)
       : undefined;
 
+  const priceMatches = (price: Stripe.Price) =>
+    price.unit_amount === item.priceCents &&
+    price.currency === "usd" &&
+    (item.kind === "subscription"
+      ? price.recurring?.interval === "month"
+      : price.recurring === null);
+
   let replacing = false;
   if (existing.data.length > 0) {
     const price = existing.data[0];
-    const matches =
-      price.unit_amount === item.priceCents &&
-      price.currency === "usd" &&
-      (item.kind === "subscription"
-        ? price.recurring?.interval === "month"
-        : price.recurring === null);
-
-    if (matches) {
+    if (priceMatches(price)) {
       console.log(`  ↻ price reused: ${price.id} ($${(item.priceCents / 100).toFixed(2)})`);
       return price;
     }
@@ -131,6 +146,28 @@ async function findOrCreatePrice(
     console.log(`  ⚠ price changed — creating a replacement for ${price.id}`);
     await stripe.prices.update(price.id, { active: false });
     replacing = true;
+  } else {
+    // No price carries our lookup_key yet. The dashboard "copy test → live"
+    // feature copies prices but may NOT carry the lookup_key — so adopt an
+    // existing matching price on this product by assigning the key to it,
+    // instead of leaving a duplicate behind.
+    const onProduct = await stripe.prices.list({
+      product: product.id,
+      active: true,
+      limit: 100,
+    });
+    const match = onProduct.data.find(priceMatches);
+    if (match) {
+      const adopted = await stripe.prices.update(match.id, {
+        lookup_key: item.lookupKey,
+        transfer_lookup_key: true,
+        metadata: { gtvault_id: item.id, credits: String(item.credits) },
+      });
+      console.log(
+        `  ⇪ adopted existing price: ${adopted.id} (assigned lookup_key '${item.lookupKey}')`,
+      );
+      return adopted;
+    }
   }
 
   const created = await stripe.prices.create({
