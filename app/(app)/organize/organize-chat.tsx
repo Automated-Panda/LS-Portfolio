@@ -16,6 +16,7 @@ import type {
   Turn,
 } from "@/lib/organizer/types";
 import type { ConversationRow, OrganizerPlan } from "@/lib/queries/organizer";
+import type { CreditDisplay } from "@/lib/credits/access";
 
 import { useConfirm } from "@/components/ui/confirm-dialog";
 
@@ -44,14 +45,16 @@ type Phase =
   | { kind: "plan-ready"; planId: string; prompt: string; steps: PlanStep[]; summary: PlanSummary; priorTurns: Turn[] }
   | { kind: "applied"; planId: string; carsMoved: number; undoExpiresAt: string }
   | { kind: "checklist"; planId: string; steps: PlanStep[] }
-  | { kind: "failed"; message: string };
+  | { kind: "failed"; message: string }
+  | { kind: "out-of-credits"; needed: number };
 
 type Props = {
   initialConversations: ConversationRow[];
   initialUndoablePlan: OrganizerPlan | null;
+  initialBalance: CreditDisplay;
 };
 
-export function OrganizeChat({ initialConversations, initialUndoablePlan }: Props) {
+export function OrganizeChat({ initialConversations, initialUndoablePlan, initialBalance }: Props) {
   const router = useRouter();
   const confirm = useConfirm();
   // Rail data comes from the server; new/bumped threads surface via router.refresh().
@@ -59,6 +62,7 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
   const [activeConversationId, setActiveConversationId] = useState<string | null>(null);
   const [transcript, setTranscript] = useState<TranscriptEntry[]>([]);
   const [input, setInput] = useState("");
+  const [balance, setBalance] = useState<CreditDisplay>(initialBalance);
   const [railOpen, setRailOpen] = useState(false);
   const [pending, startTransition] = useTransition();
   const [phase, setPhase] = useState<Phase>(() => {
@@ -128,10 +132,11 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         return;
       }
       if ("outOfCredits" in parsed) {
-        toast.error(`Not enough credits. You need ${parsed.needed} but have ${parsed.balance.total}.`);
-        setPhase({ kind: "idle" });
+        setBalance(parsed.balance);
+        setPhase({ kind: "out-of-credits", needed: parsed.needed });
         return;
       }
+      setBalance(parsed.balance);
       if (!parsed.ok) {
         setPhase({
           kind: "clarifying",
@@ -147,10 +152,11 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         supersedePlanId,
       });
       if ("outOfCredits" in planResult) {
-        toast.error(`Not enough credits. You need ${planResult.needed} but have ${planResult.balance.total}.`);
-        setPhase({ kind: "idle" });
+        setBalance(planResult.balance);
+        setPhase({ kind: "out-of-credits", needed: planResult.needed });
         return;
       }
+      setBalance(planResult.balance);
       if (!planResult.ok) {
         setPhase({ kind: "failed", message: planResult.message });
         return;
@@ -177,7 +183,6 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
         summary: planResult.summary,
         priorTurns,
       });
-      // Refresh the rail (new thread / bumped order).
       router.refresh();
     });
   };
@@ -326,6 +331,11 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
 
           {phase.kind === "plan-ready" && liveCard && (
             <MessageBubble role="assistant">
+              {!balance.unlimited && (
+                <p className="mb-1.5 text-[11px] text-neutral-400">
+                  ⚡ {balance.total} credit{balance.total === 1 ? "" : "s"} left
+                </p>
+              )}
               <PlanCard
                 summary={liveCard.summary}
                 steps={liveCard.steps}
@@ -355,36 +365,52 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan }: Prop
               </Button>
             </MessageBubble>
           )}
+
+          {phase.kind === "out-of-credits" && (
+            <MessageBubble role="assistant">
+              <p className="mb-2">
+                You&apos;re out of credits ⚡ — top-ups and Pro are coming soon!
+              </p>
+              <Button size="sm" variant="outline" onClick={() => setPhase({ kind: "idle" })}>
+                Got it
+              </Button>
+            </MessageBubble>
+          )}
         </div>
 
         {/* input */}
-        <div className="flex gap-2 border-t border-[#1f1f1f] p-3">
-          <Input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && input.trim()) {
-                e.preventDefault();
-                submit(input.trim());
+        <div className="border-t border-[#1f1f1f] p-3">
+          <div className="mb-1.5 px-1 text-[11px] text-neutral-400">
+            {balance.unlimited ? "Unlimited ⚡" : `⚡ ${balance.total} credit${balance.total === 1 ? "" : "s"}`}
+          </div>
+          <div className="flex gap-2">
+            <Input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && input.trim()) {
+                  e.preventDefault();
+                  submit(input.trim());
+                }
+              }}
+              placeholder={
+                phase.kind === "clarifying"
+                  ? "Answer the question…"
+                  : phase.kind === "plan-ready"
+                    ? "Refine this plan, or apply it…"
+                    : "Describe how to organize…"
               }
-            }}
-            placeholder={
-              phase.kind === "clarifying"
-                ? "Answer the question…"
-                : phase.kind === "plan-ready"
-                  ? "Refine this plan, or apply it…"
-                  : "Describe how to organize…"
-            }
-            disabled={pending || phase.kind === "thinking"}
-            className="rounded-full"
-          />
-          <Button
-            onClick={() => input.trim() && submit(input.trim())}
-            disabled={!input.trim() || pending || phase.kind === "thinking"}
-            className={cn("shrink-0 rounded-full bg-[#84cc16] text-black hover:bg-[#84cc16]/90")}
-          >
-            ↑
-          </Button>
+              disabled={pending || phase.kind === "thinking"}
+              className="rounded-full"
+            />
+            <Button
+              onClick={() => input.trim() && submit(input.trim())}
+              disabled={!input.trim() || pending || phase.kind === "thinking"}
+              className={cn("shrink-0 rounded-full bg-[#84cc16] text-black hover:bg-[#84cc16]/90")}
+            >
+              ↑
+            </Button>
+          </div>
         </div>
       </div>
     </div>

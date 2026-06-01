@@ -5,6 +5,7 @@ import {
   getActiveUndoablePlan,
   getConversations,
 } from "@/lib/queries/organizer";
+import { organizerBalance } from "@/lib/credits/gate";
 
 import { OrganizeChat } from "./organize-chat";
 
@@ -15,15 +16,17 @@ export default async function OrganizePage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const [initialConversations, initialUndoablePlan] = await Promise.all([
+  const [initialConversations, initialUndoablePlan, initialBalance] = await Promise.all([
     getConversations(user.id),
     getActiveUndoablePlan(user.id),
+    organizerBalance(user.id, user.email),
   ]);
 
   return (
     <OrganizeChat
       initialConversations={initialConversations}
       initialUndoablePlan={initialUndoablePlan}
+      initialBalance={initialBalance}
     />
   );
 }
