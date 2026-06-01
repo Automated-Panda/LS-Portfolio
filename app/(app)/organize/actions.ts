@@ -70,6 +70,9 @@ export async function parseIntent(
   if ("error" in result) return result;
   if (!result.ok) {
     // Clarifying question = no plan, but a Haiku call fired → charge the floor.
+    // The pre-check above guarantees ≥1 credit, so this charge effectively always
+    // succeeds; if a race ever made it fail we'd still show the clarification
+    // un-charged (the safe-for-the-user outcome), so charge.ok isn't inspected.
     const charge = await chargeOrganizer(user.id, user.email, 1, "clarify");
     return { ok: false, clarification: result.clarification, balance: charge.balance };
   }
@@ -119,8 +122,10 @@ export async function generatePlan(
 
   if (!result.ok) {
     // Planner failure = no usable plan, but Haiku calls fired → charge the floor.
-    const charge = await chargeOrganizer(user.id, user.email, 1, "failure");
+    // Build the message FIRST so a formatFailure throw doesn't debit a user who
+    // never sees a result.
     const message = await formatFailure({ failure: result.failure, promptText: prompt });
+    const charge = await chargeOrganizer(user.id, user.email, 1, "failure");
     return { ok: false, message, balance: charge.balance };
   }
 
