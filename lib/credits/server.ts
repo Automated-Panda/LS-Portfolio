@@ -52,7 +52,10 @@ export async function getCreditState(
   const raw = rowToState(row);
   const normalized = normalize(raw, Date.now());
 
-  // Persist only if normalization actually changed something.
+  // Persist only if normalization actually changed something. This write is not
+  // CAS-guarded, which is safe because normalization is idempotent: the refill
+  // SETS free_monthly (not adds) and sub-expiry SETS sub_monthly = 0, so two
+  // concurrent reads racing to persist converge to the same result.
   const changed =
     normalized.freeMonthly !== raw.freeMonthly ||
     normalized.subMonthly !== raw.subMonthly ||

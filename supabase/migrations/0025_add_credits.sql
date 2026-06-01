@@ -74,6 +74,8 @@ create policy "Users can view own credit transactions"
 -- ── Signup grant: extend handle_new_user to seed a credits row ───────────────
 -- 20 one-time signup bonus (never-expiring bucket) + 10 free monthly.
 -- NOTE: preserves the username-from-metadata behavior added in 0009.
+-- The 10 / 20 below mirror FREE_MONTHLY / SIGNUP_BONUS in lib/credits/constants.ts;
+-- keep them in sync if those constants change (migrations are point-in-time SQL).
 create or replace function public.handle_new_user()
 returns trigger language plpgsql security definer set search_path = public
 as $$
