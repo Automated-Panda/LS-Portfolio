@@ -145,9 +145,10 @@ async function recordDebits(
 }
 
 /**
- * Grant credits. `purchased` adds to the never-expiring bucket; `subscription`
- * SETS the monthly sub allotment and marks the sub active. Idempotent when a
- * `stripeEventId` is supplied (a duplicate event is a no-op).
+ * Grant credits via the atomic, idempotent `grant_credits` Postgres RPC.
+ * `purchased` adds to the never-expiring bucket; `subscription` sets the
+ * monthly allotment + marks the sub active. A duplicate `stripeEventId` is a
+ * no-op (idempotent at the DB layer).
  */
 export async function grantCredits(
   userId: string,
@@ -156,65 +157,18 @@ export async function grantCredits(
     kind: "purchased" | "subscription";
     reason: "purchase" | "subscription_grant" | "adjustment" | "refund";
     stripeEventId?: string;
-    subPeriodEnd?: number; // epoch ms, required for subscription grants
+    subPeriodEnd?: number; // epoch ms; for subscription grants
   },
-): Promise<{ ok: true; alreadyApplied: boolean; total: number }> {
+): Promise<{ ok: true }> {
   const supabase = createAdminClient();
-
-  // Fast-path idempotency: if we've already recorded this Stripe event, no-op.
-  if (opts.stripeEventId) {
-    const { data: existing, error } = await supabase
-      .from("credit_transactions")
-      .select("id")
-      .eq("stripe_event_id", opts.stripeEventId)
-      .maybeSingle();
-    if (error) throw new Error(`grantCredits idempotency check failed: ${error.message}`);
-    if (existing) {
-      return { ok: true, alreadyApplied: true, total: await getBalance(userId) };
-    }
-  }
-
-  const { state } = await getCreditState(userId);
-  const next: CreditState = { ...state };
-  let bucket: "purchased" | "sub";
-
-  if (opts.kind === "purchased") {
-    next.balanceCredits += opts.amount;
-    bucket = "purchased";
-  } else {
-    next.subMonthly = opts.amount; // set, not add — sub credits don't stack
-    next.hasActiveSub = true;
-    next.subPeriodEnd = opts.subPeriodEnd ?? null;
-    bucket = "sub";
-  }
-
-  // ⚠️ NOT atomic. grantCredits has no callers yet — Stripe wiring is Plan 3.
-  // Before real money flows through it, this MUST become a single transactional
-  // Postgres RPC. The audit row is inserted FIRST so a mid-operation failure
-  // leaves a detectable orphan transaction (under-grant) rather than a silently
-  // double-granted balance. The unique constraint on stripe_event_id also makes
-  // concurrent duplicate deliveries safe (handled below).
-  const { error: insertError } = await supabase.from("credit_transactions").insert({
-    user_id: userId,
-    delta: opts.amount,
-    reason: opts.reason,
-    bucket,
-    balance_after: totalBalance(next),
-    stripe_event_id: opts.stripeEventId ?? null,
+  const { error } = await supabase.rpc("grant_credits", {
+    p_user_id: userId,
+    p_amount: opts.amount,
+    p_kind: opts.kind,
+    p_reason: opts.reason,
+    p_stripe_event_id: opts.stripeEventId ?? null,
+    p_sub_period_end: opts.subPeriodEnd ? new Date(opts.subPeriodEnd).toISOString() : null,
   });
-  if (insertError) {
-    if ((insertError as { code?: string }).code === "23505") {
-      // A concurrent delivery already recorded this event.
-      return { ok: true, alreadyApplied: true, total: await getBalance(userId) };
-    }
-    throw new Error(`grantCredits insert failed: ${insertError.message}`);
-  }
-
-  const { error: updateError } = await supabase
-    .from("user_credits")
-    .update(stateToUpdate(next))
-    .eq("user_id", userId);
-  if (updateError) throw new Error(`grantCredits update failed: ${updateError.message}`);
-
-  return { ok: true, alreadyApplied: false, total: totalBalance(next) };
+  if (error) throw new Error(`grantCredits RPC failed: ${error.message}`);
+  return { ok: true };
 }
