@@ -54,6 +54,11 @@ export async function setTicketPriority(id: string, priority: string): Promise<R
   if (!isValidPriority(priority)) return { error: "Invalid priority." };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("support_tickets")
+    .select("priority")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase.from("support_tickets").update({ priority }).eq("id", id);
   if (error) return { error: error.message };
 
@@ -61,7 +66,7 @@ export async function setTicketPriority(id: string, priority: string): Promise<R
     action: "ticket.priority",
     targetId: id,
     targetLabel: id,
-    changes: { to: priority },
+    changes: { from: (before as { priority?: string } | null)?.priority ?? null, to: priority },
   });
 
   revalidatePath("/admin/support");
