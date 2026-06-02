@@ -1,6 +1,8 @@
 // lib/notifications/messages.ts
 // Pure builders for notification payloads (no I/O).
 
+import { categoryLabel, statusLabel } from "@/lib/support/tickets";
+
 export type NotificationPayload = {
   type: string;
   title: string;
@@ -20,5 +22,19 @@ export function creditAdjustmentNotification(
       ? `An admin added ${delta} credits to your account. You now have ${newTotal}.`
       : `An admin adjusted your credits by ${delta}. You now have ${newTotal}.`,
     data: { delta, newTotal },
+  };
+}
+
+export function ticketStatusNotification(
+  category: string,
+  status: string,
+): NotificationPayload {
+  const cat = categoryLabel(category).toLowerCase();
+  const st = statusLabel(status);
+  return {
+    type: "support_update",
+    title: "Update on your feedback",
+    body: `Your ${cat} was marked ${st}.`,
+    data: { category, status },
   };
 }
