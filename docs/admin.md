@@ -3,9 +3,9 @@
 Internal control centre for GT Vault — manage catalog content, users, plans,
 credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
 
-> **Status:** Slices 1 + 2 + 3 + 4 + 5a shipped to `main` on **2026-06-02**.
-> Slices 5b/5c + 6 are backlog. This doc is the living reference for the whole
-> dashboard.
+> **Status:** Slices 1 + 2 + 3 + 4 + 5a + 5b shipped to `main` on
+> **2026-06-02**. Slices 5c + 6 are backlog. This doc is the living reference for
+> the whole dashboard.
 
 ---
 
@@ -49,7 +49,7 @@ log, draft/publish) was decomposed into 6 independently-shippable slices:
 | 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU) | ✅ Shipped 2026-06-02 |
 | 4 | **Support / Feedback inbox** (user-facing submit + admin triage: categories, statuses, priority, internal notes) | ✅ Shipped 2026-06-02 |
 | 5a | **Image upload/replace** (vehicle + property images via Supabase Storage) | ✅ Shipped 2026-06-02 |
-| 5b | **Activity log** (audit of admin content edits) | ⬜ Backlog |
+| 5b | **Activity log** (audit of all admin actions) | ✅ Shipped 2026-06-02 |
 | 5c | **Draft/publish** (content states on catalog items) | ⬜ Backlog |
 | 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
 
@@ -91,6 +91,19 @@ disabled), credits total, signup, last login. Searchable.
 - Library: `lib/notifications/` — `messages.ts` (pure payload builders),
   `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
   (`markAllNotificationsRead`), `types.ts`.
+
+### Activity log (Slice 5b) — `/admin/activity` (owner only)
+- Append-only `admin_activity_log` (migration 0030, RLS-no-policy → service-role
+  only) records **every admin mutation**: content edits (vehicle/property/upgrade,
+  with a before→after field diff), image upload/remove, user credits/role/disable,
+  and ticket status/priority/note.
+- Logging is **best-effort**: `logAdminActivity` (`lib/admin/activity.ts`) swallows
+  its own errors, so a logging failure can never break the underlying action — no
+  per-site try/catch. Each action calls it once after its successful write.
+- Pure diff + labels in `lib/admin/activity-format.ts` (`diffFields`,
+  `actionLabel`, unit-tested). Owner-only page with an action-type filter
+  (`app/admin/activity/`).
+- Deferred: revert-from-log, pagination beyond 200, retention policy.
 
 ### Image upload/replace (Slice 5a) — vehicle + property editors
 - Admins **Replace/Remove** an image per row in `/admin/vehicles` and
