@@ -190,5 +190,8 @@ export async function adminAdjustCredits(
     p_note: note,
   });
   if (error) throw new Error(`adminAdjustCredits RPC failed: ${error.message}`);
-  return { ok: true, total: (data as number) ?? 0 };
+  // The RPC is declared `returns integer`, so supabase-js yields a scalar; guard
+  // against an array-wrapped shape just in case the signature ever changes.
+  const total = typeof data === "number" ? data : Array.isArray(data) ? Number(data[0]) : 0;
+  return { ok: true, total: Number.isFinite(total) ? total : 0 };
 }
