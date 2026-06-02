@@ -3,8 +3,8 @@
 Internal control centre for GT Vault — manage catalog content, users, plans,
 credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
 
-> **Status:** Slices 1 + 2 shipped to `main` on **2026-06-02**. Slices 3–6 are
-> backlog. This doc is the living reference for the whole dashboard.
+> **Status:** Slices 1 + 2 + 3 shipped to `main` on **2026-06-02**. Slices 4–6
+> are backlog. This doc is the living reference for the whole dashboard.
 
 ---
 
@@ -45,7 +45,7 @@ log, draft/publish) was decomposed into 6 independently-shippable slices:
 |---|-------|--------|
 | 1 | **Roles + Admin Shell** (sidebar, role-aware sections, owner overview stats) | ✅ Shipped 2026-06-02 |
 | 2 | **User Management** (table + adjust credits / change role / disable) | ✅ Shipped 2026-06-02 |
-| 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU — from Stripe + `credit_transactions`) | ⬜ Backlog |
+| 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU) | ✅ Shipped 2026-06-02 |
 | 4 | **Support / Feedback inbox** (user-facing submit form + admin inbox: categories, statuses, notes, assignment) | ⬜ Backlog |
 | 5 | **Content-mgmt upgrades** (image upload/replace via Supabase Storage, more editable fields, draft/publish, full `activity_log` table) | ⬜ Backlog |
 | 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
@@ -88,6 +88,22 @@ disabled), credits total, signup, last login. Searchable.
 - Library: `lib/notifications/` — `messages.ts` (pure payload builders),
   `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
   (`markAllNotificationsRead`), `types.ts`.
+
+### Revenue (Slice 3) — `/admin/revenue` (owner only)
+- Revenue dollars live **only in Stripe** (our DB stores credit deltas + Stripe
+  IDs, never amounts), so the page reads **live from the Stripe API** each load —
+  no caching/snapshot table.
+- Shows: **MRR** (active subs), **total revenue** (gross — paid, non-refunded
+  charges), **active / cancelled subs**, **ARPU** (MRR ÷ active), **plan
+  breakdown** (Pro from subs; Starter/Plus from one-time packs, disambiguated by
+  `hasInvoice` so a $9.99 renewal isn't counted as a one-time Plus), and **recent
+  + failed payments** lists.
+- **Test-mode badge** when `STRIPE_SECRET_KEY` is `sk_test_…`; graceful "Stripe
+  unavailable" state if the key is missing/errors.
+- Code: pure `lib/stripe/revenue-metrics.ts` (unit-tested) + server I/O
+  `lib/stripe/revenue.ts` (normalizes Stripe subs + charges via `getStripe()`).
+  Note: pinned Stripe API version dropped `Charge.invoice` from the typings, so
+  `hasInvoice` uses a narrowing cast (the field is still on the wire).
 
 ---
 
