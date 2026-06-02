@@ -8,7 +8,7 @@ export default async function AdminVehiclesPage() {
   const { data, error } = await supabase
     .from("vehicles")
     .select(
-      "id, display_name, class, manufacturer_id, price, availability, vendors, manufacturers(display)",
+      "id, display_name, class, manufacturer_id, price, availability, vendors, image_path, manufacturers(display)",
     )
     .order("display_name", { ascending: true });
   if (error) throw error;
@@ -24,6 +24,7 @@ export default async function AdminVehiclesPage() {
       price: r.price,
       availability: (r.availability ?? "available") as AvailabilityStatus,
       vendors: (r.vendors ?? []) as VehicleVendor[],
+      image_path: r.image_path,
     };
   });
 

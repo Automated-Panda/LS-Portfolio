@@ -5,9 +5,11 @@ import { toast } from "sonner";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { propertyImageUrl } from "@/lib/properties";
 import { normalizeSearch } from "@/lib/vehicles";
 
 import { updatePropertyAdmin, type PropertyPatch } from "../actions";
+import { AdminImageCell } from "../admin-image-cell";
 
 export type AdminPropertyRow = {
   id: string;
@@ -19,6 +21,7 @@ export type AdminPropertyRow = {
   capacity: number;
   counts_as_garage: boolean;
   price: number | null;
+  image_path: string | null;
 };
 
 const CAP = 150;
@@ -75,6 +78,7 @@ export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
         <table className="w-full text-sm">
           <thead className="border-b bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
             <tr>
+              <th className="w-44 p-2">Image</th>
               <th className="p-2">Name</th>
               <th className="p-2">Type</th>
               <th className="p-2">Subtype label</th>
@@ -151,6 +155,9 @@ function Row({
 
   return (
     <tr className="border-b last:border-0 hover:bg-muted/20">
+      <td className="p-1.5">
+        <AdminImageCell entity="properties" id={row.id} initialUrl={propertyImageUrl(row.image_path)} />
+      </td>
       <td className="p-1.5">
         <Input value={name} onChange={(e) => setName(e.target.value)} onBlur={commitName} className="h-8" />
       </td>
