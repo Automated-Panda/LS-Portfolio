@@ -29,7 +29,13 @@ export async function setTicketStatus(id: string, status: string): Promise<Resul
   if (error) return { error: error.message };
 
   const t = ticket as { user_id: string; category: string };
-  await createNotification(t.user_id, ticketStatusNotification(t.category, status));
+  // Best-effort alert — the status change already succeeded, so a notification
+  // failure must not crash the action (mirrors the credit-adjust pattern).
+  try {
+    await createNotification(t.user_id, ticketStatusNotification(t.category, status));
+  } catch (e) {
+    console.error("[support] status-change notification failed (non-fatal):", e);
+  }
 
   revalidatePath("/admin/support");
   return { ok: true };
