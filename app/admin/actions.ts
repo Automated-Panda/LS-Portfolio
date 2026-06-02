@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 
 import { requireAdmin } from "@/lib/admin/guard";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { validateImageFile, storageKey, publicImageUrl, type ImageEntity } from "@/lib/admin/image-upload";
 import type { AvailabilityStatus, VehicleVendor } from "@/lib/vehicles";
 
 type Result = { ok: true } | { error: string };
@@ -183,4 +184,55 @@ export async function updateUpgradeAdmin(
   revalidatePath("/admin/upgrades");
   revalidatePath("/", "layout");
   return { ok: true };
+}
+
+const IMAGE_ENTITIES = new Set<ImageEntity>(["vehicles", "properties"]);
+
+export type ImageResult = { ok: true; url: string | null } | { error: string };
+
+/** Upload/replace a catalog item's image. Stores an absolute Storage URL in image_path. */
+export async function uploadCatalogImage(
+  entity: string,
+  id: string,
+  formData: FormData,
+): Promise<ImageResult> {
+  await requireAdmin();
+  if (!IMAGE_ENTITIES.has(entity as ImageEntity)) return { error: "Invalid entity." };
+
+  const file = formData.get("file");
+  if (!(file instanceof File) || file.size === 0) return { error: "No file provided." };
+
+  const v = validateImageFile({ type: file.type, size: file.size });
+  if (!v.ok) return { error: v.error };
+
+  const key = storageKey(entity as ImageEntity, id);
+  const bytes = new Uint8Array(await file.arrayBuffer());
+
+  const supabase = createAdminClient();
+  const { error: upErr } = await supabase.storage
+    .from("catalog-images")
+    .upload(key, bytes, { upsert: true, contentType: file.type });
+  if (upErr) return { error: upErr.message };
+
+  const url = `${publicImageUrl(key)}?t=${Date.now()}`;
+  const { error } = await supabase.from(entity).update({ image_path: url }).eq("id", id);
+  if (error) return { error: error.message };
+
+  revalidatePath(`/admin/${entity}`);
+  revalidatePath("/", "layout");
+  return { ok: true, url };
+}
+
+/** Clear a catalog item's image. */
+export async function removeCatalogImage(entity: string, id: string): Promise<ImageResult> {
+  await requireAdmin();
+  if (!IMAGE_ENTITIES.has(entity as ImageEntity)) return { error: "Invalid entity." };
+
+  const supabase = createAdminClient();
+  const { error } = await supabase.from(entity).update({ image_path: null }).eq("id", id);
+  if (error) return { error: error.message };
+
+  revalidatePath(`/admin/${entity}`);
+  revalidatePath("/", "layout");
+  return { ok: true, url: null };
 }

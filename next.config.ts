@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "static.wikia.nocookie.net" },
+      { protocol: "https", hostname: "*.supabase.co" },
     ],
   },
   async headers() {
