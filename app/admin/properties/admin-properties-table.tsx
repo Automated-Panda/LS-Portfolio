@@ -11,6 +11,7 @@ import { normalizeSearch } from "@/lib/vehicles";
 import { updatePropertyAdmin, type PropertyPatch } from "../actions";
 import { AdminImageCell } from "../admin-image-cell";
 import { AdminStatusCell } from "../admin-status-cell";
+import { AdminPager, usePagination } from "../admin-pager";
 
 export type AdminPropertyRow = {
   id: string;
@@ -26,7 +27,7 @@ export type AdminPropertyRow = {
   status: string;
 };
 
-const CAP = 150;
+const PAGE_SIZE = 100;
 
 export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
   const [data, setData] = useState<AdminPropertyRow[]>(rows);
@@ -43,6 +44,8 @@ export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
         normalizeSearch(r.neighborhood ?? "").includes(q),
     );
   }, [data, search]);
+
+  const { page, setPage, totalPages, pageItems } = usePagination(filtered, PAGE_SIZE, search);
 
   const save = (id: string, patch: PropertyPatch) => {
     let prev: AdminPropertyRow | undefined;
@@ -73,7 +76,6 @@ export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
         />
         <span className="text-xs text-muted-foreground">
           {filtered.length} match{filtered.length === 1 ? "" : "es"}
-          {filtered.length > CAP ? ` · showing first ${CAP}` : ""}
         </span>
       </div>
       <div className="overflow-x-auto rounded-md border">
@@ -92,12 +94,13 @@ export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
             </tr>
           </thead>
           <tbody>
-            {filtered.slice(0, CAP).map((r) => (
+            {pageItems.map((r) => (
               <Row key={r.id} row={r} onSave={save} />
             ))}
           </tbody>
         </table>
       </div>
+      <AdminPager page={page} totalPages={totalPages} onPage={setPage} />
     </div>
   );
 }

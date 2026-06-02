@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { normalizeSearch } from "@/lib/vehicles";
 
 import { updateUpgradeAdmin, type UpgradePatch } from "../actions";
+import { AdminPager, usePagination } from "../admin-pager";
 
 export type AdminUpgradeRow = {
   id: string;
@@ -17,7 +18,7 @@ export type AdminUpgradeRow = {
   price: number | null;
 };
 
-const CAP = 300;
+const PAGE_SIZE = 100;
 
 export function AdminUpgradesTable({ rows }: { rows: AdminUpgradeRow[] }) {
   const [data, setData] = useState<AdminUpgradeRow[]>(rows);
@@ -33,6 +34,12 @@ export function AdminUpgradesTable({ rows }: { rows: AdminUpgradeRow[] }) {
         normalizeSearch(r.property_display_name).includes(q),
     );
   }, [data, search]);
+
+  const { page, setPage, totalPages, pageItems: shown } = usePagination(
+    filtered,
+    PAGE_SIZE,
+    search,
+  );
 
   const save = (id: string, patch: UpgradePatch) => {
     let prev: AdminUpgradeRow | undefined;
@@ -52,8 +59,6 @@ export function AdminUpgradesTable({ rows }: { rows: AdminUpgradeRow[] }) {
     });
   };
 
-  const shown = filtered.slice(0, CAP);
-
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-2">
@@ -65,7 +70,6 @@ export function AdminUpgradesTable({ rows }: { rows: AdminUpgradeRow[] }) {
         />
         <span className="text-xs text-muted-foreground">
           {filtered.length} match{filtered.length === 1 ? "" : "es"}
-          {filtered.length > CAP ? ` · showing first ${CAP}` : ""}
         </span>
       </div>
       <div className="overflow-x-auto rounded-md border">
@@ -87,6 +91,7 @@ export function AdminUpgradesTable({ rows }: { rows: AdminUpgradeRow[] }) {
           </tbody>
         </table>
       </div>
+      <AdminPager page={page} totalPages={totalPages} onPage={setPage} />
     </div>
   );
 }

@@ -24,6 +24,7 @@ import { vehicleImageUrl } from "@/lib/vehicles";
 import { updateVehicleAdmin, type VehiclePatch } from "../actions";
 import { AdminImageCell } from "../admin-image-cell";
 import { AdminStatusCell } from "../admin-status-cell";
+import { AdminPager, usePagination } from "../admin-pager";
 
 export type AdminVehicleRow = {
   id: string;
@@ -38,7 +39,7 @@ export type AdminVehicleRow = {
 };
 
 const AVAILABILITY_KEYS = Object.keys(AVAILABILITY_LABEL) as AvailabilityStatus[];
-const CAP = 150;
+const PAGE_SIZE = 100;
 
 export function AdminVehiclesTable({ rows }: { rows: AdminVehicleRow[] }) {
   const [data, setData] = useState<AdminVehicleRow[]>(rows);
@@ -54,6 +55,8 @@ export function AdminVehiclesTable({ rows }: { rows: AdminVehicleRow[] }) {
         normalizeSearch(r.manufacturer_display).includes(q),
     );
   }, [data, search]);
+
+  const { page, setPage, totalPages, pageItems } = usePagination(filtered, PAGE_SIZE, search);
 
   const save = (id: string, patch: VehiclePatch) => {
     let prevRow: AdminVehicleRow | undefined;
@@ -86,7 +89,6 @@ export function AdminVehiclesTable({ rows }: { rows: AdminVehicleRow[] }) {
         />
         <span className="text-xs text-muted-foreground">
           {filtered.length} match{filtered.length === 1 ? "" : "es"}
-          {filtered.length > CAP ? ` · showing first ${CAP}` : ""}
         </span>
       </div>
       <div className="overflow-x-auto rounded-md border">
@@ -103,12 +105,13 @@ export function AdminVehiclesTable({ rows }: { rows: AdminVehicleRow[] }) {
             </tr>
           </thead>
           <tbody>
-            {filtered.slice(0, CAP).map((r) => (
+            {pageItems.map((r) => (
               <Row key={r.id} row={r} onSave={save} />
             ))}
           </tbody>
         </table>
       </div>
+      <AdminPager page={page} totalPages={totalPages} onPage={setPage} />
     </div>
   );
 }
