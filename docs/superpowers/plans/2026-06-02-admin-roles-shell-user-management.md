@@ -209,19 +209,42 @@ select
 ```
 Expected: `owner_role = owner`, `fn_exists = 1`, `notifications_exists = 1`.
 
-- [ ] **Step 4: Smoke-test the RPC + clamp (pick a non-owner test user id)**
+- [ ] **Step 4: Non-destructive smoke-test of the RPC (owner row only)**
+
+IMPORTANT: do NOT run adjustments against real non-owner users — it would mutate
+their real credits. Test the write path + audit log with a **net-zero round-trip
+on the OWNER's own row** (the owner is unlimited in-app, so their stored balance
+is cosmetic). The zero-clamp math is already covered by unit tests; verify it
+read-only via `greatest`.
 
 ```sql
--- replace <UID> with a real non-owner user id from auth.users
-select public.admin_adjust_credits('<UID>', 5, 'plan smoke test');   -- returns new total (+5)
-select public.admin_adjust_credits('<UID>', -100, 'clamp test');     -- bucket clamps at 0
-select balance_credits from public.user_credits where user_id = '<UID>'; -- expect 0
--- inspect the two audit rows:
-select delta, reason, bucket, balance_after, metadata
-  from public.credit_transactions where user_id = '<UID>' and reason = 'adjustment'
-  order by created_at desc limit 2;
+-- Resolve the owner's user id.
+with owner as (
+  select id from auth.users where lower(email) = lower('james@automatedpanda.com')
+)
+select balance_credits as before from public.user_credits
+  where user_id = (select id from owner);
+
+-- Net-zero round-trip: +5 then -5 exercises both directions and the audit log.
+with owner as (
+  select id from auth.users where lower(email) = lower('james@automatedpanda.com')
+)
+select
+  public.admin_adjust_credits((select id from owner), 5, 'plan smoke +5')  as after_plus,
+  public.admin_adjust_credits((select id from owner), -5, 'plan smoke -5') as after_minus;
+
+-- Confirm the balance returned to its original value and two audit rows exist.
+with owner as (
+  select id from auth.users where lower(email) = lower('james@automatedpanda.com')
+)
+select balance_credits as after_roundtrip from public.user_credits
+  where user_id = (select id from owner);
+
+-- Read-only confirmation of the zero-clamp expression the function uses:
+select greatest(0, 20 + -100) as clamp_check;  -- expect 0
 ```
-Expected: second adjustment's `delta` is the clamped applied amount (not -100), `balance_credits = 0`.
+Expected: `after_roundtrip` equals `before`; `clamp_check = 0`; two `adjustment`
+rows were appended for the owner.
 
 - [ ] **Step 5: Commit**
 
