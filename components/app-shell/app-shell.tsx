@@ -10,6 +10,7 @@ import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 import type { NavCounts } from "./nav-items";
+import { NotificationBell } from "./notification-bell";
 import { SidebarNav } from "./sidebar-nav";
 import { UserMenu } from "./user-menu";
 
@@ -17,6 +18,8 @@ type Props = {
   email: string;
   username: string | null;
   displayName: string | null;
+  notifications: import("@/lib/notifications/types").NotificationRow[];
+  unreadCount: number;
   counts: NavCounts;
   children: React.ReactNode;
 };
@@ -25,6 +28,8 @@ export function AppShell({
   email,
   username,
   displayName,
+  notifications,
+  unreadCount,
   counts,
   children,
 }: Props) {
@@ -89,6 +94,7 @@ export function AppShell({
             <Menu className="h-5 w-5" />
           </Button>
           <div className="flex-1" />
+          <NotificationBell notifications={notifications} unread={unreadCount} />
           <UserMenu
             email={email}
             username={username}
