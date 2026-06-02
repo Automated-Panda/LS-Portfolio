@@ -67,10 +67,17 @@ Each slice has its own spec + plan under `docs/superpowers/specs/` and
 ## 3. What shipped — by slice
 
 ### Roles + Admin Shell (Slice 1)
-- `/admin` is a **sidebar layout** (`app/admin/layout.tsx`); `admin-nav-link.tsx`
-  handles active highlighting; sections are role-aware (see §1).
-- **Overview** (`app/admin/page.tsx`): owner sees stat cards (Total users, Paid
-  users, Credits outstanding) + the content cards; editors see content only.
+- `/admin` is a **sidebar layout** (`app/admin/layout.tsx`) with the **GT Vault
+  Admin** brand lockup (`public/admin/admin-logo.png`), the admin **favicon**
+  (`app/admin/icon.png`), and **Lucide icons** on every nav link
+  (`admin-nav-link.tsx`, role-aware sections — see §1).
+- **Overview** (`app/admin/page.tsx`): owner sees icon **stat cards** (Total
+  users, Paid users, Open tickets, Credits outstanding), role-aware **quick-link
+  cards**, and a **recent-activity** panel (last 5 audit entries). Editors see the
+  content/support quick-links only.
+- **Browse-all:** the vehicle/property/upgrade admin tables paginate
+  (100/page, Prev/Next via `app/admin/admin-pager.tsx` + pure
+  `lib/admin/pagination.ts`) instead of the old 150-row render cap.
 
 ### User Management — `/admin/users` (Slice 2, owner only)
 - Table joining `auth.users ⨝ profiles ⨝ user_credits`: name, email, role, plan
@@ -154,6 +161,13 @@ Each slice has its own spec + plan under `docs/superpowers/specs/` and
 - `0030_admin_activity_log.sql` — `admin_activity_log` (RLS, no policies).
 - `0031_catalog_status.sql` — `status` on vehicles+properties + published-only RLS
   SELECT policy.
+- `0032_fold_builtin_garages.sql` — one-time data fix: folded free (price $0)
+  capacity "upgrades" (built-in garages that come WITH the property — Auto Shop /
+  Clubhouse / Facility / Agency / Mansion garages, Vinewood Club Garage floors)
+  into the property's base `capacity` and removed the 38 upgrade rows + 32 user
+  ownership rows. Paid garage add-ons (e.g. Penthouse "Garage Access" $1.5M) kept.
+  ⚠️ The seed JSON still models these as upgrades — fix the seed builder before any
+  full re-import, or they'll return.
 
 **Code map:**
 - Roles/guard: `lib/admin/roles.ts`, `lib/admin/guard.ts`
