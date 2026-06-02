@@ -9,6 +9,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { isValidStatus, isValidPriority } from "@/lib/support/tickets";
 import { createNotification } from "@/lib/notifications/server";
 import { ticketStatusNotification } from "@/lib/notifications/messages";
+import { logAdminActivity } from "@/lib/admin/activity";
 
 type Result = { ok: true } | { error: string };
 
@@ -19,7 +20,7 @@ export async function setTicketStatus(id: string, status: string): Promise<Resul
   const supabase = createAdminClient();
   const { data: ticket, error: fetchErr } = await supabase
     .from("support_tickets")
-    .select("user_id, category")
+    .select("user_id, category, status")
     .eq("id", id)
     .maybeSingle();
   if (fetchErr) return { error: fetchErr.message };
@@ -28,7 +29,14 @@ export async function setTicketStatus(id: string, status: string): Promise<Resul
   const { error } = await supabase.from("support_tickets").update({ status }).eq("id", id);
   if (error) return { error: error.message };
 
-  const t = ticket as { user_id: string; category: string };
+  const t = ticket as { user_id: string; category: string; status: string };
+
+  await logAdminActivity({
+    action: "ticket.status",
+    targetId: id,
+    targetLabel: t.category,
+    changes: { from: t.status, to: status },
+  });
   // Best-effort alert — the status change already succeeded, so a notification
   // failure must not crash the action (mirrors the credit-adjust pattern).
   try {
@@ -46,8 +54,20 @@ export async function setTicketPriority(id: string, priority: string): Promise<R
   if (!isValidPriority(priority)) return { error: "Invalid priority." };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("support_tickets")
+    .select("priority")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase.from("support_tickets").update({ priority }).eq("id", id);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "ticket.priority",
+    targetId: id,
+    targetLabel: id,
+    changes: { from: (before as { priority?: string } | null)?.priority ?? null, to: priority },
+  });
 
   revalidatePath("/admin/support");
   return { ok: true };
@@ -70,6 +90,13 @@ export async function addTicketNote(id: string, body: string): Promise<Result> {
     body: text,
   });
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "ticket.note",
+    targetId: id,
+    targetLabel: id,
+    changes: { note: text },
+  });
 
   revalidatePath("/admin/support");
   return { ok: true };

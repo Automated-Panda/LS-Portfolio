@@ -11,6 +11,7 @@ import { createNotification } from "@/lib/notifications/server";
 import { creditAdjustmentNotification } from "@/lib/notifications/messages";
 import { sendCreditsAdjustedEmail } from "@/lib/email/send";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { logAdminActivity } from "@/lib/admin/activity";
 
 type Result = { ok: true } | { error: string };
 
@@ -49,6 +50,13 @@ export async function adjustUserCredits(
     console.error("[admin] credit-adjust email failed (non-fatal):", e);
   }
 
+  await logAdminActivity({
+    action: "user.credits",
+    targetId: userId,
+    targetLabel: userId,
+    changes: { delta: parsed.delta, note: trimmedNote, newTotal: total },
+  });
+
   revalidatePath("/admin/users");
   return { ok: true };
 }
@@ -59,8 +67,20 @@ export async function setUserRole(userId: string, role: Role): Promise<Result> {
   if (!ASSIGNABLE_ROLES.includes(role)) return { error: "Invalid role." };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", userId)
+    .maybeSingle();
   const { error } = await supabase.from("profiles").update({ role }).eq("id", userId);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "user.role",
+    targetId: userId,
+    targetLabel: userId,
+    changes: { from: (before as { role?: string } | null)?.role ?? null, to: role },
+  });
 
   revalidatePath("/admin/users");
   return { ok: true };
@@ -78,6 +98,13 @@ export async function setUserDisabled(
     ban_duration: disabled ? BAN_FOREVER : "none",
   });
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "user.disabled",
+    targetId: userId,
+    targetLabel: userId,
+    changes: { to: disabled },
+  });
 
   revalidatePath("/admin/users");
   return { ok: true };

@@ -6,6 +6,8 @@ import { requireAdmin } from "@/lib/admin/guard";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { validateImageFile, storageKey, publicImageUrl, type ImageEntity } from "@/lib/admin/image-upload";
 import type { AvailabilityStatus, VehicleVendor } from "@/lib/vehicles";
+import { logAdminActivity } from "@/lib/admin/activity";
+import { diffFields } from "@/lib/admin/activity-format";
 
 type Result = { ok: true } | { error: string };
 
@@ -70,8 +72,20 @@ export async function updateVehicleAdmin(
   if (Object.keys(update).length === 0) return { ok: true };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("vehicles")
+    .select("display_name, price, availability, vendors")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase.from("vehicles").update(update).eq("id", id);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "vehicle.update",
+    targetId: id,
+    targetLabel: ((before as Record<string, unknown> | null)?.display_name as string) ?? id,
+    changes: diffFields((before ?? {}) as Record<string, unknown>, update, Object.keys(update)),
+  });
 
   revalidatePath("/admin/vehicles");
   revalidatePath("/", "layout"); // keep public pages in sync
@@ -130,8 +144,20 @@ export async function updatePropertyAdmin(
   if (Object.keys(update).length === 0) return { ok: true };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("properties")
+    .select("display_name, price, capacity, counts_as_garage, subtype_display, neighborhood")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase.from("properties").update(update).eq("id", id);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "property.update",
+    targetId: id,
+    targetLabel: ((before as Record<string, unknown> | null)?.display_name as string) ?? id,
+    changes: diffFields((before ?? {}) as Record<string, unknown>, update, Object.keys(update)),
+  });
 
   revalidatePath("/admin/properties");
   revalidatePath("/", "layout");
@@ -175,11 +201,23 @@ export async function updateUpgradeAdmin(
   if (Object.keys(update).length === 0) return { ok: true };
 
   const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from("property_upgrades")
+    .select("display_name, capacity, price")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase
     .from("property_upgrades")
     .update(update)
     .eq("id", id);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "upgrade.update",
+    targetId: id,
+    targetLabel: ((before as Record<string, unknown> | null)?.display_name as string) ?? id,
+    changes: diffFields((before ?? {}) as Record<string, unknown>, update, Object.keys(update)),
+  });
 
   revalidatePath("/admin/upgrades");
   revalidatePath("/", "layout");
@@ -218,6 +256,14 @@ export async function uploadCatalogImage(
   const { error } = await supabase.from(entity).update({ image_path: url }).eq("id", id);
   if (error) return { error: error.message };
 
+  const { data: row } = await supabase.from(entity).select("display_name").eq("id", id).maybeSingle();
+  await logAdminActivity({
+    action: "image.upload",
+    targetId: id,
+    targetLabel: ((row as Record<string, unknown> | null)?.display_name as string) ?? `${entity} ${id}`,
+    changes: {},
+  });
+
   revalidatePath(`/admin/${entity}`);
   revalidatePath("/", "layout");
   return { ok: true, url };
@@ -229,8 +275,16 @@ export async function removeCatalogImage(entity: string, id: string): Promise<Im
   if (!IMAGE_ENTITIES.has(entity as ImageEntity)) return { error: "Invalid entity." };
 
   const supabase = createAdminClient();
+  const { data: row } = await supabase.from(entity).select("display_name").eq("id", id).maybeSingle();
   const { error } = await supabase.from(entity).update({ image_path: null }).eq("id", id);
   if (error) return { error: error.message };
+
+  await logAdminActivity({
+    action: "image.remove",
+    targetId: id,
+    targetLabel: ((row as Record<string, unknown> | null)?.display_name as string) ?? `${entity} ${id}`,
+    changes: {},
+  });
 
   revalidatePath(`/admin/${entity}`);
   revalidatePath("/", "layout");
