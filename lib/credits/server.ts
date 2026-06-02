@@ -172,3 +172,23 @@ export async function grantCredits(
   if (error) throw new Error(`grantCredits RPC failed: ${error.message}`);
   return { ok: true };
 }
+
+/**
+ * Manually adjust a user's NEVER-EXPIRING (purchased) credit bucket by `delta`
+ * (may be negative). Clamps at zero in the DB, writes an audited 'adjustment'
+ * transaction row, and returns the user's new total balance. Service-role only.
+ */
+export async function adminAdjustCredits(
+  userId: string,
+  delta: number,
+  note: string | null,
+): Promise<{ ok: true; total: number }> {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase.rpc("admin_adjust_credits", {
+    p_user_id: userId,
+    p_delta: delta,
+    p_note: note,
+  });
+  if (error) throw new Error(`adminAdjustCredits RPC failed: ${error.message}`);
+  return { ok: true, total: (data as number) ?? 0 };
+}
