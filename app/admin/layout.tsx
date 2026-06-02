@@ -58,6 +58,14 @@ export default async function AdminLayout({
               <AdminNavLink href="/admin/revenue">Revenue</AdminNavLink>
             </div>
           )}
+          {owner && (
+            <div>
+              <p className="px-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+                Audit
+              </p>
+              <AdminNavLink href="/admin/activity">Activity</AdminNavLink>
+            </div>
+          )}
         </nav>
         <div className="mt-6 flex flex-col gap-2 border-t pt-4 text-sm">
           <a href="/admin/export" className="text-muted-foreground hover:underline">
