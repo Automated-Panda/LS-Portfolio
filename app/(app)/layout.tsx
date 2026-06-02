@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { AppShell } from "@/components/app-shell/app-shell";
+import { listNotifications, unreadCount } from "@/lib/notifications/server";
 import { getOwnedCounts } from "@/lib/queries/vehicles";
 import { createClient } from "@/lib/supabase/server";
 
@@ -26,13 +27,15 @@ export default async function AppLayout({
   // in a partial-onboarding state. Users still reach /wizard via the
   // EmptyDashboard hero or manual navigation.
 
-  const [{ data: profile }, counts] = await Promise.all([
+  const [{ data: profile }, counts, notifications, unread] = await Promise.all([
     supabase
       .from("profiles")
       .select("username, display_name")
       .eq("id", user.id)
       .maybeSingle(),
     getOwnedCounts(user.id),
+    listNotifications(),
+    unreadCount(),
   ]);
 
   return (
@@ -41,6 +44,8 @@ export default async function AppLayout({
       username={profile?.username ?? null}
       displayName={profile?.display_name ?? null}
       counts={counts}
+      notifications={notifications}
+      unreadCount={unread}
     >
       {children}
     </AppShell>
