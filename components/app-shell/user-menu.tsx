@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut, User as UserIcon } from "lucide-react";
+import { LogOut, MessageSquarePlus, User as UserIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { logOutAction } from "@/lib/auth/actions";
 
+import { useFeedback } from "./feedback";
+
 type Props = {
   email: string;
   username: string | null;
@@ -24,6 +26,7 @@ type Props = {
 export function UserMenu({ email, username, displayName }: Props) {
   const shownName = displayName || username || email;
   const initials = shownName.slice(0, 2).toUpperCase();
+  const feedback = useFeedback();
 
   return (
     <DropdownMenu>
@@ -59,6 +62,13 @@ export function UserMenu({ email, username, displayName }: Props) {
             <UserIcon className="mr-2 h-4 w-4" />
             Profile
           </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => feedback.open()}
+          className="cursor-pointer"
+        >
+          <MessageSquarePlus className="mr-2 h-4 w-4" />
+          Send feedback
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <form action={logOutAction}>
