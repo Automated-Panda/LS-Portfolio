@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 import {
   AdminPropertiesTable,
@@ -6,11 +6,11 @@ import {
 } from "./admin-properties-table";
 
 export default async function AdminPropertiesPage() {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("properties")
     .select(
-      "id, display_name, property_type, subtype, subtype_display, neighborhood, capacity, counts_as_garage, price, image_path",
+      "id, display_name, property_type, subtype, subtype_display, neighborhood, capacity, counts_as_garage, price, image_path, status",
     )
     .order("display_name", { ascending: true });
   if (error) throw error;

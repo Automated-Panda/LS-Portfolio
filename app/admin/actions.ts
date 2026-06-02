@@ -8,6 +8,7 @@ import { validateImageFile, storageKey, publicImageUrl, type ImageEntity } from 
 import type { AvailabilityStatus, VehicleVendor } from "@/lib/vehicles";
 import { logAdminActivity } from "@/lib/admin/activity";
 import { diffFields } from "@/lib/admin/activity-format";
+import { isValidCatalogStatus } from "@/lib/catalog/status";
 
 type Result = { ok: true } | { error: string };
 
@@ -289,4 +290,36 @@ export async function removeCatalogImage(entity: string, id: string): Promise<Im
   revalidatePath(`/admin/${entity}`);
   revalidatePath("/", "layout");
   return { ok: true, url: null };
+}
+
+/** Set a catalog item's visibility status (draft/published/archived). */
+export async function setCatalogStatus(
+  entity: string,
+  id: string,
+  status: string,
+): Promise<Result> {
+  await requireAdmin();
+  if (!IMAGE_ENTITIES.has(entity as ImageEntity)) return { error: "Invalid entity." };
+  if (!isValidCatalogStatus(status)) return { error: "Invalid status." };
+
+  const supabase = createAdminClient();
+  const { data: before } = await supabase
+    .from(entity)
+    .select("display_name, status")
+    .eq("id", id)
+    .maybeSingle();
+  const { error } = await supabase.from(entity).update({ status }).eq("id", id);
+  if (error) return { error: error.message };
+
+  const b = (before ?? {}) as { display_name?: string; status?: string };
+  await logAdminActivity({
+    action: entity === "vehicles" ? "vehicle.update" : "property.update",
+    targetId: id,
+    targetLabel: b.display_name ?? id,
+    changes: diffFields({ status: b.status ?? null }, { status }, ["status"]),
+  });
+
+  revalidatePath(`/admin/${entity}`);
+  revalidatePath("/", "layout");
+  return { ok: true };
 }
