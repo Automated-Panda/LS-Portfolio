@@ -36,6 +36,12 @@ export default async function AdminLayout({
             <AdminNavLink href="/admin/properties">Properties &amp; Businesses</AdminNavLink>
             <AdminNavLink href="/admin/upgrades">Upgrades</AdminNavLink>
           </div>
+          <div>
+            <p className="px-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+              Support
+            </p>
+            <AdminNavLink href="/admin/support">Inbox</AdminNavLink>
+          </div>
           {owner && (
             <div>
               <p className="px-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">
