@@ -17,6 +17,7 @@ export function MarketingFooter() {
           </div>
           <nav className="flex flex-col gap-2 text-sm text-neutral-400">
             <a href="#features" className="hover:text-neutral-100">Features</a>
+            <a href="#pricing" className="hover:text-neutral-100">Pricing</a>
             <a href="#faq" className="hover:text-neutral-100">FAQ</a>
             <Link href="/login" className="hover:text-neutral-100">Sign in</Link>
             <Link href="/signup" className="hover:text-neutral-100">Get started</Link>

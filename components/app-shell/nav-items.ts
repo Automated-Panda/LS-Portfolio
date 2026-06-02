@@ -2,6 +2,7 @@ import {
   Briefcase,
   Building2,
   Car,
+  Gem,
   Grid3x3,
   Home,
   LayoutDashboard,
@@ -17,6 +18,8 @@ export type NavItem = {
   href: string;
   icon: LucideIcon;
   badgeKey?: NavBadgeKey;
+  /** Render with the brand accent so the item stands out (e.g. Credits). */
+  highlight?: boolean;
 };
 
 export type NavSection = {
@@ -26,6 +29,7 @@ export type NavSection = {
 
 export const NAV_PINNED: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Credits", href: "/credits", icon: Gem, highlight: true },
 ];
 
 export const NAV_SECTIONS: NavSection[] = [

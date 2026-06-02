@@ -12,7 +12,8 @@ export function FinalCta() {
           Start tracking your empire
         </h2>
         <p className="mx-auto mt-3 max-w-md text-neutral-400">
-          Free to use. Set up your portfolio in minutes.
+          Free to start, no card required. Set up your portfolio in minutes and
+          see your whole GTA V empire come together.
         </p>
         <div className="mt-8">
           <Button

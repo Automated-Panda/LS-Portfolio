@@ -35,7 +35,9 @@ export function SidebarNav({
           "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
           active
             ? "bg-accent text-accent-foreground"
-            : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
+            : item.highlight
+              ? "bg-[#84cc16]/10 font-medium text-[#65a30d] ring-1 ring-inset ring-[#84cc16]/30 hover:bg-[#84cc16]/20 dark:text-[#a3e635]"
+              : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
         )}
       >
         <Icon className="h-4 w-4" />

@@ -6,19 +6,22 @@ import { Section } from "./section";
 
 export function OrganizerSpotlight() {
   return (
-    <Section eyebrow="Pro · Coming soon">
+    <Section eyebrow="AI Organizer">
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[#84cc16]/40 bg-[#84cc16]/10 px-3 py-1 text-xs font-medium text-[#84cc16]">
             <Sparkles className="h-3.5 w-3.5" />
-            Pro · Coming soon
+            Live now
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-neutral-100 md:text-4xl">
             Organize your garage with AI
           </h2>
           <p className="mt-4 text-base leading-relaxed text-neutral-400">
-            Describe what you want in plain English and the AI Organizer plans
-            the moves and applies them for you.
+            Reshuffling vehicles across a dozen properties by hand is tedious.
+            Just describe what you want in plain English — the AI Organizer works
+            out the moves, shows you the plan, and applies it the moment you
+            approve. Every account starts with free credits, so you can try it
+            today.
           </p>
           <div className="mt-6 rounded-lg border border-neutral-800 bg-[#101010] p-4">
             <p className="text-xs uppercase tracking-wider text-neutral-500">

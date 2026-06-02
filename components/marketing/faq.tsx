@@ -4,7 +4,19 @@ import { Section } from "./section";
 const FAQS = [
   {
     q: "Is it free?",
-    a: "Yes — GT Vault is free to use. A Pro tier, including the AI Organizer, is coming.",
+    a: "Yes — tracking and valuing your portfolio is completely free, forever, and there's no card required to sign up. The only thing that costs money is the AI Organizer, which runs on credits. Every account gets free credits to start and a top-up each month.",
+  },
+  {
+    q: "What are credits and what do they cost?",
+    a: "Credits power the AI Organizer. Each plan it generates costs around 5 credits. You start with 20 bonus credits, get 10 more free every month, and can buy more whenever you like — a $4.99 Starter pack is 50 credits (roughly 10 plans), or go Pro for $9.99/mo and get 250 fresh credits every month.",
+  },
+  {
+    q: "Do I have to pay for the AI Organizer?",
+    a: "Not to try it — your free monthly credits cover light use. You only pay if you want to run it heavily. Everything else in GT Vault stays free regardless.",
+  },
+  {
+    q: "Can I cancel my subscription?",
+    a: "Anytime, from your billing page. Your Pro credits stay available until the end of the period you've already paid for, and any one-off credit packs you've bought never expire.",
   },
   {
     q: "Is this affiliated with Rockstar or Take-Two?",

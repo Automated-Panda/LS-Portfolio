@@ -9,13 +9,13 @@ const SHOTS = [
     src: "/marketing/vehicles.webp",
     alt: "GT Vault vehicles browser showing the GTA V vehicle catalog with owned counts and filters",
     title: "Browse the full catalog",
-    body: "Every vehicle in the game, searchable and filterable, with your owned count on each.",
+    body: "Every vehicle in the game, searchable and filterable by class, price and source. See your owned count on each, spot what you're missing, and tag discontinued or seasonal rides before they vanish from the in-game stores.",
   },
   {
     src: "/marketing/property.webp",
     alt: "GT Vault property detail showing storage upgrades and assigned vehicles",
     title: "Manage your properties",
-    body: "Track upgrades, storage capacity and exactly which vehicles live where.",
+    body: "Track every property, its upgrades and its storage capacity — and see exactly which vehicles live where. Never buy a garage you don't need or lose track of where you parked your favourite car again.",
   },
 ];
 

@@ -10,18 +10,18 @@ import { StatBar } from "@/components/marketing/stat-bar";
 import { FeatureCards } from "@/components/marketing/feature-cards";
 import { OrganizerSpotlight } from "@/components/marketing/organizer-spotlight";
 import { ScreenshotShowcase } from "@/components/marketing/screenshot-showcase";
-import { PricingTeaser } from "@/components/marketing/pricing-teaser";
+import { Pricing } from "@/components/marketing/pricing";
 import { Faq } from "@/components/marketing/faq";
 import { FinalCta } from "@/components/marketing/final-cta";
 
 export const metadata: Metadata = {
   title: "GT Vault — Track your entire GTA V empire",
   description:
-    "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft and boats — and see your net worth. Free to use.",
+    "Track your full GTA V asset portfolio — vehicles, properties, businesses, aircraft and boats — see your net worth, and organize your garages with AI. Free to start.",
   openGraph: {
     title: "GT Vault — Track your entire GTA V empire",
     description:
-      "Your full GTA V portfolio and its net worth, in one place. Free to use.",
+      "Your full GTA V portfolio and its net worth, in one place, with AI-powered garage organization. Free to start.",
     url: "https://www.gtvault.app",
     siteName: "GT Vault",
     images: [{ url: "/marketing/og.webp", width: 1200, height: 630 }],
@@ -52,7 +52,7 @@ export default async function HomePage() {
       <FeatureCards />
       <OrganizerSpotlight />
       <ScreenshotShowcase />
-      <PricingTeaser />
+      <Pricing />
       <Faq />
       <FinalCta />
     </>

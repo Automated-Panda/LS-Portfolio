@@ -21,7 +21,11 @@ export function Hero() {
       </h1>
       <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg">
         Vehicles, properties, businesses, aircraft &amp; boats — your whole
-        portfolio and its net worth, in one place.
+        portfolio and its net worth, in one place. Track what you own, chase 100%
+        completion, and let AI organize your garages for you.
+      </p>
+      <p className="mx-auto mt-3 max-w-md text-sm text-neutral-500">
+        Free to start · No card required · Set up in minutes
       </p>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button
