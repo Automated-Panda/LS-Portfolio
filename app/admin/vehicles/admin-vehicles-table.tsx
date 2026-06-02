@@ -23,6 +23,7 @@ import { vehicleImageUrl } from "@/lib/vehicles";
 
 import { updateVehicleAdmin, type VehiclePatch } from "../actions";
 import { AdminImageCell } from "../admin-image-cell";
+import { AdminStatusCell } from "../admin-status-cell";
 
 export type AdminVehicleRow = {
   id: string;
@@ -33,6 +34,7 @@ export type AdminVehicleRow = {
   availability: AvailabilityStatus;
   vendors: VehicleVendor[];
   image_path: string | null;
+  status: string;
 };
 
 const AVAILABILITY_KEYS = Object.keys(AVAILABILITY_LABEL) as AvailabilityStatus[];
@@ -92,6 +94,7 @@ export function AdminVehiclesTable({ rows }: { rows: AdminVehicleRow[] }) {
           <thead className="border-b bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
             <tr>
               <th className="w-44 p-2">Image</th>
+              <th className="w-32 p-2">Status</th>
               <th className="p-2">Name</th>
               <th className="p-2">Class / Maker</th>
               <th className="w-28 p-2">Price</th>
@@ -158,6 +161,9 @@ function Row({
     <tr className="border-b last:border-0 hover:bg-muted/20">
       <td className="p-1.5">
         <AdminImageCell entity="vehicles" id={row.id} initialUrl={vehicleImageUrl(row.image_path)} />
+      </td>
+      <td className="p-1.5">
+        <AdminStatusCell entity="vehicles" id={row.id} initial={row.status} />
       </td>
       <td className="p-1.5">
         <Input

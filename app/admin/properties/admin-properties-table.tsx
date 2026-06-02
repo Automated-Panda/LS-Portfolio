@@ -10,6 +10,7 @@ import { normalizeSearch } from "@/lib/vehicles";
 
 import { updatePropertyAdmin, type PropertyPatch } from "../actions";
 import { AdminImageCell } from "../admin-image-cell";
+import { AdminStatusCell } from "../admin-status-cell";
 
 export type AdminPropertyRow = {
   id: string;
@@ -22,6 +23,7 @@ export type AdminPropertyRow = {
   counts_as_garage: boolean;
   price: number | null;
   image_path: string | null;
+  status: string;
 };
 
 const CAP = 150;
@@ -79,6 +81,7 @@ export function AdminPropertiesTable({ rows }: { rows: AdminPropertyRow[] }) {
           <thead className="border-b bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
             <tr>
               <th className="w-44 p-2">Image</th>
+              <th className="w-32 p-2">Status</th>
               <th className="p-2">Name</th>
               <th className="p-2">Type</th>
               <th className="p-2">Subtype label</th>
@@ -157,6 +160,9 @@ function Row({
     <tr className="border-b last:border-0 hover:bg-muted/20">
       <td className="p-1.5">
         <AdminImageCell entity="properties" id={row.id} initialUrl={propertyImageUrl(row.image_path)} />
+      </td>
+      <td className="p-1.5">
+        <AdminStatusCell entity="properties" id={row.id} initial={row.status} />
       </td>
       <td className="p-1.5">
         <Input value={name} onChange={(e) => setName(e.target.value)} onBlur={commitName} className="h-8" />
