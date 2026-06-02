@@ -10,7 +10,7 @@ export default async function AdminPropertiesPage() {
   const { data, error } = await supabase
     .from("properties")
     .select(
-      "id, display_name, property_type, subtype, subtype_display, neighborhood, capacity, counts_as_garage, price",
+      "id, display_name, property_type, subtype, subtype_display, neighborhood, capacity, counts_as_garage, price, image_path",
     )
     .order("display_name", { ascending: true });
   if (error) throw error;

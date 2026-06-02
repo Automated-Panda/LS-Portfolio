@@ -25,6 +25,7 @@ export type PropertyFilterOptions = {
 
 export function propertyImageUrl(imagePath: string | null): string | null {
   if (!imagePath) return null;
+  if (/^https?:\/\//.test(imagePath)) return imagePath;
   const basename = imagePath.split("/").pop();
   return basename ? `/properties/${basename}` : null;
 }
