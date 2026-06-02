@@ -3,8 +3,8 @@
 Internal control centre for GT Vault — manage catalog content, users, plans,
 credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
 
-> **Status:** Slices 1 + 2 + 3 shipped to `main` on **2026-06-02**. Slices 4–6
-> are backlog. This doc is the living reference for the whole dashboard.
+> **Status:** Slices 1 + 2 + 3 + 4 shipped to `main` on **2026-06-02**. Slices
+> 5–6 are backlog. This doc is the living reference for the whole dashboard.
 
 ---
 
@@ -46,7 +46,7 @@ log, draft/publish) was decomposed into 6 independently-shippable slices:
 | 1 | **Roles + Admin Shell** (sidebar, role-aware sections, owner overview stats) | ✅ Shipped 2026-06-02 |
 | 2 | **User Management** (table + adjust credits / change role / disable) | ✅ Shipped 2026-06-02 |
 | 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU) | ✅ Shipped 2026-06-02 |
-| 4 | **Support / Feedback inbox** (user-facing submit form + admin inbox: categories, statuses, notes, assignment) | ⬜ Backlog |
+| 4 | **Support / Feedback inbox** (user-facing submit + admin triage: categories, statuses, priority, internal notes) | ✅ Shipped 2026-06-02 |
 | 5 | **Content-mgmt upgrades** (image upload/replace via Supabase Storage, more editable fields, draft/publish, full `activity_log` table) | ⬜ Backlog |
 | 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
 
@@ -88,6 +88,22 @@ disabled), credits total, signup, last login. Searchable.
 - Library: `lib/notifications/` — `messages.ts` (pure payload builders),
   `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
   (`markAllNotificationsRead`), `types.ts`.
+
+### Support / Feedback (Slice 4) — `/admin/support` (owner + editor)
+- **Users submit** from a floating 💬 button (bottom-right, every logged-in page)
+  AND a "Send feedback" item in the account menu — both drive one modal via a
+  `FeedbackProvider` context. Fields: category (bug/feature/data/suggestion/
+  general/complaint), message, optional related item. Action `submitFeedback`
+  inserts with the user-scoped client (insert-own RLS).
+- **Admins triage** at `/admin/support` (owner AND editor): filter by status,
+  change **status** (New→In review→Planned→Fixed→Rejected→Closed) and **priority**
+  (low/normal/high), and add **internal notes** (admin-only). A status change
+  fires an in-app notification to the submitter (best-effort; reuses Slice 2).
+- Tables: `support_tickets` (user-scoped RLS) + `support_ticket_notes`
+  (RLS-enabled, **no policies** = service-role/admin-only). Pure domain +
+  validation: `lib/support/tickets.ts` (unit-tested). Admin reads/writes via the
+  service-role client in `app/admin/support/`.
+- Deferred: assignment, a user "My tickets" page, email, attachments.
 
 ### Revenue (Slice 3) — `/admin/revenue` (owner only)
 - Revenue dollars live **only in Stripe** (our DB stores credit deltas + Stripe
