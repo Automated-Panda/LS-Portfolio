@@ -3,9 +3,9 @@
 Internal control centre for GT Vault — manage catalog content, users, plans,
 credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
 
-> **Status:** Slices 1 + 2 + 3 + 4 + 5a + 5b shipped to `main` on
-> **2026-06-02**. Slices 5c + 6 are backlog. This doc is the living reference for
-> the whole dashboard.
+> **Status:** Slices 1–5 (all sub-slices) shipped to `main` on **2026-06-02**.
+> Only Slice 6 (Analytics) remains. This doc is the living reference for the whole
+> dashboard.
 
 ---
 
@@ -50,7 +50,7 @@ log, draft/publish) was decomposed into 6 independently-shippable slices:
 | 4 | **Support / Feedback inbox** (user-facing submit + admin triage: categories, statuses, priority, internal notes) | ✅ Shipped 2026-06-02 |
 | 5a | **Image upload/replace** (vehicle + property images via Supabase Storage) | ✅ Shipped 2026-06-02 |
 | 5b | **Activity log** (audit of all admin actions) | ✅ Shipped 2026-06-02 |
-| 5c | **Draft/publish** (content states on catalog items) | ⬜ Backlog |
+| 5c | **Draft/publish** (content states on catalog items) | ✅ Shipped 2026-06-02 |
 | 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
 
 Spec: `docs/superpowers/specs/2026-06-02-admin-roles-shell-user-management-design.md`
@@ -91,6 +91,22 @@ disabled), credits total, signup, last login. Searchable.
 - Library: `lib/notifications/` — `messages.ts` (pure payload builders),
   `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
   (`markAllNotificationsRead`), `types.ts`.
+
+### Draft/publish (Slice 5c) — catalog visibility
+- Vehicles + properties have a `status`: **draft** / **published** / **archived**
+  (migration 0031; existing rows default **published** so nothing disappeared).
+- **How hiding works:** the public catalog SELECT **RLS policy** was scoped from
+  `using(true)` to `using(status = 'published')`. Since every public read uses the
+  RLS client, drafts/archived hide from the public **everywhere automatically** —
+  no per-query edits. The admin editor pages (`app/admin/{vehicles,properties}/
+  page.tsx`) were switched to `createAdminClient()` (service-role, bypasses RLS)
+  so admins still see/edit all statuses.
+- Status `<select>` per row in the editors (`app/admin/admin-status-cell.tsx`) →
+  `setCatalogStatus` action (`requireAdmin`, validated, logged to the activity
+  log). Pure values in `lib/catalog/status.ts`.
+- ⚠️ A drafted/archived item a user OWNS also disappears from their garage (the
+  `!inner` joins drop it) — accepted as by-design (admin-only, rare).
+- Deferred: "needs review"/approval workflow, scheduled publish, upgrades status.
 
 ### Activity log (Slice 5b) — `/admin/activity` (owner only)
 - Append-only `admin_activity_log` (migration 0030, RLS-no-policy → service-role
