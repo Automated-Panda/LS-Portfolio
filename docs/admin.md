@@ -1,0 +1,141 @@
+# Admin Dashboard
+
+Internal control centre for GT Vault — manage catalog content, users, plans,
+credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
+
+> **Status:** Slices 1 + 2 shipped to `main` on **2026-06-02**. Slices 3–6 are
+> backlog. This doc is the living reference for the whole dashboard.
+
+---
+
+## 1. Roles & access
+
+Three roles, stored on `profiles.role` (`'user' | 'editor' | 'owner'`, default
+`'user'`):
+
+| Role | Can access | Notes |
+|------|-----------|-------|
+| **owner** | Everything in `/admin` incl. **People → Users**, owner stats, all actions | Full control |
+| **editor** | **Content only** (Vehicles, Properties & Businesses, Upgrades) | No users/revenue/billing |
+| **user** | Nothing in `/admin` (redirected to `/`) | Normal app user |
+
+**Owner bootstrap (lockout safety net):** the email in the `ADMIN_EMAIL` env var
+(`james@automatedpanda.com`) **always** resolves to `owner`, regardless of the DB
+`role` value. So you can never lock yourself out even if a role row is wrong.
+
+**Security:**
+- Role resolution is pure + tested: `lib/admin/roles.ts` (`resolveRole`,
+  `isAdminRole`, `isOwnerRole`).
+- Server guard: `lib/admin/guard.ts` — `getRole()`, `isAdmin()`, `isOwner()`,
+  `requireAdmin()`, `requireOwner()`. Enforced in the admin layout (page access)
+  AND at the top of every admin server action (write access). Sidebar hiding is
+  UX only — the real boundary is server-side.
+- A DB trigger (`prevent_role_change`) blocks anyone but the service role from
+  changing `profiles.role`, so a user can never self-escalate via the normal
+  profile-update path. Role changes flow only through the owner-only action.
+
+---
+
+## 2. Slice roadmap
+
+The original vision (content mgmt, users, analytics, revenue, support, activity
+log, draft/publish) was decomposed into 6 independently-shippable slices:
+
+| # | Slice | Status |
+|---|-------|--------|
+| 1 | **Roles + Admin Shell** (sidebar, role-aware sections, owner overview stats) | ✅ Shipped 2026-06-02 |
+| 2 | **User Management** (table + adjust credits / change role / disable) | ✅ Shipped 2026-06-02 |
+| 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU — from Stripe + `credit_transactions`) | ⬜ Backlog |
+| 4 | **Support / Feedback inbox** (user-facing submit form + admin inbox: categories, statuses, notes, assignment) | ⬜ Backlog |
+| 5 | **Content-mgmt upgrades** (image upload/replace via Supabase Storage, more editable fields, draft/publish, full `activity_log` table) | ⬜ Backlog |
+| 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
+
+Spec: `docs/superpowers/specs/2026-06-02-admin-roles-shell-user-management-design.md`
+Plan: `docs/superpowers/plans/2026-06-02-admin-roles-shell-user-management.md`
+
+---
+
+## 3. What shipped (Slice 1 + 2)
+
+### Admin shell
+- `/admin` is a **sidebar layout** (`app/admin/layout.tsx`): Overview, Content,
+  and (owner-only) People sections. `app/admin/admin-nav-link.tsx` handles active
+  highlighting.
+- **Overview page** (`app/admin/page.tsx`): owner sees stat cards — Total users,
+  Paid users, Credits outstanding — plus the content section cards. Editors see
+  just the content cards.
+
+### User Management — `/admin/users` (owner only)
+Table of all accounts (joins `auth.users` ⨝ `profiles` ⨝ `user_credits`):
+name, email, role, plan (Free/Pro from `has_active_sub`), status (active/
+disabled), credits total, signup, last login. Searchable.
+
+**Row actions** (all `requireOwner()`):
+- **Adjust credits** — modal: enter a signed amount (`+50` to gift, `-20` to
+  deduct) + optional note. Hits the never-expiring `balance_credits` bucket,
+  clamped at ≥0, audited in `credit_transactions` (reason `adjustment`). The user
+  is alerted in-app (and by email once Resend is configured — see §5).
+- **Change role** — user / editor / owner.
+- **Disable / enable** — Supabase `auth.admin` ban toggle (`ban_duration`).
+
+> 💡 This UI **replaces manual SQL credit grants.** To gift a user credits: go to
+> `/admin/users`, click **Credits** on their row, enter the amount, Apply.
+
+### Notifications
+- `notifications` table + bell in the app-shell header
+  (`components/app-shell/notification-bell.tsx`): unread badge, dropdown list,
+  mark-all-read on open. Credit gifts show "🎁 You received credits!".
+- Library: `lib/notifications/` — `messages.ts` (pure payload builders),
+  `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
+  (`markAllNotificationsRead`), `types.ts`.
+
+---
+
+## 4. Key files & DB objects
+
+**Code map**
+- Roles: `lib/admin/roles.ts`, `lib/admin/guard.ts`
+- Users view-model (pure): `lib/admin/users-view.ts`
+- Users page/actions/table: `app/admin/users/{page,actions,admin-users-table}.tsx`
+- Credit adjust: `lib/credits/adjust.ts` (parse), `lib/credits/server.ts`
+  (`adminAdjustCredits` → RPC)
+- Notifications: `lib/notifications/*`, `components/app-shell/notification-bell.tsx`
+- Email: `lib/email/{client,send}.ts`, `lib/email/templates/credits-adjusted.ts`
+- Existing content editors (unchanged behaviour, now editor+owner): `app/admin/{vehicles,properties,upgrades}/`, `app/admin/actions.ts`
+
+**Migration `0027_admin_roles.sql`** (already applied to live DB `bzoizaakcqzlvpraysjn`)
+- `profiles.role` column + check constraint; owner seeded.
+- `prevent_role_change()` trigger (anti-escalation).
+- `notifications` table + RLS (select/update own; service-role-only insert) +
+  unread index.
+- `admin_adjust_credits(p_user_id, p_delta, p_note)` — `SECURITY DEFINER`,
+  service-role only; clamps the purchased bucket at 0, logs the actual applied
+  delta with the existing `adjustment` reason, returns the new total balance.
+
+---
+
+## 5. Resend email — follow-up to enable
+
+Credit-adjust emails are **graceful-degrade**: they only send when
+`RESEND_API_KEY` is set. Until then the in-app notification still fires and the
+email is silently skipped. To turn emails on:
+
+1. Create a Resend account; add the **gtvault.app** sending domain and verify its
+   DNS records.
+2. Set `RESEND_API_KEY` (and optionally `EMAIL_FROM`, default
+   `GT Vault <noreply@gtvault.app>`) in the production env + local `.env.local`.
+3. No code changes needed — emails start flowing immediately. The template
+   (`lib/email/templates/credits-adjusted.ts`) matches the dark branded auth
+   emails with the lime CTA to `/credits`.
+
+---
+
+## 6. Backlog / deferred (from the spec's non-goals)
+
+- Saved/favourited items (net-new **user-facing** feature).
+- Usage activity & analytics (Slice 6).
+- Revenue dashboard (Slice 3); Support inbox (Slice 4).
+- Image upload/replace, draft/publish, general `activity_log` table (Slice 5).
+- CSV export of users (trivial add).
+- Realtime push for notifications (bell + email cover it for now).
+- A `developer` role (one-line migration to add when needed).
