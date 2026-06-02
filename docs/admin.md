@@ -3,8 +3,9 @@
 Internal control centre for GT Vault — manage catalog content, users, plans,
 credits, and (in future) revenue, analytics, and support. Lives under `/admin`.
 
-> **Status:** Slices 1 + 2 + 3 + 4 shipped to `main` on **2026-06-02**. Slices
-> 5–6 are backlog. This doc is the living reference for the whole dashboard.
+> **Status:** Slices 1 + 2 + 3 + 4 + 5a shipped to `main` on **2026-06-02**.
+> Slices 5b/5c + 6 are backlog. This doc is the living reference for the whole
+> dashboard.
 
 ---
 
@@ -47,7 +48,9 @@ log, draft/publish) was decomposed into 6 independently-shippable slices:
 | 2 | **User Management** (table + adjust credits / change role / disable) | ✅ Shipped 2026-06-02 |
 | 3 | **Revenue tracking** (MRR, total revenue, active/cancelled subs, recent/failed payments, ARPU) | ✅ Shipped 2026-06-02 |
 | 4 | **Support / Feedback inbox** (user-facing submit + admin triage: categories, statuses, priority, internal notes) | ✅ Shipped 2026-06-02 |
-| 5 | **Content-mgmt upgrades** (image upload/replace via Supabase Storage, more editable fields, draft/publish, full `activity_log` table) | ⬜ Backlog |
+| 5a | **Image upload/replace** (vehicle + property images via Supabase Storage) | ✅ Shipped 2026-06-02 |
+| 5b | **Activity log** (audit of admin content edits) | ⬜ Backlog |
+| 5c | **Draft/publish** (content states on catalog items) | ⬜ Backlog |
 | 6 | **Analytics overview** (total/new/active users, most-viewed items, searches, conversion, free vs paid + GA4/Search Console) — needs net-new event-tracking infra | ⬜ Backlog |
 
 Spec: `docs/superpowers/specs/2026-06-02-admin-roles-shell-user-management-design.md`
@@ -88,6 +91,24 @@ disabled), credits total, signup, last login. Searchable.
 - Library: `lib/notifications/` — `messages.ts` (pure payload builders),
   `server.ts` (service-role insert + RLS-scoped reads), `actions.ts`
   (`markAllNotificationsRead`), `types.ts`.
+
+### Image upload/replace (Slice 5a) — vehicle + property editors
+- Admins **Replace/Remove** an image per row in `/admin/vehicles` and
+  `/admin/properties` (businesses are `property_type='business'`, covered by the
+  properties editor). Upgrades have no images.
+- Uploads go to a **public** Supabase Storage bucket `catalog-images` (migration
+  0029) via the service-role admin action. **No schema column** — the absolute
+  Storage URL (cache-busted with `?t=`) is stored in the existing `image_path`;
+  the helpers `vehicleImageUrl`/`propertyImageUrl` return absolute URLs verbatim,
+  else map a legacy basename to `/vehicles|properties/{name}`. So the ~1,016
+  legacy static images keep working untouched.
+- Pure validation/key/URL: `lib/admin/image-upload.ts` (≤5 MB, webp/png/jpeg;
+  extension-less key `{entity}/{id}` = one object per item, orphan-free). Actions:
+  `uploadCatalogImage` / `removeCatalogImage` in `app/admin/actions.ts`. UI:
+  `app/admin/admin-image-cell.tsx`. `next.config.ts` allows `*.supabase.co` for
+  `next/image`.
+- Deferred: server-side resize/optimize, migrating legacy files into Storage,
+  upgrades imagery, bulk upload.
 
 ### Support / Feedback (Slice 4) — `/admin/support` (owner + editor)
 - **Users submit** from a floating 💬 button (bottom-right, every logged-in page)
