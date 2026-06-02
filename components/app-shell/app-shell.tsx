@@ -9,6 +9,7 @@ import { ConfirmDialogHost } from "@/components/ui/confirm-dialog";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
+import { FeedbackProvider } from "./feedback";
 import type { NavCounts } from "./nav-items";
 import { NotificationBell } from "./notification-bell";
 import { SidebarNav } from "./sidebar-nav";
@@ -36,7 +37,8 @@ export function AppShell({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen">
+    <FeedbackProvider>
+      <div className="flex min-h-screen">
       <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r bg-card md:flex">
         <div className="flex h-14 shrink-0 items-center border-b px-4">
           <Link href="/dashboard" aria-label="GT Vault — Dashboard">
@@ -104,6 +106,7 @@ export function AppShell({
         <main className="flex-1 p-6">{children}</main>
       </div>
       <ConfirmDialogHost />
-    </div>
+      </div>
+    </FeedbackProvider>
   );
 }
