@@ -18,6 +18,19 @@ type Result = { ok: true } | { error: string };
 const ASSIGNABLE_ROLES: Role[] = ["user", "editor", "owner"];
 const BAN_FOREVER = "876000h"; // ~100 years
 
+/** Best-effort email lookup so the activity log shows who, not a raw UUID. */
+async function lookupEmail(
+  supabase: ReturnType<typeof createAdminClient>,
+  userId: string,
+): Promise<string | undefined> {
+  try {
+    const { data } = await supabase.auth.admin.getUserById(userId);
+    return data.user?.email ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 /** Adjust a user's credits by a signed amount, notify them in-app + by email. */
 export async function adjustUserCredits(
   userId: string,
@@ -35,10 +48,11 @@ export async function adjustUserCredits(
   // Alert the user — in-app always, email best-effort (never blocks).
   await createNotification(userId, creditAdjustmentNotification(parsed.delta, total));
 
+  let email: string | undefined;
   try {
     const supabase = createAdminClient();
     const { data } = await supabase.auth.admin.getUserById(userId);
-    const email = data.user?.email;
+    email = data.user?.email;
     if (email) {
       await sendCreditsAdjustedEmail(email, {
         delta: parsed.delta,
@@ -53,7 +67,7 @@ export async function adjustUserCredits(
   await logAdminActivity({
     action: "user.credits",
     targetId: userId,
-    targetLabel: userId,
+    targetLabel: email ?? userId,
     changes: { delta: parsed.delta, note: trimmedNote, newTotal: total },
   });
 
@@ -78,7 +92,7 @@ export async function setUserRole(userId: string, role: Role): Promise<Result> {
   await logAdminActivity({
     action: "user.role",
     targetId: userId,
-    targetLabel: userId,
+    targetLabel: (await lookupEmail(supabase, userId)) ?? userId,
     changes: { from: (before as { role?: string } | null)?.role ?? null, to: role },
   });
 
@@ -102,7 +116,7 @@ export async function setUserDisabled(
   await logAdminActivity({
     action: "user.disabled",
     targetId: userId,
-    targetLabel: userId,
+    targetLabel: (await lookupEmail(supabase, userId)) ?? userId,
     changes: { to: disabled },
   });
 

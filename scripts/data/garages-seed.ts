@@ -232,7 +232,6 @@ const STANDALONE_LOCATIONS: GarageSeed[] = [
 ];
 
 function buildStandaloneGarage(loc: GarageSeed): Omit<Property, "image_path"> {
-  const label = `${loc.car_count}-Car Garage`;
   return {
     id: loc.id,
     display_name: loc.display_name,
@@ -241,18 +240,12 @@ function buildStandaloneGarage(loc: GarageSeed): Omit<Property, "image_path"> {
     subtype_display: "Stand-Alone Garage",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    // The garage IS the property — its 2/6/10-car capacity comes with the
+    // purchase, so it lives on the base capacity, not a separate upgrade row.
+    // (Was modelled as an upgrade; folded in by migration 0033.)
+    capacity: loc.car_count,
     counts_as_garage: true,
-    upgrades: [
-      {
-        id: `${loc.id}-spaces`,
-        display_name: label,
-        tier: null,
-        capacity: loc.car_count,
-        required_upgrade_id: null,
-        notes: null,
-      },
-    ],
+    upgrades: [],
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages",

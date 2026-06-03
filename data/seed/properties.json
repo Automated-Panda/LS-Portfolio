@@ -1604,19 +1604,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "0120 Murrieta Heights",
     "neighborhood": "Murrieta Heights",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0120-murrieta-heights-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 35000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1633,19 +1623,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Unit 2 Popular Street",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-unit-2-popular-st-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 25000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1662,19 +1642,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "331 Supply Street",
     "neighborhood": "Cypress Flats",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-331-supply-st-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 27500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1691,19 +1661,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1623 South Shambles Street",
     "neighborhood": "Strawberry",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1623-south-shambles-st-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 30000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1720,19 +1680,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1337 Exceptionalists Way",
     "neighborhood": "Banning",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1337-exceptionalists-way-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 32500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1749,19 +1699,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Unit 76 Greenwich Parkway",
     "neighborhood": "Banning",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-unit-76-greenwich-parkway-spaces",
-        "display_name": "10-Car Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 35000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1778,19 +1718,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Unit 14 Popular Street",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-unit-14-popular-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 62500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1807,19 +1737,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Unit 1 Olympic Freeway",
     "neighborhood": "La Puerta",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-unit-1-olympic-fwy-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 65000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1836,19 +1756,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "0552 Roy Lowenstein Boulevard",
     "neighborhood": "Chamberlain Hills",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0552-roy-lowenstein-blvd-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 67500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1865,19 +1775,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "0432 Davis Avenue",
     "neighborhood": "Davis",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0432-davis-ave-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 70000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1894,19 +1794,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "870 Route 68 Approach",
     "neighborhood": "Route 68",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-870-route-68-approach-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 72500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1923,19 +1813,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "8754 Route 68",
     "neighborhood": "Route 68",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-8754-route-68-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 75000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1952,19 +1832,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1905 Davis Avenue",
     "neighborhood": "Davis",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1905-davis-ave-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 77500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -1981,19 +1851,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "4531 Dry Dock Street",
     "neighborhood": "Elysian Island",
-    "capacity": 0,
+    "capacity": 6,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-4531-dry-dock-st-spaces",
-        "display_name": "6-Car Garage",
-        "tier": null,
-        "capacity": 6,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 80000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2010,19 +1870,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "0754 Roy Lowenstein Boulevard",
     "neighborhood": "Chamberlain Hills",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0754-roy-lowenstein-blvd-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 105000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2039,19 +1889,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "12 Little Bighorn Avenue",
     "neighborhood": "Davis",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-12-little-bighorn-ave-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 110000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2068,19 +1908,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Unit 124 Popular Street",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-unit-124-popular-st-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 115000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2097,19 +1927,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "142 Paleto Boulevard",
     "neighborhood": "Paleto Bay",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-142-paleto-blvd-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 120000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2126,19 +1946,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1 Strawberry Avenue",
     "neighborhood": "Strawberry",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1-strawberry-ave-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 122500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2155,19 +1965,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1932 Grapeseed Avenue",
     "neighborhood": "Grapeseed",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1932-grapeseed-ave-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 125000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2184,19 +1984,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1920 Senora Way",
     "neighborhood": "Sandy Shores",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1920-senora-way-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 127500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2213,19 +2003,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "2000 Great Ocean Highway",
     "neighborhood": "Banham Canyon",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-2000-great-ocean-hwy-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 130000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2242,19 +2022,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "197 Route 68",
     "neighborhood": "Route 68",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-197-route-68-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 135000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2271,19 +2041,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "1200 Route 68",
     "neighborhood": "Route 68",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-1200-route-68-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 140000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2300,19 +2060,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "Innocence Boulevard",
     "neighborhood": "Strawberry",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-innocence-blvd-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 145000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2329,19 +2079,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "634 Boulevard Del Perro",
     "neighborhood": "Del Perro",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-634-blvd-del-perro-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 147500
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -2358,19 +2098,9 @@
     "subtype_display": "Stand-Alone Garage",
     "location": "0897 Mirror Park Boulevard",
     "neighborhood": "Mirror Park",
-    "capacity": 0,
+    "capacity": 2,
     "counts_as_garage": true,
-    "upgrades": [
-      {
-        "id": "stand-alone-garage-0897-mirror-park-blvd-spaces",
-        "display_name": "2-Car Garage",
-        "tier": null,
-        "capacity": 2,
-        "required_upgrade_id": null,
-        "notes": null,
-        "price": 150000
-      }
-    ],
+    "upgrades": [],
     "_sources": {
       "fandom": "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages"
@@ -5044,18 +4774,9 @@
     "subtype_display": "Arcade",
     "location": "Paleto Bay, Blaine County",
     "neighborhood": "Paleto Bay",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-pixel-petes-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-pixel-petes-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5109,18 +4830,9 @@
     "subtype_display": "Arcade",
     "location": "Grapeseed, Blaine County",
     "neighborhood": "Grapeseed",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-wonderama-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-wonderama-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5174,18 +4886,9 @@
     "subtype_display": "Arcade",
     "location": "Davis, Los Santos",
     "neighborhood": "Davis",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-the-warehouse-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-the-warehouse-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5239,18 +4942,9 @@
     "subtype_display": "Arcade",
     "location": "La Mesa, Los Santos",
     "neighborhood": "La Mesa",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-videogeddon-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-videogeddon-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5304,18 +4998,9 @@
     "subtype_display": "Arcade",
     "location": "Rockford Hills, Los Santos",
     "neighborhood": "Rockford Hills",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-insert-coin-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-insert-coin-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5369,18 +5054,9 @@
     "subtype_display": "Arcade",
     "location": "Vinewood Boulevard, Los Santos",
     "neighborhood": "Vinewood",
-    "capacity": 0,
+    "capacity": 10,
     "counts_as_garage": true,
     "upgrades": [
-      {
-        "id": "arcade-eight-bit-garage",
-        "display_name": "Arcade Garage",
-        "tier": null,
-        "capacity": 10,
-        "required_upgrade_id": null,
-        "notes": "Underground garage for Casino Heist prep vehicles ($215,000).",
-        "price": 215000
-      },
       {
         "id": "arcade-eight-bit-master-control-terminal",
         "display_name": "Master Control Terminal",
@@ -5762,7 +5438,6 @@
     "capacity": 10,
     "counts_as_garage": true,
     "price": 995000,
-    "image_path": "data/images/properties/arena-workshop.webp",
     "upgrades": [
       {
         "id": "arena-workshop-garage-b1",
@@ -5845,7 +5520,7 @@
       "gtabase": "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/arena-war-workshop"
     },
     "parent_building": null,
-    "image_path": null
+    "image_path": "data/images/properties/arena-workshop.webp"
   },
   {
     "id": "salvage-yard-murrieta-heights",

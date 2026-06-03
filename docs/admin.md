@@ -132,7 +132,14 @@ Each slice has its own spec + plan under `docs/superpowers/specs/` and
   image upload/remove, user credits/role/disable, ticket status/priority/note.
 - **Best-effort**: `logAdminActivity` (`lib/admin/activity.ts`) swallows its own
   errors, so logging can never break an action. Pure `lib/admin/activity-format.ts`
-  (`diffFields`, `actionLabel`, tested). Owner page with an action-type filter.
+  (`diffFields`, `actionLabel`, `formatActivityDetail`, `formatValue` — all tested).
+  Owner page with an action-type filter.
+- **Readable entries**: `target_label` resolves to a human identifier — the
+  affected user's **email** for user actions, `category (#shortid)` for ticket
+  actions — instead of a raw UUID. `formatActivityDetail` turns each `changes`
+  payload into plain lines (e.g. `Price: $1,000,000 → $1,100,000`, `user → editor`,
+  `+50 credits (new balance 150)`, `Account disabled`). Existing pre-fix rows keep
+  their old UUID labels (the log is append-only/immutable).
 
 ### Draft/publish (Slice 5c) — catalog visibility
 - Vehicles + properties get a `status`: **draft** / **published** / **archived**
@@ -166,8 +173,17 @@ Each slice has its own spec + plan under `docs/superpowers/specs/` and
   Clubhouse / Facility / Agency / Mansion garages, Vinewood Club Garage floors)
   into the property's base `capacity` and removed the 38 upgrade rows + 32 user
   ownership rows. Paid garage add-ons (e.g. Penthouse "Garage Access" $1.5M) kept.
-  ⚠️ The seed JSON still models these as upgrades — fix the seed builder before any
-  full re-import, or they'll return.
+- `0033_fold_garage_property_upgrades.sql` — follow-up to 0032 for *priced*
+  included garages 0032 couldn't catch: **Stand-Alone Garages** (the garage IS
+  the property — 27 rows, capacity 2/6/10) and **Arcades** (basement garage, 10).
+  Folds the garage capacity into base `capacity` and deletes the upgrade rows.
+  Extra step vs 0032: **re-points parked vehicles** (8 of them) off the deleted
+  upgrade to bare-property storage first (FK is `ON DELETE SET NULL`, but done
+  explicitly). The seed builders (`garages-seed.ts`, `arcades-seed.ts`) were
+  **fixed in the same change** so a re-import won't reintroduce them — the 0032
+  caveat no longer applies to these two subtypes. Genuinely optional paid garages
+  (CEO Office, Nightclub, Penthouse "Garage Access", Arena Workshop's two
+  purchasable floors) are untouched.
 
 **Code map:**
 - Roles/guard: `lib/admin/roles.ts`, `lib/admin/guard.ts`

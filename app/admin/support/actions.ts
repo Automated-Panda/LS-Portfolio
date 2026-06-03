@@ -13,6 +13,12 @@ import { logAdminActivity } from "@/lib/admin/activity";
 
 type Result = { ok: true } | { error: string };
 
+/** A readable, identifiable ticket label for the activity log, e.g. "Bug (#60c7e8b5)". */
+function ticketLabel(category: string | null | undefined, id: string): string {
+  const cat = category?.trim() || "Ticket";
+  return `${cat} (#${id.slice(0, 8)})`;
+}
+
 export async function setTicketStatus(id: string, status: string): Promise<Result> {
   await requireAdmin();
   if (!isValidStatus(status)) return { error: "Invalid status." };
@@ -34,7 +40,7 @@ export async function setTicketStatus(id: string, status: string): Promise<Resul
   await logAdminActivity({
     action: "ticket.status",
     targetId: id,
-    targetLabel: t.category,
+    targetLabel: ticketLabel(t.category, id),
     changes: { from: t.status, to: status },
   });
   // Best-effort alert — the status change already succeeded, so a notification
@@ -56,17 +62,18 @@ export async function setTicketPriority(id: string, priority: string): Promise<R
   const supabase = createAdminClient();
   const { data: before } = await supabase
     .from("support_tickets")
-    .select("priority")
+    .select("category, priority")
     .eq("id", id)
     .maybeSingle();
   const { error } = await supabase.from("support_tickets").update({ priority }).eq("id", id);
   if (error) return { error: error.message };
 
+  const b = before as { category?: string; priority?: string } | null;
   await logAdminActivity({
     action: "ticket.priority",
     targetId: id,
-    targetLabel: id,
-    changes: { from: (before as { priority?: string } | null)?.priority ?? null, to: priority },
+    targetLabel: ticketLabel(b?.category, id),
+    changes: { from: b?.priority ?? null, to: priority },
   });
 
   revalidatePath("/admin/support");
@@ -84,6 +91,11 @@ export async function addTicketNote(id: string, body: string): Promise<Result> {
   } = await userClient.auth.getUser();
 
   const supabase = createAdminClient();
+  const { data: ticket } = await supabase
+    .from("support_tickets")
+    .select("category")
+    .eq("id", id)
+    .maybeSingle();
   const { error } = await supabase.from("support_ticket_notes").insert({
     ticket_id: id,
     author_id: user?.id ?? null,
@@ -94,7 +106,7 @@ export async function addTicketNote(id: string, body: string): Promise<Result> {
   await logAdminActivity({
     action: "ticket.note",
     targetId: id,
-    targetLabel: id,
+    targetLabel: ticketLabel((ticket as { category?: string } | null)?.category, id),
     changes: { note: text },
   });
 

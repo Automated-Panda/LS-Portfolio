@@ -67,17 +67,12 @@ function buildArcade(loc: LocationSeed): Omit<Property, "image_path"> {
     subtype_display: "Arcade",
     location: loc.address,
     neighborhood: loc.neighborhood,
-    capacity: 0,
+    // The basement garage (10 vehicles) is included with the arcade, so its
+    // capacity lives on the base property, not a separate upgrade row.
+    // (Was modelled as a priced "Arcade Garage" upgrade; folded by migration 0033.)
+    capacity: 10,
     counts_as_garage: true,
     upgrades: [
-      {
-        id: `${loc.id}-garage`,
-        display_name: "Arcade Garage",
-        tier: null,
-        capacity: 10,
-        required_upgrade_id: null,
-        notes: "Underground garage for Casino Heist prep vehicles ($215,000).",
-      },
       {
         id: `${loc.id}-master-control-terminal`,
         display_name: "Master Control Terminal",

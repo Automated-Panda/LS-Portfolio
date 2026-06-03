@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-import { actionLabel } from "@/lib/admin/activity-format";
+import { actionLabel, formatActivityDetail } from "@/lib/admin/activity-format";
 
 export type ActivityEntry = {
   id: string;
@@ -18,28 +18,18 @@ function fmt(iso: string): string {
   return new Date(iso).toLocaleString();
 }
 
-function renderChanges(changes: unknown): React.ReactNode {
-  if (Array.isArray(changes)) {
-    return (
-      <ul className="mt-1 space-y-0.5">
-        {changes.map((c: { field: string; from: unknown; to: unknown }, i) => (
-          <li key={i} className="text-xs text-muted-foreground">
-            {c.field}: {String(c.from)} → {String(c.to)}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-  if (changes && typeof changes === "object" && Object.keys(changes).length > 0) {
-    return (
-      <p className="mt-1 text-xs text-muted-foreground">
-        {Object.entries(changes as Record<string, unknown>)
-          .map(([k, v]) => `${k}: ${String(v)}`)
-          .join(" · ")}
-      </p>
-    );
-  }
-  return null;
+function renderDetail(action: string, changes: unknown): React.ReactNode {
+  const lines = formatActivityDetail(action, changes);
+  if (lines.length === 0) return null;
+  return (
+    <ul className="mt-1 space-y-0.5">
+      {lines.map((line, i) => (
+        <li key={i} className="text-xs text-muted-foreground">
+          {line}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export function AdminActivityList({ entries }: { entries: ActivityEntry[] }) {
@@ -71,7 +61,7 @@ export function AdminActivityList({ entries }: { entries: ActivityEntry[] }) {
               {e.targetLabel && <span className="font-medium">{e.targetLabel}</span>}
               <span className="ml-auto text-xs text-muted-foreground">{fmt(e.createdAt)}</span>
             </div>
-            {renderChanges(e.changes)}
+            {renderDetail(e.action, e.changes)}
           </div>
         ))}
         {shown.length === 0 && (
