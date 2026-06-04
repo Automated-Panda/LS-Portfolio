@@ -261,6 +261,20 @@ export const STANDALONE_GARAGES: Omit<Property, "image_path">[] =
 // ECLIPSE BOULEVARD GARAGES
 // ---------------------------------------------------------------------------
 
+// 5 floors × 10 cars = 50 total. Like Vinewood, each floor is its own pickable
+// upgrade row so users can choose which floor a vehicle parks on. All five
+// floors come with the purchase (no separate buy), so they install together.
+const ECLIPSE_FLOOR_UPGRADES = Array.from({ length: 5 }, (_, i) => ({
+  id: `eclipse-blvd-garages-floor-${i + 1}`,
+  display_name: `Floor ${i + 1}`,
+  tier: i + 1,
+  capacity: 10,
+  required_upgrade_id: null,
+  notes: "Included with the garage.",
+  price: 0,
+  included_on_purchase: true,
+}));
+
 export const ECLIPSE_BLVD_GARAGES: Omit<Property, "image_path">[] = [
   {
     id: "eclipse-blvd-garages-all",
@@ -270,9 +284,9 @@ export const ECLIPSE_BLVD_GARAGES: Omit<Property, "image_path">[] = [
     subtype_display: "Eclipse Boulevard Garages",
     location: "Eclipse Boulevard",
     neighborhood: "West Vinewood",
-    capacity: 50,
+    capacity: 0, // all capacity lives on the floor upgrades (5 × 10)
     counts_as_garage: true,
-    upgrades: [],
+    upgrades: ECLIPSE_FLOOR_UPGRADES,
     _sources: {
       fandom: "https://gta.fandom.com/wiki/Garage_(GTA_Online)",
       gtabase: "https://www.gtabase.com/grand-theft-auto-v/guides/property-types/garages",
