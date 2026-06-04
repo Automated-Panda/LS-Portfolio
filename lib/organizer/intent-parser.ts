@@ -88,6 +88,35 @@ export type IntentParserResult =
   | { ok: false; clarification: Clarification }
   | { error: string };
 
+/**
+ * Build the Anthropic message list from the operative prompt + the prior
+ * clarification round-trip. The conversation MUST start with a user turn,
+ * alternate roles, and end with `prompt` (the latest user message) so the
+ * model treats it as the authoritative request. `clarifyingHistory` is
+ * therefore expected to be well-ordered (user-first, alternating) — see
+ * buildClarifyReply, which constructs it.
+ */
+export function buildMessages(
+  prompt: string,
+  clarifyingHistory?: Turn[],
+): Anthropic.MessageParam[] {
+  const messages: Anthropic.MessageParam[] = [];
+  for (const turn of clarifyingHistory ?? []) {
+    if (turn.role === "user") {
+      messages.push({ role: "user", content: turn.content });
+    } else {
+      // Assistant clarification — represent as plain assistant text describing
+      // the prior question (the suggestions aren't needed to re-establish context).
+      messages.push({
+        role: "assistant",
+        content: `Previously I asked: "${turn.clarification.question}"`,
+      });
+    }
+  }
+  messages.push({ role: "user", content: prompt });
+  return messages;
+}
+
 export async function parseIntent(
   input: IntentParserInput,
 ): Promise<IntentParserResult> {
@@ -96,22 +125,7 @@ export async function parseIntent(
 
   const client = new Anthropic({ apiKey });
 
-  const messages: Anthropic.MessageParam[] = [];
-
-  // Replay any prior clarification round-trip so the model has full context.
-  for (const turn of input.clarifyingHistory ?? []) {
-    if (turn.role === "user") {
-      messages.push({ role: "user", content: turn.content });
-    } else {
-      // Assistant clarification — represent as the previous tool_use response.
-      // Simpler: emit as plain assistant text describing the prior clarification.
-      messages.push({
-        role: "assistant",
-        content: `Previously I asked: "${turn.clarification.question}"`,
-      });
-    }
-  }
-  messages.push({ role: "user", content: input.prompt });
+  const messages = buildMessages(input.prompt, input.clarifyingHistory);
 
   let response: Anthropic.Message;
   try {

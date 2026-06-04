@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { buildClarifyReply } from "@/lib/organizer/clarify-turns";
 import type {
   Clarification,
   PlanStep,
@@ -101,19 +102,27 @@ export function OrganizeChat({ initialConversations, initialUndoablePlan, initia
   const submit = (promptText: string) => {
     // Refinement: a follow-up while a plan is pending refines that same plan.
     const refining = phase.kind === "plan-ready";
-    const priorTurns: Turn[] =
-      phase.kind === "clarifying"
-        ? [
-            ...phase.history,
-            { role: "assistant", clarification: phase.clarification },
-            { role: "user", content: promptText },
-          ]
-        : phase.kind === "plan-ready"
-          ? [...phase.priorTurns, { role: "user", content: promptText }]
-          : [];
 
-    const parsePrompt =
-      phase.kind === "clarifying" ? phase.originalPrompt : promptText;
+    // Answering a clarification: the answer becomes the operative prompt and the
+    // prior round-trip replays user-first. (Re-sending the original ambiguous
+    // prompt here is what made the organizer loop on "I don't see Apt 30".)
+    const clarifyReply =
+      phase.kind === "clarifying"
+        ? buildClarifyReply({
+            history: phase.history,
+            originalPrompt: phase.originalPrompt,
+            clarification: phase.clarification,
+            answer: promptText,
+          })
+        : null;
+
+    const priorTurns: Turn[] = clarifyReply
+      ? clarifyReply.priorTurns
+      : phase.kind === "plan-ready"
+        ? [...phase.priorTurns, { role: "user", content: promptText }]
+        : [];
+
+    const parsePrompt = clarifyReply ? clarifyReply.parsePrompt : promptText;
     const supersedePlanId = refining && phase.kind === "plan-ready" ? phase.planId : undefined;
 
     // Push the user's message into the transcript immediately.
