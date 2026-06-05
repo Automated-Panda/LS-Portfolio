@@ -387,7 +387,7 @@ function StorageArea({
           <button
             type="button"
             onClick={onAdd}
-            className="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-foreground/30 text-muted-foreground transition-colors hover:border-foreground/60 hover:bg-muted/30 hover:text-foreground"
+            className="flex h-full min-h-[140px] flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-foreground/30 text-muted-foreground transition-colors hover:border-foreground/60 hover:bg-muted/30 hover:text-foreground"
           >
             <Plus className="h-5 w-5" />
             <span className="text-xs">Add {noun}</span>
@@ -414,42 +414,45 @@ function VehicleSlotCard({
   const img = vehicleImageUrl(instance.image_path);
   const name = instance.nickname || instance.display_name;
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/60 bg-card ring-1 ring-emerald-500/20">
-      <FavouriteStar
-        instanceId={instance.id}
-        initial={instance.is_favourite}
-        size={15}
-        className="absolute left-1.5 top-1.5 z-10 bg-background/80 shadow-sm backdrop-blur-sm hover:bg-background"
-      />
-      {/* Hover action cluster */}
-      <div className="absolute right-1.5 top-1.5 z-10 flex items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
-        <button
-          type="button"
-          onClick={onManage}
-          disabled={isPending}
-          className="flex h-7 w-7 items-center justify-center rounded-md bg-background/90 text-muted-foreground shadow-sm hover:text-foreground disabled:opacity-50"
-          aria-label={`Manage ${name}`}
-          title="Manage nickname, tags, notes, storage"
-        >
-          <Settings2 className="h-3.5 w-3.5" />
-        </button>
-        <button
-          type="button"
-          onClick={onRemove}
-          disabled={isPending}
-          className="flex h-7 w-7 items-center justify-center rounded-md bg-background/90 text-xs text-muted-foreground shadow-sm hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
-          aria-label={`Remove ${name} from this slot`}
-          title="Remove from this slot"
-        >
-          ✕
-        </button>
+    <div className="group relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card ring-2 ring-emerald-500/30 hover:border-foreground/40">
+      {/* Top-right cluster: star always visible; manage + unassign on hover.
+          Mirrors the /my-vehicles card (class badge top-left, star top-right). */}
+      <div className="absolute right-1.5 top-1.5 z-10 flex items-center gap-0.5">
+        <div className="flex items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
+          <button
+            type="button"
+            onClick={onManage}
+            disabled={isPending}
+            className="flex h-7 w-7 items-center justify-center rounded-md bg-background/90 text-muted-foreground shadow-sm hover:text-foreground disabled:opacity-50"
+            aria-label={`Manage ${name}`}
+            title="Manage nickname, tags, notes, storage"
+          >
+            <Settings2 className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={onRemove}
+            disabled={isPending}
+            className="flex h-7 w-7 items-center justify-center rounded-md bg-background/90 text-xs text-muted-foreground shadow-sm hover:bg-red-500/10 hover:text-red-300 disabled:opacity-50"
+            aria-label={`Remove ${name} from this slot`}
+            title="Remove from this slot"
+          >
+            ✕
+          </button>
+        </div>
+        <FavouriteStar
+          instanceId={instance.id}
+          initial={instance.is_favourite}
+          size={16}
+          className="bg-background/80 shadow-sm backdrop-blur-sm hover:bg-background"
+        />
       </div>
       <button
         type="button"
         onClick={onManage}
         className="flex flex-col text-left"
       >
-        <div className="relative aspect-[4/3] w-full bg-muted">
+        <div className="relative aspect-video w-full bg-muted">
           {img && (
             <Image
               src={img}
@@ -460,18 +463,28 @@ function VehicleSlotCard({
               sizes="20vw"
             />
           )}
+          <span className="absolute left-2 top-2 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] uppercase text-white">
+            {instance.class}
+          </span>
         </div>
-        <div className="flex flex-col gap-1 p-2.5">
+        <div className="flex flex-col gap-1 p-3">
           <p className="truncate text-sm font-medium">{name}</p>
-          {instance.nickname && (
-            <p className="truncate text-[10px] text-muted-foreground">
-              {instance.display_name}
-            </p>
-          )}
-          <div className="flex flex-wrap gap-1">
-            {instance.tag_ids.slice(0, 2).map((id) => (
+          <p className="truncate text-xs text-muted-foreground">
+            {instance.nickname ? instance.display_name : instance.manufacturer_display}
+          </p>
+          <div className="mt-1 flex flex-wrap gap-1">
+            {instance.tag_ids.slice(0, 3).map((id) => (
               <Badge key={id} variant="outline" className="text-[10px]">
                 {tagLookup[id] ?? id}
+              </Badge>
+            ))}
+            {instance.custom_tags.slice(0, 3).map((t) => (
+              <Badge
+                key={t}
+                variant="outline"
+                className="border-amber-500/40 text-amber-300 text-[10px]"
+              >
+                {t}
               </Badge>
             ))}
           </div>
