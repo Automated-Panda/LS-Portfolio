@@ -21,6 +21,8 @@ import type {
 } from "@/lib/properties";
 import { formatPropertyType } from "@/lib/properties";
 import { cn } from "@/lib/utils";
+import { PriceFilter } from "@/components/filters/price-filter";
+import { SortControl } from "@/components/filters/sort-control";
 
 type Props = {
   filters: PropertyFilterOptions;
@@ -97,7 +99,14 @@ export function FilterBar({
     update({ type: next || null, ...(subtypeToClear ? { subtype: null } : {}) });
   };
 
-  const hasAny = q || type || subtype || nbhd;
+  const hasAny =
+    q ||
+    type ||
+    subtype ||
+    nbhd ||
+    searchParams.get("pmin") ||
+    searchParams.get("pmax") ||
+    searchParams.get("sort");
 
   return (
     <div className="space-y-3">
@@ -212,6 +221,10 @@ export function FilterBar({
             </SelectContent>
           </Select>
         )}
+
+        <PriceFilter />
+
+        <SortControl />
 
         {hasAny && (
           <Button

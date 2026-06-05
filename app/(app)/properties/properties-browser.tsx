@@ -8,6 +8,7 @@ import type {
   PropertySummary,
 } from "@/lib/properties";
 import { propertyImageUrl } from "@/lib/properties";
+import { priceMatches, priceParam, sortByParam } from "@/lib/browse-filters";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { PropertyScope } from "@/lib/queries/properties";
 import { TowerUnitsDialog } from "@/components/portfolio/tower-units-dialog";
@@ -72,6 +73,9 @@ export function PropertiesBrowser({
   const type = searchParams.get("type") ?? "";
   const subtype = searchParams.get("subtype") ?? "";
   const nbhd = searchParams.get("nbhd") ?? "";
+  const pmin = priceParam(searchParams.get("pmin"));
+  const pmax = priceParam(searchParams.get("pmax"));
+  const sort = searchParams.get("sort") ?? "default";
 
   const ownedSet = useMemo(
     () => new Set(ownedPropertyIds),
@@ -117,9 +121,15 @@ export function PropertiesBrowser({
       if (type && p.property_type !== type) return false;
       if (subtype && p.subtype !== subtype) return false;
       if (nbhd && p.neighborhood !== nbhd) return false;
+      if (!priceMatches(p.price, pmin, pmax)) return false;
       return true;
     });
-  }, [properties, q, type, subtype, nbhd]);
+  }, [properties, q, type, subtype, nbhd, pmin, pmax]);
+
+  const sortedFiltered = useMemo(
+    () => sortByParam(filtered, sort),
+    [filtered, sort],
+  );
 
   const openTower = openTowerId
     ? properties.find((p) => p.id === openTowerId) ?? null
@@ -151,7 +161,7 @@ export function PropertiesBrowser({
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {filtered.map((p) => {
+          {sortedFiltered.map((p) => {
             const units = unitsByTower.get(p.id);
             const isTower = units !== undefined && units.length > 0;
             return (

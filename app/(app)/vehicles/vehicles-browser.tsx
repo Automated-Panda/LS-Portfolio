@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { AssetCategory, FilterOptions, VehicleSummary } from "@/lib/vehicles";
 import { assetCategoryOf, normalizeSearch, vehicleImageUrl } from "@/lib/vehicles";
+import { priceMatches, priceParam, sortByParam } from "@/lib/browse-filters";
 
 import { FilterBar } from "./filter-bar";
 import { VehicleCard } from "./vehicle-card";
@@ -40,6 +41,9 @@ export function VehiclesBrowser({
   const avail = searchParams.get("avail") ?? "";
   const vendor = searchParams.get("vendor") ?? "";
   const tagParam = searchParams.get("tags") ?? "";
+  const pmin = priceParam(searchParams.get("pmin"));
+  const pmax = priceParam(searchParams.get("pmax"));
+  const sort = searchParams.get("sort") ?? "default";
 
   const ownedSet = useMemo(
     () => new Set(ownedVehicleIds),
@@ -81,6 +85,7 @@ export function VehiclesBrowser({
       if (vendor && !v.vendors.includes(vendor as (typeof v.vendors)[number])) return false;
       if (cls && v.class !== cls) return false;
       if (mfr && v.manufacturer_id !== mfr) return false;
+      if (!priceMatches(v.price, pmin, pmax)) return false;
       if (
         selectedTags.length > 0 &&
         !selectedTags.every((t) => v.tag_ids.includes(t))
@@ -89,7 +94,9 @@ export function VehiclesBrowser({
       }
       return true;
     });
-  }, [vehicles, q, cat, avail, vendor, cls, mfr, tagParam]);
+  }, [vehicles, q, cat, avail, vendor, cls, mfr, tagParam, pmin, pmax]);
+
+  const sorted = useMemo(() => sortByParam(filtered, sort), [filtered, sort]);
 
   const isOwnedMode = mode === "owned";
   const title = isOwnedMode ? "My Vehicles" : "All Vehicles";
@@ -118,7 +125,7 @@ export function VehiclesBrowser({
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-          {filtered.map((v) => (
+          {sorted.map((v) => (
             <VehicleCard
               key={v.id}
               vehicle={v}

@@ -49,6 +49,8 @@ const AVAILABILITY_OPTIONS: AvailabilityStatus[] = [
   "seasonal",
 ];
 import { cn } from "@/lib/utils";
+import { PriceFilter } from "@/components/filters/price-filter";
+import { SortControl } from "@/components/filters/sort-control";
 
 export function FilterBar({ filters }: { filters: FilterOptions }) {
   const router = useRouter();
@@ -105,7 +107,17 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
   };
 
   const selectedMfr = filters.manufacturers.find((m) => m.id === mfr);
-  const hasAny = q || cls || mfr || cat || avail || vendor || selectedTags.length > 0;
+  const hasAny =
+    q ||
+    cls ||
+    mfr ||
+    cat ||
+    avail ||
+    vendor ||
+    selectedTags.length > 0 ||
+    searchParams.get("pmin") ||
+    searchParams.get("pmax") ||
+    searchParams.get("sort");
 
   // Classes available in the currently-selected category — switching to Air
   // narrows the Class dropdown to Plane/Helicopter, etc.
@@ -266,6 +278,10 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
             </Command>
           </PopoverContent>
         </Popover>
+
+        <PriceFilter />
+
+        <SortControl />
 
         {hasAny && (
           <Button
