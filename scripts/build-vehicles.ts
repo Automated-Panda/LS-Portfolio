@@ -60,6 +60,14 @@ const MANUFACTURER_DISPLAY_OVERRIDES: Record<string, string> = {
   dewbauch: "Dewbauchee",
 };
 
+// Per-vehicle display-name corrections, keyed by vehicle id. For cars whose
+// DurtyFree + Fandom names don't match the in-game name. Survives rebuilds.
+const VEHICLE_DISPLAY_OVERRIDES: Record<string, string> = {
+  // feltzer3 IS the Benefactor Stirling GT; both sources mislabel it "Feltzer
+  // Classic". Pin the correct in-game name.
+  feltzer3: "Stirling GT",
+};
+
 interface DurtyFreeName {
   English?: string;
   Name?: string;
@@ -177,7 +185,7 @@ async function main(): Promise<void> {
     vehicles.push({
       id,
       internal_name: v.Name,
-      display_name: fandomData.display_name || displayName,
+      display_name: VEHICLE_DISPLAY_OVERRIDES[id] ?? (fandomData.display_name || displayName),
       manufacturer_id: manufacturerId,
       class: v.Class || "Unknown",
       release_update: null,

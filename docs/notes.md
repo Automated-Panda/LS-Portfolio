@@ -2,6 +2,12 @@
 
 Running working checklist of what's next. Tick items off as we go. Roughly ordered by priority but feel free to jump around.
 
+> ⚠️ **ACTION NEEDED — James: add 2 vehicle images (2026-06-05).** The catalog Sanchez fix is done but two photos are still missing:
+> - **Plain Sanchez** (no livery, street-only) → drop into `docs/temp-images/sanchez.png` (currently still showing the livery photo)
+> - **Sanchez 2** ($8k buyable) → drop into `docs/temp-images/sanchez2.png` (no image yet)
+>
+> Then ping me and I'll run `normalize-temp-images` + `images:publish` + push. (Same in-game look, so one photo can serve both if easier.)
+
 ---
 
 ## ✅ Session — 2026-06-05 (Favourites · Duplicates · Property page)

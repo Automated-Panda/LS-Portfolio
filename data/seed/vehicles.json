@@ -5535,7 +5535,7 @@
   {
     "id": "feltzer3",
     "internal_name": "feltzer3",
-    "display_name": "Feltzer Classic",
+    "display_name": "Stirling GT",
     "manufacturer_id": "benefactor",
     "class": "SPORT_CLASSIC",
     "release_update": null,
@@ -5545,7 +5545,7 @@
     "image_path": "data/images/vehicles/feltzer3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
-      "fandom": "https://gta.fandom.com/wiki/Feltzer_Classic"
+      "fandom": "https://gta.fandom.com/wiki/Stirling_GT"
     }
   },
   {
@@ -12165,16 +12165,56 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [
-      "imani_tech"
-    ],
+    "tags": [],
     "image_path": "data/images/vehicles/sanchez.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Sanchez"
+    },
+    "price": null,
+    "availability": "available",
+    "vendor": null,
+    "vendors": []
+  },
+  {
+    "id": "sanchez2",
+    "internal_name": "sanchez2",
+    "display_name": "Sanchez 2",
+    "manufacturer_id": "maibatsu",
+    "class": "MOTORCYCLE",
+    "release_update": null,
+    "is_garage_storable": true,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/sanchez2.webp",
+    "_sources": {
+      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
+      "fandom": "https://gta.fandom.com/wiki/Sanchez"
+    },
+    "price": 8000,
+    "availability": "available",
+    "vendor": "southern_san_andreas",
+    "vendors": [
+      "southern_san_andreas"
+    ]
+  },
+  {
+    "id": "sanchez-livery",
+    "internal_name": "sanchez_livery",
+    "display_name": "Sanchez (Livery)",
+    "manufacturer_id": "maibatsu",
+    "class": "MOTORCYCLE",
+    "release_update": null,
+    "is_garage_storable": true,
+    "variant_of": null,
+    "tags": [],
+    "image_path": "data/images/vehicles/sanchez-livery.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sanchez_(livery)"
     },
-    "price": 8000,
-    "availability": "discontinued",
+    "price": 7000,
+    "availability": "available",
     "vendor": "southern_san_andreas",
     "vendors": [
       "southern_san_andreas"
