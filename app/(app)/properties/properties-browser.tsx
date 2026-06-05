@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 
 import type {
@@ -9,9 +9,7 @@ import type {
 } from "@/lib/properties";
 import { propertyImageUrl } from "@/lib/properties";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
-import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { PropertyScope } from "@/lib/queries/properties";
-import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import { TowerUnitsDialog } from "@/components/portfolio/tower-units-dialog";
 
 import { FilterBar } from "./filter-bar";
@@ -22,10 +20,9 @@ type Props = {
   properties: PropertySummary[];
   ownedPropertyIds: string[];
   filters: PropertyFilterOptions;
-  /** Owned detail + instances power the in-place management drawer so the
-   * Settings icon on an owned card doesn't have to redirect to /my-properties. */
+  /** Owned detail lets the Settings icon / owned-card click resolve the owned
+   * id and navigate to the asset's dedicated detail page. */
   ownedProperties?: OwnedPropertyDetail[];
-  instances?: OwnedVehicleInstance[];
   selectionMode?: "browse" | "multi";
   selectedIds?: string[];
   onToggleSelection?: (propertyId: string) => void;
@@ -50,26 +47,26 @@ export function PropertiesBrowser({
   ownedPropertyIds,
   filters,
   ownedProperties,
-  instances,
   selectionMode,
   selectedIds,
   onToggleSelection,
 }: Props) {
   const copy = COPY[scope];
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [openTowerId, setOpenTowerId] = useState<string | null>(null);
-  // Catalogue property_id of the owned property whose management drawer is
-  // open. Only enabled when ownedProperties + instances are supplied
-  // (the /properties + /businesses pages) — selection-mode flows like the
-  // onboarding wizard pass neither and keep the old non-drawer behaviour.
-  const [openOwnedCatalogueId, setOpenOwnedCatalogueId] = useState<
-    string | null
-  >(null);
-  const canOpenDrawerInPlace =
-    !!ownedProperties && !!instances && selectionMode !== "multi";
-  const openOwnedDetail = openOwnedCatalogueId
-    ? ownedProperties?.find((p) => p.property_id === openOwnedCatalogueId) ?? null
-    : null;
+  // Owned-card management navigates to the asset's dedicated detail page
+  // (/my-properties/[id] or /my-businesses/[id]) — the card grid where you see
+  // & add vehicles. Only enabled when ownedProperties is supplied and we're not
+  // in multi-select (onboarding picker) mode.
+  const canManageOwned = !!ownedProperties && selectionMode !== "multi";
+
+  const handleOpenManagement = (catalogueId: string) => {
+    const owned = ownedProperties?.find((p) => p.property_id === catalogueId);
+    if (!owned) return;
+    const base = scope === "businesses" ? "/my-businesses" : "/my-properties";
+    router.push(`${base}/${owned.id}`);
+  };
 
   const q = (searchParams.get("q") ?? "").toLowerCase().trim();
   const type = searchParams.get("type") ?? "";
@@ -167,9 +164,7 @@ export function PropertiesBrowser({
                 selected={selectedSet.has(p.id)}
                 onSelect={onToggleSelection}
                 onOpenManagement={
-                  canOpenDrawerInPlace
-                    ? (id) => setOpenOwnedCatalogueId(id)
-                    : undefined
+                  canManageOwned ? handleOpenManagement : undefined
                 }
                 tower={
                   isTower
@@ -200,15 +195,6 @@ export function PropertiesBrowser({
         />
       )}
 
-      {openOwnedDetail && ownedProperties && instances && (
-        <PropertyDrawer
-          property={openOwnedDetail}
-          allOwnedProperties={ownedProperties}
-          instances={instances}
-          open={true}
-          onOpenChange={(o) => !o && setOpenOwnedCatalogueId(null)}
-        />
-      )}
     </div>
   );
 }

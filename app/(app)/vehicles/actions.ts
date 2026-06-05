@@ -55,7 +55,7 @@ export async function getOwnedInstancesForVehicle(
   const { data, error } = await supabase
     .from("user_owned_vehicles")
     .select(`
-      id, vehicle_id, nickname, notes, custom_tags,
+      id, vehicle_id, nickname, notes, custom_tags, is_favourite,
       stored_in_property_id, assigned_upgrade_id, sub_slot,
       vehicles!inner (
         display_name, class, image_path, manufacturer_id, price,
@@ -102,6 +102,7 @@ export async function getOwnedInstancesForVehicle(
       nickname: row.nickname,
       notes: row.notes,
       custom_tags: row.custom_tags ?? [],
+      is_favourite: row.is_favourite ?? false,
       tag_ids: (v?.vehicle_tag_links ?? []).map(
         (l: { tag_id: string }) => l.tag_id,
       ),
@@ -117,6 +118,28 @@ export async function getOwnedInstancesForVehicle(
         : null,
     };
   });
+}
+
+/** Toggle the ⭐ favourite flag on a specific owned-vehicle instance. */
+export async function setFavourite(
+  instanceId: string,
+  isFavourite: boolean,
+): Promise<{ ok: true } | { error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not signed in." };
+
+  const { error } = await supabase
+    .from("user_owned_vehicles")
+    .update({ is_favourite: isFavourite })
+    .eq("id", instanceId)
+    .eq("user_id", user.id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/", "layout");
+  return { ok: true };
 }
 
 /** Remove a specific user_owned_vehicles row by id. Used by the `-` picker. */

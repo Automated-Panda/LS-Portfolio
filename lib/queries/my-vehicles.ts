@@ -13,6 +13,7 @@ export type OwnedVehicleInstance = {
   nickname: string | null;
   notes: string | null;
   custom_tags: string[];
+  is_favourite: boolean;                 // ⭐ user-marked favourite
   tag_ids: string[];                     // system tags from vehicle_tag_links
   storage: {
     owned_property_id: string;
@@ -32,7 +33,7 @@ export async function getOwnedVehicleInstances(
   const { data, error } = await supabase
     .from("user_owned_vehicles")
     .select(`
-      id, vehicle_id, nickname, notes, custom_tags,
+      id, vehicle_id, nickname, notes, custom_tags, is_favourite,
       stored_in_property_id, assigned_upgrade_id, sub_slot,
       vehicles!inner (
         display_name, class, image_path, manufacturer_id, price,
@@ -79,6 +80,7 @@ export async function getOwnedVehicleInstances(
       nickname: row.nickname,
       notes: row.notes,
       custom_tags: row.custom_tags ?? [],
+      is_favourite: row.is_favourite ?? false,
       tag_ids: (v?.vehicle_tag_links ?? []).map(
         (l: { tag_id: string }) => l.tag_id,
       ),

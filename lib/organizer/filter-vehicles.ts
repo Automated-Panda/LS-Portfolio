@@ -21,8 +21,13 @@ export function vehicleMatches(
     (filter.tags?.length ?? 0) > 0 ||
     (filter.custom_tags?.length ?? 0) > 0 ||
     (filter.classes?.length ?? 0) > 0 ||
-    (filter.manufacturers?.length ?? 0) > 0;
+    (filter.manufacturers?.length ?? 0) > 0 ||
+    filter.favourites === true;
   if (!hasAny) return false;
+
+  // Favourites is a boolean constraint (AND-across like the rest): when set to
+  // true, the vehicle must be ⭐ favourited. false/undefined = no constraint.
+  if (filter.favourites === true && !vehicle.is_favourite) return false;
 
   if (filter.tags && filter.tags.length > 0) {
     const hasMatch = filter.tags.some((t) => vehicle.tag_ids.includes(t));

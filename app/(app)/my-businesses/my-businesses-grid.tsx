@@ -1,12 +1,11 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
-import { PropertyDrawer } from "@/components/portfolio/property-drawer";
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
-import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { propertyImageUrl } from "@/lib/properties";
 import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
 
@@ -14,22 +13,20 @@ const STORAGE_ICON = { land: "🚗", air: "✈️", sea: "🛥️" } as const;
 
 type Props = {
   businesses: OwnedPropertyDetail[];
-  instances: OwnedVehicleInstance[];
 };
 
-export function MyBusinessesGrid({ businesses, instances }: Props) {
+export function MyBusinessesGrid({ businesses }: Props) {
+  const router = useRouter();
   const searchParams = useSearchParams();
-  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  // Deep-link: /my-businesses?open=<catalogue property_id> auto-opens.
+  // Deep-link: /my-businesses?open=<catalogue property_id> redirects to the
+  // business's dedicated page.
   useEffect(() => {
     const focus = searchParams.get("open");
     if (!focus) return;
     const match = businesses.find((b) => b.property_id === focus);
-    if (match) setSelectedId(match.id);
-  }, [searchParams, businesses]);
-
-  const selected = businesses.find((b) => b.id === selectedId);
+    if (match) router.replace(`/my-businesses/${match.id}`);
+  }, [searchParams, businesses, router]);
 
   return (
     <>
@@ -46,10 +43,9 @@ export function MyBusinessesGrid({ businesses, instances }: Props) {
             .reduce((s, u) => s + (u.price ?? 0), 0);
           const totalCost = (b.price ?? 0) + installedUpgradeCost;
           return (
-            <button
+            <Link
               key={b.id}
-              type="button"
-              onClick={() => setSelectedId(b.id)}
+              href={`/my-businesses/${b.id}`}
               className="flex flex-col overflow-hidden rounded-lg border bg-card text-left hover:border-foreground/40"
             >
               <div className="relative aspect-video w-full bg-muted">
@@ -85,19 +81,10 @@ export function MyBusinessesGrid({ businesses, instances }: Props) {
                   </p>
                 )}
               </div>
-            </button>
+            </Link>
           );
         })}
       </div>
-      {selected && (
-        <PropertyDrawer
-          property={selected}
-          allOwnedProperties={businesses}
-          instances={instances}
-          open={true}
-          onOpenChange={(o) => !o && setSelectedId(null)}
-        />
-      )}
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
+import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
@@ -33,12 +34,22 @@ export function MyVehiclesGrid({
             ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
             : null;
           return (
-            <button
+            <div
               key={inst.id}
-              type="button"
-              onClick={() => setSelectedId(inst.id)}
-              className="flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card text-left ring-2 ring-emerald-500/30 hover:border-foreground/40"
+              className="relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card ring-2 ring-emerald-500/30 hover:border-foreground/40"
             >
+              {/* Star sits as a sibling overlay so we never nest a button in a button. */}
+              <FavouriteStar
+                instanceId={inst.id}
+                initial={inst.is_favourite}
+                size={16}
+                className="absolute right-1.5 top-1.5 z-10 bg-background/80 shadow-sm backdrop-blur-sm hover:bg-background"
+              />
+              <button
+                type="button"
+                onClick={() => setSelectedId(inst.id)}
+                className="flex flex-col overflow-hidden text-left"
+              >
               <div className="relative aspect-video w-full bg-muted">
                 {img && (
                   <Image src={img} alt={inst.display_name} fill className="object-contain" loading="lazy" sizes="20vw" />
@@ -70,7 +81,8 @@ export function MyVehiclesGrid({
                   ))}
                 </div>
               </div>
-            </button>
+              </button>
+            </div>
           );
         })}
       </div>

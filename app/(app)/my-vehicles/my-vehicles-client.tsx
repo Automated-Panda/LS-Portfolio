@@ -19,6 +19,7 @@ type Props = {
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
   initialUnassignedOnly: boolean;
+  initialDuplicatesOnly: boolean;
 };
 
 const VIEW_KEY = "my-vehicles:view";
@@ -28,6 +29,7 @@ export function MyVehiclesClient({
   ownedProperties,
   tagLookup,
   initialUnassignedOnly,
+  initialDuplicatesOnly,
 }: Props) {
   const router = useRouter();
 
@@ -40,7 +42,30 @@ export function MyVehiclesClient({
   const [search, setSearch] = useState("");
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
+  const [favouritesOnly, setFavouritesOnly] = useState(false);
+  const [duplicatesOnly, setDuplicatesOnly] = useState(initialDuplicatesOnly);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  // vehicle_ids the user owns 2+ of — the "duplicates" set.
+  const duplicateVehicleIds = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const i of instances) {
+      counts.set(i.vehicle_id, (counts.get(i.vehicle_id) ?? 0) + 1);
+    }
+    return new Set(
+      Array.from(counts.entries())
+        .filter(([, n]) => n >= 2)
+        .map(([id]) => id),
+    );
+  }, [instances]);
+  const favouritesCount = useMemo(
+    () => instances.filter((i) => i.is_favourite).length,
+    [instances],
+  );
+  const duplicatesCount = useMemo(
+    () => instances.filter((i) => duplicateVehicleIds.has(i.vehicle_id)).length,
+    [instances, duplicateVehicleIds],
+  );
 
   // Location filter tree: garage-capable properties (or any with a stored
   // vehicle), each with the occupied levels within it (shown only when its
@@ -119,8 +144,27 @@ export function MyVehiclesClient({
     });
   }, [unassignedOnly, router]);
 
+  // Sync ?duplicates=1 with state (mirrors the unassigned sync above) so the
+  // dashboard stat can deep-link straight into the filtered view.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const had = params.get("duplicates") === "1";
+    if (had === duplicatesOnly) return;
+    if (duplicatesOnly) {
+      params.set("duplicates", "1");
+    } else {
+      params.delete("duplicates");
+    }
+    const qs = params.toString();
+    router.replace(qs ? `/my-vehicles?${qs}` : "/my-vehicles", {
+      scroll: false,
+    });
+  }, [duplicatesOnly, router]);
+
   const filtered = instances.filter((i) => {
     if (unassignedOnly && i.storage) return false;
+    if (favouritesOnly && !i.is_favourite) return false;
+    if (duplicatesOnly && !duplicateVehicleIds.has(i.vehicle_id)) return false;
     if (selectedLocations.length > 0) {
       if (!i.storage) return false;
       const pid = i.storage.owned_property_id;
@@ -169,6 +213,26 @@ export function MyVehiclesClient({
             selectedTags={selectedTags}
             onChange={setSelectedTags}
           />
+          {favouritesCount > 0 && (
+            <Button
+              size="sm"
+              variant={favouritesOnly ? "default" : "outline"}
+              onClick={() => setFavouritesOnly((v) => !v)}
+              aria-pressed={favouritesOnly}
+            >
+              ⭐ Favourites ({favouritesCount})
+            </Button>
+          )}
+          {duplicatesCount > 0 && (
+            <Button
+              size="sm"
+              variant={duplicatesOnly ? "default" : "outline"}
+              onClick={() => setDuplicatesOnly((v) => !v)}
+              aria-pressed={duplicatesOnly}
+            >
+              👯 Duplicates ({duplicatesCount})
+            </Button>
+          )}
           <div className="flex rounded-md border">
             <Button
               size="sm"

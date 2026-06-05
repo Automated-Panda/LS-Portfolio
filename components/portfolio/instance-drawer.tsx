@@ -28,6 +28,7 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
 
 import { CustomTagsInput } from "./custom-tags-input";
+import { FavouriteStar } from "./favourite-star";
 
 type Props = {
   instance: OwnedVehicleInstance;
@@ -207,7 +208,15 @@ export function InstanceDrawer({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="w-full overflow-y-auto sm:max-w-md">
         <SheetHeader>
-          <SheetTitle>{nickname || instance.display_name}</SheetTitle>
+          <SheetTitle className="flex items-center gap-2">
+            <FavouriteStar
+              instanceId={instance.id}
+              initial={instance.is_favourite}
+              size={20}
+              className="-ml-1"
+            />
+            <span>{nickname || instance.display_name}</span>
+          </SheetTitle>
           <SheetDescription>
             {instance.manufacturer_display} · {instance.class}
             {instance.price !== null && (

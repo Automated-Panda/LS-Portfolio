@@ -19,6 +19,7 @@ You MUST:
 - Only use property_id, upgrade_id, tag id, custom_tag, class, and manufacturer values that appear in the USER PORTFOLIO block below.
 - If a request is ambiguous (target unclear, multiple matches, etc.), provide a clarification with 2-4 short suggestions.
 - For compound requests like "put X in A and Y in B", emit multiple criteria in one intent.
+- For "favourite"/"favourites"/"starred"/"my favorites" cars, set filter.favourites = true (combine with other fields as needed, e.g. favourite Supers).
 - "leave the rest" or no mention of other cars → unmatched_handling = "leave".
 - "and consolidate the rest" or similar → unmatched_handling = "consolidate-to-target".
 
@@ -47,6 +48,7 @@ const PARSE_INTENT_TOOL: Anthropic.Tool = {
                     custom_tags: { type: "array", items: { type: "string" } },
                     classes: { type: "array", items: { type: "string" } },
                     manufacturers: { type: "array", items: { type: "string" } },
+                    favourites: { type: "boolean" },
                   },
                 },
                 target: {

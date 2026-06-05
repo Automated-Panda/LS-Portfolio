@@ -19,6 +19,7 @@ type Step = "picker" | "hub";
 type Props = {
   ownedProperties: OwnedPropertyDetail[];
   ownedInstances: OwnedVehicleInstance[];
+  tagLookup: Record<string, string>;
   // Combined catalogue (both scopes) for the picker step
   pickerData: {
     properties: PropertySummary[];
@@ -30,6 +31,7 @@ type Props = {
 export function OnboardingWizard({
   ownedProperties,
   ownedInstances,
+  tagLookup,
   pickerData,
 }: Props) {
   const router = useRouter();
@@ -100,7 +102,11 @@ export function OnboardingWizard({
           Click each property to mark installed upgrades and add cars. Finish whenever.
         </p>
       </div>
-      <PropertyHubList properties={ownedProperties} instances={ownedInstances} />
+      <PropertyHubList
+        properties={ownedProperties}
+        instances={ownedInstances}
+        tagLookup={tagLookup}
+      />
       <div className="flex justify-end gap-2 border-t pt-4">
         <Button variant="outline" onClick={() => router.push("/dashboard")}>
           Finish later

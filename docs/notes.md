@@ -4,6 +4,58 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## ✅ Session — 2026-06-05 (Favourites · Duplicates · Property page)
+
+Shipped (migration 0035): boolean favourites, a duplicates view, and a dedicated detail page for **both properties and businesses** + the onboarding wizard — the old right-side `PropertyDrawer` is fully deleted.
+
+### ⭐ Favourite cars — DONE (boolean model)
+- [x] Migration `0035_vehicle_favourites.sql`: `user_owned_vehicles.is_favourite boolean not null default false` (applied to hosted GT Vault DB). Threaded through `OwnedVehicleInstance` + both instance queries.
+- [x] Reusable `FavouriteStar` component (optimistic flip + rollback) + `setFavourite(instanceId, bool)` action. ⭐ on `/vehicles` owned popover rows, InstanceDrawer header, and `/my-vehicles` cards. "⭐ Favourites (N)" filter chip on `/my-vehicles`.
+- [x] **Organizer wiring (the goal):** `favourites?: boolean` on `VehicleFilter`; ★ marker + note in `portfolio-context.ts`; `favourites` in `parse_intent` schema + behaviour note; honoured in `filter-vehicles.ts` (AND-across). New `filter-vehicles.test.ts` (4 cases). "organize my favourite cars into my mansions" now works.
+
+### 👯 Duplicates — DONE
+- [x] "👯 Duplicates (N)" chip on `/my-vehicles` — instances where you own 2+ of the same `vehicle_id` (client-side derive). URL-synced `?duplicates=1` (mirrors `?unassigned=1`).
+- [x] Dashboard **NeedsAttention** stat "N duplicate vehicles (own 2+ of)" deep-linking to `/my-vehicles?duplicates=1`.
+
+### 🏠 Dedicated detail page — DONE (PropertyDrawer fully deleted)
+- [x] Shared **`components/portfolio/property-detail.tsx`** (`PropertyDetail`): header + **sections per storage area** (base + each installed storage upgrade / garage floor), each a **card grid** + an "+ Add" card → existing `VehiclePickerModal`. Cards carry ⭐ + manage (`InstanceDrawer`) + unassign. Upgrades checklist via new `usePropertyUpgrades` hook.
+- [x] Routes `/my-properties/[id]` + `/my-businesses/[id]` (keyed by owned-property id). Owned-card clicks on `/my-properties`, `/my-businesses`, and the `/properties` + `/businesses` browse grids navigate here; `?open=<catalogueId>` redirects through the list grids.
+- [x] **Onboarding wizard** renders `PropertyDetail` inline in a `Dialog` (`embedded` mode — no nav, `onRemoved` closes). `tagLookup` threaded through `OnboardingWizard`.
+- [x] **`components/portfolio/property-drawer.tsx` DELETED** — businesses + onboarding migrated to the shared component, so the old right-side drawer is fully retired. (`PropertyDetail` props: `embedded?`, `backHref?`, `onRemoved?`.)
+- [x] Verified: `tsc` clean, 104 tests green, `next build` compiles `/my-properties/[id]` + `/my-businesses/[id]` with no RSC errors.
+
+---
+
+## 💰 Session — 2026-06-01 (Monetization — credits + Stripe, end-to-end)
+
+Shipped the **entire credit monetization system** in one session: pricing locked → Stripe set up → 3 plans built, merged to `main`, and pushed. Full purchase loop verified live with the Stripe CLI. Specs/plans in `docs/superpowers/`.
+
+### 💬 Pricing strategy — LOCKED
+- [x] Settled on **credit-based AI usage + a monthly subscription** (dropped the flat one-time unlock — the future open-ended GTA knowledge assistant is Sonnet-priced & unbounded, so credits future-proof cost + give recurring revenue/FOMO).
+- [x] **App stays free; only AI costs credits.** Charge at plan *generation* (not apply); `messageCost = max(1, planCost)` where `planCost = 5 + 2×(extra intents)`, tweak/clarify/floor = 1. Free tier = **20 signup bonus + 10/month** refill (subscribers get no free refill). Spec: `docs/superpowers/specs/2026-06-01-pro-credit-pricing-design.md`.
+
+### 💳 Stripe account + products
+- [x] New **GT Vault** Stripe account (acct `…LlSdyTNuZP`), branded (logo/colors `#22A050`/`#18181B`, statement descriptor `GTVAULT.APP`, SaaS/personal). Custom domain skipped ($10/mo, not worth it yet).
+- [x] 3 products live in **test & live** (Starter 50/$4.99 · Plus 150/$9.99 · Pro sub 250/mo $9.99) via idempotent `npm run stripe:setup` (`-- --live` for live). App resolves by `lookup_key` so test/live both work.
+- [x] ⚠️ Learned: use the account's **test mode**, NOT the **Sandbox** (a stray env where the first setup run misfired). See `reference_stripe_golive` memory.
+
+### 🏗️ Plan 1 — Credit ledger foundation (migration 0025)
+- [x] `user_credits` (free/sub/purchased buckets) + append-only `credit_transactions` audit; signup grant via `handle_new_user`; Vitest-tested pure logic (`lib/credits/logic.ts`) + server module (getBalance/spendCredits CAS/grantCredits). Added **Vitest** to the project.
+
+### 🚦 Plan 2 — Organizer credit gating
+- [x] AI Organizer now **charges credits** (pre-check ≥1 before any LLM call; spend at generation; out-of-credits wall; balance in the input footer). **Owner (`james@automatedpanda.com`) = unlimited** via `lib/credits/access.ts` (ADMIN_EMAIL). Apply/undo free. App is now friend-launch-safe (free credits cap API spend).
+
+### 🛒 Plan 3 — Stripe purchasing (migration 0026)
+- [x] `/credits` page (tier cards + balance + portal link); `createCheckoutSession`/`createPortalSession` actions; **webhook** `app/api/stripe/webhook/route.ts` (signature-verified; packs on `checkout.session.completed`, subs on `invoice.paid`, cancel on `customer.subscription.deleted`); **atomic, service-role-only `grant_credits` RPC**; wall/footer → `/credits`.
+- [x] Installed **Stripe CLI**; verified the **full loop live**: pack (+150), sub (+250 + flags), cancel (clears sub, keeps purchased), portal, idempotency.
+- [x] 🐛 Fixed: auth middleware was **307-redirecting `/api/stripe/webhook`** to `/login` → events never landed. Exempted it (it verifies its own Stripe signature).
+
+### 🚀 Shipped
+- [x] All 3 plans **merged to `main` and pushed** (31 commits). Production build passes.
+- [x] Documented the **8 Vercel env vars** + live-webhook setup; James configured them. Live webhook endpoint → `https://gtvault.app/api/stripe/webhook` (events: checkout.session.completed, invoice.paid, customer.subscription.deleted).
+
+---
+
 ## ✅ Session — 2026-05-31 / 06-01
 
 Big multi-part session. Highlights:
@@ -36,10 +88,10 @@ Big multi-part session. Highlights:
 
 ## 🗓️ TOMORROW — next session priorities
 
-1. **Pro feature gating** — gate/disable the AI Organizer before sending friends to the site (each run costs real API money; it's marketed as "Pro · Coming soon" but is currently fully usable). Potentially start **Stripe** setup for the Pro unlock.
-   - 💬 **First, discuss Pro pricing strategy** — James has ideas. Settle the model before touching Stripe: one-time unlock (~$7.99) vs subscription vs usage credits for the AI Organizer (it has real per-run API cost, which may argue against a flat one-time unlock). Also lock what's free vs Pro.
-2. **Price filtering** — add a price filter (range/min-max) on `/vehicles`, `/properties`, and `/businesses`.
-3. **Marketing copy** — bulk up / improve the text across the marketing site (it's a bit thin right now).
+1. ✅ **DONE 2026-06-01** — Pro pricing strategy + credit gating + Stripe purchasing (all 3 plans merged & pushed; see the Monetization session above).
+2. **Verify live Stripe in prod** (after the Vercel deploy): confirm **migration 0026 is applied to the prod Supabase** project; send a test webhook event → expect 200; do one real low-stakes purchase ($4.99) → credits land (refund after); owner shows "Unlimited ⚡". (Steps in `reference_stripe_golive` memory.)
+3. **Price filtering** — add a price filter (range/min-max) on `/vehicles`, `/properties`, and `/businesses`.
+4. **Marketing copy** — bulk up / improve the text across the marketing site. Now that credits are live, also **update the landing "Pro · Coming soon" framing + pricing teaser** to match the credit model and link to `/credits`.
 
 ---
 

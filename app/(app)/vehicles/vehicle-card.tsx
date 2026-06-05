@@ -5,6 +5,7 @@ import Image from "next/image";
 import { memo, useState, useTransition } from "react";
 import { toast } from "sonner";
 
+import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -59,7 +60,7 @@ function VehicleCardImpl({
   >(null);
   const [pickerLoading, setPickerLoading] = useState(false);
   // Inline car management — opens the same InstanceDrawer used on
-  // /my-vehicles / PropertyDrawer. Closed initially; gear-click sets the id.
+  // /my-vehicles / the property detail page. Closed initially; gear-click sets it.
   const [managedInstanceId, setManagedInstanceId] = useState<string | null>(null);
   const canManageInline = Boolean(ownedProperties);
 
@@ -228,6 +229,22 @@ function VehicleCardImpl({
                           </span>
                         )}
                       </span>
+                      <FavouriteStar
+                        instanceId={inst.id}
+                        initial={inst.is_favourite}
+                        size={14}
+                        onChange={(next) =>
+                          setPickerInstances((prev) =>
+                            prev
+                              ? prev.map((p) =>
+                                  p.id === inst.id
+                                    ? { ...p, is_favourite: next }
+                                    : p,
+                                )
+                              : prev,
+                          )
+                        }
+                      />
                       {canManageInline && (
                         <button
                           type="button"

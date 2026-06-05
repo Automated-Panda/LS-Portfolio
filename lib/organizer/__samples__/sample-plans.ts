@@ -39,6 +39,7 @@ function v(
     nickname: null,
     notes: null,
     custom_tags: [],
+    is_favourite: false,
     tag_ids: tags,
     storage: storage
       ? {

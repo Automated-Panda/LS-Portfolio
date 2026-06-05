@@ -209,6 +209,15 @@ export default async function DashboardPage() {
   // --- Needs attention ---
   const unassignedVehicles = vehicleInstances.filter((v) => v.storage === null)
     .length;
+  // Duplicate instances: vehicles the user owns 2+ of. Count every instance
+  // that belongs to a duplicated catalog vehicle (so "3 Comets" contributes 3).
+  const vehicleIdCounts = new Map<string, number>();
+  for (const v of vehicleInstances) {
+    vehicleIdCounts.set(v.vehicle_id, (vehicleIdCounts.get(v.vehicle_id) ?? 0) + 1);
+  }
+  const duplicateVehicles = vehicleInstances.filter(
+    (v) => (vehicleIdCounts.get(v.vehicle_id) ?? 0) >= 2,
+  ).length;
   const activeUndoForWidget =
     activeUndoPlan && activeUndoPlan.applied_at && activeUndoPlan.undo_expires_at
       ? {
@@ -246,6 +255,7 @@ export default async function DashboardPage() {
     },
     attention: {
       unassignedVehicles,
+      duplicateVehicles,
       activeUndoPlan: activeUndoForWidget,
     },
     recentPlans,

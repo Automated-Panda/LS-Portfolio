@@ -15,13 +15,18 @@ export default async function WizardPage() {
   if (!user) redirect("/login");
 
   // Fetch both scopes in parallel and merge for the picker step.
-  const [propsScope, bizScope, ownedProperties, ownedInstances] =
+  const [propsScope, bizScope, ownedProperties, ownedInstances, { data: tags }] =
     await Promise.all([
       getPropertiesBrowserData(user.id, "properties"),
       getPropertiesBrowserData(user.id, "businesses"),
       getOwnedPropertiesWithStorage(user.id),
       getOwnedVehicleInstances(user.id),
+      supabase.from("vehicle_tags").select("id, display"),
     ]);
+
+  const tagLookup = Object.fromEntries(
+    (tags ?? []).map((t) => [t.id, t.display]),
+  );
 
   // Merge: concat properties, union ownedPropertyIds, take properties' filters
   // (filters object structure is identical between scopes).
@@ -37,6 +42,7 @@ export default async function WizardPage() {
     <OnboardingWizard
       ownedProperties={ownedProperties}
       ownedInstances={ownedInstances}
+      tagLookup={tagLookup}
       pickerData={pickerData}
     />
   );

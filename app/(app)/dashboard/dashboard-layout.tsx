@@ -40,6 +40,7 @@ export type DashboardData = {
   };
   attention: {
     unassignedVehicles: number;
+    duplicateVehicles: number;
     activeUndoPlan: {
       id: string;
       appliedAt: string;
@@ -82,6 +83,7 @@ export function DashboardLayout({ data }: { data: DashboardData }) {
 
       <NeedsAttention
         unassignedVehicles={data.attention.unassignedVehicles}
+        duplicateVehicles={data.attention.duplicateVehicles}
         activeUndoPlan={data.attention.activeUndoPlan}
       />
 

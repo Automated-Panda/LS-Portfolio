@@ -50,18 +50,23 @@ export function buildPortfolioContext(input: PortfolioContextInput): string {
     `Classes (use these names in filter.classes): ${classes.join(", ")}`,
   );
 
+  lines.push(
+    'Favourites: vehicles marked with a ★ below are the user\'s favourites. To target them, set filter.favourites = true.',
+  );
+
   lines.push("");
   lines.push(`Vehicles (${input.vehicles.length} owned instances):`);
   for (const v of input.vehicles) {
     const tagStr = v.tag_ids.length > 0 ? `[${v.tag_ids.join(", ")}]` : "[]";
     const customStr =
       v.custom_tags.length > 0 ? ` custom:[${v.custom_tags.join(", ")}]` : "";
+    const favStr = v.is_favourite ? " ★" : "";
     const storage = v.storage
       ? `${v.storage.property_display_name}${v.storage.upgrade_display_name ? ` · ${v.storage.upgrade_display_name}` : ""}`
       : "unassigned";
     const name = v.nickname ? `${v.display_name} ("${v.nickname}")` : v.display_name;
     lines.push(
-      `  [${v.id}] ${name} (${v.manufacturer_display} · ${v.class}) ${tagStr}${customStr} @ ${storage}`,
+      `  [${v.id}] ${name}${favStr} (${v.manufacturer_display} · ${v.class}) ${tagStr}${customStr} @ ${storage}`,
     );
   }
 

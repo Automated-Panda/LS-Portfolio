@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 
-import { PropertyDrawer } from "@/components/portfolio/property-drawer";
+import { PropertyDetail } from "@/components/portfolio/property-detail";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
@@ -10,9 +15,10 @@ import { storageAssetCategory, ASSET_NOUN } from "@/lib/vehicles";
 type Props = {
   properties: OwnedPropertyDetail[];
   instances: OwnedVehicleInstance[];
+  tagLookup: Record<string, string>;
 };
 
-export function PropertyHubList({ properties, instances }: Props) {
+export function PropertyHubList({ properties, instances, tagLookup }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = properties.find((p) => p.id === selectedId);
 
@@ -54,15 +60,26 @@ export function PropertyHubList({ properties, instances }: Props) {
           })}
         </div>
       </div>
-      {selected && (
-        <PropertyDrawer
-          property={selected}
-          allOwnedProperties={properties}
-          instances={instances}
-          open={true}
-          onOpenChange={(o) => !o && setSelectedId(null)}
-        />
-      )}
+      <Dialog
+        open={!!selected}
+        onOpenChange={(o) => !o && setSelectedId(null)}
+      >
+        {selected && (
+          <DialogContent className="max-h-[88vh] max-w-4xl overflow-y-auto">
+            <DialogTitle className="sr-only">
+              {selected.display_name}
+            </DialogTitle>
+            <PropertyDetail
+              property={selected}
+              allOwnedProperties={properties}
+              instances={instances}
+              tagLookup={tagLookup}
+              embedded
+              onRemoved={() => setSelectedId(null)}
+            />
+          </DialogContent>
+        )}
+      </Dialog>
     </>
   );
 }

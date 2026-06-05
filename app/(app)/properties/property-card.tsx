@@ -35,8 +35,8 @@ type Props = {
   selectionMode?: "browse" | "multi";
   selected?: boolean;
   onSelect?: (propertyId: string) => void;
-  /** When set, the Settings icon (and clicking an owned card) opens the
-   * management drawer in place instead of routing to /my-properties. */
+  /** When set, the Settings icon (and clicking an owned card) navigates to the
+   * asset's dedicated detail page. Falls back to a `?open=` deep link otherwise. */
   onOpenManagement?: (catalogueId: string) => void;
 } & Partial<TowerProps>;
 
@@ -60,10 +60,10 @@ function PropertyCardImpl({
   const storageNoun = ASSET_NOUN[storageAssetCategory(property.subtype)];
 
   const openManagement = () => {
-    // Prefer the in-place handler (used by /properties + /businesses) so the
-    // user stays on the browse grid; fall back to routing for any consumer
-    // that hasn't been wired up to host a PropertyDrawer (e.g. /dashboard
-    // links or older deep links).
+    // Prefer the handler (used by /properties + /businesses) which navigates
+    // straight to the dedicated detail page; fall back to a `?open=` deep link
+    // (the owned-list grid redirects it to the detail page) for any consumer
+    // that doesn't supply the handler.
     if (onOpenManagement) {
       onOpenManagement(property.id);
       return;

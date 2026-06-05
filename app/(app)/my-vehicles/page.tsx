@@ -9,7 +9,7 @@ import { MyVehiclesClient } from "./my-vehicles-client";
 export default async function MyVehiclesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ unassigned?: string }>;
+  searchParams: Promise<{ unassigned?: string; duplicates?: string }>;
 }) {
   const supabase = await createClient();
   const {
@@ -19,6 +19,7 @@ export default async function MyVehiclesPage({
 
   const sp = await searchParams;
   const initialUnassignedOnly = sp.unassigned === "1";
+  const initialDuplicatesOnly = sp.duplicates === "1";
 
   const [instances, ownedProperties, { data: tags }] = await Promise.all([
     getOwnedVehicleInstances(user.id),
@@ -36,6 +37,7 @@ export default async function MyVehiclesPage({
       ownedProperties={ownedProperties}
       tagLookup={tagLookup}
       initialUnassignedOnly={initialUnassignedOnly}
+      initialDuplicatesOnly={initialDuplicatesOnly}
     />
   );
 }

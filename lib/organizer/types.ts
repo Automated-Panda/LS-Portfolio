@@ -9,6 +9,7 @@ export type VehicleFilter = {
   custom_tags?: string[];   // user-defined tags — match user_owned_vehicles.custom_tags
   classes?: string[];       // formatted class names ("Super", "Sports")
   manufacturers?: string[]; // manufacturer ids
+  favourites?: boolean;     // true → only ⭐ user-marked favourites
 };
 
 // ----- Parsed intent (LLM output, post-validation) -----
