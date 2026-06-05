@@ -12171,26 +12171,6 @@
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
       "fandom": "https://gta.fandom.com/wiki/Sanchez"
     },
-    "price": null,
-    "availability": "available",
-    "vendor": null,
-    "vendors": []
-  },
-  {
-    "id": "sanchez2",
-    "internal_name": "sanchez2",
-    "display_name": "Sanchez 2",
-    "manufacturer_id": "maibatsu",
-    "class": "MOTORCYCLE",
-    "release_update": null,
-    "is_garage_storable": true,
-    "variant_of": null,
-    "tags": [],
-    "image_path": "data/images/vehicles/sanchez2.webp",
-    "_sources": {
-      "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
-      "fandom": "https://gta.fandom.com/wiki/Sanchez"
-    },
     "price": 8000,
     "availability": "available",
     "vendor": "southern_san_andreas",
