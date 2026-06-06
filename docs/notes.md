@@ -20,7 +20,7 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] `/my-vehicles`: **"✈️ Pegasus" filter chip**; summon-only Pegasus show "✈️ Pegasus · summon" (sky) instead of red "Not stored"; excluded from "unassigned only" + the unassigned banner. **Dashboard** "needs attention" no longer counts summon-only Pegasus.
 - [x] Applied via DB + seed (no full `build:vehicles` rebuild — protects the manual Sanchez/Stirling rows).
 - [x] **Phase 2a — Facility bays DONE.** Migration `0036` gives all 9 Facilities a **"Weaponized Bays"** included upgrade (5 vehicle-bound `sub_slots`: Avenger, Thruster, Khanjali, Chernobog, RCV/`riot2`). New `sub_slots.vehicle_id` binding + `lib/bays.ts`. These 5 live **only** in a Facility bay — summon-only without one, excluded from normal garages/pickers, and the InstanceDrawer auto-targets the right bay. `included_on_purchase` upgrades now always count as installed (no backfill).
-- [ ] **Phase 2b — Arena (pending James sign-off):** each Arena floor = **9 regular + 1 "large" spot**; the large spot is the only place a **Cerberus** (all 3 variants) fits. Proposed: model the large spot as a Cerberus-bound bay per floor. Confirm before building.
+- [x] **Phase 2b — Arena DONE.** Migration `0037`: the Arena Workshop's floors drop to 9 regular spots + a new included **"Large Vehicle Bay"** (capacity 3) bound to the **Cerberus family** (cerberus/cerberus2/cerberus3) via a new `sub_slots.vehicle_ids` set. Cerberus variants are now bay-bound to the Arena (summon-only otherwise, excluded from normal garages). Total Arena storage stays 30.
 
 ---
 

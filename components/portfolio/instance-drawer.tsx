@@ -26,7 +26,7 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
-import { bayBinding, isBayUpgrade } from "@/lib/bays";
+import { bayBinding, isBayUpgrade, isVehicleBoundSlot, slotAcceptsVehicle } from "@/lib/bays";
 
 import { CustomTagsInput } from "./custom-tags-input";
 import { FavouriteStar } from "./favourite-star";
@@ -123,7 +123,9 @@ export function InstanceDrawer({
     if (binding)
       return (
         bayUpg &&
-        (u.sub_slots?.some((s) => s.vehicle_id === instance.vehicle_id) ?? false)
+        (u.sub_slots?.some((s) =>
+          slotAcceptsVehicle(s, instance.vehicle_id),
+        ) ?? false)
       );
     // Normal vehicle: never offer vehicle-bound bays.
     return !bayUpg;
@@ -134,7 +136,8 @@ export function InstanceDrawer({
   // mansion Podium slot only shows when the Car Podium upgrade is on).
   const subSlotsAvailable = selectedUpgrade?.sub_slots
     ? selectedUpgrade.sub_slots.filter((s) => {
-        if (s.vehicle_id) return s.vehicle_id === instance.vehicle_id;
+        if (isVehicleBoundSlot(s))
+          return slotAcceptsVehicle(s, instance.vehicle_id);
         if (!s.required_upgrade_id) return true;
         const req = selectedProperty?.upgrades.find(
           (u) => u.id === s.required_upgrade_id,

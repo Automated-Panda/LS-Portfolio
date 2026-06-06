@@ -21,7 +21,7 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { ASSET_NOUN, storageAssetCategory, vehicleImageUrl } from "@/lib/vehicles";
-import { isBayUpgrade } from "@/lib/bays";
+import { isBayUpgrade, slotVehicleIds } from "@/lib/bays";
 
 type Props = {
   property: OwnedPropertyDetail;
@@ -256,9 +256,7 @@ export function PropertyDetail({
                     capacity: u.capacity,
                     current: u.cars_here,
                     allowedVehicleIds: isBayUpgrade(u.sub_slots)
-                      ? (u.sub_slots ?? [])
-                          .map((s) => s.vehicle_id)
-                          .filter((id): id is string => !!id)
+                      ? (u.sub_slots ?? []).flatMap((s) => slotVehicleIds(s))
                       : undefined,
                   })
                 }

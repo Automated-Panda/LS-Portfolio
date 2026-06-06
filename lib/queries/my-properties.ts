@@ -33,8 +33,10 @@ export type OwnedPropertyDetail = {
       capacity: number;
       required_upgrade_id?: string | null;
       /** When set, this bay only fits one specific vehicle (e.g. a Facility's
-       *  Khanjali bay). See lib/bays.ts. */
+       *  Khanjali bay), or a set of vehicles (e.g. the Arena's Cerberus family).
+       *  See lib/bays.ts. */
       vehicle_id?: string | null;
+      vehicle_ids?: string[] | null;
       cars_here: number;
     }> | null;
     /** Mutex group label: upgrades sharing this label on the same property are mutually exclusive (e.g. yacht models). */
@@ -93,7 +95,7 @@ export async function getOwnedPropertiesWithStorage(
 
   return (data ?? []).map((row: Row) => {
     const p = Array.isArray(row.properties) ? row.properties[0] : row.properties;
-    type RawSubSlot = { label: string; capacity: number; required_upgrade_id?: string | null; vehicle_id?: string | null };
+    type RawSubSlot = { label: string; capacity: number; required_upgrade_id?: string | null; vehicle_id?: string | null; vehicle_ids?: string[] | null };
     const allUpgrades = (p?.property_upgrades ?? []) as Array<{
       id: string; display_name: string; capacity: number;
       required_upgrade_id: string | null; sort_order: number;
@@ -167,6 +169,7 @@ export async function getOwnedPropertiesWithStorage(
                 capacity: s.capacity,
                 required_upgrade_id: s.required_upgrade_id ?? null,
                 vehicle_id: s.vehicle_id ?? null,
+                vehicle_ids: s.vehicle_ids ?? null,
                 cars_here: carsByUpgradeSubSlot.get(`${u.id}::${s.label}`) ?? 0,
               }))
             : null,
