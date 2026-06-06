@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { isSummonOnly, needsBayProperty } from "./pegasus";
+import { isSummonOnly, needsBayProperty, isUnassignedNagworthy } from "./pegasus";
 
 type V = Parameters<typeof isSummonOnly>[0];
 type P = Parameters<typeof isSummonOnly>[1][number];
@@ -34,6 +34,37 @@ describe("isSummonOnly", () => {
   it("is false once the Pegasus vehicle has a compatible hangar", () => {
     const jet = veh({ vehicle_id: "luxor", tag_ids: ["pegasus"], class: "Plane" });
     expect(isSummonOnly(jet, [prop("hangar", true)])).toBe(false);
+  });
+
+  it("keeps a no-storage Pegasus vehicle (Rhino) summon-only even with garages", () => {
+    const rhino = veh({ vehicle_id: "rhino", tag_ids: ["pegasus"], class: "Military" });
+    // Owns a garage — but a Rhino can't be parked in one, so still summon-only.
+    expect(isSummonOnly(rhino, [prop("stand-alone-garage", true)])).toBe(true);
+  });
+
+  it("does not flag a summon-only Rhino as needing a home", () => {
+    const rhino = veh({ vehicle_id: "rhino", tag_ids: ["pegasus"], class: "Military" });
+    expect(isUnassignedNagworthy(rhino, [prop("stand-alone-garage", true)])).toBe(
+      false,
+    );
+  });
+
+  it("a stored summon-only vehicle is no longer summon-only", () => {
+    const rhino = veh({
+      vehicle_id: "rhino",
+      tag_ids: ["pegasus"],
+      class: "Military",
+      storage: {
+        owned_property_id: "op1",
+        property_display_name: "Garage",
+        property_subtype_display: "Garage",
+        assigned_upgrade_id: null,
+        upgrade_display_name: null,
+        sub_slot: null,
+        slot_number: null,
+      },
+    });
+    expect(isSummonOnly(rhino, [])).toBe(false);
   });
 });
 

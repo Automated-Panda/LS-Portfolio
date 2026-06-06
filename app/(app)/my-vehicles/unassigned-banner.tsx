@@ -7,7 +7,7 @@ export function UnassignedBanner({ count }: { count: number }) {
   return (
     <div className="flex items-center justify-between rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-3">
       <p className="text-sm">
-        <strong>{count}</strong> {count === 1 ? "car needs" : "cars need"} a home.
+        <strong>{count}</strong> {count === 1 ? "vehicle needs" : "vehicles need"} a home.
       </p>
       <Button asChild size="sm">
         <Link href="/wizard">Set up storage →</Link>

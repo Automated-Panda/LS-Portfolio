@@ -10,6 +10,7 @@ import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { assetCategoryOf, propertyAcceptsVehicleCategory } from "@/lib/vehicles";
 import { bayBinding, bayPropertyLabel, isBayBound } from "@/lib/bays";
 import { isContainerVehicle } from "@/lib/containers";
+import { isSummonOnlyVehicle } from "@/lib/pegasus-storage";
 
 export const PEGASUS_TAG_ID = "pegasus";
 
@@ -54,11 +55,17 @@ export function isSummonOnly(
   instance: VehicleBits,
   ownedProperties: StorageProp[],
 ): boolean {
+  // Already stored (in a property or nested in a container) → not summon-only.
+  if (instance.storage || instance.nested_in) return false;
+  // Curated: vehicles with no personal storage anywhere are ALWAYS summon-only,
+  // regardless of which properties the user owns (fixes Pegasus-only land
+  // vehicles wrongly counted as "needs a home"). See lib/pegasus-storage.ts.
+  if (isSummonOnlyVehicle(instance.vehicle_id)) return true;
+  // Broad Pegasus that COULD be stored (aircraft → hangar) but has no compatible
+  // property yet.
   return (
     isPegasus(instance.tag_ids) &&
     !isBayBound(instance.vehicle_id) &&
-    !instance.storage &&
-    !instance.nested_in &&
     !hasCompatibleStorage(instance, ownedProperties)
   );
 }
