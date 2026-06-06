@@ -4,7 +4,9 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
-## 🔼 NEXT SESSION — start here (added 2026-06-06)
+## ✅ SHIPPED 2026-06-06 → 06-07 — garage slots · organised views · Phase 2 bays · hybrid entities
+
+> All of the below is **merged to `main` and pushed** (live on Vercel). Kept here as the record of what landed.
 
 ### 🚨 HIGHEST PRIORITY — garage slots + organised vehicle views
 - [x] **Numbered garage slots — DONE (not pushed yet).** Migration `0038`: nullable `slot_number` on `user_owned_vehicles` + partial unique index (per `stored_in_property_id` + `coalesce(assigned_upgrade_id,'')`) + atomic `swap_vehicle_slots` RPC. Applied to hosted GT Vault DB. **No auto-assign** — numbers only ever reflect deliberate placement (decided with James).
@@ -12,7 +14,7 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
   - **Stepper-with-swap** in `InstanceDrawer`: number input + arrows when a car is in a garage; typing an occupied slot → "Slot N is taken by «X», swap?" confirm.
   - **Card badges** on `/my-vehicles`: green **slot # pill** (bottom-left) when placed, **❓** when in a garage but unplaced, **‼️** when not stored. Table view gets a sortable **Slot** column.
   - Pure logic in `lib/slots.ts` (+ 17 Vitest cases); slot resets to null when a car moves to a different area (`assignVehicleStorage`). Server actions in `app/(app)/my-vehicles/slot-actions.ts`. ✅ tsc + 121 tests + `next build` all green.
-- [ ] **Better, more organised garage view** — ~~order vehicles by slot number~~ (the grid IS this now); ~~collapsing per-level groups~~ (done). _Effectively covered by the grid view above._
+- [x] **Better, more organised garage view** — covered by the grid view (ordered by slot; per-floor collapse).
 - [x] **Better "My Vehicles" organisation — DONE (not pushed).** `/my-vehicles` cards now have a **"Group:" dropdown** (`lib/vehicle-grouping.ts`, tested): **Garage** (default — sections per property, cars ordered by slot, "Not stored" last), **Manufacturer**, **Type** (class), **Model**, **None** (flat). Turning on the **👯 Duplicates** filter **forces Group-by-Model** so identical cars sit side by side. Grid refactored into grouped sections (`my-vehicles-grid.tsx`); table view unchanged.
 - [x] **Owned / Unowned split — DONE (not pushed).** `/vehicles` ("All Vehicles") gets an **All / Owned / Unowned** segmented toggle (`?own=` param, `filter-bar.tsx` `showOwnership`). **Unowned = your shopping list** (own 0 of); subtitle + empty-state ("you own everything 🏆") adapt. Owning 2+ still counts as Owned.
 
@@ -21,19 +23,22 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] **Arena floor model — DONE.** `lib/arena-bay.ts`: Large Vehicle Bay capacity now = **1 (ground) + installed B1 + installed B2** (1–3), applied dynamically in the display query (`getOwnedPropertiesWithStorage`) and enforcement (`capacityForStorageLocation`) — hangar-boost pattern, no migration. **Facility bay list verified CORRECT** (5 bays incl. RCV/`riot2`) — no change needed.
 - [x] **Organizer bay-aware — DONE.** Bay upgrades excluded from the planner's slot universe (`locations.ts`); bay-bound vehicles are never matched/moved/displaced/consolidated and are skipped in the capacity pre-flight (`planner.ts`); LLM context annotates them `⚠ bay-bound (Facility)` with a behaviour note (`portfolio-context.ts`). New `planner.test.ts`.
 
-### 🧩 Hybrid vehicle/business storage entities — MODEL DECIDED, build in progress (2026-06-06)
+### 🧩 Hybrid vehicle/business storage entities — ✅ DONE (shipped 2026-06-07)
 **Model locked (Approach A):** they stay **vehicles** that store other vehicles + get a **vehicle-upgrades subsystem** mirroring property upgrades. **Storage + upgrades only** (no income/business). **Full upgrades**, **one-level nesting**, **Freakshop added**. Spec: `docs/superpowers/specs/2026-06-06-hybrid-entities-design.md`. Phase 1 plan: `docs/superpowers/plans/2026-06-06-hybrid-entities-phase1.md`.
 - [x] **Phase 1 — schema + scaffolding DONE (not pushed).** Migration `0039` (`vehicle_upgrades` + `user_owned_vehicle_upgrades` tables + `user_owned_vehicles.stored_in_vehicle_id` nesting col + RLS, applied to hosted DB). `lib/containers.ts` catalogue map (mirrors `lib/bays.ts`) + tests. `nested_in` threaded through both instance queries. tsc + 148 tests + build green.
 - [x] **Phase 1b — catalogue data DONE (not pushed).** All 4 containers seeded (migrations `0040`–`0042`): **Terrorbyte** (`terbyte` — Oppressor Mk II gated by Specialized Workshop; + Drone Station/Weapon Workshop/Turret/MCT), **Kosatka** (`kosatka` moon pool: Sparrow `seasparrow2` + **Kraken Avisa** `avisa`; + Sonar/Guided Missiles), **Acid Lab** (`brickade2` — Manchez Scout C `manchez2`; + Equipment Upgrade), **MOC** (new `moc` vehicle, HVY/COMMERCIAL; cab mutex group + Command Centre + Vehicle & Weapon Workshop-gated bay). **Freakshop** property added (the Acid Lab's home). `lib/containers.ts` covers all four. MOC + Freakshop are **DB-only manual rows** (protect from full rebuilds, like Sanchez/Stirling).
-  - ⏳ **James — images:** drop `moc` + `freakshop` covers into `docs/temp-images/` → `normalize-temp-images` + `images:publish` whenever (they show subtype/no-image fallback until then).
+  - [x] **Images DONE (2026-06-07):** `moc` + `freakshop` covers added (converted to `data/images/...`, `image_path` set on the DB rows, published; migrations 0041/0042 seed image_path for fresh installs). Note: these are DB-only rows so `normalize-temp-images` skips them — convert directly if replacing.
 - [x] **Phase 2 DONE** — `getOwnedContainerVehicles` query + pure `deriveContainerView` (client-safe in `lib/containers.ts`, tested).
 - [x] **Phase 3 DONE** — UI. **3a:** nest a bound vehicle into a container via the drawer's "store inside" dropdown (`container-actions.ts`: assign/getOwned…); mutual exclusivity; `📦 in «X»` badge; nested = stored. **3b:** container management panel in the drawer (bays w/ nested vehicle + remove; upgrades checklist install/uninstall, MOC cab mutex; `getContainerDetail`/`setVehicleUpgrade`); `📦 Stores N` card badge.
 - [x] **Phase 4 DONE** — Organizer ignores container + nested vehicles (planner `isPinned` + context annotation); containers/nested excluded from unassigned nags. tsc + 159 tests + build green throughout.
-  - ⏳ Remaining polish (not blocking): **images** for `moc` + `freakshop`; container **parent-property** assignment (e.g. Terrorbyte→Nightclub) left free/unmodelled in v1; grouping a nested car shows under "Not stored" group (badge still says in «X»).
+  - ⏳ Remaining polish (not blocking): container **parent-property** assignment (e.g. Terrorbyte→Nightclub) left free/unmodelled in v1; grouping a nested car shows under the "Not stored" group (badge still says in «X»); the "summon" card badge uses ✈️ even for land/boat Pegasus.
+
+### 🏷️ "Needs a home" / Pegasus fix — ✅ DONE (shipped 2026-06-07)
+User reported "59 cars need a home" full of Pegasus vehicles. Fixed: (1) banner wording **"cars" → "vehicles"** (`unassigned-banner.tsx`); dashboard already said vehicles. (2) New curated **`lib/pegasus-storage.ts`** — `SUMMON_ONLY_VEHICLE_IDS` lists every Pegasus vehicle with **no personal storage** (all non-aircraft Pegasus + the **Blimp**, which can't be hangared; 43 ids). `isSummonOnly` now treats these as **always summon-only regardless of owned properties**, so land Pegasus (Rhino/Insurgent/etc.) no longer count as "needs a home" just because you own a garage. **Pegasus aircraft** (Hydra/Lazer/Luxor/…) stay hangar-storable via the existing logic. Researched vs GTA Wiki; list is documented + editable. ⚠️ Judgment call: **Pegasus boats treated as summon-only** (yacht doesn't store them) — revisit if boat→yacht is wanted.
 
 ---
 
-> ✅ **DONE 2026-06-06 — Sanchez image fixed.** James dropped `sanchez.webp` into `docs/temp-images/`; ran `normalize-temp-images` (517KB → 50KB) + `images:publish`. Plain **Sanchez** (colours, $8k) now shows the correct colours-only photo; **Sanchez (Livery)** ($7k) unchanged. Needs a push to go live.
+> ✅ **DONE 2026-06-06 — Sanchez image fixed.** James dropped `sanchez.webp` into `docs/temp-images/`; ran `normalize-temp-images` (517KB → 50KB) + `images:publish`. Plain **Sanchez** (colours, $8k) now shows the correct colours-only photo; **Sanchez (Livery)** ($7k) unchanged. Shipped.
 
 ---
 
