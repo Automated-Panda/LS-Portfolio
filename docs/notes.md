@@ -21,13 +21,13 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] **Arena floor model — DONE.** `lib/arena-bay.ts`: Large Vehicle Bay capacity now = **1 (ground) + installed B1 + installed B2** (1–3), applied dynamically in the display query (`getOwnedPropertiesWithStorage`) and enforcement (`capacityForStorageLocation`) — hangar-boost pattern, no migration. **Facility bay list verified CORRECT** (5 bays incl. RCV/`riot2`) — no change needed.
 - [x] **Organizer bay-aware — DONE.** Bay upgrades excluded from the planner's slot universe (`locations.ts`); bay-bound vehicles are never matched/moved/displaced/consolidated and are skipped in the capacity pre-flight (`planner.ts`); LLM context annotates them `⚠ bay-bound (Facility)` with a behaviour note (`portfolio-context.ts`). New `planner.test.ts`.
 
-### 🧩 Hybrid vehicle/business storage entities — NEEDS DISCUSSION (not highest priority)
-These are GTA things that are simultaneously a **vehicle AND a business / mini-storage unit** — the core question is how to model dual-nature entities (a vehicle, a property/business, or a new hybrid concept). **Discuss the model before building.**
-- [ ] **Terrorbyte — fix it.** It can **store the Oppressor (Mk II)**, and the Terrorbyte itself is **stored at the Garment Factory or the Nightclub**. So it's a vehicle that's also a small storage unit.
-- [ ] **Mobile Operations Center (MOC) — add it.** Can **only be stored in a Bunker**, and has a **vehicle-storage upgrade** of its own.
-- [ ] **Kosatka (submarine) — add it + its upgrades.**
-- [ ] **Freakshop — maybe add as a business/property**, since it stores the **Acid Lab (a business)** and the **Acid delivery bike**.
-- ⚠️ **Core tension:** the **Acid Lab, MOC, and Terrorbyte are technically vehicles AND businesses.** Need to decide how dual-nature entities are represented before implementing any of the above.
+### 🧩 Hybrid vehicle/business storage entities — MODEL DECIDED, build in progress (2026-06-06)
+**Model locked (Approach A):** they stay **vehicles** that store other vehicles + get a **vehicle-upgrades subsystem** mirroring property upgrades. **Storage + upgrades only** (no income/business). **Full upgrades**, **one-level nesting**, **Freakshop added**. Spec: `docs/superpowers/specs/2026-06-06-hybrid-entities-design.md`. Phase 1 plan: `docs/superpowers/plans/2026-06-06-hybrid-entities-phase1.md`.
+- [x] **Phase 1 — schema + scaffolding DONE (not pushed).** Migration `0039` (`vehicle_upgrades` + `user_owned_vehicle_upgrades` tables + `user_owned_vehicles.stored_in_vehicle_id` nesting col + RLS, applied to hosted DB). `lib/containers.ts` catalogue map (mirrors `lib/bays.ts`) + tests. `nested_in` threaded through both instance queries. tsc + 148 tests + build green.
+- [ ] **Phase 1b — catalogue data (needs James input):** confirm **Sparrow** vehicle id; add the **MOC** catalogue vehicle row (class/price/image + cab-choice decision); add **Freakshop** property (subtype `freakshop`, special, image); seed `vehicle_upgrades` rows for all four (bays + weapons/sonar/equipment). Entities: **Terrorbyte** (stores Oppressor Mk II; Nightclub/Garment Factory), **MOC** (vehicle bays via Vehicle Workshop; Bunker), **Kosatka** (Sparrow + **Kraken Avisa**; independent), **Acid Lab**/Brickade 6x6 (Acid bike; Freakshop).
+- [ ] **Phase 2** — `getOwnedContainerVehicles` query layer.
+- [ ] **Phase 3** — UI (InstanceDrawer container panel: upgrades + bays; child-side nesting; badges).
+- [ ] **Phase 4** — integration (slot exclusion, Organizer awareness, dashboard, tests).
 
 ---
 
