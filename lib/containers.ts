@@ -15,20 +15,23 @@ export type ContainerBay = {
 };
 
 export const CONTAINER_VEHICLES: Record<string, ContainerBay[]> = {
-  terrorbyte: [{ label: "Oppressor Mk II", vehicleIds: ["oppressor2"] }],
-  kosatka: [
-    { label: "Sparrow", vehicleIds: ["sparrow"] }, // TODO confirm Sparrow id (Phase 1b)
-    { label: "Kraken Avisa", vehicleIds: ["avisa"] },
-  ],
-  brickade2: [{ label: "Acid Bike", vehicleIds: ["manchez2"] }],
-  // MOC id is a Phase 1b catalogue addition; bay gated by its Vehicle Workshop.
-  moc: [
+  // Terrorbyte: the Oppressor Mk II bay only exists with the Specialized Workshop.
+  terbyte: [
     {
-      label: "Vehicle Bay",
-      vehicleIds: [], // empty = any vehicle (class-checked in UI); refine in 1b
-      requiresUpgradeId: "moc-vehicle-workshop",
+      label: "Oppressor Mk II",
+      vehicleIds: ["oppressor2"],
+      requiresUpgradeId: "terbyte-specialized-workshop",
     },
   ],
+  // Kosatka moon pool (included): the Sparrow heli + the Kraken Avisa mini-sub.
+  kosatka: [
+    { label: "Sparrow", vehicleIds: ["seasparrow2"] },
+    { label: "Kraken Avisa", vehicleIds: ["avisa"] },
+  ],
+  // Acid Lab (Brickade 6x6): the Manchez Scout C acid bike (included).
+  brickade2: [{ label: "Acid Bike", vehicleIds: ["manchez2"] }],
+  // MOC is a follow-up — it needs a catalogue vehicle row first (Phase 1b-MOC),
+  // then its Vehicle Workshop-gated bays go here.
 };
 
 export function isContainerVehicle(vehicleId: string): boolean {
