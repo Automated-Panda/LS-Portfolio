@@ -9,6 +9,7 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { assetCategoryOf, propertyAcceptsVehicleCategory } from "@/lib/vehicles";
 import { bayBinding, bayPropertyLabel, isBayBound } from "@/lib/bays";
+import { isContainerVehicle } from "@/lib/containers";
 
 export const PEGASUS_TAG_ID = "pegasus";
 
@@ -88,6 +89,7 @@ export function isUnassignedNagworthy(
   return (
     !instance.storage &&
     !instance.nested_in && // nested inside a container vehicle = stored
+    !isContainerVehicle(instance.vehicle_id) && // containers don't need a garage
     !isSummonOnly(instance, ownedProperties)
   );
 }

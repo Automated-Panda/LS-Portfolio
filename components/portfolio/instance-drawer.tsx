@@ -27,10 +27,13 @@ import {
 } from "@/app/(app)/my-vehicles/slot-actions";
 import {
   assignVehicleToContainer,
+  getContainerDetail,
   getOwnedContainersForStorable,
+  setVehicleUpgrade,
+  type ContainerDetail,
   type ContainerOption,
 } from "@/app/(app)/my-vehicles/container-actions";
-import { bayForStoredVehicle } from "@/lib/containers";
+import { bayForStoredVehicle, isContainerVehicle } from "@/lib/containers";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
@@ -95,6 +98,65 @@ export function InstanceDrawer({
       active = false;
     };
   }, [open, childBay, instance.vehicle_id]);
+
+  // Container side: when THIS vehicle is a container (Terrorbyte/Kosatka/…),
+  // load its upgrades + bays + nested vehicles for the management panel.
+  const isContainer = isContainerVehicle(instance.vehicle_id);
+  const [detail, setDetail] = useState<ContainerDetail | null>(null);
+  const [detailBusy, setDetailBusy] = useState(false);
+  const reloadDetail = async () => {
+    const d = await getContainerDetail(instance.id);
+    setDetail(d);
+  };
+  useEffect(() => {
+    if (!open || !isContainer) return;
+    let active = true;
+    getContainerDetail(instance.id).then((d) => {
+      if (active) setDetail(d);
+    });
+    return () => {
+      active = false;
+    };
+  }, [open, isContainer, instance.id]);
+
+  const toggleUpgrade = async (vehicleUpgradeId: string, install: boolean) => {
+    if (detailBusy) return;
+    setDetailBusy(true);
+    try {
+      const r = await setVehicleUpgrade({
+        ownedVehicleId: instance.id,
+        vehicleUpgradeId,
+        install,
+      });
+      if ("error" in r) {
+        toast.error(r.error);
+        return;
+      }
+      await reloadDetail();
+    } finally {
+      setDetailBusy(false);
+    }
+  };
+
+  const unnestFromBay = async (nestedInstanceId: string, name: string) => {
+    if (detailBusy) return;
+    setDetailBusy(true);
+    try {
+      const r = await assignVehicleStorage({
+        ownedVehicleId: nestedInstanceId,
+        ownedPropertyId: null,
+        assignedUpgradeId: null,
+      });
+      if ("error" in r) {
+        toast.error(r.error);
+        return;
+      }
+      toast.success(`Removed ${name}`);
+      await reloadDetail();
+    } finally {
+      setDetailBusy(false);
+    }
+  };
 
   // Auto-expand fields that already have content on open. Empty fields show
   // as `+ Field name` pill buttons; clicking expands the input inline.
@@ -566,6 +628,86 @@ export function InstanceDrawer({
               </select>
             )}
           </div>
+
+          {/* Container management — when THIS vehicle stores others. */}
+          {isContainer && detail && (
+            <div className="flex flex-col gap-3 rounded-md border bg-muted/10 p-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Stored vehicles
+              </p>
+              <div className="flex flex-col gap-1.5">
+                {detail.bays.length === 0 && (
+                  <p className="text-xs text-muted-foreground">
+                    No bays yet — install a storage upgrade below.
+                  </p>
+                )}
+                {detail.bays.map((bay) => {
+                  const occupant = detail.nested.find(
+                    (n) => n.bayLabel === bay.label,
+                  );
+                  return (
+                    <div
+                      key={bay.label}
+                      className="flex items-center justify-between gap-2 rounded-md border px-2 py-1.5 text-sm"
+                    >
+                      <span className="text-muted-foreground">📦 {bay.label}</span>
+                      {occupant ? (
+                        <span className="flex items-center gap-2">
+                          <span className="truncate">{occupant.name}</span>
+                          <button
+                            type="button"
+                            disabled={detailBusy}
+                            onClick={() =>
+                              unnestFromBay(occupant.instanceId, occupant.name)
+                            }
+                            className="text-muted-foreground hover:text-red-300 disabled:opacity-50"
+                            aria-label={`Remove ${occupant.name}`}
+                            title="Remove from this container"
+                          >
+                            ✕
+                          </button>
+                        </span>
+                      ) : (
+                        <span className="text-xs text-muted-foreground">Empty</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {detail.upgrades.some((u) => !u.included_on_purchase) && (
+                <div className="flex flex-col gap-0.5">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    Upgrades
+                  </p>
+                  {detail.upgrades
+                    .filter((u) => !u.included_on_purchase)
+                    .map((u) => (
+                      <label
+                        key={u.id}
+                        className="flex cursor-pointer items-center gap-2 rounded-md p-1.5 text-sm hover:bg-muted/40"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={u.is_installed}
+                          disabled={detailBusy}
+                          onChange={() => toggleUpgrade(u.id, !u.is_installed)}
+                        />
+                        <span className="flex-1">{u.display_name}</span>
+                        {u.price !== null && (
+                          <span
+                            className="text-[10px] tabular-nums text-emerald-300/70"
+                            title={formatMoneyFull(u.price)}
+                          >
+                            {formatMoneyCompact(u.price)}
+                          </span>
+                        )}
+                      </label>
+                    ))}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Collapsed-field pill row — only shows for fields not yet expanded. */}
           {anyCollapsed && (

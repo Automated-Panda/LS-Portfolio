@@ -2,7 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 
-import { bayForStoredVehicle } from "@/lib/containers";
+import {
+  bayForStoredVehicle,
+  type ContainerBayView,
+  type ContainerUpgradeView,
+} from "@/lib/containers";
 import { getOwnedContainerVehicles } from "@/lib/queries/container-vehicles";
 import { createClient } from "@/lib/supabase/server";
 
@@ -144,6 +148,127 @@ export async function assignVehicleToContainer(opts: {
     })
     .eq("id", opts.ownedVehicleId)
     .eq("user_id", user.id);
+  if (error) return { error: error.message };
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
+
+// --- Container-side management (the container's own drawer) -----------------
+
+export type ContainerNestedVehicle = {
+  instanceId: string;
+  name: string;
+  bayLabel: string | null;
+};
+
+export type ContainerDetail = {
+  upgrades: ContainerUpgradeView[];
+  bays: ContainerBayView[];
+  nested: ContainerNestedVehicle[];
+};
+
+/** Full management view for one owned container vehicle: its upgrades (installed
+ *  state), the bays its installed upgrades expose, and the vehicles nested in it. */
+export async function getContainerDetail(
+  ownedVehicleId: string,
+): Promise<ContainerDetail | null> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  const container = (await getOwnedContainerVehicles(user.id)).find(
+    (c) => c.id === ownedVehicleId,
+  );
+  if (!container) return null;
+
+  const { data: nested } = await supabase
+    .from("user_owned_vehicles")
+    .select("id, nickname, sub_slot, vehicles!inner(display_name)")
+    .eq("user_id", user.id)
+    .eq("stored_in_vehicle_id", ownedVehicleId);
+
+  const nestedList: ContainerNestedVehicle[] = (nested ?? []).map((n) => {
+    const v = Array.isArray(n.vehicles) ? n.vehicles[0] : n.vehicles;
+    return {
+      instanceId: n.id as string,
+      name: (n.nickname as string) || v?.display_name || "Vehicle",
+      bayLabel: (n.sub_slot as string) ?? null,
+    };
+  });
+
+  return { upgrades: container.upgrades, bays: container.bays, nested: nestedList };
+}
+
+/**
+ * Install or uninstall a vehicle upgrade on an owned container. Installing an
+ * upgrade in a mutex group (e.g. MOC cab choice) uninstalls its siblings.
+ */
+export async function setVehicleUpgrade(opts: {
+  ownedVehicleId: string;
+  vehicleUpgradeId: string;
+  install: boolean;
+}): Promise<Result> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not signed in." };
+
+  // Confirm the owned vehicle belongs to the user (RLS also enforces this).
+  const { data: owned } = await supabase
+    .from("user_owned_vehicles")
+    .select("id")
+    .eq("id", opts.ownedVehicleId)
+    .eq("user_id", user.id)
+    .maybeSingle();
+  if (!owned) return { error: "Vehicle not found." };
+
+  if (!opts.install) {
+    const { error } = await supabase
+      .from("user_owned_vehicle_upgrades")
+      .delete()
+      .eq("user_owned_vehicle_id", opts.ownedVehicleId)
+      .eq("vehicle_upgrade_id", opts.vehicleUpgradeId);
+    if (error) return { error: error.message };
+    revalidatePath("/", "layout");
+    return { ok: true };
+  }
+
+  // Installing: clear mutex siblings first.
+  const { data: upg } = await supabase
+    .from("vehicle_upgrades")
+    .select("vehicle_id, mutex_group")
+    .eq("id", opts.vehicleUpgradeId)
+    .maybeSingle();
+  if (!upg) return { error: "Upgrade not found." };
+
+  if (upg.mutex_group) {
+    const { data: siblings } = await supabase
+      .from("vehicle_upgrades")
+      .select("id")
+      .eq("vehicle_id", upg.vehicle_id)
+      .eq("mutex_group", upg.mutex_group);
+    const siblingIds = (siblings ?? []).map((s) => s.id as string);
+    if (siblingIds.length > 0) {
+      await supabase
+        .from("user_owned_vehicle_upgrades")
+        .delete()
+        .eq("user_owned_vehicle_id", opts.ownedVehicleId)
+        .in("vehicle_upgrade_id", siblingIds);
+    }
+  }
+
+  const { error } = await supabase
+    .from("user_owned_vehicle_upgrades")
+    .upsert(
+      {
+        user_owned_vehicle_id: opts.ownedVehicleId,
+        vehicle_upgrade_id: opts.vehicleUpgradeId,
+      },
+      { onConflict: "user_owned_vehicle_id,vehicle_upgrade_id" },
+    );
   if (error) return { error: error.message };
   revalidatePath("/", "layout");
   return { ok: true };

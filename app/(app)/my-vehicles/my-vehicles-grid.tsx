@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
 import { isBayUpgrade } from "@/lib/bays";
+import { isContainerVehicle } from "@/lib/containers";
 import { isSummonOnly, needsBayProperty } from "@/lib/pegasus";
 import { groupInstances, type GroupBy } from "@/lib/vehicle-grouping";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
@@ -203,6 +204,13 @@ function OwnedCard({
     : null;
   const summonOnly = isSummonOnly(inst, ownedProperties);
   const bayNeed = needsBayProperty(inst, ownedProperties);
+  // This vehicle is itself a container (Terrorbyte/Kosatka/…): how many it holds.
+  const isContainer = isContainerVehicle(inst.vehicle_id);
+  const storesCount = isContainer
+    ? [...instById.values()].filter(
+        (i) => i.nested_in?.container_owned_vehicle_id === inst.id,
+      ).length
+    : 0;
 
   // Slot indicator: a number when placed, ❓ when in a garage but not yet
   // placed, ‼️ when not stored anywhere (and not a summon-only Pegasus).
@@ -256,7 +264,11 @@ function OwnedCard({
             >
               ❓
             </span>
-          ) : !inst.storage && !inst.nested_in && !summonOnly && !bayNeed ? (
+          ) : !inst.storage &&
+            !inst.nested_in &&
+            !isContainer &&
+            !summonOnly &&
+            !bayNeed ? (
             <span
               className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
               title="Not stored in any garage"
@@ -270,7 +282,12 @@ function OwnedCard({
           <p className="text-xs text-muted-foreground">
             {inst.manufacturer_display}
           </p>
-          {subLineCompact ? (
+          {isContainer ? (
+            <p className="mt-1 text-xs text-violet-400">
+              📦 Stores {storesCount}
+              {subLineCompact ? ` · 📍 ${subLineCompact}` : ""}
+            </p>
+          ) : subLineCompact ? (
             <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
           ) : nestedLabel ? (
             <p className="mt-1 text-xs text-violet-400">📦 in {nestedLabel}</p>
