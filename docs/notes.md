@@ -2,6 +2,22 @@
 
 Running working checklist of what's next. Tick items off as we go. Roughly ordered by priority but feel free to jump around.
 
+---
+
+## 🔼 NEXT SESSION — start here (added 2026-06-06)
+
+### 🚨 HIGHEST PRIORITY — garage slots + organised vehicle views
+- [ ] **Add numbered slots for ALL garages.** Every garage slot gets a number. **Show the slot number in the bottom corner of each vehicle card.** Show an icon (e.g. **❓**) on cards for **unslotted** vehicles.
+- [ ] **Better, more organised garage view** — order vehicles **by slot number**; allow **collapsing the per-level groups** for multi-floor properties (e.g. Vinewood / Eclipse garages).
+- [ ] **Better "My Vehicles" organisation** — **group by garage by default** instead of one big unordered list. When the **Duplicates** filter is on, **group the duplicates together** so identical vehicles sit side by side.
+
+### 🔧 Phase 2 (Pegasus / bays) follow-ups
+- [ ] **"Summon-only" is wrong — rework it.** Researched & confirmed: in GTA you **must own the Facility** to buy the Khanjali/Chernobog/Avenger/Thruster, and **must own an Arena Workshop** to buy the Cerberus. So owning the vehicle *implies* owning the property — "summon-only" (vehicle without property) is **impossible in-game**. Rework: treat bay-bound vehicles as **always assignable to their bay** (and/or prompt "you need a Facility/Arena to own this"). Re-check whether this also applies to broader Pegasus vehicles.
+- [ ] **Fix the Arena floor model (accuracy).** The 3 large (Cerberus) slots currently exist regardless of which basement floors are installed. Make the large-spot count **track installed floors** (base + B1 + B2). Also **double-check the Facility bay list**: one source lists **5** (incl. **RCV** = `riot2`), another lists 4 (Khanjali/Thruster/Chernobog + Avenger) — verify RCV is really a Facility bay.
+- [ ] **Make the AI Organizer bay-aware.** The planner can currently move a Khanjali into a normal garage. Teach it about bay-bound vehicles (`lib/bays.ts`) + their dedicated bays so it never mis-assigns them.
+
+---
+
 > ⚠️ **ACTION NEEDED — James: add 1 vehicle image (2026-06-05).** Catalog Sanchez fix is done. There are only **two** Sanchez bikes now — **Sanchez** (just colours, $8k) and **Sanchez (Livery)** ($7k). The Livery image is correct; the plain **Sanchez** row still shows the livery photo.
 > - **Sanchez** (colours / no livery) → drop a photo into `docs/temp-images/sanchez.png`
 >
