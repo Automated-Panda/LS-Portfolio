@@ -21,6 +21,7 @@ function veh(over: Partial<OwnedVehicleInstance> = {}): OwnedVehicleInstance {
     is_favourite: false,
     tag_ids: [],
     storage: null,
+    nested_in: null,
     ...over,
   };
 }

@@ -43,6 +43,7 @@ function inst(
           slot_number: slot,
         }
       : null,
+    nested_in: null,
   };
 }
 

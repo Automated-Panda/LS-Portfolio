@@ -52,6 +52,7 @@ function v(
           slot_number: null,
         }
       : null,
+    nested_in: null,
   };
 }
 

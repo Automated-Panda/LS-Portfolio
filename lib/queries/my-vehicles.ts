@@ -24,6 +24,12 @@ export type OwnedVehicleInstance = {
     sub_slot: string | null;          // specific labelled slot within the upgrade
     slot_number: number | null;       // numbered garage spot (null = unplaced)
   } | null;
+  /** When set, this vehicle is nested INSIDE a container vehicle (Terrorbyte,
+   *  Kosatka…). Mutually exclusive with `storage` (a property location). */
+  nested_in: {
+    container_owned_vehicle_id: string;
+    bay_label: string | null; // reuses sub_slot
+  } | null;
 };
 
 export async function getOwnedVehicleInstances(
@@ -36,6 +42,7 @@ export async function getOwnedVehicleInstances(
     .select(`
       id, vehicle_id, nickname, notes, custom_tags, is_favourite,
       stored_in_property_id, assigned_upgrade_id, sub_slot, slot_number,
+      stored_in_vehicle_id,
       vehicles!inner (
         display_name, class, image_path, manufacturer_id, price,
         manufacturers ( display ),
@@ -94,6 +101,12 @@ export async function getOwnedVehicleInstances(
             upgrade_display_name: up?.display_name ?? null,
             sub_slot: row.sub_slot ?? null,
             slot_number: row.slot_number ?? null,
+          }
+        : null,
+      nested_in: row.stored_in_vehicle_id
+        ? {
+            container_owned_vehicle_id: row.stored_in_vehicle_id,
+            bay_label: row.sub_slot ?? null,
           }
         : null,
     };
