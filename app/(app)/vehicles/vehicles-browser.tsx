@@ -41,6 +41,8 @@ export function VehiclesBrowser({
   const avail = searchParams.get("avail") ?? "";
   const vendor = searchParams.get("vendor") ?? "";
   const tagParam = searchParams.get("tags") ?? "";
+  // Ownership scope (catalogue only): "" all, "owned", "unowned".
+  const own = mode === "all" ? (searchParams.get("own") ?? "") : "";
   const pmin = priceParam(searchParams.get("pmin"));
   const pmax = priceParam(searchParams.get("pmax"));
   const sort = searchParams.get("sort") ?? "default";
@@ -85,6 +87,8 @@ export function VehiclesBrowser({
       if (vendor && !v.vendors.includes(vendor as (typeof v.vendors)[number])) return false;
       if (cls && v.class !== cls) return false;
       if (mfr && v.manufacturer_id !== mfr) return false;
+      if (own === "owned" && !ownedSet.has(v.id)) return false;
+      if (own === "unowned" && ownedSet.has(v.id)) return false;
       if (!priceMatches(v.price, pmin, pmax)) return false;
       if (
         selectedTags.length > 0 &&
@@ -94,21 +98,27 @@ export function VehiclesBrowser({
       }
       return true;
     });
-  }, [vehicles, q, cat, avail, vendor, cls, mfr, tagParam, pmin, pmax]);
+  }, [vehicles, q, cat, avail, vendor, cls, mfr, tagParam, pmin, pmax, own, ownedSet]);
 
   const sorted = useMemo(() => sortByParam(filtered, sort), [filtered, sort]);
 
   const isOwnedMode = mode === "owned";
   const title = isOwnedMode ? "My Vehicles" : "All Vehicles";
+  const ownNoun =
+    own === "owned" ? "owned" : own === "unowned" ? "not owned" : "vehicles";
   const subtitle = isOwnedMode
     ? `${filtered.length.toLocaleString()} of ${vehicles.length.toLocaleString()} owned`
-    : `${filtered.length.toLocaleString()} of ${vehicles.length.toLocaleString()} vehicles${
-        ownedVehicleIds.length > 0 ? ` · ${ownedVehicleIds.length} owned` : ""
+    : `${filtered.length.toLocaleString()} of ${vehicles.length.toLocaleString()} ${ownNoun}${
+        own === "" && ownedVehicleIds.length > 0
+          ? ` · ${ownedVehicleIds.length} owned`
+          : ""
       }`;
   const emptyMessage =
     isOwnedMode && vehicles.length === 0
       ? "You don't own any vehicles yet — browse All Vehicles to add some."
-      : "No vehicles match your filters.";
+      : own === "unowned"
+        ? "You already own every vehicle that matches these filters! 🏆"
+        : "No vehicles match your filters.";
 
   return (
     <div className="space-y-6">
@@ -117,7 +127,7 @@ export function VehiclesBrowser({
         <p className="text-sm text-muted-foreground">{subtitle}</p>
       </div>
 
-      <FilterBar filters={scopedFilters} />
+      <FilterBar filters={scopedFilters} showOwnership={mode === "all"} />
 
       {filtered.length === 0 ? (
         <div className="flex h-40 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground">

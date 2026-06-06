@@ -22,17 +22,35 @@ export async function assignVehicleStorage(opts: {
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
 
-  // Unassign path
+  // Unassign path — clears the numbered slot too (it's area-scoped).
   if (opts.ownedPropertyId === null) {
     const { error } = await supabase
       .from("user_owned_vehicles")
-      .update({ stored_in_property_id: null, assigned_upgrade_id: null, sub_slot: null })
+      .update({
+        stored_in_property_id: null,
+        assigned_upgrade_id: null,
+        sub_slot: null,
+        slot_number: null,
+      })
       .eq("id", opts.ownedVehicleId)
       .eq("user_id", user.id);
     if (error) return { error: error.message };
     revalidatePath("/", "layout");
     return { ok: true };
   }
+
+  // A numbered slot belongs to one area. If this save moves the car to a
+  // different (property, upgrade), drop the old slot so it lands unplaced in the
+  // new garage. Re-saving in place (e.g. just editing tags) keeps the slot.
+  const { data: existing } = await supabase
+    .from("user_owned_vehicles")
+    .select("stored_in_property_id, assigned_upgrade_id")
+    .eq("id", opts.ownedVehicleId)
+    .eq("user_id", user.id)
+    .maybeSingle();
+  const areaChanged =
+    (existing?.stored_in_property_id ?? null) !== opts.ownedPropertyId ||
+    (existing?.assigned_upgrade_id ?? null) !== (opts.assignedUpgradeId ?? null);
 
   // Capacity check — exclude the vehicle itself so re-saving a car that's
   // already parked in a full location (e.g. just editing its tags) isn't
@@ -78,6 +96,7 @@ export async function assignVehicleStorage(opts: {
       stored_in_property_id: opts.ownedPropertyId,
       assigned_upgrade_id: opts.assignedUpgradeId,
       sub_slot: opts.subSlot ?? null,
+      ...(areaChanged ? { slot_number: null } : {}),
     })
     .eq("id", opts.ownedVehicleId)
     .eq("user_id", user.id);

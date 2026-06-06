@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, X } from "lucide-react";
+import { Minus, Plus, X } from "lucide-react";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -21,10 +21,15 @@ import {
   updateVehicleInstance,
   assignVehicleStorage,
 } from "@/app/(app)/my-vehicles/actions";
+import {
+  setVehicleSlot,
+  swapVehicleSlots,
+} from "@/app/(app)/my-vehicles/slot-actions";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
+import { clampSlot } from "@/lib/slots";
 import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
 import { bayBinding, isBayUpgrade, isVehicleBoundSlot, slotAcceptsVehicle } from "@/lib/bays";
 
@@ -57,6 +62,10 @@ export function InstanceDrawer({
     instance.storage?.assigned_upgrade_id ?? "",
   );
   const [subSlot, setSubSlot] = useState(instance.storage?.sub_slot ?? "");
+  const [slotValue, setSlotValue] = useState<number | null>(
+    instance.storage?.slot_number ?? null,
+  );
+  const [slotBusy, setSlotBusy] = useState(false);
   const [isPending, startTransition] = useTransition();
   const confirm = useConfirm();
 
@@ -185,6 +194,76 @@ export function InstanceDrawer({
   ) {
     setSubSlot(subSlotsAvailable[0].label);
   }
+
+  // Numbered garage slot. Only meaningful while the car sits in a CAR garage and
+  // the drawer has no pending move to a different area (saving the move resets
+  // the slot). Acts immediately (like the favourite star), independent of Save.
+  const savedProp = ownedProperties.find(
+    (p) => p.id === (instance.storage?.owned_property_id ?? ""),
+  );
+  const savedUpgrade = instance.storage?.assigned_upgrade_id
+    ? savedProp?.upgrades.find(
+        (u) => u.id === instance.storage?.assigned_upgrade_id,
+      )
+    : null;
+  const slotAreaCapacity = savedUpgrade
+    ? savedUpgrade.capacity
+    : (savedProp?.base_capacity ?? 0);
+  const pendingAreaChange =
+    (propertyId || null) !== (instance.storage?.owned_property_id ?? null) ||
+    (upgradeId || null) !== (instance.storage?.assigned_upgrade_id ?? null);
+  const showSlot =
+    !!instance.storage &&
+    !!savedProp?.counts_as_garage &&
+    !isBayUpgrade(savedUpgrade?.sub_slots) &&
+    slotAreaCapacity > 0 &&
+    !pendingAreaChange;
+
+  const commitSlot = async (next: number | null) => {
+    if (slotBusy) return;
+    const prev = slotValue;
+    setSlotValue(next); // optimistic
+    setSlotBusy(true);
+    try {
+      const r = await setVehicleSlot({
+        ownedVehicleId: instance.id,
+        slotNumber: next,
+      });
+      if ("error" in r) {
+        toast.error(r.error);
+        setSlotValue(prev);
+        return;
+      }
+      if ("occupied" in r) {
+        // Confirm OUTSIDE any transition (awaiting confirm in a transition
+        // silently no-ops — see the organizer delete-chat fix).
+        const ok = await confirm({
+          title: `Slot ${r.occupied.slot} is taken`,
+          description: `${r.occupied.byName} is already in slot ${r.occupied.slot}. Swap them so this vehicle takes the spot?`,
+          confirmText: "Swap",
+        });
+        if (!ok) {
+          setSlotValue(prev);
+          return;
+        }
+        const sw = await swapVehicleSlots({
+          aId: instance.id,
+          bId: r.occupied.byInstanceId,
+        });
+        if ("error" in sw) {
+          toast.error(sw.error);
+          setSlotValue(prev);
+          return;
+        }
+        setSlotValue(r.occupied.slot);
+        toast.success(`Moved to slot ${r.occupied.slot}`);
+        return;
+      }
+      toast.success(next === null ? "Un-placed" : `Set to slot ${next}`);
+    } finally {
+      setSlotBusy(false);
+    }
+  };
 
   const handleSave = () => {
     startTransition(async () => {
@@ -318,6 +397,89 @@ export function InstanceDrawer({
                   </option>
                 ))}
               </select>
+            )}
+
+            {showSlot && (
+              <div className="flex flex-col gap-1.5 rounded-md border bg-muted/20 p-2.5">
+                <Label className="text-xs">
+                  Garage slot{" "}
+                  <span className="text-muted-foreground">
+                    (1–{slotAreaCapacity})
+                  </span>
+                </Label>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    disabled={slotBusy}
+                    onClick={() =>
+                      commitSlot(
+                        slotValue == null
+                          ? 1
+                          : clampSlot(slotValue - 1, slotAreaCapacity),
+                      )
+                    }
+                    className="flex h-8 w-8 items-center justify-center rounded-md border hover:bg-muted disabled:opacity-50"
+                    aria-label="Lower slot"
+                  >
+                    <Minus className="h-3.5 w-3.5" />
+                  </button>
+                  <input
+                    type="number"
+                    min={1}
+                    max={slotAreaCapacity}
+                    inputMode="numeric"
+                    disabled={slotBusy}
+                    value={slotValue ?? ""}
+                    placeholder="—"
+                    onChange={(e) => {
+                      const raw = e.target.value;
+                      setSlotValue(raw === "" ? null : Number(raw));
+                    }}
+                    onBlur={(e) => {
+                      const raw = e.target.value;
+                      if (raw === "") return;
+                      const n = clampSlot(Number(raw), slotAreaCapacity);
+                      if (n !== (instance.storage?.slot_number ?? null))
+                        commitSlot(n);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") e.currentTarget.blur();
+                    }}
+                    className="h-8 w-16 rounded-md border bg-background px-2 text-center text-sm tabular-nums disabled:opacity-50"
+                  />
+                  <button
+                    type="button"
+                    disabled={slotBusy}
+                    onClick={() =>
+                      commitSlot(
+                        slotValue == null
+                          ? 1
+                          : clampSlot(slotValue + 1, slotAreaCapacity),
+                      )
+                    }
+                    className="flex h-8 w-8 items-center justify-center rounded-md border hover:bg-muted disabled:opacity-50"
+                    aria-label="Raise slot"
+                  >
+                    <Plus className="h-3.5 w-3.5" />
+                  </button>
+                  {slotValue != null && (
+                    <button
+                      type="button"
+                      disabled={slotBusy}
+                      onClick={() => commitSlot(null)}
+                      className="ml-1 text-xs text-muted-foreground hover:text-foreground disabled:opacity-50"
+                    >
+                      Un-place
+                    </button>
+                  )}
+                </div>
+                {slotValue == null && (
+                  <p className="text-[11px] text-muted-foreground">
+                    ❓ Unplaced — pick a numbered spot, or drag it on the garage
+                    page.
+                  </p>
+                )}
+              </div>
             )}
           </div>
 

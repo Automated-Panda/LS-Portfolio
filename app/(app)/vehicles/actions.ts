@@ -56,7 +56,7 @@ export async function getOwnedInstancesForVehicle(
     .from("user_owned_vehicles")
     .select(`
       id, vehicle_id, nickname, notes, custom_tags, is_favourite,
-      stored_in_property_id, assigned_upgrade_id, sub_slot,
+      stored_in_property_id, assigned_upgrade_id, sub_slot, slot_number,
       vehicles!inner (
         display_name, class, image_path, manufacturer_id, price,
         manufacturers ( display ),
@@ -114,6 +114,7 @@ export async function getOwnedInstancesForVehicle(
             assigned_upgrade_id: row.assigned_upgrade_id,
             upgrade_display_name: up?.display_name ?? null,
             sub_slot: row.sub_slot ?? null,
+            slot_number: row.slot_number ?? null,
           }
         : null,
     };

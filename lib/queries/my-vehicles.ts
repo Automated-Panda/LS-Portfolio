@@ -22,6 +22,7 @@ export type OwnedVehicleInstance = {
     assigned_upgrade_id: string | null;
     upgrade_display_name: string | null;
     sub_slot: string | null;          // specific labelled slot within the upgrade
+    slot_number: number | null;       // numbered garage spot (null = unplaced)
   } | null;
 };
 
@@ -34,7 +35,7 @@ export async function getOwnedVehicleInstances(
     .from("user_owned_vehicles")
     .select(`
       id, vehicle_id, nickname, notes, custom_tags, is_favourite,
-      stored_in_property_id, assigned_upgrade_id, sub_slot,
+      stored_in_property_id, assigned_upgrade_id, sub_slot, slot_number,
       vehicles!inner (
         display_name, class, image_path, manufacturer_id, price,
         manufacturers ( display ),
@@ -92,6 +93,7 @@ export async function getOwnedVehicleInstances(
             assigned_upgrade_id: row.assigned_upgrade_id,
             upgrade_display_name: up?.display_name ?? null,
             sub_slot: row.sub_slot ?? null,
+            slot_number: row.slot_number ?? null,
           }
         : null,
     };

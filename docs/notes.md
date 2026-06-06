@@ -7,10 +7,14 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 ## 🔼 NEXT SESSION — start here (added 2026-06-06)
 
 ### 🚨 HIGHEST PRIORITY — garage slots + organised vehicle views
-- [ ] **Add numbered slots for ALL garages.** Every garage slot gets a number. **Show the slot number in the bottom corner of each vehicle card.** Show an icon (e.g. **❓**) on cards for **unslotted** vehicles.
-- [ ] **Better, more organised garage view** — order vehicles **by slot number**; allow **collapsing the per-level groups** for multi-floor properties (e.g. Vinewood / Eclipse garages).
-- [ ] **Better "My Vehicles" organisation** — **group by garage by default** instead of one big unordered list. When the **Duplicates** filter is on, **group the duplicates together** so identical vehicles sit side by side.
-- [ ] **Owned / Unowned split** — a way to separate "My Vehicles" into **Owned vs Unowned** so users can easily see **which cars they could still buy** (the ones they don't own yet, excluding duplicates they already have). Helps discovery of new purchases.
+- [x] **Numbered garage slots — DONE (not pushed yet).** Migration `0038`: nullable `slot_number` on `user_owned_vehicles` + partial unique index (per `stored_in_property_id` + `coalesce(assigned_upgrade_id,'')`) + atomic `swap_vehicle_slots` RPC. Applied to hosted GT Vault DB. **No auto-assign** — numbers only ever reflect deliberate placement (decided with James).
+  - **Garage grid view** (`components/portfolio/garage-grid.tsx`, uses `@dnd-kit`): each car garage renders a **fixed grid of N numbered slots** (empty slots visible) + an **"Unplaced" tray**. Drag a card onto a slot to place; **drop onto an occupied slot to swap**; drop onto the tray to un-place. Per-floor **collapse** for multi-area properties (Vinewood/Eclipse). Per-garage **Auto-arrange** button (one-click 1..N by add order). Garages only — hangars/docks/weaponized bays keep the old list.
+  - **Stepper-with-swap** in `InstanceDrawer`: number input + arrows when a car is in a garage; typing an occupied slot → "Slot N is taken by «X», swap?" confirm.
+  - **Card badges** on `/my-vehicles`: green **slot # pill** (bottom-left) when placed, **❓** when in a garage but unplaced, **‼️** when not stored. Table view gets a sortable **Slot** column.
+  - Pure logic in `lib/slots.ts` (+ 17 Vitest cases); slot resets to null when a car moves to a different area (`assignVehicleStorage`). Server actions in `app/(app)/my-vehicles/slot-actions.ts`. ✅ tsc + 121 tests + `next build` all green.
+- [ ] **Better, more organised garage view** — ~~order vehicles by slot number~~ (the grid IS this now); ~~collapsing per-level groups~~ (done). _Effectively covered by the grid view above._
+- [x] **Better "My Vehicles" organisation — DONE (not pushed).** `/my-vehicles` cards now have a **"Group:" dropdown** (`lib/vehicle-grouping.ts`, tested): **Garage** (default — sections per property, cars ordered by slot, "Not stored" last), **Manufacturer**, **Type** (class), **Model**, **None** (flat). Turning on the **👯 Duplicates** filter **forces Group-by-Model** so identical cars sit side by side. Grid refactored into grouped sections (`my-vehicles-grid.tsx`); table view unchanged.
+- [x] **Owned / Unowned split — DONE (not pushed).** `/vehicles` ("All Vehicles") gets an **All / Owned / Unowned** segmented toggle (`?own=` param, `filter-bar.tsx` `showOwnership`). **Unowned = your shopping list** (own 0 of); subtitle + empty-state ("you own everything 🏆") adapt. Owning 2+ still counts as Owned.
 
 ### 🔧 Phase 2 (Pegasus / bays) follow-ups
 - [ ] **"Summon-only" is wrong — rework it.** Researched & confirmed: in GTA you **must own the Facility** to buy the Khanjali/Chernobog/Avenger/Thruster, and **must own an Arena Workshop** to buy the Cerberus. So owning the vehicle *implies* owning the property — "summon-only" (vehicle without property) is **impossible in-game**. Rework: treat bay-bound vehicles as **always assignable to their bay** (and/or prompt "you need a Facility/Arena to own this"). Re-check whether this also applies to broader Pegasus vehicles.
@@ -27,10 +31,7 @@ These are GTA things that are simultaneously a **vehicle AND a business / mini-s
 
 ---
 
-> ⚠️ **ACTION NEEDED — James: add 1 vehicle image (2026-06-05).** Catalog Sanchez fix is done. There are only **two** Sanchez bikes now — **Sanchez** (just colours, $8k) and **Sanchez (Livery)** ($7k). The Livery image is correct; the plain **Sanchez** row still shows the livery photo.
-> - **Sanchez** (colours / no livery) → drop a photo into `docs/temp-images/sanchez.png`
->
-> Then ping me and I'll run `normalize-temp-images` + `images:publish` + push.
+> ✅ **DONE 2026-06-06 — Sanchez image fixed.** James dropped `sanchez.webp` into `docs/temp-images/`; ran `normalize-temp-images` (517KB → 50KB) + `images:publish`. Plain **Sanchez** (colours, $8k) now shows the correct colours-only photo; **Sanchez (Livery)** ($7k) unchanged. Needs a push to go live.
 
 ---
 

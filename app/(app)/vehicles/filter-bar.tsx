@@ -52,12 +52,20 @@ import { cn } from "@/lib/utils";
 import { PriceFilter } from "@/components/filters/price-filter";
 import { SortControl } from "@/components/filters/sort-control";
 
-export function FilterBar({ filters }: { filters: FilterOptions }) {
+export function FilterBar({
+  filters,
+  showOwnership = false,
+}: {
+  filters: FilterOptions;
+  /** Show the All / Owned / Unowned scope toggle (catalogue only). */
+  showOwnership?: boolean;
+}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [mfrOpen, setMfrOpen] = useState(false);
 
+  const own = searchParams.get("own") ?? "";
   const q = searchParams.get("q") ?? "";
   const cls = searchParams.get("class") ?? "";
   const mfr = searchParams.get("mfr") ?? "";
@@ -114,6 +122,7 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
     cat ||
     avail ||
     vendor ||
+    own ||
     selectedTags.length > 0 ||
     searchParams.get("pmin") ||
     searchParams.get("pmax") ||
@@ -171,6 +180,36 @@ export function FilterBar({ filters }: { filters: FilterOptions }) {
           );
         })}
       </div>
+
+      {showOwnership && (
+        <div className="flex w-fit rounded-md border p-0.5">
+          {(
+            [
+              ["", "All"],
+              ["owned", "Owned"],
+              ["unowned", "Unowned"],
+            ] as const
+          ).map(([value, label]) => {
+            const active = own === value;
+            return (
+              <button
+                key={label}
+                type="button"
+                onClick={() => update({ own: value || null })}
+                aria-pressed={active}
+                className={cn(
+                  "rounded px-3 py-1 text-sm transition-colors",
+                  active
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-2">
         <Input

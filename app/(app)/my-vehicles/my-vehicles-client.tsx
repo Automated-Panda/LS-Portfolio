@@ -10,6 +10,7 @@ import { LocationFilter, type LocationOption } from "@/components/portfolio/loca
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import { isPegasus, isSummonOnly, isUnassignedNagworthy } from "@/lib/pegasus";
+import type { GroupBy } from "@/lib/vehicle-grouping";
 
 import { MyVehiclesGrid } from "./my-vehicles-grid";
 import { MyVehiclesTable } from "./my-vehicles-table";
@@ -40,6 +41,7 @@ export function MyVehiclesClient({
     [instances],
   );
   const [view, setView] = useState<"cards" | "table">("cards");
+  const [groupBy, setGroupBy] = useState<GroupBy>("garage");
   const [search, setSearch] = useState("");
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
@@ -203,6 +205,10 @@ export function MyVehiclesClient({
     isUnassignedNagworthy(i, ownedProperties),
   ).length;
 
+  // The Duplicates filter forces a by-model grouping so identical cars sit
+  // side by side; otherwise honour the user's Group choice.
+  const effectiveGroupBy: GroupBy = duplicatesOnly ? "model" : groupBy;
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -258,6 +264,26 @@ export function MyVehiclesClient({
               ✈️ Pegasus ({pegasusCount})
             </Button>
           )}
+          {view === "cards" && (
+            <select
+              value={duplicatesOnly ? "model" : groupBy}
+              onChange={(e) => setGroupBy(e.target.value as GroupBy)}
+              disabled={duplicatesOnly}
+              title={
+                duplicatesOnly
+                  ? "Duplicates view groups by model"
+                  : "Group cards by"
+              }
+              className="rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              aria-label="Group vehicles by"
+            >
+              <option value="garage">Group: Garage</option>
+              <option value="manufacturer">Group: Manufacturer</option>
+              <option value="class">Group: Type</option>
+              <option value="model">Group: Model</option>
+              <option value="none">Group: None</option>
+            </select>
+          )}
           <div className="flex rounded-md border">
             <Button
               size="sm"
@@ -279,6 +305,7 @@ export function MyVehiclesClient({
           ownedProperties={ownedProperties}
           tagLookup={tagLookup}
           tagSuggestions={tagSuggestions}
+          groupBy={effectiveGroupBy}
         />
       ) : (
         <MyVehiclesTable

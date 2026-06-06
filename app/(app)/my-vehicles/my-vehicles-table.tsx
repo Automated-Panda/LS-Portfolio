@@ -12,7 +12,13 @@ type Props = {
   tagSuggestions?: string[];
 };
 
-type SortKey = "display_name" | "class" | "manufacturer_display" | "property" | "upgrade";
+type SortKey =
+  | "display_name"
+  | "class"
+  | "manufacturer_display"
+  | "property"
+  | "upgrade"
+  | "slot";
 
 export function MyVehiclesTable({
   instances,
@@ -25,6 +31,13 @@ export function MyVehiclesTable({
   const selected = instances.find((i) => i.id === selectedId);
 
   const sorted = [...instances].sort((a, b) => {
+    if (sortKey === "slot") {
+      // Unplaced sort last (asc). Big sentinel keeps them at the bottom.
+      const av = a.storage?.slot_number ?? Number.MAX_SAFE_INTEGER;
+      const bv = b.storage?.slot_number ?? Number.MAX_SAFE_INTEGER;
+      const cmp = av - bv;
+      return sortDir === "asc" ? cmp : -cmp;
+    }
     const av =
       sortKey === "property"
         ? a.storage?.property_display_name ?? ""
@@ -64,6 +77,7 @@ export function MyVehiclesTable({
               <SortHeader k="manufacturer_display" label="Manufacturer" />
               <SortHeader k="property" label="📍 Stored at" />
               <SortHeader k="upgrade" label="Sub-garage" />
+              <SortHeader k="slot" label="Slot" />
             </tr>
           </thead>
           <tbody>
@@ -85,6 +99,11 @@ export function MyVehiclesTable({
                 </td>
                 <td className="p-2 text-muted-foreground">
                   {inst.storage?.upgrade_display_name ?? "—"}
+                </td>
+                <td className="p-2 tabular-nums">
+                  {inst.storage?.slot_number ?? (
+                    <span className="text-muted-foreground">—</span>
+                  )}
                 </td>
               </tr>
             ))}

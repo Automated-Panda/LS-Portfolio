@@ -49,6 +49,7 @@ function v(
           assigned_upgrade_id: storage.upgrade ?? null,
           upgrade_display_name: storage.upgrade ?? null,
           sub_slot: null,
+          slot_number: null,
         }
       : null,
   };

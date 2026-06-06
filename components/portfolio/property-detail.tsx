@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import { usePropertyUpgrades } from "@/components/portfolio/use-property-upgrades";
+import { GarageGrid } from "@/components/portfolio/garage-grid";
 import { VehiclePickerModal } from "@/components/portfolio/vehicle-picker-modal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -100,6 +101,14 @@ export function PropertyDetail({
     (u) => u.capacity > 0 && u.is_installed,
   );
   const hasAnyStorage = property.base_capacity > 0 || storageUpgrades.length > 0;
+
+  // A car garage gets the numbered-slot grid; hangars/docks and weaponized bays
+  // keep the plain card list. Base storage has no sub_slots so it's a garage iff
+  // the property counts as one.
+  const baseIsGarage = property.counts_as_garage;
+  const areaCount = (property.base_capacity > 0 ? 1 : 0) + storageUpgrades.length;
+  // Multi-area properties (Vinewood/Eclipse floors) get collapsible sections.
+  const collapsible = areaCount > 1;
 
   // Upgrades checklist (Storage upgrades + Equipment), hiding included_on_purchase
   // rows — those aren't user choices.
@@ -220,50 +229,98 @@ export function PropertyDetail({
           </p>
         ) : (
           <div className="flex flex-col gap-6">
-            {property.base_capacity > 0 && (
-              <StorageArea
-                label={property.subtype_display}
-                capacity={property.base_capacity}
-                cars={carsByUpgrade.get(null) ?? []}
-                noun={noun}
-                tagLookup={tagLookup}
-                isPending={isPending}
-                onAdd={() =>
-                  openPicker({
-                    upgradeId: null,
-                    label: "Base storage",
-                    capacity: property.base_capacity,
-                    current: (carsByUpgrade.get(null) ?? []).length,
-                  })
-                }
-                onManage={setManagedInstanceId}
-                onRemove={handleRemoveFromStorage}
-              />
-            )}
-            {storageUpgrades.map((u) => (
-              <StorageArea
-                key={u.id}
-                label={u.display_name}
-                capacity={u.capacity}
-                cars={carsByUpgrade.get(u.id) ?? []}
-                noun={noun}
-                tagLookup={tagLookup}
-                isPending={isPending}
-                onAdd={() =>
-                  openPicker({
-                    upgradeId: u.id,
-                    label: u.display_name,
-                    capacity: u.capacity,
-                    current: u.cars_here,
-                    allowedVehicleIds: isBayUpgrade(u.sub_slots)
-                      ? (u.sub_slots ?? []).flatMap((s) => slotVehicleIds(s))
-                      : undefined,
-                  })
-                }
-                onManage={setManagedInstanceId}
-                onRemove={handleRemoveFromStorage}
-              />
-            ))}
+            {property.base_capacity > 0 &&
+              (baseIsGarage ? (
+                <GarageGrid
+                  ownedPropertyId={property.id}
+                  assignedUpgradeId={null}
+                  label={property.subtype_display}
+                  capacity={property.base_capacity}
+                  cars={carsByUpgrade.get(null) ?? []}
+                  noun={noun}
+                  tagLookup={tagLookup}
+                  collapsible={collapsible}
+                  onAdd={() =>
+                    openPicker({
+                      upgradeId: null,
+                      label: "Base storage",
+                      capacity: property.base_capacity,
+                      current: (carsByUpgrade.get(null) ?? []).length,
+                    })
+                  }
+                  onManage={setManagedInstanceId}
+                  onRemove={handleRemoveFromStorage}
+                />
+              ) : (
+                <StorageArea
+                  label={property.subtype_display}
+                  capacity={property.base_capacity}
+                  cars={carsByUpgrade.get(null) ?? []}
+                  noun={noun}
+                  tagLookup={tagLookup}
+                  isPending={isPending}
+                  onAdd={() =>
+                    openPicker({
+                      upgradeId: null,
+                      label: "Base storage",
+                      capacity: property.base_capacity,
+                      current: (carsByUpgrade.get(null) ?? []).length,
+                    })
+                  }
+                  onManage={setManagedInstanceId}
+                  onRemove={handleRemoveFromStorage}
+                />
+              ))}
+            {storageUpgrades.map((u) => {
+              const upgradeIsGarage =
+                property.counts_as_garage && !isBayUpgrade(u.sub_slots);
+              return upgradeIsGarage ? (
+                <GarageGrid
+                  key={u.id}
+                  ownedPropertyId={property.id}
+                  assignedUpgradeId={u.id}
+                  label={u.display_name}
+                  capacity={u.capacity}
+                  cars={carsByUpgrade.get(u.id) ?? []}
+                  noun={noun}
+                  tagLookup={tagLookup}
+                  collapsible={collapsible}
+                  onAdd={() =>
+                    openPicker({
+                      upgradeId: u.id,
+                      label: u.display_name,
+                      capacity: u.capacity,
+                      current: u.cars_here,
+                    })
+                  }
+                  onManage={setManagedInstanceId}
+                  onRemove={handleRemoveFromStorage}
+                />
+              ) : (
+                <StorageArea
+                  key={u.id}
+                  label={u.display_name}
+                  capacity={u.capacity}
+                  cars={carsByUpgrade.get(u.id) ?? []}
+                  noun={noun}
+                  tagLookup={tagLookup}
+                  isPending={isPending}
+                  onAdd={() =>
+                    openPicker({
+                      upgradeId: u.id,
+                      label: u.display_name,
+                      capacity: u.capacity,
+                      current: u.cars_here,
+                      allowedVehicleIds: isBayUpgrade(u.sub_slots)
+                        ? (u.sub_slots ?? []).flatMap((s) => slotVehicleIds(s))
+                        : undefined,
+                    })
+                  }
+                  onManage={setManagedInstanceId}
+                  onRemove={handleRemoveFromStorage}
+                />
+              );
+            })}
           </div>
         )}
       </section>

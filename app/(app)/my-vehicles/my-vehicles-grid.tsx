@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
+import { isBayUpgrade } from "@/lib/bays";
 import { isSummonOnly } from "@/lib/pegasus";
+import { groupInstances, type GroupBy } from "@/lib/vehicle-grouping";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
@@ -15,6 +18,8 @@ type Props = {
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
   tagSuggestions?: string[];
+  /** Section grouping for the cards. "none" = a single flat grid. */
+  groupBy?: GroupBy;
 };
 
 export function MyVehiclesGrid({
@@ -22,71 +27,99 @@ export function MyVehiclesGrid({
   ownedProperties,
   tagLookup,
   tagSuggestions,
+  groupBy = "none",
 }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const selected = instances.find((i) => i.id === selectedId);
+
+  const toggleCollapsed = (key: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+
+  const propById = useMemo(
+    () => new Map(ownedProperties.map((p) => [p.id, p])),
+    [ownedProperties],
+  );
+
+  const groups = useMemo(
+    () => groupInstances(instances, groupBy),
+    [instances, groupBy],
+  );
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-        {instances.map((inst) => {
-          const img = vehicleImageUrl(inst.image_path);
-          const subLineCompact = inst.storage
-            ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
-            : null;
-          const summonOnly = isSummonOnly(inst, ownedProperties);
+      <div className="flex flex-col gap-6">
+        {groups.map((group) => {
+          const isCollapsed = collapsed.has(group.key);
           return (
-            <div
-              key={inst.id}
-              className="relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card ring-2 ring-emerald-500/30 hover:border-foreground/40"
-            >
-              {/* Star sits as a sibling overlay so we never nest a button in a button. */}
-              <FavouriteStar
-                instanceId={inst.id}
-                initial={inst.is_favourite}
-                size={16}
-                className="absolute right-1.5 top-1.5 z-10 bg-background/80 shadow-sm backdrop-blur-sm hover:bg-background"
-              />
-              <button
-                type="button"
-                onClick={() => setSelectedId(inst.id)}
-                className="flex flex-col overflow-hidden text-left"
-              >
-              <div className="relative aspect-video w-full bg-muted">
-                {img && (
-                  <Image src={img} alt={inst.display_name} fill className="object-contain" loading="lazy" sizes="20vw" />
-                )}
-                <span className="absolute left-2 top-2 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] uppercase text-white">
-                  {inst.class}
-                </span>
-              </div>
-              <div className="flex flex-col gap-1 p-3">
-                <p className="text-sm font-medium">
-                  {inst.nickname ?? inst.display_name}
-                </p>
-                <p className="text-xs text-muted-foreground">{inst.manufacturer_display}</p>
-                {subLineCompact ? (
-                  <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
-                ) : summonOnly ? (
-                  <p className="mt-1 text-xs text-sky-400">✈️ Pegasus · summon</p>
+            <section key={group.key} className="flex flex-col gap-3">
+              {group.label && (
+                <button
+                  type="button"
+                  onClick={() => toggleCollapsed(group.key)}
+                  className="flex w-fit items-baseline gap-1.5 text-sm font-semibold hover:text-foreground/80"
+                  aria-expanded={!isCollapsed}
+                >
+                  {isCollapsed ? (
+                    <ChevronRight className="h-4 w-4 self-center" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 self-center" />
+                  )}
+                  {group.label}
+                  <span className="text-xs font-normal tabular-nums text-muted-foreground">
+                    {group.items.length}
+                  </span>
+                </button>
+              )}
+              {!isCollapsed &&
+                (group.subgroups ? (
+                  <div className="flex flex-col gap-4 border-l border-border/60 pl-3">
+                    {group.subgroups.map((sub) => {
+                      const subCollapsed = collapsed.has(sub.key);
+                      return (
+                        <div key={sub.key} className="flex flex-col gap-2">
+                          <button
+                            type="button"
+                            onClick={() => toggleCollapsed(sub.key)}
+                            className="flex w-fit items-baseline gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
+                            aria-expanded={!subCollapsed}
+                          >
+                            {subCollapsed ? (
+                              <ChevronRight className="h-3.5 w-3.5 self-center" />
+                            ) : (
+                              <ChevronDown className="h-3.5 w-3.5 self-center" />
+                            )}
+                            {sub.label}
+                            <span className="tabular-nums">{sub.items.length}</span>
+                          </button>
+                          {!subCollapsed && (
+                            <CardGrid
+                              items={sub.items}
+                              propById={propById}
+                              ownedProperties={ownedProperties}
+                              tagLookup={tagLookup}
+                              onSelect={setSelectedId}
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 ) : (
-                  <p className="mt-1 text-xs text-red-400">📍 Not stored →</p>
-                )}
-                <div className="mt-1 flex flex-wrap gap-1">
-                  {inst.tag_ids.slice(0, 3).map((id) => (
-                    <Badge key={id} variant="outline" className="text-[10px]">
-                      {tagLookup[id] ?? id}
-                    </Badge>
-                  ))}
-                  {inst.custom_tags.slice(0, 3).map((t) => (
-                    <Badge key={t} variant="outline" className="border-amber-500/40 text-amber-300 text-[10px]">
-                      {t}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              </button>
-            </div>
+                  <CardGrid
+                    items={group.items}
+                    propById={propById}
+                    ownedProperties={ownedProperties}
+                    tagLookup={tagLookup}
+                    onSelect={setSelectedId}
+                  />
+                ))}
+            </section>
           );
         })}
       </div>
@@ -100,5 +133,148 @@ export function MyVehiclesGrid({
         />
       )}
     </>
+  );
+}
+
+function CardGrid({
+  items,
+  propById,
+  ownedProperties,
+  tagLookup,
+  onSelect,
+}: {
+  items: OwnedVehicleInstance[];
+  propById: Map<string, OwnedPropertyDetail>;
+  ownedProperties: OwnedPropertyDetail[];
+  tagLookup: Record<string, string>;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+      {items.map((inst) => (
+        <OwnedCard
+          key={inst.id}
+          inst={inst}
+          propById={propById}
+          ownedProperties={ownedProperties}
+          tagLookup={tagLookup}
+          onSelect={() => onSelect(inst.id)}
+        />
+      ))}
+    </div>
+  );
+}
+
+function OwnedCard({
+  inst,
+  propById,
+  ownedProperties,
+  tagLookup,
+  onSelect,
+}: {
+  inst: OwnedVehicleInstance;
+  propById: Map<string, OwnedPropertyDetail>;
+  ownedProperties: OwnedPropertyDetail[];
+  tagLookup: Record<string, string>;
+  onSelect: () => void;
+}) {
+  const img = vehicleImageUrl(inst.image_path);
+  const subLineCompact = inst.storage
+    ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
+    : null;
+  const summonOnly = isSummonOnly(inst, ownedProperties);
+
+  // Slot indicator: a number when placed, ❓ when in a garage but not yet
+  // placed, ‼️ when not stored anywhere (and not a summon-only Pegasus).
+  const prop = inst.storage ? propById.get(inst.storage.owned_property_id) : null;
+  const upg = inst.storage?.assigned_upgrade_id
+    ? prop?.upgrades.find((u) => u.id === inst.storage?.assigned_upgrade_id)
+    : null;
+  const inGarage =
+    !!inst.storage && !!prop?.counts_as_garage && !isBayUpgrade(upg?.sub_slots);
+  const slot = inst.storage?.slot_number ?? null;
+
+  return (
+    <div className="relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card ring-2 ring-emerald-500/30 hover:border-foreground/40">
+      {/* Star sits as a sibling overlay so we never nest a button in a button. */}
+      <FavouriteStar
+        instanceId={inst.id}
+        initial={inst.is_favourite}
+        size={16}
+        className="absolute right-1.5 top-1.5 z-10 bg-background/80 shadow-sm backdrop-blur-sm hover:bg-background"
+      />
+      <button
+        type="button"
+        onClick={onSelect}
+        className="flex flex-col overflow-hidden text-left"
+      >
+        <div className="relative aspect-video w-full bg-muted">
+          {img && (
+            <Image
+              src={img}
+              alt={inst.display_name}
+              fill
+              className="object-contain"
+              loading="lazy"
+              sizes="20vw"
+            />
+          )}
+          <span className="absolute left-2 top-2 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] uppercase text-white">
+            {inst.class}
+          </span>
+          {slot != null ? (
+            <span
+              className="absolute bottom-1.5 left-1.5 flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow"
+              title={`Garage slot ${slot}`}
+            >
+              {slot}
+            </span>
+          ) : inGarage ? (
+            <span
+              className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-amber-500/90 text-xs shadow"
+              title="In a garage but not placed in a numbered slot"
+            >
+              ❓
+            </span>
+          ) : !inst.storage && !summonOnly ? (
+            <span
+              className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
+              title="Not stored in any garage"
+            >
+              ‼️
+            </span>
+          ) : null}
+        </div>
+        <div className="flex flex-col gap-1 p-3">
+          <p className="text-sm font-medium">{inst.nickname ?? inst.display_name}</p>
+          <p className="text-xs text-muted-foreground">
+            {inst.manufacturer_display}
+          </p>
+          {subLineCompact ? (
+            <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
+          ) : summonOnly ? (
+            <p className="mt-1 text-xs text-sky-400">✈️ Pegasus · summon</p>
+          ) : (
+            <p className="mt-1 text-xs text-red-400">📍 Not stored →</p>
+          )}
+          <div className="mt-1 flex flex-wrap gap-1">
+            {inst.tag_ids.slice(0, 3).map((id) => (
+              <Badge key={id} variant="outline" className="text-[10px]">
+                {tagLookup[id] ?? id}
+              </Badge>
+            ))}
+            {inst.custom_tags.slice(0, 3).map((t) => (
+              <Badge
+                key={t}
+                variant="outline"
+                className="border-amber-500/40 text-amber-300 text-[10px]"
+              >
+                {t}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </button>
+    </div>
   );
 }
