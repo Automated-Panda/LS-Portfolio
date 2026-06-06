@@ -17,6 +17,14 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [ ] **Fix the Arena floor model (accuracy).** The 3 large (Cerberus) slots currently exist regardless of which basement floors are installed. Make the large-spot count **track installed floors** (base + B1 + B2). Also **double-check the Facility bay list**: one source lists **5** (incl. **RCV** = `riot2`), another lists 4 (Khanjali/Thruster/Chernobog + Avenger) — verify RCV is really a Facility bay.
 - [ ] **Make the AI Organizer bay-aware.** The planner can currently move a Khanjali into a normal garage. Teach it about bay-bound vehicles (`lib/bays.ts`) + their dedicated bays so it never mis-assigns them.
 
+### 🧩 Hybrid vehicle/business storage entities — NEEDS DISCUSSION (not highest priority)
+These are GTA things that are simultaneously a **vehicle AND a business / mini-storage unit** — the core question is how to model dual-nature entities (a vehicle, a property/business, or a new hybrid concept). **Discuss the model before building.**
+- [ ] **Terrorbyte — fix it.** It can **store the Oppressor (Mk II)**, and the Terrorbyte itself is **stored at the Garment Factory or the Nightclub**. So it's a vehicle that's also a small storage unit.
+- [ ] **Mobile Operations Center (MOC) — add it.** Can **only be stored in a Bunker**, and has a **vehicle-storage upgrade** of its own.
+- [ ] **Kosatka (submarine) — add it + its upgrades.**
+- [ ] **Freakshop — maybe add as a business/property**, since it stores the **Acid Lab (a business)** and the **Acid delivery bike**.
+- ⚠️ **Core tension:** the **Acid Lab, MOC, and Terrorbyte are technically vehicles AND businesses.** Need to decide how dual-nature entities are represented before implementing any of the above.
+
 ---
 
 > ⚠️ **ACTION NEEDED — James: add 1 vehicle image (2026-06-05).** Catalog Sanchez fix is done. There are only **two** Sanchez bikes now — **Sanchez** (just colours, $8k) and **Sanchez (Livery)** ($7k). The Livery image is correct; the plain **Sanchez** row still shows the livery photo.
