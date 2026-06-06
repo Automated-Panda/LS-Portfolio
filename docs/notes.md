@@ -26,9 +26,10 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] **Phase 1 — schema + scaffolding DONE (not pushed).** Migration `0039` (`vehicle_upgrades` + `user_owned_vehicle_upgrades` tables + `user_owned_vehicles.stored_in_vehicle_id` nesting col + RLS, applied to hosted DB). `lib/containers.ts` catalogue map (mirrors `lib/bays.ts`) + tests. `nested_in` threaded through both instance queries. tsc + 148 tests + build green.
 - [x] **Phase 1b — catalogue data DONE (not pushed).** All 4 containers seeded (migrations `0040`–`0042`): **Terrorbyte** (`terbyte` — Oppressor Mk II gated by Specialized Workshop; + Drone Station/Weapon Workshop/Turret/MCT), **Kosatka** (`kosatka` moon pool: Sparrow `seasparrow2` + **Kraken Avisa** `avisa`; + Sonar/Guided Missiles), **Acid Lab** (`brickade2` — Manchez Scout C `manchez2`; + Equipment Upgrade), **MOC** (new `moc` vehicle, HVY/COMMERCIAL; cab mutex group + Command Centre + Vehicle & Weapon Workshop-gated bay). **Freakshop** property added (the Acid Lab's home). `lib/containers.ts` covers all four. MOC + Freakshop are **DB-only manual rows** (protect from full rebuilds, like Sanchez/Stirling).
   - ⏳ **James — images:** drop `moc` + `freakshop` covers into `docs/temp-images/` → `normalize-temp-images` + `images:publish` whenever (they show subtype/no-image fallback until then).
-- [ ] **Phase 2** — `getOwnedContainerVehicles` query layer.
-- [ ] **Phase 3** — UI (InstanceDrawer container panel: upgrades + bays; child-side nesting; badges).
-- [ ] **Phase 4** — integration (slot exclusion, Organizer awareness, dashboard, tests).
+- [x] **Phase 2 DONE** — `getOwnedContainerVehicles` query + pure `deriveContainerView` (client-safe in `lib/containers.ts`, tested).
+- [x] **Phase 3 DONE** — UI. **3a:** nest a bound vehicle into a container via the drawer's "store inside" dropdown (`container-actions.ts`: assign/getOwned…); mutual exclusivity; `📦 in «X»` badge; nested = stored. **3b:** container management panel in the drawer (bays w/ nested vehicle + remove; upgrades checklist install/uninstall, MOC cab mutex; `getContainerDetail`/`setVehicleUpgrade`); `📦 Stores N` card badge.
+- [x] **Phase 4 DONE** — Organizer ignores container + nested vehicles (planner `isPinned` + context annotation); containers/nested excluded from unassigned nags. tsc + 159 tests + build green throughout.
+  - ⏳ Remaining polish (not blocking): **images** for `moc` + `freakshop`; container **parent-property** assignment (e.g. Terrorbyte→Nightclub) left free/unmodelled in v1; grouping a nested car shows under "Not stored" group (badge still says in «X»).
 
 ---
 
