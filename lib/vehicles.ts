@@ -157,3 +157,19 @@ export function storageAssetCategory(subtype: string): AssetCategory {
   if (SEA_STORAGE_SUBTYPES.has(subtype)) return "sea";
   return "land";
 }
+
+/**
+ * Can a property of this subtype store a vehicle of the given asset category?
+ *
+ * Land storage is gated by `counts_as_garage` so non-garage land properties
+ * (businesses, cargo warehouses) are excluded. Air/sea subtypes (hangars,
+ * yachts) ARE valid storage even though `counts_as_garage` is false for them —
+ * that flag specifically means "car garage", so it must NOT gate aircraft/boats.
+ */
+export function propertyAcceptsVehicleCategory(
+  p: { subtype: string; counts_as_garage: boolean },
+  category: AssetCategory,
+): boolean {
+  if (storageAssetCategory(p.subtype) !== category) return false;
+  return category === "land" ? p.counts_as_garage : true;
+}

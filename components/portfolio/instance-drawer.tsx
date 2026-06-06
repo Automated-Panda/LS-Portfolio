@@ -30,7 +30,7 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import { clampSlot } from "@/lib/slots";
-import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
+import { assetCategoryOf, propertyAcceptsVehicleCategory } from "@/lib/vehicles";
 import { bayBinding, isBayUpgrade, isVehicleBoundSlot, slotAcceptsVehicle } from "@/lib/bays";
 
 import { CustomTagsInput } from "./custom-tags-input";
@@ -118,8 +118,12 @@ export function InstanceDrawer({
   const storableProperties = ownedProperties.filter((p) => {
     if (p.id === currentPropertyId) return true;
     if (binding) return p.subtype === binding.subtype;
+    // Must accept this vehicle's category (hangars for aircraft, yachts for
+    // boats, garages for cars) AND actually have somewhere to park it.
+    if (!propertyAcceptsVehicleCategory(p, vehicleCategory)) return false;
     return (
-      p.counts_as_garage && storageAssetCategory(p.subtype) === vehicleCategory
+      p.base_capacity > 0 ||
+      p.upgrades.some((u) => u.is_installed && u.capacity > 0)
     );
   });
   const selectedProperty = storableProperties.find((p) => p.id === propertyId);

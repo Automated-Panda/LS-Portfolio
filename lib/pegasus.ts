@@ -7,7 +7,7 @@
 
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
-import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
+import { assetCategoryOf, propertyAcceptsVehicleCategory } from "@/lib/vehicles";
 import { bayBinding, bayPropertyLabel, isBayBound } from "@/lib/bays";
 
 export const PEGASUS_TAG_ID = "pegasus";
@@ -41,9 +41,7 @@ export function hasCompatibleStorage(
     return ownedProperties.some((p) => p.subtype === bay.subtype);
   }
   const cat = assetCategoryOf(vehicle.class);
-  return ownedProperties.some(
-    (p) => p.counts_as_garage && storageAssetCategory(p.subtype) === cat,
-  );
+  return ownedProperties.some((p) => propertyAcceptsVehicleCategory(p, cat));
 }
 
 /** A genuinely summon-only vehicle: BROAD Pegasus (jets/helis you can legitimately
