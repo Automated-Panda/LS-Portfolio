@@ -4,6 +4,7 @@
 // (upgrade_id=null) or one of its installed sub-garage upgrades.
 
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import { isBayUpgrade } from "@/lib/bays";
 
 /** Stable string key for a location slot. */
 export type LocationKey = string;
@@ -34,8 +35,11 @@ export function parseLocationKey(
 export function slotsForProperty(
   prop: OwnedPropertyDetail,
 ): Array<{ key: LocationKey; capacity: number; label: string; upgradeId: string | null }> {
+  // Vehicle-bound bays (Facility weaponized bays, Arena large-vehicle bay) are
+  // NOT general-purpose slots — the planner must never park a normal car there
+  // or displace a bay-bound vehicle out of one. Exclude them from the universe.
   const installedStorageUpgrades = prop.upgrades.filter(
-    (u) => u.is_installed && u.capacity > 0,
+    (u) => u.is_installed && u.capacity > 0 && !isBayUpgrade(u.sub_slots),
   );
 
   if (installedStorageUpgrades.length > 0) {

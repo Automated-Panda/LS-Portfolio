@@ -8,6 +8,8 @@ import { toast } from "sonner";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import { Badge } from "@/components/ui/badge";
+import { useConfirm } from "@/components/ui/confirm-dialog";
+import { bayBinding, bayPropertyLabel } from "@/lib/bays";
 import {
   Popover,
   PopoverContent,
@@ -63,8 +65,27 @@ function VehicleCardImpl({
   // /my-vehicles / the property detail page. Closed initially; gear-click sets it.
   const [managedInstanceId, setManagedInstanceId] = useState<string | null>(null);
   const canManageInline = Boolean(ownedProperties);
+  const confirm = useConfirm();
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
+    // Bay-bound weaponized vehicles can only be bought once you own the
+    // Facility / Arena in-game. If the user hasn't added that property, nudge
+    // them — but let them add it anyway. (Skip when ownedProperties is unknown.)
+    const binding = bayBinding(vehicle.id);
+    if (
+      binding &&
+      ownedProperties &&
+      !ownedProperties.some((p) => p.subtype === binding.subtype)
+    ) {
+      const label = bayPropertyLabel(vehicle.id) ?? "property";
+      const ok = await confirm({
+        title: `${vehicle.display_name} needs a ${label}`,
+        description: `In GTA the ${vehicle.display_name} is stored in a ${label}, which isn't in your portfolio yet. Add the vehicle anyway?`,
+        confirmText: "Add anyway",
+      });
+      if (!ok) return;
+    }
+
     setOptimisticCount(optimisticCount + 1);
     startTransition(async () => {
       const result = await addVehicleInstance(vehicle.id);

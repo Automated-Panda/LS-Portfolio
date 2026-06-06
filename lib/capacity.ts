@@ -1,6 +1,7 @@
 // lib/capacity.ts
 import { createClient } from "@/lib/supabase/server";
 import { applyHangarBoost, getHangarBoostContext } from "@/lib/hangar-boost";
+import { ARENA_LARGE_BAY_UPGRADE_ID, arenaLargeBayCapacity } from "@/lib/arena-bay";
 
 /**
  * Returns the maximum number of vehicles that can be stored at the given
@@ -35,6 +36,19 @@ export async function capacityForStorageLocation(
       ownsMckenzie: boost.ownsMckenzie,
       gtaPlus: boost.gtaPlus,
     });
+  }
+
+  // The Arena's Large Vehicle Bay capacity tracks installed floors, not the
+  // static seed value (see lib/arena-bay.ts).
+  if (assignedUpgradeId === ARENA_LARGE_BAY_UPGRADE_ID) {
+    const { data, error } = await supabase
+      .from("user_owned_property_upgrades")
+      .select("property_upgrade_id")
+      .eq("user_owned_property_id", ownedPropertyId);
+    if (error) throw error;
+    return arenaLargeBayCapacity(
+      (data ?? []).map((r) => r.property_upgrade_id as string),
+    );
   }
 
   const { data, error } = await supabase

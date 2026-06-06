@@ -8,7 +8,7 @@
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
-import { bayBinding, isBayBound } from "@/lib/bays";
+import { bayBinding, bayPropertyLabel, isBayBound } from "@/lib/bays";
 
 export const PEGASUS_TAG_ID = "pegasus";
 
@@ -46,21 +46,41 @@ export function hasCompatibleStorage(
   );
 }
 
-/** A special vehicle that is unstored AND has nowhere ownable to live —
- *  i.e. genuinely summon-only right now. */
+/** A genuinely summon-only vehicle: BROAD Pegasus (jets/helis you can legitimately
+ *  own without a hangar), unstored, with nowhere ownable to live. Bay-bound
+ *  weaponized vehicles are deliberately excluded — owning one implies owning its
+ *  Facility/Arena in-game, so a missing bay property is an inconsistency we nag
+ *  about (see needsBayProperty), not a valid "summon" state. */
 export function isSummonOnly(
   instance: VehicleBits,
   ownedProperties: StorageProp[],
 ): boolean {
   return (
-    isSpecialStorage(instance) &&
+    isPegasus(instance.tag_ids) &&
+    !isBayBound(instance.vehicle_id) &&
     !instance.storage &&
     !hasCompatibleStorage(instance, ownedProperties)
   );
 }
 
+/** A bay-bound weaponized vehicle (Khanjali, Cerberus…) that is unstored AND
+ *  whose bay property the user doesn't own. In GTA you must own the Facility /
+ *  Arena to buy it, so this state is impossible in-game — we surface it as a
+ *  nudge to add the missing property. Returns the property's label, or null. */
+export function needsBayProperty(
+  instance: VehicleBits,
+  ownedProperties: StorageProp[],
+): { label: string } | null {
+  if (!isBayBound(instance.vehicle_id) || instance.storage) return null;
+  if (hasCompatibleStorage(instance, ownedProperties)) return null; // owns the bay already
+  const label = bayPropertyLabel(instance.vehicle_id);
+  return label ? { label } : null;
+}
+
 /** Should this vehicle count as "unassigned / needs attention"? Unstored, but
- *  NOT a summon-only special vehicle (there's nowhere to assign those). */
+ *  NOT a summon-only Pegasus (there's nowhere to assign those). Bay-bound
+ *  vehicles DO count — either they need parking in their owned bay or they need
+ *  the bay property added. */
 export function isUnassignedNagworthy(
   instance: VehicleBits,
   ownedProperties: StorageProp[],

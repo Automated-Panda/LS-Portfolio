@@ -6,6 +6,7 @@
 
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import { bayPropertyLabel, isBayBound } from "@/lib/bays";
 
 export type PortfolioContextInput = {
   vehicles: OwnedVehicleInstance[];
@@ -54,6 +55,10 @@ export function buildPortfolioContext(input: PortfolioContextInput): string {
     'Favourites: vehicles marked with a ★ below are the user\'s favourites. To target them, set filter.favourites = true.',
   );
 
+  lines.push(
+    'Bay-bound: vehicles marked "⚠ bay-bound (X)" below live ONLY in their dedicated bay in an X (a Facility or Arena Workshop). NEVER move or target them to a normal garage — leave them where they are.',
+  );
+
   lines.push("");
   lines.push(`Vehicles (${input.vehicles.length} owned instances):`);
   for (const v of input.vehicles) {
@@ -61,12 +66,15 @@ export function buildPortfolioContext(input: PortfolioContextInput): string {
     const customStr =
       v.custom_tags.length > 0 ? ` custom:[${v.custom_tags.join(", ")}]` : "";
     const favStr = v.is_favourite ? " ★" : "";
+    const bayStr = isBayBound(v.vehicle_id)
+      ? ` ⚠ bay-bound (${bayPropertyLabel(v.vehicle_id)})`
+      : "";
     const storage = v.storage
       ? `${v.storage.property_display_name}${v.storage.upgrade_display_name ? ` · ${v.storage.upgrade_display_name}` : ""}`
       : "unassigned";
     const name = v.nickname ? `${v.display_name} ("${v.nickname}")` : v.display_name;
     lines.push(
-      `  [${v.id}] ${name}${favStr} (${v.manufacturer_display} · ${v.class}) ${tagStr}${customStr} @ ${storage}`,
+      `  [${v.id}] ${name}${favStr}${bayStr} (${v.manufacturer_display} · ${v.class}) ${tagStr}${customStr} @ ${storage}`,
     );
   }
 

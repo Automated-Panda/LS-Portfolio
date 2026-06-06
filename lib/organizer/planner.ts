@@ -6,6 +6,8 @@
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
+import { isBayBound } from "@/lib/bays";
+
 import { vehicleMatches } from "./filter-vehicles";
 import {
   type LocationKey,
@@ -201,6 +203,12 @@ export function generatePlan(input: PlannerInput): PlannerResult {
   const state = buildState(input);
   const { intent, portfolio } = input;
 
+  // Bay-bound weaponized vehicles (Khanjali, Cerberus…) live ONLY in their
+  // dedicated bay — the planner must never move them to a normal garage nor
+  // displace them. Treat them as untouchable: skip from matching, victim pools,
+  // consolidation, and the capacity pre-flight (they don't use normal slots).
+  const isBay = (v: OwnedVehicleInstance): boolean => isBayBound(v.vehicle_id);
+
   // Track which vehicles match ANY criterion (for displacement-victim selection).
   const allCriteriaUnion: VehicleFilter[] = intent.criteria.map((c) => c.filter);
 
@@ -215,12 +223,15 @@ export function generatePlan(input: PlannerInput): PlannerResult {
   void totalFreeCapacity;
 
   const totalCapacity = Array.from(state.capacity.values()).reduce((a, b) => a + b, 0);
-  if (portfolio.vehicles.length > totalCapacity) {
+  // Bay-bound vehicles don't consume normal slots, so exclude them from the
+  // "does everything fit?" check.
+  const placeableCount = portfolio.vehicles.filter((v) => !isBay(v)).length;
+  if (placeableCount > totalCapacity) {
     return {
       ok: false,
       failure: {
         reason: "insufficient-capacity",
-        shortBy: portfolio.vehicles.length - totalCapacity,
+        shortBy: placeableCount - totalCapacity,
       },
     };
   }
@@ -244,8 +255,10 @@ export function generatePlan(input: PlannerInput): PlannerResult {
 
   // Main loop: process criteria in order.
   for (const criterion of intent.criteria) {
-    const matchingVehicles = portfolio.vehicles.filter((v) =>
-      vehicleMatches(criterion.filter, v, input.manufacturerIdByDisplay),
+    const matchingVehicles = portfolio.vehicles.filter(
+      (v) =>
+        !isBay(v) &&
+        vehicleMatches(criterion.filter, v, input.manufacturerIdByDisplay),
     );
 
     for (const v of matchingVehicles) {
@@ -281,9 +294,12 @@ export function generatePlan(input: PlannerInput): PlannerResult {
           continue;
         }
 
-        // Find a victim AT that slot, preferring vehicles not matching any criterion.
+        // Find a victim AT that slot, preferring vehicles not matching any
+        // criterion. Bay-bound vehicles are never valid victims.
         const occupants = portfolio.vehicles.filter(
-          (occ) => state.vehicleLocation.get(occ.id) === slotToFreeFrom,
+          (occ) =>
+            !isBay(occ) &&
+            state.vehicleLocation.get(occ.id) === slotToFreeFrom,
         );
         const nonMatchVictims = occupants.filter((o) => !matchesAnyCriterion(o));
         const matchVictims = occupants.filter((o) => matchesAnyCriterion(o));
@@ -329,7 +345,9 @@ export function generatePlan(input: PlannerInput): PlannerResult {
   // (or non-matched) vehicles and try to fit them in the LAST criterion's target.
   if (intent.unmatched_handling === "consolidate-to-target" && intent.criteria.length > 0) {
     const lastTarget = intent.criteria[intent.criteria.length - 1].target;
-    const unmatched = portfolio.vehicles.filter((v) => !matchesAnyCriterion(v));
+    const unmatched = portfolio.vehicles.filter(
+      (v) => !isBay(v) && !matchesAnyCriterion(v),
+    );
     for (const v of unmatched) {
       const currentKey = state.vehicleLocation.get(v.id);
       if (currentKey && currentKey !== "unassigned") {

@@ -6,7 +6,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
 import { isBayUpgrade } from "@/lib/bays";
-import { isSummonOnly } from "@/lib/pegasus";
+import { isSummonOnly, needsBayProperty } from "@/lib/pegasus";
 import { groupInstances, type GroupBy } from "@/lib/vehicle-grouping";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
@@ -183,6 +183,7 @@ function OwnedCard({
     ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
     : null;
   const summonOnly = isSummonOnly(inst, ownedProperties);
+  const bayNeed = needsBayProperty(inst, ownedProperties);
 
   // Slot indicator: a number when placed, ❓ when in a garage but not yet
   // placed, ‼️ when not stored anywhere (and not a summon-only Pegasus).
@@ -236,7 +237,7 @@ function OwnedCard({
             >
               ❓
             </span>
-          ) : !inst.storage && !summonOnly ? (
+          ) : !inst.storage && !summonOnly && !bayNeed ? (
             <span
               className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
               title="Not stored in any garage"
@@ -254,6 +255,10 @@ function OwnedCard({
             <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
           ) : summonOnly ? (
             <p className="mt-1 text-xs text-sky-400">✈️ Pegasus · summon</p>
+          ) : bayNeed ? (
+            <p className="mt-1 text-xs text-orange-400">
+              ⚠️ Needs a {bayNeed.label}
+            </p>
           ) : (
             <p className="mt-1 text-xs text-red-400">📍 Not stored →</p>
           )}

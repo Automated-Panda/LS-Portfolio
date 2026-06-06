@@ -1,6 +1,7 @@
 // lib/queries/my-properties.ts
 import { createClient } from "@/lib/supabase/server";
 import { applyHangarBoost, getHangarBoostContext } from "@/lib/hangar-boost";
+import { ARENA_LARGE_BAY_UPGRADE_ID, arenaLargeBayCapacity } from "@/lib/arena-bay";
 
 export type OwnedPropertyDetail = {
   id: string;                 // user_owned_properties.id (uuid)
@@ -153,27 +154,38 @@ export async function getOwnedPropertiesWithStorage(
       total_cars: cars.length,
       upgrades: allUpgrades
         .sort((a, b) => a.sort_order - b.sort_order)
-        .map((u) => ({
-          ...u,
-          price: u.price ?? null,
-          mutex_group: u.mutex_group ?? null,
-          included_on_purchase: u.included_on_purchase ?? false,
-          // Included-on-purchase upgrades (mansion garage, garage floors,
-          // facility weaponized bays…) come WITH the property — always treat
-          // them as installed even if no explicit row exists yet.
-          is_installed: installedIds.has(u.id) || (u.included_on_purchase ?? false),
-          cars_here: carsByUpgrade.get(u.id) ?? 0,
-          sub_slots: u.sub_slots
-            ? u.sub_slots.map((s) => ({
-                label: s.label,
-                capacity: s.capacity,
-                required_upgrade_id: s.required_upgrade_id ?? null,
-                vehicle_id: s.vehicle_id ?? null,
-                vehicle_ids: s.vehicle_ids ?? null,
-                cars_here: carsByUpgradeSubSlot.get(`${u.id}::${s.label}`) ?? 0,
-              }))
-            : null,
-        })),
+        .map((u) => {
+          // The Arena's Large Vehicle Bay holds one Cerberus per installed
+          // floor (ground + B1 + B2), so its capacity tracks what's installed
+          // rather than the static seed value.
+          const capacity =
+            u.id === ARENA_LARGE_BAY_UPGRADE_ID
+              ? arenaLargeBayCapacity(installedIds)
+              : u.capacity;
+          return {
+            ...u,
+            capacity,
+            price: u.price ?? null,
+            mutex_group: u.mutex_group ?? null,
+            included_on_purchase: u.included_on_purchase ?? false,
+            // Included-on-purchase upgrades (mansion garage, garage floors,
+            // facility weaponized bays…) come WITH the property — always treat
+            // them as installed even if no explicit row exists yet.
+            is_installed: installedIds.has(u.id) || (u.included_on_purchase ?? false),
+            cars_here: carsByUpgrade.get(u.id) ?? 0,
+            sub_slots: u.sub_slots
+              ? u.sub_slots.map((s) => ({
+                  label: s.label,
+                  capacity:
+                    u.id === ARENA_LARGE_BAY_UPGRADE_ID ? capacity : s.capacity,
+                  required_upgrade_id: s.required_upgrade_id ?? null,
+                  vehicle_id: s.vehicle_id ?? null,
+                  vehicle_ids: s.vehicle_ids ?? null,
+                  cars_here: carsByUpgradeSubSlot.get(`${u.id}::${s.label}`) ?? 0,
+                }))
+              : null,
+          };
+        }),
     };
   });
 }

@@ -32,6 +32,19 @@ export function bayBinding(vehicleId: string): BayBinding | null {
   return BAY_BOUND_VEHICLES[vehicleId] ?? null;
 }
 
+/** Human-readable property name for a bay subtype (for prompts/badges). */
+export const BAY_PROPERTY_LABEL: Record<string, string> = {
+  facility: "Facility",
+  "arena-workshop": "Arena Workshop",
+};
+
+/** The property name a bay-bound vehicle needs (e.g. "Facility"), or null. */
+export function bayPropertyLabel(vehicleId: string): string | null {
+  const b = bayBinding(vehicleId);
+  if (!b) return null;
+  return BAY_PROPERTY_LABEL[b.subtype] ?? b.subtype;
+}
+
 type SlotBinding = { vehicle_id?: string | null; vehicle_ids?: string[] | null };
 
 /** Is this sub-slot a vehicle-bound bay (single or family)? */
