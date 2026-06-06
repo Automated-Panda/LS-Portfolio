@@ -31,6 +31,7 @@ export async function assignVehicleStorage(opts: {
         assigned_upgrade_id: null,
         sub_slot: null,
         slot_number: null,
+        stored_in_vehicle_id: null, // also un-nest from any container vehicle
       })
       .eq("id", opts.ownedVehicleId)
       .eq("user_id", user.id);
@@ -96,6 +97,7 @@ export async function assignVehicleStorage(opts: {
       stored_in_property_id: opts.ownedPropertyId,
       assigned_upgrade_id: opts.assignedUpgradeId,
       sub_slot: opts.subSlot ?? null,
+      stored_in_vehicle_id: null, // moving into a property un-nests from a container
       ...(areaChanged ? { slot_number: null } : {}),
     })
     .eq("id", opts.ownedVehicleId)

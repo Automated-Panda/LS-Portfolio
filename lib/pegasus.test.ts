@@ -8,6 +8,7 @@ const veh = (o: Partial<V> & { vehicle_id: string }): V => ({
   tag_ids: [],
   class: "Sports",
   storage: null,
+  nested_in: null,
   ...o,
 });
 

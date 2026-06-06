@@ -45,6 +45,11 @@ export function MyVehiclesGrid({
     () => new Map(ownedProperties.map((p) => [p.id, p])),
     [ownedProperties],
   );
+  // Lookup so a nested vehicle's card can name its container vehicle.
+  const instById = useMemo(
+    () => new Map(instances.map((i) => [i.id, i])),
+    [instances],
+  );
 
   const groups = useMemo(
     () => groupInstances(instances, groupBy),
@@ -101,6 +106,7 @@ export function MyVehiclesGrid({
                             <CardGrid
                               items={sub.items}
                               propById={propById}
+                              instById={instById}
                               ownedProperties={ownedProperties}
                               tagLookup={tagLookup}
                               onSelect={setSelectedId}
@@ -114,6 +120,7 @@ export function MyVehiclesGrid({
                   <CardGrid
                     items={group.items}
                     propById={propById}
+                    instById={instById}
                     ownedProperties={ownedProperties}
                     tagLookup={tagLookup}
                     onSelect={setSelectedId}
@@ -139,12 +146,14 @@ export function MyVehiclesGrid({
 function CardGrid({
   items,
   propById,
+  instById,
   ownedProperties,
   tagLookup,
   onSelect,
 }: {
   items: OwnedVehicleInstance[];
   propById: Map<string, OwnedPropertyDetail>;
+  instById: Map<string, OwnedVehicleInstance>;
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
   onSelect: (id: string) => void;
@@ -156,6 +165,7 @@ function CardGrid({
           key={inst.id}
           inst={inst}
           propById={propById}
+          instById={instById}
           ownedProperties={ownedProperties}
           tagLookup={tagLookup}
           onSelect={() => onSelect(inst.id)}
@@ -168,17 +178,26 @@ function CardGrid({
 function OwnedCard({
   inst,
   propById,
+  instById,
   ownedProperties,
   tagLookup,
   onSelect,
 }: {
   inst: OwnedVehicleInstance;
   propById: Map<string, OwnedPropertyDetail>;
+  instById: Map<string, OwnedVehicleInstance>;
   ownedProperties: OwnedPropertyDetail[];
   tagLookup: Record<string, string>;
   onSelect: () => void;
 }) {
   const img = vehicleImageUrl(inst.image_path);
+  // Nested inside a container vehicle (Terrorbyte/Kosatka/…)? Name the container.
+  const container = inst.nested_in
+    ? instById.get(inst.nested_in.container_owned_vehicle_id)
+    : null;
+  const nestedLabel = inst.nested_in
+    ? `${container?.nickname || container?.display_name || "container"}${inst.nested_in.bay_label ? ` · ${inst.nested_in.bay_label}` : ""}`
+    : null;
   const subLineCompact = inst.storage
     ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
     : null;
@@ -237,7 +256,7 @@ function OwnedCard({
             >
               ❓
             </span>
-          ) : !inst.storage && !summonOnly && !bayNeed ? (
+          ) : !inst.storage && !inst.nested_in && !summonOnly && !bayNeed ? (
             <span
               className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
               title="Not stored in any garage"
@@ -253,6 +272,8 @@ function OwnedCard({
           </p>
           {subLineCompact ? (
             <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
+          ) : nestedLabel ? (
+            <p className="mt-1 text-xs text-violet-400">📦 in {nestedLabel}</p>
           ) : summonOnly ? (
             <p className="mt-1 text-xs text-sky-400">✈️ Pegasus · summon</p>
           ) : bayNeed ? (

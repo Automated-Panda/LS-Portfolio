@@ -1,7 +1,7 @@
 "use client";
 
 import { Minus, Plus, X } from "lucide-react";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,12 @@ import {
   setVehicleSlot,
   swapVehicleSlots,
 } from "@/app/(app)/my-vehicles/slot-actions";
+import {
+  assignVehicleToContainer,
+  getOwnedContainersForStorable,
+  type ContainerOption,
+} from "@/app/(app)/my-vehicles/container-actions";
+import { bayForStoredVehicle } from "@/lib/containers";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
@@ -68,6 +74,27 @@ export function InstanceDrawer({
   const [slotBusy, setSlotBusy] = useState(false);
   const [isPending, startTransition] = useTransition();
   const confirm = useConfirm();
+
+  // Container nesting (child side): this vehicle can live inside a container
+  // vehicle (e.g. Oppressor Mk II → Terrorbyte). Load the owned containers that
+  // accept it; `containerKey` = "<ownedVehicleId>::<bayLabel>" or "".
+  const childBay = bayForStoredVehicle(instance.vehicle_id);
+  const [containerOptions, setContainerOptions] = useState<ContainerOption[]>([]);
+  const [containerKey, setContainerKey] = useState(
+    instance.nested_in
+      ? `${instance.nested_in.container_owned_vehicle_id}::${instance.nested_in.bay_label ?? ""}`
+      : "",
+  );
+  useEffect(() => {
+    if (!open || !childBay) return;
+    let active = true;
+    getOwnedContainersForStorable(instance.vehicle_id).then((opts) => {
+      if (active) setContainerOptions(opts);
+    });
+    return () => {
+      active = false;
+    };
+  }, [open, childBay, instance.vehicle_id]);
 
   // Auto-expand fields that already have content on open. Empty fields show
   // as `+ Field name` pill buttons; clicking expands the input inline.
@@ -282,6 +309,29 @@ export function InstanceDrawer({
         return;
       }
 
+      // Nesting into a container vehicle takes precedence over a property.
+      if (containerKey) {
+        const [cid, blabel] = containerKey.split("::");
+        const r = await assignVehicleToContainer({
+          ownedVehicleId: instance.id,
+          containerOwnedVehicleId: cid,
+          bayLabel: blabel,
+        });
+        if ("error" in r) {
+          toast.error(r.error);
+          return;
+        }
+        if ("capacityExceeded" in r) {
+          toast.error(
+            `Full: ${r.capacityExceeded.current} / ${r.capacityExceeded.capacity}`,
+          );
+          return;
+        }
+        toast.success("Saved");
+        onOpenChange(false);
+        return;
+      }
+
       const storage = await assignVehicleStorage({
         ownedVehicleId: instance.id,
         ownedPropertyId: propertyId || null,
@@ -362,6 +412,7 @@ export function InstanceDrawer({
                 setPropertyId(e.target.value);
                 setUpgradeId("");
                 setSubSlot("");
+                if (e.target.value) setContainerKey(""); // un-nest if picking a property
               }}
             >
               <option value="">— Unassigned —</option>
@@ -484,6 +535,35 @@ export function InstanceDrawer({
                   </p>
                 )}
               </div>
+            )}
+
+            {/* Container nesting — store this vehicle inside a Terrorbyte /
+                Kosatka / Acid Lab etc. you own. */}
+            {childBay && (containerOptions.length > 0 || instance.nested_in) && (
+              <select
+                className="rounded-md border bg-background px-3 py-2 text-sm"
+                value={containerKey}
+                onChange={(e) => {
+                  setContainerKey(e.target.value);
+                  if (e.target.value) {
+                    // Nesting un-assigns from any property.
+                    setPropertyId("");
+                    setUpgradeId("");
+                    setSubSlot("");
+                  }
+                }}
+              >
+                <option value="">— Not stored in a container —</option>
+                {containerOptions.map((o) => (
+                  <option
+                    key={`${o.containerOwnedVehicleId}::${o.bayLabel}`}
+                    value={`${o.containerOwnedVehicleId}::${o.bayLabel}`}
+                  >
+                    📦 {o.containerDisplayName} · {o.bayLabel} ({o.used}/
+                    {o.capacity})
+                  </option>
+                ))}
+              </select>
             )}
           </div>
 

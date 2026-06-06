@@ -173,7 +173,10 @@ export function MyVehiclesClient({
   const filtered = instances.filter((i) => {
     // "Unassigned only" hides stored vehicles AND summon-only Pegasus (there's
     // nowhere to assign those, so they aren't really "unassigned").
-    if (unassignedOnly && (i.storage || isSummonOnly(i, ownedProperties)))
+    if (
+      unassignedOnly &&
+      (i.storage || i.nested_in || isSummonOnly(i, ownedProperties))
+    )
       return false;
     if (pegasusOnly && !isPegasus(i.tag_ids)) return false;
     if (favouritesOnly && !i.is_favourite) return false;

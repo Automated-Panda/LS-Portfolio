@@ -19,7 +19,7 @@ export function isPegasus(tagIds: string[]): boolean {
 type StorageProp = Pick<OwnedPropertyDetail, "counts_as_garage" | "subtype">;
 type VehicleBits = Pick<
   OwnedVehicleInstance,
-  "vehicle_id" | "tag_ids" | "class" | "storage"
+  "vehicle_id" | "tag_ids" | "class" | "storage" | "nested_in"
 >;
 
 /** A vehicle that needs non-garage / dedicated storage — Pegasus or bay-bound. */
@@ -57,6 +57,7 @@ export function isSummonOnly(
     isPegasus(instance.tag_ids) &&
     !isBayBound(instance.vehicle_id) &&
     !instance.storage &&
+    !instance.nested_in &&
     !hasCompatibleStorage(instance, ownedProperties)
   );
 }
@@ -69,7 +70,8 @@ export function needsBayProperty(
   instance: VehicleBits,
   ownedProperties: StorageProp[],
 ): { label: string } | null {
-  if (!isBayBound(instance.vehicle_id) || instance.storage) return null;
+  if (!isBayBound(instance.vehicle_id) || instance.storage || instance.nested_in)
+    return null;
   if (hasCompatibleStorage(instance, ownedProperties)) return null; // owns the bay already
   const label = bayPropertyLabel(instance.vehicle_id);
   return label ? { label } : null;
@@ -83,5 +85,9 @@ export function isUnassignedNagworthy(
   instance: VehicleBits,
   ownedProperties: StorageProp[],
 ): boolean {
-  return !instance.storage && !isSummonOnly(instance, ownedProperties);
+  return (
+    !instance.storage &&
+    !instance.nested_in && // nested inside a container vehicle = stored
+    !isSummonOnly(instance, ownedProperties)
+  );
 }
