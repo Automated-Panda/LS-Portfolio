@@ -7,8 +7,8 @@
 
 insert into public.properties
   (id, display_name, property_type, counts_as_garage, subtype, subtype_display,
-   capacity, ownership_group, status)
+   capacity, ownership_group, status, image_path)
 values
   ('freakshop', 'The Freakshop', 'special', false, 'freakshop', 'Freakshop',
-   0, 'freakshop', 'published')
+   0, 'freakshop', 'published', 'data/images/properties/freakshop.webp')
 on conflict (id) do nothing;

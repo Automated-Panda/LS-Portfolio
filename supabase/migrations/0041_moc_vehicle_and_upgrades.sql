@@ -7,10 +7,11 @@
 -- (maps to data/images/vehicles/moc.webp). Idempotent.
 
 insert into public.vehicles
-  (id, internal_name, display_name, manufacturer_id, class, price, availability, vendors, status)
+  (id, internal_name, display_name, manufacturer_id, class, price, availability,
+   vendors, status, image_path)
 values
   ('moc', 'moc', 'Mobile Operations Center', 'hvy', 'COMMERCIAL', 1225000,
-   'available', '{warstock}', 'published')
+   'available', '{warstock}', 'published', 'data/images/vehicles/moc.webp')
 on conflict (id) do nothing;
 
 insert into public.vehicle_upgrades
