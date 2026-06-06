@@ -10,6 +10,7 @@ import {
 } from "@/lib/queries/organizer";
 import { getCatalogCoverage } from "@/lib/queries/dashboard";
 import { assetCategoryOf, isBikeClass } from "@/lib/vehicles";
+import { isUnassignedNagworthy } from "@/lib/pegasus";
 
 import { DashboardLayout, type DashboardData } from "./dashboard-layout";
 import { EmptyDashboard } from "./empty-dashboard";
@@ -207,8 +208,11 @@ export default async function DashboardPage() {
   unpricedUpgrades.sort((a, b) => a.localeCompare(b));
 
   // --- Needs attention ---
-  const unassignedVehicles = vehicleInstances.filter((v) => v.storage === null)
-    .length;
+  // Exclude summon-only Pegasus vehicles (tanks/jets with nowhere ownable to
+  // store them) — they're not "unassigned" in a fixable sense.
+  const unassignedVehicles = vehicleInstances.filter((v) =>
+    isUnassignedNagworthy(v, ownedProperties),
+  ).length;
   // Duplicate instances: vehicles the user owns 2+ of. Count every instance
   // that belongs to a duplicated catalog vehicle (so "3 Comets" contributes 3).
   const vehicleIdCounts = new Map<string, number>();

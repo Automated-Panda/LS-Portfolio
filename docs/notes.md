@@ -9,6 +9,20 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## ✅ Session — 2026-06-06 (Price filtering · Pegasus vehicles)
+
+### 💰 Price filtering + sort — DONE
+- [x] Shared `PriceFilter` (Min/Max popover, `k`/`m` shorthand + presets) + `SortControl` (Price ↑/↓, Name) dropped into the `/vehicles` and `/properties`+`/businesses` filter bars. `pmin`/`pmax`/`sort` URL params; logic in `lib/browse-filters.ts`. Unpriced items hide when a bound is set / sort last.
+
+### ✈️ Pegasus vehicles — Phase 1 DONE
+- [x] Added a **`pegasus` system tag** seeded from the game's own Fandom category *"Vehicles requested via Pegasus Lifestyle Management"* (rule in `tags.json`; **69** catalog vehicles tagged in DB + seed). Gives a Pegasus filter on `/vehicles` + a card badge for free.
+- [x] **`lib/pegasus.ts`** — `isPegasus`, `hasCompatibleStorage`, `isSummonOnlyPegasus`, `isUnassignedNagworthy`. A Pegasus vehicle is **summon-only** until you own a compatible property (aircraft → hangar), then it becomes **assignable** — the hangar conversion handled dynamically, no static per-vehicle flag.
+- [x] `/my-vehicles`: **"✈️ Pegasus" filter chip**; summon-only Pegasus show "✈️ Pegasus · summon" (sky) instead of red "Not stored"; excluded from "unassigned only" + the unassigned banner. **Dashboard** "needs attention" no longer counts summon-only Pegasus.
+- [x] Applied via DB + seed (no full `build:vehicles` rebuild — protects the manual Sanchez/Stirling rows).
+- [ ] **Phase 2 (backlog):** weaponized-land storage + **Facility/Arena fixed vehicle bays** (Khanjali, Chernobog, Thruster, Cerberus) via vehicle-bound `sub_slots`. The `weaponized` + `arena` tags already exist to help target these.
+
+---
+
 ## ✅ Session — 2026-06-05 (Favourites · Duplicates · Property page)
 
 Shipped (migration 0035): boolean favourites, a duplicates view, and a dedicated detail page for **both properties and businesses** + the onboarding wizard — the old right-side `PropertyDrawer` is fully deleted.

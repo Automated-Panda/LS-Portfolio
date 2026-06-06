@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
+import { isSummonOnlyPegasus } from "@/lib/pegasus";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
@@ -33,6 +34,7 @@ export function MyVehiclesGrid({
           const subLineCompact = inst.storage
             ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
             : null;
+          const summonOnly = isSummonOnlyPegasus(inst, ownedProperties);
           return (
             <div
               key={inst.id}
@@ -65,6 +67,8 @@ export function MyVehiclesGrid({
                 <p className="text-xs text-muted-foreground">{inst.manufacturer_display}</p>
                 {subLineCompact ? (
                   <p className="mt-1 text-xs text-amber-400">📍 {subLineCompact}</p>
+                ) : summonOnly ? (
+                  <p className="mt-1 text-xs text-sky-400">✈️ Pegasus · summon</p>
                 ) : (
                   <p className="mt-1 text-xs text-red-400">📍 Not stored →</p>
                 )}

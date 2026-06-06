@@ -9,6 +9,7 @@ import { CustomTagFilter } from "@/components/portfolio/custom-tag-filter";
 import { LocationFilter, type LocationOption } from "@/components/portfolio/location-filter";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
+import { isPegasus, isSummonOnlyPegasus, isUnassignedNagworthy } from "@/lib/pegasus";
 
 import { MyVehiclesGrid } from "./my-vehicles-grid";
 import { MyVehiclesTable } from "./my-vehicles-table";
@@ -44,7 +45,13 @@ export function MyVehiclesClient({
   const [unassignedOnly, setUnassignedOnly] = useState(initialUnassignedOnly);
   const [favouritesOnly, setFavouritesOnly] = useState(false);
   const [duplicatesOnly, setDuplicatesOnly] = useState(initialDuplicatesOnly);
+  const [pegasusOnly, setPegasusOnly] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  const pegasusCount = useMemo(
+    () => instances.filter((i) => isPegasus(i.tag_ids)).length,
+    [instances],
+  );
 
   // vehicle_ids the user owns 2+ of — the "duplicates" set.
   const duplicateVehicleIds = useMemo(() => {
@@ -162,7 +169,11 @@ export function MyVehiclesClient({
   }, [duplicatesOnly, router]);
 
   const filtered = instances.filter((i) => {
-    if (unassignedOnly && i.storage) return false;
+    // "Unassigned only" hides stored vehicles AND summon-only Pegasus (there's
+    // nowhere to assign those, so they aren't really "unassigned").
+    if (unassignedOnly && (i.storage || isSummonOnlyPegasus(i, ownedProperties)))
+      return false;
+    if (pegasusOnly && !isPegasus(i.tag_ids)) return false;
     if (favouritesOnly && !i.is_favourite) return false;
     if (duplicatesOnly && !duplicateVehicleIds.has(i.vehicle_id)) return false;
     if (selectedLocations.length > 0) {
@@ -186,7 +197,11 @@ export function MyVehiclesClient({
     return true;
   });
 
-  const unassignedCount = instances.filter((i) => !i.storage).length;
+  // Summon-only Pegasus vehicles aren't really "unassigned" — exclude them so
+  // the banner/count only nags about vehicles you can actually store.
+  const unassignedCount = instances.filter((i) =>
+    isUnassignedNagworthy(i, ownedProperties),
+  ).length;
 
   return (
     <div className="flex flex-col gap-4">
@@ -231,6 +246,16 @@ export function MyVehiclesClient({
               aria-pressed={duplicatesOnly}
             >
               👯 Duplicates ({duplicatesCount})
+            </Button>
+          )}
+          {pegasusCount > 0 && (
+            <Button
+              size="sm"
+              variant={pegasusOnly ? "default" : "outline"}
+              onClick={() => setPegasusOnly((v) => !v)}
+              aria-pressed={pegasusOnly}
+            >
+              ✈️ Pegasus ({pegasusCount})
             </Button>
           )}
           <div className="flex rounded-md border">

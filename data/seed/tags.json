@@ -30,5 +30,9 @@
   "lowrider": {
     "display": "Lowrider",
     "rule": { "type": "fandom_category", "category": "Lowrider" }
+  },
+  "pegasus": {
+    "display": "Pegasus",
+    "rule": { "type": "fandom_category", "category": "Vehicles requested via Pegasus Lifestyle Management" }
   }
 }

@@ -29,7 +29,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/airbus.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -214,7 +216,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/annihilator.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -806,7 +810,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/barracks.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -826,7 +832,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "barracks",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/barracks2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -928,7 +936,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "benson",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/benson2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -950,7 +960,8 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/besra.webp",
     "_sources": {
@@ -1271,7 +1282,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": "blimp",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/blimp3.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -1484,7 +1497,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "boxville",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/boxville6.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -1529,7 +1544,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/brickade.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2012,7 +2029,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/bulldozer.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2105,7 +2124,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/buzzard.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -2807,7 +2828,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/coach.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -3339,7 +3362,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/crusader.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -3360,7 +3385,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/cuban800.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -3738,7 +3765,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": "dinghy",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/dinghy5.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4716,7 +4745,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/dump.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4759,7 +4790,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "dune",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/dune2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -4819,7 +4852,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/duster.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -5836,7 +5871,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/frogger.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -6798,7 +6835,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/hydra.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -7197,7 +7236,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/insurgent.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -7757,7 +7798,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/journey.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8181,7 +8224,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/lazer.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8269,7 +8314,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/limo2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8330,7 +8377,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/longfin.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8397,7 +8446,8 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/luxor.webp",
     "_sources": {
@@ -8420,7 +8470,8 @@
     "is_garage_storable": false,
     "variant_of": "luxor",
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/luxor2.webp",
     "_sources": {
@@ -8485,7 +8536,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/mammatus.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8609,7 +8662,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/marquis.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8630,7 +8685,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/marshall.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8815,7 +8872,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/miljet.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -8920,7 +8979,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/mixer.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -9151,7 +9212,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/mule.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -9388,7 +9451,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/nimbus.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -9978,7 +10043,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/patrolboat.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -9999,7 +10066,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/pbus.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -10020,7 +10089,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "pbus",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/pbus2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -10939,7 +11010,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/predator.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11172,7 +11245,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/rallytruck.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11565,7 +11640,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/rentalbus.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11692,7 +11769,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/rhino.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -11734,7 +11813,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/riot.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -12274,7 +12355,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/savage.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -12637,7 +12720,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/seashark.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -12882,7 +12967,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/shamal.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13272,7 +13359,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "speedo",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/speedo2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13526,7 +13615,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/stockade.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13546,7 +13637,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": "stockade",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/stockade4.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13623,7 +13716,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/stretch.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13703,7 +13798,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/stunt.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13740,7 +13837,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": "submersible",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/submersible2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13860,7 +13959,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/suntrap.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -13905,7 +14006,8 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/supervolito.webp",
     "_sources": {
@@ -13928,7 +14030,8 @@
     "is_garage_storable": false,
     "variant_of": "supervolito",
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/supervolito2.webp",
     "_sources": {
@@ -14056,7 +14159,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/swift.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14078,7 +14183,8 @@
     "is_garage_storable": false,
     "variant_of": "swift",
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/swift2.webp",
     "_sources": {
@@ -14145,7 +14251,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/taco.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14351,7 +14459,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/technical.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14647,7 +14757,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/titan.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14818,7 +14930,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/toro.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14894,7 +15008,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/tractor.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -14926,7 +15042,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/trash.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15047,7 +15165,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/tropic.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15404,7 +15524,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/valkyrie.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15487,7 +15609,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/velum.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15508,7 +15632,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": "velum",
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/velum2.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15573,7 +15699,9 @@
     "release_update": null,
     "is_garage_storable": false,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/vestra.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15594,7 +15722,9 @@
     "release_update": null,
     "is_garage_storable": true,
     "variant_of": null,
-    "tags": [],
+    "tags": [
+      "pegasus"
+    ],
     "image_path": "data/images/vehicles/vetir.webp",
     "_sources": {
       "durtyfree": "https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicles.json",
@@ -15942,7 +16072,8 @@
     "is_garage_storable": false,
     "variant_of": null,
     "tags": [
-      "imani_tech"
+      "imani_tech",
+      "pegasus"
     ],
     "image_path": "data/images/vehicles/volatus.webp",
     "_sources": {
