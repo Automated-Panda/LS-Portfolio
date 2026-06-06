@@ -10,6 +10,7 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [ ] **Add numbered slots for ALL garages.** Every garage slot gets a number. **Show the slot number in the bottom corner of each vehicle card.** Show an icon (e.g. **❓**) on cards for **unslotted** vehicles.
 - [ ] **Better, more organised garage view** — order vehicles **by slot number**; allow **collapsing the per-level groups** for multi-floor properties (e.g. Vinewood / Eclipse garages).
 - [ ] **Better "My Vehicles" organisation** — **group by garage by default** instead of one big unordered list. When the **Duplicates** filter is on, **group the duplicates together** so identical vehicles sit side by side.
+- [ ] **Owned / Unowned split** — a way to separate "My Vehicles" into **Owned vs Unowned** so users can easily see **which cars they could still buy** (the ones they don't own yet, excluding duplicates they already have). Helps discovery of new purchases.
 
 ### 🔧 Phase 2 (Pegasus / bays) follow-ups
 - [ ] **"Summon-only" is wrong — rework it.** Researched & confirmed: in GTA you **must own the Facility** to buy the Khanjali/Chernobog/Avenger/Thruster, and **must own an Arena Workshop** to buy the Cerberus. So owning the vehicle *implies* owning the property — "summon-only" (vehicle without property) is **impossible in-game**. Rework: treat bay-bound vehicles as **always assignable to their bay** (and/or prompt "you need a Facility/Arena to own this"). Re-check whether this also applies to broader Pegasus vehicles.
