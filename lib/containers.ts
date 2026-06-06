@@ -59,3 +59,91 @@ export function bayForStoredVehicle(
   }
   return null;
 }
+
+// ---------------------------------------------------------------------------
+// Owned-container view derivation (pure; client-safe so it stays testable). The
+// server query in lib/queries/container-vehicles.ts feeds DB rows into this.
+// ---------------------------------------------------------------------------
+
+export type ContainerSubSlot = {
+  label: string;
+  capacity: number;
+  vehicle_id: string | null;
+  vehicle_ids: string[] | null;
+};
+
+export type ContainerUpgradeView = {
+  id: string;
+  display_name: string;
+  capacity: number;
+  sub_slots: ContainerSubSlot[] | null;
+  required_upgrade_id: string | null;
+  mutex_group: string | null;
+  included_on_purchase: boolean;
+  price: number | null;
+  sort_order: number;
+  is_installed: boolean;
+};
+
+/** A storage bay exposed by an installed upgrade. */
+export type ContainerBayView = {
+  upgrade_id: string;
+  label: string;
+  capacity: number;
+  /** Vehicle binding (single or set); null/empty = any vehicle. */
+  vehicle_id: string | null;
+  vehicle_ids: string[] | null;
+};
+
+export type RawContainerUpgrade = {
+  id: string;
+  display_name: string;
+  capacity: number;
+  sub_slots: ContainerSubSlot[] | null;
+  required_upgrade_id: string | null;
+  mutex_group: string | null;
+  included_on_purchase: boolean | null;
+  price: number | null;
+  sort_order: number;
+};
+
+/**
+ * Resolve a container's catalogue upgrade rows + the set of installed upgrade ids
+ * into the sorted upgrade view + the bays exposed by installed upgrades.
+ * included_on_purchase upgrades are always installed.
+ */
+export function deriveContainerView(
+  rawUpgrades: RawContainerUpgrade[],
+  installedUpgradeIds: Set<string>,
+): { upgrades: ContainerUpgradeView[]; bays: ContainerBayView[] } {
+  const upgrades: ContainerUpgradeView[] = rawUpgrades
+    .map((u) => ({
+      id: u.id,
+      display_name: u.display_name,
+      capacity: u.capacity,
+      sub_slots: u.sub_slots ?? null,
+      required_upgrade_id: u.required_upgrade_id ?? null,
+      mutex_group: u.mutex_group ?? null,
+      included_on_purchase: u.included_on_purchase ?? false,
+      price: u.price ?? null,
+      sort_order: u.sort_order,
+      is_installed:
+        installedUpgradeIds.has(u.id) || (u.included_on_purchase ?? false),
+    }))
+    .sort((a, b) => a.sort_order - b.sort_order);
+
+  const bays: ContainerBayView[] = [];
+  for (const u of upgrades) {
+    if (!u.is_installed || !u.sub_slots) continue;
+    for (const s of u.sub_slots) {
+      bays.push({
+        upgrade_id: u.id,
+        label: s.label,
+        capacity: s.capacity,
+        vehicle_id: s.vehicle_id ?? null,
+        vehicle_ids: s.vehicle_ids ?? null,
+      });
+    }
+  }
+  return { upgrades, bays };
+}
