@@ -7,6 +7,7 @@
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import { bayPropertyLabel, isBayBound } from "@/lib/bays";
+import { isContainerVehicle } from "@/lib/containers";
 
 export type PortfolioContextInput = {
   vehicles: OwnedVehicleInstance[];
@@ -68,10 +69,14 @@ export function buildPortfolioContext(input: PortfolioContextInput): string {
     const favStr = v.is_favourite ? " ★" : "";
     const bayStr = isBayBound(v.vehicle_id)
       ? ` ⚠ bay-bound (${bayPropertyLabel(v.vehicle_id)})`
-      : "";
+      : isContainerVehicle(v.vehicle_id)
+        ? " ⚠ container (stores other vehicles — never move to a garage)"
+        : "";
     const storage = v.storage
       ? `${v.storage.property_display_name}${v.storage.upgrade_display_name ? ` · ${v.storage.upgrade_display_name}` : ""}`
-      : "unassigned";
+      : v.nested_in
+        ? "nested in a container vehicle"
+        : "unassigned";
     const name = v.nickname ? `${v.display_name} ("${v.nickname}")` : v.display_name;
     lines.push(
       `  [${v.id}] ${name}${favStr}${bayStr} (${v.manufacturer_display} · ${v.class}) ${tagStr}${customStr} @ ${storage}`,

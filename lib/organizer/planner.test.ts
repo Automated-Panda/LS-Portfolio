@@ -70,6 +70,27 @@ describe("generatePlan bay-awareness", () => {
     expect(movedIds).toContain("b1"); // normal car still planned
   });
 
+  it("never moves a container vehicle or a vehicle nested inside one", () => {
+    const terrorbyte = veh("t1", "terbyte", "Super"); // a container
+    const nested: OwnedVehicleInstance = {
+      ...veh("n1", "oppressor2", "Super"),
+      nested_in: { container_owned_vehicle_id: "t1", bay_label: "Oppressor Mk II" },
+    };
+    const banshee = veh("b1", "banshee", "Super"); // a normal car (control)
+    const input: PlannerInput = {
+      intent,
+      portfolio: { vehicles: [terrorbyte, nested, banshee], properties: [garage()] },
+      manufacturerIdByDisplay: new Map(),
+    };
+    const result = generatePlan(input);
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const moved = result.steps.map((s) => s.owned_vehicle_id);
+    expect(moved).not.toContain("t1"); // container untouched
+    expect(moved).not.toContain("n1"); // nested untouched
+    expect(moved).toContain("b1"); // normal car still planned
+  });
+
   it("doesn't fail capacity pre-flight just because of bay-bound vehicles", () => {
     // 1 tiny garage, but lots of bay-bound vehicles — should still succeed.
     const small = { ...garage(), base_capacity: 1 };
