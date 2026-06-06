@@ -30,8 +30,15 @@ export const CONTAINER_VEHICLES: Record<string, ContainerBay[]> = {
   ],
   // Acid Lab (Brickade 6x6): the Manchez Scout C acid bike (included).
   brickade2: [{ label: "Acid Bike", vehicleIds: ["manchez2"] }],
-  // MOC is a follow-up — it needs a catalogue vehicle row first (Phase 1b-MOC),
-  // then its Vehicle Workshop-gated bays go here.
+  // MOC: one vehicle bay (any personal vehicle), gated by the Vehicle & Weapon
+  // Workshop. Empty vehicleIds = unrestricted (capacity-checked, not bound).
+  moc: [
+    {
+      label: "Vehicle Bay",
+      vehicleIds: [],
+      requiresUpgradeId: "moc-vehicle-weapon-workshop",
+    },
+  ],
 };
 
 export function isContainerVehicle(vehicleId: string): boolean {
