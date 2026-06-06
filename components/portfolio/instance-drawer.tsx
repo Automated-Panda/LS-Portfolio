@@ -26,6 +26,7 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 
 import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import { assetCategoryOf, storageAssetCategory } from "@/lib/vehicles";
+import { bayBinding, isBayUpgrade } from "@/lib/bays";
 
 import { CustomTagsInput } from "./custom-tags-input";
 import { FavouriteStar } from "./favourite-star";
@@ -101,21 +102,39 @@ export function InstanceDrawer({
   // can be moved out.
   const vehicleCategory = assetCategoryOf(instance.class);
   const currentPropertyId = instance.storage?.owned_property_id ?? null;
-  const storableProperties = ownedProperties.filter(
-    (p) =>
-      (p.counts_as_garage && storageAssetCategory(p.subtype) === vehicleCategory) ||
-      p.id === currentPropertyId,
-  );
+  // Bay-bound vehicles (Facility weaponized vehicles — Khanjali, Chernobog…)
+  // live ONLY in their dedicated bay: list only properties of the bay's subtype
+  // and hide normal garages/base. Normal vehicles, conversely, never see bays.
+  const binding = bayBinding(instance.vehicle_id);
+  const storableProperties = ownedProperties.filter((p) => {
+    if (p.id === currentPropertyId) return true;
+    if (binding) return p.subtype === binding.subtype;
+    return (
+      p.counts_as_garage && storageAssetCategory(p.subtype) === vehicleCategory
+    );
+  });
   const selectedProperty = storableProperties.find((p) => p.id === propertyId);
-  const installedUpgrades =
-    selectedProperty?.upgrades.filter(
-      (u) => u.is_installed && u.capacity > 0,
-    ) ?? [];
+  const installedUpgrades = (
+    selectedProperty?.upgrades.filter((u) => u.is_installed && u.capacity > 0) ??
+    []
+  ).filter((u) => {
+    const bayUpg = isBayUpgrade(u.sub_slots);
+    // Bay-bound vehicle: only bay upgrades that have a slot for THIS vehicle.
+    if (binding)
+      return (
+        bayUpg &&
+        (u.sub_slots?.some((s) => s.vehicle_id === instance.vehicle_id) ?? false)
+      );
+    // Normal vehicle: never offer vehicle-bound bays.
+    return !bayUpg;
+  });
   const selectedUpgrade = installedUpgrades.find((u) => u.id === upgradeId);
-  // Sub-slots: filter out any whose required_upgrade_id isn't installed
-  // (e.g. mansion Podium slot only shows when the Car Podium upgrade is on).
+  // Sub-slots: a vehicle-bound bay only shows its bound vehicle's slot; other
+  // sub-slots show unless their required_upgrade_id isn't installed (e.g. the
+  // mansion Podium slot only shows when the Car Podium upgrade is on).
   const subSlotsAvailable = selectedUpgrade?.sub_slots
     ? selectedUpgrade.sub_slots.filter((s) => {
+        if (s.vehicle_id) return s.vehicle_id === instance.vehicle_id;
         if (!s.required_upgrade_id) return true;
         const req = selectedProperty?.upgrades.find(
           (u) => u.id === s.required_upgrade_id,
@@ -134,7 +153,9 @@ export function InstanceDrawer({
   //   - If after applying that rule there's only ONE viable area, hide the
   //     dropdown entirely and auto-select it. The "anywhere" still appears
   //     when sub-slots exist (e.g. mansion garage/driveway/podium).
-  const hasBaseStorage = (selectedProperty?.base_capacity ?? 0) > 0;
+  // Bay-bound vehicles can't use the property's personal/base storage.
+  const hasBaseStorage =
+    !binding && (selectedProperty?.base_capacity ?? 0) > 0;
   const totalStorageAreas = (hasBaseStorage ? 1 : 0) + installedUpgrades.length;
 
   // Auto-pick the only upgrade when there's no base + exactly 1 upgrade.
@@ -149,6 +170,17 @@ export function InstanceDrawer({
     // setState during render is OK when guarded — React will reschedule.
     // Avoids a separate useEffect that would lag by a render.
     setUpgradeId(installedUpgrades[0].id);
+  }
+
+  // Bay-bound vehicle: auto-select its one bay sub-slot (e.g. the Khanjali bay).
+  if (
+    binding &&
+    selectedUpgrade &&
+    subSlotsAvailable &&
+    subSlotsAvailable.length === 1 &&
+    subSlot !== subSlotsAvailable[0].label
+  ) {
+    setSubSlot(subSlotsAvailable[0].label);
   }
 
   const handleSave = () => {

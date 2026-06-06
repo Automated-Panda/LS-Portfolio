@@ -21,6 +21,7 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { ASSET_NOUN, storageAssetCategory, vehicleImageUrl } from "@/lib/vehicles";
+import { isBayUpgrade } from "@/lib/bays";
 
 type Props = {
   property: OwnedPropertyDetail;
@@ -41,6 +42,8 @@ type PickerTarget = {
   label: string;
   capacity: number;
   current: number;
+  /** For vehicle-bound bays: restrict the picker to these vehicle ids. */
+  allowedVehicleIds?: string[];
 };
 
 export function PropertyDetail({
@@ -252,6 +255,11 @@ export function PropertyDetail({
                     label: u.display_name,
                     capacity: u.capacity,
                     current: u.cars_here,
+                    allowedVehicleIds: isBayUpgrade(u.sub_slots)
+                      ? (u.sub_slots ?? [])
+                          .map((s) => s.vehicle_id)
+                          .filter((id): id is string => !!id)
+                      : undefined,
                   })
                 }
                 onManage={setManagedInstanceId}
@@ -320,6 +328,7 @@ export function PropertyDetail({
           capacity={pickerTarget.capacity}
           currentCount={pickerTarget.current}
           assetCategory={storageAssetCategory(property.subtype)}
+          allowedVehicleIds={pickerTarget.allowedVehicleIds}
           open={pickerOpen}
           onOpenChange={setPickerOpen}
         />

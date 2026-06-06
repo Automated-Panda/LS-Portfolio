@@ -19,7 +19,8 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] **`lib/pegasus.ts`** — `isPegasus`, `hasCompatibleStorage`, `isSummonOnlyPegasus`, `isUnassignedNagworthy`. A Pegasus vehicle is **summon-only** until you own a compatible property (aircraft → hangar), then it becomes **assignable** — the hangar conversion handled dynamically, no static per-vehicle flag.
 - [x] `/my-vehicles`: **"✈️ Pegasus" filter chip**; summon-only Pegasus show "✈️ Pegasus · summon" (sky) instead of red "Not stored"; excluded from "unassigned only" + the unassigned banner. **Dashboard** "needs attention" no longer counts summon-only Pegasus.
 - [x] Applied via DB + seed (no full `build:vehicles` rebuild — protects the manual Sanchez/Stirling rows).
-- [ ] **Phase 2 (backlog):** weaponized-land storage + **Facility/Arena fixed vehicle bays** (Khanjali, Chernobog, Thruster, Cerberus) via vehicle-bound `sub_slots`. The `weaponized` + `arena` tags already exist to help target these.
+- [x] **Phase 2a — Facility bays DONE.** Migration `0036` gives all 9 Facilities a **"Weaponized Bays"** included upgrade (5 vehicle-bound `sub_slots`: Avenger, Thruster, Khanjali, Chernobog, RCV/`riot2`). New `sub_slots.vehicle_id` binding + `lib/bays.ts`. These 5 live **only** in a Facility bay — summon-only without one, excluded from normal garages/pickers, and the InstanceDrawer auto-targets the right bay. `included_on_purchase` upgrades now always count as installed (no backfill).
+- [ ] **Phase 2b — Arena (pending James sign-off):** each Arena floor = **9 regular + 1 "large" spot**; the large spot is the only place a **Cerberus** (all 3 variants) fits. Proposed: model the large spot as a Cerberus-bound bay per floor. Confirm before building.
 
 ---
 

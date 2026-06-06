@@ -9,7 +9,7 @@ import { CustomTagFilter } from "@/components/portfolio/custom-tag-filter";
 import { LocationFilter, type LocationOption } from "@/components/portfolio/location-filter";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
-import { isPegasus, isSummonOnlyPegasus, isUnassignedNagworthy } from "@/lib/pegasus";
+import { isPegasus, isSummonOnly, isUnassignedNagworthy } from "@/lib/pegasus";
 
 import { MyVehiclesGrid } from "./my-vehicles-grid";
 import { MyVehiclesTable } from "./my-vehicles-table";
@@ -171,7 +171,7 @@ export function MyVehiclesClient({
   const filtered = instances.filter((i) => {
     // "Unassigned only" hides stored vehicles AND summon-only Pegasus (there's
     // nowhere to assign those, so they aren't really "unassigned").
-    if (unassignedOnly && (i.storage || isSummonOnlyPegasus(i, ownedProperties)))
+    if (unassignedOnly && (i.storage || isSummonOnly(i, ownedProperties)))
       return false;
     if (pegasusOnly && !isPegasus(i.tag_ids)) return false;
     if (favouritesOnly && !i.is_favourite) return false;

@@ -32,6 +32,9 @@ export type OwnedPropertyDetail = {
       label: string;
       capacity: number;
       required_upgrade_id?: string | null;
+      /** When set, this bay only fits one specific vehicle (e.g. a Facility's
+       *  Khanjali bay). See lib/bays.ts. */
+      vehicle_id?: string | null;
       cars_here: number;
     }> | null;
     /** Mutex group label: upgrades sharing this label on the same property are mutually exclusive (e.g. yacht models). */
@@ -90,7 +93,7 @@ export async function getOwnedPropertiesWithStorage(
 
   return (data ?? []).map((row: Row) => {
     const p = Array.isArray(row.properties) ? row.properties[0] : row.properties;
-    type RawSubSlot = { label: string; capacity: number; required_upgrade_id?: string | null };
+    type RawSubSlot = { label: string; capacity: number; required_upgrade_id?: string | null; vehicle_id?: string | null };
     const allUpgrades = (p?.property_upgrades ?? []) as Array<{
       id: string; display_name: string; capacity: number;
       required_upgrade_id: string | null; sort_order: number;
@@ -153,13 +156,17 @@ export async function getOwnedPropertiesWithStorage(
           price: u.price ?? null,
           mutex_group: u.mutex_group ?? null,
           included_on_purchase: u.included_on_purchase ?? false,
-          is_installed: installedIds.has(u.id),
+          // Included-on-purchase upgrades (mansion garage, garage floors,
+          // facility weaponized bays…) come WITH the property — always treat
+          // them as installed even if no explicit row exists yet.
+          is_installed: installedIds.has(u.id) || (u.included_on_purchase ?? false),
           cars_here: carsByUpgrade.get(u.id) ?? 0,
           sub_slots: u.sub_slots
             ? u.sub_slots.map((s) => ({
                 label: s.label,
                 capacity: s.capacity,
                 required_upgrade_id: s.required_upgrade_id ?? null,
+                vehicle_id: s.vehicle_id ?? null,
                 cars_here: carsByUpgradeSubSlot.get(`${u.id}::${s.label}`) ?? 0,
               }))
             : null,

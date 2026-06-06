@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { assignVehiclesToSubGarage } from "@/app/(app)/my-vehicles/actions";
 import { assetCategoryOf, formatClass, isBikeClass, ASSET_NOUN, type AssetCategory } from "@/lib/vehicles";
+import { isBayBound } from "@/lib/bays";
 
 type Props = {
   ownedPropertyId: string;
@@ -24,6 +25,9 @@ type Props = {
   currentCount: number;
   /** Restricts the list to vehicles this storage can hold (garage→land, hangar→air, yacht→sea). */
   assetCategory: AssetCategory;
+  /** When set (vehicle-bound bays), restricts to exactly these vehicle ids and
+   *  ignores assetCategory — bay vehicles span classes (e.g. Avenger is air). */
+  allowedVehicleIds?: string[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
@@ -42,6 +46,7 @@ export function VehiclePickerModal({
   capacity,
   currentCount,
   assetCategory,
+  allowedVehicleIds,
   open,
   onOpenChange,
 }: Props) {
@@ -64,18 +69,24 @@ export function VehiclePickerModal({
 
   const filtered = useMemo(() => {
     if (!vehicles) return [];
-    const inCategory = vehicles.filter(
-      (v) => assetCategoryOf(formatClass(v.class)) === assetCategory,
-    );
+    const eligible = allowedVehicleIds
+      ? vehicles.filter((v) => allowedVehicleIds.includes(v.id))
+      : vehicles.filter(
+          // Bay-bound vehicles (Khanjali etc.) only belong in their dedicated
+          // bay — never offer them in a normal garage / base picker.
+          (v) =>
+            assetCategoryOf(formatClass(v.class)) === assetCategory &&
+            !isBayBound(v.id),
+        );
     const q = search.toLowerCase();
     return q
-      ? inCategory.filter(
+      ? eligible.filter(
           (v) =>
             v.display_name.toLowerCase().includes(q) ||
             v.manufacturer_display.toLowerCase().includes(q),
         )
-      : inCategory;
-  }, [vehicles, search, assetCategory]);
+      : eligible;
+  }, [vehicles, search, assetCategory, allowedVehicleIds]);
 
   // Plural noun for the current selection. Land storage holds cars + bikes, so
   // reflect what's picked: only bikes → "bikes", only cars → "cars", a mix (or

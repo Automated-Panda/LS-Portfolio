@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
-import { isSummonOnlyPegasus } from "@/lib/pegasus";
+import { isSummonOnly } from "@/lib/pegasus";
 import { FavouriteStar } from "@/components/portfolio/favourite-star";
 import { InstanceDrawer } from "@/components/portfolio/instance-drawer";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
@@ -34,7 +34,7 @@ export function MyVehiclesGrid({
           const subLineCompact = inst.storage
             ? `${inst.storage.property_display_name}${inst.storage.upgrade_display_name ? ` · ${inst.storage.upgrade_display_name}` : ""}`
             : null;
-          const summonOnly = isSummonOnlyPegasus(inst, ownedProperties);
+          const summonOnly = isSummonOnly(inst, ownedProperties);
           return (
             <div
               key={inst.id}
