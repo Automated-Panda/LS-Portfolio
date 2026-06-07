@@ -2,9 +2,10 @@ import type { Property } from "../schema";
 
 /**
  * GTA Online CEO Executive Offices — 4 purchasable locations.
- * The office building itself does not store cars (counts_as_garage: false).
- * Vehicle storage comes from the chained Office Garage upgrade
- * (3 levels × 20 = 60 max when fully upgraded).
+ * The office building has no base storage (capacity: 0); all vehicle storage
+ * comes from the chained Office Garage upgrade (3 levels × 20 = 60 max when
+ * fully upgraded). counts_as_garage is true so cars can be parked there and
+ * each level renders as a numbered-slot grid (slots coded 1A-1, 1B-2, …).
  *
  * Sources:
  *   https://gta.fandom.com/wiki/Executive_Offices
@@ -56,7 +57,10 @@ function buildOffice(loc: LocationSeed): Omit<Property, "image_path"> {
     location: loc.address,
     neighborhood: loc.neighborhood,
     capacity: 0,
-    counts_as_garage: false,
+    // The office building has no base storage, but its Office Garage upgrades
+    // hold cars — so it counts as a car garage (gates land-vehicle storage and
+    // the numbered-slot grid). Base capacity stays 0; storage lives on upgrades.
+    counts_as_garage: true,
     upgrades: [
       {
         id: `${loc.id}-garage-1`,

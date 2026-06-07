@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { vehicleImageUrl } from "@/lib/vehicles";
 import { isBayUpgrade } from "@/lib/bays";
+import { slotLabeler, isFlagSubSlot } from "@/lib/slot-labels";
 import { isContainerVehicle } from "@/lib/containers";
 import { isSummonOnly, needsBayProperty } from "@/lib/pegasus";
 import { groupInstances, type GroupBy } from "@/lib/vehicle-grouping";
@@ -221,6 +222,13 @@ function OwnedCard({
   const inGarage =
     !!inst.storage && !!prop?.counts_as_garage && !isBayUpgrade(upg?.sub_slots);
   const slot = inst.storage?.slot_number ?? null;
+  // Coded slot label for partitioned garages (CEO offices → "1B-2"); bare
+  // number elsewhere. Flag chip for Mansion Driveway / Podium.
+  const slotText =
+    slot != null ? slotLabeler(upg?.sub_slots, upg?.capacity ?? 0)(slot) : null;
+  const flag = isFlagSubSlot(upg?.sub_slots, inst.storage?.sub_slot)
+    ? inst.storage?.sub_slot
+    : null;
 
   return (
     <div className="relative flex flex-col overflow-hidden rounded-lg border border-emerald-500/70 bg-card ring-2 ring-emerald-500/30 hover:border-foreground/40">
@@ -250,32 +258,42 @@ function OwnedCard({
           <span className="absolute left-2 top-2 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] uppercase text-white">
             {inst.class}
           </span>
-          {slot != null ? (
-            <span
-              className="absolute bottom-1.5 left-1.5 flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow"
-              title={`Garage slot ${slot}`}
-            >
-              {slot}
-            </span>
-          ) : inGarage ? (
-            <span
-              className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-amber-500/90 text-xs shadow"
-              title="In a garage but not placed in a numbered slot"
-            >
-              ❓
-            </span>
-          ) : !inst.storage &&
-            !inst.nested_in &&
-            !isContainer &&
-            !summonOnly &&
-            !bayNeed ? (
-            <span
-              className="absolute bottom-1.5 left-1.5 flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
-              title="Not stored in any garage"
-            >
-              ‼️
-            </span>
-          ) : null}
+          <div className="absolute bottom-1.5 left-1.5 flex items-center gap-1">
+            {slot != null ? (
+              <span
+                className="flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow"
+                title={`Garage slot ${slotText}`}
+              >
+                {slotText}
+              </span>
+            ) : inGarage ? (
+              <span
+                className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-500/90 text-xs shadow"
+                title="In a garage but not placed in a numbered slot"
+              >
+                ❓
+              </span>
+            ) : !inst.storage &&
+              !inst.nested_in &&
+              !isContainer &&
+              !summonOnly &&
+              !bayNeed ? (
+              <span
+                className="flex h-6 w-6 items-center justify-center rounded-md bg-red-600/90 text-xs shadow"
+                title="Not stored in any garage"
+              >
+                ‼️
+              </span>
+            ) : null}
+            {flag && (
+              <span
+                className="flex h-6 items-center justify-center rounded-md bg-violet-600 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow"
+                title={`Displayed on the ${flag}`}
+              >
+                {flag}
+              </span>
+            )}
+          </div>
         </div>
         <div className="flex flex-col gap-1 p-3">
           <p className="text-sm font-medium">{inst.nickname ?? inst.display_name}</p>

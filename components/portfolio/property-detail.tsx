@@ -23,6 +23,7 @@ import type { OwnedPropertyDetail } from "@/lib/queries/my-properties";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { ASSET_NOUN, storageAssetCategory, vehicleImageUrl } from "@/lib/vehicles";
 import { isBayUpgrade, slotVehicleIds } from "@/lib/bays";
+import { slotLabeler, slotMode } from "@/lib/slot-labels";
 
 type Props = {
   property: OwnedPropertyDetail;
@@ -285,6 +286,12 @@ export function PropertyDetail({
                   noun={noun}
                   tagLookup={tagLookup}
                   collapsible={collapsible}
+                  slotLabel={slotLabeler(u.sub_slots, u.capacity)}
+                  subSlots={
+                    slotMode(u.sub_slots, u.capacity) === "flags"
+                      ? u.sub_slots ?? undefined
+                      : undefined
+                  }
                   onAdd={() =>
                     openPicker({
                       upgradeId: u.id,

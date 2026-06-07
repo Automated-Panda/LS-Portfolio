@@ -41,6 +41,7 @@ import { formatMoneyCompact, formatMoneyFull } from "@/lib/format";
 import { clampSlot } from "@/lib/slots";
 import { assetCategoryOf, propertyAcceptsVehicleCategory } from "@/lib/vehicles";
 import { bayBinding, isBayUpgrade, isVehicleBoundSlot, slotAcceptsVehicle } from "@/lib/bays";
+import { flagSections, slotLabeler, slotMode } from "@/lib/slot-labels";
 
 import { CustomTagsInput } from "./custom-tags-input";
 import { FavouriteStar } from "./favourite-star";
@@ -248,6 +249,43 @@ export function InstanceDrawer({
       })
     : null;
 
+  // How the selected upgrade's sub_slots behave:
+  //   bay       → vehicle-bound dropdown (existing).
+  //   partition → CEO office levels: no sub_slot UI; the numbered slot grid
+  //               carries the section code (1A-1…), so sub_slot stays null.
+  //   flags     → Mansion Driveway / Podium: a toggle layered on the 1..N grid.
+  const selectedMode = slotMode(
+    selectedUpgrade?.sub_slots,
+    selectedUpgrade?.capacity ?? 0,
+  );
+  const flagLabelSet = new Set(
+    selectedUpgrade?.sub_slots
+      ? flagSections(selectedUpgrade.sub_slots).map((s) => s.label)
+      : [],
+  );
+  // Display-flag options (Driveway/Podium) whose gating upgrade is installed.
+  const flagOpts =
+    selectedMode === "flags" && selectedUpgrade?.sub_slots
+      ? selectedUpgrade.sub_slots.filter((s) => {
+          if (!flagLabelSet.has(s.label)) return false;
+          if (!s.required_upgrade_id) return true;
+          const req = selectedProperty?.upgrades.find(
+            (u) => u.id === s.required_upgrade_id,
+          );
+          return req?.is_installed ?? false;
+        })
+      : [];
+  // What to persist as sub_slot: never for a partition (slot grid owns it),
+  // the chosen flag for a flags area, the dropdown value otherwise.
+  const subSlotToSave =
+    selectedMode === "partition"
+      ? null
+      : selectedMode === "flags"
+        ? flagLabelSet.has(subSlot)
+          ? subSlot
+          : null
+        : subSlot || null;
+
   // Storage-area choice rules:
   //   - "Base storage" is only an option when the property actually HAS base
   //     capacity (e.g. apartments, bail offices). Properties whose storage
@@ -302,6 +340,15 @@ export function InstanceDrawer({
   const slotAreaCapacity = savedUpgrade
     ? savedUpgrade.capacity
     : (savedProp?.base_capacity ?? 0);
+  // For CEO offices the numbered slot maps to a section code ("1B-2"); show it
+  // alongside the stepper so the number isn't ambiguous.
+  const savedSlotCode =
+    slotMode(savedUpgrade?.sub_slots, savedUpgrade?.capacity ?? 0) ===
+      "partition" && slotValue != null
+      ? slotLabeler(savedUpgrade?.sub_slots, savedUpgrade?.capacity ?? 0)(
+          slotValue,
+        )
+      : null;
   const pendingAreaChange =
     (propertyId || null) !== (instance.storage?.owned_property_id ?? null) ||
     (upgradeId || null) !== (instance.storage?.assigned_upgrade_id ?? null);
@@ -398,7 +445,7 @@ export function InstanceDrawer({
         ownedVehicleId: instance.id,
         ownedPropertyId: propertyId || null,
         assignedUpgradeId: upgradeId || null,
-        subSlot: subSlot || null,
+        subSlot: subSlotToSave,
       });
       if ("error" in storage) {
         toast.error(storage.error);
@@ -501,19 +548,63 @@ export function InstanceDrawer({
                 ))}
               </select>
             )}
-            {subSlotsAvailable && subSlotsAvailable.length > 0 && (
-              <select
-                className="rounded-md border bg-background px-3 py-2 text-sm"
-                value={subSlot}
-                onChange={(e) => setSubSlot(e.target.value)}
-              >
-                <option value="">— Anywhere in {selectedUpgrade?.display_name} —</option>
-                {subSlotsAvailable.map((s) => (
-                  <option key={s.label} value={s.label}>
-                    {s.label} ({s.cars_here} / {s.capacity})
+            {selectedMode === "bay" &&
+              subSlotsAvailable &&
+              subSlotsAvailable.length > 0 && (
+                <select
+                  className="rounded-md border bg-background px-3 py-2 text-sm"
+                  value={subSlot}
+                  onChange={(e) => setSubSlot(e.target.value)}
+                >
+                  <option value="">
+                    — Anywhere in {selectedUpgrade?.display_name} —
                   </option>
-                ))}
-              </select>
+                  {subSlotsAvailable.map((s) => (
+                    <option key={s.label} value={s.label}>
+                      {s.label} ({s.cars_here} / {s.capacity})
+                    </option>
+                  ))}
+                </select>
+              )}
+
+            {/* Mansion display spots — flag a parked car as Driveway / Podium.
+                The car keeps its numbered slot; this is just a display tag. */}
+            {selectedMode === "flags" && flagOpts.length > 0 && (
+              <div className="flex flex-col gap-1.5">
+                <Label className="text-xs text-muted-foreground">
+                  Display spot
+                </Label>
+                <div className="flex flex-wrap gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setSubSlot("")}
+                    className={`rounded-md border px-2.5 py-1 text-xs ${
+                      flagLabelSet.has(subSlot)
+                        ? "hover:bg-muted"
+                        : "border-violet-500 bg-violet-500/15 text-violet-200"
+                    }`}
+                  >
+                    Normal
+                  </button>
+                  {flagOpts.map((s) => (
+                    <button
+                      key={s.label}
+                      type="button"
+                      onClick={() => setSubSlot(s.label)}
+                      className={`rounded-md border px-2.5 py-1 text-xs ${
+                        subSlot === s.label
+                          ? "border-violet-500 bg-violet-500/15 text-violet-200"
+                          : "hover:bg-muted"
+                      }`}
+                    >
+                      {s.label}{" "}
+                      <span className="opacity-70 tabular-nums">
+                        ({s.cars_here}/{s.capacity})
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
 
             {showSlot && (
@@ -523,6 +614,11 @@ export function InstanceDrawer({
                   <span className="text-muted-foreground">
                     (1–{slotAreaCapacity})
                   </span>
+                  {savedSlotCode && (
+                    <span className="ml-1 font-semibold text-emerald-400">
+                      · {savedSlotCode}
+                    </span>
+                  )}
                 </Label>
                 <div className="flex items-center gap-2">
                   <button

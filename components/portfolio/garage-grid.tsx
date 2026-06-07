@@ -26,6 +26,7 @@ import {
   swapVehicleSlots,
 } from "@/app/(app)/my-vehicles/slot-actions";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
+import { isFlagSubSlot, type SlotLayout } from "@/lib/slot-labels";
 import { vehicleImageUrl } from "@/lib/vehicles";
 
 type Props = {
@@ -41,6 +42,12 @@ type Props = {
   onRemove: (instanceId: string, displayName: string) => void;
   /** Show a chevron to collapse this area (multi-floor properties). */
   collapsible?: boolean;
+  /** Format a 1-based slot number for display — e.g. CEO offices code slots by
+   *  sub-level ("1B-2"). Defaults to the bare number. */
+  slotLabel?: (n: number) => string;
+  /** The area's sub_slots, when it has display flags (Mansion Driveway /
+   *  Podium). A car flagged into one gets a small chip. */
+  subSlots?: SlotLayout[];
 };
 
 /**
@@ -62,7 +69,12 @@ export function GarageGrid({
   onManage,
   onRemove,
   collapsible = false,
+  slotLabel,
+  subSlots,
 }: Props) {
+  const labelOf = (n: number) => (slotLabel ? slotLabel(n) : String(n));
+  const flagOf = (car: OwnedVehicleInstance) =>
+    isFlagSubSlot(subSlots, car.storage?.sub_slot) ? car.storage?.sub_slot ?? null : null;
   const confirm = useConfirm();
   const [isPending, startTransition] = useTransition();
   const [collapsed, setCollapsed] = useState(false);
@@ -221,11 +233,12 @@ export function GarageGrid({
           {Array.from({ length: capacity }, (_, i) => i + 1).map((n) => {
             const car = carAtSlot(n);
             return (
-              <SlotCell key={n} slot={n}>
+              <SlotCell key={n} slot={n} label={labelOf(n)}>
                 {car ? (
                   <CarCard
                     instance={car}
-                    slot={n}
+                    slotLabel={labelOf(n)}
+                    flag={flagOf(car)}
                     tagLookup={tagLookup}
                     isPending={isPending}
                     onManage={() => onManage(car.id)}
@@ -251,7 +264,8 @@ export function GarageGrid({
               <CarCard
                 key={car.id}
                 instance={car}
-                slot={null}
+                slotLabel={null}
+                flag={flagOf(car)}
                 tagLookup={tagLookup}
                 isPending={isPending}
                 onManage={() => onManage(car.id)}
@@ -281,12 +295,14 @@ function initSlots(cars: OwnedVehicleInstance[]): Map<string, number | null> {
   return new Map(cars.map((c) => [c.id, c.storage?.slot_number ?? null]));
 }
 
-/** A droppable numbered cell. Shows its number; renders a card when occupied. */
+/** A droppable numbered cell. Shows its slot label; renders a card when occupied. */
 function SlotCell({
   slot,
+  label,
   children,
 }: {
   slot: number;
+  label: string;
   children: React.ReactNode;
 }) {
   const { setNodeRef, isOver } = useDroppable({ id: `slot:${slot}` });
@@ -304,8 +320,13 @@ function SlotCell({
       } ${isOver && children ? "ring-2 ring-emerald-400" : ""}`}
     >
       {!children && (
-        <span className="text-2xl font-semibold tabular-nums text-foreground/20">
-          {slot}
+        // Coded labels (1A-1) are wider than bare numbers — shrink them to fit.
+        <span
+          className={`font-semibold tabular-nums text-foreground/20 ${
+            label.length > 2 ? "text-lg" : "text-2xl"
+          }`}
+        >
+          {label}
         </span>
       )}
       {children}
@@ -331,17 +352,19 @@ function Tray({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Draggable vehicle card. `slot` non-null when it sits in a numbered cell. */
+/** Draggable vehicle card. `slotLabel` non-null when it sits in a numbered cell. */
 function CarCard({
   instance,
-  slot,
+  slotLabel,
+  flag,
   tagLookup,
   isPending,
   onManage,
   onRemove,
 }: {
   instance: OwnedVehicleInstance;
-  slot: number | null;
+  slotLabel: string | null;
+  flag: string | null;
   tagLookup: Record<string, string>;
   isPending: boolean;
   onManage: () => void;
@@ -370,12 +393,20 @@ function CarCard({
       {...attributes}
       {...listeners}
     >
-      {/* Slot number — bottom-left, mirrors the /my-vehicles badge. */}
-      {slot != null && (
-        <span className="absolute bottom-1.5 left-1.5 z-10 flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow">
-          {slot}
-        </span>
-      )}
+      {/* Slot label + optional flag (Driveway/Podium) — bottom-left, mirrors
+          the /my-vehicles badge. */}
+      <div className="absolute bottom-1.5 left-1.5 z-10 flex items-center gap-1">
+        {slotLabel != null && (
+          <span className="flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow">
+            {slotLabel}
+          </span>
+        )}
+        {flag && (
+          <span className="flex h-6 items-center justify-center rounded-md bg-violet-600 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
+            {flag}
+          </span>
+        )}
+      </div>
       <div className="absolute right-1.5 top-1.5 z-10 flex items-center gap-0.5">
         <div className="flex items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
           <button
