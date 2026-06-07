@@ -14,10 +14,9 @@ type Props = {
   email: string;
   username: string;
   displayName: string;
-  gtaPlus: boolean;
 };
 
-export function ProfileForm({ email, username, displayName, gtaPlus }: Props) {
+export function ProfileForm({ email, username, displayName }: Props) {
   const [state, formAction, isPending] = useActionState<ProfileState, FormData>(
     updateProfileAction,
     {},
@@ -72,20 +71,13 @@ export function ProfileForm({ email, username, displayName, gtaPlus }: Props) {
         )}
       </div>
 
-      <div className="flex items-start gap-3 rounded-md border p-3">
-        <input
-          id="gtaPlus"
-          name="gtaPlus"
-          type="checkbox"
-          defaultChecked={gtaPlus}
-          className="mt-1 h-4 w-4 accent-[#84cc16]"
-        />
-        <div className="space-y-0.5">
-          <Label htmlFor="gtaPlus">GTA+ member</Label>
-          <p className="text-xs text-muted-foreground">
-            Unlocks GTA+ perks — e.g. the larger McKenzie hangar boost (+20 vs +15 aircraft slots).
-          </p>
-        </div>
+      <div className="rounded-md border p-3 text-xs text-muted-foreground">
+        <strong className="text-foreground">GTA+</strong> is now set per profile (GTA account) —
+        manage it in{" "}
+        <a href="/characters" className="text-emerald-400 hover:underline">
+          Profiles &amp; Characters
+        </a>
+        .
       </div>
 
       {state.error && (

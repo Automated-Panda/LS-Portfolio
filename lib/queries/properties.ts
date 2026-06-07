@@ -20,7 +20,7 @@ const SCOPE_TYPES: Record<PropertyScope, PropertyType[]> = {
 };
 
 export async function getPropertiesBrowserData(
-  userId: string,
+  characterId: string,
   scope: PropertyScope,
 ): Promise<PropertiesBrowserData> {
   const supabase = await createClient();
@@ -43,7 +43,7 @@ export async function getPropertiesBrowserData(
     supabase
       .from("user_owned_properties")
       .select("property_id")
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
   ]);
 
   if (propsErr) throw propsErr;

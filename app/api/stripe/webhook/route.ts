@@ -4,7 +4,7 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe/client";
 import { creditsFromMetadata } from "@/lib/stripe/metadata";
 import { grantCredits } from "@/lib/credits/server";
-import { linkStripeIds, endSubscription } from "@/lib/credits/billing";
+import { linkStripeIds, endSubscription, grantProfileSlot } from "@/lib/credits/billing";
 
 export const runtime = "nodejs";
 
@@ -43,6 +43,12 @@ export async function POST(request: NextRequest) {
           subscriptionId:
             typeof session.subscription === "string" ? session.subscription : undefined,
         });
+
+        // Multi-character: one-time "extra GTA-account profile" unlock.
+        if (session.metadata?.sku === "profile_slot") {
+          await grantProfileSlot(userId, event.id);
+          break;
+        }
 
         // Packs grant here; subscriptions are granted on invoice.paid.
         if (session.mode === "payment") {

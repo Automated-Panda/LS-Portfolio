@@ -33,7 +33,7 @@ export type OwnedVehicleInstance = {
 };
 
 export async function getOwnedVehicleInstances(
-  userId: string,
+  characterId: string,
 ): Promise<OwnedVehicleInstance[]> {
   const supabase = await createClient();
 
@@ -53,7 +53,7 @@ export async function getOwnedVehicleInstances(
       ),
       property_upgrades!assigned_upgrade_id ( display_name )
     `)
-    .eq("user_id", userId)
+    .eq("character_id", characterId)
     .order("created_at", { ascending: true });
 
   if (error) throw error;

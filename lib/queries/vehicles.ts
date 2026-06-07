@@ -14,7 +14,7 @@ export type VehiclesBrowserData = {
 };
 
 export async function getVehiclesBrowserData(
-  userId: string,
+  characterId: string,
 ): Promise<VehiclesBrowserData> {
   const supabase = await createClient();
 
@@ -43,7 +43,7 @@ export async function getVehiclesBrowserData(
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id")
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
   ]);
 
   if (vehiclesErr) throw vehiclesErr;
@@ -135,7 +135,7 @@ export async function getVehiclesBrowserData(
 }
 
 export async function getOwnedCounts(
-  userId: string,
+  characterId: string,
 ): Promise<{ vehicles: number; properties: number; businesses: number }> {
   const supabase = await createClient();
 
@@ -144,11 +144,11 @@ export async function getOwnedCounts(
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id", { count: "exact", head: true })
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
     supabase
       .from("user_owned_properties")
       .select("property_id, properties!inner(property_type)")
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
   ]);
 
   type OwnedPropRow = {

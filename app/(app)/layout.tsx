@@ -3,7 +3,9 @@ import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell/app-shell";
 import { listNotifications, unreadCount } from "@/lib/notifications/server";
 import { getOwnedCounts } from "@/lib/queries/vehicles";
+import { getCharacterSwitcherData } from "@/lib/queries/characters";
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 
 export default async function AppLayout({
   children,
@@ -18,6 +20,7 @@ export default async function AppLayout({
   if (!user) {
     redirect("/login");
   }
+  const characterId = (await getScope())!.characterId;
 
   // Note: the prior wizard-redirect (force /wizard if isWizardCompleted=false
   // on any route except /dashboard or /wizard) has been removed. The Phase 6
@@ -27,16 +30,18 @@ export default async function AppLayout({
   // in a partial-onboarding state. Users still reach /wizard via the
   // EmptyDashboard hero or manual navigation.
 
-  const [{ data: profile }, counts, notifications, unread] = await Promise.all([
-    supabase
-      .from("profiles")
-      .select("username, display_name")
-      .eq("id", user.id)
-      .maybeSingle(),
-    getOwnedCounts(user.id),
-    listNotifications(),
-    unreadCount(),
-  ]);
+  const [{ data: profile }, counts, notifications, unread, switcher] =
+    await Promise.all([
+      supabase
+        .from("profiles")
+        .select("username, display_name")
+        .eq("id", user.id)
+        .maybeSingle(),
+      getOwnedCounts(characterId),
+      listNotifications(),
+      unreadCount(),
+      getCharacterSwitcherData(),
+    ]);
 
   return (
     <AppShell
@@ -44,6 +49,7 @@ export default async function AppLayout({
       username={profile?.username ?? null}
       displayName={profile?.display_name ?? null}
       counts={counts}
+      switcher={switcher}
       notifications={notifications}
       unreadCount={unread}
     >

@@ -7,6 +7,7 @@ import {
   currentCarCountAt,
 } from "@/lib/capacity";
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 
 type Result<T = {}> = ({ ok: true } & T) | { error: string };
 
@@ -121,6 +122,7 @@ export async function assignVehiclesToSubGarage(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const [capacity, current] = await Promise.all([
     capacityForStorageLocation(opts.ownedPropertyId, opts.assignedUpgradeId),
@@ -134,6 +136,7 @@ export async function assignVehiclesToSubGarage(opts: {
 
   const rows = opts.vehicleIds.map((vid) => ({
     user_id: user.id,
+    character_id: characterId,
     vehicle_id: vid,
     stored_in_property_id: opts.ownedPropertyId,
     assigned_upgrade_id: opts.assignedUpgradeId,

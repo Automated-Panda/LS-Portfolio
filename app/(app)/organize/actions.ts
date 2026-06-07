@@ -19,6 +19,7 @@ import { undoPlan as undoPlanLib } from "@/lib/organizer/undo-plan";
 import { validateIntent } from "@/lib/organizer/validate-intent";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
+import { getScope } from "@/lib/scope";
 import { createClient } from "@/lib/supabase/server";
 import { planCost, TWEAK_COST } from "@/lib/credits/constants";
 import { organizerBalance, chargeOrganizer } from "@/lib/credits/gate";
@@ -39,6 +40,7 @@ export async function parseIntent(
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Pre-check: need at least 1 credit to send a message at all (owner bypassed).
   const balance = await organizerBalance(user.id, user.email);
@@ -48,8 +50,8 @@ export async function parseIntent(
 
   // Load everything the LLM needs.
   const [vehicles, properties, { data: systemTags }, { data: manufacturers }] = await Promise.all([
-    getOwnedVehicleInstances(user.id),
-    getOwnedPropertiesWithStorage(user.id),
+    getOwnedVehicleInstances(characterId),
+    getOwnedPropertiesWithStorage(characterId),
     supabase.from("vehicle_tags").select("id, display"),
     supabase.from("manufacturers").select("id, display"),
   ]);
@@ -103,10 +105,11 @@ export async function generatePlan(
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return { ok: false, message: "Not signed in.", balance: { total: 0, unlimited: false } };
+  const { characterId } = (await getScope())!;
 
   const [vehicles, properties, { data: manufacturers }] = await Promise.all([
-    getOwnedVehicleInstances(user.id),
-    getOwnedPropertiesWithStorage(user.id),
+    getOwnedVehicleInstances(characterId),
+    getOwnedPropertiesWithStorage(characterId),
     supabase.from("manufacturers").select("id, display"),
   ]);
 
@@ -145,7 +148,7 @@ export async function generatePlan(
     const title = conversationTitle(intent, propertyNameById, prompt);
     const { data: convo, error: convoErr } = await supabase
       .from("conversations")
-      .insert({ user_id: user.id, title })
+      .insert({ user_id: user.id, character_id: characterId, title })
       .select("id")
       .single();
     if (convoErr || !convo) {
@@ -175,6 +178,7 @@ export async function generatePlan(
     .from("organizer_plans")
     .insert({
       user_id: user.id,
+      character_id: characterId,
       conversation_id: conversationId,
       prompt,
       parsed_intent: intent,

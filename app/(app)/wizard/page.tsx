@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getPropertiesBrowserData } from "@/lib/queries/properties";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
@@ -13,14 +14,15 @@ export default async function WizardPage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   // Fetch both scopes in parallel and merge for the picker step.
   const [propsScope, bizScope, ownedProperties, ownedInstances, { data: tags }] =
     await Promise.all([
-      getPropertiesBrowserData(user.id, "properties"),
-      getPropertiesBrowserData(user.id, "businesses"),
-      getOwnedPropertiesWithStorage(user.id),
-      getOwnedVehicleInstances(user.id),
+      getPropertiesBrowserData(characterId, "properties"),
+      getPropertiesBrowserData(characterId, "businesses"),
+      getOwnedPropertiesWithStorage(characterId),
+      getOwnedVehicleInstances(characterId),
       supabase.from("vehicle_tags").select("id, display"),
     ]);
 

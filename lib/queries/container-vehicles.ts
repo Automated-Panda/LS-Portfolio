@@ -9,6 +9,7 @@
 // this module is the server-only query that feeds it DB rows.
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import {
   CONTAINER_VEHICLES,
   deriveContainerView,
@@ -26,9 +27,9 @@ export type OwnedContainerVehicle = {
   bays: ContainerBayView[];
 };
 
-export async function getOwnedContainerVehicles(
-  userId: string,
-): Promise<OwnedContainerVehicle[]> {
+export async function getOwnedContainerVehicles(): Promise<OwnedContainerVehicle[]> {
+  const scope = await getScope();
+  if (!scope) return [];
   const supabase = await createClient();
   const containerIds = Object.keys(CONTAINER_VEHICLES);
   if (containerIds.length === 0) return [];
@@ -46,7 +47,7 @@ export async function getOwnedContainerVehicles(
       ),
       user_owned_vehicle_upgrades ( vehicle_upgrade_id )
     `)
-    .eq("user_id", userId)
+    .eq("character_id", scope.characterId)
     .in("vehicle_id", containerIds)
     .order("created_at", { ascending: true });
 

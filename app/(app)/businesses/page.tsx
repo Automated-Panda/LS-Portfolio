@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getPropertiesBrowserData } from "@/lib/queries/properties";
 
@@ -13,12 +14,13 @@ export default async function BusinessesPage() {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   // Owned detail lets an owned card resolve its owned id and navigate to the
   // dedicated /my-businesses/[id] page.
   const [data, ownedProperties] = await Promise.all([
-    getPropertiesBrowserData(user.id, "businesses"),
-    getOwnedPropertiesWithStorage(user.id, "businesses"),
+    getPropertiesBrowserData(characterId, "businesses"),
+    getOwnedPropertiesWithStorage(characterId, "businesses"),
   ]);
 
   return <PropertiesBrowser {...data} ownedProperties={ownedProperties} />;

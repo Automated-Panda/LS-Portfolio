@@ -58,6 +58,15 @@ const CATALOG: CatalogItem[] = [
     priceCents: 999,
     lookupKey: "gtvault_pro_250_monthly",
   },
+  {
+    id: "profile_slot",
+    name: "Extra GTA-account profile",
+    description: "One-time unlock for one more GTA-account profile (up to 2 characters).",
+    credits: 0,
+    kind: "pack",
+    priceCents: 299,
+    lookupKey: "gtvault_profile_slot_299",
+  },
 ];
 
 async function findOrCreateProduct(

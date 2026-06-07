@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getUserHighlights } from "@/lib/queries/highlights";
 
 import { DangerZone } from "./danger-zone";
@@ -23,14 +24,15 @@ export default async function ProfilePage() {
   if (!user) {
     redirect("/login");
   }
+  const characterId = (await getScope())!.characterId;
 
   const [{ data: profile }, highlights] = await Promise.all([
     supabase
       .from("profiles")
-      .select("username, display_name, gta_plus")
+      .select("username, display_name")
       .eq("id", user.id)
       .maybeSingle(),
-    getUserHighlights(user.id),
+    getUserHighlights(characterId),
   ]);
 
   return (
@@ -54,7 +56,6 @@ export default async function ProfilePage() {
             email={user.email ?? ""}
             username={profile?.username ?? ""}
             displayName={profile?.display_name ?? ""}
-            gtaPlus={profile?.gta_plus ?? false}
           />
         </CardContent>
       </Card>

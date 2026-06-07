@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { formatClass } from "@/lib/vehicles";
 
@@ -23,10 +24,11 @@ export async function addVehicleInstance(
   if (!user) {
     return { vehicleId, error: "Not signed in." };
   }
+  const { characterId } = (await getScope())!;
 
   const { data, error } = await supabase
     .from("user_owned_vehicles")
-    .insert({ user_id: user.id, vehicle_id: vehicleId })
+    .insert({ user_id: user.id, character_id: characterId, vehicle_id: vehicleId })
     .select("id")
     .single();
 

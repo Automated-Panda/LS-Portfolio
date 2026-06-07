@@ -4,6 +4,64 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 
 ---
 
+## 🚧 IN PROGRESS — Multi-character / multi-account (Phase 1 done, NOT pushed)
+
+> Started 2026-06-08. **Phase 1 (data + scoping foundation) is built, verified (tsc + 187 tests + build green), and the migrations are applied to the hosted GT Vault DB — but NOTHING is pushed to `main` yet** (decided to push the whole feature at once when done). Resume at **Phase 2 (UI)**.
+
+### 🔒 LOCKED design decisions (do not change without asking James)
+- **Two levels under ONE GTVault login** (no separate logins):
+  - **Profile** = one **GTA account**. Holds the **GTA+** toggle. Groups characters. **First Profile is free; each additional Profile is a one-time $2.99 permanent purchase** (reuses existing one-time Stripe flow). **Owner (james@automatedpanda.com) = unlimited.**
+  - **Character** = an in-game character that **owns the assets**. **Up to 2 per Profile** (GTA's max). New profile starts with 1 character; add the 2nd.
+- **Per-character:** owned vehicles, owned properties, their upgrades/garage layouts, **organizer history**, **setup wizard** state.
+- **Shared / account-level (NOT per character):** credits, subscription, billing, notifications, support tickets, role.
+- **Pricing rationale (locked):** one-time (not subscription) so cancelling Pro never removes profiles, and it's self-limiting. $2.99 sits just under the cheapest credit pack ($4.99). NOT priced in credits.
+- **Delete:** typed-confirm; **never the last remaining character.**
+- **Labels:** user-facing "**Profile**" + "**Character**"; internal tables `game_profiles` + `characters`.
+
+### 🎨 LOCKED UI (mocked in the visual companion + approved — keep exactly this)
+- **Switcher = top-bar pill** showing the active character (`🎮 Franklin · Main ▾`). Click → dropdown:
+  - Profiles are **group headers** with a **GTA+ badge** + a ⚙ (manage). Characters are **selectable rows** (active = **lime dot**) showing a quick **vehicle / property count**.
+  - **"Add character"** only shows when a profile has < 2 (shows e.g. `1 / 2`).
+  - Footer: **"Add GTA-account profile"** with a **$2.99** tag (buy prompt for free users, free for owner) + **"Manage profiles & characters"**.
+- **Management screen** ("Manage profiles & characters"):
+  - Each **Profile is a card**: inline-editable **name**, a per-profile **GTA+ toggle** (this MOVES here, off the `/profile` account-settings page), and a 🗑 to delete the whole profile.
+  - **Characters** rename inline, show counts, have **Set active** + delete (✕). "2 / 2 — GTA's max" note caps adding.
+  - **"Add character — starts a blank slate"** (under 2); **"Add GTA-account profile · $2.99"**.
+  - **$2.99 buy prompt:** "permanent — you keep it and all its data even if you cancel Pro."
+  - **Delete confirm:** typed-DELETE, spelling out exactly what's removed (e.g. "60 vehicles + 3 properties").
+
+### 🗄️ Data model (Phase 1 — DONE, migrations `0047` + `0048` applied to prod)
+- `game_profiles` (id, user_id, **name**, **gta_plus**, sort_order) + `characters` (id, game_profile_id, user_id, name, sort_order). Both RLS = own by user_id.
+- `profiles.active_character_id` (drives scoping) + `profiles.extra_profile_slots` (purchased profile slots beyond the 1 free).
+- `character_id` added to `user_owned_vehicles`, `user_owned_properties`, `organizer_plans`, `conversations` (kept `user_id` so RLS untouched).
+- GTA+ **moved** to `game_profiles.gta_plus` (hangar boost reads the active character's profile). Per-character ownership uniqueness (`0048`).
+- **Backfill verified:** every existing account → one "Main" profile + "Character 1" holding all assets, GTA+ copied. Signup trigger now also creates a default profile + character.
+- **Scope helper:** `lib/scope.ts` `getScope()` → `{ userId, characterId }`. ~30 files rewired (10 queries, hangar-boost, capacity, 9 pages, 6 action files) from "filter by user" → "filter by active character"; inserts now set `character_id` (keep `user_id`).
+
+### ✅ Phase 2 — UI (BUILT 2026-06-08, not pushed; needs James's visual check)
+- [x] **Character switcher** — top-bar pill (`🎮 Character · Profile ▾`) + dropdown in the app shell (`components/app-shell/character-switcher.tsx`), wired via `app/(app)/layout.tsx` → `getCharacterSwitcherData()`. Switch character / add character / add profile / Manage link. Matches the locked mock.
+- [x] **Manage screen** at **`/characters`** (`characters-manager.tsx`): profile cards with inline rename, **per-profile GTA+ toggle**, delete profile; characters rename inline + counts + Set active + delete; "Add character — blank slate" (≤2); "Add GTA-account profile $2.99". **Typed-DELETE** confirm dialog.
+- [x] **GTA+ moved off `/profile`** → now the per-profile toggle on `/characters` (writes `game_profiles.gta_plus`, which hangar-boost reads). The interim disconnect is resolved. `/profile` shows a pointer note.
+- [x] **Blank slate** works automatically — a new character has 0 assets → EmptyDashboard onboarding. No extra wizard code needed.
+- [x] **Server actions** (`app/(app)/characters/actions.ts`): setActiveCharacter, createCharacter, renameCharacter, deleteCharacter (cascades assets), createProfile (gated; returns `needs-purchase` for non-owners), renameProfile, setProfileGtaPlus, deleteProfile. Client-safe types/const in `lib/characters-shared.ts` (RSC split). ✅ tsc + 187 tests + build green.
+- ⚠️ **Owner (James) can add profiles freely** for testing; non-owners hit the `$2.99` gate (toast placeholder until Phase 3 wires the real purchase).
+
+### ✅ Phase 3 — the $2.99 purchase + gate (BUILT 2026-06-08, not pushed)
+- [x] One-time Stripe SKU **`gtvault_profile_slot_299`** ($2.99). `createProfileSlotCheckout()` in `credits/actions.ts` (mode payment, metadata `sku=profile_slot`, returns to `/characters?status=slot-success`). Webhook branch (`checkout.session.completed` → `sku==="profile_slot"`) calls `grantProfileSlot()` → RPC **`grant_profile_slot`** (migration `0049`: `profile_slot_grants` ledger, idempotent on `stripe_event_id`) → +1 `profiles.extra_profile_slots`.
+- [x] **Gate wired:** non-owner clicking "Add GTA-account profile" → `createProfile()` returns `needs-purchase` → UI redirects to Stripe checkout; on return, success toast, then they can add. Owner = unlimited (skips gate).
+- ⚠️ **TODO before this works live:** run **`npm run stripe:setup`** (with Stripe keys) to create the $2.99 price in the Stripe account — the CATALOG entry is added but the price must exist. Webhook endpoint already configured (same one as credits).
+
+### 🎯 Multi-character: ALL PHASES BUILT — ready for James's visual check, then push the whole feature
+Migrations `0047`–`0049` applied to prod. tsc + 187 tests + build green throughout. **Nothing pushed yet.**
+
+---
+
+## 🐞 Minor bugs / polish (next session)
+- [ ] **Slot-number badge covers the tags on the vehicle card view** → move it (James's suggestion: **bottom-left of the image itself**). Check `app/(app)/my-vehicles/my-vehicles-grid.tsx` (`OwnedCard` badge) — and any other card view where the slot pill overlaps the tag row.
+- [ ] **Owned vehicles inside properties/garages don't keep the "Discontinued" (availability) tags** — the `/vehicles` browser shows availability badges (discontinued/seasonal) but the garage-grid / my-vehicles cards don't. Thread `availability` into the owned-vehicle queries + render the badge on those cards.
+
+---
+
 ## ✅ SHIPPED 2026-06-06 → 06-07 — garage slots · organised views · Phase 2 bays · hybrid entities
 
 > All of the below is **merged to `main` and pushed** (live on Vercel). Kept here as the record of what landed.

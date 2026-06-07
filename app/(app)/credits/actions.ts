@@ -5,7 +5,7 @@ import type Stripe from "stripe";
 
 import { createClient } from "@/lib/supabase/server";
 import { getStripe } from "@/lib/stripe/client";
-import { CREDIT_TIERS } from "@/lib/stripe/tiers";
+import { CREDIT_TIERS, PROFILE_SLOT } from "@/lib/stripe/tiers";
 import { creditsFromMetadata } from "@/lib/stripe/metadata";
 import { getStripeCustomerId, linkStripeIds } from "@/lib/credits/billing";
 
@@ -71,6 +71,48 @@ export async function createCheckoutSession(lookupKey: string): Promise<Checkout
       : {}),
   });
 
+  if (!session.url) return { error: "Failed to create checkout session." };
+  return { url: session.url };
+}
+
+/** Checkout for the one-time "$2.99 extra GTA-account profile" unlock. On
+ *  success the webhook (sku=profile_slot) bumps profiles.extra_profile_slots. */
+export async function createProfileSlotCheckout(): Promise<CheckoutResult> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not signed in." };
+
+  const stripe = getStripe();
+  const prices = await stripe.prices.list({
+    lookup_keys: [PROFILE_SLOT.lookupKey],
+    active: true,
+    limit: 1,
+  });
+  const price = prices.data[0];
+  if (!price) return { error: "Profile-slot price isn't set up in Stripe yet (run stripe:setup)." };
+
+  let customerId = await getStripeCustomerId(user.id);
+  if (!customerId) {
+    const customer = await stripe.customers.create({
+      email: user.email ?? undefined,
+      metadata: { user_id: user.id },
+    });
+    customerId = customer.id;
+    await linkStripeIds(user.id, { customerId });
+  }
+
+  const origin = await getOrigin();
+  const session = await stripe.checkout.sessions.create({
+    mode: "payment",
+    customer: customerId,
+    line_items: [{ price: price.id, quantity: 1 }],
+    client_reference_id: user.id,
+    success_url: `${origin}/characters?status=slot-success`,
+    cancel_url: `${origin}/characters?status=cancel`,
+    metadata: { user_id: user.id, sku: "profile_slot" },
+  });
   if (!session.url) return { error: "Failed to create checkout session." };
   return { url: session.url };
 }

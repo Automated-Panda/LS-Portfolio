@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import {
   getActiveUndoablePlan,
   getConversations,
@@ -15,10 +16,11 @@ export default async function OrganizePage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   const [initialConversations, initialUndoablePlan, initialBalance] = await Promise.all([
-    getConversations(user.id),
-    getActiveUndoablePlan(user.id),
+    getConversations(characterId),
+    getActiveUndoablePlan(characterId),
     organizerBalance(user.id, user.email),
   ]);
 

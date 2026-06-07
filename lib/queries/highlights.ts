@@ -12,7 +12,7 @@ export type UserHighlight = {
 };
 
 export async function getUserHighlights(
-  userId: string,
+  characterId: string,
 ): Promise<UserHighlight[]> {
   const supabase = await createClient();
 
@@ -21,7 +21,7 @@ export async function getUserHighlights(
   const { data, error } = await supabase
     .from("user_owned_vehicles")
     .select("custom_tags")
-    .eq("user_id", userId);
+    .eq("character_id", characterId);
   if (error) throw error;
 
   const counts = new Map<string, number>();

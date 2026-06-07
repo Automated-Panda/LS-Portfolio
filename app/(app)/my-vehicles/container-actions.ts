@@ -38,7 +38,7 @@ export async function getOwnedContainersForStorable(
   const match = bayForStoredVehicle(childVehicleId);
   if (!match) return [];
 
-  const containers = (await getOwnedContainerVehicles(user.id)).filter(
+  const containers = (await getOwnedContainerVehicles()).filter(
     (c) => c.vehicle_id === match.containerVehicleId,
   );
   if (containers.length === 0) return [];
@@ -119,7 +119,7 @@ export async function assignVehicleToContainer(opts: {
   }
 
   // Bay must exist on the owned container (gating upgrade installed) + have room.
-  const containers = await getOwnedContainerVehicles(user.id);
+  const containers = await getOwnedContainerVehicles();
   const c = containers.find((x) => x.id === opts.containerOwnedVehicleId);
   const bay = c?.bays.find((b) => b.label === opts.bayLabel);
   if (!bay) {
@@ -178,7 +178,7 @@ export async function getContainerDetail(
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const container = (await getOwnedContainerVehicles(user.id)).find(
+  const container = (await getOwnedContainerVehicles()).find(
     (c) => c.id === ownedVehicleId,
   );
   if (!container) return null;

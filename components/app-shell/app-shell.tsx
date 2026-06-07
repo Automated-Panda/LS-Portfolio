@@ -11,9 +11,11 @@ import { cn } from "@/lib/utils";
 
 import { FeedbackProvider } from "./feedback";
 import type { NavCounts } from "./nav-items";
+import { CharacterSwitcher } from "./character-switcher";
 import { NotificationBell } from "./notification-bell";
 import { SidebarNav } from "./sidebar-nav";
 import { UserMenu } from "./user-menu";
+import type { CharacterSwitcherData } from "@/lib/characters-shared";
 
 type Props = {
   email: string;
@@ -22,6 +24,7 @@ type Props = {
   notifications: import("@/lib/notifications/types").NotificationRow[];
   unreadCount: number;
   counts: NavCounts;
+  switcher: CharacterSwitcherData | null;
   children: React.ReactNode;
 };
 
@@ -32,6 +35,7 @@ export function AppShell({
   notifications,
   unreadCount,
   counts,
+  switcher,
   children,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -95,6 +99,7 @@ export function AppShell({
           >
             <Menu className="h-5 w-5" />
           </Button>
+          {switcher && <CharacterSwitcher data={switcher} />}
           <div className="flex-1" />
           <NotificationBell notifications={notifications} unread={unreadCount} />
           <UserMenu

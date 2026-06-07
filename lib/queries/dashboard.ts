@@ -86,7 +86,7 @@ function labelFor(slug: string): string {
 const BUSINESS_TYPE = "business";
 const UNOWNED_LIMIT = 12;
 
-export async function getCatalogCoverage(userId: string): Promise<CatalogCoverage> {
+export async function getCatalogCoverage(characterId: string): Promise<CatalogCoverage> {
   const supabase = await createClient();
 
   const [vehicleTotal, vehicleOwned, propRows, ownedRows, capRows] = await Promise.all([
@@ -94,14 +94,14 @@ export async function getCatalogCoverage(userId: string): Promise<CatalogCoverag
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id")
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
     supabase
       .from("properties")
       .select("id, display_name, ownership_group, property_type, parent_building"),
     supabase
       .from("user_owned_properties")
       .select("property_id")
-      .eq("user_id", userId),
+      .eq("character_id", characterId),
     supabase
       .from("property_ownership_limits")
       .select("ownership_group, max_owned"),

@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedCounts } from "@/lib/queries/vehicles";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
@@ -40,6 +41,7 @@ export default async function DashboardPage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   const [
     { data: profile },
@@ -55,12 +57,12 @@ export default async function DashboardPage() {
       .select("username, display_name")
       .eq("id", user.id)
       .maybeSingle(),
-    getOwnedCounts(user.id),
-    getOwnedVehicleInstances(user.id),
-    getOwnedPropertiesWithStorage(user.id),
-    getRecentPlans(user.id, 5),
-    getActiveUndoablePlan(user.id),
-    getCatalogCoverage(user.id),
+    getOwnedCounts(characterId),
+    getOwnedVehicleInstances(characterId),
+    getOwnedPropertiesWithStorage(characterId),
+    getRecentPlans(characterId, 5),
+    getActiveUndoablePlan(characterId),
+    getCatalogCoverage(characterId),
   ]);
 
   const greetingName = profile?.display_name ?? profile?.username ?? null;

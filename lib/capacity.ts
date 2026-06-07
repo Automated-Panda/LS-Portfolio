@@ -18,7 +18,7 @@ export async function capacityForStorageLocation(
   if (assignedUpgradeId === null) {
     const { data, error } = await supabase
       .from("user_owned_properties")
-      .select("user_id, properties!inner(capacity, ownership_group)")
+      .select("character_id, properties!inner(capacity, ownership_group)")
       .eq("id", ownedPropertyId)
       .maybeSingle();
 
@@ -27,8 +27,8 @@ export async function capacityForStorageLocation(
       ? data?.properties[0]
       : data?.properties;
     const baseCapacity = p?.capacity ?? 0;
-    if (p?.ownership_group !== "hangar" || !data?.user_id) return baseCapacity;
-    const boost = await getHangarBoostContext(data.user_id);
+    if (p?.ownership_group !== "hangar" || !data?.character_id) return baseCapacity;
+    const boost = await getHangarBoostContext(data.character_id);
     return applyHangarBoost({
       ownershipGroup: p.ownership_group,
       assignedUpgradeId: null,

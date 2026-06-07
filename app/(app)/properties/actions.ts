@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnershipGroupStatus } from "@/lib/queries/ownership";
 
 export type TradeInCar = {
@@ -35,6 +36,7 @@ export async function togglePropertyOwnership(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Already owned → un-own (no car relocation here; this path is for the
   // /properties browse "Owned" toggle on a property that's the sole owned in
@@ -64,7 +66,7 @@ export async function togglePropertyOwnership(
     .single();
   if (propErr || !prop) return { error: propErr?.message ?? "Property not found." };
 
-  const status = await getOwnershipGroupStatus(user.id, prop.ownership_group);
+  const status = await getOwnershipGroupStatus(characterId, prop.ownership_group);
 
   if (status.atLimit) {
     // Fetch current owned in this group with per-car detail. We include cars
@@ -81,7 +83,7 @@ export async function togglePropertyOwnership(
           vehicles!inner ( display_name )
         )
       `)
-      .eq("user_id", user.id)
+      .eq("character_id", characterId)
       .eq("properties.ownership_group", prop.ownership_group);
     if (rowErr) return { error: rowErr.message };
 
@@ -124,7 +126,7 @@ export async function togglePropertyOwnership(
   // Under limit → insert directly.
   const { data, error } = await supabase
     .from("user_owned_properties")
-    .insert({ user_id: user.id, property_id: propertyId })
+    .insert({ user_id: user.id, character_id: characterId, property_id: propertyId })
     .select("id")
     .single();
   if (error) return { error: error.message };
@@ -178,11 +180,12 @@ export async function tradeInProperty(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // 1. Insert new owned property row.
   const { data: newRow, error: newErr } = await supabase
     .from("user_owned_properties")
-    .insert({ user_id: user.id, property_id: args.newPropertyId })
+    .insert({ user_id: user.id, character_id: characterId, property_id: args.newPropertyId })
     .select("id")
     .single();
   if (newErr) return { error: newErr.message };
@@ -197,7 +200,7 @@ export async function tradeInProperty(
     const { data: cars, error: carsErr } = await supabase
       .from("user_owned_vehicles")
       .select("id")
-      .eq("user_id", user.id)
+      .eq("character_id", characterId)
       .eq("stored_in_property_id", args.tradeInOwnedPropertyId)
       .order("created_at", { ascending: true });
     if (carsErr) return { error: carsErr.message };
@@ -229,7 +232,7 @@ export async function tradeInProperty(
       .from("user_owned_vehicles")
       .update(patch)
       .eq("id", dest.ownedVehicleId)
-      .eq("user_id", user.id);
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
   }
 
@@ -261,6 +264,7 @@ export async function unownProperty(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   for (const dest of args.carDestinations) {
     const patch =
@@ -271,7 +275,7 @@ export async function unownProperty(
       .from("user_owned_vehicles")
       .update(patch)
       .eq("id", dest.ownedVehicleId)
-      .eq("user_id", user.id);
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
   }
 

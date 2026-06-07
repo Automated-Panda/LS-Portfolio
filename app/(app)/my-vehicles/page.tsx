@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 
@@ -16,14 +17,15 @@ export default async function MyVehiclesPage({
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   const sp = await searchParams;
   const initialUnassignedOnly = sp.unassigned === "1";
   const initialDuplicatesOnly = sp.duplicates === "1";
 
   const [instances, ownedProperties, { data: tags }] = await Promise.all([
-    getOwnedVehicleInstances(user.id),
-    getOwnedPropertiesWithStorage(user.id),
+    getOwnedVehicleInstances(characterId),
+    getOwnedPropertiesWithStorage(characterId),
     supabase.from("vehicle_tags").select("id, display"),
   ]);
 

@@ -62,12 +62,12 @@ const SCOPE_TYPES: Record<OwnedScope, Array<"residence" | "garage" | "business" 
 };
 
 export async function getOwnedPropertiesWithStorage(
-  userId: string,
+  characterId: string,
   scope: OwnedScope = "all",
 ): Promise<OwnedPropertyDetail[]> {
   const supabase = await createClient();
 
-  const boost = await getHangarBoostContext(userId);
+  const boost = await getHangarBoostContext(characterId);
 
   const query = supabase
     .from("user_owned_properties")
@@ -84,7 +84,7 @@ export async function getOwnedPropertiesWithStorage(
         id, assigned_upgrade_id, sub_slot
       )
     `)
-    .eq("user_id", userId)
+    .eq("character_id", characterId)
     .order("created_at", { ascending: true });
 
   const types = SCOPE_TYPES[scope];

@@ -9,7 +9,7 @@ export type OwnershipGroupStatus = {
 };
 
 export async function getOwnershipGroupStatus(
-  userId: string,
+  characterId: string,
   ownershipGroup: string,
 ): Promise<OwnershipGroupStatus> {
   const supabase = await createClient();
@@ -23,7 +23,7 @@ export async function getOwnershipGroupStatus(
     supabase
       .from("user_owned_properties")
       .select("id, properties!inner(ownership_group)")
-      .eq("user_id", userId)
+      .eq("character_id", characterId)
       .eq("properties.ownership_group", ownershipGroup),
   ]);
 

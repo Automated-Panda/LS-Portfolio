@@ -35,23 +35,31 @@ export function applyHangarBoost(opts: {
   return opts.baseCapacity + hangarBoostSlots(opts.ownsMckenzie, opts.gtaPlus);
 }
 
-/** Per-user inputs to the boost. Two cheap lookups. */
+/** Per-character inputs to the boost. Two cheap lookups. McKenzie ownership is
+ *  per character; GTA+ is per the character's Profile (GTA account). */
 export type HangarBoostContext = { ownsMckenzie: boolean; gtaPlus: boolean };
 
 export async function getHangarBoostContext(
-  userId: string,
+  characterId: string,
 ): Promise<HangarBoostContext> {
   const supabase = await createClient();
-  const [mck, prof] = await Promise.all([
+  const [mck, char] = await Promise.all([
     supabase
       .from("user_owned_properties")
       .select("id", { count: "exact", head: true })
-      .eq("user_id", userId)
+      .eq("character_id", characterId)
       .eq("property_id", MCKENZIE_PROPERTY_ID),
-    supabase.from("profiles").select("gta_plus").eq("id", userId).maybeSingle(),
+    supabase
+      .from("characters")
+      .select("game_profiles(gta_plus)")
+      .eq("id", characterId)
+      .maybeSingle(),
   ]);
+  const gp = Array.isArray(char.data?.game_profiles)
+    ? char.data?.game_profiles[0]
+    : char.data?.game_profiles;
   return {
     ownsMckenzie: (mck.count ?? 0) > 0,
-    gtaPlus: prof.data?.gta_plus ?? false,
+    gtaPlus: (gp as { gta_plus?: boolean } | null | undefined)?.gta_plus ?? false,
   };
 }

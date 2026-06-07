@@ -24,14 +24,14 @@ export type OrganizerPlan = {
 };
 
 export async function getRecentPlans(
-  userId: string,
+  characterId: string,
   limit = 10,
 ): Promise<PlanSummaryRow[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("organizer_plans")
     .select("id, prompt, status, applied_at, created_at, plan_steps")
-    .eq("user_id", userId)
+    .eq("character_id", characterId)
     .order("created_at", { ascending: false })
     .limit(limit);
   if (error) throw error;
@@ -76,14 +76,14 @@ export type ConversationRow = {
 };
 
 export async function getConversations(
-  userId: string,
+  characterId: string,
   limit = 30,
 ): Promise<ConversationRow[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("conversations")
     .select("id, title, updated_at")
-    .eq("user_id", userId)
+    .eq("character_id", characterId)
     .order("updated_at", { ascending: false })
     .limit(limit);
   if (error) throw error;
@@ -122,13 +122,13 @@ export async function getConversationTranscript(
 }
 
 export async function getActiveUndoablePlan(
-  userId: string,
+  characterId: string,
 ): Promise<OrganizerPlan | null> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("organizer_plans")
     .select("id, prompt, status, plan_steps, applied_at, undo_expires_at, created_at")
-    .eq("user_id", userId)
+    .eq("character_id", characterId)
     .eq("status", "applied")
     .gt("undo_expires_at", new Date().toISOString())
     .order("applied_at", { ascending: false })

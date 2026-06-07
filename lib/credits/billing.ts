@@ -41,3 +41,14 @@ export async function endSubscription(userId: string): Promise<void> {
     .eq("user_id", userId);
   if (error) throw new Error(`endSubscription failed: ${error.message}`);
 }
+
+/** One-time profile-slot purchase: +1 to profiles.extra_profile_slots,
+ *  idempotent on the Stripe event id (migration 0049). */
+export async function grantProfileSlot(userId: string, stripeEventId: string): Promise<void> {
+  const supabase = createAdminClient();
+  const { error } = await supabase.rpc("grant_profile_slot", {
+    p_user_id: userId,
+    p_stripe_event_id: stripeEventId,
+  });
+  if (error) throw new Error(`grantProfileSlot failed: ${error.message}`);
+}

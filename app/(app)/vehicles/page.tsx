@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 import { getVehiclesBrowserData } from "@/lib/queries/vehicles";
@@ -14,14 +15,15 @@ export default async function VehiclesPage() {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
+  const characterId = (await getScope())!.characterId;
 
   // ownedProperties + tagSuggestions feed the inline InstanceDrawer that the
   // /vehicles card popover opens for managing nickname / custom tags / notes
   // / storage on an owned instance — see VehicleCard.
   const [data, ownedProperties, instances] = await Promise.all([
-    getVehiclesBrowserData(user.id),
-    getOwnedPropertiesWithStorage(user.id),
-    getOwnedVehicleInstances(user.id),
+    getVehiclesBrowserData(characterId),
+    getOwnedPropertiesWithStorage(characterId),
+    getOwnedVehicleInstances(characterId),
   ]);
 
   const tagSuggestions = Array.from(
