@@ -75,7 +75,7 @@ function VehicleCardImpl({
     if (
       binding &&
       ownedProperties &&
-      !ownedProperties.some((p) => p.subtype === binding.subtype)
+      !ownedProperties.some((p) => binding.subtypes.includes(p.subtype))
     ) {
       const label = bayPropertyLabel(vehicle.id) ?? "property";
       const ok = await confirm({

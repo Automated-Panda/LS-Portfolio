@@ -40,7 +40,7 @@ export function hasCompatibleStorage(
 ): boolean {
   const bay = bayBinding(vehicle.vehicle_id);
   if (bay) {
-    return ownedProperties.some((p) => p.subtype === bay.subtype);
+    return ownedProperties.some((p) => bay.subtypes.includes(p.subtype));
   }
   const cat = assetCategoryOf(vehicle.class);
   return ownedProperties.some((p) => propertyAcceptsVehicleCategory(p, cat));

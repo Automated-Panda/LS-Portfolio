@@ -207,7 +207,7 @@ export function InstanceDrawer({
   const binding = bayBinding(instance.vehicle_id);
   const storableProperties = ownedProperties.filter((p) => {
     if (p.id === currentPropertyId) return true;
-    if (binding) return p.subtype === binding.subtype;
+    if (binding) return binding.subtypes.includes(p.subtype);
     // Must accept this vehicle's category (hangars for aircraft, yachts for
     // boats, garages for cars) AND actually have somewhere to park it.
     if (!propertyAcceptsVehicleCategory(p, vehicleCategory)) return false;

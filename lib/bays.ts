@@ -9,19 +9,30 @@
 // client can reason about a vehicle without scanning every property. Keep it in
 // sync with the bay sub_slots seeded in migrations.
 
-export type BayBinding = { subtype: string; label: string };
+// A vehicle pinned to a dedicated bay. `subtypes` lists every property subtype
+// whose bay can hold it — usually one, but some vehicles have more than one
+// valid home (the Terrorbyte fits a Nightclub OR a Garment Factory).
+export type BayBinding = { subtypes: string[]; label: string };
 
 export const BAY_BOUND_VEHICLES: Record<string, BayBinding> = {
   // Facility (single-vehicle bays)
-  avenger: { subtype: "facility", label: "Avenger" },
-  thruster: { subtype: "facility", label: "Thruster" },
-  khanjali: { subtype: "facility", label: "Khanjali" },
-  chernobog: { subtype: "facility", label: "Chernobog" },
-  riot2: { subtype: "facility", label: "RCV" },
+  avenger: { subtypes: ["facility"], label: "Avenger" },
+  thruster: { subtypes: ["facility"], label: "Thruster" },
+  khanjali: { subtypes: ["facility"], label: "Khanjali" },
+  chernobog: { subtypes: ["facility"], label: "Chernobog" },
+  riot2: { subtypes: ["facility"], label: "RCV" },
   // Arena Workshop "large vehicle" spot (Cerberus family)
-  cerberus: { subtype: "arena-workshop", label: "Large Vehicle" },
-  cerberus2: { subtype: "arena-workshop", label: "Large Vehicle" },
-  cerberus3: { subtype: "arena-workshop", label: "Large Vehicle" },
+  cerberus: { subtypes: ["arena-workshop"], label: "Large Vehicle" },
+  cerberus2: { subtypes: ["arena-workshop"], label: "Large Vehicle" },
+  cerberus3: { subtypes: ["arena-workshop"], label: "Large Vehicle" },
+  // Container vehicles parked at their business HQ. Their bays are seeded on the
+  // host properties in migration 0044 (MOC → Bunker, Terrorbyte → Nightclub /
+  // Garment Factory). They still work as containers wherever they're parked.
+  moc: { subtypes: ["bunker"], label: "Mobile Operations Center" },
+  terbyte: {
+    subtypes: ["nightclub", "garment-factory"],
+    label: "Terrorbyte",
+  },
 };
 
 export function isBayBound(vehicleId: string): boolean {
@@ -36,13 +47,18 @@ export function bayBinding(vehicleId: string): BayBinding | null {
 export const BAY_PROPERTY_LABEL: Record<string, string> = {
   facility: "Facility",
   "arena-workshop": "Arena Workshop",
+  bunker: "Bunker",
+  nightclub: "Nightclub",
+  "garment-factory": "Garment Factory",
 };
 
-/** The property name a bay-bound vehicle needs (e.g. "Facility"), or null. */
+/** The property name(s) a bay-bound vehicle needs — e.g. "Facility", or
+ *  "Nightclub or Garment Factory" when more than one subtype fits. Null when
+ *  the vehicle isn't bay-bound. */
 export function bayPropertyLabel(vehicleId: string): string | null {
   const b = bayBinding(vehicleId);
   if (!b) return null;
-  return BAY_PROPERTY_LABEL[b.subtype] ?? b.subtype;
+  return b.subtypes.map((s) => BAY_PROPERTY_LABEL[s] ?? s).join(" or ");
 }
 
 type SlotBinding = { vehicle_id?: string | null; vehicle_ids?: string[] | null };
