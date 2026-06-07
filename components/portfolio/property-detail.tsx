@@ -24,6 +24,7 @@ import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { ASSET_NOUN, storageAssetCategory, vehicleImageUrl } from "@/lib/vehicles";
 import { isBayUpgrade, slotVehicleIds } from "@/lib/bays";
 import { slotLabeler, slotMode } from "@/lib/slot-labels";
+import { groupUpgrades, type UpgradeGroup } from "@/lib/upgrade-groups";
 
 type Props = {
   property: OwnedPropertyDetail;
@@ -580,51 +581,132 @@ function UpgradeChecklist({
   onToggle: (id: string, currentlyInstalled: boolean) => void;
   showCapacity?: boolean;
 }) {
+  // Mutually-exclusive upgrades (yacht models…) render as a radio set, not
+  // independent checkboxes — so it's clear you pick one.
+  const entries = groupUpgrades(rows);
+  const prereqMet = (u: UpgradeRow) =>
+    !u.required_upgrade_id ||
+    isInstalled(
+      u.required_upgrade_id,
+      property.upgrades.find((x) => x.id === u.required_upgrade_id)?.is_installed ?? false,
+    );
+
   return (
     <Card className="p-3">
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
         {title}
       </p>
       <div className="flex flex-col gap-0.5">
-        {rows.map((u) => {
-          const installed = isInstalled(u.id, u.is_installed);
-          const prereqMet =
-            !u.required_upgrade_id ||
-            isInstalled(
-              u.required_upgrade_id,
-              property.upgrades.find((x) => x.id === u.required_upgrade_id)
-                ?.is_installed ?? false,
-            );
-          return (
+        {entries.map((e) =>
+          e.type === "single" ? (
             <label
-              key={u.id}
+              key={e.upgrade.id}
               className="flex cursor-pointer items-center gap-2 rounded-md p-2 hover:bg-muted/50"
-              style={{ opacity: prereqMet ? 1 : 0.5 }}
+              style={{ opacity: prereqMet(e.upgrade) ? 1 : 0.5 }}
             >
               <input
                 type="checkbox"
-                checked={installed}
-                disabled={!prereqMet}
-                onChange={() => onToggle(u.id, installed)}
+                checked={isInstalled(e.upgrade.id, e.upgrade.is_installed)}
+                disabled={!prereqMet(e.upgrade)}
+                onChange={() =>
+                  onToggle(e.upgrade.id, isInstalled(e.upgrade.id, e.upgrade.is_installed))
+                }
               />
-              <span className="flex-1 text-sm">{u.display_name}</span>
-              {u.price !== null && (
-                <span
-                  className="text-[10px] tabular-nums text-emerald-300/70"
-                  title={formatMoneyFull(u.price)}
-                >
-                  {formatMoneyCompact(u.price)}
-                </span>
-              )}
-              {showCapacity && (
-                <Badge variant="outline" className="text-[10px]">
-                  {u.capacity}
-                </Badge>
-              )}
+              <span className="flex-1 text-sm">{e.upgrade.display_name}</span>
+              <UpgradeMeta u={e.upgrade} showCapacity={showCapacity} />
             </label>
-          );
-        })}
+          ) : (
+            <MutexRadios
+              key={`g:${e.group.key}`}
+              group={e.group}
+              property={property}
+              isInstalled={isInstalled}
+              prereqMet={prereqMet}
+              onToggle={onToggle}
+              showCapacity={showCapacity}
+            />
+          ),
+        )}
       </div>
     </Card>
+  );
+}
+
+function UpgradeMeta({ u, showCapacity }: { u: UpgradeRow; showCapacity: boolean }) {
+  return (
+    <>
+      {u.price !== null && (
+        <span
+          className="text-[10px] tabular-nums text-emerald-300/70"
+          title={formatMoneyFull(u.price)}
+        >
+          {formatMoneyCompact(u.price)}
+        </span>
+      )}
+      {showCapacity && (
+        <Badge variant="outline" className="text-[10px]">
+          {u.capacity}
+        </Badge>
+      )}
+    </>
+  );
+}
+
+/** A "pick one" mutex group rendered as radio buttons (with an optional None). */
+function MutexRadios({
+  group,
+  property,
+  isInstalled,
+  prereqMet,
+  onToggle,
+  showCapacity,
+}: {
+  group: UpgradeGroup<UpgradeRow>;
+  property: OwnedPropertyDetail;
+  isInstalled: (id: string, fallback: boolean) => boolean;
+  prereqMet: (u: UpgradeRow) => boolean;
+  onToggle: (id: string, currentlyInstalled: boolean) => void;
+  showCapacity: boolean;
+}) {
+  const selected = group.members.find((m) => isInstalled(m.id, m.is_installed)) ?? null;
+  const name = `mutex-${property.id}-${group.key}`;
+  return (
+    <div className="rounded-md border border-violet-500/30 bg-violet-500/5 p-1.5">
+      <p className="px-1 pb-0.5 text-[11px] font-medium text-violet-300">
+        {group.label} <span className="font-normal text-muted-foreground">· pick one</span>
+      </p>
+      {group.allowNone && (
+        <label className="flex cursor-pointer items-center gap-2 rounded-md p-2 hover:bg-muted/40">
+          <input
+            type="radio"
+            name={name}
+            checked={!selected}
+            onChange={() => selected && onToggle(selected.id, true)}
+          />
+          <span className="flex-1 text-sm text-muted-foreground">None</span>
+        </label>
+      )}
+      {group.members.map((m) => {
+        const checked = selected?.id === m.id;
+        const ok = prereqMet(m);
+        return (
+          <label
+            key={m.id}
+            className="flex cursor-pointer items-center gap-2 rounded-md p-2 hover:bg-muted/40"
+            style={{ opacity: ok ? 1 : 0.5 }}
+          >
+            <input
+              type="radio"
+              name={name}
+              checked={checked}
+              disabled={!ok}
+              onChange={() => !checked && onToggle(m.id, false)}
+            />
+            <span className="flex-1 text-sm">{m.display_name}</span>
+            <UpgradeMeta u={m} showCapacity={showCapacity} />
+          </label>
+        );
+      })}
+    </div>
   );
 }

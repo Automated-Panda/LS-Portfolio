@@ -89,6 +89,7 @@ function p(
       price: null,
       sub_slots: null,
       mutex_group: null,
+      mutex_allow_none: false,
       included_on_purchase: false,
     })),
   };

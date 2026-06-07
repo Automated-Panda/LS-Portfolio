@@ -4,12 +4,12 @@
 import {
   Building2,
   Car,
+  Home,
   LayoutDashboard,
   LifeBuoy,
   LineChart,
   ScrollText,
   Users,
-  Wrench,
 } from "lucide-react";
 
 import { AdminNavLink } from "./admin-nav-link";
@@ -34,11 +34,11 @@ export function AdminNav({
         <AdminNavLink href="/admin/vehicles" icon={Car}>
           Vehicles
         </AdminNavLink>
-        <AdminNavLink href="/admin/properties" icon={Building2}>
-          Properties &amp; Businesses
+        <AdminNavLink href="/admin/properties" icon={Home}>
+          Properties
         </AdminNavLink>
-        <AdminNavLink href="/admin/upgrades" icon={Wrench}>
-          Upgrades
+        <AdminNavLink href="/admin/businesses" icon={Building2}>
+          Businesses
         </AdminNavLink>
       </Section>
       <Section label="Support">

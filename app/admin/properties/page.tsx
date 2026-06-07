@@ -1,20 +1,18 @@
-import { createAdminClient } from "@/lib/supabase/admin";
+// app/admin/properties/page.tsx
+import { requireAdmin } from "@/lib/admin/guard";
 
-import {
-  AdminPropertiesTable,
-  type AdminPropertyRow,
-} from "./admin-properties-table";
+import { AdminContentList } from "../content/admin-content-list";
+import { fetchContent } from "../content/fetch-content";
 
+// Properties = residences, garages, and special properties (businesses live on
+// /admin/businesses). Each is a collapsible row with its upgrades editor.
 export default async function AdminPropertiesPage() {
-  const supabase = createAdminClient();
-  const { data, error } = await supabase
-    .from("properties")
-    .select(
-      "id, display_name, property_type, subtype, subtype_display, neighborhood, capacity, counts_as_garage, price, image_path, status",
-    )
-    .order("display_name", { ascending: true });
-  if (error) throw error;
-
-  const rows = (data ?? []) as AdminPropertyRow[];
-  return <AdminPropertiesTable rows={rows} />;
+  await requireAdmin();
+  const rows = await fetchContent(["residence", "garage", "special"]);
+  return (
+    <div className="flex flex-col gap-4">
+      <h1 className="text-xl font-semibold">Properties</h1>
+      <AdminContentList rows={rows} noun="property" />
+    </div>
+  );
 }

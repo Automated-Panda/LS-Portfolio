@@ -42,6 +42,8 @@ export type OwnedPropertyDetail = {
     }> | null;
     /** Mutex group label: upgrades sharing this label on the same property are mutually exclusive (e.g. yacht models). */
     mutex_group: string | null;
+    /** When true, the mutex group this upgrade belongs to offers a "None" opt-out choice. */
+    mutex_allow_none: boolean;
     /** True when the upgrade unlocks automatically on purchase (e.g. Mansion Garage). Hidden from the Upgrades tab checklist but shown in Storage when it has capacity. */
     included_on_purchase: boolean;
   }>;
@@ -75,7 +77,7 @@ export async function getOwnedPropertiesWithStorage(
       properties!inner (
         display_name, property_type, subtype, subtype_display, neighborhood, image_path,
         capacity, ownership_group, counts_as_garage, price,
-        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots, mutex_group, included_on_purchase )
+        property_upgrades ( id, display_name, capacity, required_upgrade_id, sort_order, price, sub_slots, mutex_group, mutex_allow_none, included_on_purchase )
       ),
       user_owned_property_upgrades ( property_upgrade_id ),
       user_owned_vehicles!stored_in_property_id (
@@ -103,6 +105,7 @@ export async function getOwnedPropertiesWithStorage(
       price: number | null;
       sub_slots: RawSubSlot[] | null;
       mutex_group: string | null;
+      mutex_allow_none: boolean | null;
       included_on_purchase: boolean | null;
     }>;
     const installedIds = new Set(
@@ -167,6 +170,7 @@ export async function getOwnedPropertiesWithStorage(
             capacity,
             price: u.price ?? null,
             mutex_group: u.mutex_group ?? null,
+            mutex_allow_none: u.mutex_allow_none ?? false,
             included_on_purchase: u.included_on_purchase ?? false,
             // Included-on-purchase upgrades (mansion garage, garage floors,
             // facility weaponized bays…) come WITH the property — always treat
