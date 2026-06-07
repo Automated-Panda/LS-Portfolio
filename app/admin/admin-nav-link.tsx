@@ -11,10 +11,13 @@ export function AdminNavLink({
   href,
   icon: Icon,
   children,
+  badge,
 }: {
   href: string;
   icon?: LucideIcon;
   children: React.ReactNode;
+  /** Unread/attention count shown as a small pill on the right. */
+  badge?: number;
 }) {
   const pathname = usePathname();
   const active = href === "/admin" ? pathname === "/admin" : pathname.startsWith(href);
@@ -30,6 +33,11 @@ export function AdminNavLink({
     >
       {Icon && <Icon className={cn("h-4 w-4 shrink-0", active && "text-[#84cc16]")} />}
       <span className="truncate">{children}</span>
+      {badge != null && badge > 0 && (
+        <span className="ml-auto shrink-0 rounded-full bg-red-600 px-1.5 text-[10px] font-bold tabular-nums text-white">
+          {badge}
+        </span>
+      )}
     </Link>
   );
 }

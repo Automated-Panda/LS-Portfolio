@@ -30,7 +30,7 @@ export function ticketStatusNotification(
   status: string,
 ): NotificationPayload {
   const cat = categoryLabel(category).toLowerCase();
-  const st = statusLabel(status);
+  const st = statusLabel(status, category);
   return {
     type: "support_update",
     title: "Update on your feedback",

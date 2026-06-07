@@ -14,9 +14,10 @@ import {
 } from "./tickets";
 
 describe("option lists", () => {
-  it("expose the six categories, six statuses, three priorities", () => {
+  it("expose the six categories, five statuses (Closed retired), three priorities", () => {
     expect(CATEGORIES).toHaveLength(6);
-    expect(STATUSES).toHaveLength(6);
+    expect(STATUSES).toHaveLength(5);
+    expect(STATUSES.map((s) => s.value)).not.toContain("closed");
     expect(PRIORITIES).toHaveLength(3);
   });
 });
@@ -38,6 +39,25 @@ describe("labels", () => {
     expect(statusLabel("in_review")).toBe("In review");
     expect(priorityLabel("high")).toBe("High");
     expect(statusLabel("unknown")).toBe("unknown");
+  });
+
+  it("uses the neutral umbrella label for terminal states without a category", () => {
+    expect(statusLabel("fixed")).toBe("Completed");
+    expect(statusLabel("rejected")).toBe("Rejected");
+  });
+
+  it("uses category-specific wording for terminal states when given a category", () => {
+    expect(statusLabel("fixed", "bug")).toBe("Fixed");
+    expect(statusLabel("fixed", "feature")).toBe("Done");
+    expect(statusLabel("fixed", "complaint")).toBe("Resolved");
+    expect(statusLabel("rejected", "bug")).toBe("Won't fix");
+    expect(statusLabel("rejected", "feature")).toBe("Declined");
+    // Non-terminal states ignore category.
+    expect(statusLabel("new", "feature")).toBe("New");
+  });
+
+  it("still labels legacy 'closed' rows", () => {
+    expect(statusLabel("closed")).toBe("Closed");
   });
 });
 

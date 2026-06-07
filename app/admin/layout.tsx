@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import { getRole } from "@/lib/admin/guard";
 import { isAdminRole, isOwnerRole } from "@/lib/admin/roles";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 import { AdminNav } from "./admin-nav";
 
@@ -16,6 +17,13 @@ export default async function AdminLayout({
   const role = await getRole();
   if (!isAdminRole(role)) redirect("/");
   const owner = isOwnerRole(role);
+
+  // Unread support tickets (active workflow states only) → Inbox nav badge.
+  const { count: inboxUnread } = await createAdminClient()
+    .from("support_tickets")
+    .select("*", { count: "exact", head: true })
+    .is("read_at", null)
+    .in("status", ["new", "in_review", "planned"]);
 
   return (
     <div className="flex min-h-screen">
@@ -34,7 +42,7 @@ export default async function AdminLayout({
           {role}
         </p>
 
-        <AdminNav owner={owner} />
+        <AdminNav owner={owner} inboxUnread={inboxUnread ?? 0} />
 
         <div className="mt-5 flex flex-col gap-0.5 border-t pt-4">
           <a

@@ -13,6 +13,7 @@ type TicketRow = {
   priority: string;
   status: string;
   created_at: string;
+  read_at: string | null;
 };
 type NoteRow = { id: string; ticket_id: string; body: string; created_at: string };
 
@@ -46,6 +47,7 @@ export default async function AdminSupportPage() {
     priority: t.priority,
     status: t.status,
     createdAt: t.created_at,
+    readAt: t.read_at,
     notes: (notesByTicket.get(t.id) ?? []).map((n) => ({
       id: n.id,
       body: n.body,
@@ -54,9 +56,8 @@ export default async function AdminSupportPage() {
   }));
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-xl font-semibold">Support inbox</h1>
-      <p className="text-sm text-muted-foreground">{rows.length} tickets</p>
+    <div className="flex h-[calc(100vh-3rem)] flex-col gap-4">
+      <h1 className="shrink-0 text-xl font-semibold">Inbox</h1>
       <AdminSupportList tickets={rows} />
     </div>
   );

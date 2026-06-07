@@ -16,7 +16,13 @@ import { AdminNavLink } from "./admin-nav-link";
 
 // Client component: it owns the Lucide icon components so they are never passed
 // as props across the server→client boundary (which RSC cannot serialize).
-export function AdminNav({ owner }: { owner: boolean }) {
+export function AdminNav({
+  owner,
+  inboxUnread = 0,
+}: {
+  owner: boolean;
+  inboxUnread?: number;
+}) {
   return (
     <nav className="mt-5 flex flex-1 flex-col gap-5 overflow-y-auto">
       <Section label="Overview">
@@ -36,7 +42,7 @@ export function AdminNav({ owner }: { owner: boolean }) {
         </AdminNavLink>
       </Section>
       <Section label="Support">
-        <AdminNavLink href="/admin/support" icon={LifeBuoy}>
+        <AdminNavLink href="/admin/support" icon={LifeBuoy} badge={inboxUnread}>
           Inbox
         </AdminNavLink>
       </Section>

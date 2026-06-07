@@ -55,6 +55,20 @@ export async function setTicketStatus(id: string, status: string): Promise<Resul
   return { ok: true };
 }
 
+/** Mark a ticket read (read=true → stamp read_at now) or unread (read_at null).
+ *  Deliberately NOT activity-logged — it fires on every open and would be noise. */
+export async function setTicketRead(id: string, read: boolean): Promise<Result> {
+  await requireAdmin();
+  const supabase = createAdminClient();
+  const { error } = await supabase
+    .from("support_tickets")
+    .update({ read_at: read ? new Date().toISOString() : null })
+    .eq("id", id);
+  if (error) return { error: error.message };
+  revalidatePath("/admin/support");
+  return { ok: true };
+}
+
 export async function setTicketPriority(id: string, priority: string): Promise<Result> {
   await requireAdmin();
   if (!isValidPriority(priority)) return { error: "Invalid priority." };
