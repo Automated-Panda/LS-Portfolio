@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { vehicleImageUrl } from "@/lib/vehicles";
+import { AVAILABILITY_BADGE_CLASS, AVAILABILITY_LABEL, vehicleImageUrl } from "@/lib/vehicles";
+import { cn } from "@/lib/utils";
 import { isBayUpgrade } from "@/lib/bays";
 import { slotLabeler, isFlagSubSlot } from "@/lib/slot-labels";
 import { isContainerVehicle } from "@/lib/containers";
@@ -294,6 +295,16 @@ function OwnedCard({
               </span>
             )}
           </div>
+          {inst.availability !== "available" && (
+            <span
+              className={cn(
+                "absolute bottom-1.5 right-1.5 z-10 rounded-md border px-1.5 py-0.5 text-[10px] font-medium backdrop-blur-sm",
+                AVAILABILITY_BADGE_CLASS[inst.availability],
+              )}
+            >
+              {AVAILABILITY_LABEL[inst.availability]}
+            </span>
+          )}
         </div>
         <div className="flex flex-col gap-1 p-3">
           <p className="text-sm font-medium">{inst.nickname ?? inst.display_name}</p>

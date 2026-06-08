@@ -15,6 +15,7 @@ function veh(over: Partial<OwnedVehicleInstance> = {}): OwnedVehicleInstance {
     manufacturer_display: "Bravado",
     image_path: null,
     price: null,
+    availability: "available",
     nickname: null,
     notes: null,
     custom_tags: [],

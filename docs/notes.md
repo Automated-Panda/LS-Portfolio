@@ -51,14 +51,15 @@ Running working checklist of what's next. Tick items off as we go. Roughly order
 - [x] **Gate wired:** non-owner clicking "Add GTA-account profile" → `createProfile()` returns `needs-purchase` → UI redirects to Stripe checkout; on return, success toast, then they can add. Owner = unlimited (skips gate).
 - ⚠️ **TODO before this works live:** run **`npm run stripe:setup`** (with Stripe keys) to create the $2.99 price in the Stripe account — the CATALOG entry is added but the price must exist. Webhook endpoint already configured (same one as credits).
 
-### 🎯 Multi-character: ALL PHASES BUILT — ready for James's visual check, then push the whole feature
-Migrations `0047`–`0049` applied to prod. tsc + 187 tests + build green throughout. **Nothing pushed yet.**
+### 🎯 Multi-character: ALL PHASES SHIPPED to main 2026-06-08 (commit `62f47b3`)
+Migrations `0047`–`0049` applied to prod. tsc + 187 tests + build green. Live $2.99 Stripe price created (`price_1TfqE0…`, lookup `gtvault_profile_slot_299`).
+⚠️ **For prod $2.99 to work:** Vercel env needs the **live** `STRIPE_SECRET_KEY` + a **live webhook** endpoint (same `/api/stripe/webhook`). And put the **test** key back in local `.env.local`.
 
 ---
 
-## 🐞 Minor bugs / polish (next session)
-- [ ] **Slot-number badge covers the tags on the vehicle card view** → move it (James's suggestion: **bottom-left of the image itself**). Check `app/(app)/my-vehicles/my-vehicles-grid.tsx` (`OwnedCard` badge) — and any other card view where the slot pill overlaps the tag row.
-- [ ] **Owned vehicles inside properties/garages don't keep the "Discontinued" (availability) tags** — the `/vehicles` browser shows availability badges (discontinued/seasonal) but the garage-grid / my-vehicles cards don't. Thread `availability` into the owned-vehicle queries + render the badge on those cards.
+## 🐞 Minor bugs / polish
+- [x] **Slot-number badge covered the tags (2026-06-08)** — the garage-grid `CarCard` slot pill was on the card (over the tag row); moved it inside the image (bottom-left), matching `/my-vehicles`. The my-vehicles card was already on the image.
+- [x] **Owned vehicles now keep the "Discontinued"/availability badge (2026-06-08)** — threaded `availability` through `getOwnedVehicleInstances` (+ the per-vehicle owned query) and render the `AVAILABILITY_*` badge (bottom-right of the image) on both the `/my-vehicles` cards and the garage-grid cards.
 
 ---
 

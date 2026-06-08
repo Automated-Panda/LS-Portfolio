@@ -27,6 +27,7 @@ function inst(
     manufacturer_display: rest.manufacturer_display ?? "Pegassi",
     image_path: null,
     price: null,
+    availability: "available",
     nickname: rest.nickname ?? null,
     notes: null,
     custom_tags: [],

@@ -27,7 +27,8 @@ import {
 } from "@/app/(app)/my-vehicles/slot-actions";
 import type { OwnedVehicleInstance } from "@/lib/queries/my-vehicles";
 import { isFlagSubSlot, type SlotLayout } from "@/lib/slot-labels";
-import { vehicleImageUrl } from "@/lib/vehicles";
+import { AVAILABILITY_BADGE_CLASS, AVAILABILITY_LABEL, vehicleImageUrl } from "@/lib/vehicles";
+import { cn } from "@/lib/utils";
 
 type Props = {
   ownedPropertyId: string;
@@ -393,20 +394,6 @@ function CarCard({
       {...attributes}
       {...listeners}
     >
-      {/* Slot label + optional flag (Driveway/Podium) — bottom-left, mirrors
-          the /my-vehicles badge. */}
-      <div className="absolute bottom-1.5 left-1.5 z-10 flex items-center gap-1">
-        {slotLabel != null && (
-          <span className="flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow">
-            {slotLabel}
-          </span>
-        )}
-        {flag && (
-          <span className="flex h-6 items-center justify-center rounded-md bg-violet-600 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
-            {flag}
-          </span>
-        )}
-      </div>
       <div className="absolute right-1.5 top-1.5 z-10 flex items-center gap-0.5">
         <div className="flex items-center gap-0.5 opacity-0 transition-opacity group-hover:opacity-100">
           <button
@@ -465,6 +452,29 @@ function CarCard({
         <span className="absolute left-2 top-2 rounded-md bg-black/70 px-1.5 py-0.5 text-[10px] uppercase text-white">
           {instance.class}
         </span>
+        {/* Slot label + flag — bottom-left of the IMAGE so it never overlaps the tags. */}
+        <div className="absolute bottom-1.5 left-1.5 z-10 flex items-center gap-1">
+          {slotLabel != null && (
+            <span className="flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-600 px-1.5 text-xs font-bold tabular-nums text-white shadow">
+              {slotLabel}
+            </span>
+          )}
+          {flag && (
+            <span className="flex h-6 items-center justify-center rounded-md bg-violet-600 px-1.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
+              {flag}
+            </span>
+          )}
+        </div>
+        {instance.availability !== "available" && (
+          <span
+            className={cn(
+              "absolute bottom-1.5 right-1.5 z-10 rounded-md border px-1.5 py-0.5 text-[10px] font-medium backdrop-blur-sm",
+              AVAILABILITY_BADGE_CLASS[instance.availability],
+            )}
+          >
+            {AVAILABILITY_LABEL[instance.availability]}
+          </span>
+        )}
       </div>
       <div className="flex flex-col gap-1 p-3">
         <p className="truncate text-sm font-medium">{name}</p>

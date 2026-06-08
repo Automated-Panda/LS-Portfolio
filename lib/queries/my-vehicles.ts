@@ -1,6 +1,6 @@
 // lib/queries/my-vehicles.ts
 import { createClient } from "@/lib/supabase/server";
-import { formatClass } from "@/lib/vehicles";
+import { formatClass, type AvailabilityStatus } from "@/lib/vehicles";
 
 export type OwnedVehicleInstance = {
   id: string;                            // user_owned_vehicles.id (uuid)
@@ -10,6 +10,7 @@ export type OwnedVehicleInstance = {
   manufacturer_display: string;
   image_path: string | null;
   price: number | null;                  // GTA Online purchase price in $, null if unsourced
+  availability: AvailabilityStatus;      // available / discontinued / seasonal / …
   nickname: string | null;
   notes: string | null;
   custom_tags: string[];
@@ -44,7 +45,7 @@ export async function getOwnedVehicleInstances(
       stored_in_property_id, assigned_upgrade_id, sub_slot, slot_number,
       stored_in_vehicle_id,
       vehicles!inner (
-        display_name, class, image_path, manufacturer_id, price,
+        display_name, class, image_path, manufacturer_id, price, availability,
         manufacturers ( display ),
         vehicle_tag_links ( tag_id )
       ),
@@ -85,6 +86,7 @@ export async function getOwnedVehicleInstances(
       manufacturer_display: mfr?.display ?? "",
       image_path: v?.image_path ?? null,
       price: (v?.price ?? null) as number | null,
+      availability: (v?.availability ?? "available") as AvailabilityStatus,
       nickname: row.nickname,
       notes: row.notes,
       custom_tags: row.custom_tags ?? [],

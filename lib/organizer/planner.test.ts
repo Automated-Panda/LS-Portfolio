@@ -34,6 +34,7 @@ function veh(id: string, vehicle_id: string, cls: string): OwnedVehicleInstance 
     manufacturer_display: "M",
     image_path: null,
     price: null,
+    availability: "available",
     nickname: null,
     notes: null,
     custom_tags: [],

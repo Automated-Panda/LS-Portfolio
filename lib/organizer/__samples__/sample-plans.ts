@@ -36,6 +36,7 @@ function v(
     manufacturer_display: "Mock",
     image_path: null,
     price: null,
+    availability: "available",
     nickname: null,
     notes: null,
     custom_tags: [],
