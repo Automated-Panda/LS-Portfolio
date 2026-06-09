@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 
 import { MyBusinessesGrid } from "./my-businesses-grid";
@@ -12,8 +13,9 @@ export default async function MyBusinessesPage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const { characterId } = (await getScope())!;
 
-  const businesses = await getOwnedPropertiesWithStorage(user.id, "businesses");
+  const businesses = await getOwnedPropertiesWithStorage(characterId, "businesses");
 
   return (
     <div className="flex flex-col gap-4">

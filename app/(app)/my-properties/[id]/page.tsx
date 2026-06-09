@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import { getOwnedPropertiesWithStorage } from "@/lib/queries/my-properties";
 import { getOwnedVehicleInstances } from "@/lib/queries/my-vehicles";
 
@@ -16,12 +17,13 @@ export default async function PropertyDetailPage({
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
+  const { characterId } = (await getScope())!;
 
   const { id } = await params;
 
   const [ownedProperties, instances, { data: tags }] = await Promise.all([
-    getOwnedPropertiesWithStorage(user.id),
-    getOwnedVehicleInstances(user.id),
+    getOwnedPropertiesWithStorage(characterId),
+    getOwnedVehicleInstances(characterId),
     supabase.from("vehicle_tags").select("id, display"),
   ]);
 
