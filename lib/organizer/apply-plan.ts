@@ -38,7 +38,7 @@ export async function applyPlan(planId: string): Promise<ApplyPlanResult> {
   // 2. Snapshot the current storage state of every affected vehicle.
   const { data: currentRows, error: snapErr } = await supabase
     .from("user_owned_vehicles")
-    .select("id, stored_in_property_id, assigned_upgrade_id")
+    .select("id, stored_in_property_id, assigned_upgrade_id, slot_number, sub_slot")
     .in("id", affectedVehicleIds)
     .eq("user_id", user.id);
   if (snapErr) return { error: snapErr.message };
@@ -48,6 +48,8 @@ export async function applyPlan(planId: string): Promise<ApplyPlanResult> {
       owned_vehicle_id: r.id,
       stored_in_property_id: r.stored_in_property_id,
       assigned_upgrade_id: r.assigned_upgrade_id,
+      slot_number: r.slot_number,
+      sub_slot: r.sub_slot,
     })),
   };
 

@@ -56,6 +56,11 @@ export type UndoSnapshot = {
     owned_vehicle_id: string;
     stored_in_property_id: string | null;
     assigned_upgrade_id: string | null;
+    // Area-scoped placement, captured so undo restores the exact numbered slot
+    // / sub-slot a car held before the plan moved it (older snapshots omit
+    // these — treat missing as null).
+    slot_number?: number | null;
+    sub_slot?: string | null;
   }>;
 };
 

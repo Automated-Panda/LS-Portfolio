@@ -41,6 +41,9 @@ export async function undoPlan(planId: string): Promise<UndoPlanResult> {
       .update({
         stored_in_property_id: v.stored_in_property_id,
         assigned_upgrade_id: v.assigned_upgrade_id,
+        // Older snapshots (pre slot-capture) omit these — restore as unplaced.
+        slot_number: v.slot_number ?? null,
+        sub_slot: v.sub_slot ?? null,
       })
       .eq("id", v.owned_vehicle_id)
       .eq("user_id", user.id);
