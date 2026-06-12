@@ -307,12 +307,18 @@ async function markStep(
 
   // Apply / reverse the DB write for THIS step.
   if (complete) {
+    // A numbered slot / sub-slot is scoped to one (property, upgrade) area, so a
+    // move must drop both — otherwise the car carries its old slot number into
+    // the target floor and trips the (property, upgrade, slot) unique index as
+    // soon as two moved cars collide on the same spot.
     const patch =
       step.type === "unassign"
-        ? { stored_in_property_id: null, assigned_upgrade_id: null }
+        ? { stored_in_property_id: null, assigned_upgrade_id: null, sub_slot: null, slot_number: null }
         : {
             stored_in_property_id: step.to.property_id,
             assigned_upgrade_id: step.to.upgrade_id,
+            sub_slot: null,
+            slot_number: null,
           };
     const { error } = await supabase
       .from("user_owned_vehicles")
@@ -322,10 +328,13 @@ async function markStep(
     if (error) return { error: error.message };
   } else {
     // Untick: restore from the step's `from` (since checklist mode never
-    // snapshots; we trust the step's own from-state).
+    // snapshots; we trust the step's own from-state). The slot was dropped on
+    // the forward move, so the car returns to its old area unplaced.
     const patch = {
       stored_in_property_id: step.from.property_id || null,
       assigned_upgrade_id: step.from.upgrade_id,
+      sub_slot: null,
+      slot_number: null,
     };
     const { error } = await supabase
       .from("user_owned_vehicles")

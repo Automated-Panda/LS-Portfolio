@@ -69,12 +69,17 @@ export async function applyPlan(planId: string): Promise<ApplyPlanResult> {
 
   // 4. Apply each step sequentially.
   for (const step of steps) {
+    // Drop the area-scoped numbered slot / sub-slot on every move, or the car
+    // carries its old slot into the target floor and trips the
+    // (property, upgrade, slot) unique index when two moved cars collide.
     const patch =
       step.type === "unassign"
-        ? { stored_in_property_id: null, assigned_upgrade_id: null }
+        ? { stored_in_property_id: null, assigned_upgrade_id: null, sub_slot: null, slot_number: null }
         : {
             stored_in_property_id: step.to.property_id,
             assigned_upgrade_id: step.to.upgrade_id,
+            sub_slot: null,
+            slot_number: null,
           };
     const { error } = await supabase
       .from("user_owned_vehicles")
