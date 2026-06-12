@@ -64,6 +64,11 @@ export function MyVehiclesGrid({
       <div className="flex flex-col gap-6">
         {groups.map((group) => {
           const isCollapsed = collapsed.has(group.key);
+          // Multi-area garages move their cars into subgroups and empty `items`,
+          // so the header count must sum the subgroups (else it reads 0).
+          const groupCount = group.subgroups
+            ? group.subgroups.reduce((s, sg) => s + sg.items.length, 0)
+            : group.items.length;
           return (
             <section key={group.key} className="flex flex-col gap-3">
               {group.label && (
@@ -80,7 +85,7 @@ export function MyVehiclesGrid({
                   )}
                   {group.label}
                   <span className="text-xs font-normal tabular-nums text-muted-foreground">
-                    {group.items.length}
+                    {groupCount}
                   </span>
                 </button>
               )}
