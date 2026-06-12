@@ -386,7 +386,7 @@ function CarCard({
       onClick={() => {
         if (!isDragging) onManage();
       }}
-      className={`group relative flex cursor-pointer touch-none flex-col overflow-hidden rounded-lg border bg-card ${
+      className={`group relative flex h-full cursor-pointer touch-none flex-col overflow-hidden rounded-lg border bg-card ${
         isDragging
           ? "border-emerald-400 opacity-90 shadow-lg"
           : "border-emerald-500/70 ring-2 ring-emerald-500/30 hover:border-foreground/40"
