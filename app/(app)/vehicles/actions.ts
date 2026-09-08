@@ -42,17 +42,16 @@ export async function addVehicleInstance(
  * Returns the user's owned instances of a vehicle as full OwnedVehicleInstance
  * records — same shape as /my-vehicles uses — so the /vehicles popover can
  * pass them straight into InstanceDrawer for inline management (nickname,
- * custom tags, notes, storage). Scoped to the signed-in user's vehicle_id
- * and ordered oldest-first.
+ * custom tags, notes, storage). Scoped to the ACTIVE CHARACTER's instances of
+ * this vehicle and ordered oldest-first — scoping to user_id alone leaked (and
+ * let you edit) the other character's cars.
  */
 export async function getOwnedInstancesForVehicle(
   vehicleId: string,
 ): Promise<OwnedVehicleInstance[] | { error: string }> {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { error: "Not signed in." };
+  const scope = await getScope();
+  if (!scope) return { error: "Not signed in." };
 
   const { data, error } = await supabase
     .from("user_owned_vehicles")
@@ -70,7 +69,7 @@ export async function getOwnedInstancesForVehicle(
       ),
       property_upgrades!assigned_upgrade_id ( display_name )
     `)
-    .eq("user_id", user.id)
+    .eq("character_id", scope.characterId)
     .eq("vehicle_id", vehicleId)
     .order("created_at", { ascending: true });
 
@@ -141,12 +140,13 @@ export async function setFavourite(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const { error } = await supabase
     .from("user_owned_vehicles")
     .update({ is_favourite: isFavourite })
     .eq("id", instanceId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
 
   revalidatePath("/", "layout");
@@ -162,12 +162,13 @@ export async function removeOwnedInstance(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const { error } = await supabase
     .from("user_owned_vehicles")
     .delete()
     .eq("id", instanceId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
 
   revalidatePath("/", "layout");

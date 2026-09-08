@@ -38,13 +38,19 @@ export async function togglePropertyOwnership(
   if (!user) return { error: "Not signed in." };
   const { characterId } = (await getScope())!;
 
-  // Already owned → un-own (no car relocation here; this path is for the
-  // /properties browse "Owned" toggle on a property that's the sole owned in
-  // its group. Cars get cleared via ON DELETE SET NULL).
+  // Already owned BY THE ACTIVE CHARACTER → un-own (no car relocation here;
+  // this path is for the /properties browse "Owned" toggle on a property that's
+  // the sole owned in its group. Cars get cleared via ON DELETE SET NULL).
+  //
+  // This lookup MUST be character-scoped. Scoped to user_id alone it matched a
+  // *different* character's row, so buying a property another character already
+  // owned deleted that character's row instead — silently unparking every car
+  // stored there (ON DELETE SET NULL). Ownership is per character (unique index
+  // user_owned_properties_character_property_key, migration 0048).
   const { data: existing } = await supabase
     .from("user_owned_properties")
     .select("id")
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("property_id", propertyId)
     .maybeSingle();
 
@@ -52,7 +58,8 @@ export async function togglePropertyOwnership(
     const { error } = await supabase
       .from("user_owned_properties")
       .delete()
-      .eq("id", existing.id);
+      .eq("id", existing.id)
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
     revalidatePath("/", "layout");
     return { ok: false, removed: true };
@@ -241,7 +248,7 @@ export async function tradeInProperty(
     .from("user_owned_properties")
     .delete()
     .eq("id", args.tradeInOwnedPropertyId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (delErr) return { error: delErr.message };
 
   revalidatePath("/", "layout");
@@ -283,7 +290,7 @@ export async function unownProperty(
     .from("user_owned_properties")
     .delete()
     .eq("id", args.ownedPropertyId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (delErr) return { error: delErr.message };
 
   revalidatePath("/", "layout");

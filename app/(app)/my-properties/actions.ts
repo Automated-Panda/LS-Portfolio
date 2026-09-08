@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 
 export type ToggleUpgradeResult =
   | { ok: true; installed: boolean }
@@ -21,13 +22,14 @@ export async function toggleUpgradeInstalled(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Verify the user owns this property (RLS would also catch this).
   const { data: ownership, error: ownErr } = await supabase
     .from("user_owned_properties")
     .select("id")
     .eq("id", ownedPropertyId)
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .maybeSingle();
   if (ownErr || !ownership) return { error: "Property not owned." };
 
@@ -124,13 +126,14 @@ export async function setAllUpgradesInstalled(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Verify ownership + get the underlying property_id so we know the upgrade catalog.
   const { data: ownership } = await supabase
     .from("user_owned_properties")
     .select("id, property_id")
     .eq("id", ownedPropertyId)
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .maybeSingle();
   if (!ownership) return { error: "Property not owned." };
 

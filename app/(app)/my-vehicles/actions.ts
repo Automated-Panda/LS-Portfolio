@@ -22,6 +22,7 @@ export async function assignVehicleStorage(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Unassign path — clears the numbered slot too (it's area-scoped).
   if (opts.ownedPropertyId === null) {
@@ -35,7 +36,7 @@ export async function assignVehicleStorage(opts: {
         stored_in_vehicle_id: null, // also un-nest from any container vehicle
       })
       .eq("id", opts.ownedVehicleId)
-      .eq("user_id", user.id);
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
     revalidatePath("/", "layout");
     return { ok: true };
@@ -48,7 +49,7 @@ export async function assignVehicleStorage(opts: {
     .from("user_owned_vehicles")
     .select("stored_in_property_id, assigned_upgrade_id")
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .maybeSingle();
   const areaChanged =
     (existing?.stored_in_property_id ?? null) !== opts.ownedPropertyId ||
@@ -102,7 +103,7 @@ export async function assignVehicleStorage(opts: {
       ...(areaChanged ? { slot_number: null } : {}),
     })
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
   revalidatePath("/", "layout");
   return { ok: true };
@@ -163,6 +164,7 @@ export async function updateVehicleInstance(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const patch: Record<string, unknown> = {};
   if (opts.nickname !== undefined) patch.nickname = opts.nickname;
@@ -189,7 +191,7 @@ export async function updateVehicleInstance(opts: {
     .from("user_owned_vehicles")
     .update(patch)
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
 
   revalidatePath("/", "layout");
@@ -204,12 +206,13 @@ export async function removeVehicleInstance(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const { error } = await supabase
     .from("user_owned_vehicles")
     .delete()
     .eq("id", ownedVehicleId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
 
   revalidatePath("/", "layout");

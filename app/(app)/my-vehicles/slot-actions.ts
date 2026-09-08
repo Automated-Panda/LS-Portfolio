@@ -6,6 +6,7 @@ import { isBayUpgrade } from "@/lib/bays";
 import { capacityForStorageLocation } from "@/lib/capacity";
 import { isValidSlot, planAutoArrange } from "@/lib/slots";
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 type Result = { ok: true } | { error: string };
@@ -62,6 +63,7 @@ export async function setVehicleSlot(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Clearing (un-placing) is always allowed.
   if (opts.slotNumber === null) {
@@ -69,7 +71,7 @@ export async function setVehicleSlot(opts: {
       .from("user_owned_vehicles")
       .update({ slot_number: null })
       .eq("id", opts.ownedVehicleId)
-      .eq("user_id", user.id);
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
     revalidatePath("/", "layout");
     return { ok: true };
@@ -79,7 +81,7 @@ export async function setVehicleSlot(opts: {
     .from("user_owned_vehicles")
     .select("stored_in_property_id, assigned_upgrade_id")
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .maybeSingle();
   if (vErr) return { error: vErr.message };
   if (!v?.stored_in_property_id) {
@@ -100,7 +102,7 @@ export async function setVehicleSlot(opts: {
   let q = supabase
     .from("user_owned_vehicles")
     .select("id, nickname, vehicles!inner(display_name)")
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("stored_in_property_id", propertyId)
     .eq("slot_number", opts.slotNumber)
     .neq("id", opts.ownedVehicleId);
@@ -125,7 +127,7 @@ export async function setVehicleSlot(opts: {
     .from("user_owned_vehicles")
     .update({ slot_number: opts.slotNumber })
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
   revalidatePath("/", "layout");
   return { ok: true };
@@ -169,6 +171,7 @@ export async function autoArrangeGarage(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const area = await garageArea(
     supabase,
@@ -183,7 +186,7 @@ export async function autoArrangeGarage(opts: {
   let sel = supabase
     .from("user_owned_vehicles")
     .select("id")
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("stored_in_property_id", opts.ownedPropertyId)
     .order("created_at", { ascending: true });
   sel =
@@ -200,7 +203,7 @@ export async function autoArrangeGarage(opts: {
   let clr = supabase
     .from("user_owned_vehicles")
     .update({ slot_number: null })
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("stored_in_property_id", opts.ownedPropertyId);
   clr =
     opts.assignedUpgradeId === null
@@ -215,7 +218,7 @@ export async function autoArrangeGarage(opts: {
       .from("user_owned_vehicles")
       .update({ slot_number: slot })
       .eq("id", id)
-      .eq("user_id", user.id);
+      .eq("character_id", characterId);
     if (error) return { error: error.message };
   }
 

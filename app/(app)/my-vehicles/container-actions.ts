@@ -9,6 +9,7 @@ import {
 } from "@/lib/containers";
 import { getOwnedContainerVehicles } from "@/lib/queries/container-vehicles";
 import { createClient } from "@/lib/supabase/server";
+import { getScope } from "@/lib/scope";
 
 type Result = { ok: true } | { error: string };
 
@@ -34,6 +35,7 @@ export async function getOwnedContainersForStorable(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return [];
+  const { characterId } = (await getScope())!;
 
   const match = bayForStoredVehicle(childVehicleId);
   if (!match) return [];
@@ -47,7 +49,7 @@ export async function getOwnedContainersForStorable(
   const { data: nested } = await supabase
     .from("user_owned_vehicles")
     .select("stored_in_vehicle_id, sub_slot")
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .in("stored_in_vehicle_id", ids);
 
   const key = (cid: string, label: string) => `${cid}::${label}`;
@@ -91,19 +93,20 @@ export async function assignVehicleToContainer(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   const [{ data: child }, { data: container }] = await Promise.all([
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id")
       .eq("id", opts.ownedVehicleId)
-      .eq("user_id", user.id)
+      .eq("character_id", characterId)
       .maybeSingle(),
     supabase
       .from("user_owned_vehicles")
       .select("vehicle_id")
       .eq("id", opts.containerOwnedVehicleId)
-      .eq("user_id", user.id)
+      .eq("character_id", characterId)
       .maybeSingle(),
   ]);
   if (!child) return { error: "Vehicle not found." };
@@ -129,7 +132,7 @@ export async function assignVehicleToContainer(opts: {
   const { count } = await supabase
     .from("user_owned_vehicles")
     .select("id", { count: "exact", head: true })
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("stored_in_vehicle_id", opts.containerOwnedVehicleId)
     .eq("sub_slot", opts.bayLabel)
     .neq("id", opts.ownedVehicleId);
@@ -147,7 +150,7 @@ export async function assignVehicleToContainer(opts: {
       slot_number: null,
     })
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id);
+    .eq("character_id", characterId);
   if (error) return { error: error.message };
   revalidatePath("/", "layout");
   return { ok: true };
@@ -177,6 +180,7 @@ export async function getContainerDetail(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return null;
+  const { characterId } = (await getScope())!;
 
   const container = (await getOwnedContainerVehicles()).find(
     (c) => c.id === ownedVehicleId,
@@ -186,7 +190,7 @@ export async function getContainerDetail(
   const { data: nested } = await supabase
     .from("user_owned_vehicles")
     .select("id, nickname, sub_slot, vehicles!inner(display_name)")
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .eq("stored_in_vehicle_id", ownedVehicleId);
 
   const nestedList: ContainerNestedVehicle[] = (nested ?? []).map((n) => {
@@ -215,13 +219,14 @@ export async function setVehicleUpgrade(opts: {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not signed in." };
+  const { characterId } = (await getScope())!;
 
   // Confirm the owned vehicle belongs to the user (RLS also enforces this).
   const { data: owned } = await supabase
     .from("user_owned_vehicles")
     .select("id")
     .eq("id", opts.ownedVehicleId)
-    .eq("user_id", user.id)
+    .eq("character_id", characterId)
     .maybeSingle();
   if (!owned) return { error: "Vehicle not found." };
 
